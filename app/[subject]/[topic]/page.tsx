@@ -9,7 +9,9 @@ import { useParams } from "next/navigation";
 import styles from "@/app/styles/pagedata.module.css";
 import { javaTopicsData } from "@/app/topic/java/page";
 import LiveCodeEditor from "@/app/components/code-editor/java/page";
-import { useTheme } from "@/app/components/themecontext/page";
+import { useTheme } from "@/app/components/themecontext";
+// app/[subject]/[topic]/page.tsx
+import { scanAllParams } from "@/lib/scansitemaptopic";
 
 // ====================== INTERFACES ======================
 interface BulletItem {
