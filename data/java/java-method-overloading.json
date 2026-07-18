@@ -1,0 +1,1616 @@
+{
+  "meta": {
+    "title": "Java Method Overloading — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java method overloading with syntax, rules, type promotion, return type, varargs overloading, overloading vs overriding, best practices, common mistakes, and real-world examples. Covers all method overloading patterns in Java. Updated March 2026.",
+    "keywords": "java method overloading, java overloading, java method overloading example, java method overloading rules, java overloading vs overriding, java type promotion in overloading, java varargs overloading, java compile time polymorphism, java static polymorphism, java overloading best practices, java overloading interview questions, java overloading with return type, java overloading constructor, java ad hoc polymorphism",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-method-overloading",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Method Overloading — Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java method overloading — rules, type promotion, return type, varargs, overloading vs overriding, compile-time polymorphism, real-world examples, pitfalls, and interview questions.",
+      "url": "https://www.techsustainify.com/java/java-method-overloading",
+      "image": "https://www.techsustainify.com/images/java-method-overloading-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Method Overloading Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-02-15T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Method Overloading",
+          "Java Compile-Time Polymorphism",
+          "Java Static Polymorphism",
+          "Java Type Promotion",
+          "Java Varargs Overloading",
+          "Java Overloading vs Overriding",
+          "Java OOP",
+          "Java Basics",
+          "Java Methods",
+          "Java 21"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Method Overloading — Syntax, Examples & Best Practices 2026",
+      "description": "Complete guide to Java method overloading — rules, type promotion, varargs, overloading vs overriding, compile-time polymorphism, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-method-overloading-og.png",
+      "imageAlt": "Java Method Overloading Guide 2026 - Tech Sustainify",
+      "readingTime": "22 minutes",
+      "level": "Beginner",
+      "label1": "Reading Time",
+      "data1": "22 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Method Overloading — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering all Java method overloading concepts — rules, type promotion, return type, varargs overloading, overloading vs overriding, compile-time polymorphism, real-world examples, pitfalls, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-02-15",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner",
+        "wordCount": 6200,
+        "timeRequired": "PT22M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Method Overloading" },
+          { "@type": "Thing", "name": "Java Compile-Time Polymorphism" },
+          { "@type": "Thing", "name": "Java Type Promotion" },
+          { "@type": "Thing", "name": "Java Static Polymorphism" }
+        ],
+        "keywords": "java method overloading, compile-time polymorphism, type promotion, varargs overloading, overloading vs overriding, static polymorphism, ad hoc polymorphism"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Method Overloading" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is method overloading in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Method overloading in Java is a feature that allows a class to have multiple methods with the same name, provided they differ in their parameter list — either in the number of parameters, the types of parameters, or the order of parameter types. The compiler determines which version to call at compile time based on the arguments supplied at the call site. This is also called compile-time polymorphism or static polymorphism. Return type alone is NOT sufficient to overload a method in Java."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the rules for method overloading in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rules for method overloading in Java: (1) The method name must be the same. (2) The parameter list must be different — different number, different types, or different order of types. (3) Return type can be the same or different, but return type ALONE cannot distinguish overloaded methods. (4) Access modifiers and exceptions can also differ. (5) Overloading is resolved at compile time (static dispatch). (6) Overloading can happen within the same class or in a subclass (though in a subclass, changing only the return type of an inherited method creates a compile error)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is type promotion in method overloading?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Type promotion (also called implicit widening conversion) occurs during overload resolution when there is no exact match for the argument type. Java automatically widens the argument to the next compatible type to find a matching overload. The promotion chain for numeric types is: byte → short → int → long → float → double. For example, if you call add(5) and only add(long x) exists (not add(int x)), Java promotes 5 (int) to long and calls add(long). char can be promoted to int and then further up the chain. Widening always takes priority over autoboxing in overload resolution."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can we overload the main method in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, the main method can be overloaded in Java. You can define multiple methods named 'main' with different parameter lists: public static void main(String[] args), public static void main(int x), public static void main(String msg), etc. However, the JVM only uses the specific 'public static void main(String[] args)' signature as the program entry point. The other overloaded versions are treated as regular methods and must be called explicitly from code — the JVM will not invoke them automatically at startup."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between method overloading and method overriding?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Method overloading: same method name, different parameter list, within the same class (or subclass). Resolved at compile time (static polymorphism). Return type, access modifier, and exceptions can vary. Method overriding: same method name, same parameter list, same return type (or covariant), in a subclass overriding an inherited method. Resolved at runtime (dynamic polymorphism). Access modifier cannot be more restrictive; checked exceptions cannot be broader. Overloading is about providing multiple versions of a method for different input types; overriding is about replacing a parent class's behavior in a child class."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-02-15",
+      "dateModified": "2026-03-20",
+      "readingTime": "22 minutes",
+      "wordCount": 6200,
+      "difficulty": "Beginner",
+      "chapter": 18,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-overloading",         "title": "What is Method Overloading?" },
+        { "id": "overloading-rules",            "title": "Rules of Method Overloading" },
+        { "id": "overloading-by-param-count",   "title": "Overloading by Number of Parameters" },
+        { "id": "overloading-by-param-type",    "title": "Overloading by Type of Parameters" },
+        { "id": "overloading-by-param-order",   "title": "Overloading by Order of Parameters" },
+        { "id": "type-promotion",               "title": "Type Promotion in Overloading" },
+        { "id": "return-type-overloading",      "title": "Return Type & Overloading" },
+        { "id": "varargs-overloading",          "title": "Varargs and Overloading" },
+        { "id": "constructor-overloading",      "title": "Constructor Overloading" },
+        { "id": "overloading-vs-overriding",    "title": "Overloading vs Overriding" },
+        { "id": "compile-time-polymorphism",    "title": "Compile-Time Polymorphism" },
+        { "id": "common-mistakes",              "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",                "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",          "title": "Real-World Production Code Examples" },
+        { "id": "overloading-flowchart",        "title": "Overloading Resolution Flowchart" },
+        { "id": "interview-questions",          "title": "Interview Questions" },
+        { "id": "practice-questions",           "title": "Practice Questions" },
+        { "id": "conclusion-heading",           "title": "Conclusion" },
+        { "id": "faq-heading",                  "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-method-overloading" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-method-overloading" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-method-overloading" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-method-parameters",
+      "next": "https://www.techsustainify.com/java/java-method-return-type"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-methods",
+      "contentTopic": "java-method-overloading",
+      "chapterNumber": 18,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Method Overloading" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Method Overloading — Syntax, Rules, Examples & Best Practices",
+    "subtitle": "Everything you need to know about Java method overloading — rules, type promotion, return type constraints, varargs overloading, constructor overloading, overloading vs overriding, compile-time polymorphism, anti-patterns, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "22 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "18 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-overloading",
+      "title": "What is Method Overloading in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Method overloading</strong> in Java is the ability to define <strong>multiple methods with the same name</strong> in the same class, as long as their <strong>parameter lists are different</strong>. The Java compiler selects the correct version of the method at <strong>compile time</strong> based on the number, types, and order of the arguments passed — making it a form of <strong>compile-time polymorphism</strong> (also called <em>static polymorphism</em> or <em>ad hoc polymorphism</em>)."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Without overloading, you would need different method names for logically identical operations on different data types — <code>addInt(int, int)</code>, <code>addDouble(double, double)</code>, <code>addLong(long, long)</code>. Overloading lets all three simply be called <code>add()</code>, making the API cleaner and more intuitive. In real applications, overloading is everywhere: <code>System.out.println()</code> has 10 overloaded versions, <code>String.valueOf()</code> has 9, and <code>Math.max()</code> has 4."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Overloading is resolved <strong>entirely at compile time</strong> — the JVM does not make any runtime decision about which overload to invoke. This makes overloaded method calls as efficient as direct method calls. It is completely different from <strong>method overriding</strong>, which involves runtime dispatch and inheritance."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java Method Overloading at a Glance",
+          "text": "Key facts: (1) Same method name, different parameter list — that is the entire definition. (2) Can differ by: number of parameters, type of parameters, or order of parameter types. (3) Return type ALONE cannot distinguish overloads — it causes a compile error. (4) Resolved at compile time — no runtime overhead. (5) Also applies to constructors (constructor overloading). (6) Type promotion (widening) is applied automatically when there is no exact match. (7) Varargs overloads are chosen last — only when no non-varargs overload matches."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "overloading-rules",
+      "title": "Rules of Method Overloading — What the Compiler Checks",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The Java compiler enforces a precise set of rules to determine whether two methods constitute valid overloads or a duplicate definition error. Understanding these rules prevents compile errors and unexpected resolution behavior."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "✅",
+              "title": "Rule 1 — Same Method Name",
+              "text": "Overloaded methods MUST share the exact same name (case-sensitive). 'print' and 'Print' are different methods, not overloads. The same name is the entire point of overloading — providing multiple implementations under one intuitive name."
+            },
+            {
+              "icon": "✅",
+              "title": "Rule 2 — Different Parameter List",
+              "text": "The parameter list must differ in at least one of: (a) Number of parameters — add(int) vs add(int, int). (b) Type of parameters — add(int, int) vs add(double, double). (c) Order of parameter types — display(String, int) vs display(int, String). Parameter NAMES do not matter — display(int a, String b) and display(int x, String y) are the same signature."
+            },
+            {
+              "icon": "❌",
+              "title": "Rule 3 — Return Type Alone Is NOT Enough",
+              "text": "Two methods with the same name and same parameter list but different return types cause a COMPILE ERROR — they are not valid overloads. Java cannot distinguish them from the call site alone: 'add(1,2)' gives no information about which return type is expected. This is a fundamental rule: return type never participates in overload resolution."
+            },
+            {
+              "icon": "✅",
+              "title": "Rule 4 — Access Modifier & Exceptions Can Vary",
+              "text": "Overloaded methods can have different access modifiers (public, private, protected, package-private) and different throws clauses. These do not affect overload resolution — the compiler selects the overload purely from the parameter list, then applies the access check."
+            },
+            {
+              "icon": "✅",
+              "title": "Rule 5 — Can Exist in Same Class or Subclass",
+              "text": "Overloaded methods can be defined in the same class. A subclass can also add overloads to an inherited method by defining a method with the same name but a different parameter list. This is still overloading (not overriding), resolved at compile time."
+            },
+            {
+              "icon": "✅",
+              "title": "Rule 6 — Static Methods Can Be Overloaded",
+              "text": "Static methods follow the same overloading rules as instance methods. Math.min(int,int), Math.min(long,long), Math.min(float,float), Math.min(double,double) are all static overloads. Overloading is independent of whether methods are static or instance."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "OverloadingRules.java",
+          "lines": [
+            "public class OverloadingRules {",
+            "",
+            "    // ✅ VALID: Different number of parameters",
+            "    public int add(int a) { return a; }",
+            "    public int add(int a, int b) { return a + b; }",
+            "    public int add(int a, int b, int c) { return a + b + c; }",
+            "",
+            "    // ✅ VALID: Different parameter types",
+            "    public double multiply(int a, int b)       { return (double)(a * b); }",
+            "    public double multiply(double a, double b) { return a * b; }",
+            "    public double multiply(long a, long b)     { return (double)(a * b); }",
+            "",
+            "    // ✅ VALID: Different order of parameter types",
+            "    public void display(String name, int age) {",
+            "        System.out.println(name + \" is \" + age);",
+            "    }",
+            "    public void display(int age, String name) {",
+            "        System.out.println(age + \" years old: \" + name);",
+            "    }",
+            "",
+            "    // ❌ INVALID: Only return type differs — COMPILE ERROR",
+            "    // public int    getValue() { return 1; }",
+            "    // public double getValue() { return 1.0; } // ERROR: duplicate method",
+            "",
+            "    // ❌ INVALID: Only parameter names differ — COMPILE ERROR",
+            "    // public void show(int x) { }",
+            "    // public void show(int y) { } // ERROR: duplicate method (same signature)",
+            "",
+            "    // ✅ VALID: Different access modifiers (both compile)",
+            "    public    void log(String msg)         { System.out.println(\"[PUB] \" + msg); }",
+            "    private   void log(String msg, int id) { System.out.println(\"[PRI] \" + id + \": \" + msg); }",
+            "",
+            "    public static void main(String[] args) {",
+            "        OverloadingRules obj = new OverloadingRules();",
+            "        System.out.println(obj.add(5));          // 5",
+            "        System.out.println(obj.add(5, 3));       // 8",
+            "        System.out.println(obj.add(5, 3, 2));    // 10",
+            "        obj.display(\"Kavya\", 22);               // Kavya is 22",
+            "        obj.display(22, \"Kavya\");               // 22 years old: Kavya",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "overloading-by-param-count",
+      "title": "Overloading by Number of Parameters",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The simplest and most readable form of overloading: defining the same method for <strong>different numbers of arguments</strong>. This is the Java idiom for <em>default parameter values</em> — since Java has no built-in default arguments (unlike Python or Kotlin), overloading is how you provide optional parameters cleanly."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "OverloadByCount.java",
+          "lines": [
+            "public class OverloadByCount {",
+            "",
+            "    // Overloading to simulate default parameters",
+            "    // 1 param — uses defaults for missing values",
+            "    public static void createConnection(String host) {",
+            "        createConnection(host, 3306);  // default port",
+            "    }",
+            "",
+            "    // 2 params — uses default for timeout",
+            "    public static void createConnection(String host, int port) {",
+            "        createConnection(host, port, 30); // default timeout",
+            "    }",
+            "",
+            "    // 3 params — full implementation (all others delegate here)",
+            "    public static void createConnection(String host, int port, int timeoutSeconds) {",
+            "        System.out.println(\"Connecting to \" + host + \":\" + port",
+            "                           + \" (timeout=\" + timeoutSeconds + \"s)\");",
+            "    }",
+            "",
+            "    // Another example: area calculation",
+            "    // Square — 1 side",
+            "    public static double area(double side) {",
+            "        return side * side;",
+            "    }",
+            "",
+            "    // Rectangle — 2 sides",
+            "    public static double area(double length, double width) {",
+            "        return length * width;",
+            "    }",
+            "",
+            "    // Cuboid surface area — 3 dimensions",
+            "    public static double area(double length, double width, double height) {",
+            "        return 2 * (length * width + width * height + height * length);",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // Connection with progressive defaults",
+            "        createConnection(\"db.example.com\");",
+            "        // Output: Connecting to db.example.com:3306 (timeout=30s)",
+            "",
+            "        createConnection(\"db.example.com\", 5432);",
+            "        // Output: Connecting to db.example.com:5432 (timeout=30s)",
+            "",
+            "        createConnection(\"db.example.com\", 5432, 60);",
+            "        // Output: Connecting to db.example.com:5432 (timeout=60s)",
+            "",
+            "        // Area calculations",
+            "        System.out.println(area(5.0));           // 25.0  (square)",
+            "        System.out.println(area(5.0, 3.0));      // 15.0  (rectangle)",
+            "        System.out.println(area(5.0, 3.0, 2.0)); // 62.0  (cuboid surface)",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 The Delegation Pattern for Overloads",
+          "text": "When overloading by parameter count, have shorter overloads DELEGATE to the longest (most complete) version by supplying default values. This avoids code duplication: the actual logic lives in exactly one place. If the logic changes, you update one method. This is the standard Java pattern for optional parameters — used throughout the JDK in classes like PrintStream, String, and Collections."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "overloading-by-param-type",
+      "title": "Overloading by Type of Parameters",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Overloading by <strong>parameter type</strong> is the most common form — providing type-specific implementations under a single method name. This is how the Java standard library achieves a clean API: <code>Math.abs(int)</code>, <code>Math.abs(long)</code>, <code>Math.abs(float)</code>, <code>Math.abs(double)</code> all share one name and the compiler picks the right version automatically."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "OverloadByType.java",
+          "lines": [
+            "public class OverloadByType {",
+            "",
+            "    // Overloading by numeric type — mirrors Math.max() pattern",
+            "    public static int    max(int a,    int b)    { return (a >= b) ? a : b; }",
+            "    public static long   max(long a,   long b)   { return (a >= b) ? a : b; }",
+            "    public static float  max(float a,  float b)  { return (a >= b) ? a : b; }",
+            "    public static double max(double a, double b) { return (a >= b) ? a : b; }",
+            "",
+            "    // Overloading by object type — print different info per type",
+            "    public static void describe(int value) {",
+            "        System.out.println(\"Integer: \" + value + \" (binary: \" + Integer.toBinaryString(value) + \")\");",
+            "    }",
+            "    public static void describe(double value) {",
+            "        System.out.println(\"Double: \" + value + \" (formatted: \" + String.format(\"%.2f\", value) + \")\");",
+            "    }",
+            "    public static void describe(String value) {",
+            "        System.out.println(\"String: \\\"\" + value + \"\\\" (length=\" + value.length() + \")\");",
+            "    }",
+            "    public static void describe(boolean value) {",
+            "        System.out.println(\"Boolean: \" + value + \" (\" + (value ? \"TRUE\" : \"FALSE\") + \")\");",
+            "    }",
+            "",
+            "    // Overloading with object types",
+            "    public static void process(Integer id) {",
+            "        System.out.println(\"Processing by ID: \" + id);",
+            "    }",
+            "    public static void process(String name) {",
+            "        System.out.println(\"Processing by name: \" + name);",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // Compiler picks exact type match",
+            "        System.out.println(max(10, 20));          // int version → 20",
+            "        System.out.println(max(100L, 200L));      // long version → 200",
+            "        System.out.println(max(1.5f, 2.5f));      // float version → 2.5",
+            "        System.out.println(max(3.14, 2.71));      // double version → 3.14",
+            "",
+            "        // Each call dispatches to the appropriate overload",
+            "        describe(42);         // Integer: 42 (binary: 101010)",
+            "        describe(3.14);       // Double: 3.14 (formatted: 3.14)",
+            "        describe(\"Java\");    // String: \"Java\" (length=4)",
+            "        describe(true);       // Boolean: true (TRUE)",
+            "",
+            "        process(101);         // Processing by ID: 101",
+            "        process(\"Alice\");    // Processing by name: Alice",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "overloading-by-param-order",
+      "title": "Overloading by Order of Parameters",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Overloading by <strong>changing the order of parameter types</strong> is the least common and most error-prone form. While valid, it often leads to <strong>confusing call sites</strong> where the caller must know the order to determine which version runs. It should be used only when the order genuinely conveys different semantic meaning."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "OverloadByOrder.java",
+          "lines": [
+            "public class OverloadByOrder {",
+            "",
+            "    // ✅ Order matters semantically — different meaning",
+            "    // Repeats a string N times",
+            "    public static String repeat(String text, int times) {",
+            "        return text.repeat(times);",
+            "    }",
+            "",
+            "    // Pads a number to a given width with a character",
+            "    public static String repeat(int times, String text) {",
+            "        StringBuilder sb = new StringBuilder();",
+            "        for (int i = 0; i < times; i++) sb.append(text);",
+            "        return sb.toString();",
+            "    }",
+            "",
+            "    // Another example: log(String message, int code) vs log(int code, String message)",
+            "    public static void log(String message, int statusCode) {",
+            "        System.out.println(\"[\" + statusCode + \"] \" + message);",
+            "    }",
+            "    public static void log(int statusCode, String category) {",
+            "        System.out.println(\"CATEGORY=\" + category + \" CODE=\" + statusCode);",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        System.out.println(repeat(\"ha\", 3));  // hahaha  (String, int)",
+            "        System.out.println(repeat(3, \"ha\"));  // hahaha  (int, String) — same output, different overload",
+            "",
+            "        log(\"Not Found\", 404);   // [404] Not Found    — String, int",
+            "        log(404, \"CLIENT_ERROR\"); // CATEGORY=CLIENT_ERROR CODE=404  — int, String",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Order-Based Overloading Is Often a Design Smell",
+          "text": "Overloading by parameter order only works when the parameter types are DIFFERENT (e.g., String and int). Two methods with the same types in different order but same names are a valid overload — but at the call site, log(\"msg\", 404) and log(404, \"msg\") look nearly identical and are easy to mix up. Prefer clearly named, distinct methods or a parameter object over order-based overloads in production code."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "type-promotion",
+      "title": "Type Promotion in Method Overloading",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When the compiler cannot find an <strong>exact type match</strong> for a method call, it applies <strong>automatic type promotion</strong> (widening conversion) to find the closest compatible overload. The promotion chain for numeric primitives is: <code>byte → short → int → long → float → double</code>. A <code>char</code> is first promoted to <code>int</code> and then follows the chain. This happens <strong>silently at compile time</strong> — the programmer may not realize which overload is actually called."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "TypePromotion.java",
+          "lines": [
+            "public class TypePromotion {",
+            "",
+            "    public static void show(int x) {",
+            "        System.out.println(\"int version: \" + x);",
+            "    }",
+            "    public static void show(long x) {",
+            "        System.out.println(\"long version: \" + x);",
+            "    }",
+            "    public static void show(double x) {",
+            "        System.out.println(\"double version: \" + x);",
+            "    }",
+            "",
+            "    // Only long and double overloads exist — no int",
+            "    public static void display(long x) {",
+            "        System.out.println(\"display long: \" + x);",
+            "    }",
+            "    public static void display(double x) {",
+            "        System.out.println(\"display double: \" + x);",
+            "    }",
+            "",
+            "    // Only double overload exists",
+            "    public static void printVal(double x) {",
+            "        System.out.println(\"printVal double: \" + x);",
+            "    }",
+            "",
+            "    // char promotion demo",
+            "    public static void check(int x) {",
+            "        System.out.println(\"check int: \" + x);",
+            "    }",
+            "    public static void check(double x) {",
+            "        System.out.println(\"check double: \" + x);",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // Exact match — no promotion needed",
+            "        show(10);      // int version: 10",
+            "        show(10L);     // long version: 10",
+            "        show(10.0);    // double version: 10.0",
+            "",
+            "        // No int overload — byte/short/int promoted to long (nearest wider type)",
+            "        byte  b = 5;",
+            "        short s = 10;",
+            "        display(b);    // display long: 5   (byte → long)",
+            "        display(s);    // display long: 10  (short → long)",
+            "        display(10);   // display long: 10  (int → long)",
+            "",
+            "        // Only double exists — int, long, float all promote to double",
+            "        printVal(5);    // printVal double: 5.0   (int → double)",
+            "        printVal(5L);   // printVal double: 5.0   (long → double)",
+            "        printVal(5.0f); // printVal double: 5.0   (float → double)",
+            "",
+            "        // char promoted to int first, then follows chain",
+            "        char c = 'A';  // ASCII value 65",
+            "        check(c);      // check int: 65  (char → int)",
+            "",
+            "        // ⚠️ Widening vs Autoboxing priority",
+            "        // Java prefers widening OVER autoboxing",
+            "        // show(10) — prefers show(int) over show(Integer) if both exist",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Argument Type", "Exact Match", "Promoted To (if no exact match)"],
+          "rows": [
+            ["byte",   "byte",   "short → int → long → float → double"],
+            ["short",  "short",  "int → long → float → double"],
+            ["int",    "int",    "long → float → double"],
+            ["long",   "long",   "float → double"],
+            ["float",  "float",  "double"],
+            ["char",   "char",   "int → long → float → double"],
+            ["double", "double", "No promotion possible — compile error if no match"]
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Overload Resolution Priority Order",
+          "text": "When Java resolves an overloaded call, it tries in this order: (1) Exact type match — highest priority. (2) Widening (type promotion) — next. (3) Autoboxing/unboxing — e.g., int → Integer. (4) Varargs — lowest priority, only chosen when nothing else matches. If multiple promotions are equally valid, the compiler reports an ambiguity error. Knowing this order is critical for predicting which overload runs."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "return-type-overloading",
+      "title": "Return Type & Overloading — Why Return Type Alone Fails",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A fundamental rule in Java: <strong>return type alone cannot distinguish overloaded methods</strong>. If two methods have the same name and the same parameter list but different return types, the compiler reports a <strong>duplicate method error</strong> — not a valid overload. This is because at the call site, the compiler determines which overload to invoke before it knows what return type the caller expects."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ReturnTypeOverloading.java",
+          "lines": [
+            "public class ReturnTypeOverloading {",
+            "",
+            "    // ❌ INVALID — only return type differs, same parameter list → COMPILE ERROR",
+            "    // public int    convert(String s) { return Integer.parseInt(s); }",
+            "    // public double convert(String s) { return Double.parseDouble(s); } // ERROR",
+            "",
+            "    // WHY? At the call site:",
+            "    // convert(\"42\")  — compiler cannot tell which return type you want",
+            "    // Even: int x = convert(\"42\") — this is checked AFTER overload resolution",
+            "",
+            "    // ✅ Fix: Use different method names",
+            "    public static int    convertToInt(String s)    { return Integer.parseInt(s); }",
+            "    public static double convertToDouble(String s) { return Double.parseDouble(s); }",
+            "",
+            "    // ✅ Fix: Use different parameter types (then return type can differ too)",
+            "    public static int    parse(String s) { return Integer.parseInt(s); }",
+            "    public static double parse(String s, boolean asDecimal) {",
+            "        return Double.parseDouble(s); // Now parameter list differs — valid overload",
+            "    }",
+            "",
+            "    // ✅ VALID: Same name, different params — return types CAN differ when params differ",
+            "    public static int    getValue(int index)    { return index * 10; }",
+            "    public static String getValue(String key)   { return \"Value of \" + key; }",
+            "    public static double getValue(double ratio) { return ratio * 100; }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        System.out.println(convertToInt(\"123\"));     // 123",
+            "        System.out.println(convertToDouble(\"3.14\")); // 3.14",
+            "",
+            "        // Compiler uses parameter type to resolve — return types are fine here",
+            "        System.out.println(getValue(3));        // 30       (int version)",
+            "        System.out.println(getValue(\"score\")); // Value of score (String version)",
+            "        System.out.println(getValue(0.85));     // 85.0     (double version)",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 Covariant Return Types — Overriding, Not Overloading",
+          "text": "While return type cannot distinguish overloads, Java DOES allow a subclass to narrow (covariant) the return type when OVERRIDING: if the parent declares 'Animal create()', the child can declare 'Dog create()' — Dog is a subtype of Animal. This is covariant return type and applies only to overriding (runtime polymorphism), not overloading (compile-time polymorphism)."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "varargs-overloading",
+      "title": "Varargs and Method Overloading — The Last Resort",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Varargs (<code>type...</code>) can be used in overloaded methods, but they interact with overload resolution in a specific and sometimes surprising way. The Java compiler treats a varargs overload as the <strong>last resort</strong> — it is chosen only when no non-varargs overload matches the call. This makes varargs a natural 'catch-all' fallback while specific overloads handle common cases efficiently."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "VarargsOverloading.java",
+          "lines": [
+            "public class VarargsOverloading {",
+            "",
+            "    // Specific overloads for 1 and 2 args (most common cases — no array overhead)",
+            "    public static int sum(int a) {",
+            "        System.out.println(\"single-arg version\");",
+            "        return a;",
+            "    }",
+            "    public static int sum(int a, int b) {",
+            "        System.out.println(\"two-arg version\");",
+            "        return a + b;",
+            "    }",
+            "    // Varargs — fallback for 0, 3, 4, ... args",
+            "    public static int sum(int... nums) {",
+            "        System.out.println(\"varargs version (\" + nums.length + \" args)\");",
+            "        int total = 0;",
+            "        for (int n : nums) total += n;",
+            "        return total;",
+            "    }",
+            "",
+            "    // Ambiguity example — both could match",
+            "    public static void print(String s) {",
+            "        System.out.println(\"String: \" + s);",
+            "    }",
+            "    public static void print(Object... objs) {",
+            "        System.out.println(\"varargs Object: \" + objs.length + \" args\");",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        System.out.println(sum(5));         // single-arg version → 5",
+            "        System.out.println(sum(5, 3));      // two-arg version → 8",
+            "        System.out.println(sum());          // varargs version (0 args) → 0",
+            "        System.out.println(sum(1, 2, 3));   // varargs version (3 args) → 6",
+            "        System.out.println(sum(1,2,3,4,5)); // varargs version (5 args) → 15",
+            "",
+            "        // Non-varargs preferred over varargs when both match",
+            "        print(\"hello\");  // String version chosen (more specific than Object...)",
+            "        print(1, 2);     // varargs Object version (no String overload for 2 args)",
+            "",
+            "        // ⚠️ Ambiguity warning — avoid this pattern",
+            "        // Two varargs overloads that can both match a specific call:",
+            "        // sum(int... nums) and sum(Integer... nums) — calling sum(1,2) is ambiguous",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Varargs Overloading Ambiguity — The Compiler Cannot Choose",
+          "text": "Never define two overloads where both are varargs and both could match the same call: 'void show(int... nums)' and 'void show(Integer... nums)' — calling show(1, 2) causes an ambiguity compile error because 1 can be either int or Integer. Similarly, 'void show(Object... o)' and 'void show(String... s)' can conflict. Rule: if you have a varargs overload, ensure it cannot collide with other varargs overloads for the same argument types."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "constructor-overloading",
+      "title": "Constructor Overloading — Multiple Ways to Build an Object",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Constructor overloading</strong> applies the same principle — multiple constructors in the same class with different parameter lists. This allows objects to be created in multiple ways: with all fields, with some fields (others defaulting), or from different data sources. The <code>this()</code> call allows one constructor to delegate to another, avoiding code duplication — the same delegation pattern used with method overloads."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ConstructorOverloading.java",
+          "lines": [
+            "public class ConstructorOverloading {",
+            "",
+            "    static class Employee {",
+            "        String name;",
+            "        String department;",
+            "        double salary;",
+            "        boolean isActive;",
+            "",
+            "        // Constructor 1: Minimal — only name required",
+            "        public Employee(String name) {",
+            "            this(name, \"General\"); // Delegates to Constructor 2",
+            "        }",
+            "",
+            "        // Constructor 2: Name + department",
+            "        public Employee(String name, String department) {",
+            "            this(name, department, 30000.0); // Delegates to Constructor 3",
+            "        }",
+            "",
+            "        // Constructor 3: Name + department + salary",
+            "        public Employee(String name, String department, double salary) {",
+            "            this(name, department, salary, true); // Delegates to full constructor",
+            "        }",
+            "",
+            "        // Constructor 4: Full — all fields (all others delegate here)",
+            "        public Employee(String name, String department, double salary, boolean isActive) {",
+            "            this.name       = name;",
+            "            this.department = department;",
+            "            this.salary     = salary;",
+            "            this.isActive   = isActive;",
+            "        }",
+            "",
+            "        @Override",
+            "        public String toString() {",
+            "            return name + \" | \" + department + \" | ₹\" + salary + \" | active=\" + isActive;",
+            "        }",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        Employee e1 = new Employee(\"Rohit\");",
+            "        System.out.println(e1);",
+            "        // Output: Rohit | General | ₹30000.0 | active=true",
+            "",
+            "        Employee e2 = new Employee(\"Sneha\", \"Engineering\");",
+            "        System.out.println(e2);",
+            "        // Output: Sneha | Engineering | ₹30000.0 | active=true",
+            "",
+            "        Employee e3 = new Employee(\"Arjun\", \"Sales\", 55000.0);",
+            "        System.out.println(e3);",
+            "        // Output: Arjun | Sales | ₹55000.0 | active=true",
+            "",
+            "        Employee e4 = new Employee(\"Divya\", \"HR\", 45000.0, false);",
+            "        System.out.println(e4);",
+            "        // Output: Divya | HR | ₹45000.0 | active=false",
+            "",
+            "        // ✅ this() must be the FIRST statement in a constructor",
+            "        // ❌ Cannot call both this() and super() in same constructor",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 this() Must Be the First Statement",
+          "text": "When using this() to delegate to another constructor, it MUST be the very first statement in the constructor body. You cannot execute any other statements before this(). Also, you cannot use both this() and super() in the same constructor — they are mutually exclusive. The delegation chain must terminate at a constructor that does NOT call this() — that one performs the actual initialization."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "overloading-vs-overriding",
+      "title": "Overloading vs Overriding — The Most Important Distinction",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Method overloading and method overriding are both forms of polymorphism in Java, but they are fundamentally different mechanisms. <strong>Overloading</strong> is resolved at <strong>compile time</strong> (static polymorphism). <strong>Overriding</strong> is resolved at <strong>runtime</strong> (dynamic polymorphism). Confusing the two is among the most common mistakes in Java interviews and code."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Criteria", "Method Overloading", "Method Overriding"],
+          "rows": [
+            ["Definition",            "Same name, different parameter list in SAME class",     "Same name, same parameter list in SUBCLASS"],
+            ["Polymorphism type",     "Compile-time (static)",                                  "Runtime (dynamic)"],
+            ["Parameter list",        "MUST be different",                                      "MUST be the same"],
+            ["Return type",           "Can be same or different",                               "Must be same or covariant (narrower subtype)"],
+            ["Access modifier",       "Can be same or different",                               "Cannot be MORE restrictive than parent"],
+            ["Exceptions",            "Can throw any exception",                                "Cannot throw new/broader checked exceptions"],
+            ["Inheritance required?", "No — same class",                                        "Yes — requires parent-child class relationship"],
+            ["@Override annotation",  "Not applicable",                                         "Recommended — compiler validates the override"],
+            ["Static methods",        "Can be overloaded",                                       "Cannot be overridden — static methods are hidden, not overridden"],
+            ["Private methods",       "Can be overloaded (in same class)",                      "Cannot be overridden — private is not inherited"],
+            ["Resolution",            "Compiler picks overload at compile time",                 "JVM picks implementation at runtime via vtable"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "OverloadingVsOverriding.java",
+          "lines": [
+            "class Animal {",
+            "    // This method will be OVERRIDDEN in Dog",
+            "    public void sound() {",
+            "        System.out.println(\"Animal makes a sound\");",
+            "    }",
+            "",
+            "    // This method will be OVERLOADED in same class",
+            "    public void eat(String food) {",
+            "        System.out.println(\"Animal eats \" + food);",
+            "    }",
+            "    public void eat(String food, int times) {   // OVERLOAD — different params",
+            "        System.out.println(\"Animal eats \" + food + \" \" + times + \" times\");",
+            "    }",
+            "}",
+            "",
+            "class Dog extends Animal {",
+            "",
+            "    // ✅ OVERRIDING — same signature as Animal.sound()",
+            "    @Override",
+            "    public void sound() {",
+            "        System.out.println(\"Dog barks: Woof!\");",
+            "    }",
+            "",
+            "    // ✅ OVERLOADING inherited method — different parameter list",
+            "    public void eat(String food, String bowl) {",
+            "        System.out.println(\"Dog eats \" + food + \" from \" + bowl);",
+            "    }",
+            "}",
+            "",
+            "public class OverloadingVsOverriding {",
+            "    public static void main(String[] args) {",
+            "",
+            "        Animal a = new Animal();",
+            "        Dog    d = new Dog();",
+            "",
+            "        // OVERRIDING — runtime decides based on actual object type",
+            "        Animal ref = new Dog();   // Animal reference, Dog object",
+            "        ref.sound();  // Dog barks: Woof! ← runtime dispatch → Dog.sound()",
+            "",
+            "        // OVERLOADING — compile time decides based on argument types",
+            "        d.eat(\"bone\");             // Animal eats bone        (1-param overload)",
+            "        d.eat(\"bone\", 3);          // Animal eats bone 3 times (2-param overload)",
+            "        d.eat(\"bone\", \"red bowl\"); // Dog eats bone from red bowl (Dog overload)",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "compile-time-polymorphism",
+      "title": "Compile-Time Polymorphism — How the JVM Resolves Overloads",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Method overloading is also called <strong>compile-time polymorphism</strong> or <strong>static polymorphism</strong> because the binding between a method call and its implementation is resolved <strong>during compilation</strong>, not at runtime. The Java compiler analyzes the argument types at the call site, applies the overload resolution rules, and emits a direct <code>invokestatic</code> or <code>invokevirtual</code> bytecode instruction pointing to the specific overload. No runtime dispatch table lookup is needed."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "CompileTimePolymorphism.java",
+          "lines": [
+            "public class CompileTimePolymorphism {",
+            "",
+            "    static class Printer {",
+            "        public void print(int value) {",
+            "            System.out.println(\"Printing int: \" + value);",
+            "        }",
+            "        public void print(String value) {",
+            "            System.out.println(\"Printing String: \" + value);",
+            "        }",
+            "        public void print(double value) {",
+            "            System.out.println(\"Printing double: \" + value);",
+            "        }",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        Printer p = new Printer();",
+            "",
+            "        // Compile time: compiler sees literal 42 → int → picks print(int)",
+            "        p.print(42);       // Printing int: 42",
+            "",
+            "        // Compile time: compiler sees literal \"Hello\" → String → picks print(String)",
+            "        p.print(\"Hello\"); // Printing String: Hello",
+            "",
+            "        // Compile time: compiler sees literal 3.14 → double → picks print(double)",
+            "        p.print(3.14);     // Printing double: 3.14",
+            "",
+            "        // ⚠️ Reference type vs actual type — overloading uses REFERENCE type!",
+            "        // This is different from overriding which uses ACTUAL (runtime) type",
+            "        Object obj = \"Java\";",
+            "        p.print(obj.toString()); // print(String) — called via explicit toString()",
+            "",
+            "        // Key insight: if print(Object obj) existed:",
+            "        // p.print(obj) would call print(Object) — because obj's DECLARED type is Object",
+            "        // NOT print(String) — even though obj holds a String at runtime",
+            "        // Overloading binds at compile time using DECLARED type, not runtime type",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Critical: Overloading Uses Declared (Static) Type — Not Runtime Type",
+          "text": "Unlike overriding (which uses the actual runtime type), overloading resolution uses the DECLARED (compile-time) type of the reference. If Object obj = \"Hello\" and you call show(obj), Java calls show(Object) — NOT show(String) — even though obj holds a String at runtime. This surprises many developers. Rule: overload resolution is 100% a compile-time decision based on the declared types of the arguments, ignoring what those references actually point to at runtime."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Bugs That Fool Everyone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These mistakes appear consistently in beginner and even intermediate Java code. Each one compiles without error or warning but produces wrong or unexpected behavior at runtime."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "OverloadingMistakes.java",
+          "lines": [
+            "// ❌ MISTAKE 1: Assuming return type differentiates overloads",
+            "// public int    getData() { return 1; }",
+            "// public String getData() { return \"one\"; } // COMPILE ERROR — not an overload",
+            "",
+            "// ❌ MISTAKE 2: Assuming parameter names differentiate overloads",
+            "// public void process(int id)   { }",
+            "// public void process(int code) { } // COMPILE ERROR — same signature",
+            "",
+            "// ❌ MISTAKE 3: Unexpected type promotion picks wrong overload",
+            "public class OverloadingMistakes {",
+            "",
+            "    static void show(long x)   { System.out.println(\"long: \"   + x); }",
+            "    static void show(double x) { System.out.println(\"double: \" + x); }",
+            "",
+            "    public static void main(String[] args) {",
+            "        int i = 100;",
+            "        show(i); // Prints: long: 100",
+            "        // Developer expected int or double — gets long via promotion",
+            "        // Fix: add an int overload, or explicitly cast: show((double)i)",
+            "",
+            "        // ❌ MISTAKE 4: Overloading with declared type vs runtime type",
+            "        // Overloading is resolved at COMPILE TIME using DECLARED type",
+            "        Object obj = \"hello\";",
+            "        // If show(Object x) and show(String x) both existed:",
+            "        // show(obj) → calls show(Object) — NOT show(String)!",
+            "        // Because obj is declared as Object, not String",
+            "",
+            "        // ❌ MISTAKE 5: null argument — ambiguity between reference-type overloads",
+            "        // If: static void find(String s) {} and static void find(Integer n) {}",
+            "        // find(null) → COMPILE ERROR: ambiguous, both String and Integer accept null",
+            "        // Fix: cast explicitly: find((String) null) or find((Integer) null)",
+            "",
+            "        // ❌ MISTAKE 6: Autoboxing creates unexpected overload selection",
+            "        // If: static void check(int x) {} and static void check(Integer x) {}",
+            "        // check(5) → calls check(int) — widening preferred over autoboxing",
+            "        // But if only check(Integer x) exists:",
+            "        // check(5) → autoboxes 5 to Integer and calls check(Integer)",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These overloading anti-patterns are common reasons for failed code reviews and maintenance headaches in professional Java teams. Each one abuses overloading in ways that reduce clarity or cause subtle bugs."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Overloading with Inconsistent Semantics",
+              "text": "All overloads of a method MUST do the same logical operation on different types or argument counts. 'void process(int id)' that fetches a user and 'void process(String command)' that executes a shell command — same name, completely different behavior. This destroys the principle of least surprise. Rename them: fetchUser(int id) and executeCommand(String cmd)."
+            },
+            {
+              "icon": "🚫",
+              "title": "Too Many Overloads (Overload Explosion)",
+              "text": "Defining 6, 7, 8+ overloads of the same method for every possible combination of optional parameters creates an explosion of methods. Readers must scan all overloads to understand the API. Use the Builder pattern or a parameter object (record) instead. A good rule: if you have more than 4 overloads of the same method, consider a builder."
+            },
+            {
+              "icon": "🚫",
+              "title": "Overloading Based on Order of Same Types",
+              "text": "Having both 'void register(String firstName, String lastName)' and 'void register(String lastName, String firstName)' is a disaster — both have the same signature! This won't even compile (both are String, String). Even if the types differ slightly, order-only overloads confuse callers and are trivial to call incorrectly. Use a named object: register(PersonName name)."
+            },
+            {
+              "icon": "🚫",
+              "title": "Mixing Varargs and Specific Overloads Carelessly",
+              "text": "Adding a varargs overload to a class that already has many specific overloads can cause unexpected resolution. If 'print(String)' exists and you add 'print(Object... objs)', calling print(\"hello\") works — but print((Object)\"hello\") now goes to varargs. Callers cannot easily predict which version runs without checking the resolution rules."
+            },
+            {
+              "icon": "🚫",
+              "title": "Overloading Purely for Auto-Widening Side Effects",
+              "text": "Designing overloads that intentionally exploit type promotion to route calls — e.g., leaving out an int overload so int calls auto-promote to long — is clever but fragile. A future developer adding an int overload changes the behavior of all existing int callers silently. Always provide the overload for the type you intend to handle rather than relying on promotion."
+            },
+            {
+              "icon": "🚫",
+              "title": "Not Using @Override When Intending to Override",
+              "text": "If you intend to OVERRIDE a parent method but accidentally change the parameter type, Java silently treats it as an OVERLOAD — not an override. The parent method is not replaced; both exist. Using @Override forces the compiler to verify it's a true override. This is the most dangerous interaction between overloading and overriding — always use @Override on intended overrides."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "OverloadingAntiPatterns.java",
+          "lines": [
+            "// ❌ ANTI-PATTERN: Missing @Override — silently becomes overload instead of override",
+            "class Base {",
+            "    public void save(Object data) {",
+            "        System.out.println(\"Base save\");",
+            "    }",
+            "}",
+            "",
+            "class Child extends Base {",
+            "    // ❌ Intended as override, but parameter type changed to String",
+            "    // This is an OVERLOAD of save(), NOT an override — Base.save(Object) still exists",
+            "    public void save(String data) {  // No @Override — compiler won't catch this",
+            "        System.out.println(\"Child save String\");",
+            "    }",
+            "}",
+            "",
+            "// At call site:",
+            "Base ref = new Child();",
+            "ref.save(\"hello\");  // Calls Base.save(Object) — NOT Child.save(String)!",
+            "// Because overloading uses declared type (Base), and Base only has save(Object)",
+            "",
+            "// ✅ Fix: Always add @Override",
+            "class ChildFixed extends Base {",
+            "    @Override",
+            "    public void save(Object data) { // Compiler verifies this is a true override",
+            "        System.out.println(\"ChildFixed save Object — true override\");",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Overloading in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples model idiomatic Java method overloading patterns found in real enterprise Spring Boot-style codebases, mirroring patterns used in the Java standard library."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "NotificationService.java — Overloading for Clean API Design",
+          "lines": [
+            "package com.techsustainify.notification.service;",
+            "",
+            "import java.util.List;",
+            "import java.util.Objects;",
+            "",
+            "public class NotificationService {",
+            "",
+            "    /**",
+            "     * Overloading to provide a simple API with sensible defaults.",
+            "     * Shortest overloads delegate to the complete implementation.",
+            "     */",
+            "",
+            "    // Overload 1: Minimal — send to single user with subject only",
+            "    public void sendEmail(String toAddress, String subject) {",
+            "        sendEmail(toAddress, subject, \"\", List.of());",
+            "    }",
+            "",
+            "    // Overload 2: With body text",
+            "    public void sendEmail(String toAddress, String subject, String body) {",
+            "        sendEmail(toAddress, subject, body, List.of());",
+            "    }",
+            "",
+            "    // Overload 3: Full — complete implementation (all others delegate here)",
+            "    public void sendEmail(String toAddress, String subject,",
+            "                          String body, List<String> ccAddresses) {",
+            "        Objects.requireNonNull(toAddress, \"Recipient address must not be null\");",
+            "        Objects.requireNonNull(subject,   \"Email subject must not be null\");",
+            "",
+            "        System.out.println(\"TO:      \" + toAddress);",
+            "        System.out.println(\"SUBJECT: \" + subject);",
+            "        if (!body.isBlank())",
+            "            System.out.println(\"BODY:    \" + body);",
+            "        if (!ccAddresses.isEmpty())",
+            "            System.out.println(\"CC:      \" + ccAddresses);",
+            "        System.out.println(\"--- Email sent ---\");",
+            "    }",
+            "",
+            "    /**",
+            "     * Overloading by type — send SMS to a single number or multiple recipients.",
+            "     */",
+            "    public void sendSMS(String phoneNumber, String message) {",
+            "        System.out.println(\"SMS to \" + phoneNumber + \": \" + message);",
+            "    }",
+            "",
+            "    // Varargs overload — broadcast to multiple numbers",
+            "    public void sendSMS(String message, String... phoneNumbers) {",
+            "        System.out.println(\"Broadcasting SMS to \" + phoneNumbers.length + \" recipients\");",
+            "        for (String phone : phoneNumbers) {",
+            "            sendSMS(phone, message); // Delegates to single-recipient overload",
+            "        }",
+            "    }",
+            "",
+            "    /**",
+            "     * Constructor overloading — different initialization paths.",
+            "     */",
+            "    static class Alert {",
+            "        String title;",
+            "        String message;",
+            "        String severity;",
+            "        String recipient;",
+            "",
+            "        public Alert(String title, String message) {",
+            "            this(title, message, \"INFO\");",
+            "        }",
+            "        public Alert(String title, String message, String severity) {",
+            "            this(title, message, severity, \"admin@example.com\");",
+            "        }",
+            "        public Alert(String title, String message, String severity, String recipient) {",
+            "            this.title     = title;",
+            "            this.message   = message;",
+            "            this.severity  = severity;",
+            "            this.recipient = recipient;",
+            "        }",
+            "",
+            "        @Override",
+            "        public String toString() {",
+            "            return \"[\" + severity + \"] \" + title + \" → \" + recipient;",
+            "        }",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        NotificationService svc = new NotificationService();",
+            "",
+            "        svc.sendEmail(\"user@example.com\", \"Welcome!\");",
+            "        svc.sendEmail(\"user@example.com\", \"Invoice\", \"Please find your invoice attached.\");",
+            "        svc.sendEmail(\"user@example.com\", \"Report\", \"Monthly report\",",
+            "                      List.of(\"manager@example.com\", \"cfo@example.com\"));",
+            "",
+            "        svc.sendSMS(\"+919876543210\", \"Your OTP is 482910\");",
+            "        svc.sendSMS(\"System downtime at 2 AM\",",
+            "                    \"+911111111111\", \"+912222222222\", \"+913333333333\");",
+            "",
+            "        System.out.println(new Alert(\"Disk Full\", \"Server disk at 95%\"));",
+            "        System.out.println(new Alert(\"CPU Spike\", \"CPU > 90%\", \"CRITICAL\"));",
+            "        System.out.println(new Alert(\"Login Fail\", \"5 failed attempts\", \"WARNING\", \"sec@example.com\"));",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "MathUtils.java — JDK-Style Overloading",
+          "lines": [
+            "package com.techsustainify.util;",
+            "",
+            "/**",
+            " * Utility class demonstrating JDK-style method overloading.",
+            " * Mirrors patterns in java.lang.Math and java.util.Objects.",
+            " */",
+            "public class MathUtils {",
+            "",
+            "    // Overloaded clamp — constrains a value to [min, max] range",
+            "    // Works for all numeric types just like JDK Math.clamp (Java 21)",
+            "    public static int    clamp(int    value, int    min, int    max) {",
+            "        return Math.max(min, Math.min(max, value));",
+            "    }",
+            "    public static long   clamp(long   value, long   min, long   max) {",
+            "        return Math.max(min, Math.min(max, value));",
+            "    }",
+            "    public static float  clamp(float  value, float  min, float  max) {",
+            "        return Math.max(min, Math.min(max, value));",
+            "    }",
+            "    public static double clamp(double value, double min, double max) {",
+            "        return Math.max(min, Math.min(max, value));",
+            "    }",
+            "",
+            "    // Overloaded round — to different decimal places",
+            "    public static double round(double value) {",
+            "        return round(value, 0);",
+            "    }",
+            "    public static double round(double value, int decimalPlaces) {",
+            "        double scale = Math.pow(10, decimalPlaces);",
+            "        return Math.round(value * scale) / scale;",
+            "    }",
+            "",
+            "    // Overloaded average — varargs for any count of values",
+            "    public static double average(int first, int... rest) {",
+            "        int sum = first;",
+            "        for (int v : rest) sum += v;",
+            "        return (double) sum / (rest.length + 1);",
+            "    }",
+            "    public static double average(double first, double... rest) {",
+            "        double sum = first;",
+            "        for (double v : rest) sum += v;",
+            "        return sum / (rest.length + 1);",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        System.out.println(clamp(150,  0, 100));   // 100  (int)",
+            "        System.out.println(clamp(-5.0, 0.0, 1.0)); // 0.0  (double)",
+            "",
+            "        System.out.println(round(3.14159));        // 3.0",
+            "        System.out.println(round(3.14159, 2));     // 3.14",
+            "        System.out.println(round(3.14159, 4));     // 3.1416",
+            "",
+            "        System.out.println(average(10, 20, 30));           // 20.0  (int varargs)",
+            "        System.out.println(average(1.5, 2.5, 3.5, 4.5));  // 3.0   (double varargs)",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "overloading-flowchart",
+      "title": "Overloading Resolution Flowchart — How the Compiler Picks an Overload",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This flowchart shows the exact steps the Java compiler takes when resolving which overloaded method to invoke for a given call."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "▶ Method call encountered",          "sublabel": "e.g., add(5, 3.0)",                          "type": "start"    },
+            { "id": "2", "label": "🔍 Find all methods with same name", "sublabel": "In current class and inherited",              "type": "process"  },
+            { "id": "3", "label": "🔍 Exact type match found?",         "sublabel": "Arg types match param types exactly",        "type": "decision" },
+            { "id": "4", "label": "✅ Call exact match overload",        "sublabel": "Highest priority — no conversion needed",    "type": "process"  },
+            { "id": "5", "label": "🔍 Widening match found?",           "sublabel": "byte→short→int→long→float→double",           "type": "decision" },
+            { "id": "6", "label": "✅ Call widened overload",            "sublabel": "Type promoted silently at compile time",     "type": "process"  },
+            { "id": "7", "label": "🔍 Autoboxing match found?",         "sublabel": "int→Integer, double→Double, etc.",           "type": "decision" },
+            { "id": "8", "label": "✅ Call autoboxed overload",          "sublabel": "Wrapper type used",                         "type": "process"  },
+            { "id": "9", "label": "🔍 Varargs match found?",            "sublabel": "Type... — last resort",                     "type": "decision" },
+            { "id": "10","label": "✅ Call varargs overload",            "sublabel": "Args packed into array",                    "type": "process"  },
+            { "id": "11","label": "❌ Compile Error",                    "sublabel": "No matching overload / ambiguity",          "type": "end"      },
+            { "id": "12","label": "➡️ Method executes",                 "sublabel": "Resolved overload runs",                    "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1",  "to": "2",  "label": "Start resolution"    },
+            { "from": "2",  "to": "3",  "label": "Check exact match"   },
+            { "from": "3",  "to": "4",  "label": "YES"                 },
+            { "from": "3",  "to": "5",  "label": "NO"                  },
+            { "from": "4",  "to": "12", "label": "Execute"             },
+            { "from": "5",  "to": "6",  "label": "YES"                 },
+            { "from": "5",  "to": "7",  "label": "NO"                  },
+            { "from": "6",  "to": "12", "label": "Execute"             },
+            { "from": "7",  "to": "8",  "label": "YES"                 },
+            { "from": "7",  "to": "9",  "label": "NO"                  },
+            { "from": "8",  "to": "12", "label": "Execute"             },
+            { "from": "9",  "to": "10", "label": "YES"                 },
+            { "from": "9",  "to": "11", "label": "NO / Ambiguous"      },
+            { "from": "10", "to": "12", "label": "Execute"             }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Method Overloading Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are consistently asked in Java fresher interviews, OCPJP/OCA certification exams, and campus placement tests."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is method overloading in Java? Why is it used?",
+              "a": "Method overloading is defining multiple methods in the same class with the same name but different parameter lists (different number, type, or order of parameters). It is used to: (1) Provide a clean, intuitive API — Math.max(int,int), Math.max(double,double) are all just 'max'. (2) Implement type-specific behavior under one name. (3) Simulate default parameter values — Java has no built-in default args, so shorter overloads delegate to longer ones with default values. (4) Reduce cognitive load — callers use one familiar name regardless of data type. It is resolved at compile time (static/compile-time polymorphism) — no runtime overhead.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. Can we overload a method by changing only the return type?",
+              "a": "No — this causes a COMPILE ERROR. Two methods with the same name and same parameter list but different return types are not valid overloads. The compiler determines which overload to call before it knows what return type the caller expects. For example, at 'int x = getData()', the call 'getData()' is resolved first — the compiler cannot use the left-hand side type to disambiguate. The fix is to either use different parameter lists or different method names.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is the output? void show(int x){} void show(long x){} — which is called for show(5)?",
+              "a": "show(int x) is called. The literal 5 is an int by default in Java. The compiler finds an exact match for int and calls show(int). No type promotion is needed. If show(int x) did NOT exist, then Java would promote 5 to long and call show(long). Type promotion only happens when there is no exact match — the compiler always prefers the most specific (narrowest) applicable overload.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What is type promotion in the context of method overloading?",
+              "a": "Type promotion (widening conversion) is Java's automatic fallback when no exact-match overload exists for a given argument type. The compiler widens the argument to the next compatible type in the chain: byte → short → int → long → float → double. char is promoted to int first. Example: if only show(long x) and show(double x) exist, calling show(100) widens int 100 to long and calls show(long). Priority in overload resolution: (1) Exact match, (2) Widening/promotion, (3) Autoboxing, (4) Varargs.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. What is the difference between method overloading and method overriding?",
+              "a": "Overloading: same method name, different parameter list, same class. Resolved at COMPILE TIME (static polymorphism). Return type, access modifier, and exceptions can vary. No inheritance needed. Overriding: same method name, same parameter list, subclass replaces parent's implementation. Resolved at RUNTIME (dynamic polymorphism). Return type must be same or covariant. Access cannot be more restrictive. Requires @Override for safety. Key trick question: if you change the parameter type when 'overriding', you accidentally create an overload instead — the parent method is not replaced. Always use @Override to let the compiler catch this mistake.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q6. Can we overload the main method in Java?",
+              "a": "Yes. You can define multiple methods named 'main' with different parameter lists: public static void main(String[] args), public static void main(int x), public static void main(). They are all valid overloads and can be called explicitly from code. However, the JVM only recognizes 'public static void main(String[] args)' as the program entry point — no other overload is invoked automatically at startup. All other main overloads are treated as regular static methods.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. What happens when null is passed to an overloaded method with multiple reference-type parameters?",
+              "a": "If exactly one overload accepts a reference type compatible with null, that overload is called. Example: void find(String s) — find(null) calls it. If multiple overloads accept reference types (all compatible with null) and none is more specific, the compiler reports an AMBIGUITY ERROR: the call is ambiguous between find(String) and find(Integer). Fix: cast explicitly — find((String)null) or find((Integer)null). Rule: null is compatible with any reference type, so when multiple reference-type overloads exist, pass null with an explicit cast.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q8. Does overloading work with static methods?",
+              "a": "Yes. Static methods follow identical overloading rules. Math.min(int,int), Math.min(long,long), Math.min(float,float), Math.min(double,double) are four static overloads. Static methods CANNOT be overridden (a subclass defining the same static signature creates a separate hidden method, not an override), but they CAN be overloaded. Overloading is a compile-time, same-class feature and does not depend on the static/instance distinction.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q9. How does autoboxing interact with method overloading?",
+              "a": "Autoboxing (int → Integer, double → Double, etc.) participates in overload resolution, but has LOWER priority than widening. Priority: exact match > widening > autoboxing > varargs. So if show(int x) and show(Integer x) both exist: show(5) calls show(int) — exact match, no autoboxing. If only show(Integer x) exists: show(5) autoboxes 5 to Integer. If show(long x) and show(Integer x) both exist: show(5) prefers show(long) via widening over show(Integer) via autoboxing — widening is preferred. This surprises many developers: widening beats boxing.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q10. What is the risk of overloading when combined with inheritance?",
+              "a": "The main risk is accidentally creating an overload instead of an override. If parent has 'save(Object data)' and child defines 'save(String data)', the child has created an OVERLOAD — not an override. The parent's save(Object) still exists and is NOT replaced. When called through a parent reference: Animal a = new Dog(); a.save(obj) — this calls parent's save(Object) even if obj is a String, because overload resolution uses the DECLARED type (Animal) at compile time. The fix is always @Override, which forces the compiler to verify the signature matches exactly. This combination of overloading and polymorphism is one of the trickiest Java topics.",
+              "tag": "Advanced"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Overloading Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Challenge yourself with these practice questions. Attempt each independently before reading the answer — active recall is proven to be 2–3x more effective than passive reading."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. Which overload is called? What is the output?\nstatic void print(int x)    { System.out.println(\"int: \" + x); }\nstatic void print(double x) { System.out.println(\"double: \" + x); }\npublic static void main(String[] args) {\n    print(10);\n    print(10.0);\n    print(10L);\n    byte b = 5; print(b);\n}",
+              "a": "int: 10 — exact int match.\ndouble: 10.0 — exact double match.\ndouble: 10.0 — 10L is a long; no long overload exists, so it widens to double.\nint: 5 — byte widens to int (nearest exact match in the chain). If int didn't exist, byte would promote to double.\nKey: exact match wins always. When no exact match, nearest wider type in chain is chosen.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Will this compile? If yes, what prints?\nstatic int    compute(int a, int b)    { return a + b; }\nstatic double compute(int a, int b)    { return a * 1.0 + b; }\npublic static void main(String[] args) {\n    System.out.println(compute(2, 3));\n}",
+              "a": "This does NOT compile. Error: 'compute(int, int)' is already defined. Two methods with the same name and same parameter list (int, int) differ only in return type — this is NOT valid overloading. Java cannot distinguish them at the call site compute(2,3) because return type is not used for overload resolution. Fix: either give them different names (computeSum, computeProduct) or use different parameter types.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Identify which version is called and explain:\nstatic void display(Object o)   { System.out.println(\"Object\"); }\nstatic void display(String s)   { System.out.println(\"String\"); }\npublic static void main(String[] args) {\n    Object obj = \"Hello\";\n    display(obj);\n    display(\"Hello\");\n    display(null);\n}",
+              "a": "display(obj) → prints 'Object' — obj is DECLARED as Object type. Overloading uses declared (compile-time) type, not runtime type. Even though obj holds a String at runtime, the compiler sees Object.\ndisplay(\"Hello\") → prints 'String' — the literal \"Hello\" has declared type String. Exact String match is more specific than Object.\ndisplay(null) → prints 'String' — when multiple reference overloads exist and null is passed, Java picks the most specific type. String is more specific than Object (String IS-A Object), so String version wins. If both were equally specific (unrelated types), it would be ambiguous.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. Write an overloaded method 'format' that: (a) takes a double and returns it rounded to 2 decimal places as a String, (b) takes a double and an int (decimal places) and formats accordingly, (c) takes a String and an int (max length) and truncates if longer.",
+              "a": "public static String format(double value) {\n    return format(value, 2); // Delegates to (b)\n}\npublic static String format(double value, int decimalPlaces) {\n    return String.format(\"%.\" + decimalPlaces + \"f\", value);\n}\npublic static String format(String text, int maxLength) {\n    if (text == null) return \"\";\n    return text.length() <= maxLength ? text : text.substring(0, maxLength) + \"...\";\n}\n// Usage:\nSystem.out.println(format(3.14159));       // 3.14\nSystem.out.println(format(3.14159, 4));    // 3.1416\nSystem.out.println(format(\"Hello World\", 5)); // Hello...",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. What is the output and why?\nstatic void test(Integer x)  { System.out.println(\"Integer\"); }\nstatic void test(long x)     { System.out.println(\"long\"); }\npublic static void main(String[] args) {\n    int i = 5;\n    test(i);\n}",
+              "a": "Output: 'long' — This demonstrates overload resolution priority: widening (int → long) is preferred over autoboxing (int → Integer). Even though Integer seems like the 'natural' box type for int, Java prefers the widening conversion to long because widening has higher priority than autoboxing in overload resolution. To call the Integer version, you must explicitly autobox: test(Integer.valueOf(i)) or test((Integer) i).",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. Refactor this code to use proper constructor overloading with delegation:\nclass Product {\n    String name;\n    double price;\n    String category;\n    boolean inStock;\n    Product(String name, double price, String category, boolean inStock) {\n        this.name = name; this.price = price;\n        this.category = category; this.inStock = inStock;\n    }\n}\n// Callers often need: new Product(\"Book\", 299.0, \"Education\", true)\n// But also want:      new Product(\"Book\", 299.0)  with defaults",
+              "a": "class Product {\n    String name;\n    double price;\n    String category;\n    boolean inStock;\n\n    // Most minimal — name and price only\n    Product(String name, double price) {\n        this(name, price, \"General\");\n    }\n    // Name, price, category — inStock defaults to true\n    Product(String name, double price, String category) {\n        this(name, price, category, true);\n    }\n    // Full constructor — all others delegate here\n    Product(String name, double price, String category, boolean inStock) {\n        this.name = name;\n        this.price = price;\n        this.category = category;\n        this.inStock = inStock;\n    }\n}\n// Usage:\nProduct p1 = new Product(\"Book\", 299.0);\nProduct p2 = new Product(\"Pen\", 15.0, \"Stationery\");\nProduct p3 = new Product(\"Laptop\", 75000.0, \"Electronics\", false);",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What is the output?\nclass Parent {\n    public void show(Object o) { System.out.println(\"Parent Object\"); }\n}\nclass Child extends Parent {\n    public void show(String s) { System.out.println(\"Child String\"); }\n}\npublic class Test {\n    public static void main(String[] args) {\n        Parent p = new Child();\n        p.show(\"hello\");\n        p.show(new Object());\n    }\n}",
+              "a": "p.show(\"hello\") → prints 'Parent Object' — NOT 'Child String'! Because overloading resolution uses the DECLARED type of p, which is Parent. Parent only has show(Object). So even though p holds a Child at runtime, the compiler sees Parent.show(Object) and calls that. The Child's show(String) is an OVERLOAD, not an override of Parent.show(Object).\np.show(new Object()) → prints 'Parent Object' — straightforward, only Parent.show(Object) matches.\nTo call Child's show(String), you need: ((Child)p).show(\"hello\") — casting to Child exposes the String overload.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Predict the output:\nstatic void go(int x, long y)  { System.out.println(\"int,long\"); }\nstatic void go(long x, int y)  { System.out.println(\"long,int\"); }\npublic static void main(String[] args) {\n    go(1, 2);\n}",
+              "a": "This causes a COMPILE ERROR: 'reference to go is ambiguous'. Both go(int,long) and go(long,int) are applicable when called with go(1, 2) — two int arguments. For go(int,long): first arg 1 is exact int, second arg 2 is promoted int→long. For go(long,int): first arg 1 is promoted int→long, second arg 2 is exact int. Both require exactly one widening promotion — neither is more specific than the other. Java cannot choose and reports ambiguity. Fix: provide an explicit go(int,int) overload, or cast at the call site: go(1, 2L) to force go(int,long).",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Method Overloading: Compile-Time Polymorphism Done Right",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Method overloading is the foundation of <strong>clean, intuitive Java APIs</strong>. It allows a single logical operation to work across different data types and argument counts under one recognizable name — eliminating the need for type-encoded names like <code>addInt</code>, <code>addDouble</code>, or <code>addWithDefault</code>. The Java standard library is built on this principle: <code>System.out.println</code>, <code>Math.max</code>, <code>String.valueOf</code> are all overloaded for every type you'll ever need."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Mastering overloading means understanding not just the syntax, but the resolution rules: <strong>exact match first, then widening, then autoboxing, then varargs</strong>. It means knowing that <strong>declared type, not runtime type</strong>, governs overload selection. It means recognizing when overloading is the right tool (type-variant operations, optional parameters) versus when it introduces confusion (inconsistent semantics, too many overloads, order-based disambiguation)."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept",                          "Key Rule",                                                   "Example"],
+          "rows": [
+            ["Overloading definition",                    "Same name, different parameter list in same class",          "add(int) / add(double) / add(int,int)"],
+            ["Return type",                               "Cannot distinguish overloads alone",                         "int f() and double f() → compile error"],
+            ["Parameter names",                           "Cannot distinguish overloads — only types matter",           "f(int x) and f(int y) → compile error"],
+            ["Resolution order",                          "Exact → Widening → Autoboxing → Varargs",                   "show(5) prefers show(int) over show(long)"],
+            ["Type promotion chain",                      "byte→short→int→long→float→double; char→int",                "show(byte b) → show(int) if no byte overload"],
+            ["Declared vs runtime type",                  "Overloading uses DECLARED type — compile-time decision",     "Object o = \"hi\"; show(o) → show(Object)"],
+            ["Varargs overload",                          "Last resort — only chosen when no non-varargs overload fits","sum(int... nums) called only for 3+ args if 1- and 2-arg overloads exist"],
+            ["Constructor overloading",                   "Same rules — delegate shorter to longer with this()",        "Employee(name) → this(name, 'General')"],
+            ["vs Overriding",                             "Overloading = compile time; Overriding = runtime",           "@Override ensures true override, not accidental overload"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Method Return Types</strong> — where you'll explore how methods communicate results back to callers, void vs typed returns, returning multiple values with records, and how return types interact with overriding and polymorphism. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Method Overloading",
+    "items": [
+      {
+        "q": "What is method overloading in Java?",
+        "a": "Method overloading is defining multiple methods in the same class with the same name but different parameter lists — differing in number, type, or order of parameters. The compiler selects the correct version at compile time based on the arguments at the call site. It is also called compile-time polymorphism or static polymorphism. It makes APIs cleaner by allowing one intuitive method name to handle multiple types or argument counts."
+      },
+      {
+        "q": "What are the rules for method overloading in Java?",
+        "a": "Rules: (1) Method name must be the same. (2) Parameter list must differ — in count, type, or order. (3) Return type alone cannot distinguish overloads. (4) Parameter names alone cannot distinguish overloads. (5) Access modifier, exceptions, and return type can all vary as long as the parameter list differs. (6) Overloading is resolved entirely at compile time using the declared types of the arguments."
+      },
+      {
+        "q": "What is type promotion in method overloading?",
+        "a": "Type promotion (widening conversion) is Java's automatic fallback when no exact-type overload exists. The argument type is widened to the nearest compatible parameter type in the chain: byte→short→int→long→float→double. char promotes to int first. Java applies this silently — the developer may not realize which overload is selected. Overload resolution priority: exact match > widening > autoboxing > varargs."
+      },
+      {
+        "q": "Can we overload the main method in Java?",
+        "a": "Yes. Multiple methods named 'main' with different parameter lists are valid overloads. Only 'public static void main(String[] args)' is recognized by the JVM as the program entry point. All other main overloads are regular methods and must be called explicitly from code — the JVM ignores them at startup."
+      },
+      {
+        "q": "What is the difference between method overloading and method overriding?",
+        "a": "Overloading: same name, different parameters, same class, resolved at compile time (static polymorphism). Overriding: same name, same parameters, subclass replaces parent's behavior, resolved at runtime (dynamic polymorphism). A critical trap: if you intend to override but accidentally change the parameter type, Java silently treats it as an overload — the parent's method is not replaced. Always use @Override to catch this mistake at compile time."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Method Parameters",    "path": "/java/java-Function-parameters" },
+    "next": { "label": "Java Method Overriding →",   "path": "/java/java-method-overriding" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Overloading Type",         "dd": "Compile-time (static) polymorphism" },
+      { "dt": "Differentiated by",        "dd": "Parameter list ONLY (not return type)" },
+      { "dt": "Resolution time",          "dd": "Compile time — no runtime overhead" },
+      { "dt": "Resolution order",         "dd": "Exact → Widening → Autoboxing → Varargs" },
+      { "dt": "Works on constructors?",   "dd": "Yes — constructor overloading is identical" },
+      { "dt": "vs Overriding",            "dd": "Overriding = runtime; Overloading = compile time" }
+    ],
+    "relatedArticles": [
+      { "label": "Java Method Parameters",   "path": "/java/java-method-parameters" },
+      { "label": "Java Method Return Type",  "path": "/java/java-method-return-type" },
+      { "label": "Java Method Overriding",   "path": "/java/java-method-overriding" },
+      { "label": "Java Methods",             "path": "/java/java-methods" },
+      { "label": "Java OOPs Concepts",       "path": "/java/java-oops" },
+      { "label": "Java Polymorphism",        "path": "/java/java-polymorphism" },
+      { "label": "Java Constructors",        "path": "/java/java-constructors" },
+      { "label": "Java Inheritance",         "path": "/java/java-inheritance" }
+    ],
+    "tags": ["Method Overloading", "Compile-Time Polymorphism", "Static Polymorphism", "Type Promotion", "Varargs Overloading", "Constructor Overloading", "Overloading vs Overriding", "Ad Hoc Polymorphism", "Widening Conversion", "Autoboxing Overloading", "Java Best Practices", "Clean Code", "Java OOP", "Java Methods", "Java 21"]
+  }
+}

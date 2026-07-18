@@ -1,0 +1,2126 @@
+{
+  "meta": {
+    "title": "Java Exception Handling — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Exception Handling — try-catch-finally, throws keyword, custom exceptions, checked vs unchecked exceptions, multi-catch, try-with-resources, exception chaining, best practices, common mistakes, and interview questions. Updated March 2026.",
+    "keywords": "java exception handling, java try catch finally, java throws keyword, java custom exception, java checked unchecked exception, java exception hierarchy, java multi catch, java try with resources, java exception chaining, java error vs exception, java runtime exception, java exception best practices, java exception interview questions, java throw vs throws, java finally block, java exception propagation, java exception handling examples",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-exception-handling",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Exception Handling — try-catch-finally, Custom Exceptions & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java Exception Handling — exception hierarchy, try-catch-finally, throw vs throws, checked vs unchecked, multi-catch, try-with-resources, custom exceptions, exception chaining, real-world examples & interview questions.",
+      "url": "https://www.techsustainify.com/java/java-exception-handling",
+      "image": "https://www.techsustainify.com/images/java-exception-handling-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Exception Handling Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-03-10T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Exception Handling",
+          "try catch finally",
+          "Custom Exception",
+          "Checked Unchecked Exception",
+          "throws keyword",
+          "try-with-resources",
+          "Exception Chaining",
+          "Java Error",
+          "Runtime Exception",
+          "Java Best Practices"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Exception Handling — try-catch, Custom Exceptions & Best Practices 2026",
+      "description": "Complete guide to Java Exception Handling — hierarchy, try-catch-finally, throw vs throws, checked vs unchecked, multi-catch, try-with-resources, custom exceptions, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-exception-handling-og.png",
+      "imageAlt": "Java Exception Handling Guide 2026 - Tech Sustainify",
+      "readingTime": "28 minutes",
+      "level": "Beginner to Intermediate",
+      "label1": "Reading Time",
+      "data1": "28 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner to Intermediate"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Exception Handling — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering all Java Exception Handling concepts — exception hierarchy, try-catch-finally, throw vs throws, checked vs unchecked exceptions, multi-catch, try-with-resources, custom exceptions, exception chaining, real-world examples, anti-patterns, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-03-10",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner",
+        "wordCount": 7600,
+        "timeRequired": "PT28M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Exception Handling" },
+          { "@type": "Thing", "name": "try-catch-finally" },
+          { "@type": "Thing", "name": "Custom Exception Java" },
+          { "@type": "Thing", "name": "Checked vs Unchecked Exception" }
+        ],
+        "keywords": "java exception handling, try catch finally, throw throws, checked unchecked exception, custom exception, multi-catch, try-with-resources, exception chaining, NullPointerException, StackOverflowError"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Exception Handling" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is exception handling in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Exception handling in Java is a mechanism to deal with runtime errors gracefully — preventing abnormal program termination. When an exceptional condition occurs (file not found, null pointer dereference, division by zero), Java creates an exception object describing the error and 'throws' it. The program can 'catch' this exception and take corrective action. Java provides five keywords: try (wraps risky code), catch (handles specific exceptions), finally (always executes for cleanup), throw (manually throws an exception), and throws (declares checked exceptions a method may throw)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between checked and unchecked exceptions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Checked exceptions extend Exception (but not RuntimeException) and MUST be either caught or declared with 'throws' at compile time. The compiler enforces handling. Examples: IOException, SQLException, ParseException. They represent recoverable conditions the caller should anticipate. Unchecked exceptions extend RuntimeException and do NOT need explicit handling — they represent programming errors. Examples: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException, ClassCastException. Errors (OutOfMemoryError, StackOverflowError) are a third category — represent JVM-level failures, generally not recoverable."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between throw and throws in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "'throw' is a statement used to explicitly create and throw an exception object from within a method: 'throw new IllegalArgumentException(\"Invalid input\")'. 'throws' is a keyword in the method signature that DECLARES which checked exceptions the method might propagate to the caller: 'public void readFile(String path) throws IOException'. 'throw' is the action; 'throws' is the declaration. A method can throw an exception without using 'throws' if the exception is unchecked (RuntimeException subclass)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does finally block always execute in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The finally block executes in almost all cases — whether an exception occurs or not, whether it is caught or not, even when a return statement is encountered in the try or catch block. Three rare exceptions where finally does NOT execute: (1) System.exit() is called — JVM shuts down immediately. (2) JVM crashes (e.g., kill -9 on Unix). (3) The thread executing the try-catch is killed forcibly. Finally is used for resource cleanup (closing connections, streams) to guarantee cleanup happens regardless of what the try block does."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is try-with-resources in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "try-with-resources (Java 7+) automatically closes resources that implement AutoCloseable (or Closeable) when the try block exits — whether normally or via exception. Syntax: 'try (ResourceType res = new ResourceType()) { ... }'. Multiple resources can be declared, separated by semicolons, and are closed in REVERSE order of declaration. This eliminates the need for explicit finally blocks for resource cleanup and handles the tricky case where both the try block body and the close() method throw exceptions (the close() exception becomes suppressed)."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-03-10",
+      "dateModified": "2026-03-20",
+      "readingTime": "28 minutes",
+      "wordCount": 7600,
+      "difficulty": "Beginner to Intermediate",
+      "chapter": 21,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-exception",          "title": "What is an Exception in Java?" },
+        { "id": "exception-hierarchy",        "title": "Exception Hierarchy — Throwable Tree" },
+        { "id": "try-catch-finally",          "title": "try-catch-finally Blocks" },
+        { "id": "throw-vs-throws",            "title": "throw vs throws — Key Difference" },
+        { "id": "checked-unchecked",          "title": "Checked vs Unchecked Exceptions" },
+        { "id": "multi-catch",                "title": "Multi-catch & Exception Order" },
+        { "id": "try-with-resources",         "title": "try-with-resources (Java 7+)" },
+        { "id": "custom-exceptions",          "title": "Custom Exceptions — Writing Your Own" },
+        { "id": "exception-chaining",         "title": "Exception Chaining & Cause" },
+        { "id": "exception-propagation",      "title": "Exception Propagation — Call Stack" },
+        { "id": "common-exceptions",          "title": "Common Java Exceptions Explained" },
+        { "id": "common-mistakes",            "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",              "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",        "title": "Real-World Production Code Examples" },
+        { "id": "exception-flowchart",        "title": "Exception Flow Diagram" },
+        { "id": "interview-questions",        "title": "Interview Questions" },
+        { "id": "practice-questions",         "title": "Practice Questions" },
+        { "id": "conclusion-heading",         "title": "Conclusion" },
+        { "id": "faq-heading",                "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-exception-handling" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-exception-handling" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-exception-handling" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-interface",
+      "next": "https://www.techsustainify.com/java/java-collections"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-core",
+      "contentTopic": "java-exception-handling",
+      "chapterNumber": 21,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Exception Handling" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Exception Handling — try-catch-finally, Custom Exceptions & Best Practices",
+    "subtitle": "Everything you need to know about Java Exception Handling — exception hierarchy, try-catch-finally, throw vs throws, checked vs unchecked, multi-catch, try-with-resources, custom exceptions, exception chaining, propagation, anti-patterns, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "28 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner to Intermediate" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "21 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-exception",
+      "title": "What is an Exception in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "An <strong>exception</strong> in Java is an <em>unexpected event</em> that disrupts the normal flow of a program during execution. When a problematic situation arises — a file that does not exist, a null reference being dereferenced, an invalid array index, a network connection timeout — the Java runtime creates an <strong>exception object</strong> that encapsulates information about the error: its type, a descriptive message, and the <em>stack trace</em> showing exactly where in the code it occurred."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Without exception handling, any runtime error immediately terminates the entire program — a poor user experience and a reliability disaster for production systems. Java's <strong>exception handling mechanism</strong> allows programs to detect these conditions, respond intelligently, log the problem, and continue operating — or shut down gracefully with a meaningful error message — rather than crashing without explanation."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java uses five keywords for exception handling: <code>try</code> — wraps the risky code that might throw an exception; <code>catch</code> — handles a specific exception type; <code>finally</code> — always executes, regardless of outcome, used for cleanup; <code>throw</code> — manually creates and throws an exception; <code>throws</code> — declares in the method signature that a method may propagate a checked exception to its caller."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Exception vs Error — Critical Distinction",
+          "text": "Java distinguishes two categories of serious runtime problems: EXCEPTIONS are conditions that a well-written program can and should anticipate and recover from — file not found, invalid input, network timeout. ERRORS represent catastrophic JVM-level failures that programs generally cannot recover from — OutOfMemoryError, StackOverflowError, VirtualMachineError. The rule of thumb: catch Exceptions (and handle them meaningfully), never catch Errors (they signal the JVM itself is in trouble). Both Exception and Error extend the common superclass Throwable."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "exception-hierarchy",
+      "title": "Exception Hierarchy — The Complete Throwable Tree",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java's exception mechanism is built on a class hierarchy rooted at <code>java.lang.Throwable</code>. Every exception and error in Java is an instance of Throwable or one of its subclasses. Understanding this hierarchy is fundamental to writing correct exception handling code — because <code>catch</code> blocks use IS-A matching, catching a parent type also catches all its subclasses."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🌳",
+              "title": "Throwable (Root)",
+              "text": "java.lang.Throwable is the root of all exception and error types. It provides: getMessage() — descriptive error message, getCause() — the original exception that caused this one, getStackTrace() — array of stack frames, printStackTrace() — prints the full call stack to stderr. Only Throwable instances (and subclasses) can be thrown with 'throw' and caught with 'catch'."
+            },
+            {
+              "icon": "⚠️",
+              "title": "Exception Branch",
+              "text": "java.lang.Exception represents conditions a program should anticipate and recover from. Two major subtrees:\n• Checked Exceptions: extend Exception directly (not via RuntimeException). Compiler enforces handling. Examples: IOException, SQLException, ClassNotFoundException, ParseException.\n• Unchecked Exceptions: extend RuntimeException. No compiler enforcement. Examples: NullPointerException, IllegalArgumentException, ArrayIndexOutOfBoundsException."
+            },
+            {
+              "icon": "💥",
+              "title": "Error Branch",
+              "text": "java.lang.Error represents severe, typically unrecoverable JVM-level failures. Should NEVER be caught in normal application code. Examples:\n• OutOfMemoryError — heap exhausted\n• StackOverflowError — infinite recursion\n• NoClassDefFoundError — class missing at runtime\n• AssertionError — assertion failed\n• VirtualMachineError — JVM internal error\nIf you see these in production, they indicate infrastructure or code architecture problems — not logic bugs to catch."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ExceptionHierarchy.java — Visual Tree",
+          "lines": [
+            "/*",
+            " * java.lang.Throwable",
+            " * ├── java.lang.Error                    ← Do NOT catch these",
+            " * │   ├── OutOfMemoryError",
+            " * │   ├── StackOverflowError",
+            " * │   ├── NoClassDefFoundError",
+            " * │   ├── AssertionError",
+            " * │   └── VirtualMachineError",
+            " * │",
+            " * └── java.lang.Exception               ← Handle these",
+            " *     ├── IOException           (CHECKED)",
+            " *     │   ├── FileNotFoundException",
+            " *     │   └── SocketException",
+            " *     ├── SQLException          (CHECKED)",
+            " *     ├── ClassNotFoundException (CHECKED)",
+            " *     ├── ParseException        (CHECKED)",
+            " *     ├── InterruptedException  (CHECKED)",
+            " *     └── RuntimeException      (UNCHECKED — no compiler enforcement)",
+            " *         ├── NullPointerException",
+            " *         ├── IllegalArgumentException",
+            " *         ├── IllegalStateException",
+            " *         ├── ArrayIndexOutOfBoundsException",
+            " *         ├── ClassCastException",
+            " *         ├── ArithmeticException",
+            " *         ├── NumberFormatException",
+            " *         ├── UnsupportedOperationException",
+            " *         └── ConcurrentModificationException",
+            " */",
+            "",
+            "// Demonstrating hierarchy with instanceof:",
+            "public class HierarchyDemo {",
+            "    public static void main(String[] args) {",
+            "        Exception e = new java.io.FileNotFoundException(\"config.yaml not found\");",
+            "",
+            "        System.out.println(e instanceof Throwable);                  // true",
+            "        System.out.println(e instanceof Exception);                  // true",
+            "        System.out.println(e instanceof java.io.IOException);        // true",
+            "        System.out.println(e instanceof java.io.FileNotFoundException); // true",
+            "        System.out.println(e instanceof RuntimeException);           // false",
+            "",
+            "        // Catching a parent type catches all child types",
+            "        try {",
+            "            throw new java.io.FileNotFoundException(\"not found\");",
+            "        } catch (java.io.IOException ioEx) {",
+            "            // ✅ Catches FileNotFoundException because it IS-A IOException",
+            "            System.out.println(\"Caught: \" + ioEx.getClass().getSimpleName());",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "try-catch-finally",
+      "title": "try-catch-finally — The Foundation of Exception Handling",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>try-catch-finally</code> construct is the core mechanism for handling exceptions in Java. The <code>try</code> block wraps code that might throw an exception. One or more <code>catch</code> blocks each handle a specific exception type. The optional <code>finally</code> block runs <em>always</em> — after normal completion or exception handling — making it the perfect place for cleanup code like closing resources."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🛡️",
+              "title": "try Block",
+              "text": "Wraps the risky code — statements that might throw exceptions. The moment an exception is thrown inside try, execution jumps immediately to the matching catch block — remaining statements in the try block are skipped. If no exception occurs, all catch blocks are skipped and finally (if present) executes."
+            },
+            {
+              "icon": "🎯",
+              "title": "catch Block",
+              "text": "Handles a specific exception type. Catches the exception and its subclasses (IS-A). Multiple catch blocks can follow one try — each handles a different exception type. Evaluated top-to-bottom — the FIRST matching catch block runs; all others are skipped. NEVER catch a more general type before a more specific one in the same try-catch — compile error (unreachable catch block)."
+            },
+            {
+              "icon": "🔒",
+              "title": "finally Block",
+              "text": "Executes ALWAYS — whether the try block completes normally, throws an exception that is caught, or throws an exception that is NOT caught. Even a return statement in try or catch does NOT prevent finally from running. Three exceptional cases: System.exit(), JVM crash, or thread death. Use finally for: closing file handles, releasing DB connections, unlocking resources."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "TryCatchFinallyDemo.java",
+          "lines": [
+            "import java.io.*;",
+            "",
+            "public class TryCatchFinallyDemo {",
+            "",
+            "    // ── BASIC try-catch ────────────────────────────────",
+            "    public static void basicDemo() {",
+            "        try {",
+            "            int result = 10 / 0;  // Throws ArithmeticException",
+            "            System.out.println(\"This line never runs\");",
+            "        } catch (ArithmeticException e) {",
+            "            System.out.println(\"Caught: \" + e.getMessage()); // / by zero",
+            "        }",
+            "        System.out.println(\"Program continues after catch\");",
+            "    }",
+            "",
+            "    // ── MULTIPLE catch blocks ──────────────────────────",
+            "    public static void multiCatchDemo(String input, int[] arr, int index) {",
+            "        try {",
+            "            int parsed  = Integer.parseInt(input); // NumberFormatException",
+            "            int element = arr[index];              // ArrayIndexOutOfBoundsException",
+            "            System.out.println(parsed + element);",
+            "        } catch (NumberFormatException e) {",
+            "            System.out.println(\"Invalid number format: \" + e.getMessage());",
+            "        } catch (ArrayIndexOutOfBoundsException e) {",
+            "            System.out.println(\"Array index out of range: \" + index);",
+            "        } catch (Exception e) {",
+            "            // General fallback — catches anything not caught above",
+            "            System.out.println(\"Unexpected error: \" + e.getMessage());",
+            "        }",
+            "    }",
+            "",
+            "    // ── finally block for cleanup ──────────────────────",
+            "    public static String readFirstLine(String filePath) {",
+            "        BufferedReader reader = null;",
+            "        try {",
+            "            reader = new BufferedReader(new FileReader(filePath));",
+            "            return reader.readLine(); // May throw IOException",
+            "        } catch (FileNotFoundException e) {",
+            "            System.err.println(\"File not found: \" + filePath);",
+            "            return null;",
+            "        } catch (IOException e) {",
+            "            System.err.println(\"Error reading file: \" + e.getMessage());",
+            "            return null;",
+            "        } finally {",
+            "            // ALWAYS runs — whether readLine() succeeded or threw",
+            "            if (reader != null) {",
+            "                try {",
+            "                    reader.close(); // Close the resource",
+            "                } catch (IOException closeEx) {",
+            "                    System.err.println(\"Failed to close reader\");",
+            "                }",
+            "            }",
+            "            System.out.println(\"finally block: reader closed\");",
+            "        }",
+            "    }",
+            "",
+            "    // ── finally vs return — finally WINS ──────────────",
+            "    public static String finallyVsReturn() {",
+            "        try {",
+            "            System.out.println(\"In try\");",
+            "            return \"From try\";   // return is noted, but finally runs first",
+            "        } finally {",
+            "            System.out.println(\"In finally\"); // ← This ALWAYS runs",
+            "            // If we return here, it OVERRIDES the try's return!",
+            "            // return \"From finally\"; // ← Would override 'From try' — BAD PRACTICE",
+            "        }",
+            "    }",
+            "    // Output: 'In try' → 'In finally' → returns 'From try'",
+            "",
+            "    public static void main(String[] args) {",
+            "        basicDemo();",
+            "        multiCatchDemo(\"abc\", new int[]{1,2,3}, 5);",
+            "        System.out.println(finallyVsReturn());",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Never Return from finally — It Swallows Exceptions",
+          "text": "Placing a 'return' statement inside a finally block is a dangerous anti-pattern. If the try block throws an exception and the finally block contains a return, the exception is SILENTLY SWALLOWED — it disappears without any trace. The method returns normally as if nothing went wrong. This makes debugging extremely difficult. Rule: never use return, break, or continue in a finally block — only use finally for cleanup (close, unlock, release). The IDE IntelliJ IDEA warns: 'return inside finally block'."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "throw-vs-throws",
+      "title": "throw vs throws — Two Different Keywords, Two Different Purposes",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java uses two similar-looking keywords — <code>throw</code> and <code>throws</code> — that serve completely different purposes. Confusing them is one of the most common interview mistakes. Mastering both is essential for writing correct, self-documenting exception handling code."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "throw", "throws"],
+          "rows": [
+            ["Purpose",            "Actually CREATES and THROWS an exception object",        "DECLARES that a method may propagate checked exceptions"],
+            ["Location",           "Inside a method body — a statement",                     "In the method signature — after parameter list"],
+            ["Syntax",             "throw new ExceptionType(\"message\");",                  "void method() throws IOException, SQLException"],
+            ["Exception count",    "Throws EXACTLY ONE exception at a time",                 "Can declare MULTIPLE exception types (comma-separated)"],
+            ["Object required",    "YES — must provide an exception instance",               "NO — just the exception class name"],
+            ["Who calls it?",      "Developer explicitly, or JVM implicitly",                "Only developer — in method signature"],
+            ["Required for?",      "Both checked AND unchecked exceptions",                  "Only CHECKED exceptions (unchecked don't need it)"],
+            ["What it triggers?",  "Immediately transfers control to catch/caller",          "Nothing at runtime — it's a compile-time declaration"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ThrowVsThrowsDemo.java",
+          "lines": [
+            "import java.io.*;",
+            "import java.sql.*;",
+            "",
+            "public class ThrowVsThrowsDemo {",
+            "",
+            "    // ── 'throws' in method signature ──────────────────",
+            "    // Declares: this method may propagate IOException to caller",
+            "    // Caller is FORCED to handle or re-declare it",
+            "    public String readConfig(String path) throws IOException {",
+            "        // If FileReader throws IOException, it propagates up",
+            "        BufferedReader br = new BufferedReader(new FileReader(path));",
+            "        return br.readLine();",
+            "    }",
+            "",
+            "    // ── 'throw' in method body ────────────────────────",
+            "    // Developer explicitly creates and throws an exception",
+            "    public double divide(double numerator, double denominator) {",
+            "        if (denominator == 0) {",
+            "            throw new ArithmeticException(\"Division by zero is not allowed\");",
+            "        }",
+            "        return numerator / denominator;",
+            "    }",
+            "",
+            "    // ── Both together: throw + throws ─────────────────",
+            "    public void processAge(int age) throws IllegalArgumentException {",
+            "        if (age < 0 || age > 150) {",
+            "            throw new IllegalArgumentException(",
+            "                \"Age must be between 0 and 150, received: \" + age);",
+            "        }",
+            "        System.out.println(\"Processing age: \" + age);",
+            "    }",
+            "    // Note: IllegalArgumentException is unchecked — 'throws' is optional here",
+            "    // But declaring it documents the failure condition clearly",
+            "",
+            "    // ── Multiple exceptions in throws ──────────────────",
+            "    public void saveUserData(String userId, String data)",
+            "            throws IOException, SQLException {",
+            "        // This method might throw either IOException or SQLException",
+            "        if (data == null)",
+            "            throw new IOException(\"Data cannot be null\");",
+            "        // ... database save operation ...",
+            "    }",
+            "",
+            "    // ── Caller must handle declared checked exceptions ─",
+            "    public void callerMethod() {",
+            "        // Option 1: catch it",
+            "        try {",
+            "            String config = readConfig(\"app.yml\");",
+            "            System.out.println(config);",
+            "        } catch (IOException e) {",
+            "            System.err.println(\"Failed to read config: \" + e.getMessage());",
+            "        }",
+            "",
+            "        // Option 2: re-declare it (propagate further)",
+            "        // Add 'throws IOException' to this method's signature",
+            "    }",
+            "",
+            "    // ── Re-throwing exceptions ─────────────────────────",
+            "    public void processFile(String path) throws IOException {",
+            "        try {",
+            "            String line = readConfig(path);",
+            "            if (line == null)",
+            "                throw new IOException(\"File is empty: \" + path);",
+            "            // process...",
+            "        } catch (IOException e) {",
+            "            System.err.println(\"Processing failed, re-throwing...\");",
+            "            throw e; // Re-throw the same exception",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "checked-unchecked",
+      "title": "Checked vs Unchecked Exceptions — Know the Difference",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java's exception system is divided into <strong>checked</strong> and <strong>unchecked</strong> exceptions. This distinction profoundly affects how you write and call methods. The Java compiler actively participates in checked exception handling — it verifies at compile time that every checked exception is either handled or declared. Unchecked exceptions bypass this compiler check entirely."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "Checked Exception", "Unchecked Exception"],
+          "rows": [
+            ["Superclass",          "extends Exception (not RuntimeException)",   "extends RuntimeException"],
+            ["Compiler check",      "✅ YES — must handle or declare with throws", "❌ NO — optional to handle"],
+            ["Represents",          "Recoverable external conditions",              "Programming errors / bugs"],
+            ["When to use",         "Caller CAN and SHOULD handle it",              "Caller cannot reasonably recover"],
+            ["Examples",            "IOException, SQLException, ParseException",   "NullPointerException, IllegalArgumentException"],
+            ["Design intent",       "Forces callers to think about failure paths",  "Signals a bug in the code"],
+            ["API contract",        "Part of the public API contract via throws",   "Not part of the contract"],
+            ["In frameworks",       "Spring wraps most checked in unchecked (DataAccessException)", "Used everywhere"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "CheckedVsUnchecked.java",
+          "lines": [
+            "import java.io.*;",
+            "import java.text.*;",
+            "",
+            "public class CheckedVsUnchecked {",
+            "",
+            "    // ── CHECKED EXCEPTION — compiler enforces handling ─",
+            "",
+            "    // Must declare 'throws IOException' — it's checked",
+            "    public static byte[] readFile(String path) throws IOException {",
+            "        return new FileInputStream(path).readAllBytes();",
+            "    }",
+            "",
+            "    // Caller MUST handle IOException",
+            "    public static void callerOfReadFile() {",
+            "        try {",
+            "            byte[] content = readFile(\"data.bin\");",
+            "            System.out.println(\"Read \" + content.length + \" bytes\");",
+            "        } catch (IOException e) {",
+            "            // Meaningful recovery: use default, log, alert ops team",
+            "            System.err.println(\"File read failed: \" + e.getMessage());",
+            "        }",
+            "        // ❌ If we omit the try-catch: compile error!",
+            "        // \"Unhandled exception type IOException\"",
+            "    }",
+            "",
+            "    // ── UNCHECKED EXCEPTION — no compiler enforcement ──",
+            "",
+            "    // No 'throws' needed — IllegalArgumentException is unchecked",
+            "    public static double calculateBMI(double weightKg, double heightMetres) {",
+            "        if (weightKg <= 0)",
+            "            throw new IllegalArgumentException(\"Weight must be positive: \" + weightKg);",
+            "        if (heightMetres <= 0)",
+            "            throw new IllegalArgumentException(\"Height must be positive: \" + heightMetres);",
+            "        return weightKg / (heightMetres * heightMetres);",
+            "    }",
+            "",
+            "    // Caller may choose to catch or let it propagate",
+            "    public static void callerOfBMI() {",
+            "        // ✅ Legal without try-catch (unchecked)",
+            "        double bmi = calculateBMI(70, 1.75);",
+            "        System.out.println(\"BMI: \" + bmi);",
+            "",
+            "        // ✅ Also legal WITH try-catch for better UX",
+            "        try {",
+            "            double badBmi = calculateBMI(-5, 1.75);",
+            "        } catch (IllegalArgumentException e) {",
+            "            System.out.println(\"Input error: \" + e.getMessage());",
+            "        }",
+            "    }",
+            "",
+            "    // ── REAL-WORLD: When to choose which ──────────────",
+            "",
+            "    // Checked: external resource — caller SHOULD handle",
+            "    public void connectToDatabase(String url, String user, String pass)",
+            "            throws java.sql.SQLException {",
+            "        // Network/DB failures are recoverable — caller should retry/fail gracefully",
+            "        java.sql.DriverManager.getConnection(url, user, pass);",
+            "    }",
+            "",
+            "    // Unchecked: programming contract — caller shouldn't reach this if correct",
+            "    public void setPositiveAge(int age) {",
+            "        if (age < 0)",
+            "            throw new IllegalArgumentException(",
+            "                \"Age cannot be negative. Caller has a bug.\");",
+            "        // If caller passes valid age, this never throws",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Modern Java Preference — Unchecked Exceptions",
+          "text": "Major frameworks like Spring, Hibernate, and JUnit intentionally wrap checked exceptions in unchecked ones (Spring's DataAccessException wraps SQLException; JUnit's AssertionError is unchecked). The rationale: checked exceptions often pollute method signatures throughout a call stack, forcing every layer to either handle or re-declare exceptions it cannot meaningfully address. The modern Java consensus: use checked exceptions only for conditions where the caller has a realistic recovery strategy. For programming errors and conditions callers cannot recover from, use unchecked exceptions."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "multi-catch",
+      "title": "Multi-catch & Exception Order — Catching Multiple Types",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java provides two patterns for catching multiple exception types: <strong>separate catch blocks</strong> (one per exception type) and <strong>multi-catch</strong> (Java 7+, multiple types in one block separated by <code>|</code>). Understanding the ordering rules prevents the most common multi-catch compile errors."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📋",
+              "title": "Catch Block Order Rules",
+              "text": "Catch blocks are evaluated TOP-TO-BOTTOM. The FIRST matching catch block runs — all remaining are skipped.\nRule: always place MORE SPECIFIC exceptions BEFORE LESS SPECIFIC ones.\nWrong order: catch(Exception e) before catch(IOException e) → compile error: 'exception IOException has already been caught'.\nCorrect order: specific first, general last. A 'catch (Exception e)' as the last catch is a common pattern to handle any unexpected exception."
+            },
+            {
+              "icon": "⚡",
+              "title": "Multi-catch (Java 7+) — The | Operator",
+              "text": "Syntax: catch (ExceptionA | ExceptionB | ExceptionC e)\nWhen multiple exceptions need the SAME handling logic, multi-catch eliminates code duplication.\nConstraint: the caught variable 'e' is implicitly final — cannot be reassigned inside the block.\nConstraint: cannot use related types (parent and child) in the same multi-catch — compile error: 'type is already caught by the alternative'.\nBenefit: cleaner code without repeating the same handler body."
+            },
+            {
+              "icon": "🎯",
+              "title": "Catching Throwable vs Exception",
+              "text": "catch(Exception e): catches all checked and unchecked exceptions — appropriate as a last resort fallback.\ncatch(Throwable t): catches Errors too — almost never appropriate. Errors (OutOfMemoryError etc.) signal JVM failure — catching them can hide serious problems or prevent proper JVM shutdown.\nRule: catch the most specific type you can meaningfully handle. Use catch(Exception e) sparingly as a global fallback. Never catch Throwable in normal application code."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "MultiCatchDemo.java",
+          "lines": [
+            "import java.io.*;",
+            "import java.sql.*;",
+            "import java.text.*;",
+            "",
+            "public class MultiCatchDemo {",
+            "",
+            "    // ── SEPARATE CATCH BLOCKS — different handling ─────",
+            "    public static void separateCatchDemo(String filePath, String dateStr) {",
+            "        try {",
+            "            File file = new File(filePath);",
+            "            if (!file.exists())",
+            "                throw new FileNotFoundException(\"Config missing: \" + filePath);",
+            "",
+            "            SimpleDateFormat sdf = new SimpleDateFormat(\"dd/MM/yyyy\");",
+            "            java.util.Date date = sdf.parse(dateStr);",
+            "",
+            "            System.out.println(\"File: \" + file.getName() + \", Date: \" + date);",
+            "",
+            "        } catch (FileNotFoundException e) {",
+            "            // Specific handling: use a default config",
+            "            System.err.println(\"Config not found, using defaults: \" + e.getMessage());",
+            "        } catch (ParseException e) {",
+            "            // Specific handling: reject the request",
+            "            System.err.println(\"Invalid date format at position \" + e.getErrorOffset());",
+            "        } catch (Exception e) {",
+            "            // General fallback: log and alert",
+            "            System.err.println(\"Unexpected error: \" + e.getClass().getName());",
+            "        }",
+            "    }",
+            "",
+            "    // ── MULTI-CATCH (Java 7+) — same handling for multiple types ─",
+            "    public static void processUserRequest(String userId, String amount) {",
+            "        try {",
+            "            if (userId == null) throw new IllegalArgumentException(\"userId is null\");",
+            "            double parsedAmount = Double.parseDouble(amount);",
+            "            int    parsedId     = Integer.parseInt(userId);",
+            "            System.out.println(\"Processing \" + parsedAmount + \" for user \" + parsedId);",
+            "",
+            "        } catch (NumberFormatException | IllegalArgumentException e) {",
+            "            // ✅ Multi-catch: both get same 'invalid input' handling",
+            "            System.err.println(\"[VALIDATION] Invalid input: \" + e.getMessage());",
+            "            // 'e' is implicitly final here — cannot do: e = new Exception();",
+            "        } catch (Exception e) {",
+            "            System.err.println(\"[SYSTEM] Unexpected: \" + e.getMessage());",
+            "        }",
+            "    }",
+            "",
+            "    // ── CORRECT ORDER — specific before general ────────",
+            "    public static void correctOrderDemo() {",
+            "        try {",
+            "            Object[] arr = new String[3];",
+            "            arr[10] = \"test\"; // ArrayIndexOutOfBoundsException",
+            "",
+            "        // ✅ Most specific first",
+            "        } catch (ArrayIndexOutOfBoundsException e) {",
+            "            System.err.println(\"Array index error: \" + e.getMessage());",
+            "        } catch (RuntimeException e) {",
+            "            System.err.println(\"Runtime error: \" + e.getMessage());",
+            "        } catch (Exception e) {",
+            "            System.err.println(\"General error: \" + e.getMessage());",
+            "        }",
+            "    }",
+            "",
+            "    // ── WRONG ORDER — compile error example ───────────",
+            "    // public static void wrongOrder() {",
+            "    //     try { throw new FileNotFoundException(); }",
+            "    //     catch (IOException e)           { }  // Catches parent",
+            "    //     catch (FileNotFoundException e) { }  // ❌ COMPILE ERROR!",
+            "    //     // FileNotFoundException already caught by IOException above",
+            "    // }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "try-with-resources",
+      "title": "try-with-resources (Java 7+) — Automatic Resource Management",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>try-with-resources</strong> (Java 7+, JEP 334 improved in Java 9) automatically closes resources that implement <code>AutoCloseable</code> (or its subinterface <code>Closeable</code>) when the try block exits — regardless of whether it exits normally or via exception. It is the <strong>recommended pattern</strong> for all resource management in modern Java, replacing the verbose and error-prone try-finally pattern."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🔑",
+              "title": "How try-with-resources Works",
+              "text": "Resources declared in the parentheses after 'try' are automatically closed when the try block exits. Close() is called in REVERSE order of declaration (last opened, first closed). If both the try body and close() throw exceptions, the body's exception propagates and the close() exception becomes a SUPPRESSED exception — accessible via getSuppressed(). This is the key advantage over try-finally."
+            },
+            {
+              "icon": "📋",
+              "title": "Multiple Resources",
+              "text": "Multiple resources are separated by semicolons:\ntry (Resource1 r1 = ...; Resource2 r2 = ...; Resource3 r3 = ...) { }\nClosed in reverse: r3.close(), r2.close(), r1.close().\nJava 9+: effectively-final resources declared outside the try can be used:\nResource res = getResource();\ntry (res) { } // No need to re-declare if effectively final"
+            },
+            {
+              "icon": "🏭",
+              "title": "Implementing AutoCloseable",
+              "text": "Any class implementing AutoCloseable (one method: void close() throws Exception) works with try-with-resources. Implementing Closeable (throws IOException only) is more specific. Custom resources like DB connections, HTTP clients, thread pools should implement AutoCloseable to participate in try-with-resources. This is how modern Java resource management is designed."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "TryWithResourcesDemo.java",
+          "lines": [
+            "import java.io.*;",
+            "import java.sql.*;",
+            "",
+            "public class TryWithResourcesDemo {",
+            "",
+            "    // ── OLD WAY: try-finally — verbose and error-prone ─",
+            "    public static String readFileOldWay(String path) {",
+            "        BufferedReader reader = null;",
+            "        try {",
+            "            reader = new BufferedReader(new FileReader(path));",
+            "            StringBuilder sb = new StringBuilder();",
+            "            String line;",
+            "            while ((line = reader.readLine()) != null) sb.append(line).append(\"\\n\");",
+            "            return sb.toString();",
+            "        } catch (IOException e) {",
+            "            System.err.println(\"Read error: \" + e.getMessage());",
+            "            return null;",
+            "        } finally {",
+            "            if (reader != null) {",
+            "                try { reader.close(); }           // Must try-catch AGAIN",
+            "                catch (IOException e) { /* suppress */ }",
+            "            }",
+            "        }",
+            "    }",
+            "",
+            "    // ── NEW WAY: try-with-resources — clean, safe ──────",
+            "    public static String readFileNewWay(String path) {",
+            "        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {",
+            "            StringBuilder sb = new StringBuilder();",
+            "            String line;",
+            "            while ((line = reader.readLine()) != null) sb.append(line).append(\"\\n\");",
+            "            return sb.toString();",
+            "        } catch (IOException e) {",
+            "            System.err.println(\"Read error: \" + e.getMessage());",
+            "            return null;",
+            "        }",
+            "        // reader.close() called automatically — even if exception is thrown",
+            "    }",
+            "",
+            "    // ── MULTIPLE RESOURCES — closed in reverse order ───",
+            "    public static void copyFile(String srcPath, String destPath) throws IOException {",
+            "        try (",
+            "            InputStream  in  = new FileInputStream(srcPath);   // Opens first",
+            "            OutputStream out = new FileOutputStream(destPath)  // Opens second",
+            "        ) {",
+            "            byte[] buffer = new byte[4096];",
+            "            int bytesRead;",
+            "            while ((bytesRead = in.read(buffer)) != -1) {",
+            "                out.write(buffer, 0, bytesRead);",
+            "            }",
+            "            System.out.println(\"File copied successfully\");",
+            "        }",
+            "        // out.close() called FIRST (reverse), then in.close()",
+            "        // Both closed even if exception occurs mid-copy",
+            "    }",
+            "",
+            "    // ── CUSTOM AutoCloseable ───────────────────────────",
+            "    static class DatabaseTransaction implements AutoCloseable {",
+            "        private final Connection connection;",
+            "        private       boolean    committed;",
+            "",
+            "        DatabaseTransaction(Connection conn) throws SQLException {",
+            "            this.connection = conn;",
+            "            this.connection.setAutoCommit(false);",
+            "            System.out.println(\"Transaction started\");",
+            "        }",
+            "",
+            "        public void commit() throws SQLException {",
+            "            connection.commit();",
+            "            committed = true;",
+            "            System.out.println(\"Transaction committed\");",
+            "        }",
+            "",
+            "        @Override",
+            "        public void close() throws SQLException {",
+            "            if (!committed) {",
+            "                connection.rollback(); // Auto-rollback if not committed",
+            "                System.out.println(\"Transaction rolled back\");",
+            "            }",
+            "        }",
+            "    }",
+            "",
+            "    public static void processOrder(Connection conn, Order order) throws SQLException {",
+            "        try (DatabaseTransaction tx = new DatabaseTransaction(conn)) {",
+            "            // Business logic",
+            "            saveOrder(conn, order);",
+            "            reserveInventory(conn, order);",
+            "            tx.commit(); // ← Only reaches here if no exception",
+            "        }",
+            "        // If saveOrder() or reserveInventory() throw: tx.close() rolls back",
+            "        // If commit() succeeds: tx.close() sees committed=true, skips rollback",
+            "    }",
+            "",
+            "    // ── SUPPRESSED EXCEPTIONS ─────────────────────────",
+            "    public static void suppressedDemo() {",
+            "        try (",
+            "            AutoCloseable resource = () -> { throw new Exception(\"close() failed\"); }",
+            "        ) {",
+            "            throw new RuntimeException(\"try block failed\");",
+            "        } catch (Exception e) {",
+            "            System.out.println(\"Primary: \" + e.getMessage()); // try block failed",
+            "            for (Throwable suppressed : e.getSuppressed()) {",
+            "                System.out.println(\"Suppressed: \" + suppressed.getMessage()); // close() failed",
+            "            }",
+            "        }",
+            "    }",
+            "",
+            "    static void saveOrder(Connection c, Order o) throws SQLException {}",
+            "    static void reserveInventory(Connection c, Order o) throws SQLException {}",
+            "    record Order(String id) {}",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "custom-exceptions",
+      "title": "Custom Exceptions — Designing Domain-Specific Exceptions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java's built-in exceptions cover general programming errors, but real applications need <strong>domain-specific exceptions</strong> that carry meaningful business context. A <code>PaymentDeclinedException</code> is far more informative than a generic <code>RuntimeException</code>. Custom exceptions make error handling code <em>self-documenting</em>, enable callers to react differently to different failure modes, and carry structured data about what went wrong."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🏗️",
+              "title": "Custom Exception Design Rules",
+              "text": "1. Choose the right superclass: extend RuntimeException for unchecked (most domain exceptions), extend Exception for checked (when callers should be forced to handle).\n2. Always provide BOTH constructors: (String message) and (String message, Throwable cause) — cause enables exception chaining.\n3. Add domain-specific fields for structured context: errorCode, orderId, userId, retryAfterSeconds.\n4. Make fields final — exceptions should be immutable.\n5. Follow the naming convention: end with 'Exception'."
+            },
+            {
+              "icon": "🎯",
+              "title": "Exception Hierarchy for Your Domain",
+              "text": "Group related exceptions under a base domain exception. This lets callers catch the entire category if they choose:\nApplicationException (base)\n├── ValidationException\n│   ├── InvalidEmailException\n│   └── InvalidPhoneException\n└── BusinessException\n    ├── InsufficientFundsException\n    └── AccountFrozenException\nCallers can catch ValidationException to handle all validation failures, or InsufficientFundsException to handle just that specific case."
+            },
+            {
+              "icon": "📋",
+              "title": "When to Create Custom Exceptions",
+              "text": "Create custom exceptions when: (1) The exception needs domain-specific context (orderId, errorCode, retryAfterMs). (2) Callers need to distinguish this failure from others — different recovery strategies. (3) The built-in exception names don't clearly communicate the business situation. (4) You're building a library or SDK — custom exceptions create a stable API contract. Don't create custom exceptions for every method — use IllegalArgumentException, IllegalStateException for basic validation."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "CustomExceptions.java",
+          "lines": [
+            "// ── BASE DOMAIN EXCEPTION ─────────────────────────────",
+            "public class ApplicationException extends RuntimeException {",
+            "",
+            "    private final String errorCode;",
+            "    private final String userFriendlyMessage;",
+            "",
+            "    public ApplicationException(String errorCode,",
+            "                                String techMessage,",
+            "                                String userMessage) {",
+            "        super(techMessage);",
+            "        this.errorCode          = errorCode;",
+            "        this.userFriendlyMessage = userMessage;",
+            "    }",
+            "",
+            "    public ApplicationException(String errorCode,",
+            "                                String techMessage,",
+            "                                String userMessage,",
+            "                                Throwable cause) {",
+            "        super(techMessage, cause);",
+            "        this.errorCode          = errorCode;",
+            "        this.userFriendlyMessage = userMessage;",
+            "    }",
+            "",
+            "    public String getErrorCode()          { return errorCode; }",
+            "    public String getUserFriendlyMessage() { return userFriendlyMessage; }",
+            "}",
+            "",
+            "// ── VALIDATION EXCEPTIONS ─────────────────────────────",
+            "public class ValidationException extends ApplicationException {",
+            "",
+            "    private final String fieldName;",
+            "    private final Object rejectedValue;",
+            "",
+            "    public ValidationException(String fieldName, Object rejectedValue, String reason) {",
+            "        super(\"VALIDATION_ERROR\",",
+            "              \"Validation failed for '\" + fieldName + \"': \" + reason,",
+            "              \"Please check \" + fieldName + \" and try again.\");",
+            "        this.fieldName     = fieldName;",
+            "        this.rejectedValue = rejectedValue;",
+            "    }",
+            "",
+            "    public String getFieldName()    { return fieldName; }",
+            "    public Object getRejectedValue(){ return rejectedValue; }",
+            "}",
+            "",
+            "// ── PAYMENT DOMAIN EXCEPTIONS ─────────────────────────",
+            "public class PaymentException extends ApplicationException {",
+            "",
+            "    private final String transactionId;",
+            "",
+            "    public PaymentException(String errorCode, String message,",
+            "                            String transactionId) {",
+            "        super(errorCode, message, \"Payment could not be processed.\");",
+            "        this.transactionId = transactionId;",
+            "    }",
+            "",
+            "    public PaymentException(String errorCode, String message,",
+            "                            String transactionId, Throwable cause) {",
+            "        super(errorCode, message, \"Payment could not be processed.\", cause);",
+            "        this.transactionId = transactionId;",
+            "    }",
+            "",
+            "    public String getTransactionId() { return transactionId; }",
+            "}",
+            "",
+            "public class InsufficientFundsException extends PaymentException {",
+            "",
+            "    private final double availableBalance;",
+            "    private final double requestedAmount;",
+            "",
+            "    public InsufficientFundsException(double available,",
+            "                                      double requested,",
+            "                                      String transactionId) {",
+            "        super(\"INSUFFICIENT_FUNDS\",",
+            "              String.format(\"Insufficient funds: available=%.2f, requested=%.2f\",",
+            "                           available, requested),",
+            "              transactionId);",
+            "        this.availableBalance = available;",
+            "        this.requestedAmount  = requested;",
+            "    }",
+            "",
+            "    public double getAvailableBalance() { return availableBalance; }",
+            "    public double getRequestedAmount()  { return requestedAmount; }",
+            "",
+            "    public double getShortfallAmount() {",
+            "        return requestedAmount - availableBalance;",
+            "    }",
+            "}",
+            "",
+            "// ── RESOURCE NOT FOUND ────────────────────────────────",
+            "public class ResourceNotFoundException extends ApplicationException {",
+            "",
+            "    private final String resourceType;",
+            "    private final Object resourceId;",
+            "",
+            "    public ResourceNotFoundException(String resourceType, Object id) {",
+            "        super(\"RESOURCE_NOT_FOUND\",",
+            "              resourceType + \" not found with id: \" + id,",
+            "              resourceType + \" not found.\");",
+            "        this.resourceType = resourceType;",
+            "        this.resourceId   = id;",
+            "    }",
+            "",
+            "    public String getResourceType() { return resourceType; }",
+            "    public Object getResourceId()   { return resourceId; }",
+            "}",
+            "",
+            "// ── USAGE ─────────────────────────────────────────────",
+            "// try {",
+            "//     paymentService.processPayment(userId, amount);",
+            "// } catch (InsufficientFundsException e) {",
+            "//     // Specific recovery: show available balance to user",
+            "//     ui.showError(\"Need ₹\" + e.getShortfallAmount() + \" more to complete payment\");",
+            "// } catch (PaymentException e) {",
+            "//     // General payment failure",
+            "//     ui.showError(e.getUserFriendlyMessage() + \" [\" + e.getErrorCode() + \"]\");",
+            "// } catch (ApplicationException e) {",
+            "//     // Any application-level error",
+            "//     logger.error(\"App error: {}\", e.getErrorCode(), e);",
+            "// }"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "exception-chaining",
+      "title": "Exception Chaining & Cause — Preserving Error Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Exception chaining</strong> (also called <em>exception wrapping</em>) is the practice of catching a low-level exception and re-throwing it as a higher-level, more meaningful exception — while preserving the original exception as the <code>cause</code>. This is critical for debuggability: without the cause, the root problem is hidden; with it, the full chain of errors is visible in the stack trace."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🔗",
+              "title": "Why Chain Exceptions",
+              "text": "A service layer should not expose JDBC's SQLException to a UI layer. Instead, it catches SQLException and throws a domain-meaningful DatabaseException — but includes the original SQLException as the cause. The caller sees a BusinessException. But when debugging, getCause() retrieves the original SQLException with its full stack trace. This is the principle of 'translate, not suppress' — convert the exception type but never lose the original context."
+            },
+            {
+              "icon": "📋",
+              "title": "Cause Constructor Pattern",
+              "text": "Every well-designed exception class should have a constructor that accepts a Throwable cause:\nnew DatabaseException(\"Failed to save user\", sqlEx);\nThis cause is passed to super(message, cause) in the exception class constructor, which stores it in Throwable. getCause() returns it. printStackTrace() shows the entire chain with 'Caused by:' labels."
+            },
+            {
+              "icon": "🔍",
+              "title": "Suppressed Exceptions",
+              "text": "Java 7+ introduced addSuppressed(Throwable) for cases where multiple exceptions occur simultaneously — most commonly in try-with-resources where both the try body and close() throw. The primary exception propagates; the close() exception is suppressed but attached. getSuppressed() retrieves them. They appear in the stack trace as 'Suppressed:' entries, not as 'Caused by:'."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ExceptionChainingDemo.java",
+          "lines": [
+            "import java.sql.*;",
+            "",
+            "// ── EXCEPTION CHAINING ────────────────────────────────",
+            "public class UserRepository {",
+            "",
+            "    // ❌ BAD: Swallowing the original exception",
+            "    public User findUserBad(String userId) {",
+            "        try {",
+            "            return queryDatabase(userId);",
+            "        } catch (SQLException e) {",
+            "            // Original exception lost — impossible to diagnose root cause",
+            "            throw new RuntimeException(\"Database error\");",
+            "        }",
+            "    }",
+            "",
+            "    // ❌ ALSO BAD: Logging and rethrowing same type",
+            "    public User findUserAlsoBad(String userId) throws SQLException {",
+            "        try {",
+            "            return queryDatabase(userId);",
+            "        } catch (SQLException e) {",
+            "            // Logs it here AND caller might log again — duplicate logs",
+            "            System.err.println(\"DB error: \" + e.getMessage());",
+            "            throw e; // Same exception — OK, but causes are lost if wrapped later",
+            "        }",
+            "    }",
+            "",
+            "    // ✅ CORRECT: Wrap with cause — translate level, preserve context",
+            "    public User findUser(String userId) {",
+            "        try {",
+            "            return queryDatabase(userId);",
+            "        } catch (SQLException e) {",
+            "            // Higher-level exception with original cause preserved",
+            "            throw new DatabaseException(",
+            "                \"Failed to retrieve user with id: \" + userId, e);",
+            "            // ↑ 'e' stored as cause — getCause() returns it",
+            "        }",
+            "    }",
+            "",
+            "    // ── READING THE CHAIN ─────────────────────────────",
+            "    public static void demonstrateChain() {",
+            "        try {",
+            "            // Simulate a chain: SocketException → SQLException → DatabaseException",
+            "            java.net.SocketException socketEx =",
+            "                new java.net.SocketException(\"Connection reset by peer\");",
+            "",
+            "            SQLException sqlEx = new SQLException(",
+            "                \"Query execution failed\", socketEx);",
+            "",
+            "            DatabaseException dbEx = new DatabaseException(",
+            "                \"User lookup failed\", sqlEx);",
+            "",
+            "            throw dbEx;",
+            "",
+            "        } catch (DatabaseException e) {",
+            "            System.out.println(\"Top level: \" + e.getMessage());",
+            "",
+            "            // Walk the cause chain",
+            "            Throwable cause = e.getCause();",
+            "            int depth = 1;",
+            "            while (cause != null) {",
+            "                System.out.printf(\"  Cause[%d]: %s — %s%n\",",
+            "                    depth++, cause.getClass().getSimpleName(), cause.getMessage());",
+            "                cause = cause.getCause();",
+            "            }",
+            "        }",
+            "        // Output:",
+            "        // Top level: User lookup failed",
+            "        //   Cause[1]: SQLException — Query execution failed",
+            "        //   Cause[2]: SocketException — Connection reset by peer",
+            "    }",
+            "",
+            "    private User queryDatabase(String id) throws SQLException { return new User(id); }",
+            "    record User(String id) {}",
+            "}",
+            "",
+            "class DatabaseException extends RuntimeException {",
+            "    public DatabaseException(String msg) { super(msg); }",
+            "    public DatabaseException(String msg, Throwable cause) { super(msg, cause); }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "exception-propagation",
+      "title": "Exception Propagation — The Call Stack Journey",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When an exception is thrown and not caught in the current method, it <strong>propagates up the call stack</strong> — the current method is exited immediately, its local variables are discarded, and the exception is passed to the calling method. This continues frame by frame until either a matching catch block is found or the exception reaches the JVM's main thread handler and the thread terminates."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📶",
+              "title": "Propagation Rules",
+              "text": "Unchecked exceptions propagate automatically — no declaration needed at each level.\nChecked exceptions require either catch or throws declaration at each stack frame.\nWhen a method declares 'throws CheckedException', it is telling the compiler: 'I'm not handling this, my caller must.'\nThe exception propagates until: (1) a catch block matches it, (2) it reaches main() and is uncaught, or (3) it reaches a thread's uncaught exception handler."
+            },
+            {
+              "icon": "🔍",
+              "title": "Reading a Stack Trace",
+              "text": "A stack trace reads BOTTOM-UP for origin — the bottom line is where the exception originated; each line above it is a calling method. The top line is where the exception was caught (or the thread that died). Each line shows: ClassName.methodName(FileName.java:lineNumber). 'Caused by:' sections show the exception chain. 'Suppressed:' shows close() exceptions from try-with-resources."
+            },
+            {
+              "icon": "🎯",
+              "title": "Catch at the Right Level",
+              "text": "The correct level to catch an exception is the level that has enough CONTEXT to handle it meaningfully. A data access method shouldn't catch its own SQLException and show a UI dialog — it has no UI context. The UI layer should catch and display appropriately. Repository layer: translate technical exceptions to domain exceptions. Service layer: handle business rule violations. Presentation layer: translate to user-friendly messages."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ExceptionPropagationDemo.java",
+          "lines": [
+            "public class ExceptionPropagationDemo {",
+            "",
+            "    // ── PROPAGATION CHAIN ─────────────────────────────",
+            "    // Level 3 — deepest — throws, does not catch",
+            "    static void level3() throws java.io.IOException {",
+            "        System.out.println(\"→ Entering level3\");",
+            "        throw new java.io.IOException(\"Disk read failed at sector 47\");",
+            "    }",
+            "",
+            "    // Level 2 — middle — declares throws, does not catch",
+            "    static void level2() throws java.io.IOException {",
+            "        System.out.println(\"→ Entering level2\");",
+            "        level3();  // Exception propagates up from level3",
+            "        System.out.println(\"← Leaving level2\"); // Never reached",
+            "    }",
+            "",
+            "    // Level 1 — catches the exception",
+            "    static void level1() {",
+            "        System.out.println(\"→ Entering level1\");",
+            "        try {",
+            "            level2();",
+            "            System.out.println(\"← Leaving level2 (no exception)\"); // Never reached",
+            "        } catch (java.io.IOException e) {",
+            "            System.out.println(\"★ Caught in level1: \" + e.getMessage());",
+            "        }",
+            "        System.out.println(\"← Leaving level1 normally\");",
+            "    }",
+            "",
+            "    // Output when level1() is called:",
+            "    // → Entering level1",
+            "    // → Entering level2",
+            "    // → Entering level3",
+            "    // ★ Caught in level1: Disk read failed at sector 47",
+            "    // ← Leaving level1 normally",
+            "",
+            "    // ── LAYERED ARCHITECTURE PROPAGATION ──────────────",
+            "    // This is how enterprise apps are SUPPOSED to handle exceptions",
+            "",
+            "    // Data Access Layer — translates SQL to domain exception",
+            "    static User findUserInDb(String id) {",
+            "        try {",
+            "            // Simulate SQL call",
+            "            if (id == null) throw new java.sql.SQLException(\"Null parameter\");",
+            "            return new User(id, \"Test User\");",
+            "        } catch (java.sql.SQLException e) {",
+            "            // Translate — don't expose JDBC to service layer",
+            "            throw new DatabaseException(\"DB lookup failed for user: \" + id, e);",
+            "        }",
+            "    }",
+            "",
+            "    // Service Layer — translates domain exception to business exception",
+            "    static User getUserService(String id) {",
+            "        try {",
+            "            return findUserInDb(id);",
+            "        } catch (DatabaseException e) {",
+            "            // Service-level context added",
+            "            throw new ServiceException(\"Cannot retrieve user profile\", e);",
+            "        }",
+            "    }",
+            "",
+            "    // Controller Layer — translates to HTTP response or UI message",
+            "    static String getUserController(String id) {",
+            "        try {",
+            "            User user = getUserService(id);",
+            "            return \"200 OK: \" + user;",
+            "        } catch (ServiceException e) {",
+            "            // Log with full cause chain, return user-friendly message",
+            "            System.err.println(\"Service error: \" + e.getMessage());",
+            "            System.err.println(\"Root cause: \" + e.getCause().getCause().getMessage());",
+            "            return \"500 Internal Error: Unable to load profile\";",
+            "        }",
+            "    }",
+            "",
+            "    record User(String id, String name) {}",
+            "    static class ServiceException  extends RuntimeException {",
+            "        ServiceException(String m, Throwable c) { super(m, c); }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-exceptions",
+      "title": "Common Java Exceptions Explained — What Causes Them & How to Fix",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the exceptions you will encounter most frequently in Java development. Understanding <em>exactly</em> what triggers each one — and how to prevent or handle it — saves hours of debugging time."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Exception", "Root Cause", "Prevention / Fix"],
+          "rows": [
+            ["NullPointerException",              "Calling a method or accessing a field on a null reference",      "Null checks, Optional<T>, Objects.requireNonNull(), @NonNull annotations"],
+            ["ArrayIndexOutOfBoundsException",    "Accessing arr[i] where i < 0 or i >= arr.length",              "Check arr.length before indexing; use enhanced for loops"],
+            ["ClassCastException",                "Casting an object to a type it is not (fails instanceof check)", "Check instanceof before casting; use generics to avoid casts"],
+            ["NumberFormatException",             "Integer.parseInt(\"abc\") — string is not a valid number",       "Validate format before parsing; use try-catch for user input"],
+            ["StackOverflowError",                "Infinite recursion — no base case or base case never reached",  "Verify base case exists and is reachable; use iteration for deep recursion"],
+            ["OutOfMemoryError",                  "JVM heap exhausted — too many objects or memory leak",          "Profile with VisualVM; fix leaks; increase heap with -Xmx if justified"],
+            ["ConcurrentModificationException",   "Modifying a collection while iterating it with Iterator",       "Use Iterator.remove(); copy before modifying; use CopyOnWriteArrayList"],
+            ["IllegalArgumentException",          "Method received an argument that violates its contract",         "Validate inputs at method start; document preconditions clearly"],
+            ["IllegalStateException",             "Method called at a wrong time or in wrong object state",         "Check object state before calling; use state machine patterns"],
+            ["UnsupportedOperationException",     "Operation not supported by this implementation",                "Check if collection is modifiable; use mutable collection types"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "CommonExceptionsDemo.java",
+          "lines": [
+            "import java.util.*;",
+            "",
+            "public class CommonExceptionsDemo {",
+            "",
+            "    // NullPointerException — and how to prevent it",
+            "    public static void npeDemo() {",
+            "        // ❌ NPE: calling on null",
+            "        String s = null;",
+            "        // s.length(); // Throws NullPointerException",
+            "",
+            "        // ✅ Prevention 1: explicit null check",
+            "        if (s != null) System.out.println(s.length());",
+            "",
+            "        // ✅ Prevention 2: Optional",
+            "        Optional.ofNullable(s).ifPresent(str -> System.out.println(str.length()));",
+            "",
+            "        // ✅ Prevention 3: Objects.requireNonNull for constructor params",
+            "        String name = Objects.requireNonNull(s, \"name cannot be null\");",
+            "    }",
+            "",
+            "    // ConcurrentModificationException — modifying during iteration",
+            "    public static void cmeDemo() {",
+            "        List<String> list = new ArrayList<>(List.of(\"A\", \"B\", \"C\", \"D\"));",
+            "",
+            "        // ❌ ConcurrentModificationException",
+            "        // for (String s : list) {",
+            "        //     if (s.equals(\"B\")) list.remove(s);",
+            "        // }",
+            "",
+            "        // ✅ Fix 1: Iterator.remove()",
+            "        Iterator<String> it = list.iterator();",
+            "        while (it.hasNext()) {",
+            "            if (it.next().equals(\"B\")) it.remove();",
+            "        }",
+            "",
+            "        // ✅ Fix 2: removeIf (Java 8+) — cleanest",
+            "        list.removeIf(s -> s.equals(\"C\"));",
+            "",
+            "        System.out.println(list); // [A, D]",
+            "    }",
+            "",
+            "    // StackOverflowError — missing base case",
+            "    public static int badFactorial(int n) {",
+            "        // ❌ No base case — infinite recursion",
+            "        return n * badFactorial(n - 1); // StackOverflowError",
+            "    }",
+            "",
+            "    public static long goodFactorial(int n) {",
+            "        if (n < 0) throw new IllegalArgumentException(\"n must be >= 0\");",
+            "        if (n <= 1) return 1; // ✅ Base case",
+            "        return n * goodFactorial(n - 1);",
+            "    }",
+            "",
+            "    // NumberFormatException — parsing user input",
+            "    public static Optional<Integer> safeParseInt(String s) {",
+            "        try {",
+            "            return Optional.of(Integer.parseInt(s));",
+            "        } catch (NumberFormatException e) {",
+            "            return Optional.empty(); // Return empty Optional instead of throwing",
+            "        }",
+            "    }",
+            "    // Usage: safeParseInt(\"42\") → Optional[42]",
+            "    //        safeParseInt(\"abc\") → Optional.empty",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Errors That Trip Everyone Up",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These exception handling mistakes appear consistently in Java beginner and intermediate code. Each one either hides real problems, corrupts error context, or leads to resource leaks that only surface in production."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ExceptionMistakes.java",
+          "lines": [
+            "// ❌ MISTAKE 1: Empty catch block — swallowing the exception silently",
+            "try {",
+            "    processPayment();",
+            "} catch (Exception e) {",
+            "    // ❌ Exception silently disappears — impossible to diagnose in production",
+            "}",
+            "// ✅ Fix: always at minimum log it",
+            "try {",
+            "    processPayment();",
+            "} catch (Exception e) {",
+            "    logger.error(\"Payment processing failed\", e); // Log with full stack trace",
+            "    throw e; // Re-throw or throw a domain exception",
+            "}",
+            "",
+            "// ❌ MISTAKE 2: Catching Exception (too broad) instead of specific types",
+            "try {",
+            "    int value = Integer.parseInt(userInput);",
+            "    File f = new File(filePath);",
+            "} catch (Exception e) {",
+            "    System.out.println(\"Something went wrong\"); // Which thing? Can't tell",
+            "}",
+            "// ✅ Fix: specific catch blocks",
+            "try {",
+            "    int value = Integer.parseInt(userInput);",
+            "    File f = new File(filePath);",
+            "} catch (NumberFormatException e) {",
+            "    System.out.println(\"Invalid number format: \" + e.getMessage());",
+            "} catch (SecurityException e) {",
+            "    System.out.println(\"File access denied: \" + e.getMessage());",
+            "}",
+            "",
+            "// ❌ MISTAKE 3: Catching exception without the cause — losing root cause",
+            "try {",
+            "    executeQuery();",
+            "} catch (SQLException e) {",
+            "    throw new RuntimeException(\"Database error\"); // ❌ Cause lost!",
+            "}",
+            "// ✅ Fix: always pass cause to new exception",
+            "catch (SQLException e) {",
+            "    throw new DatabaseException(\"Query failed: \" + e.getMessage(), e); // ✅",
+            "}",
+            "",
+            "// ❌ MISTAKE 4: Using exceptions for normal control flow",
+            "public boolean userExists(String id) {",
+            "    try {",
+            "        getUser(id); // throws UserNotFoundException if not found",
+            "        return true;",
+            "    } catch (UserNotFoundException e) {",
+            "        return false; // ❌ Exception as conditional — expensive, poor design",
+            "    }",
+            "}",
+            "// ✅ Fix: return Optional or design API to check first",
+            "public Optional<User> findUser(String id) { /* ... */ return Optional.empty(); }",
+            "",
+            "// ❌ MISTAKE 5: re-declaring unchecked exceptions in throws",
+            "// Not an error, but misleading and unnecessary",
+            "public void setAge(int age) throws NullPointerException { // ❌ Unnecessary",
+            "    if (age < 0) throw new IllegalArgumentException(\"Negative age\");",
+            "}",
+            "// ✅ Fix: don't declare unchecked exceptions in throws (unless documenting)",
+            "",
+            "// ❌ MISTAKE 6: Finally block with return statement",
+            "public int getValue() {",
+            "    try {",
+            "        return 1;",
+            "    } finally {",
+            "        return 2; // ❌ Overrides try's return AND swallows any exception!",
+            "    }",
+            "}",
+            "// Always returns 2, any exception in try is silently swallowed",
+            "",
+            "// ❌ MISTAKE 7: Not closing resources in finally (before Java 7)",
+            "// or not using try-with-resources (Java 7+)",
+            "Connection conn = getConnection();",
+            "try {",
+            "    execute(conn);",
+            "} catch (SQLException e) {",
+            "    log(e);",
+            "    throw new RuntimeException(e);",
+            "    // ❌ conn.close() never reached — connection leak!",
+            "}",
+            "// ✅ Fix: try-with-resources",
+            "try (Connection conn2 = getConnection()) {",
+            "    execute(conn2);",
+            "} catch (SQLException e) {",
+            "    throw new DatabaseException(\"Execution failed\", e);",
+            "} // conn2.close() called automatically"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These exception handling anti-patterns are among the top reasons for <strong>failed code reviews</strong> in professional Java teams. Each one either hides bugs, corrupts logs, leaks resources, or makes systems impossible to diagnose in production."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Pokemon Exception Handling — Gotta Catch 'Em All",
+              "text": "'catch (Exception e) {}' — catching everything and doing nothing. Named after the game's 'catch all Pokémon' theme. This is the single most destructive exception handling pattern: bugs disappear without a trace, systems fail silently, and production issues become nearly impossible to diagnose. Rule: if you catch an exception, you must either handle it meaningfully or re-throw (with cause). An empty catch block should be a code review blocker."
+            },
+            {
+              "icon": "🚫",
+              "title": "Log-and-Throw (Duplicate Logging)",
+              "text": "Logging the exception AND throwing it, causing the same error to appear multiple times in the logs — at every layer of the stack. Production log files become noisy, making real issues hard to spot. Fix: log at the TOP-MOST handler level only (where you can fully handle it). Let exceptions propagate silently through intermediate layers (just re-throw or chain). The boundary between application code and framework (Spring MVC, JAX-RS) is where logging belongs."
+            },
+            {
+              "icon": "🚫",
+              "title": "Using Exceptions for Control Flow",
+              "text": "Throwing exceptions for expected, normal conditions — 'throw UserNotFoundException' to signal 'user not found' in a lookup. Exceptions have a significant performance cost (capturing the stack trace). They make code harder to read. They are meant for EXCEPTIONAL conditions — errors outside normal program flow. Use Optional<T>, null (carefully), or boolean flags for normal conditions. Reserve exceptions for genuinely exceptional situations."
+            },
+            {
+              "icon": "🚫",
+              "title": "Catching Throwable or Error",
+              "text": "Catching Throwable or Error (OutOfMemoryError, StackOverflowError) in application code is almost always wrong. These errors signal JVM-level failures. Catching them can prevent proper JVM cleanup, hide catastrophic failures, make the system appear healthy when it's in an unrecoverable state. Spring's @ExceptionHandler and Tomcat's error pages handle unrecoverable errors at the framework level. Application code should only catch Exception at most."
+            },
+            {
+              "icon": "🚫",
+              "title": "Overusing Checked Exceptions",
+              "text": "Declaring every possible checked exception in every method signature creates 'exception pollution' — methods that do nothing but pass checked exceptions up the call stack. This forces callers to handle exceptions they cannot meaningfully address. The Spring framework famously wraps all SQL exceptions in unchecked DataAccessException precisely because most callers cannot recover from a database failure. Design principle: checked exceptions for conditions callers CAN recover from; unchecked for everything else."
+            },
+            {
+              "icon": "🚫",
+              "title": "Missing Exception Context",
+              "text": "throw new RuntimeException(\"error\") — no context, no cause, no identifying information. When this appears in production logs, it is nearly impossible to diagnose. Always include: what failed, what the input/state was, and the cause exception. Good: 'throw new OrderProcessingException(\"Failed to save order #\" + orderId + \" for customer \" + customerId, sqlException)'. Bad: 'throw new RuntimeException(\"Database error\")'. Context is everything in production debugging."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Exception Handling in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples demonstrate professional exception handling patterns from real enterprise Java applications — showing layered exception translation, custom exception hierarchies, and production-ready resource management."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "PaymentService.java — Enterprise Exception Handling",
+          "lines": [
+            "package com.techsustainify.payment.service;",
+            "",
+            "import java.sql.*;",
+            "import java.util.Optional;",
+            "import java.util.logging.*;",
+            "",
+            "public class PaymentService {",
+            "",
+            "    private static final Logger log = Logger.getLogger(PaymentService.class.getName());",
+            "",
+            "    private final PaymentRepository     paymentRepo;",
+            "    private final PaymentGatewayClient  gatewayClient;",
+            "    private final NotificationService   notificationService;",
+            "    private final AuditService          auditService;",
+            "",
+            "    public PaymentService(PaymentRepository repo,",
+            "                          PaymentGatewayClient gateway,",
+            "                          NotificationService notifications,",
+            "                          AuditService audit) {",
+            "        this.paymentRepo       = java.util.Objects.requireNonNull(repo, \"repo required\");",
+            "        this.gatewayClient     = java.util.Objects.requireNonNull(gateway, \"gateway required\");",
+            "        this.notificationService = notifications;",
+            "        this.auditService        = audit;",
+            "    }",
+            "",
+            "    /**",
+            "     * Processes a payment with full error handling.",
+            "     * Demonstrates: validation, checked/unchecked translation,",
+            "     * try-with-resources, exception chaining, and layered handling.",
+            "     */",
+            "    public PaymentResult processPayment(PaymentRequest request) {",
+            "",
+            "        // Input validation — unchecked, detected early",
+            "        validatePaymentRequest(request);",
+            "",
+            "        String txId = generateTransactionId();",
+            "        auditService.logAttempt(txId, request);",
+            "",
+            "        try {",
+            "            // Gateway call — may throw GatewayException (unchecked)",
+            "            GatewayResponse response = gatewayClient.charge(",
+            "                request.getAmount(),",
+            "                request.getCurrency(),",
+            "                request.getPaymentMethod()",
+            "            );",
+            "",
+            "            if (!response.isApproved()) {",
+            "                // Business failure — NOT an exception, just a result",
+            "                auditService.logDecline(txId, response.getDeclineCode());",
+            "                return PaymentResult.declined(response.getDeclineCode(),",
+            "                                             response.getDeclineMessage());",
+            "            }",
+            "",
+            "            // Persist in DB using try-with-resources",
+            "            savePaymentRecord(txId, request, response);",
+            "",
+            "            // Async notification — failures should NOT affect payment result",
+            "            notifyAsyncSafely(request, response, txId);",
+            "",
+            "            auditService.logSuccess(txId);",
+            "            return PaymentResult.success(txId, response.getAuthCode());",
+            "",
+            "        } catch (GatewayTimeoutException e) {",
+            "            // Retriable — caller can retry after delay",
+            "            log.log(Level.WARNING, \"Payment gateway timeout for tx: \" + txId, e);",
+            "            auditService.logFailure(txId, \"GATEWAY_TIMEOUT\");",
+            "            throw new RetryablePaymentException(",
+            "                \"Payment gateway timed out — please retry\",",
+            "                txId, 30, e);",
+            "",
+            "        } catch (GatewayException e) {",
+            "            // Non-retriable gateway error",
+            "            log.log(Level.SEVERE, \"Gateway error for tx: \" + txId, e);",
+            "            auditService.logFailure(txId, \"GATEWAY_ERROR\");",
+            "            throw new PaymentProcessingException(",
+            "                \"Payment gateway error: \" + e.getMessage(),",
+            "                txId, e);",
+            "",
+            "        } catch (DatabaseException e) {",
+            "            // Payment may have succeeded at gateway but not saved — critical",
+            "            log.log(Level.SEVERE,",
+            "                    \"CRITICAL: Payment processed by gateway but save failed. tx=\" + txId, e);",
+            "            auditService.logCriticalFailure(txId, e);",
+            "            // Alert ops team immediately",
+            "            throw new PaymentProcessingException(",
+            "                \"Payment record save failed — manual intervention required. tx=\" + txId,",
+            "                txId, e);",
+            "        }",
+            "    }",
+            "",
+            "    private void validatePaymentRequest(PaymentRequest req) {",
+            "        if (req == null)",
+            "            throw new IllegalArgumentException(\"PaymentRequest cannot be null\");",
+            "        if (req.getAmount() <= 0)",
+            "            throw new IllegalArgumentException(\"Amount must be positive: \" + req.getAmount());",
+            "        if (req.getCurrency() == null || req.getCurrency().isBlank())",
+            "            throw new IllegalArgumentException(\"Currency is required\");",
+            "        if (req.getPaymentMethod() == null)",
+            "            throw new IllegalArgumentException(\"Payment method is required\");",
+            "    }",
+            "",
+            "    private void savePaymentRecord(String txId,",
+            "                                    PaymentRequest req,",
+            "                                    GatewayResponse resp) {",
+            "        try (Connection conn = paymentRepo.getConnection()) {",
+            "            paymentRepo.save(conn, txId, req, resp);",
+            "        } catch (SQLException e) {",
+            "            // Translate JDBC exception to domain exception with full context",
+            "            throw new DatabaseException(",
+            "                \"Failed to save payment record for tx: \" + txId, e);",
+            "        } catch (Exception e) {",
+            "            throw new DatabaseException(",
+            "                \"Unexpected DB error saving payment tx: \" + txId, e);",
+            "        }",
+            "    }",
+            "",
+            "    /** Notification failures must never affect payment success */",
+            "    private void notifyAsyncSafely(PaymentRequest req,",
+            "                                    GatewayResponse resp, String txId) {",
+            "        try {",
+            "            notificationService.sendPaymentConfirmation(req, resp, txId);",
+            "        } catch (Exception e) {",
+            "            // ✅ Intentional: notification failure does NOT fail the payment",
+            "            log.log(Level.WARNING, \"Notification failed for tx: \" + txId +",
+            "                    \" — payment still successful\", e);",
+            "        }",
+            "    }",
+            "",
+            "    private String generateTransactionId() {",
+            "        return \"TXN-\" + java.util.UUID.randomUUID().toString().replace(\"-\", \"\").substring(0, 16);",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "FileProcessor.java — try-with-resources Production Pattern",
+          "lines": [
+            "package com.techsustainify.file;",
+            "",
+            "import java.io.*;",
+            "import java.nio.file.*;",
+            "import java.util.*;",
+            "import java.util.logging.*;",
+            "",
+            "public class FileProcessor {",
+            "",
+            "    private static final Logger log = Logger.getLogger(FileProcessor.class.getName());",
+            "    private static final int    BUFFER_SIZE = 8192;",
+            "",
+            "    /**",
+            "     * Reads a CSV file, processes each line, writes results.",
+            "     * Demonstrates: try-with-resources chaining, per-line error recovery,",
+            "     * and structured error reporting without aborting the whole batch.",
+            "     */",
+            "    public BatchResult processCSV(Path inputPath, Path outputPath) {",
+            "        List<String> errors       = new ArrayList<>();",
+            "        int          successCount = 0;",
+            "        int          lineNumber   = 0;",
+            "",
+            "        // Both reader and writer auto-closed — writer closed FIRST (reverse order)",
+            "        try (",
+            "            BufferedReader reader = Files.newBufferedReader(inputPath);",
+            "            BufferedWriter writer = Files.newBufferedWriter(outputPath)",
+            "        ) {",
+            "            String line;",
+            "            while ((line = reader.readLine()) != null) {",
+            "                lineNumber++;",
+            "                final int currentLine = lineNumber; // Effectively final for lambda",
+            "",
+            "                try {",
+            "                    // Per-line processing — errors DON'T abort the entire batch",
+            "                    String processed = processLine(line);",
+            "                    writer.write(processed);",
+            "                    writer.newLine();",
+            "                    successCount++;",
+            "",
+            "                } catch (DataParsingException e) {",
+            "                    // Record error but continue with next line",
+            "                    String errorEntry = String.format(",
+            "                        \"Line %d: %s — %s\", currentLine, e.getRawData(), e.getMessage());",
+            "                    errors.add(errorEntry);",
+            "                    log.warning(errorEntry);",
+            "",
+            "                } catch (Exception e) {",
+            "                    // Unexpected per-line error — record and continue",
+            "                    String errorEntry = String.format(",
+            "                        \"Line %d: Unexpected error — %s\", currentLine, e.getMessage());",
+            "                    errors.add(errorEntry);",
+            "                    log.log(Level.WARNING, errorEntry, e);",
+            "                }",
+            "            }",
+            "",
+            "        } catch (NoSuchFileException e) {",
+            "            // Input file doesn't exist — fail fast, nothing to process",
+            "            throw new FileProcessingException(",
+            "                \"Input file not found: \" + inputPath, e);",
+            "",
+            "        } catch (AccessDeniedException e) {",
+            "            throw new FileProcessingException(",
+            "                \"Permission denied reading: \" + inputPath +",
+            "                \" or writing: \" + outputPath, e);",
+            "",
+            "        } catch (IOException e) {",
+            "            throw new FileProcessingException(",
+            "                \"IO error during batch processing\", e);",
+            "        }",
+            "",
+            "        int totalLines = lineNumber;",
+            "        log.info(String.format(",
+            "            \"Batch complete: %d/%d lines processed successfully, %d errors\",",
+            "            successCount, totalLines, errors.size()));",
+            "",
+            "        return new BatchResult(successCount, errors, totalLines);",
+            "    }",
+            "",
+            "    private String processLine(String line) {",
+            "        if (line == null || line.isBlank())",
+            "            return \"\";",
+            "        String[] parts = line.split(\",\");",
+            "        if (parts.length < 3)",
+            "            throw new DataParsingException(",
+            "                \"Expected 3+ columns, found \" + parts.length, line);",
+            "        return String.join(\"|\", parts).toUpperCase();",
+            "    }",
+            "",
+            "    record BatchResult(int successCount, List<String> errors, int totalLines) {",
+            "        boolean hasErrors() { return !errors.isEmpty(); }",
+            "        double  successRate() { return totalLines == 0 ? 0 :",
+            "                                    (double) successCount / totalLines * 100; }",
+            "    }",
+            "}",
+            "",
+            "class DataParsingException extends RuntimeException {",
+            "    private final String rawData;",
+            "    DataParsingException(String msg, String rawData) {",
+            "        super(msg); this.rawData = rawData;",
+            "    }",
+            "    String getRawData() { return rawData; }",
+            "}",
+            "",
+            "class FileProcessingException extends RuntimeException {",
+            "    FileProcessingException(String msg, Throwable cause) { super(msg, cause); }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "exception-flowchart",
+      "title": "Exception Flow Diagram — What Happens When an Exception Is Thrown",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This flowchart shows the complete journey of an exception from the moment it is thrown to its final resolution."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1",  "label": "💥 Exception thrown",             "sublabel": "throw new X() or JVM creates X",               "type": "start" },
+            { "id": "2",  "label": "🔍 Matching catch in same method?","sublabel": "check each catch block top-to-bottom",         "type": "decision" },
+            { "id": "3",  "label": "✅ catch block executes",          "sublabel": "handler runs, exception handled",              "type": "process" },
+            { "id": "4",  "label": "🔒 finally block?",               "sublabel": "if present, always executes",                  "type": "decision" },
+            { "id": "5",  "label": "🧹 finally executes",             "sublabel": "cleanup: close resources, unlock",             "type": "process" },
+            { "id": "6",  "label": "📤 Propagate to caller",          "sublabel": "current method exits, exception moves up",     "type": "process" },
+            { "id": "7",  "label": "🔍 More frames in call stack?",   "sublabel": "is there a calling method?",                   "type": "decision" },
+            { "id": "8",  "label": "💀 Uncaught — thread terminates", "sublabel": "JVM prints stack trace, thread dies",          "type": "process" },
+            { "id": "9",  "label": "➡️ Program continues",            "sublabel": "after the catch block or finally",             "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2",  "label": "check" },
+            { "from": "2", "to": "3",  "label": "YES — match found" },
+            { "from": "2", "to": "4",  "label": "NO match" },
+            { "from": "3", "to": "4",  "label": "after catch" },
+            { "from": "4", "to": "5",  "label": "YES — has finally" },
+            { "from": "4", "to": "6",  "label": "NO finally" },
+            { "from": "5", "to": "6",  "label": "propagate" },
+            { "from": "5", "to": "9",  "label": "if caught above" },
+            { "from": "6", "to": "7",  "label": "check stack" },
+            { "from": "7", "to": "2",  "label": "YES — check caller" },
+            { "from": "7", "to": "8",  "label": "NO — stack empty" },
+            { "from": "3", "to": "9",  "label": "handled" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Exception Handling Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are consistently asked in Java fresher and experienced developer interviews, campus placements, and OCPJP certification exams."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is the difference between checked and unchecked exceptions in Java?",
+              "a": "Checked exceptions extend Exception (not RuntimeException) and MUST be either caught or declared with 'throws' in the method signature — the compiler enforces this. They represent recoverable external conditions: IOException, SQLException, ParseException. Unchecked exceptions extend RuntimeException — no compiler enforcement, optional to catch. They represent programming errors: NullPointerException, IllegalArgumentException, ClassCastException. Errors (OutOfMemoryError, StackOverflowError) are a third category extending Error — represent JVM failures, should never be caught. Rule: checked = 'caller can and should recover'. Unchecked = 'programming mistake or unrecoverable'.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between throw and throws in Java?",
+              "a": "'throw' is a STATEMENT inside a method body that actually creates and throws an exception object: 'throw new IllegalArgumentException(\"Invalid age\")'. It transfers control immediately to the nearest matching catch block. 'throws' is a KEYWORD in the METHOD SIGNATURE that DECLARES checked exceptions the method might propagate: 'void readFile(String path) throws IOException'. At runtime, throws does nothing — it is purely a compile-time declaration that tells callers what to handle. throw = action. throws = declaration. A method can throw unchecked exceptions without declaring them with throws.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. Does the finally block always execute in Java? When does it NOT execute?",
+              "a": "The finally block executes in virtually all circumstances: when the try block completes normally, when it throws a caught exception, when it throws an uncaught exception, and even when a return statement is encountered in try or catch (finally runs BEFORE the method actually returns). Three cases where finally does NOT execute: (1) System.exit() is called — JVM shuts down immediately without running any finally blocks. (2) The JVM process itself is killed forcibly (kill -9 on Linux). (3) The executing thread is stopped via deprecated Thread.stop() or the JVM crashes. For all practical purposes in normal application code — finally always runs.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What is exception chaining? Why is it important?",
+              "a": "Exception chaining (introduced in Java 1.4) is wrapping a low-level exception inside a higher-level, more meaningful exception while preserving the original as the CAUSE. Example: catching a SQLException and throwing a DatabaseException(message, sqlException). The cause is stored via super(message, cause) and retrieved with getCause(). Importance: (1) Each layer translates to its own abstraction (JDBC → domain → service). (2) The root cause is never lost — the full chain appears in the stack trace as 'Caused by:'. (3) Callers interact with domain exceptions, not infrastructure details. Without chaining, exception wrapping swallows the original root cause — making production debugging nearly impossible.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q5. What is try-with-resources? How is it better than try-finally?",
+              "a": "try-with-resources (Java 7+) automatically closes resources implementing AutoCloseable when the try block exits. Syntax: 'try (Resource r = new Resource()) { }'. Advantages over try-finally: (1) SIMPLER CODE — no need for null checks in finally and nested try-catch to close the resource. (2) REVERSE CLOSE ORDER — multiple resources closed in reverse declaration order automatically. (3) SUPPRESSED EXCEPTIONS — if both try body and close() throw, the body exception propagates and close() exception is suppressed but accessible via getSuppressed() — no exception silently lost. With try-finally, if both throw, the finally's exception overwrites and loses the original. It is the recommended pattern for all resource management in modern Java.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q6. Can we have a try block without catch or finally?",
+              "a": "A try block CANNOT exist alone — it must be followed by either catch, finally, or both. Valid combinations: (1) try + catch (most common). (2) try + finally (no catch — exception still propagates, but finally cleans up). (3) try + catch + finally (complete form). (4) try-with-resources — can have no catch and no finally if the resource itself handles cleanup. INVALID: 'try { }' alone — compile error. Note: a try-with-resources can technically stand alone: 'try (res) { }' — the resource is closed but any exception propagates to the caller.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. What is the output?\ntry { return 1; } finally { return 2; }",
+              "a": "Output: returns 2. The finally block ALWAYS executes before the method actually returns, even when a return statement is encountered in try. In this case, finally's 'return 2' OVERRIDES the try's 'return 1'. The method returns 2. If an exception were thrown in try and finally had 'return 2', the exception would be SILENTLY SWALLOWED — the method returns 2 as if nothing happened. This is a severe anti-pattern: returning from finally can hide exceptions and override earlier return values unexpectedly. IntelliJ IDEA warns: 'return inside finally block'. Never return (or throw) from a finally block.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q8. What is the difference between Error and Exception in Java?",
+              "a": "Both Error and Exception extend Throwable. Exception: represents conditions a program can anticipate and recover from — IOException, SQLException, NullPointerException. Catching and handling exceptions is normal, expected programming. Error: represents serious, typically unrecoverable JVM or system-level failures — OutOfMemoryError, StackOverflowError, NoClassDefFoundError, AssertionError. These signal infrastructure problems, JVM crashes, or catastrophic situations. Application code should NEVER catch Error. If you encounter Errors in production, they indicate architecture problems (memory leaks, infinite recursion), insufficient resources (heap too small), or environment issues — not application logic bugs to handle with try-catch.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q9. Can we write a custom exception in Java? What are the best practices?",
+              "a": "Yes. Custom exceptions are created by extending Exception (checked) or RuntimeException (unchecked). Best practices: (1) Extend RuntimeException for most domain exceptions (modern Java favours unchecked). (2) Always provide at least two constructors: (String message) and (String message, Throwable cause) — the cause constructor is essential for exception chaining. (3) Add domain-specific fields for structured context: errorCode, entityId, retryAfterSeconds. Make them final — exceptions should be immutable. (4) Create a hierarchy for your domain: base AppException → ValidationException, BusinessException → InsufficientFundsException. (5) Name ending with 'Exception'. (6) Use custom exceptions when the built-in types don't convey sufficient domain meaning or when callers need different recovery logic per exception type.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q10. What happens when an exception is thrown in a catch block?",
+              "a": "If an exception is thrown INSIDE a catch block (not re-throwing the original), the original exception is effectively replaced. The new exception propagates up the call stack looking for a matching handler. If a finally block is present, it executes before the new exception propagates — just as it would for any exception in the try block. If the catch block CATCHES the original and then throws a new exception WITHOUT chaining (without passing original as cause), the original exception is lost forever — this is the 'swallowing with replacement' anti-pattern. Always chain: 'throw new ServiceException(\"message\", originalException)' to preserve the root cause.",
+              "tag": "Tricky"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Exception Handling Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Attempt each question independently before reading the answer — active recall significantly improves retention and understanding."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output?\npublic class Q1 {\n    public static void main(String[] args) {\n        try {\n            System.out.println(\"A\");\n            int x = 10 / 0;\n            System.out.println(\"B\");\n        } catch (ArithmeticException e) {\n            System.out.println(\"C\");\n        } finally {\n            System.out.println(\"D\");\n        }\n        System.out.println(\"E\");\n    }\n}",
+              "a": "Output: A, C, D, E. Explanation: 'A' prints. '10/0' throws ArithmeticException — 'B' is skipped. catch(ArithmeticException) matches — 'C' prints. finally ALWAYS executes — 'D' prints. Exception was caught so program continues normally — 'E' prints. Key lessons: (1) Statements after the throw in try are skipped. (2) finally always runs after catch. (3) After the catch+finally, execution continues normally.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What is the output?\npublic class Q2 {\n    static int method() {\n        try {\n            return 1;\n        } finally {\n            return 2;\n        }\n    }\n    public static void main(String[] args) {\n        System.out.println(method());\n    }\n}",
+              "a": "Output: 2. The finally block's 'return 2' OVERRIDES the try block's 'return 1'. Even though try executes 'return 1' first, the JVM notes the pending return but runs finally before actually returning. The finally's 'return 2' becomes the effective return value. This demonstrates why returning from finally is an anti-pattern — it silently discards the try's return value. If an exception had been thrown in try, 'return 2' in finally would have silently swallowed that exception too.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Will this compile? Explain why or why not.\npublic void method() {\n    try {\n        throw new IOException(\"test\");\n    } catch (Exception e) {\n        System.out.println(\"caught\");\n    } catch (IOException e) {\n        System.out.println(\"io\");\n    }\n}",
+              "a": "COMPILE ERROR: 'exception IOException has already been caught'. IOException is a subclass of Exception. The catch(Exception e) block already catches IOException (and all Exception subclasses). The subsequent catch(IOException e) is unreachable — a more specific exception cannot follow a more general one that already catches it. Fix: reverse the order — put catch(IOException e) BEFORE catch(Exception e). Rule: always order catch blocks from MOST SPECIFIC to LEAST SPECIFIC. The compiler enforces this to prevent dead catch blocks.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. Design a custom exception hierarchy for an e-commerce order system with at least 3 levels. Show constructors and a usage example.",
+              "a": "// Level 1 — Base\npublic class OrderException extends RuntimeException {\n    private final String orderId;\n    public OrderException(String msg, String orderId) { super(msg); this.orderId=orderId; }\n    public OrderException(String msg, String orderId, Throwable cause) { super(msg,cause); this.orderId=orderId; }\n    public String getOrderId() { return orderId; }\n}\n\n// Level 2 — Category\npublic class OrderFulfillmentException extends OrderException {\n    public OrderFulfillmentException(String msg, String orderId) { super(msg,orderId); }\n    public OrderFulfillmentException(String msg, String orderId, Throwable cause) { super(msg,orderId,cause); }\n}\n\n// Level 3 — Specific\npublic class OutOfStockException extends OrderFulfillmentException {\n    private final String productId;\n    private final int requestedQty;\n    private final int availableQty;\n    public OutOfStockException(String orderId, String productId, int req, int avail) {\n        super(\"Product \" + productId + \" out of stock: requested=\" + req + \", available=\" + avail, orderId);\n        this.productId=productId; this.requestedQty=req; this.availableQty=avail;\n    }\n    public int getShortfall() { return requestedQty - availableQty; }\n}\n\n// Usage:\ntry { fulfilmentService.fulfil(order); }\ncatch (OutOfStockException e) { notifyBuyer(\"Sorry, \" + e.getShortfall() + \" items unavailable\"); }\ncatch (OrderFulfillmentException e) { retryFulfilment(e.getOrderId()); }\ncatch (OrderException e) { logAndAlert(e); }",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. What is the output? Explain the exception chaining.\npublic class Q5 {\n    public static void method3() throws Exception {\n        throw new RuntimeException(\"Root cause\");\n    }\n    public static void method2() {\n        try { method3(); }\n        catch (Exception e) {\n            throw new IllegalStateException(\"Method2 failed\", e);\n        }\n    }\n    public static void main(String[] args) {\n        try { method2(); }\n        catch (IllegalStateException e) {\n            System.out.println(e.getMessage());\n            System.out.println(e.getCause().getMessage());\n        }\n    }\n}",
+              "a": "Output: 'Method2 failed'  then  'Root cause'. Trace: method3() throws RuntimeException('Root cause'). method2() catches it as Exception 'e' and wraps it: 'new IllegalStateException(\"Method2 failed\", e)' — the original RuntimeException becomes the cause. This new IllegalStateException propagates to main(). main() catches it: e.getMessage() = 'Method2 failed'. e.getCause().getMessage() = 'Root cause' (the original RuntimeException). This demonstrates proper exception chaining — the IllegalStateException adds context ('Method2 failed') while preserving the root cause ('Root cause') for debugging.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. Rewrite this code using try-with-resources and fix the resource leak:\npublic String readAndProcess(String path) {\n    FileInputStream fis = null;\n    BufferedReader br = null;\n    try {\n        fis = new FileInputStream(path);\n        br = new BufferedReader(new InputStreamReader(fis));\n        return br.readLine();\n    } catch (IOException e) {\n        return null;\n    } finally {\n        try { if (br != null) br.close(); }\n        catch (IOException ignore) {}\n    }\n    // BUG: fis is never closed if br creation fails!\n}",
+              "a": "public String readAndProcess(String path) { try (FileInputStream fis = new FileInputStream(path); BufferedReader br = new BufferedReader(new InputStreamReader(fis))) { return br.readLine(); } catch (FileNotFoundException e) { System.err.println(\"File not found: \" + path); return null; } catch (IOException e) { System.err.println(\"Read error: \" + e.getMessage()); return null; } // Both fis and br closed automatically in reverse order (br first, fis second) }  Original bug: if 'new BufferedReader(new InputStreamReader(fis))' threw an exception, fis would never be closed (it's not in the finally). try-with-resources fixes this — both resources are always closed, in reverse order, even if construction of one fails partway through.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What is the difference between suppressed exceptions and cause exceptions? Give an example showing both.",
+              "a": "CAUSE exception: the original exception that caused the current one. Set via constructor 'new Exception(msg, cause)'. Retrieved with getCause(). Appears as 'Caused by:' in stack traces. Represents a translation chain from low-level to high-level. SUPPRESSED exception: an additional exception that occurred while another was already propagating — most common from close() in try-with-resources. Added via addSuppressed(). Retrieved with getSuppressed(). Appears as 'Suppressed:' in stack traces. Example: // Suppressed: try (AutoCloseable r = () -> { throw new Exception(\"close failed\"); }) { throw new RuntimeException(\"try failed\"); } catch (Exception e) { System.out.println(\"Primary: \" + e.getMessage()); // try failed System.out.println(\"Suppressed: \" + e.getSuppressed()[0].getMessage()); // close failed } // Cause: catch (SQLException e) { throw new DatabaseException(\"DB error\", e); // e becomes the cause } catch (DatabaseException e) { System.out.println(e.getCause().getMessage()); // the original SQLException }",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Write a generic retry utility method that retries a Supplier<T> up to maxRetries times, with exponential backoff, and throws a custom RetryExhaustedException if all retries fail.",
+              "a": "public class RetryUtils { @FunctionalInterface public interface ThrowingSupplier<T> { T get() throws Exception; } public static <T> T withRetry(ThrowingSupplier<T> supplier, int maxRetries, long initialDelayMs) { Exception lastException = null; for (int attempt = 1; attempt <= maxRetries; attempt++) { try { return supplier.get(); } catch (Exception e) { lastException = e; if (attempt < maxRetries) { long delay = initialDelayMs * (1L << (attempt - 1)); // Exponential: 1x, 2x, 4x... System.out.printf(\"Attempt %d/%d failed: %s. Retrying in %dms%n\", attempt, maxRetries, e.getMessage(), delay); try { Thread.sleep(delay); } catch (InterruptedException ie) { Thread.currentThread().interrupt(); throw new RetryExhaustedException(\"Retry interrupted after \" + attempt + \" attempts\", ie); } } } } throw new RetryExhaustedException( \"All \" + maxRetries + \" attempts failed\", lastException); } } class RetryExhaustedException extends RuntimeException { RetryExhaustedException(String msg, Throwable cause) { super(msg, cause); } } // Usage: String result = RetryUtils.withRetry(() -> httpClient.get(url), 3, 500);",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Exception Handling: The Mark of Production-Ready Code",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Exception handling is not an afterthought — it is a <strong>first-class design concern</strong>. The difference between code that works in a demo and code that works reliably in production is often entirely in how exceptions are handled. Programs that crash on the first bad input, silently swallow errors, or produce unhelpful 'Something went wrong' messages are not production-ready, regardless of how correct the happy path is."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Professional Java developers think about exceptions at the design level: <em>What can go wrong here? Can the caller recover? Should this be checked or unchecked? What context does the exception need to carry for diagnosis?</em> They use try-with-resources universally for resources, chain exceptions to preserve root causes, create meaningful custom exception hierarchies, and catch at the layer that has sufficient context to handle meaningfully."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept",                    "Key Rule",                                                              "Example"],
+          "rows": [
+            ["try-catch-finally",          "try: risky code; catch: handle; finally: always cleanup",               "try { conn.query(); } finally { conn.close(); }"],
+            ["throw",                      "Creates and throws an exception — action statement",                     "throw new IllegalArgumentException(\"age < 0\");"],
+            ["throws",                     "Declares checked exceptions in method signature",                        "void readFile() throws IOException"],
+            ["Checked exception",          "Compiler-enforced — caller must catch or declare",                       "IOException, SQLException"],
+            ["Unchecked exception",        "No compiler enforcement — programming errors",                           "NullPointerException, IllegalArgumentException"],
+            ["Multi-catch (Java 7+)",      "Specific before general; | for same-handling types",                    "catch (IOException | SQLException e)"],
+            ["try-with-resources",         "Auto-close AutoCloseable — reverse order; suppressed exceptions",        "try (Connection c = getConn()) { ... }"],
+            ["Custom exception",           "Extend RuntimeException; add context fields; always provide cause ctor", "class PaymentException extends RuntimeException"],
+            ["Exception chaining",         "Wrap with cause — translate level, never lose root cause",               "throw new ServiceEx(\"msg\", originalException)"],
+            ["Anti-patterns",              "Never: empty catch, log+rethrow, exceptions for flow, catch Error",      "catch (Exception e) {} ← NEVER"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Collections Framework</strong> — where you will learn to work with Lists, Sets, Maps, and Queues, and see how exception handling integrates with collection operations to build robust, data-processing code. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Exception Handling",
+    "items": [
+      {
+        "q": "What is exception handling in Java?",
+        "a": "Exception handling in Java is a mechanism to deal with runtime errors gracefully — preventing abnormal program termination. Five keywords: try (wraps risky code), catch (handles specific exceptions), finally (always executes for cleanup), throw (manually throws an exception), and throws (declares checked exceptions in method signature). When an exception is thrown, Java creates an exception object and searches up the call stack for a matching catch block."
+      },
+      {
+        "q": "What is the difference between checked and unchecked exceptions?",
+        "a": "Checked exceptions extend Exception (not RuntimeException) and must be caught or declared with 'throws' — compiler enforces handling. They represent recoverable external conditions: IOException, SQLException. Unchecked exceptions extend RuntimeException — no compiler enforcement — represent programming errors: NullPointerException, IllegalArgumentException. Errors (OutOfMemoryError, StackOverflowError) are a third category for JVM-level failures — should never be caught."
+      },
+      {
+        "q": "What is the difference between throw and throws in Java?",
+        "a": "'throw' is a statement that actually creates and throws an exception object from inside a method body. 'throws' is a keyword in the method signature that declares which checked exceptions the method may propagate to callers. throw = action (happens at runtime). throws = declaration (compile-time contract). A method can throw unchecked exceptions without declaring them in throws."
+      },
+      {
+        "q": "Does finally block always execute in Java?",
+        "a": "The finally block executes in virtually all circumstances — whether try completes normally, throws a caught exception, or throws an uncaught exception. Even return statements in try or catch don't prevent finally from running. Three exceptions: System.exit() is called, JVM crashes, or thread is forcibly killed. For normal application code — finally always runs. Never use return or throw in finally — it can swallow exceptions silently."
+      },
+      {
+        "q": "What is try-with-resources in Java?",
+        "a": "try-with-resources (Java 7+) automatically closes resources implementing AutoCloseable when the try block exits. Multiple resources are declared separated by semicolons and closed in reverse order. If both the try body and close() throw exceptions, the body's exception propagates and the close() exception is suppressed (accessible via getSuppressed()). This is the recommended pattern for all resource management, replacing verbose try-finally blocks."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Multi-Threading",       "path": "/java/java-multi-thread" },
+    "next": { "label": "Java Try/Catch →",     "path": "/java/java-try-catch" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "5 keywords",           "dd": "try, catch, finally, throw, throws" },
+      { "dt": "Checked exception",    "dd": "Must catch or declare with throws" },
+      { "dt": "Unchecked exception",  "dd": "Extends RuntimeException — optional catch" },
+      { "dt": "finally guarantee",    "dd": "Always runs (except System.exit/JVM crash)" },
+      { "dt": "try-with-resources",   "dd": "Auto-close AutoCloseable — Java 7+" },
+      { "dt": "Root of all",          "dd": "java.lang.Throwable → Exception + Error" }
+    ],
+    "relatedArticles": [
+      { "label": "Java Interface",           "path": "/java/java-interface" },
+      { "label": "Java Collections",         "path": "/java/java-collections" },
+      { "label": "Java Inheritance",         "path": "/java/java-inheritance" },
+      { "label": "Java I/O Streams",         "path": "/java/java-io-streams" },
+      { "label": "Java Multithreading",      "path": "/java/java-multithreading" },
+      { "label": "Java Optional",            "path": "/java/java-optional" },
+      { "label": "Java Logging",             "path": "/java/java-logging" },
+      { "label": "Java Best Practices",      "path": "/java/java-best-practices" }
+    ],
+    "tags": ["Java Exception Handling", "try catch finally", "throw vs throws", "Checked Unchecked Exception", "Custom Exception", "Multi-catch", "try-with-resources", "Exception Chaining", "NullPointerException", "StackOverflowError", "AutoCloseable", "Suppressed Exception", "Exception Propagation", "Pokemon Exception", "Exception Anti-Patterns"]
+  }
+}

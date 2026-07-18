@@ -1,0 +1,1760 @@
+{
+  "meta": {
+    "title": "Java Single Thread — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Single Thread programming — thread lifecycle, creating threads, Thread class vs Runnable, thread states, sleep, join, interrupt, thread priority, daemon threads, and real-world single-threaded patterns. Updated March 2026.",
+    "keywords": "java single thread, java thread, java thread lifecycle, java thread class, java runnable interface, java thread states, java thread sleep, java thread join, java thread interrupt, java thread priority, java daemon thread, java main thread, java single threaded programming, java thread example, java thread interview questions, java thread best practices 2026",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-single-thread",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Single Thread — Lifecycle, States, Examples & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java Single Thread programming — thread creation, lifecycle, states, sleep, join, interrupt, priority, daemon threads, real-world examples, pitfalls, and interview questions.",
+      "url": "https://www.techsustainify.com/java/java-single-thread",
+      "image": "https://www.techsustainify.com/images/java-single-thread-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Single Thread Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-07-01T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Thread",
+          "Single Thread",
+          "Thread Lifecycle",
+          "Thread States",
+          "Runnable Interface",
+          "Thread Class",
+          "Daemon Thread",
+          "Thread Priority",
+          "Java Concurrency Basics",
+          "Java 2026"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Single Thread — Lifecycle, States & Best Practices 2026",
+      "description": "Complete guide to Java Single Thread — thread creation, lifecycle, states, sleep, join, interrupt, priority, daemon threads, real-world examples & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-single-thread-og.png",
+      "imageAlt": "Java Single Thread Guide 2026 - Tech Sustainify",
+      "readingTime": "22 minutes",
+      "level": "Intermediate",
+      "label1": "Reading Time",
+      "data1": "22 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Intermediate"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Single Thread — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive intermediate guide covering Java single-thread programming — thread creation, lifecycle, states, sleep, join, interrupt, priority, daemon threads, virtual threads intro, real-world patterns, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-07-01",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Intermediate",
+        "wordCount": 6200,
+        "timeRequired": "PT22M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Thread" },
+          { "@type": "Thing", "name": "Java Thread Lifecycle" },
+          { "@type": "Thing", "name": "Java Runnable Interface" },
+          { "@type": "Thing", "name": "Java Thread States" }
+        ],
+        "keywords": "java single thread, java thread lifecycle, thread states, runnable interface, thread class, sleep join interrupt, daemon thread, thread priority"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Single Thread" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a thread in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A thread in Java is the smallest unit of execution within a program. It is a lightweight sub-process — an independent path of execution that shares the process's memory space (heap, static data) but has its own stack, program counter, and local variables. Every Java program starts with one thread — the main thread — which executes the main() method. Additional threads can be created to perform tasks concurrently. Java threads are represented by the java.lang.Thread class and their task logic is defined via the java.lang.Runnable interface."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the ways to create a thread in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "There are two primary ways to create a thread in Java: (1) Extend the Thread class — create a subclass of Thread and override its run() method. Instantiate the subclass and call start(). Limitation: the class cannot extend any other class. (2) Implement the Runnable interface — implement the run() method in a class or lambda, pass it to a Thread constructor, and call start(). Preferred because it separates task logic from thread management and allows the class to extend another class. Since Java 8, a lambda expression can implement Runnable directly: new Thread(() -> { task logic }).start()."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between start() and run() in Java Thread?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "start() creates a new OS-level thread and then calls run() on that new thread — execution happens concurrently with the calling thread. run() is just a regular method call on the Thread object — it executes synchronously on the CALLING thread, not on a new thread. This is the most critical distinction: calling thread.run() directly does NOT create a new thread — the task executes sequentially in the current thread, defeating the purpose. Always call start() to launch a new thread. A thread whose start() has already been called cannot be restarted — calling start() again throws IllegalThreadStateException."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the states of a thread in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Java defines six thread states in the Thread.State enum: (1) NEW — thread object created but start() not yet called. (2) RUNNABLE — start() called; thread is either running on CPU or ready to run, waiting for CPU time. (3) BLOCKED — waiting to acquire a synchronized monitor lock held by another thread. (4) WAITING — indefinitely waiting for another thread to perform a specific action (Object.wait(), Thread.join() with no timeout, LockSupport.park()). (5) TIMED_WAITING — waiting for a specified time (Thread.sleep(ms), Object.wait(ms), Thread.join(ms)). (6) TERMINATED — thread has completed execution or was stopped due to an uncaught exception."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a daemon thread in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A daemon thread is a background service thread that runs as long as non-daemon (user) threads are running. When all user threads finish, the JVM automatically terminates all remaining daemon threads and exits — even if daemon threads are still running. Daemon threads are used for background tasks that should not prevent JVM shutdown: garbage collection, log flushing, heartbeat monitors, connection pool cleanup. Set before start(): thread.setDaemon(true). The main thread is always a non-daemon thread. Calling setDaemon() after start() throws IllegalThreadStateException."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Intermediate",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-07-01",
+      "dateModified": "2026-03-20",
+      "readingTime": "22 minutes",
+      "wordCount": 6200,
+      "difficulty": "Intermediate",
+      "chapter": 28,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-thread",          "title": "What is a Thread in Java?" },
+        { "id": "main-thread",             "title": "The Main Thread — Where Every Java Program Begins" },
+        { "id": "creating-thread",         "title": "Creating a Thread — Two Ways" },
+        { "id": "thread-vs-runnable",      "title": "Thread Class vs Runnable Interface" },
+        { "id": "thread-lifecycle",        "title": "Thread Lifecycle — Six States" },
+        { "id": "thread-sleep",            "title": "Thread.sleep() — Pausing Execution" },
+        { "id": "thread-join",             "title": "Thread.join() — Waiting for Another Thread" },
+        { "id": "thread-interrupt",        "title": "Thread Interruption — Cooperative Cancellation" },
+        { "id": "thread-priority",         "title": "Thread Priority" },
+        { "id": "daemon-thread",           "title": "Daemon Threads — Background Workers" },
+        { "id": "thread-name-id",          "title": "Thread Name, ID, and Metadata" },
+        { "id": "single-thread-patterns",  "title": "Single-Thread Execution Patterns" },
+        { "id": "virtual-threads-intro",   "title": "Virtual Threads — Java 21 Preview" },
+        { "id": "common-mistakes",         "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",           "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",     "title": "Real-World Production Code Examples" },
+        { "id": "thread-flowchart",        "title": "Thread Lifecycle Flowchart" },
+        { "id": "interview-questions",     "title": "Interview Questions" },
+        { "id": "practice-questions",      "title": "Practice Questions" },
+        { "id": "conclusion-heading",      "title": "Conclusion" },
+        { "id": "faq-heading",             "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-single-thread" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-single-thread" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-single-thread" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-abstract-class",
+      "next": "https://www.techsustainify.com/java/java-multithreading"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-concurrency",
+      "contentTopic": "java-single-thread",
+      "chapterNumber": 28,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "intermediate",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Single Thread" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Single Thread — Lifecycle, States, Methods & Best Practices",
+    "subtitle": "Everything you need to know about Java Threading fundamentals — the main thread, creating threads via Thread class and Runnable, all six thread states, sleep, join, interrupt, daemon threads, thread priority, single-thread execution patterns, and a preview of Java 21 virtual threads."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "22 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Intermediate" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "28 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-thread",
+      "title": "What is a Thread in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>thread</strong> is the smallest unit of execution within a Java program. Think of a program as a factory — the factory itself is the <em>process</em> (with shared resources like memory, open files, and network connections), and the workers inside are the <em>threads</em>. Each worker (thread) follows its own sequence of instructions, but all share the factory's resources."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every Java program starts with exactly <strong>one thread</strong> — the <strong>main thread</strong> — which executes the <code>main()</code> method from top to bottom. This is <em>single-threaded execution</em>: one instruction at a time, one after another, in strict order. Understanding single-threaded execution deeply is the essential foundation before tackling multithreading — because every concurrency bug is rooted in violating the mental model you build here."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Each thread in Java has its own <strong>call stack</strong> (for method calls and local variables), its own <strong>program counter</strong> (tracking which instruction to execute next), and its own <strong>thread-local storage</strong>. What threads <em>share</em> is the <strong>heap memory</strong> (objects) and <strong>static fields</strong>. This sharing is what enables threads to cooperate — and also what makes multithreading complex."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Thread Fundamentals at a Glance",
+          "text": "Thread = lightweight sub-process with its own stack + program counter. Two creation methods: (1) Extend Thread class and override run(). (2) Implement Runnable interface and pass to Thread constructor. Start with start(), NOT run(). Six states: NEW → RUNNABLE → BLOCKED/WAITING/TIMED_WAITING → TERMINATED. Key methods: sleep(), join(), interrupt(), setPriority(), setDaemon(). Java 21: Virtual Threads (Project Loom) — lightweight, JVM-managed threads for massive scalability."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "main-thread",
+      "title": "The Main Thread — Where Every Java Program Begins",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When the JVM starts and calls <code>main(String[] args)</code>, it does so on a thread it creates automatically — the <strong>main thread</strong>. This thread is a regular, non-daemon user thread. It is the parent of any threads you create within main(). When the main thread finishes, the JVM checks whether any non-daemon threads are still alive — if yes, it continues running; if no, it exits."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "MainThread.java",
+          "lines": [
+            "public class MainThread {",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ─── Inspecting the main thread ──────────────────────────────────",
+            "        Thread mainThread = Thread.currentThread();",
+            "",
+            "        System.out.println(\"Thread name    : \" + mainThread.getName());",
+            "        // Output: Thread name    : main",
+            "",
+            "        System.out.println(\"Thread ID      : \" + mainThread.threadId());",
+            "        // Output: Thread ID      : 1",
+            "",
+            "        System.out.println(\"Priority       : \" + mainThread.getPriority());",
+            "        // Output: Priority       : 5  (NORM_PRIORITY = 5)",
+            "",
+            "        System.out.println(\"Is Daemon      : \" + mainThread.isDaemon());",
+            "        // Output: Is Daemon      : false  (main is always non-daemon)",
+            "",
+            "        System.out.println(\"State          : \" + mainThread.getState());",
+            "        // Output: State          : RUNNABLE",
+            "",
+            "        System.out.println(\"Is Alive       : \" + mainThread.isAlive());",
+            "        // Output: Is Alive       : true",
+            "",
+            "        // ─── Modifying main thread properties ────────────────────────────",
+            "        mainThread.setName(\"TechSustainify-Main\");",
+            "        System.out.println(\"Renamed to     : \" + mainThread.getName());",
+            "        // Output: Renamed to     : TechSustainify-Main",
+            "",
+            "        // ─── Main thread stack trace ──────────────────────────────────────",
+            "        System.out.println(\"\\nStack trace:\");",
+            "        for (StackTraceElement element : mainThread.getStackTrace()) {",
+            "            System.out.println(\"  at \" + element);",
+            "        }",
+            "        // Shows the call stack: main() method at top",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 JVM Background Threads — You Are Never Truly Alone",
+          "text": "Even in the simplest 'Hello World' Java program, the JVM runs several background daemon threads alongside your main thread: the Garbage Collector thread (GC), the Finalizer thread, the Signal Dispatcher, and others depending on JVM implementation. You can see all active threads with Thread.getAllStackTraces().keySet(). Your main thread coexists with these invisible workers — which is why understanding daemon vs non-daemon thread distinction matters: the JVM exits only when ALL non-daemon threads finish."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "creating-thread",
+      "title": "Creating a Thread — Two Fundamental Ways",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java provides two standard ways to define the task a thread should execute. Both ultimately result in a <code>Thread</code> object whose <code>start()</code> method launches a new OS-level thread."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "CreatingThreads.java",
+          "lines": [
+            "// ─── WAY 1: Extend Thread class ──────────────────────────────────────────",
+            "class DownloadThread extends Thread {",
+            "",
+            "    private String fileUrl;",
+            "    private String destination;",
+            "",
+            "    DownloadThread(String fileUrl, String destination) {",
+            "        super(\"Download-\" + fileUrl.hashCode()); // set thread name",
+            "        this.fileUrl     = fileUrl;",
+            "        this.destination = destination;",
+            "    }",
+            "",
+            "    @Override",
+            "    public void run() {",
+            "        System.out.println(\"[\" + getName() + \"] Starting download: \" + fileUrl);",
+            "        // Simulate download work",
+            "        try {",
+            "            Thread.sleep(500); // simulate network delay",
+            "        } catch (InterruptedException e) {",
+            "            System.out.println(\"[\" + getName() + \"] Download interrupted!\");",
+            "            Thread.currentThread().interrupt(); // restore interrupt flag",
+            "            return;",
+            "        }",
+            "        System.out.println(\"[\" + getName() + \"] Saved to: \" + destination);",
+            "    }",
+            "}",
+            "",
+            "// ─── WAY 2: Implement Runnable interface ─────────────────────────────────",
+            "class ReportGenerator implements Runnable {",
+            "",
+            "    private String reportType;",
+            "",
+            "    ReportGenerator(String reportType) {",
+            "        this.reportType = reportType;",
+            "    }",
+            "",
+            "    @Override",
+            "    public void run() {",
+            "        System.out.println(\"[\" + Thread.currentThread().getName()",
+            "                         + \"] Generating \" + reportType + \" report...\");",
+            "        try { Thread.sleep(300); } catch (InterruptedException e) {",
+            "            Thread.currentThread().interrupt();",
+            "        }",
+            "        System.out.println(\"[\" + Thread.currentThread().getName()",
+            "                         + \"] \" + reportType + \" report complete.\");",
+            "    }",
+            "}",
+            "",
+            "public class CreatingThreads {",
+            "    public static void main(String[] args) throws InterruptedException {",
+            "",
+            "        // Way 1 — extend Thread",
+            "        DownloadThread dl = new DownloadThread(\"https://example.com/file.zip\", \"/tmp\");",
+            "        dl.start(); // ✅ launches new thread — run() on new thread",
+            "        // dl.run(); // ❌ WRONG — runs on main thread, no new thread!",
+            "",
+            "        // Way 2 — implement Runnable, wrap in Thread",
+            "        Runnable task    = new ReportGenerator(\"Sales\");",
+            "        Thread   worker  = new Thread(task, \"Report-Worker\");",
+            "        worker.start();",
+            "",
+            "        // Way 2b — Lambda (Runnable is a functional interface)",
+            "        Thread lambdaThread = new Thread(() -> {",
+            "            System.out.println(\"[\" + Thread.currentThread().getName()",
+            "                             + \"] Lambda task running!\");",
+            "        }, \"Lambda-Thread\");",
+            "        lambdaThread.start();",
+            "",
+            "        // Main thread continues while others run",
+            "        System.out.println(\"[main] All threads launched — main continues...\");",
+            "",
+            "        // Wait for all to finish before main exits",
+            "        dl.join();",
+            "        worker.join();",
+            "        lambdaThread.join();",
+            "",
+            "        System.out.println(\"[main] All threads completed.\");",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "thread-vs-runnable",
+      "title": "Thread Class vs Runnable Interface — Which to Choose?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Both approaches create threads, but they differ fundamentally in design philosophy. The Runnable approach is almost always preferred in professional Java code — and understanding <em>why</em> is as important as knowing the syntax."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "Extend Thread", "Implement Runnable"],
+          "rows": [
+            ["Inheritance",           "Consumes the single inheritance slot — cannot extend another class",        "Free to extend any class — Runnable is just an interface"],
+            ["Separation of concerns","Task logic mixed with threading mechanism (Thread class)",                  "Task logic (Runnable) cleanly separated from thread management"],
+            ["Reusability",           "Task tightly coupled to Thread — cannot reuse without Thread",              "Runnable can be submitted to thread pools, Executors, lambdas"],
+            ["Lambda support",        "No — cannot replace Thread subclass with lambda",                           "Yes — Runnable is a functional interface: () -> { task }"],
+            ["Testing",               "Harder — must instantiate a Thread to test run() logic",                   "Easy — test the Runnable independently without creating a Thread"],
+            ["Thread pool usage",     "Not directly compatible with ExecutorService",                              "Submit Runnable directly to ExecutorService.execute(task)"],
+            ["When to choose",        "When you need to override Thread behaviour (rare)",                         "Always — for every regular task that a thread should execute"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ThreadVsRunnable.java",
+          "lines": [
+            "import java.util.concurrent.ExecutorService;",
+            "import java.util.concurrent.Executors;",
+            "",
+            "public class ThreadVsRunnable {",
+            "",
+            "    // ❌ Thread subclass — task logic coupled to Thread",
+            "    static class EmailSenderThread extends Thread {",
+            "        private String to;",
+            "        EmailSenderThread(String to) { this.to = to; }",
+            "        @Override",
+            "        public void run() {",
+            "            System.out.println(\"Sending email to: \" + to);",
+            "        }",
+            "        // Cannot extend EmailService or any other class!",
+            "    }",
+            "",
+            "    // ✅ Runnable — task logic independent, reusable",
+            "    static class EmailSenderTask implements Runnable {",
+            "        private String to;",
+            "        EmailSenderTask(String to) { this.to = to; }",
+            "        @Override",
+            "        public void run() {",
+            "            System.out.println(\"Sending email to: \" + to);",
+            "        }",
+            "        // Can extend EmailValidator, AuditableService, etc.!",
+            "    }",
+            "",
+            "    public static void main(String[] args) throws InterruptedException {",
+            "",
+            "        // Thread subclass — only works wrapped in Thread",
+            "        new EmailSenderThread(\"alice@example.com\").start();",
+            "",
+            "        // Runnable — works in THREE ways:",
+            "        Runnable task = new EmailSenderTask(\"bob@example.com\");",
+            "",
+            "        // 1. Wrapped in Thread",
+            "        new Thread(task).start();",
+            "",
+            "        // 2. Submitted to thread pool (preferred in production)",
+            "        ExecutorService pool = Executors.newFixedThreadPool(2);",
+            "        pool.execute(task);",
+            "        pool.execute(new EmailSenderTask(\"carol@example.com\"));",
+            "        pool.shutdown();",
+            "",
+            "        // 3. As lambda (most concise)",
+            "        new Thread(() -> System.out.println(\"Lambda email!\")).start();",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "thread-lifecycle",
+      "title": "Thread Lifecycle — Six States",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A Java thread moves through a well-defined set of states during its lifetime, defined in the <code>Thread.State</code> enum. Understanding these states is critical for diagnosing thread issues — thread dumps, deadlocks, and performance problems all require you to know what state each thread is in and why."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🆕",
+              "title": "1. NEW",
+              "text": "Thread object has been created with 'new Thread(...)' but start() has not been called yet. The thread exists as a Java object but has no corresponding OS thread. It cannot execute any code in this state. Transition: NEW → RUNNABLE when start() is called."
+            },
+            {
+              "icon": "▶️",
+              "title": "2. RUNNABLE",
+              "text": "The thread has been started. From the JVM's perspective, it is 'runnable' — either actively running on a CPU core, or ready to run and waiting for the thread scheduler to assign it CPU time. Java does NOT distinguish between 'running' and 'ready' — both are RUNNABLE in Thread.State. The OS scheduler decides which RUNNABLE thread gets the CPU."
+            },
+            {
+              "icon": "🔒",
+              "title": "3. BLOCKED",
+              "text": "The thread is waiting to acquire a monitor lock (synchronized block/method) that is currently held by another thread. Once the lock becomes available and the thread acquires it, it returns to RUNNABLE. BLOCKED is exclusively about synchronized monitor locks — other waiting mechanisms put a thread in WAITING or TIMED_WAITING."
+            },
+            {
+              "icon": "⏳",
+              "title": "4. WAITING",
+              "text": "The thread is waiting indefinitely for another thread to perform a specific action. Causes: Object.wait() — waiting for notify()/notifyAll(). Thread.join() with no timeout — waiting for target thread to finish. LockSupport.park() — low-level parking. The thread stays WAITING until explicitly woken up. Cannot be timed out."
+            },
+            {
+              "icon": "⏰",
+              "title": "5. TIMED_WAITING",
+              "text": "The thread is waiting, but with a timeout — it will automatically return to RUNNABLE when the timeout expires. Causes: Thread.sleep(ms), Object.wait(ms), Thread.join(ms), LockSupport.parkNanos(). Distinguishable from WAITING because the thread will eventually wake up on its own even if not explicitly notified."
+            },
+            {
+              "icon": "✅",
+              "title": "6. TERMINATED",
+              "text": "The thread has finished execution — either because run() returned normally, or because an uncaught exception propagated out of run(). A TERMINATED thread cannot be restarted. Calling start() on a TERMINATED thread throws IllegalThreadStateException. isAlive() returns false."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ThreadStates.java",
+          "lines": [
+            "public class ThreadStates {",
+            "",
+            "    public static void main(String[] args) throws InterruptedException {",
+            "",
+            "        Thread worker = new Thread(() -> {",
+            "            try {",
+            "                Thread.sleep(500); // TIMED_WAITING during sleep",
+            "            } catch (InterruptedException e) {",
+            "                Thread.currentThread().interrupt();",
+            "            }",
+            "        }, \"StateWatcher\");",
+            "",
+            "        // ─── Observe state transitions ────────────────────────────────────",
+            "        System.out.println(\"Before start : \" + worker.getState());",
+            "        // Before start : NEW",
+            "",
+            "        worker.start();",
+            "        System.out.println(\"After start  : \" + worker.getState());",
+            "        // After start  : RUNNABLE  (or TIMED_WAITING if sleep already started)",
+            "",
+            "        Thread.sleep(100); // give worker time to reach sleep",
+            "        System.out.println(\"During sleep : \" + worker.getState());",
+            "        // During sleep : TIMED_WAITING",
+            "",
+            "        worker.join(); // wait for worker to finish",
+            "        System.out.println(\"After finish : \" + worker.getState());",
+            "        // After finish : TERMINATED",
+            "",
+            "        System.out.println(\"Is alive     : \" + worker.isAlive());",
+            "        // Is alive     : false",
+            "",
+            "        // ─── Attempting to restart a terminated thread ────────────────────",
+            "        try {",
+            "            worker.start(); // ❌ IllegalThreadStateException",
+            "        } catch (IllegalThreadStateException e) {",
+            "            System.out.println(\"Cannot restart: \" + e.getMessage());",
+            "            // Cannot restart: (message varies by JVM)",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "thread-sleep",
+      "title": "Thread.sleep() — Pausing Execution",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>Thread.sleep(milliseconds)</code> causes the <strong>currently executing thread</strong> to pause for at least the specified time, moving it to the <strong>TIMED_WAITING</strong> state. During sleep, the thread releases CPU time but does <strong>not</strong> release any monitor locks it holds. Sleep is a static method — it always acts on the current thread, regardless of which Thread object you call it on."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ThreadSleep.java",
+          "lines": [
+            "public class ThreadSleep {",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ─── Basic sleep ──────────────────────────────────────────────────",
+            "        System.out.println(\"Task started at: \" + java.time.LocalTime.now());",
+            "",
+            "        try {",
+            "            Thread.sleep(2000); // sleep 2 seconds — TIMED_WAITING",
+            "        } catch (InterruptedException e) {",
+            "            // ✅ ALWAYS restore the interrupt flag when catching InterruptedException",
+            "            Thread.currentThread().interrupt();",
+            "            System.out.println(\"Sleep interrupted!\");",
+            "            return;",
+            "        }",
+            "",
+            "        System.out.println(\"Task resumed at: \" + java.time.LocalTime.now());",
+            "        // ~2 seconds gap between the two prints",
+            "",
+            "        // ─── sleep() with nanoseconds (rarely needed) ────────────────────",
+            "        try {",
+            "            Thread.sleep(1000, 500000); // 1 second + 500,000 nanoseconds",
+            "        } catch (InterruptedException e) {",
+            "            Thread.currentThread().interrupt();",
+            "        }",
+            "",
+            "        // ─── Rate-limiting pattern — polling with sleep ───────────────────",
+            "        int retries = 0;",
+            "        boolean success = false;",
+            "        while (retries < 3 && !success) {",
+            "            System.out.println(\"Attempt \" + (retries + 1) + \"...\");",
+            "            success = tryConnect(); // simulated network call",
+            "            if (!success) {",
+            "                try {",
+            "                    long backoff = (long) Math.pow(2, retries) * 1000L;",
+            "                    System.out.println(\"Retrying in \" + backoff + \"ms...\");",
+            "                    Thread.sleep(backoff); // exponential backoff",
+            "                } catch (InterruptedException e) {",
+            "                    Thread.currentThread().interrupt();",
+            "                    break;",
+            "                }",
+            "            }",
+            "            retries++;",
+            "        }",
+            "    }",
+            "",
+            "    static boolean tryConnect() {",
+            "        return Math.random() > 0.6; // 40% failure rate simulation",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Three Critical sleep() Rules",
+          "text": "Rule 1: sleep() does NOT release locks. If the sleeping thread holds a synchronized monitor, other threads still cannot enter that synchronized block during the sleep — a common deadlock cause. Rule 2: ALWAYS handle InterruptedException properly — restore the interrupt flag with Thread.currentThread().interrupt() and exit or clean up. Swallowing InterruptedException silently is one of the most serious threading mistakes in Java. Rule 3: sleep() is not perfectly precise — the OS scheduler may wake the thread slightly later than requested. Never rely on sleep() for precise timing."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "thread-join",
+      "title": "Thread.join() — Waiting for Another Thread to Complete",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>thread.join()</code> causes the <strong>calling thread</strong> to pause and wait until the <strong>target thread</strong> terminates. This is the fundamental mechanism for coordinating sequential completion — ensuring that one thread's results are fully ready before another thread proceeds to use them. The calling thread enters the <strong>WAITING</strong> state (or <strong>TIMED_WAITING</strong> with a timeout argument)."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ThreadJoin.java",
+          "lines": [
+            "public class ThreadJoin {",
+            "",
+            "    // Simulated data pipeline: fetch → process → report",
+            "    static volatile String fetchedData   = null;",
+            "    static volatile String processedData = null;",
+            "",
+            "    public static void main(String[] args) throws InterruptedException {",
+            "",
+            "        long start = System.currentTimeMillis();",
+            "",
+            "        // ─── Thread 1: Data Fetcher ────────────────────────────────────────",
+            "        Thread fetcher = new Thread(() -> {",
+            "            System.out.println(\"[Fetcher] Starting data fetch...\");",
+            "            try { Thread.sleep(800); } catch (InterruptedException e) {",
+            "                Thread.currentThread().interrupt(); return;",
+            "            }",
+            "            fetchedData = \"RAW:user_events_2024_q1.csv\";",
+            "            System.out.println(\"[Fetcher] Done: \" + fetchedData);",
+            "        }, \"DataFetcher\");",
+            "",
+            "        // ─── Thread 2: Data Processor (must wait for fetcher to finish) ───",
+            "        Thread processor = new Thread(() -> {",
+            "            System.out.println(\"[Processor] Ready — waiting for fetch...\");",
+            "            try {",
+            "                fetcher.join(); // ← WAIT for fetcher to terminate",
+            "            } catch (InterruptedException e) {",
+            "                Thread.currentThread().interrupt(); return;",
+            "            }",
+            "            // Safe to use fetchedData now — fetcher is TERMINATED",
+            "            processedData = fetchedData.replace(\"RAW:\", \"PROCESSED:\").toUpperCase();",
+            "            System.out.println(\"[Processor] Done: \" + processedData);",
+            "        }, \"DataProcessor\");",
+            "",
+            "        fetcher.start();",
+            "        processor.start();",
+            "",
+            "        // Main thread waits for processor (which already waited for fetcher)",
+            "        processor.join();",
+            "        System.out.printf(\"[main] Pipeline complete in %dms%n\",",
+            "                          System.currentTimeMillis() - start);",
+            "        System.out.println(\"[main] Final data: \" + processedData);",
+            "",
+            "        // ─── join() with timeout ──────────────────────────────────────────",
+            "        Thread slowTask = new Thread(() -> {",
+            "            try { Thread.sleep(5000); } catch (InterruptedException e) {",
+            "                Thread.currentThread().interrupt();",
+            "            }",
+            "        }, \"SlowTask\");",
+            "        slowTask.start();",
+            "",
+            "        slowTask.join(2000); // Wait at most 2 seconds",
+            "        if (slowTask.isAlive()) {",
+            "            System.out.println(\"SlowTask still running after 2s — not waiting further\");",
+            "            slowTask.interrupt(); // cancel it",
+            "        } else {",
+            "            System.out.println(\"SlowTask finished within timeout\");",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "thread-interrupt",
+      "title": "Thread Interruption — Cooperative Cancellation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java threads cannot be forcefully killed from outside. The correct approach is <strong>cooperative cancellation</strong> using the <strong>interrupt mechanism</strong>. <code>thread.interrupt()</code> sets the thread's <em>interrupt flag</em> to <code>true</code>. The target thread is responsible for periodically checking this flag and gracefully stopping itself."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When a thread is blocked in a method like <code>sleep()</code>, <code>wait()</code>, or <code>join()</code>, calling <code>interrupt()</code> on it causes those methods to immediately throw <code>InterruptedException</code> and <em>clear</em> the interrupt flag. The thread's catch block must restore the flag with <code>Thread.currentThread().interrupt()</code> if it cannot handle the interruption at that level."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ThreadInterrupt.java",
+          "lines": [
+            "public class ThreadInterrupt {",
+            "",
+            "    // ─── Long-running task that checks for interruption ───────────────────",
+            "    static class DataProcessingTask implements Runnable {",
+            "",
+            "        @Override",
+            "        public void run() {",
+            "            int batchNumber = 0;",
+            "",
+            "            // ✅ Check interrupt flag in loop condition",
+            "            while (!Thread.currentThread().isInterrupted()) {",
+            "                batchNumber++;",
+            "                System.out.println(\"Processing batch \" + batchNumber + \"...\");",
+            "",
+            "                try {",
+            "                    Thread.sleep(300); // TIMED_WAITING — interruptible",
+            "                } catch (InterruptedException e) {",
+            "                    // sleep() threw because we were interrupted",
+            "                    // InterruptedException CLEARS the flag — restore it!",
+            "                    System.out.println(\"Interrupted during sleep — cleaning up...\");",
+            "                    Thread.currentThread().interrupt(); // ← restore flag",
+            "                    break; // exit loop gracefully",
+            "                }",
+            "            }",
+            "",
+            "            // Runs only if loop exits (interrupted or condition false)",
+            "            System.out.println(\"Task shutdown cleanly after \" + batchNumber + \" batches.\");",
+            "        }",
+            "    }",
+            "",
+            "    public static void main(String[] args) throws InterruptedException {",
+            "",
+            "        Thread worker = new Thread(new DataProcessingTask(), \"DataProcessor\");",
+            "        worker.start();",
+            "",
+            "        Thread.sleep(1200); // Let it run for ~4 batches",
+            "",
+            "        System.out.println(\"[main] Requesting cancellation...\");",
+            "        worker.interrupt(); // ← signal the thread to stop",
+            "",
+            "        worker.join(); // wait for clean shutdown",
+            "        System.out.println(\"[main] Worker has stopped. isAlive: \" + worker.isAlive());",
+            "",
+            "        // ─── Checking interrupt flag manually (non-blocking task) ─────────",
+            "        Thread cpuTask = new Thread(() -> {",
+            "            long result = 0;",
+            "            for (long i = 0; i < Long.MAX_VALUE; i++) {",
+            "                if (Thread.interrupted()) { // ← checks AND clears flag",
+            "                    System.out.println(\"CPU task cancelled at i=\" + i);",
+            "                    return;",
+            "                }",
+            "                result += i;",
+            "            }",
+            "            System.out.println(\"Result: \" + result);",
+            "        }, \"CPUTask\");",
+            "",
+            "        cpuTask.start();",
+            "        Thread.sleep(100);",
+            "        cpuTask.interrupt();",
+            "        cpuTask.join();",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ The Interrupt Contract — Never Swallow InterruptedException",
+          "text": "When you catch InterruptedException and do nothing, you silently destroy the interrupt signal. Callers or framework code higher up in the call stack may depend on the interrupt flag being set to know the thread should stop. The rule: ALWAYS do one of two things when catching InterruptedException: (1) Re-throw it — let it propagate up. (2) Restore the flag — Thread.currentThread().interrupt() and exit/clean up. The worst possible code is: catch (InterruptedException e) { /* do nothing */ } — this is a common, serious bug that causes threads to run indefinitely after cancellation."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "thread-priority",
+      "title": "Thread Priority — Hints to the Scheduler",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java threads have a <strong>priority</strong> — an integer from <code>Thread.MIN_PRIORITY</code> (1) to <code>Thread.MAX_PRIORITY</code> (10), with <code>Thread.NORM_PRIORITY</code> (5) as the default. Thread priority is a <em>hint</em> to the underlying OS thread scheduler about which threads should get CPU time preference when multiple threads are RUNNABLE. It is <strong>not</strong> a guarantee."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ThreadPriority.java",
+          "lines": [
+            "public class ThreadPriority {",
+            "",
+            "    static volatile long highPriorityCount = 0;",
+            "    static volatile long lowPriorityCount  = 0;",
+            "    static volatile boolean running        = true;",
+            "",
+            "    public static void main(String[] args) throws InterruptedException {",
+            "",
+            "        // ─── High priority thread ─────────────────────────────────────────",
+            "        Thread highPriority = new Thread(() -> {",
+            "            while (running) highPriorityCount++;",
+            "        }, \"HighPriority\");",
+            "        highPriority.setPriority(Thread.MAX_PRIORITY); // 10",
+            "",
+            "        // ─── Low priority thread ──────────────────────────────────────────",
+            "        Thread lowPriority = new Thread(() -> {",
+            "            while (running) lowPriorityCount++;",
+            "        }, \"LowPriority\");",
+            "        lowPriority.setPriority(Thread.MIN_PRIORITY); // 1",
+            "",
+            "        // ─── Priority must be set BEFORE start() ─────────────────────────",
+            "        highPriority.start();",
+            "        lowPriority.start();",
+            "",
+            "        Thread.sleep(1000); // let them compete for 1 second",
+            "        running = false;",
+            "",
+            "        highPriority.join();",
+            "        lowPriority.join();",
+            "",
+            "        System.out.println(\"High priority count : \" + highPriorityCount);",
+            "        System.out.println(\"Low priority count  : \" + lowPriorityCount);",
+            "        System.out.printf (\"High:Low ratio      : %.2f:1%n\",",
+            "                           (double) highPriorityCount / lowPriorityCount);",
+            "        // Results vary by OS — priority is only a HINT, not a guarantee",
+            "",
+            "        // ─── Priority constants ───────────────────────────────────────────",
+            "        System.out.println(\"MIN_PRIORITY  : \" + Thread.MIN_PRIORITY);  // 1",
+            "        System.out.println(\"NORM_PRIORITY : \" + Thread.NORM_PRIORITY); // 5",
+            "        System.out.println(\"MAX_PRIORITY  : \" + Thread.MAX_PRIORITY);  // 10",
+            "",
+            "        // ─── Thread group priority cap ────────────────────────────────────",
+            "        // A thread's effective priority is min(thread.getPriority(),",
+            "        //                                     threadGroup.getMaxPriority())",
+            "        System.out.println(\"Main group max: \" +",
+            "            Thread.currentThread().getThreadGroup().getMaxPriority()); // 10",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 Thread Priority in Practice — Mostly Irrelevant",
+          "text": "Thread priority behaviour is highly OS-dependent. On some operating systems (especially Linux), thread priorities are largely ignored for user threads. On Windows, priorities map more meaningfully to OS scheduling classes. In modern Java applications with thread pools and Executors, you almost never set thread priority manually — the work queue ordering handles task prioritization far more reliably. If you need task prioritization, use PriorityBlockingQueue or CompletableFuture with explicit ordering — not thread priorities."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "daemon-thread",
+      "title": "Daemon Threads — Background Service Workers",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java divides threads into two categories: <strong>user threads</strong> (non-daemon) and <strong>daemon threads</strong>. The JVM continues running as long as any user thread is alive. When the last user thread terminates, the JVM shuts down — immediately terminating all remaining daemon threads, regardless of what they were doing. Daemon threads are designed for <em>background services</em> that should not prevent the application from exiting."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "DaemonThread.java",
+          "lines": [
+            "public class DaemonThread {",
+            "",
+            "    // ─── Daemon: background heartbeat monitor ─────────────────────────────",
+            "    static class HeartbeatMonitor implements Runnable {",
+            "        @Override",
+            "        public void run() {",
+            "            int beat = 0;",
+            "            while (true) { // Intentionally infinite — daemon will be killed on JVM exit",
+            "                beat++;",
+            "                System.out.println(\"[Heartbeat #\" + beat + \"] System alive at \"+",
+            "                                   java.time.LocalTime.now());",
+            "                try {",
+            "                    Thread.sleep(500);",
+            "                } catch (InterruptedException e) {",
+            "                    Thread.currentThread().interrupt();",
+            "                    return; // exit if interrupted",
+            "                }",
+            "            }",
+            "        }",
+            "    }",
+            "",
+            "    // ─── Daemon: background cache cleanup ─────────────────────────────────",
+            "    static class CacheEviction implements Runnable {",
+            "        @Override",
+            "        public void run() {",
+            "            while (true) {",
+            "                System.out.println(\"[CacheEviction] Checking for expired entries...\");",
+            "                try { Thread.sleep(2000); } catch (InterruptedException e) {",
+            "                    Thread.currentThread().interrupt(); return;",
+            "                }",
+            "            }",
+            "        }",
+            "    }",
+            "",
+            "    public static void main(String[] args) throws InterruptedException {",
+            "",
+            "        // ─── Setup daemon threads ─────────────────────────────────────────",
+            "        Thread heartbeat = new Thread(new HeartbeatMonitor(), \"Heartbeat\");",
+            "        heartbeat.setDaemon(true);  // ← MUST be called BEFORE start()",
+            "        heartbeat.start();",
+            "        System.out.println(\"Heartbeat daemon: \" + heartbeat.isDaemon()); // true",
+            "",
+            "        Thread eviction = new Thread(new CacheEviction(), \"CacheEviction\");",
+            "        eviction.setDaemon(true);",
+            "        eviction.start();",
+            "",
+            "        // ─── User thread (non-daemon) — main work ────────────────────────",
+            "        System.out.println(\"[main] Starting main work...\");",
+            "        Thread.sleep(1500); // Simulate 1.5 seconds of real work",
+            "        System.out.println(\"[main] Work complete — exiting main thread\");",
+            "",
+            "        // When main thread exits here, JVM will kill heartbeat & eviction daemons",
+            "        // You may see 1-3 heartbeat prints, then the program exits",
+            "        // The daemons do NOT keep the JVM alive",
+            "",
+            "        // ─── setDaemon() AFTER start() throws exception ──────────────────",
+            "        Thread alreadyStarted = new Thread(() -> {});",
+            "        alreadyStarted.start();",
+            "        try {",
+            "            alreadyStarted.setDaemon(true); // ❌ IllegalThreadStateException",
+            "        } catch (IllegalThreadStateException e) {",
+            "            System.out.println(\"Cannot set daemon after start: \" + e.getMessage());",
+            "        }",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Never Do Critical Work in Daemon Threads",
+          "text": "Because daemon threads are killed abruptly when the JVM exits — without any cleanup, without finally blocks running, without streams being closed — you must never do critical, non-idempotent work in daemon threads. Daemon threads are safe for: monitoring, heartbeats, GC, log flushing, cache eviction. Dangerous for: database writes, file writes, payment processing, anything that needs a clean shutdown sequence. If cleanup on shutdown matters, use a non-daemon thread with a shutdown hook: Runtime.getRuntime().addShutdownHook(new Thread(() -> { cleanup logic }))."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "thread-name-id",
+      "title": "Thread Name, ID, and Metadata",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every Java thread has metadata that is invaluable for debugging, monitoring, and logging. Meaningful thread names make thread dumps (the primary tool for diagnosing hangs and deadlocks) dramatically easier to read. Always name your threads explicitly in production code."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ThreadMetadata.java",
+          "lines": [
+            "public class ThreadMetadata {",
+            "",
+            "    public static void main(String[] args) throws InterruptedException {",
+            "",
+            "        // ─── Meaningful thread names — critical for thread dump readability ─",
+            "        Thread paymentWorker = new Thread(() -> {",
+            "            System.out.println(\"Working on: \" + Thread.currentThread().getName());",
+            "            try { Thread.sleep(100); } catch (InterruptedException e) {",
+            "                Thread.currentThread().interrupt();",
+            "            }",
+            "        }, \"PaymentProcessor-Worker-1\"); // ← meaningful name",
+            "",
+            "        Thread anonymousWorker = new Thread(() -> {",
+            "            System.out.println(\"Working on: \" + Thread.currentThread().getName());",
+            "        }); // ← default name: Thread-N (meaningless in thread dump)",
+            "",
+            "        paymentWorker.start();",
+            "        anonymousWorker.start();",
+            "",
+            "        paymentWorker.join();",
+            "        anonymousWorker.join();",
+            "",
+            "        // ─── Thread metadata API ──────────────────────────────────────────",
+            "        Thread current = Thread.currentThread();",
+            "",
+            "        System.out.println(\"getName()         : \" + current.getName());",
+            "        System.out.println(\"threadId()        : \" + current.threadId());",
+            "        System.out.println(\"getPriority()     : \" + current.getPriority());",
+            "        System.out.println(\"isDaemon()        : \" + current.isDaemon());",
+            "        System.out.println(\"isAlive()         : \" + current.isAlive());",
+            "        System.out.println(\"getState()        : \" + current.getState());",
+            "        System.out.println(\"isInterrupted()   : \" + current.isInterrupted());",
+            "        System.out.println(\"getThreadGroup()  : \" + current.getThreadGroup().getName());",
+            "",
+            "        // ─── All active threads snapshot ──────────────────────────────────",
+            "        System.out.println(\"\\n--- All Active Threads ---\");",
+            "        Thread.getAllStackTraces().keySet().forEach(t ->",
+            "            System.out.printf(\"  %-35s id=%-4d daemon=%-5b state=%s%n\",",
+            "                              t.getName(), t.threadId(), t.isDaemon(), t.getState())",
+            "        );",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "single-thread-patterns",
+      "title": "Single-Thread Execution Patterns",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Not every concurrent design requires multiple threads doing things simultaneously. Several important patterns involve a <strong>single dedicated thread</strong> for a specific concern — isolating work on one thread to eliminate synchronization complexity while still keeping the main application responsive."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📋",
+              "title": "Event Loop Pattern",
+              "text": "A single thread continuously processes events from a queue — one at a time, in order. Used by: Node.js (inspiration), Java Swing's EDT (Event Dispatch Thread), and Android's Looper. The advantage: no synchronization needed inside event handlers because only one thread ever accesses the shared state. JavaScript's entire concurrency model is built on this single-thread event loop."
+            },
+            {
+              "icon": "🔧",
+              "title": "Single-Thread Executor",
+              "text": "ExecutorService single = Executors.newSingleThreadExecutor() — creates a thread pool with exactly one thread. All submitted tasks execute sequentially on that one thread, in submission order. Use case: database write serialization, ordered log writing, sequential state machine processing. Eliminates data races without synchronization — only one thread ever touches the data."
+            },
+            {
+              "icon": "🖥️",
+              "title": "Main-Thread-Only Pattern",
+              "text": "Frameworks like Android enforce that all UI updates must happen on the main (UI) thread. Background threads do work and post results back to the main thread via handlers/coroutines. This pattern gives you thread safety for UI state without locks — the single UI thread is the sole writer."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SingleThreadPatterns.java",
+          "lines": [
+            "import java.util.concurrent.*;",
+            "",
+            "public class SingleThreadPatterns {",
+            "",
+            "    // ─── Pattern: Single-Thread Executor for ordered task processing ──────",
+            "    public static void main(String[] args) throws InterruptedException {",
+            "",
+            "        // All tasks run sequentially on ONE dedicated thread",
+            "        // No synchronization needed — ordering is guaranteed",
+            "        ExecutorService singleExecutor = Executors.newSingleThreadExecutor(r -> {",
+            "            Thread t = new Thread(r, \"OrderProcessor-Thread\");",
+            "            t.setDaemon(true);",
+            "            return t;",
+            "        });",
+            "",
+            "        // Submit 5 tasks — they execute in order, one at a time",
+            "        for (int i = 1; i <= 5; i++) {",
+            "            final int orderId = i;",
+            "            singleExecutor.execute(() -> {",
+            "                System.out.println(\"[\" + Thread.currentThread().getName()",
+            "                                 + \"] Processing order #\" + orderId);",
+            "                try { Thread.sleep(200); } catch (InterruptedException e) {",
+            "                    Thread.currentThread().interrupt();",
+            "                }",
+            "                System.out.println(\"[\" + Thread.currentThread().getName()",
+            "                                 + \"] Order #\" + orderId + \" complete\");",
+            "            });",
+            "        }",
+            "",
+            "        singleExecutor.shutdown();",
+            "        singleExecutor.awaitTermination(10, TimeUnit.SECONDS);",
+            "        // Output: All 5 orders processed IN ORDER on OrderProcessor-Thread",
+            "",
+            "        // ─── Pattern: Event Loop simulation ──────────────────────────────",
+            "        BlockingQueue<String> eventQueue = new LinkedBlockingQueue<>();",
+            "",
+            "        // Producer — adds events",
+            "        Thread producer = new Thread(() -> {",
+            "            String[] events = {\"USER_LOGIN\", \"PAGE_VIEW\", \"PURCHASE\", \"LOGOUT\", \"POISON\"};",
+            "            for (String event : events) {",
+            "                try {",
+            "                    Thread.sleep(100);",
+            "                    eventQueue.put(event);",
+            "                    System.out.println(\"[Producer] Published: \" + event);",
+            "                } catch (InterruptedException e) {",
+            "                    Thread.currentThread().interrupt(); return;",
+            "                }",
+            "            }",
+            "        }, \"EventProducer\");",
+            "",
+            "        // Event loop — single thread, processes one event at a time",
+            "        Thread eventLoop = new Thread(() -> {",
+            "            while (true) {",
+            "                try {",
+            "                    String event = eventQueue.take(); // blocks until available",
+            "                    if (\"POISON\".equals(event)) break; // shutdown signal",
+            "                    System.out.println(\"[EventLoop] Processing: \" + event);",
+            "                } catch (InterruptedException e) {",
+            "                    Thread.currentThread().interrupt(); return;",
+            "                }",
+            "            }",
+            "            System.out.println(\"[EventLoop] Shutting down.\");",
+            "        }, \"EventLoop-Thread\");",
+            "",
+            "        producer.start();",
+            "        eventLoop.start();",
+            "        producer.join();",
+            "        eventLoop.join();",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "virtual-threads-intro",
+      "title": "Virtual Threads — Java 21's Game Changer (Brief Introduction)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java 21 (LTS) introduced <strong>Virtual Threads</strong> (Project Loom, JEP 444) as a production-ready feature. Virtual threads are <em>JVM-managed</em> lightweight threads — not OS threads. They are cheap enough to create millions of them, making the traditional thread-per-request model viable again even for highly concurrent servers. A blocking call in a virtual thread <em>unmounts</em> the virtual thread from its carrier OS thread, freeing the OS thread to run other virtual threads — no OS thread is ever truly blocked."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "VirtualThreads.java",
+          "lines": [
+            "// Java 21+ — Virtual Threads",
+            "import java.util.concurrent.Executors;",
+            "",
+            "public class VirtualThreads {",
+            "",
+            "    public static void main(String[] args) throws InterruptedException {",
+            "",
+            "        // ─── Creating a single virtual thread ─────────────────────────────",
+            "        Thread vThread = Thread.ofVirtual()",
+            "                               .name(\"my-virtual-thread\")",
+            "                               .start(() -> {",
+            "            System.out.println(\"Running on virtual thread: \"",
+            "                             + Thread.currentThread().isVirtual()); // true",
+            "        });",
+            "        vThread.join();",
+            "",
+            "        // ─── Platform (traditional) thread vs Virtual thread ──────────────",
+            "        Thread platform = Thread.ofPlatform().name(\"platform-thread\").start(() -> {",
+            "            System.out.println(\"Platform virtual: \"",
+            "                             + Thread.currentThread().isVirtual()); // false",
+            "        });",
+            "        platform.join();",
+            "",
+            "        // ─── Virtual thread executor — one per task (cheap!) ──────────────",
+            "        // Traditional: Executors.newFixedThreadPool(200) — 200 OS threads",
+            "        // Virtual: Executors.newVirtualThreadPerTaskExecutor() — millions possible",
+            "        try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {",
+            "            for (int i = 1; i <= 10; i++) {",
+            "                final int taskId = i;",
+            "                executor.submit(() -> {",
+            "                    System.out.println(\"Task \" + taskId + \" on virtual thread: \"",
+            "                                     + Thread.currentThread().isVirtual());",
+            "                    Thread.sleep(100); // blocking — but doesn't pin OS thread!",
+            "                    return null;",
+            "                });",
+            "            }",
+            "        } // executor.close() waits for all tasks",
+            "",
+            "        System.out.println(\"All virtual thread tasks complete.\");",
+            "",
+            "        // ─── Key difference: cost of creation ────────────────────────────",
+            "        // Platform thread: ~1MB stack, OS resource, expensive to create",
+            "        // Virtual thread : ~few KB initial, JVM-managed, cheap to create",
+            "        // You can create 1,000,000 virtual threads — not 1,000,000 OS threads",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Virtual Threads — Not a Silver Bullet",
+          "text": "Virtual threads excel at I/O-bound tasks — HTTP calls, database queries, file reads. They do NOT help with CPU-bound tasks (computation heavy) — those still need actual OS threads. Virtual threads also should not be used with thread-local caching patterns (ThreadLocal pools) because virtual threads are created so cheaply that pooling them defeats the purpose. The mental model: virtual threads make blocking cheap — you can block freely without worrying about OS thread starvation. Java 21+ applications handling high concurrency should use virtual threads for I/O work and platform threads for CPU work."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These mistakes are the most frequently encountered threading bugs in Java — from calling run() instead of start() to silently swallowing InterruptedException."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ThreadMistakes.java",
+          "lines": [
+            "public class ThreadMistakes {",
+            "",
+            "    // ❌ MISTAKE 1: Calling run() instead of start() — no new thread created",
+            "    static void mistake1() {",
+            "        Thread t = new Thread(() -> {",
+            "            System.out.println(\"Running on: \" + Thread.currentThread().getName());",
+            "        }, \"WorkerThread\");",
+            "",
+            "        t.run();   // ❌ Runs on the CALLING thread — output: 'main'",
+            "        // t.start(); // ✅ Creates new thread — output: 'WorkerThread'",
+            "    }",
+            "",
+            "    // ❌ MISTAKE 2: Restarting a terminated thread",
+            "    static void mistake2() throws InterruptedException {",
+            "        Thread t = new Thread(() -> System.out.println(\"Done\"), \"OneShot\");",
+            "        t.start();",
+            "        t.join();  // wait for completion",
+            "        try {",
+            "            t.start(); // ❌ IllegalThreadStateException — already terminated",
+            "        } catch (IllegalThreadStateException e) {",
+            "            System.out.println(\"Cannot restart: \" + e); // ✅ Handle this case",
+            "        }",
+            "    }",
+            "",
+            "    // ❌ MISTAKE 3: Swallowing InterruptedException — silent bug",
+            "    static void mistake3() {",
+            "        Thread t = new Thread(() -> {",
+            "            try {",
+            "                Thread.sleep(10000);",
+            "            } catch (InterruptedException e) {",
+            "                // ❌ Do nothing — interrupt signal lost forever!",
+            "                // Thread continues running even after interrupt() was called",
+            "            }",
+            "            // This still executes even after interruption — unintended!",
+            "            System.out.println(\"Continuing despite interrupt — bug!\");",
+            "        });",
+            "        t.start();",
+            "        t.interrupt();",
+            "    }",
+            "",
+            "    // ❌ MISTAKE 4: Setting daemon AFTER start()",
+            "    static void mistake4() {",
+            "        Thread t = new Thread(() -> {});",
+            "        t.start();",
+            "        try {",
+            "            t.setDaemon(true); // ❌ IllegalThreadStateException",
+            "        } catch (IllegalThreadStateException e) {",
+            "            System.out.println(\"Set daemon before start!\");",
+            "        }",
+            "    }",
+            "",
+            "    // ❌ MISTAKE 5: Thread.sleep() to synchronize — unreliable timing",
+            "    static volatile String sharedResult = null;",
+            "    static void mistake5() throws InterruptedException {",
+            "        Thread producer = new Thread(() -> {",
+            "            try { Thread.sleep(100); } catch (InterruptedException e) {",
+            "                Thread.currentThread().interrupt();}",
+            "            sharedResult = \"computed\";",
+            "        });",
+            "        producer.start();",
+            "        Thread.sleep(200); // ❌ Hoping 200ms is enough — fragile, race condition!",
+            "        System.out.println(sharedResult); // may still be null under load",
+            "        // ✅ Fix: producer.join() — guaranteed synchronization",
+            "    }",
+            "",
+            "    public static void main(String[] args) throws InterruptedException {",
+            "        mistake1(); mistake2(); mistake3(); mistake4(); mistake5();",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These thread anti-patterns appear consistently in code reviews and lead to resource leaks, unreliable behaviour, and unmaintainable threading code."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Creating Raw Threads Instead of Using Executors",
+              "text": "Manually creating Thread objects ('new Thread(task).start()') in production code bypasses thread lifecycle management, resource limits, and monitoring. Every uncontrolled thread is a potential resource leak. Use ExecutorService and thread pools instead — they manage thread lifecycle, handle exceptions, support Future/CompletableFuture, and allow graceful shutdown. Raw Thread creation is acceptable only for quick prototyping or when you have a very specific low-level reason."
+            },
+            {
+              "icon": "🚫",
+              "title": "Using Thread.sleep() for Coordination",
+              "text": "Using sleep() to 'wait for another thread to finish' (Thread.sleep(500); // hopefully done by now) is fundamentally broken. The amount of time to sleep is always a guess — too short causes race conditions, too long wastes time. The correct tool is join() for 'wait for thread to finish', CountDownLatch for 'wait for N events', and BlockingQueue for producer-consumer. sleep() is for introducing deliberate delays (rate limiting, retry backoff) — not for synchronization."
+            },
+            {
+              "icon": "🚫",
+              "title": "Calling Thread.stop(), Thread.suspend(), Thread.resume()",
+              "text": "These methods are deprecated and must never be used. Thread.stop() kills a thread abruptly, releasing all locks it holds — leaving shared data in a partially-modified, inconsistent state. Thread.suspend() stops a thread while still holding its locks — deadlock guaranteed if another thread tries to acquire those locks. Use the interrupt mechanism and cooperative cancellation (checking isInterrupted() in loops) for safe thread termination."
+            },
+            {
+              "icon": "🚫",
+              "title": "Extending Thread When Runnable Suffices",
+              "text": "Extending Thread is only justified when you need to override Thread's behaviour (extremely rare). For defining what a thread does, always implement Runnable (or Callable). Extending Thread wastes your single inheritance slot, tightly couples task logic to the threading mechanism, makes the task incompatible with ExecutorService, and cannot be used with lambda expressions. Runnable wins on every axis for defining task logic."
+            },
+            {
+              "icon": "🚫",
+              "title": "Ignoring Thread UncaughtExceptionHandler",
+              "text": "If run() throws an unchecked exception that propagates out, the thread terminates silently — the exception is swallowed unless an UncaughtExceptionHandler is set. In production, always configure: Thread.setDefaultUncaughtExceptionHandler((thread, ex) -> log.error('Thread ' + thread.getName() + ' died', ex)). Without this, threading failures are invisible — threads die, work is lost, and no log entry indicates the failure."
+            },
+            {
+              "icon": "🚫",
+              "title": "Creating Unbounded Numbers of Threads",
+              "text": "Each platform thread consumes ~1MB of stack memory and corresponding OS resources. Spawning thousands of threads for thousands of concurrent tasks exhausts memory and degrades performance through context-switching overhead. The correct pattern: submit tasks to a bounded thread pool (Executors.newFixedThreadPool(N)) where N = number of CPU cores for CPU-bound work, or use virtual threads (Java 21) for I/O-bound work. Never do: while (true) { new Thread(task).start(); }."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples demonstrate professional thread usage patterns found in real enterprise Java applications — a background job runner and an asynchronous file processor."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "BackgroundJobRunner.java — Production Thread Patterns",
+          "lines": [
+            "package com.techsustainify.job;",
+            "",
+            "import java.util.concurrent.*;",
+            "import java.util.concurrent.atomic.AtomicInteger;",
+            "",
+            "/**",
+            " * Production-grade background job runner.",
+            " * Demonstrates: named threads, daemon config, uncaught exception handler,",
+            " * graceful shutdown, interrupt handling, and status tracking.",
+            " */",
+            "public class BackgroundJobRunner {",
+            "",
+            "    private final ExecutorService executor;",
+            "    private final AtomicInteger   jobsCompleted = new AtomicInteger(0);",
+            "    private final AtomicInteger   jobsFailed    = new AtomicInteger(0);",
+            "    private volatile boolean      isShuttingDown = false;",
+            "",
+            "    public BackgroundJobRunner(int threadCount) {",
+            "        AtomicInteger counter = new AtomicInteger(0);",
+            "",
+            "        this.executor = Executors.newFixedThreadPool(threadCount, r -> {",
+            "            Thread t = new Thread(r,",
+            "                \"BgJobRunner-Worker-\" + counter.incrementAndGet());",
+            "            t.setDaemon(false); // user thread — keep JVM alive",
+            "            t.setPriority(Thread.NORM_PRIORITY - 1); // slightly below normal",
+            "",
+            "            // ✅ Log uncaught exceptions — never lose a thread failure silently",
+            "            t.setUncaughtExceptionHandler((thread, ex) -> {",
+            "                System.err.println(\"[FATAL] Thread '\" + thread.getName()",
+            "                                 + \"' died unexpectedly: \" + ex.getMessage());",
+            "                jobsFailed.incrementAndGet();",
+            "            });",
+            "            return t;",
+            "        });",
+            "    }",
+            "",
+            "    public void submitJob(String jobName, Runnable task) {",
+            "        if (isShuttingDown) {",
+            "            System.out.println(\"Rejecting job '\" + jobName + \"' — shutting down\");",
+            "            return;",
+            "        }",
+            "        executor.execute(() -> {",
+            "            String threadName = Thread.currentThread().getName();",
+            "            System.out.println(\"[\" + threadName + \"] Starting: \" + jobName);",
+            "            long start = System.currentTimeMillis();",
+            "            try {",
+            "                task.run();",
+            "                long elapsed = System.currentTimeMillis() - start;",
+            "                System.out.printf(\"[%s] Completed: %s in %dms%n\",",
+            "                                  threadName, jobName, elapsed);",
+            "                jobsCompleted.incrementAndGet();",
+            "            } catch (Exception e) {",
+            "                System.err.println(\"[\" + threadName + \"] Failed: \" + jobName",
+            "                                 + \" — \" + e.getMessage());",
+            "                jobsFailed.incrementAndGet();",
+            "            }",
+            "        });",
+            "    }",
+            "",
+            "    public void shutdown() throws InterruptedException {",
+            "        isShuttingDown = true;",
+            "        executor.shutdown();",
+            "        if (!executor.awaitTermination(30, TimeUnit.SECONDS)) {",
+            "            System.err.println(\"Force-shutting down after 30s timeout\");",
+            "            executor.shutdownNow();",
+            "        }",
+            "        System.out.printf(\"Shutdown complete — Completed: %d, Failed: %d%n\",",
+            "                          jobsCompleted.get(), jobsFailed.get());",
+            "    }",
+            "",
+            "    public static void main(String[] args) throws InterruptedException {",
+            "        BackgroundJobRunner runner = new BackgroundJobRunner(3);",
+            "",
+            "        runner.submitJob(\"SendWelcomeEmail\",  () -> { Thread.sleep(200); return; });",
+            "        runner.submitJob(\"GenerateInvoice\",   () -> { Thread.sleep(300); return; });",
+            "        runner.submitJob(\"SyncInventory\",     () -> { Thread.sleep(150); return; });",
+            "        runner.submitJob(\"UpdateAnalytics\",   () -> { Thread.sleep(400); return; });",
+            "        runner.submitJob(\"FailingJob\", () -> {",
+            "            throw new RuntimeException(\"Database connection failed\");",
+            "        });",
+            "",
+            "        runner.shutdown();",
+            "        // Shutdown complete — Completed: 4, Failed: 1",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "thread-flowchart",
+      "title": "Thread Lifecycle Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This flowchart shows all six Java thread states and the transitions between them — the triggers that move a thread from one state to another."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1",  "label": "🆕 NEW",                               "sublabel": "Thread created, start() not called",          "type": "start"    },
+            { "id": "2",  "label": "▶️ RUNNABLE",                          "sublabel": "Running or ready to run on CPU",             "type": "process"  },
+            { "id": "3",  "label": "🔒 BLOCKED",                           "sublabel": "Waiting for synchronized monitor lock",       "type": "process"  },
+            { "id": "4",  "label": "⏳ WAITING",                           "sublabel": "wait() / join() / park() — indefinite",       "type": "process"  },
+            { "id": "5",  "label": "⏰ TIMED_WAITING",                     "sublabel": "sleep(ms) / wait(ms) / join(ms)",             "type": "process"  },
+            { "id": "6",  "label": "✅ TERMINATED",                        "sublabel": "run() completed or exception",                "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1", "to": "2",  "label": "start() called"                        },
+            { "from": "2", "to": "3",  "label": "Needs synchronized lock (held by other)" },
+            { "from": "3", "to": "2",  "label": "Lock acquired"                          },
+            { "from": "2", "to": "4",  "label": "wait() / join() / park()"               },
+            { "from": "4", "to": "2",  "label": "notify() / notifyAll() / unpark()"      },
+            { "from": "2", "to": "5",  "label": "sleep(ms) / wait(ms) / join(ms)"        },
+            { "from": "5", "to": "2",  "label": "Timeout expires or notify()"            },
+            { "from": "2", "to": "6",  "label": "run() returns or uncaught exception"    },
+            { "from": "4", "to": "2",  "label": "interrupt() called"                     },
+            { "from": "5", "to": "2",  "label": "interrupt() called"                     }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Single Thread Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are consistently asked in Java mid-level and senior interviews covering threading fundamentals, Java concurrency, and system design rounds."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is a thread in Java? How is it different from a process?",
+              "a": "A thread is the smallest unit of execution within a program — a lightweight sub-process with its own stack, program counter, and local variables, but sharing the process's heap memory and static data. A process is a complete program in execution with its own isolated memory space — processes cannot directly share memory with each other (they use IPC). Key differences: (1) Threads share memory; processes do not. (2) Thread creation is cheap (100s of microseconds); process creation is expensive (10s of milliseconds). (3) A crash in one thread can potentially crash the entire process; a process crash doesn't affect other processes. (4) Communication between threads uses shared memory (needs synchronization); between processes uses IPC (pipes, sockets, shared memory segments).",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between start() and run() in Java Thread?",
+              "a": "start(): creates a new OS-level thread and invokes run() on that NEW thread — execution is concurrent. run(): is a regular method call — executes synchronously on the CALLING thread, no new thread is created. Critical consequence: calling thread.run() directly does the work on the current thread sequentially — it does NOT achieve concurrency, even though it executes the same code. A common beginner mistake is calling run() when start() was intended — the program appears to work but is not actually multithreaded. Calling start() on an already-started thread throws IllegalThreadStateException.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What are the six states of a Java thread?",
+              "a": "Java Thread.State enum defines six states: (1) NEW — created, start() not called. (2) RUNNABLE — running or ready to run; JVM doesn't distinguish 'currently running' from 'waiting for CPU'. (3) BLOCKED — waiting to acquire a synchronized monitor lock held by another thread. (4) WAITING — indefinitely waiting (Object.wait(), Thread.join(), LockSupport.park()) — needs explicit notification to wake up. (5) TIMED_WAITING — waiting with a timeout (Thread.sleep(ms), Object.wait(ms), Thread.join(ms)) — wakes automatically when time expires. (6) TERMINATED — run() has completed or an uncaught exception caused the thread to stop. A TERMINATED thread cannot be restarted.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. Why should you implement Runnable instead of extending Thread?",
+              "a": "Four reasons: (1) Java only supports single inheritance — extending Thread consumes the one inheritance slot. Implementing Runnable keeps the class free to extend another class. (2) Separation of concerns — Runnable defines WHAT to do; Thread manages HOW to execute it. Mixing them in one class violates SRP. (3) Reusability — a Runnable can be submitted to ExecutorService, thread pools, ForkJoinPool, ScheduledExecutorService, and wrapped in Thread. A Thread subclass is only usable as a Thread. (4) Lambda compatibility — Runnable is a functional interface; you can write () -> { task } instead of an anonymous Thread subclass. Extending Thread is only appropriate when overriding Thread's own behaviour (e.g., customizing thread local variables) — an extremely rare need.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q5. What is the difference between sleep() and wait() in Java?",
+              "a": "sleep(ms): static method of Thread; pauses the CURRENT thread for the specified time; does NOT release any synchronized locks held by the thread; throws InterruptedException; belongs to Thread class. wait(): instance method of Object; can only be called inside a synchronized block; releases the monitor lock and puts the thread in WAITING state until notify()/notifyAll() is called or timeout expires; must be called in a loop to handle spurious wakeups; belongs to java.lang.Object. Key distinction: sleep() is for simple delay/pausing; wait() is for inter-thread communication via the monitor protocol (producer-consumer). sleep() keeps locks; wait() releases them.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. What is a daemon thread? When would you use one?",
+              "a": "A daemon thread is a background thread that the JVM kills automatically when all user (non-daemon) threads have finished — even if the daemon is still running. Set before start(): thread.setDaemon(true). The main thread is always non-daemon. Use daemon threads for: (1) Garbage collection (the JVM's GC threads are daemon threads). (2) Background monitoring — heartbeat checkers, health probes. (3) Cache maintenance — TTL eviction, periodic cache warming. (4) Log flushing — periodic buffer flushes. (5) Connection pool maintenance. Never use daemon threads for: database writes, file writes, payment processing — any work that requires a clean shutdown because finally blocks and shutdown hooks may not run when daemon threads are killed.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q7. How does thread interruption work in Java? What is the correct way to handle InterruptedException?",
+              "a": "Thread interruption is a cooperative cancellation mechanism. thread.interrupt() sets the target thread's interrupt flag. If the thread is blocked in sleep(), wait(), or join(), those methods immediately throw InterruptedException and clear the flag. If the thread is running, isInterrupted() returns true and the thread can check it. Correct handling of InterruptedException — two valid options: (1) Propagate: declare 'throws InterruptedException' in the method signature and re-throw. (2) Restore and stop: Thread.currentThread().interrupt() to restore the flag, then return/break. WRONG: catch (InterruptedException e) { /* do nothing */ } — this silently loses the interrupt signal; callers depending on it will never receive it. The rule: never swallow InterruptedException without restoring the flag.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q8. What does Thread.join() do? How is it different from sleep()?",
+              "a": "join() causes the CALLING thread to block until the TARGET thread terminates (or timeout expires). It is used for sequencing — ensuring thread A's results are fully ready before thread B uses them. join() is guaranteed synchronization. sleep(ms) pauses the calling thread for a duration — no guarantee about any other thread's state. Using sleep() to 'wait for another thread' (Thread.sleep(500); // hopefully done) is a race condition — the other thread might finish in 200ms or 1000ms depending on system load. join() is always the correct tool for 'wait until another thread finishes'. join() also has a timeout version: join(ms) — blocks for at most ms milliseconds, then returns whether or not the target thread has finished (check with isAlive()).",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q9. What are Virtual Threads in Java 21? How do they differ from platform threads?",
+              "a": "Virtual threads (Project Loom, JEP 444, Java 21 GA) are JVM-managed lightweight threads not directly mapped to OS threads. Platform (traditional) threads: each maps to one OS thread (~1MB stack), expensive to create, a blocking call pins the OS thread. Virtual threads: managed by JVM scheduler, ~few KB initial stack, cheap to create (millions possible), blocking calls unmount the virtual thread from its carrier OS thread — the OS thread is freed to run other virtual threads. Ideal for: I/O-bound work (HTTP calls, database queries) where threads spend most time blocked. Not beneficial for: CPU-intensive computation (still needs real OS threads), ThreadLocal-based pooling patterns (virtual threads are too cheap to pool). Create: Thread.ofVirtual().start(task) or Executors.newVirtualThreadPerTaskExecutor().",
+              "tag": "Modern Java"
+            },
+            {
+              "q": "Q10. What is an UncaughtExceptionHandler and why is it important?",
+              "a": "UncaughtExceptionHandler is a callback interface (Thread.UncaughtExceptionHandler) that the JVM calls when a thread terminates due to an uncaught exception from run(). Without it, when a thread dies from an uncaught exception, the JVM prints a stack trace to System.err — which may be ignored or not captured in production log systems. The thread simply disappears silently from the application's perspective. Set per-thread: thread.setUncaughtExceptionHandler((t, ex) -> logger.error(...)); Set globally: Thread.setDefaultUncaughtExceptionHandler((t, ex) -> logger.error(...)); Critical for production: thread failures must be logged, alerted, and tracked. Thread pool executors suppress exceptions from tasks — combine with Future.get() or afterExecute() hook to catch those separately.",
+              "tag": "Advanced"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Threading Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Attempt each question independently before reading the answer — active recall dramatically improves retention compared to passive reading."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output of this code and why?\nThread t = new Thread(() -> {\n    System.out.println(Thread.currentThread().getName());\n}, \"WorkerThread\");\nt.run();  // Note: run(), not start()",
+              "a": "Output: 'main'. Because t.run() is a regular method call — it executes the lambda on the CALLING thread, which is the main thread. Thread.currentThread().getName() returns 'main'. No new thread is created. If t.start() were called instead, the output would be 'WorkerThread' — because start() creates a new thread and invokes run() on it. This is the most fundamental threading mistake: confusing run() and start().",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What states does a thread go through in this code?\nThread t = new Thread(() -> {\n    try { Thread.sleep(1000); }\n    catch (InterruptedException e) { Thread.currentThread().interrupt(); }\n});\n// State A: what is the state here?\nt.start();\n// State B: (immediately after start)\nThread.sleep(500);\n// State C: (after 500ms, while t is sleeping)\nt.join();\n// State D: (after join returns)",
+              "a": "State A (before start): NEW — thread object created but start() not called. State B (immediately after start): RUNNABLE — start() has been called; thread is active. State C (after 500ms, while t is sleeping): TIMED_WAITING — Thread.sleep(1000) is in progress; t has been sleeping for ~500ms, will wake at ~1000ms. State D (after join): TERMINATED — t's sleep completed, run() returned, thread finished. join() returned only after t reached TERMINATED state.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Is there a bug? What is it?\nThread worker = new Thread(() -> heavyComputation());\nworker.start();\nThread.sleep(2000); // waiting for worker to finish\nSystem.out.println(result); // use result from heavyComputation",
+              "a": "Yes — using Thread.sleep(2000) to 'wait' for the worker is a race condition. If heavyComputation() takes more than 2 seconds (under load, on a slow machine, during GC pause), result will be read before computation is complete — reading stale or null data. Fix: replace Thread.sleep(2000) with worker.join() — this blocks the main thread until worker is truly TERMINATED, regardless of how long the computation takes. join() is guaranteed; sleep() is a guess.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. What does this output and what threading concept does it show?\nclass Counter {\n    static int count = 0;\n}\nThread t1 = new Thread(() -> { for (int i = 0; i < 1000; i++) Counter.count++; });\nThread t2 = new Thread(() -> { for (int i = 0; i < 1000; i++) Counter.count++; });\nt1.start(); t2.start(); t1.join(); t2.join();\nSystem.out.println(Counter.count);",
+              "a": "The output is unpredictable — it will be a number between 1000 and 2000, rarely exactly 2000. This demonstrates a race condition on the shared 'count' variable. 'count++' is NOT atomic — it is three operations: read count, increment, write back. When both threads execute these concurrently without synchronization, some increments are lost (one thread reads stale value, increments, writes — overwriting the other thread's increment). Fix: use AtomicInteger (count.incrementAndGet()) or a synchronized block. This is the foundational example of why shared mutable state requires synchronization in multithreaded code.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. What is wrong with this InterruptedException handling?\nvoid processData() {\n    try {\n        Thread.sleep(5000);\n    } catch (InterruptedException e) {\n        System.out.println(\"Interrupted — continuing anyway\");\n        // continue processing\n    }\n    doMoreWork(); // continues after interrupt\n}",
+              "a": "Two problems: (1) The interrupt signal is silently swallowed — the catch block does nothing with the interrupt flag, which was cleared when InterruptedException was thrown. Code calling processData() via a thread that received interrupt() will have its interrupt signal permanently lost. (2) doMoreWork() runs after interruption — the caller intended to cancel the thread, but processing continues anyway. Fix: catch (InterruptedException e) { Thread.currentThread().interrupt(); // restore flag return; // or propagate up // do NOT continue processing } The interrupted thread should clean up and stop, not continue as if nothing happened.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. Will this daemon thread keep the JVM alive? What will it print?\npublic static void main(String[] args) {\n    Thread daemon = new Thread(() -> {\n        int i = 0;\n        while (true) {\n            System.out.println(\"Daemon tick: \" + i++);\n            try { Thread.sleep(200); } catch (InterruptedException e) { return; }\n        }\n    });\n    daemon.setDaemon(true);\n    daemon.start();\n    System.out.println(\"Main done\");\n}",
+              "a": "The JVM will NOT stay alive for the daemon. When main() returns, the main thread (the only non-daemon thread) terminates. The JVM immediately kills all daemon threads and exits. The output will be: 'Main done' and 0 to 2 daemon tick prints — depending on how quickly the JVM exits after main returns. The daemon may print 0, 1, or 2 ticks before being killed. If daemon.setDaemon(false) were used (or removed — default is non-daemon), the JVM would stay alive indefinitely running the while(true) loop.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. Design a solution: You have 3 tasks (fetchUser, fetchOrders, fetchInventory) that can run concurrently. After all three complete, combine their results. Use Thread and join(). No ExecutorService.",
+              "a": "String[] results = new String[3];\n\nThread t1 = new Thread(() -> {\n    // simulate fetch\n    try { Thread.sleep(300); } catch (InterruptedException e) { Thread.currentThread().interrupt(); return; }\n    results[0] = \"User: Priya\";\n}, \"FetchUser\");\n\nThread t2 = new Thread(() -> {\n    try { Thread.sleep(500); } catch (InterruptedException e) { Thread.currentThread().interrupt(); return; }\n    results[1] = \"Orders: [#101, #102]\";\n}, \"FetchOrders\");\n\nThread t3 = new Thread(() -> {\n    try { Thread.sleep(200); } catch (InterruptedException e) { Thread.currentThread().interrupt(); return; }\n    results[2] = \"Inventory: 150 units\";\n}, \"FetchInventory\");\n\nt1.start(); t2.start(); t3.start();\n\nt1.join(); t2.join(); t3.join();\n// All three done — safe to combine\nSystem.out.println(results[0] + ' | ' + results[1] + ' | ' + results[2]);\n// Total time: ~500ms (parallel) vs ~1000ms (sequential). Note: String[] is used for results to allow writing from Runnable lambda. In production, use AtomicReference or CompletableFuture.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. What will this print? Is there a threading issue?\nclass SharedCounter {\n    private int value = 0;\n    public int increment() { return ++value; }\n    public int get() { return value; }\n}\nSharedCounter counter = new SharedCounter();\nThread[] threads = new Thread[10];\nfor (int i = 0; i < 10; i++) {\n    threads[i] = new Thread(() -> {\n        for (int j = 0; j < 100; j++) counter.increment();\n    });\n    threads[i].start();\n}\nfor (Thread t : threads) t.join();\nSystem.out.println(counter.get());",
+              "a": "The output is unpredictable — somewhere between 100 and 1000, almost never exactly 1000. This is a race condition. '++value' compiles to: read value, add 1, write back — three non-atomic operations. When 10 threads all execute these concurrently on the shared 'value' field, increments are lost due to interleaved reads and writes. For example: Thread-1 reads value=50, Thread-2 reads value=50, Thread-1 writes 51, Thread-2 writes 51 — one increment is lost. Fix: (1) 'synchronized int increment() { return ++value; }' (2) Replace int with AtomicInteger and use incrementAndGet(). (3) Use volatile — NOT sufficient here because volatile only ensures visibility, not atomicity of compound operations like ++.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Threads: The Foundation of Every Concurrent Java Application",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Understanding threads at the single-thread level — how they are created, their lifecycle, how they pause, wait, interrupt, and finish — is the indispensable foundation for all concurrent Java programming. Every concurrency bug, every deadlock, every race condition ultimately comes down to threads violating the mental model you build here. Master the fundamentals before layering synchronization, locks, and thread pools on top."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The hallmarks of professional thread usage: always call <code>start()</code> (never <code>run()</code>), implement <code>Runnable</code> (not extend <code>Thread</code>), handle <code>InterruptedException</code> by restoring the flag, use <code>join()</code> for sequencing (not <code>sleep()</code>), name your threads meaningfully, set daemon status before <code>start()</code>, set an <code>UncaughtExceptionHandler</code>, and prefer <code>ExecutorService</code> over raw thread creation in production."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept", "Key Method / Syntax", "State / Effect", "Critical Rule"],
+          "rows": [
+            ["Create thread",       "new Thread(runnable).start()",      "NEW → RUNNABLE",               "Always start(), never run()"],
+            ["Pause execution",     "Thread.sleep(ms)",                  "RUNNABLE → TIMED_WAITING",     "Does NOT release locks; handle InterruptedException"],
+            ["Wait for thread",     "thread.join()",                     "RUNNABLE → WAITING",           "Use join(), NOT sleep() for synchronization"],
+            ["Cancel a thread",     "thread.interrupt()",                "Sets interrupt flag",          "Restore flag in catch: currentThread().interrupt()"],
+            ["Background service",  "thread.setDaemon(true)",            "Killed on JVM exit",           "Set before start(); never for critical I/O work"],
+            ["Thread priority",     "thread.setPriority(1-10)",          "Scheduler hint only",          "OS-dependent; not a guarantee"],
+            ["Check state",         "thread.getState()",                 "Thread.State enum",            "Six states: NEW RUNNABLE BLOCKED WAITING TIMED_WAITING TERMINATED"],
+            ["Virtual threads",     "Thread.ofVirtual().start(task)",    "JVM-managed lightweight",      "Java 21+; ideal for I/O-bound, not CPU-bound work"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Multithreading</strong> — where you'll learn how to safely coordinate multiple threads using synchronization, locks, volatile, atomic variables, and Java's rich <code>java.util.concurrent</code> package — building on every concept you've mastered here. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Single Thread",
+    "items": [
+      {
+        "q": "What is a thread in Java?",
+        "a": "A thread is the smallest unit of execution within a Java program. It has its own call stack, program counter, and local variables, but shares the process's heap memory with other threads. Every Java program starts with one thread — the main thread — which executes the main() method. Threads are represented by java.lang.Thread and their task logic is defined via java.lang.Runnable."
+      },
+      {
+        "q": "What are the ways to create a thread in Java?",
+        "a": "Two ways: (1) Extend Thread class and override run(). Limitation: consumes single inheritance slot. (2) Implement Runnable interface and pass to Thread constructor — preferred because it separates task logic from thread management, allows extending other classes, is compatible with ExecutorService, and supports lambda expressions. Since Java 8: new Thread(() -> { task }).start() — lambda implements Runnable directly."
+      },
+      {
+        "q": "What is the difference between start() and run() in Java Thread?",
+        "a": "start() creates a new OS thread and calls run() on it — concurrent execution. run() is a regular method call on the current (calling) thread — no new thread is created. Calling run() directly executes the task sequentially on the calling thread, not concurrently. Always call start() to launch a new thread. Calling start() on an already-started thread throws IllegalThreadStateException."
+      },
+      {
+        "q": "What are the states of a thread in Java?",
+        "a": "Six states (Thread.State enum): NEW (created, not started), RUNNABLE (running or ready), BLOCKED (waiting for a synchronized lock), WAITING (indefinitely waiting — wait()/join()/park()), TIMED_WAITING (waiting with timeout — sleep(ms)/wait(ms)/join(ms)), TERMINATED (finished or exception). A TERMINATED thread cannot be restarted."
+      },
+      {
+        "q": "What is a daemon thread in Java?",
+        "a": "A daemon thread is a background thread that the JVM automatically terminates when all non-daemon (user) threads have finished. Set with thread.setDaemon(true) BEFORE start(). Use for background tasks that should not prevent JVM shutdown: heartbeat monitors, GC, log flushing, cache eviction. Never use for critical I/O work — daemon threads are killed abruptly without cleanup when the JVM exits."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Math",    "path": "/java/java-math" },
+    "next": { "label": "Java Multithreading →",     "path": "/java/java-multi-thread" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Main thread",          "dd": "First thread — executes main() method" },
+      { "dt": "Create thread",        "dd": "Extend Thread or implement Runnable" },
+      { "dt": "Launch",               "dd": "Always start() — never run()" },
+      { "dt": "Thread states",        "dd": "NEW RUNNABLE BLOCKED WAITING TIMED_WAITING TERMINATED" },
+      { "dt": "sleep()",              "dd": "Pauses current thread; does NOT release locks" },
+      { "dt": "join()",               "dd": "Waits for target thread to TERMINATE" },
+      { "dt": "interrupt()",          "dd": "Sets flag; always restore in catch block" },
+      { "dt": "Daemon thread",        "dd": "Set before start(); killed on JVM exit" },
+      { "dt": "Virtual threads",      "dd": "Java 21 — lightweight JVM-managed threads" }
+    ],
+    "relatedArticles": [
+      { "label": "Java Multithreading",        "path": "/java/java-multithreading" },
+      { "label": "Java Synchronization",       "path": "/java/java-synchronization" },
+      { "label": "Java ExecutorService",       "path": "/java/java-executor-service" },
+      { "label": "Java volatile Keyword",      "path": "/java/java-volatile" },
+      { "label": "Java AtomicInteger",         "path": "/java/java-atomic" },
+      { "label": "Java Lambda Expressions",    "path": "/java/java-lambda" },
+      { "label": "Java Runnable vs Callable",  "path": "/java/java-runnable-callable" },
+      { "label": "Java Thread Pool",           "path": "/java/java-thread-pool" }
+    ],
+    "tags": ["Java Thread", "Single Thread", "Thread Lifecycle", "Thread States", "Runnable Interface", "Thread Class", "sleep()", "join()", "interrupt()", "Daemon Thread", "Thread Priority", "UncaughtExceptionHandler", "Virtual Threads", "Java 21", "Java Concurrency Basics", "Main Thread", "Java Best Practices"]
+  }
+}

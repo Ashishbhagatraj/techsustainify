@@ -1,0 +1,1607 @@
+{
+  "meta": {
+    "title": "Java Strings — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Strings with String creation, immutability, String pool, StringBuilder, StringBuffer, string methods, formatting, comparison, concatenation, regular expressions, best practices, common mistakes, and real-world examples. Covers all String patterns in Java. Updated March 2026.",
+    "keywords": "java strings, java string methods, java string immutability, java string pool, java stringbuilder, java stringbuffer, java string comparison, java string concatenation, java string formatting, java string regex, java string examples, java string best practices, java string interview questions, java 21 string features, java text blocks, java OOP strings",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-strings",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Strings — Syntax, Methods, Examples & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java Strings — immutability, String pool, StringBuilder vs StringBuffer, string methods, comparison, formatting, regex, text blocks, real-world examples, pitfalls, and interview questions.",
+      "url": "https://www.techsustainify.com/java/java-strings",
+      "image": "https://www.techsustainify.com/images/java-strings-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Strings Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-03-01T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Strings",
+          "String Immutability",
+          "String Pool",
+          "StringBuilder",
+          "StringBuffer",
+          "String Methods",
+          "String Comparison",
+          "Text Blocks",
+          "String Formatting",
+          "Java 21"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Strings — Syntax, Methods, Examples & Best Practices 2026",
+      "description": "Complete guide to Java Strings — immutability, String pool, StringBuilder, StringBuffer, string methods, comparison, formatting, regex, text blocks, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-strings-og.png",
+      "imageAlt": "Java Strings Guide 2026 - Tech Sustainify",
+      "readingTime": "28 minutes",
+      "level": "Beginner to Intermediate",
+      "label1": "Reading Time",
+      "data1": "28 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner to Intermediate"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Strings — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering all Java String concepts — creation, immutability, String pool, StringBuilder, StringBuffer, built-in methods, comparison, formatting, regex, text blocks, real-world examples, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-03-01",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner to Intermediate",
+        "wordCount": 7500,
+        "timeRequired": "PT28M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Strings" },
+          { "@type": "Thing", "name": "String Immutability" },
+          { "@type": "Thing", "name": "StringBuilder" },
+          { "@type": "Thing", "name": "String Methods" }
+        ],
+        "keywords": "java strings, string immutability, string pool, stringbuilder, stringbuffer, string methods, string comparison, string formatting, text blocks, regex"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Strings" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a String in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A String in Java is an object of the java.lang.String class that represents a sequence of characters. Strings in Java are immutable — once created, their value cannot be changed. Java stores string literals in a special memory area called the String Pool (inside the Heap) to reuse identical strings and save memory. Strings can be created using literals (String s = \"Hello\") or the new keyword (String s = new String(\"Hello\")). Because String is a class, it provides 50+ built-in methods for searching, comparing, modifying, formatting, and transforming text."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why are Strings immutable in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Strings are immutable in Java for several reasons: (1) Security — strings are used for class names, network connections, file paths, and credentials; immutability prevents malicious modification. (2) Thread safety — immutable objects are inherently thread-safe; multiple threads can share the same String without synchronization. (3) String Pool efficiency — immutability allows the JVM to safely share interned strings; if strings were mutable, one reference changing a value would affect all other references. (4) Hashcode caching — since String's value never changes, its hashcode can be cached on first computation, making Strings very efficient as HashMap keys."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between String, StringBuilder, and StringBuffer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "String is immutable — every modification creates a new object. Best for fixed, constant values. StringBuilder is mutable and NOT thread-safe — modifications happen in-place. Best for single-threaded string building (loops, concatenation). Significantly faster than String concatenation in loops. StringBuffer is mutable and thread-safe — all methods are synchronized. Best for multi-threaded environments where strings are shared and modified. Slower than StringBuilder due to synchronization overhead. Rule of thumb: use String for constants, StringBuilder for single-threaded building, StringBuffer for multi-threaded building."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you compare two Strings in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "There are multiple ways to compare Strings in Java: (1) equals() — compares content character by character. Most common and correct way: s1.equals(s2). (2) equalsIgnoreCase() — content comparison ignoring case: s1.equalsIgnoreCase(s2). (3) compareTo() — lexicographic comparison, returns 0 if equal, negative if s1 < s2, positive if s1 > s2. (4) == operator — compares REFERENCES (memory addresses), NOT content. Two strings with the same content may have different references. NEVER use == for string value comparison except in specific interning scenarios. (5) Objects.equals(s1, s2) — null-safe equals check."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the String Pool in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The String Pool (also called String Intern Pool or String Constant Pool) is a special memory region inside the Java Heap where the JVM stores unique string literals. When you write String s = \"Hello\", the JVM checks if \"Hello\" already exists in the pool. If yes, it returns the existing reference. If no, it creates a new String object in the pool. This avoids creating duplicate String objects for identical literals, saving memory. Strings created with new String(\"Hello\") bypass the pool and always create a new heap object. You can manually add a string to the pool using s.intern(). From Java 7+, the String Pool lives in the main Heap (previously in PermGen), allowing it to be garbage collected."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner to Intermediate",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-03-01",
+      "dateModified": "2026-03-20",
+      "readingTime": "28 minutes",
+      "wordCount": 7500,
+      "difficulty": "Beginner to Intermediate",
+      "chapter": 10,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-string",               "title": "What is a String in Java?" },
+        { "id": "string-creation",              "title": "String Creation — Literal vs new Keyword" },
+        { "id": "string-immutability",          "title": "String Immutability & String Pool" },
+        { "id": "string-methods",               "title": "Built-in String Methods" },
+        { "id": "string-comparison",            "title": "String Comparison" },
+        { "id": "string-concatenation",         "title": "String Concatenation" },
+        { "id": "stringbuilder-stringbuffer",   "title": "StringBuilder and StringBuffer" },
+        { "id": "string-formatting",            "title": "String Formatting" },
+        { "id": "text-blocks",                  "title": "Text Blocks (Java 15+)" },
+        { "id": "string-conversion",            "title": "Type Conversion with Strings" },
+        { "id": "string-vs-stringbuilder",      "title": "String vs StringBuilder vs StringBuffer" },
+        { "id": "common-mistakes",              "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",                "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",          "title": "Real-World Production Code Examples" },
+        { "id": "string-flowchart",             "title": "String Memory Flowchart" },
+        { "id": "interview-questions",          "title": "Interview Questions" },
+        { "id": "practice-questions",           "title": "Practice Questions" },
+        { "id": "conclusion-heading",           "title": "Conclusion" },
+        { "id": "faq-heading",                  "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-strings" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-strings" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-strings" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-arrays",
+      "next": "https://www.techsustainify.com/java/java-oop-intro"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-core",
+      "contentTopic": "java-strings",
+      "chapterNumber": 10,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner-intermediate",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Strings" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Strings — Creation, Methods, Immutability & Best Practices",
+    "subtitle": "Everything you need to know about Java Strings — immutability, String Pool, StringBuilder vs StringBuffer, 50+ built-in methods, comparison, formatting, text blocks, regex, type conversion, anti-patterns, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "28 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner to Intermediate" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "10 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-string",
+      "title": "What is a String in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>String</strong> in Java is an object of the <code>java.lang.String</code> class that represents a sequence of characters. Unlike primitive types such as <code>int</code> or <code>char</code>, String is a <strong>reference type</strong> — a full-fledged class with 50+ built-in methods for text manipulation. Java strings are enclosed in double quotes: <code>\"Hello, World!\"</code>."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In real-world Java applications, Strings are everywhere — <em>user names</em>, <em>email addresses</em>, <em>file paths</em>, <em>JSON payloads</em>, <em>SQL queries</em>, <em>HTTP responses</em>. Understanding how Java handles strings under the hood — including <strong>immutability</strong>, the <strong>String Pool</strong>, and when to use <strong>StringBuilder</strong> — is essential for writing both correct and performant Java code."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The most important thing to internalize about Java Strings is that they are <strong>immutable</strong> — once a String object is created, its character sequence can never be changed. Any operation that appears to modify a String (like <code>concat()</code>, <code>replace()</code>, or <code>toUpperCase()</code>) actually returns a <strong>new String object</strong>, leaving the original unchanged."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java String at a Glance",
+          "text": "String is a class in java.lang — imported automatically. Strings are immutable — value never changes after creation. String literals are stored in the String Pool (Heap) for memory efficiency. String comparison: use equals(), NOT ==. For heavy string building in loops: use StringBuilder (single-threaded) or StringBuffer (multi-threaded). Java 15+ Text Blocks (\"\"\"...\"\"\") allow multi-line strings without escape characters."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "string-creation",
+      "title": "String Creation — Literal vs new Keyword",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "There are two ways to create a String in Java: using a <strong>string literal</strong> or using the <strong><code>new</code> keyword</strong>. These two approaches behave differently in memory — a critical distinction for interviews and for writing memory-efficient code."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📌",
+              "title": "String Literal (Recommended)",
+              "text": "String s = \"Hello\"; — The JVM checks the String Pool first. If \"Hello\" already exists, it returns the existing reference. If not, it creates a new String in the pool and returns its reference. Multiple variables with the same literal value share ONE object in memory. This is the preferred way to create strings — memory efficient and idiomatic Java."
+            },
+            {
+              "icon": "🆕",
+              "title": "new Keyword (Avoid Unless Necessary)",
+              "text": "String s = new String(\"Hello\"); — ALWAYS creates a new String object in the Heap, bypassing the String Pool entirely. Even if \"Hello\" already exists in the pool, a separate new object is created. Two String objects now exist: one in the pool (from the literal inside new String()), one in the heap (from new). This wastes memory and should be avoided in modern Java. Use new String() only when you explicitly need a distinct object reference."
+            },
+            {
+              "icon": "🔗",
+              "title": "String.intern() — Manual Pool Entry",
+              "text": "s.intern() manually adds a string to the String Pool (or returns the existing pool reference if already present). Useful when strings are created dynamically (e.g., from input, files, or network) and you want to enable pool sharing. Example: String s = new String(\"Hello\").intern(); — now s points to the pool version. Used in performance-sensitive applications with massive numbers of repeated strings (e.g., parsing large XML files)."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StringCreation.java",
+          "lines": [
+            "public class StringCreation {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ String Literal — stored in String Pool",
+            "        String s1 = \"Hello\";",
+            "        String s2 = \"Hello\";  // Same pool object as s1",
+            "",
+            "        // ❌ new keyword — new Heap object, bypasses pool",
+            "        String s3 = new String(\"Hello\");",
+            "        String s4 = new String(\"Hello\");  // Another new Heap object",
+            "",
+            "        // == compares REFERENCES (memory addresses)",
+            "        System.out.println(s1 == s2);   // true  — same pool object",
+            "        System.out.println(s1 == s3);   // false — different objects",
+            "        System.out.println(s3 == s4);   // false — both new Heap objects",
+            "",
+            "        // equals() compares CONTENT (character by character)",
+            "        System.out.println(s1.equals(s2));  // true",
+            "        System.out.println(s1.equals(s3));  // true — same content",
+            "        System.out.println(s3.equals(s4));  // true — same content",
+            "",
+            "        // ✅ intern() — pulls new String back to pool",
+            "        String s5 = new String(\"Hello\").intern();",
+            "        System.out.println(s1 == s5);   // true — now same pool object",
+            "",
+            "        // Other creation methods",
+            "        char[] chars = {'J', 'a', 'v', 'a'};",
+            "        String fromChars = new String(chars);         // \"Java\"",
+            "        String fromBytes = new String(new byte[]{72, 105}); // \"Hi\"",
+            "",
+            "        System.out.println(fromChars);  // Java",
+            "        System.out.println(fromBytes);  // Hi",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Never Use == to Compare String Values",
+          "text": "The == operator compares object references (memory addresses), NOT the content of strings. Two strings with identical characters but created differently will have == return false. This is one of the most common bugs in Java for beginners. ALWAYS use equals() or equalsIgnoreCase() for string value comparison. The only exception: comparing interned strings or enum constants, where == is intentionally used for identity checks."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "string-immutability",
+      "title": "String Immutability & String Pool",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java Strings are <strong>immutable</strong> — once a String object is created, its internal character array (<code>private final char[] value</code>) cannot be modified. Every method that appears to change a string — <code>toUpperCase()</code>, <code>replace()</code>, <code>concat()</code> — returns a <strong>brand new String object</strong>. The original remains unchanged."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <strong>String Pool</strong> (String Intern Pool) is a special cache inside the Java Heap. When the JVM encounters a string literal, it looks in the pool first. If an identical string exists, it reuses that object. This is possible only because strings are immutable — if one reference could change the string, all other references to the same pool object would be affected."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🔒",
+              "title": "Why Immutability? — Security",
+              "text": "Strings are used for class names, JDBC connection URLs, file paths, passwords, and HTTP endpoints. If strings were mutable, a malicious class could obtain a reference and change the path or credential after a security check passes. Immutability guarantees that what was checked is what gets used — a fundamental security property relied on by the JVM's ClassLoader, network APIs, and security frameworks."
+            },
+            {
+              "icon": "🧵",
+              "title": "Why Immutability? — Thread Safety",
+              "text": "Immutable objects are inherently thread-safe — multiple threads can read the same String concurrently without any synchronization. No locks, no volatile, no atomic operations needed. This makes String the safest type to share across threads. If String were mutable, you would need synchronization every time a string is passed between threads — a massive performance and complexity cost in multi-threaded servers."
+            },
+            {
+              "icon": "⚡",
+              "title": "Why Immutability? — HashMap Key Efficiency",
+              "text": "String is the most common HashMap key in Java. For a key to work correctly in a HashMap, its hashCode() must stay constant throughout its lifetime. Since String is immutable, its hashCode can be computed once and cached in an internal field. Subsequent calls to hashCode() return the cached value instantly — O(1). If strings were mutable, hashCode would have to be recomputed every call, making HashMap operations unpredictable and much slower."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StringImmutability.java",
+          "lines": [
+            "public class StringImmutability {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Demonstrating immutability",
+            "        String s1 = \"Hello\";",
+            "        String s2 = s1.toUpperCase();  // Creates a NEW string",
+            "",
+            "        System.out.println(s1);  // \"Hello\" — UNCHANGED",
+            "        System.out.println(s2);  // \"HELLO\" — new object",
+            "        System.out.println(s1 == s2); // false — different objects",
+            "",
+            "        // Every modification returns a new String",
+            "        String original = \"  Java Programming  \";",
+            "        String trimmed   = original.trim();         // new String",
+            "        String replaced  = trimmed.replace(\"Java\", \"Python\"); // new String",
+            "        String upper     = replaced.toUpperCase();  // new String",
+            "",
+            "        System.out.println(original);  // \"  Java Programming  \" — unchanged",
+            "        System.out.println(upper);      // \"PYTHON PROGRAMMING\"",
+            "",
+            "        // ✅ String Pool demonstration",
+            "        String pool1 = \"Java\";  // Goes to String Pool",
+            "        String pool2 = \"Java\";  // Returns existing pool reference",
+            "        String heap1 = new String(\"Java\");  // New Heap object",
+            "",
+            "        System.out.println(pool1 == pool2);  // true  — same pool object",
+            "        System.out.println(pool1 == heap1);  // false — different locations",
+            "        System.out.println(pool1.equals(heap1)); // true — same content",
+            "",
+            "        // ✅ String concatenation creates new objects",
+            "        String a = \"Hello\";",
+            "        String b = a + \" World\";  // New String object created",
+            "        System.out.println(a);  // \"Hello\" — a is unchanged",
+            "        System.out.println(b);  // \"Hello World\" — b is a new object",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "string-methods",
+      "title": "Built-in String Methods — Complete Reference",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>java.lang.String</code> class provides 50+ methods for working with strings. These are the most important and frequently used methods — mastering them is essential for day-to-day Java development and for passing coding interviews."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📏",
+              "title": "Length & Character Access",
+              "text": "length() — returns number of characters. charAt(int index) — returns char at given index (0-based). indexOf(String s) — first occurrence index of substring (-1 if not found). lastIndexOf(String s) — last occurrence index. isEmpty() — true if length() == 0. isBlank() — true if empty or only whitespace (Java 11+). codePointAt(int index) — Unicode code point at index."
+            },
+            {
+              "icon": "✂️",
+              "title": "Substring & Splitting",
+              "text": "substring(int start) — from start to end. substring(int start, int end) — from start to end (exclusive). split(String regex) — splits into array by delimiter. split(String regex, int limit) — splits with max parts limit. strip() — removes leading/trailing whitespace (Unicode-aware, Java 11+). trim() — removes ASCII whitespace. stripLeading() / stripTrailing() — one side only (Java 11+)."
+            },
+            {
+              "icon": "🔄",
+              "title": "Modification (Returns New String)",
+              "text": "replace(char old, char new) — replaces all occurrences of char. replace(String old, String new) — replaces all occurrences of substring. replaceAll(String regex, String replacement) — regex-based replace. replaceFirst(String regex, String replacement) — replaces first match. toUpperCase() — all uppercase. toLowerCase() — all lowercase. concat(String s) — appends string (prefer + operator or StringBuilder). repeat(int count) — repeats string n times (Java 11+)."
+            },
+            {
+              "icon": "🔍",
+              "title": "Search & Testing",
+              "text": "contains(CharSequence s) — true if substring exists. startsWith(String prefix) — true if starts with prefix. endsWith(String suffix) — true if ends with suffix. matches(String regex) — true if whole string matches regex. equals(Object o) — content equality check. equalsIgnoreCase(String s) — case-insensitive equality. compareTo(String s) — lexicographic comparison (returns int). compareToIgnoreCase(String s) — case-insensitive lexicographic."
+            },
+            {
+              "icon": "🔗",
+              "title": "Joining & Formatting",
+              "text": "String.join(delimiter, elements) — joins strings with delimiter. String.format(format, args) — printf-style formatting. formatted(args) — instance method version (Java 15+). String.valueOf(Object o) — converts any type to String. chars() — returns IntStream of char values (Java 8+). lines() — splits by line terminators, returns Stream<String> (Java 11+). indent(int n) — adds/removes indentation (Java 12+)."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StringMethods.java",
+          "lines": [
+            "public class StringMethods {",
+            "    public static void main(String[] args) {",
+            "",
+            "        String s = \"  Hello, Java World!  \";",
+            "",
+            "        // --- Length & Access ---",
+            "        System.out.println(s.length());        // 22",
+            "        System.out.println(s.charAt(7));       // 'H' (after trim logic)",
+            "        System.out.println(s.indexOf(\"Java\")); // 9",
+            "        System.out.println(s.isEmpty());       // false",
+            "        System.out.println(\"  \".isBlank());    // true (Java 11+)",
+            "",
+            "        // --- Trimming ---",
+            "        String trimmed = s.strip();            // \"Hello, Java World!\"",
+            "        System.out.println(trimmed);",
+            "",
+            "        // --- Substring ---",
+            "        System.out.println(trimmed.substring(7));      // \"Java World!\"",
+            "        System.out.println(trimmed.substring(7, 11));  // \"Java\"",
+            "",
+            "        // --- Search ---",
+            "        System.out.println(trimmed.contains(\"Java\"));       // true",
+            "        System.out.println(trimmed.startsWith(\"Hello\"));    // true",
+            "        System.out.println(trimmed.endsWith(\"!\"));          // true",
+            "",
+            "        // --- Modification (new String returned) ---",
+            "        System.out.println(trimmed.toUpperCase());           // \"HELLO, JAVA WORLD!\"",
+            "        System.out.println(trimmed.toLowerCase());           // \"hello, java world!\"",
+            "        System.out.println(trimmed.replace(\"Java\", \"Python\")); // \"Hello, Python World!\"",
+            "        System.out.println(trimmed.replaceAll(\"[aeiou]\", \"*\")); // \"H*ll*, J*v* W*rld!\"",
+            "",
+            "        // --- Split ---",
+            "        String csv = \"apple,banana,mango,grape\";",
+            "        String[] fruits = csv.split(\",\");",
+            "        for (String fruit : fruits) {",
+            "            System.out.println(fruit); // apple, banana, mango, grape",
+            "        }",
+            "",
+            "        // --- Join (Java 8+) ---",
+            "        String joined = String.join(\" | \", \"Java\", \"Python\", \"Go\");",
+            "        System.out.println(joined); // \"Java | Python | Go\"",
+            "",
+            "        // --- Repeat (Java 11+) ---",
+            "        System.out.println(\"Ha\".repeat(3)); // \"HaHaHa\"",
+            "",
+            "        // --- Conversion ---",
+            "        System.out.println(String.valueOf(42));      // \"42\"",
+            "        System.out.println(String.valueOf(3.14));    // \"3.14\"",
+            "        System.out.println(String.valueOf(true));    // \"true\"",
+            "        System.out.println(Integer.parseInt(\"123\")); // 123 (String → int)",
+            "",
+            "        // --- toCharArray ---",
+            "        char[] chars = \"Hello\".toCharArray();",
+            "        System.out.println(chars[0]); // 'H'",
+            "",
+            "        // --- lines() — Java 11+ ---",
+            "        \"Line1\\nLine2\\nLine3\".lines()",
+            "                             .forEach(System.out::println);",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "string-comparison",
+      "title": "String Comparison — The Right Way",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "String comparison is one of the most error-prone areas for Java beginners. Using <code>==</code> instead of <code>equals()</code> is a classic bug that compiles perfectly but produces wrong results at runtime. Understanding the difference between reference equality and value equality is fundamental."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "✅",
+              "title": "equals() — Content Comparison (Correct)",
+              "text": "s1.equals(s2) returns true if s1 and s2 have exactly the same sequence of characters, regardless of where they are stored in memory. This is the correct method for comparing string values. Always prefer equals() over ==. Tip: to avoid NullPointerException, compare against a known non-null string: \"expected\".equals(userInput) — this is called a Yoda condition and is null-safe."
+            },
+            {
+              "icon": "⚠️",
+              "title": "== — Reference Comparison (Avoid for Values)",
+              "text": "s1 == s2 returns true ONLY if s1 and s2 point to the exact same object in memory. For string literals from the pool, == may return true (by coincidence of interning). For strings created with new, from user input, from file reads, or from method calls — == will return false even for identical content. Using == for string comparison is a bug, not an optimization."
+            },
+            {
+              "icon": "🔢",
+              "title": "compareTo() — Lexicographic Ordering",
+              "text": "s1.compareTo(s2) returns 0 if equal, negative if s1 comes before s2 alphabetically, positive if s1 comes after. Used for sorting strings. Example: \"apple\".compareTo(\"banana\") returns a negative number. compareToIgnoreCase() does the same without case sensitivity. Both methods follow Unicode code point ordering — not natural human alphabetical sorting for non-ASCII characters."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StringComparison.java",
+          "lines": [
+            "import java.util.Objects;",
+            "",
+            "public class StringComparison {",
+            "    public static void main(String[] args) {",
+            "",
+            "        String a = \"Java\";",
+            "        String b = \"Java\";",
+            "        String c = new String(\"Java\");",
+            "        String d = null;",
+            "",
+            "        // ✅ equals() — content comparison",
+            "        System.out.println(a.equals(b));  // true",
+            "        System.out.println(a.equals(c));  // true  — same content",
+            "",
+            "        // ❌ == — reference comparison",
+            "        System.out.println(a == b);  // true  — both in pool (coincidence)",
+            "        System.out.println(a == c);  // false — c is a heap object",
+            "",
+            "        // ✅ equalsIgnoreCase() — case-insensitive",
+            "        System.out.println(\"JAVA\".equalsIgnoreCase(\"java\")); // true",
+            "",
+            "        // ✅ Null-safe Yoda condition (avoids NullPointerException)",
+            "        String input = null;",
+            "        // System.out.println(input.equals(\"Java\")); // ❌ NullPointerException!",
+            "        System.out.println(\"Java\".equals(input));       // ✅ false — no NPE",
+            "        System.out.println(Objects.equals(input, \"Java\")); // ✅ false — null-safe",
+            "",
+            "        // ✅ compareTo() — lexicographic ordering",
+            "        System.out.println(\"apple\".compareTo(\"banana\")); // negative — apple < banana",
+            "        System.out.println(\"mango\".compareTo(\"mango\"));  // 0 — equal",
+            "        System.out.println(\"zebra\".compareTo(\"ant\"));    // positive — zebra > ant",
+            "",
+            "        // ✅ String sorting with compareTo",
+            "        String[] fruits = {\"mango\", \"apple\", \"banana\", \"cherry\"};",
+            "        java.util.Arrays.sort(fruits);",
+            "        System.out.println(java.util.Arrays.toString(fruits));",
+            "        // [apple, banana, cherry, mango]",
+            "",
+            "        // ✅ contains(), startsWith(), endsWith()",
+            "        String url = \"https://www.techsustainify.com/java\";",
+            "        System.out.println(url.startsWith(\"https\"));        // true",
+            "        System.out.println(url.endsWith(\"/java\"));          // true",
+            "        System.out.println(url.contains(\"techsustainify\")); // true",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "string-concatenation",
+      "title": "String Concatenation — Performance Matters",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java provides several ways to concatenate strings. The <code>+</code> operator is convenient but can be a <strong>performance trap in loops</strong> — each <code>+</code> creates a new String object, leading to O(n²) memory allocations for n concatenations. Understanding when to use <code>+</code> vs <code>StringBuilder</code> vs <code>String.join()</code> is a mark of an experienced Java developer."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StringConcatenation.java",
+          "lines": [
+            "public class StringConcatenation {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ + operator — fine for small, fixed concatenations",
+            "        String firstName = \"Priya\";",
+            "        String lastName  = \"Sharma\";",
+            "        String fullName  = firstName + \" \" + lastName;",
+            "        System.out.println(fullName); // \"Priya Sharma\"",
+            "",
+            "        // ✅ Compiler optimizes compile-time constants automatically",
+            "        String greeting = \"Hello\" + \", \" + \"World\";  // Compiled as one literal",
+            "",
+            "        // ❌ BAD — + in a loop creates N new String objects (O(n²) memory)",
+            "        String result = \"\";",
+            "        for (int i = 0; i < 10000; i++) {",
+            "            result += i;  // Creates a new String each iteration — very slow!",
+            "        }",
+            "",
+            "        // ✅ GOOD — StringBuilder in a loop (O(n) — much faster)",
+            "        StringBuilder sb = new StringBuilder();",
+            "        for (int i = 0; i < 10000; i++) {",
+            "            sb.append(i);  // Modifies internal buffer — no new objects",
+            "        }",
+            "        String fastResult = sb.toString();",
+            "",
+            "        // ✅ String.join() — clean way to join with delimiter",
+            "        String csv   = String.join(\",\", \"Alice\", \"Bob\", \"Charlie\");",
+            "        System.out.println(csv); // \"Alice,Bob,Charlie\"",
+            "",
+            "        // ✅ String.join() with List",
+            "        java.util.List<String> names = java.util.List.of(\"Delhi\", \"Mumbai\", \"Bangalore\");",
+            "        String cities = String.join(\" | \", names);",
+            "        System.out.println(cities); // \"Delhi | Mumbai | Bangalore\"",
+            "",
+            "        // ✅ concat() — appends one string (less flexible than +)",
+            "        String s = \"Hello\".concat(\" World\");",
+            "        System.out.println(s); // \"Hello World\"",
+            "",
+            "        // ✅ Collectors.joining() — stream-based joining",
+            "        String joined = names.stream()",
+            "                             .filter(n -> n.length() > 5)",
+            "                             .collect(java.util.stream.Collectors.joining(\", \"));",
+            "        System.out.println(joined); // \"Mumbai, Bangalore\"",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ String + in Loops — The Classic Performance Bug",
+          "text": "Using += to build a string in a loop is one of the most common performance bugs in Java. Each += creates a new String object, copies all existing characters, then adds the new ones. For 10,000 iterations, this means ~50 million character copies. Use StringBuilder.append() in loops instead — it maintains a resizable char buffer and only converts to String once via toString(). This is 100x–1000x faster for large loops. Modern Java compilers optimize + in simple one-liner expressions, but NOT across loop iterations."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "stringbuilder-stringbuffer",
+      "title": "StringBuilder and StringBuffer — Mutable String Classes",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>StringBuilder</strong> and <strong>StringBuffer</strong> are mutable alternatives to String. They maintain an internal resizable character buffer and allow in-place modifications without creating new objects. <code>StringBuilder</code> (Java 5+) is the preferred choice for single-threaded code. <code>StringBuffer</code> (Java 1.0) is thread-safe but slower due to synchronization overhead."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "⚡",
+              "title": "StringBuilder — Fast, Not Thread-Safe",
+              "text": "Use StringBuilder when building strings in a single thread (the vast majority of cases). Key methods: append(value) — adds to end. insert(index, value) — inserts at position. delete(start, end) — removes range. replace(start, end, str) — replaces range. reverse() — reverses content. deleteCharAt(int index) — removes one char. toString() — converts to immutable String. Initial capacity is 16 chars; auto-resizes when needed. You can set initial capacity: new StringBuilder(1000) to avoid resizes."
+            },
+            {
+              "icon": "🔐",
+              "title": "StringBuffer — Thread-Safe, Slower",
+              "text": "Use StringBuffer only when a mutable string is shared between multiple threads. All methods are synchronized — providing thread safety at the cost of performance. Has the same API as StringBuilder. In practice, StringBuffer is rarely needed in modern Java because multi-threaded string building is usually better handled by giving each thread its own StringBuilder and combining at the end. Since Java 5, StringBuilder is always preferred over StringBuffer for single-threaded use."
+            },
+            {
+              "icon": "📊",
+              "title": "StringBuilder vs String — When to Switch",
+              "text": "Use String when: value is fixed, string is used as a constant or key, simple 1-3 concatenations outside loops. Use StringBuilder when: building strings in loops, constructing SQL queries or HTML/JSON dynamically, repeatedly modifying a string, building strings from many parts. Rule of thumb: if you see += on a String inside a for/while loop, replace it with StringBuilder.append(). The performance difference grows quadratically with string length."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StringBuilderDemo.java",
+          "lines": [
+            "public class StringBuilderDemo {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ StringBuilder — basic operations",
+            "        StringBuilder sb = new StringBuilder(\"Hello\");",
+            "",
+            "        sb.append(\", Java!\");          // \"Hello, Java!\"",
+            "        sb.insert(5, \" World\");        // \"Hello World, Java!\"",
+            "        sb.replace(6, 11, \"Everyone\"); // \"Hello Everyone, Java!\"",
+            "        sb.delete(15, 21);              // \"Hello Everyone\"",
+            "        sb.reverse();                   // \"enoyrevE olleH\"",
+            "        sb.reverse();                   // \"Hello Everyone\" (back again)",
+            "",
+            "        System.out.println(sb);          // Hello Everyone",
+            "        System.out.println(sb.length()); // 14",
+            "        System.out.println(sb.charAt(0));// 'H'",
+            "",
+            "        // ✅ Method chaining — append() returns 'this'",
+            "        String result = new StringBuilder()",
+            "                            .append(\"Name: \")",
+            "                            .append(\"Rahul\")",
+            "                            .append(\", Age: \")",
+            "                            .append(25)",
+            "                            .append(\", City: \")",
+            "                            .append(\"Mumbai\")",
+            "                            .toString();",
+            "        System.out.println(result); // Name: Rahul, Age: 25, City: Mumbai",
+            "",
+            "        // ✅ Building HTML with StringBuilder",
+            "        StringBuilder html = new StringBuilder();",
+            "        String[] items = {\"Java\", \"Python\", \"Go\"};",
+            "        html.append(\"<ul>\\n\");",
+            "        for (String item : items) {",
+            "            html.append(\"  <li>\").append(item).append(\"</li>\\n\");",
+            "        }",
+            "        html.append(\"</ul>\");",
+            "        System.out.println(html.toString());",
+            "",
+            "        // ✅ StringBuilder capacity management",
+            "        StringBuilder large = new StringBuilder(1000); // Pre-allocate",
+            "        System.out.println(large.capacity()); // 1000 — no resize needed",
+            "",
+            "        // ✅ StringBuffer — same API, thread-safe",
+            "        StringBuffer sbf = new StringBuffer(\"Thread\");",
+            "        sbf.append(\"-Safe\");",
+            "        System.out.println(sbf); // Thread-Safe",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "string-formatting",
+      "title": "String Formatting — printf-style and Text Blocks",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java provides powerful string formatting capabilities through <code>String.format()</code>, <code>System.out.printf()</code>, and the newer <code>formatted()</code> instance method (Java 15+). For multi-line strings, <strong>Text Blocks</strong> (Java 15+ as standard) eliminate the need for escape characters and string concatenation."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StringFormatting.java",
+          "lines": [
+            "public class StringFormatting {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ String.format() — printf-style",
+            "        String name  = \"Ananya\";",
+            "        int    age   = 24;",
+            "        double score = 95.678;",
+            "",
+            "        String formatted = String.format(",
+            "            \"Name: %-10s | Age: %3d | Score: %.2f\", name, age, score);",
+            "        System.out.println(formatted);",
+            "        // \"Name: Ananya     | Age:  24 | Score: 95.68\"",
+            "",
+            "        // ✅ Common format specifiers",
+            "        System.out.printf(\"%d%n\",   42);        // integer",
+            "        System.out.printf(\"%f%n\",   3.14159);   // float (default 6 decimal)",
+            "        System.out.printf(\"%.2f%n\", 3.14159);   // float 2 decimal: 3.14",
+            "        System.out.printf(\"%s%n\",   \"hello\");   // string",
+            "        System.out.printf(\"%b%n\",   true);      // boolean",
+            "        System.out.printf(\"%c%n\",   'A');       // char",
+            "        System.out.printf(\"%10s%n\", \"right\");   // right-aligned width 10",
+            "        System.out.printf(\"%-10s%n\",\"left\");    // left-aligned width 10",
+            "        System.out.printf(\"%05d%n\", 42);        // zero-padded: 00042",
+            "        System.out.printf(\"%,d%n\",  1000000);   // with commas: 1,000,000",
+            "        System.out.printf(\"%x%n\",   255);       // hexadecimal: ff",
+            "",
+            "        // ✅ formatted() — instance method (Java 15+)",
+            "        String msg = \"Hello, %s! You scored %.1f%%\".formatted(name, score);",
+            "        System.out.println(msg); // Hello, Ananya! You scored 95.7%",
+            "",
+            "        // ✅ Text Blocks (Java 15+) — multi-line strings",
+            "        String json = \"\"\"",
+            "                {",
+            "                  \"name\": \"Priya\",",
+            "                  \"city\": \"Mumbai\",",
+            "                  \"score\": 98.5",
+            "                }",
+            "                \"\"\";",
+            "        System.out.println(json);",
+            "",
+            "        // ✅ Text Block with formatting",
+            "        String html = \"\"\"",
+            "                <html>",
+            "                  <body>",
+            "                    <h1>%s</h1>",
+            "                  </body>",
+            "                </html>",
+            "                \"\"\".formatted(\"Welcome to Java!\");",
+            "        System.out.println(html);",
+            "",
+            "        // ✅ Text Block for SQL queries (no more messy escaping!)",
+            "        String sql = \"\"\"",
+            "                SELECT u.name, u.email, o.total",
+            "                FROM users u",
+            "                JOIN orders o ON u.id = o.user_id",
+            "                WHERE u.active = true",
+            "                ORDER BY o.total DESC",
+            "                LIMIT 10",
+            "                \"\"\";",
+            "        System.out.println(sql);",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "💡 Text Blocks — Java 15+ Game Changer",
+          "text": "Text Blocks (\"\"\"...\"\"\"') were standardized in Java 15 and eliminate the most painful part of embedding multi-line strings in Java: escape characters and concatenation. They preserve indentation intelligently (the compiler strips leading whitespace based on the least-indented line). They are perfect for JSON payloads, HTML templates, SQL queries, XML content, and any multi-line string. The .formatted() method works seamlessly with text blocks for parameterized content."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "text-blocks",
+      "title": "Text Blocks (Java 15+) — Multi-Line Strings Made Simple",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Text Blocks</strong>, introduced as a standard feature in Java 15, allow you to write multi-line strings without escape sequences, concatenation operators, or manual newlines. They are delimited by triple double-quotes (<code>\"\"\"</code>) and handle indentation automatically."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📐",
+              "title": "Text Block Indentation Rules",
+              "text": "The compiler automatically removes common leading whitespace (the re-indentation algorithm). The closing \"\"\" position controls how much whitespace is stripped. Placing \"\"\" at column 0 keeps all indentation. Placing it at the same level as the content strips that many spaces from each line. Trailing spaces are stripped by default — use \\s escape to preserve a trailing space. Use \\<newline> to suppress a newline (join continuation line)."
+            },
+            {
+              "icon": "🔧",
+              "title": "Text Block Escape Sequences",
+              "text": "Text blocks support new escape sequences: \\s — preserves trailing whitespace (single space). \\<newline> — line continuation (joins to next line, removes the newline). Standard escapes still work: \\n, \\t, \\\", \\\\. The opening \"\"\" must be followed by a newline — you cannot put content on the same line as the opening delimiter. The closing \"\"\" ends the text block and can be on the last content line or its own line."
+            },
+            {
+              "icon": "🌐",
+              "title": "Text Blocks vs Old String Literals",
+              "text": "Before text blocks: String json = \"{\\n  \\\"name\\\": \\\"Java\\\"\\n}\"; — error-prone, hard to read. With text blocks: String json = \"\"\"\\n  {\\n    \\\"name\\\": \\\"Java\\\"\\n  }\\n  \"\"\"; — clean and readable. Text blocks are semantically equivalent to string literals — they produce a String at runtime, work with all String methods, can be used anywhere a String is accepted, and support .formatted() for interpolation."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "TextBlocks.java",
+          "lines": [
+            "public class TextBlocks {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ JSON — before and after text blocks",
+            "",
+            "        // ❌ Old way — escape hell",
+            "        String jsonOld = \"{\\n\" +",
+            "            \"  \\\"name\\\": \\\"Priya\\\",\\n\" +",
+            "            \"  \\\"age\\\": 25,\\n\" +",
+            "            \"  \\\"city\\\": \\\"Mumbai\\\"\\n\" +",
+            "            \"}\";",
+            "",
+            "        // ✅ New way — text block (Java 15+)",
+            "        String jsonNew = \"\"\"",
+            "                {",
+            "                  \"name\": \"Priya\",",
+            "                  \"age\": 25,",
+            "                  \"city\": \"Mumbai\"",
+            "                }",
+            "                \"\"\";",
+            "",
+            "        System.out.println(jsonNew);",
+            "",
+            "        // ✅ HTML template",
+            "        String name  = \"Ananya\";",
+            "        int    score = 95;",
+            "        String html  = \"\"\"",
+            "                <div class=\"report-card\">",
+            "                  <h2>%s</h2>",
+            "                  <p>Score: <strong>%d</strong></p>",
+            "                </div>",
+            "                \"\"\".formatted(name, score);",
+            "        System.out.println(html);",
+            "",
+            "        // ✅ SQL query",
+            "        String sql = \"\"\"",
+            "                SELECT id, name, email",
+            "                FROM   users",
+            "                WHERE  active = true",
+            "                  AND  created_at > '2025-01-01'",
+            "                ORDER  BY name ASC",
+            "                \"\"\";",
+            "        System.out.println(sql);",
+            "",
+            "        // ✅ Line continuation with \\",
+            "        String oneLine = \"\"\"",
+            "                This is a very long string that continues \\",
+            "                on the next source line but is ONE line at runtime.",
+            "                \"\"\";",
+            "        System.out.println(oneLine);",
+            "",
+            "        // ✅ Text blocks are just Strings — all methods work",
+            "        String block = \"\"\"",
+            "                Hello, World!",
+            "                \"\"\"",
+            "                .strip()",
+            "                .toUpperCase();",
+            "        System.out.println(block); // HELLO, WORLD!",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "string-conversion",
+      "title": "Type Conversion with Strings",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java provides straightforward mechanisms for converting between Strings and other data types — both <strong>String to primitive</strong> (parsing) and <strong>primitive to String</strong> (converting). Understanding these conversions is essential for handling user input, reading files, and building output messages."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StringConversion.java",
+          "lines": [
+            "public class StringConversion {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Primitive → String (3 ways)",
+            "        int    num  = 42;",
+            "        double pi   = 3.14159;",
+            "        boolean flag = true;",
+            "",
+            "        String s1 = String.valueOf(num);   // \"42\"      — preferred",
+            "        String s2 = Integer.toString(num); // \"42\"      — also common",
+            "        String s3 = \"\" + num;             // \"42\"      — implicit, avoid",
+            "        String s4 = String.valueOf(pi);    // \"3.14159\"",
+            "        String s5 = String.valueOf(flag);  // \"true\"",
+            "",
+            "        System.out.println(s1 + \" \" + s4 + \" \" + s5);",
+            "",
+            "        // ✅ String → Primitive (parsing)",
+            "        int    parsed1 = Integer.parseInt(\"42\");         // 42",
+            "        long   parsed2 = Long.parseLong(\"9876543210\");   // 9876543210",
+            "        double parsed3 = Double.parseDouble(\"3.14\");     // 3.14",
+            "        float  parsed4 = Float.parseFloat(\"2.5\");        // 2.5",
+            "        boolean parsed5 = Boolean.parseBoolean(\"true\");  // true",
+            "        char   parsed6 = \"Hello\".charAt(0);              // 'H'",
+            "",
+            "        System.out.println(parsed1 + parsed3); // 45.14",
+            "",
+            "        // ✅ String → Wrapper Object",
+            "        Integer intObj = Integer.valueOf(\"100\");  // Integer object",
+            "        Double  dblObj = Double.valueOf(\"9.99\");  // Double object",
+            "",
+            "        // ❌ NumberFormatException — invalid string",
+            "        try {",
+            "            int bad = Integer.parseInt(\"abc\"); // Throws NumberFormatException",
+            "        } catch (NumberFormatException e) {",
+            "            System.out.println(\"Invalid number: \" + e.getMessage());",
+            "        }",
+            "",
+            "        // ✅ Object → String",
+            "        Object obj = new java.util.ArrayList<>();",
+            "        System.out.println(obj.toString()); // Calls ArrayList.toString()",
+            "        System.out.println(String.valueOf(obj)); // Null-safe: prints \"null\" if null",
+            "",
+            "        // ✅ char[] ↔ String",
+            "        char[] chars = {'J', 'a', 'v', 'a'};",
+            "        String fromChars = new String(chars);       // \"Java\"",
+            "        char[] backToChars = fromChars.toCharArray(); // ['J','a','v','a']",
+            "",
+            "        // ✅ int → char (by ASCII/Unicode value)",
+            "        char c = (char) 65;  // 'A'",
+            "        int  i = 'A';        // 65",
+            "        System.out.println(c + \" = \" + i); // A = 65",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "string-vs-stringbuilder",
+      "title": "String vs StringBuilder vs StringBuffer — Complete Comparison",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Choosing between <code>String</code>, <code>StringBuilder</code>, and <code>StringBuffer</code> is a fundamental Java decision. The wrong choice leads to either concurrency bugs or unnecessary performance overhead. This comparison covers all dimensions — mutability, thread safety, performance, and practical usage guidelines."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "String", "StringBuilder", "StringBuffer"],
+          "rows": [
+            ["Mutability",         "Immutable",                     "Mutable",                    "Mutable"],
+            ["Thread Safety",      "Yes (immutable)",               "No",                         "Yes (synchronized)"],
+            ["Performance",        "Slow in loops (new objects)",   "Fast — best choice",         "Slower than StringBuilder"],
+            ["Storage",            "String Pool / Heap",            "Heap",                       "Heap"],
+            ["Introduced In",      "Java 1.0",                      "Java 5",                     "Java 1.0"],
+            ["Main Use Case",      "Constants, keys, fixed values", "Single-threaded building",   "Multi-threaded building"],
+            ["Methods",            "50+ (all return new String)",   "append, insert, delete, etc.","Same as StringBuilder"],
+            ["Memory",             "Each change = new object",      "Resizable internal buffer",  "Resizable internal buffer"],
+            ["Implements",         "Serializable, Comparable",      "Serializable, Comparable",   "Serializable, Comparable"],
+            ["Hashcode Caching",   "Yes — cached after first call", "No",                         "No"],
+            ["Recommended For",    "Default choice for text",       "Loops, dynamic building",    "Concurrent modification only"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Bugs That Fool Everyone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the most common String-related mistakes in Java code — from classic reference vs value comparison bugs to subtle immutability misunderstandings and performance traps."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StringMistakes.java",
+          "lines": [
+            "// ❌ MISTAKE 1: Using == to compare String values",
+            "String s1 = new String(\"Hello\");",
+            "String s2 = new String(\"Hello\");",
+            "System.out.println(s1 == s2);     // false — different objects!",
+            "System.out.println(s1.equals(s2)); // true — correct way",
+            "",
+            "// ❌ MISTAKE 2: NullPointerException from calling method on null String",
+            "String input = null;",
+            "// System.out.println(input.equals(\"Hello\")); // ❌ NullPointerException",
+            "System.out.println(\"Hello\".equals(input));       // ✅ false — safe",
+            "System.out.println(java.util.Objects.equals(input, \"Hello\")); // ✅ false — null-safe",
+            "",
+            "// ❌ MISTAKE 3: Thinking String modification changes the original",
+            "String original = \"hello\";",
+            "original.toUpperCase();  // ❌ Result is DISCARDED — original unchanged!",
+            "System.out.println(original); // \"hello\" — unchanged",
+            "// ✅ Fix: capture the return value",
+            "String upper = original.toUpperCase();",
+            "System.out.println(upper); // \"HELLO\"",
+            "",
+            "// ❌ MISTAKE 4: String concatenation in a loop (O(n²) performance)",
+            "String result = \"\";",
+            "for (int i = 0; i < 10000; i++) {",
+            "    result += i;  // ❌ Creates new String each iteration!",
+            "}",
+            "// ✅ Fix: use StringBuilder",
+            "StringBuilder sb = new StringBuilder();",
+            "for (int i = 0; i < 10000; i++) {",
+            "    sb.append(i);  // ✅ In-place modification — fast",
+            "}",
+            "",
+            "// ❌ MISTAKE 5: Incorrect substring index (off-by-one)",
+            "String s = \"Hello World\";",
+            "// System.out.println(s.substring(0, 12)); // ❌ StringIndexOutOfBoundsException",
+            "System.out.println(s.substring(0, 11));   // ✅ \"Hello World\" (length is 11)",
+            "System.out.println(s.substring(6));       // ✅ \"World\" — from index 6 to end",
+            "",
+            "// ❌ MISTAKE 6: Using split() without escaping regex special chars",
+            "String data = \"100.50|200.75\";",
+            "// String[] parts = data.split(\".\");  // ❌ . means 'any char' in regex — returns empty!",
+            "String[] parts = data.split(\"\\\\|\"); // ✅ Escape the pipe character",
+            "String[] nums  = \"3.14\".split(\"\\\\.\"); // ✅ Escape the dot",
+            "",
+            "// ❌ MISTAKE 7: charAt() with invalid index",
+            "String name = \"Java\";",
+            "// char c = name.charAt(10); // ❌ StringIndexOutOfBoundsException",
+            "// ✅ Fix: check length first",
+            "if (4 < name.length()) { char c = name.charAt(4); }"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These anti-patterns represent common misuses of Java Strings in professional code. Each one either causes bugs, degrades performance, or makes code harder to maintain."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Using new String() Without Reason",
+              "text": "Writing new String(\"Hello\") instead of just \"Hello\" bypasses the String Pool, wastes heap memory, and creates unnecessary GC pressure. The only legitimate use of new String(str) is when you explicitly need a distinct object reference — which is almost never in normal code. Always use string literals unless you have a specific technical reason for a separate heap object. Modern code reviews flag new String(literal) as an anti-pattern."
+            },
+            {
+              "icon": "🚫",
+              "title": "String Concatenation in Loops",
+              "text": "Using += to build a string across loop iterations is the most prevalent Java performance anti-pattern. It creates O(n²) String objects, puts enormous pressure on the garbage collector, and is dramatically slower than StringBuilder for large inputs. Static analysis tools like SonarQube, PMD, and FindBugs all flag this. Replace every case of 'result += something' inside a loop with StringBuilder.append()."
+            },
+            {
+              "icon": "🚫",
+              "title": "Ignoring Return Values of String Methods",
+              "text": "String methods return a NEW string — they do not modify the original. Writing s.toUpperCase(); without capturing the result is a silent no-op. The modified string is created and immediately discarded by the GC. This is a very common bug: developers assume the method mutated the string (as ArrayList methods do), but String immutability means every transformation must be assigned. Always capture: String upper = s.toUpperCase();"
+            },
+            {
+              "icon": "🚫",
+              "title": "Using StringBuffer in Single-Threaded Code",
+              "text": "StringBuffer's synchronized methods add locking overhead on every append(), insert(), and delete() even when there is only one thread. In single-threaded code (which is the vast majority of string building scenarios), this synchronization is pure overhead with no benefit. Since Java 5, StringBuilder is the correct choice for single-threaded mutable strings. StringBuffer should only appear in code where the same buffer is truly accessed by multiple threads simultaneously."
+            },
+            {
+              "icon": "🚫",
+              "title": "Storing Passwords as String",
+              "text": "Storing passwords, credentials, or sensitive data in String is a security anti-pattern. Because strings are immutable and interned, they persist in the String Pool until GC runs — potentially visible in a heap dump. Use char[] for passwords: it can be zeroed out immediately after use (Arrays.fill(password, '\\0')), limiting the window of exposure. Spring Security, JDBC PasswordAuthentication, and all major security APIs use char[] for credentials, not String."
+            },
+            {
+              "icon": "🚫",
+              "title": "Hardcoding Magic String Literals",
+              "text": "Scattering literal strings like \"admin\", \"ACTIVE\", \"USD\" throughout the codebase makes maintenance a nightmare — a typo in one place is invisible at compile time but causes bugs at runtime. Define string constants as static final fields (or enums) in a constants class. Use Java enums for finite sets of string values. Tools like SonarQube flag duplicate string literals appearing 3+ times as a code smell requiring extraction to a named constant."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Strings in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples show idiomatic, production-grade Java string usage — patterns seen in real Spring Boot applications, REST APIs, and enterprise Java codebases."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "UserService.java — String Validation and Processing",
+          "lines": [
+            "package com.techsustainify.user.service;",
+            "",
+            "import java.util.Objects;",
+            "import java.util.regex.Pattern;",
+            "",
+            "public class UserService {",
+            "",
+            "    // ✅ Constants — not magic string literals",
+            "    private static final int MIN_PASSWORD_LENGTH = 8;",
+            "    private static final Pattern EMAIL_PATTERN =",
+            "        Pattern.compile(\"^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\\\.[A-Za-z]{2,}$\");",
+            "    private static final Pattern PHONE_PATTERN =",
+            "        Pattern.compile(\"^[6-9]\\\\d{9}$\");  // Indian mobile number",
+            "",
+            "    // ✅ Email validation",
+            "    public boolean isValidEmail(String email) {",
+            "        if (email == null || email.isBlank()) return false;",
+            "        return EMAIL_PATTERN.matcher(email.strip().toLowerCase()).matches();",
+            "    }",
+            "",
+            "    // ✅ Password validation with StringBuilder for error message",
+            "    public String validatePassword(String password) {",
+            "        if (password == null || password.isEmpty())",
+            "            return \"Password cannot be empty\";",
+            "",
+            "        StringBuilder errors = new StringBuilder();",
+            "        if (password.length() < MIN_PASSWORD_LENGTH)",
+            "            errors.append(\"Must be at least \").append(MIN_PASSWORD_LENGTH)",
+            "                  .append(\" characters. \");",
+            "        if (!password.matches(\".*[A-Z].*\"))",
+            "            errors.append(\"Must have an uppercase letter. \");",
+            "        if (!password.matches(\".*[0-9].*\"))",
+            "            errors.append(\"Must have a digit. \");",
+            "        if (!password.matches(\".*[!@#$%^&*].*\"))",
+            "            errors.append(\"Must have a special character. \");",
+            "",
+            "        return errors.isEmpty() ? \"Valid\" : errors.toString().strip();",
+            "    }",
+            "",
+            "    // ✅ Name normalization — real-world string processing",
+            "    public String normalizeName(String name) {",
+            "        if (name == null || name.isBlank()) return \"\";",
+            "        return java.util.Arrays.stream(name.strip().split(\"\\\\s+\"))",
+            "               .map(word -> Character.toUpperCase(word.charAt(0)) +",
+            "                           word.substring(1).toLowerCase())",
+            "               .collect(java.util.stream.Collectors.joining(\" \"));",
+            "    }",
+            "",
+            "    // ✅ Text Block for email template",
+            "    public String buildWelcomeEmail(String userName, String activationLink) {",
+            "        return \"\"\"",
+            "                Dear %s,",
+            "                ",
+            "                Welcome to Tech Sustainify!",
+            "                Please activate your account by clicking the link below:",
+            "                ",
+            "                %s",
+            "                ",
+            "                This link expires in 24 hours.",
+            "                ",
+            "                Regards,",
+            "                Tech Sustainify Team",
+            "                \"\"\".formatted(userName, activationLink);",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        UserService svc = new UserService();",
+            "",
+            "        System.out.println(svc.isValidEmail(\"priya@gmail.com\"));  // true",
+            "        System.out.println(svc.isValidEmail(\"not-an-email\"));     // false",
+            "",
+            "        System.out.println(svc.validatePassword(\"Java@2026\"));    // Valid",
+            "        System.out.println(svc.validatePassword(\"weak\"));         // errors",
+            "",
+            "        System.out.println(svc.normalizeName(\"PRIYA sharma\"));    // Priya Sharma",
+            "        System.out.println(svc.normalizeName(\"rAHUL vERMA\"));     // Rahul Verma",
+            "",
+            "        System.out.println(svc.buildWelcomeEmail(\"Ananya\", \"https://example.com/activate\"));",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ReportBuilder.java — StringBuilder for Dynamic Report Generation",
+          "lines": [
+            "package com.techsustainify.report;",
+            "",
+            "import java.util.List;",
+            "",
+            "public class ReportBuilder {",
+            "",
+            "    // ✅ StringBuilder for building large reports — not String concatenation",
+            "    public String buildSalesReport(List<SaleRecord> records) {",
+            "        StringBuilder report = new StringBuilder(records.size() * 100); // Pre-size",
+            "",
+            "        report.append(\"=\".repeat(60)).append(\"\\n\");",
+            "        report.append(String.format(\"%-20s %-15s %10s%n\",",
+            "                                   \"Product\", \"Salesperson\", \"Amount\"));",
+            "        report.append(\"=\".repeat(60)).append(\"\\n\");",
+            "",
+            "        double total = 0;",
+            "        for (SaleRecord rec : records) {",
+            "            report.append(String.format(\"%-20s %-15s %10.2f%n\",",
+            "                                        rec.getProduct(),",
+            "                                        rec.getSalesperson(),",
+            "                                        rec.getAmount()));",
+            "            total += rec.getAmount();",
+            "        }",
+            "",
+            "        report.append(\"-\".repeat(60)).append(\"\\n\");",
+            "        report.append(String.format(\"%-35s %10.2f%n\", \"TOTAL\", total));",
+            "        report.append(\"=\".repeat(60)).append(\"\\n\");",
+            "",
+            "        return report.toString();",
+            "    }",
+            "",
+            "    // ✅ String.join for CSV generation",
+            "    public String toCSV(List<SaleRecord> records) {",
+            "        StringBuilder csv = new StringBuilder();",
+            "        csv.append(String.join(\",\", \"Product\", \"Salesperson\", \"Amount\", \"Date\"));",
+            "        csv.append(\"\\n\");",
+            "",
+            "        for (SaleRecord rec : records) {",
+            "            csv.append(String.join(\",\",",
+            "                rec.getProduct(),",
+            "                rec.getSalesperson(),",
+            "                String.valueOf(rec.getAmount()),",
+            "                rec.getDate().toString()));",
+            "            csv.append(\"\\n\");",
+            "        }",
+            "        return csv.toString();",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "string-flowchart",
+      "title": "String Memory Flowchart — How Java Handles String Creation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This flowchart shows how the JVM handles string creation — distinguishing between the String Pool path (literals) and the Heap path (new keyword), and when intern() bridges the two."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "▶ String Created",               "sublabel": "String s = ...",                              "type": "start"    },
+            { "id": "2", "label": "🔍 Is it a literal?",            "sublabel": "e.g., \"Hello\" vs new String()",             "type": "decision" },
+            { "id": "3", "label": "🔍 Exists in String Pool?",      "sublabel": "JVM scans pool for match",                    "type": "decision" },
+            { "id": "4", "label": "✅ Return Pool Reference",       "sublabel": "Reuse existing pooled object",                "type": "process"  },
+            { "id": "5", "label": "🆕 Add to String Pool",         "sublabel": "Create new object in pool",                   "type": "process"  },
+            { "id": "6", "label": "🆕 Create Heap Object",         "sublabel": "New String in Heap, bypasses pool",            "type": "process"  },
+            { "id": "7", "label": "🔍 intern() called?",           "sublabel": "s = s.intern()",                              "type": "decision" },
+            { "id": "8", "label": "✅ Variable Points to String",  "sublabel": "Reference assigned",                          "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1", "to": "2",  "label": "Evaluate source"       },
+            { "from": "2", "to": "3",  "label": "YES — literal"         },
+            { "from": "2", "to": "6",  "label": "NO — new keyword"      },
+            { "from": "3", "to": "4",  "label": "YES — found in pool"   },
+            { "from": "3", "to": "5",  "label": "NO — add to pool"      },
+            { "from": "4", "to": "8",  "label": "Pool ref returned"     },
+            { "from": "5", "to": "8",  "label": "New pool ref returned" },
+            { "from": "6", "to": "7",  "label": "Heap object created"   },
+            { "from": "7", "to": "4",  "label": "YES — intern to pool"  },
+            { "from": "7", "to": "8",  "label": "NO — stays on Heap"    }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java String Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "String-related questions are among the most frequently asked in Java interviews at all levels. These questions test your understanding of immutability, memory management, performance, and Java-specific behavior."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. Why are Strings immutable in Java?",
+              "a": "Strings are immutable in Java for four primary reasons: (1) Security — strings are used for class loading names, DB connection URLs, file paths, credentials; immutability prevents post-check modification attacks. (2) Thread safety — immutable objects need no synchronization; any thread can safely read a shared String. (3) String Pool efficiency — the JVM can safely share pool strings between references only because neither can modify the shared object; mutability would mean one reference changing the shared value for all others. (4) HashMap key reliability — String's hashcode is cached after first computation (possible only because the value never changes); this makes String the most efficient and reliable HashMap key type in Java.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the String Pool in Java?",
+              "a": "The String Pool (String Intern Pool / String Constant Pool) is a special cache in the Java Heap where the JVM stores unique string literals. When you write String s = \"Java\", the JVM checks the pool first. If \"Java\" exists, the existing reference is returned. If not, a new String is created in the pool. This avoids creating duplicate objects for identical literals. Strings created with new String() bypass the pool. You can manually pool a string with s.intern(). Since Java 7, the String Pool lives in the main Heap (moved from PermGen), making it eligible for garbage collection when no references remain.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is the difference between String, StringBuilder, and StringBuffer?",
+              "a": "String: immutable — every modification creates a new object. Thread-safe by nature. Best for constant/fixed text and HashMap keys. StringBuilder: mutable — modifications happen in-place on an internal buffer. NOT thread-safe. Introduced in Java 5. Best for string building in single-threaded contexts (loops, dynamic content). Significantly faster than String concatenation in loops. StringBuffer: mutable and thread-safe — all methods are synchronized. Slower than StringBuilder due to synchronization. Best for multi-threaded string building (rare in practice). Rule: String for constants, StringBuilder for single-threaded building, StringBuffer for multi-threaded building.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What is the difference between == and equals() for Strings?",
+              "a": "== compares object REFERENCES (memory addresses) — it returns true only if both variables point to the exact same object in memory. equals() compares CONTENT character by character — it returns true if both strings have the same character sequence, regardless of where they are in memory. Example: String s1 = new String(\"Hi\"); String s2 = new String(\"Hi\"); — s1 == s2 is false (different objects), s1.equals(s2) is true (same content). The exception: string literals from the pool may have s1 == s2 return true by coincidence of sharing the same pool object — but this is not reliable and should never be relied upon for correctness.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q5. How many String objects are created by: String s = new String(\"Hello\");?",
+              "a": "Up to 2 objects may be created: (1) \"Hello\" — the string literal. The JVM checks the String Pool. If \"Hello\" doesn't exist in the pool yet, it creates one there. If it already exists, no new pool object is created. (2) new String(\"Hello\") — always creates a new String object in the Heap, regardless of the pool. So: if \"Hello\" is NOT yet in the pool, 2 objects are created (pool + heap). If \"Hello\" IS already in the pool, 1 object is created (heap only). This is a classic Java interview trick question — the answer depends on whether the pool already contains \"Hello\".",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q6. What is String interning? When would you use intern()?",
+              "a": "String interning (s.intern()) adds a string to the String Pool (or returns the existing pool reference if already present). After interning, == comparison works like equals() for that string — both references point to the same pool object. Use intern() when: (1) You have many dynamically created strings with repeated values (e.g., parsing large datasets where the same city name appears thousands of times) — interning saves memory by deduplicating. (2) You need fast identity (==) comparison for strings that would otherwise require equals(). In modern Java, String.intern() is less commonly needed because the JVM and GC are efficient enough for most use cases, but it's still valuable in memory-intensive, read-heavy applications.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q7. Is String thread-safe in Java?",
+              "a": "Yes — String is inherently thread-safe due to immutability. Since the internal state of a String can never change after creation, multiple threads can read the same String object simultaneously without any risk of data corruption, no synchronization needed. StringBuilder is NOT thread-safe — concurrent access without synchronization can corrupt its internal buffer. StringBuffer IS thread-safe — all its public methods are synchronized. In practice: for multi-threaded string building, give each thread its own StringBuilder (no sharing), combine results afterward. Using StringBuffer for cross-thread sharing is rare; most multi-threaded code builds strings locally and then stores the immutable result.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. What are Text Blocks in Java and why were they introduced?",
+              "a": "Text Blocks (standardized in Java 15, preview in 13-14) are multi-line string literals delimited by triple double-quotes (\"\"\"...\"\"\"). They were introduced to eliminate the pain of embedding multi-line text (JSON, HTML, SQL, XML) in Java strings — previously requiring \\n escape sequences, string concatenation across multiple lines, and \\\" to escape embedded quotes. Text Blocks: automatically strip leading whitespace intelligently (based on closing \"\"\" position), preserve newlines naturally, support .formatted() for interpolation, produce a regular String at runtime (no new type). They dramatically improve readability for any string that spans multiple lines.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q9. Why should you not store passwords as Strings?",
+              "a": "Storing passwords as String is a security risk: (1) Immutability — once created, the String value cannot be zeroed out. The password remains in memory until the GC collects the object — which may not be immediately. (2) String Pool — literal passwords may end up in the String Pool and persist even longer than heap strings. (3) Heap dump exposure — if an attacker obtains a heap dump of the running JVM, all live String objects (including passwords) are visible in plaintext. The solution: use char[] for passwords. A char[] can be explicitly zeroed (Arrays.fill(pwd, '\\0')) immediately after use, minimizing the window during which the password is in readable memory. This is why all Java security APIs (javax.crypto.spec.PBEKeySpec, javax.security.auth.callback.PasswordCallback, Spring Security) use char[], not String.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q10. What is the output of: System.out.println(\"Java\" + 1 + 2); vs System.out.println(1 + 2 + \"Java\");?",
+              "a": "Output 1: \"Java12\" — because Java evaluates left to right. \"Java\" + 1 first converts 1 to String, producing \"Java1\". Then \"Java1\" + 2 produces \"Java12\". Output 2: \"3Java\" — because 1 + 2 evaluates first (both integers, arithmetic addition), giving 3. Then 3 + \"Java\" converts 3 to String, giving \"3Java\". Key rule: when + has a String operand, it performs string concatenation. When both operands are numeric, it performs arithmetic. Since + is left-associative, the left side is evaluated first, setting the context for subsequent operations.",
+              "tag": "Tricky"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your String Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Challenge yourself with these practice questions. Attempt each independently before reading the answer — active recall is proven to be 2–3x more effective than passive reading."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output?\nString s1 = \"Hello\";\nString s2 = \"Hello\";\nString s3 = new String(\"Hello\");\nSystem.out.println(s1 == s2);\nSystem.out.println(s1 == s3);\nSystem.out.println(s1.equals(s3));",
+              "a": "Output: true, false, true. s1 and s2 are literals — both reference the same String Pool object, so s1 == s2 is true. s3 is created with new — it is a separate Heap object, so s1 == s3 is false even though content matches. s1.equals(s3) is true because equals() compares content, not references.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What is the output and why?\nString s = \"Java\";\ns.concat(\" Programming\");\nSystem.out.println(s);",
+              "a": "Output: \"Java\". This demonstrates String immutability. concat() returns a NEW String — it does not modify the original. The return value (\"Java Programming\") is created but immediately discarded because it was never assigned to a variable. The original s remains \"Java\". Fix: String result = s.concat(\" Programming\"); System.out.println(result); — prints \"Java Programming\".",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Which is faster for building a string inside a loop with 100,000 iterations — using + operator or StringBuilder? Explain why.",
+              "a": "StringBuilder is dramatically faster. Using += in a loop with n iterations creates approximately n/2 * n = O(n²) total character copies — for 100,000 iterations, that's ~5 billion character copies and ~100,000 String objects. StringBuilder maintains a single resizable internal buffer and each append() is O(1) amortized (occasional resize is O(current_length) but rare). Total work is O(n). For 100,000 iterations, StringBuilder is typically 100x–1000x faster and creates only 1 final String object via toString().",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. What is the output?\nSystem.out.println(\"5\" + 3);\nSystem.out.println(5 + 3 + \"Java\");\nSystem.out.println(\"Java\" + 5 + 3);\nSystem.out.println(\"Sum: \" + (5 + 3));",
+              "a": "Line 1: \"53\" — \"5\" is String, so + is concatenation: \"5\" + 3 → \"53\". Line 2: \"8Java\" — 5 + 3 is evaluated first (both int) = 8, then 8 + \"Java\" → \"8Java\". Line 3: \"Java53\" — \"Java\" + 5 → \"Java5\" (concatenation), then \"Java5\" + 3 → \"Java53\". Line 4: \"Sum: 8\" — (5 + 3) in parentheses evaluates first (arithmetic, result 8), then \"Sum: \" + 8 → \"Sum: 8\". Use parentheses when you want arithmetic before concatenation.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. What is the output?\nString a = \"Java\";\nString b = a;\na = a + \" Programming\";\nSystem.out.println(a);\nSystem.out.println(b);",
+              "a": "Output: a = \"Java Programming\", b = \"Java\". When a = a + \" Programming\" executes, a new String \"Java Programming\" is created and a now points to this new object. b still points to the original \"Java\" string. String immutability means the original \"Java\" object was not modified — a new one was created. This demonstrates that assignment (=) changes which object a variable points to, not the object itself.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. Write a method to check if a String is a palindrome (reads the same forwards and backwards), ignoring case and non-alphanumeric characters.",
+              "a": "public boolean isPalindrome(String s) {\n    if (s == null || s.isEmpty()) return true;\n    String clean = s.toLowerCase().replaceAll(\"[^a-z0-9]\", \"\");\n    String reversed = new StringBuilder(clean).reverse().toString();\n    return clean.equals(reversed);\n}\n// Examples:\n// isPalindrome(\"A man, a plan, a canal: Panama\") → true\n// isPalindrome(\"racecar\") → true\n// isPalindrome(\"hello\") → false\n// Alternative one-liner: return clean.equals(new StringBuilder(clean).reverse().toString());",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. How many String objects are created?\nString s1 = \"abc\";\nString s2 = \"abc\";\nString s3 = s1 + s2;\nString s4 = \"abc\" + \"abc\";",
+              "a": "s1: 1 pool object (\"abc\" added to pool). s2: 0 new objects (\"abc\" already in pool, existing ref returned). s3 = s1 + s2: 1 new Heap object (\"abcabc\" — runtime concatenation creates heap string, not in pool). s4 = \"abc\" + \"abc\": The compiler evaluates compile-time constant expressions at compile time, so this becomes \"abcabc\" as a literal. If \"abcabc\" is not in the pool, 1 pool object. If already added from s3 via intern (not the case here automatically), 0. Total new objects: 1 (pool for \"abc\") + 1 (heap for s3 = s1 + s2) + 1 (pool for \"abcabc\" from s4) = 3 objects. Note: s3 is a heap object, s4 is a different pool object — s3 != s4 with ==.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Rewrite this code to fix the bug:\nclass UserValidator {\n    public boolean validate(String role) {\n        String allowedRole = \"ADMIN\";\n        if (role == allowedRole) {\n            return true;\n        }\n        return false;\n    }\n}",
+              "a": "The bug: using == instead of equals() for string comparison. == compares references — if role and allowedRole happen to point to the same pool object, it returns true, but if role comes from external input (HTTP request, DB query, etc.), it's a heap string and == returns false even for \"ADMIN\".\n\nFixed:\nclass UserValidator {\n    public boolean validate(String role) {\n        return \"ADMIN\".equals(role);  // Yoda condition — null-safe\n    }\n}\n\n// Or more explicitly:\n// return role != null && role.equals(\"ADMIN\");\n// Or with null-safety:\n// return Objects.equals(role, \"ADMIN\");",
+              "difficulty": "Easy"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Strings: The Most Used Type in Java",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Strings are arguably the most used type in all of Java programming. From user input to API responses, from database queries to configuration values — <strong>virtually every Java application handles strings constantly</strong>. The difference between beginner and senior Java code is clearly visible in how strings are handled."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Beginner code uses <code>==</code> for comparison, accumulates strings in loops with <code>+=</code>, stores passwords as Strings, ignores return values of string methods, and scatters magic string literals throughout. Senior code uses <code>equals()</code> correctly, reaches for <code>StringBuilder</code> in loops, leverages text blocks for multi-line content, extracts repeated literals to constants, and understands immutability deeply. <strong>Mastering strings is mastering Java fundamentals.</strong>"
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept",               "Key Point",                          "When to Use"],
+          "rows": [
+            ["String Literal",         "Goes to String Pool — memory efficient",     "Default — always prefer over new String()"],
+            ["new String()",           "Creates Heap object — bypasses pool",        "Only when you need distinct object reference"],
+            ["equals()",               "Compares content — correct way",             "Always for string value comparison"],
+            ["==",                     "Compares references — often wrong",          "Never for string value comparison"],
+            ["StringBuilder",          "Mutable, fast, not thread-safe",             "String building in single-threaded loops"],
+            ["StringBuffer",           "Mutable, thread-safe, slower",               "Multi-threaded string building (rare)"],
+            ["String.format()",        "printf-style formatting",                    "Formatted output with mixed types"],
+            ["Text Blocks",            "Multi-line strings, no escape hell",         "JSON, HTML, SQL, XML in code (Java 15+)"],
+            ["intern()",               "Manual pool entry for heap strings",         "Memory optimization for repeated strings"],
+            ["String.join()",          "Delimiter-based joining",                    "Joining collections or arrays cleanly"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java OOP Introduction</strong> — where you'll see how everything you've learned about Java fundamentals comes together in object-oriented design, and how classes, objects, and the four pillars of OOP build on concepts like Strings, arrays, and control flow. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Strings",
+    "items": [
+      {
+        "q": "What is a String in Java?",
+        "a": "A String in Java is an object of the java.lang.String class representing a sequence of characters. Strings are immutable — once created, their value cannot change. String literals are stored in the String Pool (a special Heap region) for memory efficiency. Because String is a class, it provides 50+ methods for searching, comparing, modifying, and formatting text. String is the most commonly used type in Java and is automatically imported from java.lang."
+      },
+      {
+        "q": "Why are Strings immutable in Java?",
+        "a": "Strings are immutable for four main reasons: (1) Security — strings are used as class names, file paths, credentials, and DB URLs; immutability prevents post-validation modification. (2) Thread safety — immutable objects are inherently thread-safe with no synchronization needed. (3) String Pool efficiency — the JVM can safely share pooled strings between references only because neither can modify the shared value. (4) HashMap key efficiency — String's hashcode is cached after first computation (possible only because value never changes), making it the most reliable and performant Map key."
+      },
+      {
+        "q": "What is the difference between String, StringBuilder, and StringBuffer?",
+        "a": "String is immutable — every change creates a new object. Thread-safe but slow for heavy modification. StringBuilder is mutable, NOT thread-safe, and introduced in Java 5 as a faster single-threaded alternative. StringBuffer is mutable and thread-safe (synchronized methods) but slower than StringBuilder. Rule of thumb: use String for constants, StringBuilder for single-threaded string building (especially in loops), and StringBuffer only when multiple threads genuinely share and modify the same string buffer."
+      },
+      {
+        "q": "How do you compare two Strings in Java?",
+        "a": "Always use equals() for content comparison: s1.equals(s2). Use equalsIgnoreCase() for case-insensitive comparison. Use compareTo() for lexicographic ordering. Never use == for string value comparison — it compares references (memory addresses), not content. Two strings with identical characters but different object references will have == return false. For null-safe comparison, use Objects.equals(s1, s2) or the Yoda condition \"expected\".equals(userInput)."
+      },
+      {
+        "q": "What is the String Pool in Java?",
+        "a": "The String Pool is a special memory cache inside the Java Heap where the JVM stores unique string literals. When you write String s = \"Hello\", the JVM checks if \"Hello\" exists in the pool. If yes, the existing reference is returned. If no, a new String is created in the pool. Strings created with new String() bypass the pool and always create new Heap objects. You can manually add a string to the pool using s.intern(). Since Java 7, the String Pool is part of the main Heap (previously PermGen), making pooled strings eligible for garbage collection when unreferenced."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Arrays",       "path": "/java/java-arrays" },
+    "next": { "label": "Java OOP Intro →",    "path": "/java/java-oop-intro" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "String type",           "dd": "Class (java.lang.String) — auto-imported" },
+      { "dt": "Immutable?",            "dd": "Yes — value never changes after creation" },
+      { "dt": "String Pool",           "dd": "Special Heap cache for literal strings" },
+      { "dt": "Compare values with",   "dd": "equals(), not ==" },
+      { "dt": "Mutable alternative",   "dd": "StringBuilder (single-thread), StringBuffer (multi-thread)" },
+      { "dt": "Text Blocks",           "dd": "Multi-line strings — Java 15+" },
+      { "dt": "Formatting",            "dd": "String.format() / .formatted() (Java 15+)" },
+      { "dt": "Passwords",             "dd": "Use char[] not String — security best practice" }
+    ],
+    "relatedArticles": [
+      { "label": "Java Variables & Data Types", "path": "/java/java-variables" },
+      { "label": "Java Arrays",                 "path": "/java/java-arrays" },
+      { "label": "Java OOP Introduction",       "path": "/java/java-oop-intro" },
+      { "label": "Java Classes & Objects",      "path": "/java/java-classes-objects" },
+      { "label": "Java StringBuilder",          "path": "/java/java-stringbuilder" },
+      { "label": "Java Regex",                  "path": "/java/java-regex" },
+      { "label": "Java Collections",            "path": "/java/java-collections" },
+      { "label": "Java Keywords",               "path": "/java/java-keyword" }
+    ],
+    "tags": [
+      "Java Strings", "String Immutability", "String Pool", "StringBuilder", "StringBuffer",
+      "String Methods", "String Comparison", "equals vs ==", "String.format", "Text Blocks",
+      "String Concatenation", "String Performance", "intern()", "String to int",
+      "String Validation", "Java 15", "Java 21", "Java Core", "Java Best Practices"
+    ]
+  }
+}

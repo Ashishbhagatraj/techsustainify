@@ -1,10 +1,11 @@
-// app/[subject]/[topic]/layout.tsx  ← nai file banao
-import { scanAllParams } from "@/lib/scansitemaptopic";
-
-export async function generateStaticParams() {
-  return scanAllParams();
-}
-
-export default function Layout({ children }: { children: React.ReactNode }) {
+// generateStaticParams yahan se hatao
+export default async function Layout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ subject: string; topic: string }>;
+}) {
+  await params;
   return <>{children}</>;
 }

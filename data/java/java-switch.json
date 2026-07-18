@@ -1,0 +1,2123 @@
+{
+  "meta": {
+    "title": "Java Switch Statement — Complete Guide with Switch Expression, Pattern Matching & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Switch — switch statement, switch expression, fall-through, break, default, string in switch, enhanced switch (Java 14+), yield, pattern matching switch (Java 21), and best practices. Updated March 2026.",
+    "keywords": "java switch, java switch statement, java switch expression, java switch case, java enhanced switch, java switch pattern matching, java switch yield, java switch string, java fall-through, java switch default, java switch arrow, java switch best practices, java 21 switch, java switch interview questions",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-switch",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Switch Statement — Switch Expression, Pattern Matching, yield & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java Switch — classic switch statement, enhanced switch expression (Java 14+), arrow labels, yield, string/enum switch, pattern matching switch (Java 21), and real-world production examples.",
+      "url": "https://www.techsustainify.com/java/java-switch",
+      "image": "https://www.techsustainify.com/images/java-switch-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Switch Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-03-01T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Switch Statement",
+          "Java Switch Expression",
+          "Java Enhanced Switch",
+          "Java Switch Pattern Matching",
+          "Java Switch yield",
+          "Java Fall-through",
+          "Java Switch Arrow Labels",
+          "Java Switch String",
+          "Java Switch Enum",
+          "Java 21"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Switch — Switch Expression, Pattern Matching, yield & Best Practices 2026",
+      "description": "Complete guide to Java Switch — classic statement, enhanced expression, arrow labels, yield, string/enum, pattern matching switch (Java 21) & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-switch-og.png",
+      "imageAlt": "Java Switch Guide 2026 - Tech Sustainify",
+      "readingTime": "20 minutes",
+      "level": "Beginner",
+      "label1": "Reading Time",
+      "data1": "20 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Switch Statement — Complete Guide with Switch Expression, Pattern Matching & Best Practices 2026",
+        "description": "A comprehensive beginner guide covering all Java Switch concepts — classic switch statement, fall-through, break, default, string/enum in switch, enhanced switch expression (Java 14+), arrow labels, yield, pattern matching switch (Java 21), guarded patterns, and real-world production examples.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-03-01",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner",
+        "wordCount": 6500,
+        "timeRequired": "PT20M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Switch Statement" },
+          { "@type": "Thing", "name": "Java Switch Expression" },
+          { "@type": "Thing", "name": "Java Pattern Matching Switch" },
+          { "@type": "Thing", "name": "Java yield Keyword" }
+        ],
+        "keywords": "java switch, switch statement, switch expression, fall-through, break, default, enhanced switch, arrow labels, yield, pattern matching, guarded patterns, string switch, enum switch"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Switch" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a switch statement in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A switch statement in Java is a multi-way branch control flow statement that evaluates an expression and executes the matching case block. It is an alternative to a long if-else-if chain when testing a single variable against multiple constant values. Syntax: switch (expression) { case value1: statements; break; case value2: statements; break; default: statements; }. The switch expression can be int, byte, short, char, String (Java 7+), or enum. Without break, execution falls through to the next case. The default case runs when no case matches."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between switch statement and switch expression in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Switch statement (classic): used for control flow — executes a block of statements. Does not produce a value. Requires break to prevent fall-through. Introduced in early Java. Switch expression (Java 14+): produces a value that can be assigned or returned. Uses arrow labels (case X ->) that prevent fall-through automatically. Or uses traditional colon labels with yield to return a value. Exhaustiveness is required for switch expressions — every possible value must be covered (with default or all enum values). Switch expressions are more concise, safer (no accidental fall-through), and expression-oriented."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is fall-through in Java switch?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Fall-through is the behaviour where execution continues from a matched case into the next case without stopping, because there is no break statement. Example: switch(x) { case 1: System.out.println('one'); case 2: System.out.println('two'); } — if x=1, both 'one' and 'two' are printed. Fall-through is usually unintentional and a bug. It can occasionally be used intentionally to share code between cases. Enhanced switch (Java 14+) arrow labels (case X ->) do not fall through — each arrow case is independent. Always use break in classic switch cases to prevent accidental fall-through."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can we use String in switch in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — String is supported in switch from Java 7 onwards. Example: switch (day) { case 'Monday': ...; break; case 'Tuesday': ...; break; default: ...; }. The comparison uses .equals() internally — it is case-sensitive ('Monday' and 'monday' are different cases). Null safety: passing null to a switch expression throws NullPointerException — always null-check before switching on a String. Switch can also use: byte, short, int, char, their wrapper classes (Byte, Short, Integer, Character), String (Java 7+), enum, and patterns (Java 21+). long, float, double, and boolean are NOT supported as switch selectors."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the yield keyword in Java switch?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "yield (Java 14+) is used inside a switch expression with traditional colon-style case blocks to produce (return) a value from the switch expression. It is similar to return but only for switch expressions. Example: int result = switch (day) { case MONDAY -> 1; case TUESDAY: yield 2; default: yield 0; }; yield is required when a case in a switch expression uses a colon label and contains multiple statements. For arrow labels (->), yield is not needed — the expression after -> is the value. yield is not a keyword for regular switch statements — only switch expressions."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-03-01",
+      "dateModified": "2026-03-20",
+      "readingTime": "20 minutes",
+      "wordCount": 6500,
+      "difficulty": "Beginner",
+      "chapter": 8,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-switch",              "title": "What is a Switch Statement?" },
+        { "id": "switch-syntax",               "title": "Switch Syntax & Structure" },
+        { "id": "switch-flow",                 "title": "How Switch Executes — Flow" },
+        { "id": "break-statement",             "title": "break in Switch" },
+        { "id": "default-case",                "title": "default Case" },
+        { "id": "fall-through",                "title": "Fall-Through — Intentional & Accidental" },
+        { "id": "multiple-case-labels",        "title": "Multiple Case Labels (Grouping)" },
+        { "id": "string-in-switch",            "title": "String in Switch (Java 7+)" },
+        { "id": "enum-in-switch",              "title": "Enum in Switch" },
+        { "id": "enhanced-switch-expression",  "title": "Enhanced Switch Expression (Java 14+)" },
+        { "id": "arrow-labels",                "title": "Arrow Labels — case X -> syntax" },
+        { "id": "yield-keyword",               "title": "yield Keyword in Switch Expression" },
+        { "id": "switch-vs-if-else",           "title": "switch vs if-else — Comparison" },
+        { "id": "pattern-matching-switch",     "title": "Pattern Matching Switch (Java 21)" },
+        { "id": "guarded-patterns",            "title": "Guarded Patterns — when clause" },
+        { "id": "switch-with-null",            "title": "Handling null in Switch (Java 21)" },
+        { "id": "common-mistakes",             "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",               "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",         "title": "Real-World Production Code Examples" },
+        { "id": "switch-flowchart",            "title": "Switch Decision Flowchart" },
+        { "id": "interview-questions",         "title": "Interview Questions" },
+        { "id": "practice-questions",          "title": "Practice Questions" },
+        { "id": "conclusion-heading",          "title": "Conclusion" },
+        { "id": "faq-heading",                 "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-switch" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-switch" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-switch" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-operators",
+      "next": "https://www.techsustainify.com/java/java-for-loop"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-control-flow",
+      "contentTopic": "java-switch",
+      "chapterNumber": 8,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Switch" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Switch — Statement, Expression, Pattern Matching & Best Practices",
+    "subtitle": "Everything you need to know about Java Switch — the classic switch statement with fall-through and break, the enhanced switch expression (Java 14+) with arrow labels and yield, String and Enum in switch, pattern matching switch with guarded patterns (Java 21), null handling, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "20 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "8 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-switch",
+      "title": "What is a Switch Statement in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>switch statement</strong> is a control flow construct that evaluates a single expression and branches execution to the matching <code>case</code> label. It is a cleaner alternative to a long <code>if-else-if</code> chain when you are comparing one variable against multiple constant values. Instead of writing condition after condition, switch lets you list each possible value as a distinct case and execute the corresponding block."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java's switch has evolved significantly across versions: the <strong>classic switch statement</strong> (all Java versions) handles control flow with explicit <code>break</code> statements and optional fall-through. The <strong>enhanced switch expression</strong> (Java 14+) produces a value, uses concise arrow syntax, and eliminates fall-through by default. The <strong>pattern matching switch</strong> (Java 21) adds type patterns and guarded conditions, making switch a powerful tool for data-driven dispatch."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SwitchIntro.java",
+          "lines": [
+            "public class SwitchIntro {",
+            "    public static void main(String[] args) {",
+            "",
+            "        int day = 3;",
+            "",
+            "        // ── Classic switch statement ───────────────────────────────────────",
+            "        switch (day) {",
+            "            case 1:",
+            "                System.out.println(\"Monday\");",
+            "                break;",
+            "            case 2:",
+            "                System.out.println(\"Tuesday\");",
+            "                break;",
+            "            case 3:",
+            "                System.out.println(\"Wednesday\");",
+            "                break;",
+            "            default:",
+            "                System.out.println(\"Other day\");",
+            "        }",
+            "        // Output: Wednesday",
+            "",
+            "        // ── Enhanced switch expression (Java 14+) — cleaner ───────────────",
+            "        String dayName = switch (day) {",
+            "            case 1 -> \"Monday\";",
+            "            case 2 -> \"Tuesday\";",
+            "            case 3 -> \"Wednesday\";",
+            "            case 4 -> \"Thursday\";",
+            "            case 5 -> \"Friday\";",
+            "            case 6 -> \"Saturday\";",
+            "            case 7 -> \"Sunday\";",
+            "            default -> \"Invalid day\";",
+            "        };",
+            "        System.out.println(dayName); // Wednesday",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java Switch at a Glance",
+          "text": "Classic switch statement: uses case: (colon) labels. Requires break to stop fall-through. Does not produce a value. Works since Java 1. Enhanced switch expression: uses case -> (arrow) labels. No fall-through. Produces a value. Java 14+. yield keyword: returns a value from a multi-statement case block in a switch expression. Java 14+. Pattern matching switch: case with type patterns (case Dog d) and guards (when d.age() > 2). Java 21+. Supported selector types: byte, short, int, char, their wrappers, String (Java 7+), enum, and any reference type (Java 21+ patterns). NOT supported: long, float, double, boolean."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "switch-syntax",
+      "title": "Switch Syntax & Structure",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <strong>classic switch statement</strong> has a straightforward structure: the keyword <code>switch</code>, followed by the selector expression in parentheses, followed by a block containing one or more <code>case</code> labels, an optional <code>default</code> label, and statements. Each case matches a constant value — not a range or condition — and execution jumps to the matching label."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SwitchSyntax.java",
+          "lines": [
+            "public class SwitchSyntax {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── Syntax of classic switch statement ───────────────────────────",
+            "        // switch (selectorExpression) {",
+            "        //     case constant1:",
+            "        //         statements;",
+            "        //         break;       // Prevents fall-through",
+            "        //     case constant2:",
+            "        //         statements;",
+            "        //         break;",
+            "        //     default:         // Optional — runs if no case matches",
+            "        //         statements;",
+            "        // }",
+            "",
+            "        // ── Example with int ──────────────────────────────────────────────",
+            "        int month = 4;",
+            "        switch (month) {",
+            "            case 1:  System.out.println(\"January\");   break;",
+            "            case 2:  System.out.println(\"February\");  break;",
+            "            case 3:  System.out.println(\"March\");     break;",
+            "            case 4:  System.out.println(\"April\");     break;",
+            "            case 5:  System.out.println(\"May\");       break;",
+            "            case 6:  System.out.println(\"June\");      break;",
+            "            case 7:  System.out.println(\"July\");      break;",
+            "            case 8:  System.out.println(\"August\");    break;",
+            "            case 9:  System.out.println(\"September\"); break;",
+            "            case 10: System.out.println(\"October\");   break;",
+            "            case 11: System.out.println(\"November\");  break;",
+            "            case 12: System.out.println(\"December\");  break;",
+            "            default: System.out.println(\"Invalid month\");",
+            "        }",
+            "        // Output: April",
+            "",
+            "        // ── Key structural rules ─────────────────────────────────────────",
+            "        // 1. case values must be compile-time constants (literals or final vars)",
+            "        // 2. case values must be unique — no duplicate case labels",
+            "        // 3. default is optional but recommended",
+            "        // 4. default can appear anywhere — not just at the end",
+            "        // 5. Multiple statements allowed per case without braces",
+            "        // 6. Empty case (no statements) falls through to the next case",
+            "",
+            "        // ── case with compile-time constant variable ───────────────────────",
+            "        final int JAN = 1;",
+            "        int m = 1;",
+            "        switch (m) {",
+            "            case JAN:  // ✅ Allowed — JAN is a compile-time constant (final)",
+            "                System.out.println(\"January\");",
+            "                break;",
+            "            default:",
+            "                System.out.println(\"Other\");",
+            "        }",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Case Values Must Be Compile-Time Constants",
+          "text": "Every case label must be a compile-time constant — a literal value (1, 'A', \"Monday\"), an enum constant, or a final primitive variable initialized with a literal. A non-final variable is NOT allowed as a case value: int x = 5; case x: — compile error. A final variable IS allowed: final int X = 5; case X: — valid. Duplicate case values cause a compile error. This restriction exists because the JVM uses a lookup table (tableswitch / lookupswitch bytecode) for switch — all case values must be known at compile time for this optimization."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "switch-flow",
+      "title": "How Switch Executes — Control Flow",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Understanding the <strong>execution flow</strong> of a switch is essential — especially the role of <code>break</code> and fall-through. When a switch is executed: <strong>(1)</strong> The selector expression is evaluated once. <strong>(2)</strong> Java compares the result against each case label from top to bottom. <strong>(3)</strong> When a match is found, execution jumps to that case and runs the statements. <strong>(4)</strong> Execution continues downward through subsequent cases until a <code>break</code>, <code>return</code>, or the end of the switch block is reached. <strong>(5)</strong> If no case matches, the <code>default</code> case runs (if present)."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SwitchFlow.java",
+          "lines": [
+            "public class SwitchFlow {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── Normal flow: break stops execution at each case ───────────────",
+            "        int x = 2;",
+            "        switch (x) {",
+            "            case 1: System.out.println(\"One\");   break;",
+            "            case 2: System.out.println(\"Two\");   break; // ← Matches here",
+            "            case 3: System.out.println(\"Three\"); break; // ← Never reached",
+            "            default: System.out.println(\"Other\");",
+            "        }",
+            "        // Output: Two",
+            "",
+            "        // ── No match — default executes ────────────────────────────────────",
+            "        int y = 99;",
+            "        switch (y) {",
+            "            case 1: System.out.println(\"One\"); break;",
+            "            case 2: System.out.println(\"Two\"); break;",
+            "            default: System.out.println(\"No match — default runs\");",
+            "        }",
+            "        // Output: No match — default runs",
+            "",
+            "        // ── No default, no match — switch does nothing ────────────────────",
+            "        int z = 99;",
+            "        switch (z) {",
+            "            case 1: System.out.println(\"One\"); break;",
+            "            case 2: System.out.println(\"Two\"); break;",
+            "        }",
+            "        // Output: (nothing — no match, no default)",
+            "",
+            "        // ── default NOT at the end — still only runs if no case matches ────",
+            "        int a = 3;",
+            "        switch (a) {",
+            "            default: System.out.println(\"Default\"); break;",
+            "            case 1:  System.out.println(\"One\");     break;",
+            "            case 3:  System.out.println(\"Three\");   break;",
+            "        }",
+            "        // Output: Three  (case 3 matches — default skipped even though it's first)",
+            "",
+            "        // ── return inside switch — exits the method ───────────────────────",
+            "        System.out.println(getDayType(6));  // Weekend",
+            "    }",
+            "",
+            "    static String getDayType(int day) {",
+            "        switch (day) {",
+            "            case 1: case 2: case 3: case 4: case 5:",
+            "                return \"Weekday\";   // return acts like break + exits method",
+            "            case 6: case 7:",
+            "                return \"Weekend\";",
+            "            default:",
+            "                return \"Invalid\";",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "break-statement",
+      "title": "break in Switch — Stopping Fall-Through",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>break</code> statement is used inside a classic switch to <strong>exit the switch block</strong> after a case executes. Without <code>break</code>, execution falls through to the next case — regardless of whether it matches — and continues until a <code>break</code>, <code>return</code>, or the end of the switch block is reached. This fall-through behaviour is a notorious source of bugs. Every case in a classic switch should end with <code>break</code> (or <code>return</code>) unless fall-through is deliberately intended."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "BreakInSwitch.java",
+          "lines": [
+            "public class BreakInSwitch {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── WITH break — correct, expected behaviour ───────────────────────",
+            "        int val = 2;",
+            "        switch (val) {",
+            "            case 1: System.out.println(\"One\");   break;",
+            "            case 2: System.out.println(\"Two\");   break;  // ← Exits after this",
+            "            case 3: System.out.println(\"Three\"); break;  // ← Never reached",
+            "        }",
+            "        // Output: Two",
+            "",
+            "        // ── WITHOUT break — fall-through happens ─────────────────────────",
+            "        int val2 = 2;",
+            "        switch (val2) {",
+            "            case 1: System.out.println(\"One\");",
+            "            case 2: System.out.println(\"Two\");    // ← Matches here",
+            "            case 3: System.out.println(\"Three\"); // ← Also executes (fall-through!)",
+            "            case 4: System.out.println(\"Four\");  // ← Also executes (fall-through!)",
+            "        }",
+            "        // Output:",
+            "        // Two",
+            "        // Three",
+            "        // Four",
+            "",
+            "        // ── break exits only the switch, not an outer loop ────────────────",
+            "        for (int i = 1; i <= 3; i++) {",
+            "            switch (i) {",
+            "                case 2:",
+            "                    System.out.println(\"Found 2 — breaking switch\");",
+            "                    break;  // Exits the switch, NOT the for loop",
+            "                default:",
+            "                    System.out.println(\"i = \" + i);",
+            "            }",
+            "        }",
+            "        // Output:",
+            "        // i = 1",
+            "        // Found 2 — breaking switch",
+            "        // i = 3",
+            "",
+            "        // ── return instead of break — exits the entire method ────────────",
+            "        System.out.println(getLabel(2)); // Two",
+            "    }",
+            "",
+            "    static String getLabel(int n) {",
+            "        switch (n) {",
+            "            case 1: return \"One\";",
+            "            case 2: return \"Two\";   // return exits method — no fall-through",
+            "            case 3: return \"Three\";",
+            "            default: return \"Unknown\";",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "default-case",
+      "title": "default Case — Handling Unmatched Values",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>default</code> case is the switch equivalent of the <code>else</code> clause in an if-else chain. It executes when none of the <code>case</code> labels match the selector value. It is <strong>optional</strong> but strongly recommended — omitting it means unmatched values silently do nothing, which can hide bugs. The <code>default</code> case can appear anywhere in the switch block — not just at the end — but placing it last is the universally followed convention for readability. For <strong>switch expressions</strong>, <code>default</code> is usually <strong>required</strong> to ensure exhaustiveness."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "DefaultCase.java",
+          "lines": [
+            "public class DefaultCase {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── default at the end — conventional position ────────────────────",
+            "        int code = 404;",
+            "        switch (code) {",
+            "            case 200: System.out.println(\"OK\");                   break;",
+            "            case 201: System.out.println(\"Created\");              break;",
+            "            case 400: System.out.println(\"Bad Request\");          break;",
+            "            case 404: System.out.println(\"Not Found\");            break;",
+            "            case 500: System.out.println(\"Internal Server Error\"); break;",
+            "            default:  System.out.println(\"Unknown status code\");",
+            "        }",
+            "        // Output: Not Found",
+            "",
+            "        // ── default when no case matches ───────────────────────────────────",
+            "        int code2 = 301;",
+            "        switch (code2) {",
+            "            case 200: System.out.println(\"OK\");        break;",
+            "            case 404: System.out.println(\"Not Found\"); break;",
+            "            default:  System.out.println(\"Redirect or other: \" + code2);",
+            "        }",
+            "        // Output: Redirect or other: 301",
+            "",
+            "        // ── default at the top — valid but unconventional ─────────────────",
+            "        int val = 5;",
+            "        switch (val) {",
+            "            default:  System.out.println(\"Default runs\"); break;",
+            "            case 1:   System.out.println(\"One\");          break;",
+            "            case 2:   System.out.println(\"Two\");          break;",
+            "        }",
+            "        // Output: Default runs  (val=5 matches no case — default executes)",
+            "",
+            "        // ── default with fall-through from case ───────────────────────────",
+            "        int val2 = 1;",
+            "        switch (val2) {",
+            "            case 1:  System.out.println(\"One\"); // No break — falls through",
+            "            default: System.out.println(\"Default also runs\");",
+            "        }",
+            "        // Output:",
+            "        // One",
+            "        // Default also runs   (fall-through from case 1 into default)",
+            "",
+            "        // ── Switch expression — default required for exhaustiveness ─────────",
+            "        int score = 85;",
+            "        String grade = switch (score / 10) {",
+            "            case 10, 9 -> \"A\";",
+            "            case 8     -> \"B\";",
+            "            case 7     -> \"C\";",
+            "            case 6     -> \"D\";",
+            "            default    -> \"F\";  // Required — int has infinite possible values",
+            "        };",
+            "        System.out.println(\"Grade: \" + grade);  // Grade: B",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Always Include default",
+          "text": "Always include a default case in every switch — even if you believe all possible values are covered. A switch without default silently does nothing for unmatched values — no error, no warning. This makes bugs hard to detect. In a switch expression, the compiler enforces exhaustiveness: if you do not cover all possible values, it is a compile error. For switch statements, it is the programmer's responsibility to add default. Convention: place default last. If you intentionally want to do nothing for unmatched values, add an explicit comment: default: // intentionally empty."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "fall-through",
+      "title": "Fall-Through — Intentional & Accidental",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Fall-through</strong> is the behaviour where, after a matched case executes, control continues into the next case without stopping — because there is no <code>break</code>. It is one of the most notorious Java pitfalls for beginners and experienced developers alike. However, fall-through is occasionally used <em>intentionally</em> to share code between consecutive cases — for example, grouping multiple values that produce the same result."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "FallThrough.java",
+          "lines": [
+            "public class FallThrough {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── ACCIDENTAL fall-through — a common bug ────────────────────────",
+            "        int day = 2;",
+            "        switch (day) {",
+            "            case 1: System.out.println(\"Monday\");",
+            "            case 2: System.out.println(\"Tuesday\");   // ← Match here",
+            "            case 3: System.out.println(\"Wednesday\"); // ← Fall-through!",
+            "            case 4: System.out.println(\"Thursday\");  // ← Fall-through!",
+            "            default: System.out.println(\"Other\");    // ← Fall-through!",
+            "        }",
+            "        // Output:",
+            "        // Tuesday",
+            "        // Wednesday",
+            "        // Thursday",
+            "        // Other",
+            "        // This is a BUG — programmer forgot break statements",
+            "",
+            "        // ── INTENTIONAL fall-through — grouping cases ─────────────────────",
+            "        int month = 4;",
+            "        int daysInMonth;",
+            "        switch (month) {",
+            "            case 1: case 3: case 5: case 7:",
+            "            case 8: case 10: case 12:",
+            "                daysInMonth = 31;  // These months have 31 days",
+            "                break;",
+            "            case 4: case 6: case 9: case 11:",
+            "                daysInMonth = 30;  // These months have 30 days",
+            "                break;",
+            "            case 2:",
+            "                daysInMonth = 28;  // Simplified — ignoring leap year",
+            "                break;",
+            "            default:",
+            "                daysInMonth = -1;  // Invalid month",
+            "        }",
+            "        System.out.println(\"Days in month \" + month + \": \" + daysInMonth);",
+            "        // Output: Days in month 4: 30",
+            "",
+            "        // ── INTENTIONAL fall-through with @SuppressWarnings annotation ─────",
+            "        int level = 1;",
+            "        @SuppressWarnings(\"fallthrough\")",
+            "        String result;",
+            "        switch (level) {",
+            "            case 3: System.out.println(\"Senior features enabled\");",
+            "            // fall through intentional",
+            "            case 2: System.out.println(\"Mid features enabled\");",
+            "            // fall through intentional",
+            "            case 1: System.out.println(\"Basic features enabled\");",
+            "                break;",
+            "            default: System.out.println(\"Guest access\");",
+            "        }",
+            "        // Output for level=1:",
+            "        // Basic features enabled",
+            "        // Output for level=3:",
+            "        // Senior features enabled",
+            "        // Mid features enabled",
+            "        // Basic features enabled",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Fall-Through Is Usually a Bug",
+          "text": "Most real-world fall-through occurrences are bugs — a forgotten break. The enhanced switch expression (Java 14+) with arrow labels eliminates fall-through entirely — each arrow case is independent. When using classic switch, always end every case with break, return, throw, or continue (if inside a loop). If fall-through is genuinely intentional, add a comment: // fall through intentional and consider the @SuppressWarnings('fallthrough') annotation. Code reviewers will ask about any case without break — be prepared to justify it."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "multiple-case-labels",
+      "title": "Multiple Case Labels — Grouping Cases",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When multiple values should produce the same result, Java allows <strong>grouping case labels</strong> so they share a single block of code. In classic switch, this is done by stacking empty cases on top of each other (intentional fall-through). In enhanced switch (Java 14+), the cleaner approach is using <strong>comma-separated case labels</strong>: <code>case 1, 2, 3 -></code>. The comma syntax is only available in enhanced switch (Java 14+) — it is not valid in classic switch colon-style cases."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "MultipleCaseLabels.java",
+          "lines": [
+            "public class MultipleCaseLabels {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── Classic style: stacked cases (intentional fall-through) ─────────",
+            "        int day = 6;",
+            "        switch (day) {",
+            "            case 1:",
+            "            case 2:",
+            "            case 3:",
+            "            case 4:",
+            "            case 5:",
+            "                System.out.println(\"Weekday\");",
+            "                break;",
+            "            case 6:",
+            "            case 7:",
+            "                System.out.println(\"Weekend\");",
+            "                break;",
+            "            default:",
+            "                System.out.println(\"Invalid\");",
+            "        }",
+            "        // Output: Weekend",
+            "",
+            "        // ── Enhanced switch (Java 14+): comma-separated case labels ────────",
+            "        String dayType = switch (day) {",
+            "            case 1, 2, 3, 4, 5 -> \"Weekday\";  // Comma-separated — clean!",
+            "            case 6, 7          -> \"Weekend\";",
+            "            default            -> \"Invalid\";",
+            "        };",
+            "        System.out.println(dayType); // Weekend",
+            "",
+            "        // ── Grouping with String values ───────────────────────────────────",
+            "        String season = \"SUMMER\";",
+            "        String weather = switch (season) {",
+            "            case \"SPRING\", \"AUTUMN\"            -> \"Mild\";",
+            "            case \"SUMMER\"                       -> \"Hot\";",
+            "            case \"WINTER\"                       -> \"Cold\";",
+            "            default                             -> \"Unknown season\";",
+            "        };",
+            "        System.out.println(weather); // Hot",
+            "",
+            "        // ── Grouping months for quarter calculation ───────────────────────",
+            "        int month = 8;",
+            "        int quarter = switch (month) {",
+            "            case 1, 2, 3   -> 1;",
+            "            case 4, 5, 6   -> 2;",
+            "            case 7, 8, 9   -> 3;",
+            "            case 10, 11, 12 -> 4;",
+            "            default        -> throw new IllegalArgumentException(\"Invalid month: \" + month);",
+            "        };",
+            "        System.out.println(\"Quarter: \" + quarter); // Quarter: 3",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "string-in-switch",
+      "title": "String in Switch — Java 7+",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Since <strong>Java 7</strong>, <code>String</code> is a valid selector type in switch. Before Java 7, only integral types and enum were allowed. String switch uses <code>.equals()</code> internally for comparison — it is <strong>case-sensitive</strong> (<code>\"Monday\"</code> and <code>\"monday\"</code> are different cases). A critical safety rule: <strong>always null-check before switching on a String</strong> — if the String is <code>null</code>, the switch throws a <code>NullPointerException</code>."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StringInSwitch.java",
+          "lines": [
+            "public class StringInSwitch {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── String switch — basic usage ───────────────────────────────────",
+            "        String command = \"START\";",
+            "        switch (command) {",
+            "            case \"START\":",
+            "                System.out.println(\"Starting application...\");",
+            "                break;",
+            "            case \"STOP\":",
+            "                System.out.println(\"Stopping application...\");",
+            "                break;",
+            "            case \"RESTART\":",
+            "                System.out.println(\"Restarting application...\");",
+            "                break;",
+            "            default:",
+            "                System.out.println(\"Unknown command: \" + command);",
+            "        }",
+            "        // Output: Starting application...",
+            "",
+            "        // ── Case-sensitive — 'start' is NOT 'START' ──────────────────────",
+            "        String cmd2 = \"start\";",
+            "        switch (cmd2) {",
+            "            case \"START\": System.out.println(\"Matched START\"); break;",
+            "            default:      System.out.println(\"No match — case sensitive!\");",
+            "        }",
+            "        // Output: No match — case sensitive!",
+            "",
+            "        // ── Safe pattern: normalize before switch ─────────────────────────",
+            "        String userInput = \"  start  \";",
+            "        switch (userInput.trim().toUpperCase()) {  // Normalize first",
+            "            case \"START\":   System.out.println(\"Starting...\");   break;",
+            "            case \"STOP\":    System.out.println(\"Stopping...\");   break;",
+            "            default:        System.out.println(\"Unknown\");",
+            "        }",
+            "        // Output: Starting...",
+            "",
+            "        // ── NullPointerException if String is null ────────────────────────",
+            "        String s = null;",
+            "        // switch (s) { ... }  // ❌ NullPointerException at runtime!",
+            "",
+            "        // ✅ Always null-check before switching on String",
+            "        if (s != null) {",
+            "            switch (s) {",
+            "                case \"A\": System.out.println(\"A\"); break;",
+            "                default:  System.out.println(\"Other\");",
+            "            }",
+            "        } else {",
+            "            System.out.println(\"Null input — using default\");",
+            "        }",
+            "        // Output: Null input — using default",
+            "",
+            "        // ── Enhanced switch with String (Java 14+) ────────────────────────",
+            "        String day = \"MONDAY\";",
+            "        String type = switch (day) {",
+            "            case \"MONDAY\", \"TUESDAY\", \"WEDNESDAY\", \"THURSDAY\", \"FRIDAY\" -> \"Weekday\";",
+            "            case \"SATURDAY\", \"SUNDAY\" -> \"Weekend\";",
+            "            default -> \"Unknown\";",
+            "        };",
+            "        System.out.println(type); // Weekday",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 How String Switch Works Internally",
+          "text": "The compiler translates String switch into two-stage logic: first, it calls hashCode() on the selector String to find the right bucket (fast O(1) lookup), then calls equals() to verify the match (handles hash collisions). This means String switch is efficient even with many cases. But it also explains why it is case-sensitive — equals() on String is case-sensitive. To make String switch case-insensitive, always normalize the selector before switching: switch (input.trim().toUpperCase()) { case 'START': ... }. Java 21 pattern matching switch also handles null directly — see the null in switch section."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enum-in-switch",
+      "title": "Enum in Switch — The Cleanest Switch Pattern",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Using an <code>enum</code> as the switch selector is one of the most powerful and clean patterns in Java. Enums provide a <strong>closed, compile-time-known set of values</strong> — the compiler can verify exhaustiveness and warn if new enum constants are not handled. When all enum constants are covered in cases, <code>default</code> is not needed (though still recommended for future-proofing). Enum in switch is the preferred approach when a variable can take one of a fixed set of named states."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EnumInSwitch.java",
+          "lines": [
+            "public class EnumInSwitch {",
+            "",
+            "    enum Day { MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY }",
+            "",
+            "    enum OrderStatus { PENDING, CONFIRMED, SHIPPED, DELIVERED, CANCELLED }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── Classic switch with enum ───────────────────────────────────────",
+            "        Day today = Day.WEDNESDAY;",
+            "        switch (today) {",
+            "            case MONDAY:",
+            "            case TUESDAY:",
+            "            case WEDNESDAY:",
+            "            case THURSDAY:",
+            "            case FRIDAY:",
+            "                System.out.println(\"Weekday — work day\");",
+            "                break;",
+            "            case SATURDAY:",
+            "            case SUNDAY:",
+            "                System.out.println(\"Weekend — rest day\");",
+            "                break;",
+            "            // Note: no 'default' needed — all enum values covered",
+            "        }",
+            "        // Output: Weekday — work day",
+            "",
+            "        // ── Enhanced switch expression with enum ──────────────────────────",
+            "        String schedule = switch (today) {",
+            "            case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> \"9 AM - 5 PM\";",
+            "            case SATURDAY -> \"10 AM - 2 PM\";",
+            "            case SUNDAY   -> \"Closed\";",
+            "            // No default needed — all enum constants covered (exhaustive)",
+            "        };",
+            "        System.out.println(\"Schedule: \" + schedule);",
+            "        // Output: Schedule: 9 AM - 5 PM",
+            "",
+            "        // ── Enum switch for order processing ──────────────────────────────",
+            "        OrderStatus status = OrderStatus.SHIPPED;",
+            "        String message = switch (status) {",
+            "            case PENDING   -> \"Your order is awaiting confirmation.\";",
+            "            case CONFIRMED -> \"Your order has been confirmed!\";",
+            "            case SHIPPED   -> \"Your order is on the way!\";",
+            "            case DELIVERED -> \"Your order has been delivered. Enjoy!\";",
+            "            case CANCELLED -> \"Your order has been cancelled.\";",
+            "        };",
+            "        System.out.println(message);",
+            "        // Output: Your order is on the way!",
+            "",
+            "        // ── Enum switch with method body — multi-statement ────────────────",
+            "        processOrder(OrderStatus.CONFIRMED);",
+            "    }",
+            "",
+            "    static void processOrder(OrderStatus status) {",
+            "        switch (status) {",
+            "            case PENDING:",
+            "                System.out.println(\"Sending confirmation email...\");",
+            "                System.out.println(\"Reserving inventory...\");",
+            "                break;",
+            "            case CONFIRMED:",
+            "                System.out.println(\"Preparing shipment...\");",
+            "                System.out.println(\"Notifying warehouse...\");",
+            "                break;",
+            "            case SHIPPED:",
+            "                System.out.println(\"Updating tracking info...\");",
+            "                break;",
+            "            case DELIVERED:",
+            "                System.out.println(\"Sending feedback request...\");",
+            "                break;",
+            "            case CANCELLED:",
+            "                System.out.println(\"Processing refund...\");",
+            "                break;",
+            "        }",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Enum + Switch Expression = Best Combination",
+          "text": "Enum with enhanced switch expression is the gold standard for state/status-based branching in Java. The compiler guarantees exhaustiveness — if you add a new enum constant later and forget to handle it in the switch expression, it becomes a compile error immediately. This is far safer than if-else chains or String switches which silently fall to default when new values are added. In switch expression covering all enum constants, you can omit default — but many teams keep it for defensive programming and to handle future constants gracefully."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enhanced-switch-expression",
+      "title": "Enhanced Switch Expression — Java 14+",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java 14 introduced the <strong>switch expression</strong> as a standard feature (JEP 361). Unlike the classic switch statement (which executes code), a switch <em>expression</em> <strong>produces a value</strong> that can be assigned, returned, or used in another expression. Switch expressions use arrow labels (<code>case X -></code>) that eliminate fall-through by default, require exhaustiveness (covering all possible values), and are significantly more concise than the classic form."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EnhancedSwitchExpression.java",
+          "lines": [
+            "public class EnhancedSwitchExpression {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── Basic switch expression — produces a value ────────────────────",
+            "        int day = 3;",
+            "        String dayName = switch (day) {",
+            "            case 1 -> \"Monday\";",
+            "            case 2 -> \"Tuesday\";",
+            "            case 3 -> \"Wednesday\";",
+            "            case 4 -> \"Thursday\";",
+            "            case 5 -> \"Friday\";",
+            "            case 6 -> \"Saturday\";",
+            "            case 7 -> \"Sunday\";",
+            "            default -> \"Invalid\";",
+            "        };  // Note: semicolon after closing brace",
+            "        System.out.println(dayName); // Wednesday",
+            "",
+            "        // ── Switch expression inline in print ─────────────────────────────",
+            "        int score = 75;",
+            "        System.out.println(\"Grade: \" + switch (score / 10) {",
+            "            case 10, 9 -> \"A\";",
+            "            case 8     -> \"B\";",
+            "            case 7     -> \"C\";",
+            "            case 6     -> \"D\";",
+            "            default    -> \"F\";",
+            "        });",
+            "        // Output: Grade: C",
+            "",
+            "        // ── Switch expression as method return ────────────────────────────",
+            "        System.out.println(getDayType(6)); // Weekend",
+            "        System.out.println(getDayType(3)); // Weekday",
+            "",
+            "        // ── Switch expression with int result ─────────────────────────────",
+            "        String month = \"APRIL\";",
+            "        int days = switch (month) {",
+            "            case \"JANUARY\", \"MARCH\", \"MAY\", \"JULY\",",
+            "                 \"AUGUST\", \"OCTOBER\", \"DECEMBER\" -> 31;",
+            "            case \"APRIL\", \"JUNE\", \"SEPTEMBER\", \"NOVEMBER\" -> 30;",
+            "            case \"FEBRUARY\" -> 28;",
+            "            default -> throw new IllegalArgumentException(\"Unknown month: \" + month);",
+            "        };",
+            "        System.out.println(month + \" has \" + days + \" days.\");",
+            "        // Output: APRIL has 30 days.",
+            "",
+            "        // ── Switch expression: no fall-through — each arrow case independent",
+            "        int x = 2;",
+            "        String result = switch (x) {",
+            "            case 1 -> \"One\";",
+            "            case 2 -> \"Two\";    // Only this executes — no fall-through",
+            "            case 3 -> \"Three\";  // Never reached for x=2",
+            "            default -> \"Other\";",
+            "        };",
+            "        System.out.println(result); // Two",
+            "    }",
+            "",
+            "    static String getDayType(int day) {",
+            "        return switch (day) {          // switch expression returned directly",
+            "            case 1, 2, 3, 4, 5 -> \"Weekday\";",
+            "            case 6, 7          -> \"Weekend\";",
+            "            default            -> \"Invalid\";",
+            "        };",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 Switch Expression Rules",
+          "text": "Must be exhaustive — every possible value must be covered (use default for non-enum types). Produces a value — can be used in assignments, returns, method arguments. No fall-through with arrow labels — each case -> is independent. Semicolon after closing brace when assigned: String s = switch(...) { ... };. Can throw exceptions in cases: default -> throw new IllegalArgumentException('...'). Can use yield in colon-style cases to produce a value from a multi-statement block. All case arms must produce the same type (or compatible types)."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "arrow-labels",
+      "title": "Arrow Labels — case X -> Syntax",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Arrow labels (<code>case X -></code>) are the new concise syntax introduced in Java 14. They replace the traditional <code>case X:</code> colon syntax with three key improvements: <strong>no fall-through</strong> (each arrow case is self-contained), <strong>concise single-line expressions</strong> (no need for break), and <strong>block support</strong> for multi-statement cases using <code>yield</code>. Arrow labels can be used in both switch expressions and switch statements."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ArrowLabels.java",
+          "lines": [
+            "public class ArrowLabels {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── Arrow label: single expression ───────────────────────────────",
+            "        int x = 3;",
+            "        String result = switch (x) {",
+            "            case 1 -> \"One\";    // Expression after -> is the value",
+            "            case 2 -> \"Two\";",
+            "            case 3 -> \"Three\";",
+            "            default -> \"Other\";",
+            "        };",
+            "        System.out.println(result); // Three",
+            "",
+            "        // ── Arrow label: block body with yield ────────────────────────────",
+            "        int score = 72;",
+            "        String grade = switch (score / 10) {",
+            "            case 10, 9 -> \"A\";",
+            "            case 8     -> \"B\";",
+            "            case 7     -> {",
+            "                // Multi-statement block — use yield to produce value",
+            "                String base = \"C\";",
+            "                System.out.println(\"Computing grade for score: \" + score);",
+            "                yield base;  // yield returns the value from this block",
+            "            }",
+            "            case 6 -> \"D\";",
+            "            default -> {",
+            "                System.out.println(\"Score \" + score + \" is below passing.\");",
+            "                yield \"F\";",
+            "            }",
+            "        };",
+            "        System.out.println(\"Grade: \" + grade);",
+            "        // Output:",
+            "        // Computing grade for score: 72",
+            "        // Grade: C",
+            "",
+            "        // ── Arrow label: throwing exceptions ──────────────────────────────",
+            "        int month = 13;",
+            "        int daysInMonth = switch (month) {",
+            "            case 1, 3, 5, 7, 8, 10, 12 -> 31;",
+            "            case 4, 6, 9, 11            -> 30;",
+            "            case 2                      -> 28;",
+            "            default -> throw new IllegalArgumentException(",
+            "                \"Invalid month: \" + month",
+            "            );",
+            "        };",
+            "",
+            "        // ── Arrow label in switch STATEMENT (not expression) ──────────────",
+            "        // Arrow labels can also be used without assigning a value",
+            "        String cmd = \"DEPLOY\";",
+            "        switch (cmd) {",
+            "            case \"BUILD\"  -> System.out.println(\"Building...\");",
+            "            case \"TEST\"   -> System.out.println(\"Testing...\");",
+            "            case \"DEPLOY\" -> System.out.println(\"Deploying...\");",
+            "            default       -> System.out.println(\"Unknown command: \" + cmd);",
+            "        }",
+            "        // Output: Deploying...",
+            "",
+            "        // ── Comparison: old style vs arrow style ─────────────────────────",
+            "        // OLD (classic switch statement):",
+            "        // switch(x) { case 3: result = \"Three\"; break; ... }",
+            "",
+            "        // NEW (arrow switch expression) — same result, more concise:",
+            "        // String r = switch(x) { case 3 -> \"Three\"; default -> \"?\"; };",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "yield-keyword",
+      "title": "yield Keyword in Switch Expression",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>yield</code> keyword (Java 14+) is used inside a <strong>switch expression</strong> to produce (return) a value from a <em>multi-statement case block</em>. It is analogous to <code>return</code> but scoped to the switch expression — it does not exit the enclosing method. <code>yield</code> is only valid in switch expressions, not in switch statements. When using arrow labels (<code>-></code>) with a single expression, <code>yield</code> is implicit and not needed. <code>yield</code> is only required when a case uses a <code>{}</code> block body with multiple statements."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "YieldKeyword.java",
+          "lines": [
+            "public class YieldKeyword {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── yield in arrow-label block ────────────────────────────────────",
+            "        int score = 85;",
+            "        String grade = switch (score / 10) {",
+            "            case 10, 9 -> \"A\";",
+            "            case 8     -> {",
+            "                System.out.println(\"Good performance!\");",
+            "                yield \"B\";  // yield provides the value for this case block",
+            "            }",
+            "            case 7 -> \"C\";",
+            "            default -> {",
+            "                System.out.println(\"Below B grade\");",
+            "                yield \"D or F\";",
+            "            }",
+            "        };",
+            "        System.out.println(\"Grade: \" + grade);",
+            "        // Output:",
+            "        // Good performance!",
+            "        // Grade: B",
+            "",
+            "        // ── yield in colon-style case (traditional labels in switch expression)",
+            "        int day = 4;",
+            "        String dayType = switch (day) {",
+            "            case 1:",
+            "            case 2:",
+            "            case 3:",
+            "            case 4:",
+            "            case 5:",
+            "                yield \"Weekday\";   // yield in colon-style case",
+            "            case 6:",
+            "            case 7:",
+            "                yield \"Weekend\";",
+            "            default:",
+            "                yield \"Invalid\";",
+            "        };",
+            "        System.out.println(dayType); // Weekday",
+            "",
+            "        // ── yield vs return — key difference ─────────────────────────────",
+            "        System.out.println(computeDiscount(\"PREMIUM\")); // 20",
+            "        System.out.println(computeDiscount(\"REGULAR\")); // 5",
+            "    }",
+            "",
+            "    static int computeDiscount(String customerType) {",
+            "        int baseDiscount = switch (customerType) {",
+            "            case \"PREMIUM\" -> {",
+            "                int bonus = 5;",
+            "                int base  = 15;",
+            "                yield base + bonus;   // yield — provides value to switch expression",
+            "                // return base + bonus; // ❌ Would exit the method, not just switch",
+            "            }",
+            "            case \"REGULAR\" -> {",
+            "                yield 5;",
+            "            }",
+            "            default -> 0;",
+            "        };",
+            "        return baseDiscount;  // return exits the method",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 yield — Key Rules",
+          "text": "yield is only valid inside a switch expression — not in a switch statement. yield produces the value of the switch expression for that case — it does not exit the method. In an arrow case (case X -> value), yield is implicit — you do not need to write yield. In a block arrow case (case X -> { ... }) or colon-style case, yield is required to supply the value. You cannot use break in a switch expression the way you would in a statement — use yield instead. yield is not a keyword in switch statements — it causes a compile error if used there. yield is a context-sensitive keyword — it can still be used as a variable or method name outside switch expressions (not recommended)."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "switch-vs-if-else",
+      "title": "switch vs if-else — When to Use Which",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Both <code>switch</code> and <code>if-else</code> handle multi-way branching, but each has strengths and appropriate use cases. The key difference: <code>switch</code> tests a <em>single expression against constant values</em>, while <code>if-else</code> can test <em>arbitrary conditions</em> including ranges, compound conditions, and non-constant comparisons."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "switch", "if-else"],
+          "rows": [
+            ["Tests",              "One expression vs constant values",    "Any boolean condition"],
+            ["Ranges",             "❌ Cannot test ranges (x > 10)",      "✅ Can test ranges (x > 10 && x < 20)"],
+            ["Null safety",        "⚠️ NPE if selector is null",         "✅ Null-safe (null == null is false)"],
+            ["Supported types",    "int, char, String, enum, patterns",    "Any type and expression"],
+            ["Fall-through",       "⚠️ Classic: yes. Enhanced: no",       "❌ No fall-through possible"],
+            ["Produces value",     "✅ Switch expression (Java 14+)",     "❌ Cannot produce value directly"],
+            ["Readability",        "✅ Cleaner for many fixed values",    "✅ Cleaner for complex logic"],
+            ["Performance",        "✅ O(1) bytecode (tableswitch)",      "⚠️ O(n) — sequential evaluation"],
+            ["Exhaustiveness",     "✅ Compiler-enforced (expression)",   "❌ Not enforced"],
+            ["Pattern matching",   "✅ Java 21 patterns and guards",      "✅ instanceof (Java 16+)"],
+            ["Use case",           "Status/state/mode/fixed values",       "Ranges, compound conditions, flags"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SwitchVsIfElse.java",
+          "lines": [
+            "public class SwitchVsIfElse {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── USE switch: many values of a single variable ──────────────────",
+            "        String status = \"SHIPPED\";",
+            "",
+            "        // if-else version — verbose:",
+            "        if (status.equals(\"PENDING\"))        { System.out.println(\"Awaiting\"); }",
+            "        else if (status.equals(\"CONFIRMED\")) { System.out.println(\"Confirmed\"); }",
+            "        else if (status.equals(\"SHIPPED\"))   { System.out.println(\"On the way\"); }",
+            "        else if (status.equals(\"DELIVERED\")) { System.out.println(\"Delivered\"); }",
+            "        else                                  { System.out.println(\"Unknown\"); }",
+            "",
+            "        // switch version — cleaner:",
+            "        switch (status) {",
+            "            case \"PENDING\"   -> System.out.println(\"Awaiting\");",
+            "            case \"CONFIRMED\" -> System.out.println(\"Confirmed\");",
+            "            case \"SHIPPED\"   -> System.out.println(\"On the way\");",
+            "            case \"DELIVERED\" -> System.out.println(\"Delivered\");",
+            "            default          -> System.out.println(\"Unknown\");",
+            "        }",
+            "",
+            "        // ── USE if-else: ranges and compound conditions ───────────────────",
+            "        int temperature = 35;",
+            "",
+            "        // switch CANNOT do this — no range support:",
+            "        // switch (temperature) { case > 30: ... }  // ❌ Compile error",
+            "",
+            "        // if-else is the correct choice for ranges:",
+            "        if (temperature > 40) {",
+            "            System.out.println(\"Extreme heat\");",
+            "        } else if (temperature > 30) {",
+            "            System.out.println(\"Hot\");",
+            "        } else if (temperature > 20) {",
+            "            System.out.println(\"Warm\");",
+            "        } else {",
+            "            System.out.println(\"Cool or Cold\");",
+            "        }",
+            "        // Output: Hot",
+            "",
+            "        // ── USE switch expression to assign result ────────────────────────",
+            "        int dayNum = 6;",
+            "        boolean isWeekend = switch (dayNum) {",
+            "            case 6, 7  -> true;",
+            "            default    -> false;",
+            "        };",
+            "        // if-else equivalent is more verbose for assignment:",
+            "        // boolean isWeekend = (dayNum == 6 || dayNum == 7);",
+            "        System.out.println(\"Weekend: \" + isWeekend); // Weekend: true",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "pattern-matching-switch",
+      "title": "Pattern Matching Switch — Java 21",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Pattern matching for switch</strong> (JEP 441, standard in Java 21) extends switch to work with <em>type patterns</em> — the same patterns used in <code>instanceof</code>. This allows you to test what type an object is AND bind it to a typed variable in one step, inside a switch. It is the modern, exhaustive, and null-safe alternative to long chains of <code>if (x instanceof TypeA a) ... else if (x instanceof TypeB b)</code>. Combined with <em>guarded patterns</em> (<code>when</code> clauses) and sealed class hierarchies, pattern matching switch is extremely powerful."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "PatternMatchingSwitch.java",
+          "lines": [
+            "public class PatternMatchingSwitch {",
+            "",
+            "    sealed interface Shape permits Circle, Rectangle, Triangle {}",
+            "    record Circle(double radius)              implements Shape {}",
+            "    record Rectangle(double width, double height) implements Shape {}",
+            "    record Triangle(double base, double height)   implements Shape {}",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── Pattern matching switch — type patterns ───────────────────────",
+            "        Object obj = \"Hello, Java 21!\";",
+            "        String description = switch (obj) {",
+            "            case Integer i  -> \"Integer: \" + i;",
+            "            case Double  d  -> \"Double: \" + d;",
+            "            case String  s  -> \"String of length \" + s.length();",
+            "            case null       -> \"Null value\";",
+            "            default         -> \"Other type: \" + obj.getClass().getSimpleName();",
+            "        };",
+            "        System.out.println(description);",
+            "        // Output: String of length 14",
+            "",
+            "        // ── Pattern matching with sealed hierarchy ────────────────────────",
+            "        Shape shape = new Circle(5.0);",
+            "        double area = switch (shape) {",
+            "            case Circle    c -> Math.PI * c.radius() * c.radius();",
+            "            case Rectangle r -> r.width() * r.height();",
+            "            case Triangle  t -> 0.5 * t.base() * t.height();",
+            "            // No default needed — sealed hierarchy is exhaustive",
+            "        };",
+            "        System.out.printf(\"Area: %.2f%n\", area);",
+            "        // Output: Area: 78.54",
+            "",
+            "        // ── Pattern matching: replaces long instanceof chain ───────────────",
+            "        Object data = 3.14;",
+            "        // OLD WAY (verbose):",
+            "        // if (data instanceof Integer i) { System.out.println(i * 2); }",
+            "        // else if (data instanceof Double d) { System.out.println(d * 2); }",
+            "        // else if (data instanceof String s) { System.out.println(s.toUpperCase()); }",
+            "",
+            "        // NEW WAY (pattern switch):",
+            "        switch (data) {",
+            "            case Integer i -> System.out.println(i * 2);",
+            "            case Double  d -> System.out.println(d * 2);       // 6.28",
+            "            case String  s -> System.out.println(s.toUpperCase());",
+            "            default        -> System.out.println(\"Unknown\");",
+            "        }",
+            "",
+            "        // ── Payment type dispatch with pattern matching ───────────────────",
+            "        processPayment(new CreditCardPayment(500.0, \"9876\"));",
+            "        processPayment(new UPIPayment(200.0, \"user@upi\"));",
+            "    }",
+            "",
+            "    sealed interface Payment permits CreditCardPayment, UPIPayment {}",
+            "    record CreditCardPayment(double amount, String last4) implements Payment {}",
+            "    record UPIPayment(double amount, String upiId)        implements Payment {}",
+            "",
+            "    static void processPayment(Payment p) {",
+            "        String receipt = switch (p) {",
+            "            case CreditCardPayment cc ->",
+            "                \"Card ending \" + cc.last4() + \" charged ₹\" + cc.amount();",
+            "            case UPIPayment upi ->",
+            "                \"UPI \" + upi.upiId() + \" charged ₹\" + upi.amount();",
+            "        };",
+            "        System.out.println(receipt);",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "guarded-patterns",
+      "title": "Guarded Patterns — when Clause (Java 21)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>guarded pattern</strong> adds an extra boolean condition to a type pattern using the <code>when</code> keyword. The case only matches if the type check AND the boolean condition both pass. This eliminates the need for nested <code>if</code> statements inside pattern match cases, making complex type-and-condition dispatch extremely concise. The <code>when</code> clause has access to the bound variable from the pattern."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "GuardedPatterns.java",
+          "lines": [
+            "public class GuardedPatterns {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── Guarded pattern: type check + condition ────────────────────────",
+            "        Object obj = 42;",
+            "        String result = switch (obj) {",
+            "            case Integer i when i < 0     -> \"Negative integer: \" + i;",
+            "            case Integer i when i == 0    -> \"Zero\";",
+            "            case Integer i when i > 0",
+            "                             && i <= 100  -> \"Positive integer 1-100: \" + i;",
+            "            case Integer i               -> \"Large integer: \" + i;",
+            "            case String  s when s.isEmpty() -> \"Empty string\";",
+            "            case String  s               -> \"String: \" + s;",
+            "            case null                    -> \"Null\";",
+            "            default                      -> \"Other: \" + obj;",
+            "        };",
+            "        System.out.println(result); // Positive integer 1-100: 42",
+            "",
+            "        // ── Guarded pattern with records ──────────────────────────────────",
+            "        record Product(String name, double price, int stock) {}",
+            "",
+            "        Object item = new Product(\"Laptop\", 75000.0, 0);",
+            "        String status = switch (item) {",
+            "            case Product p when p.stock() == 0  -> p.name() + \" is OUT OF STOCK\";",
+            "            case Product p when p.stock() < 5   -> p.name() + \" is LOW STOCK (\"+p.stock()+\" left)\";",
+            "            case Product p when p.price() > 50000 -> p.name() + \" is PREMIUM (₹\"+p.price()+\")\";",
+            "            case Product p                       -> p.name() + \" — Available\";",
+            "            default                             -> \"Unknown item\";",
+            "        };",
+            "        System.out.println(status);",
+            "        // Output: Laptop is OUT OF STOCK",
+            "",
+            "        // ── Guarded patterns eliminate nested if inside case ──────────────",
+            "        // OLD WAY (nested if inside case):",
+            "        // case Integer i -> {",
+            "        //     if (i > 0) yield \"Positive\";",
+            "        //     else yield \"Non-positive\";",
+            "        // }",
+            "",
+            "        // NEW WAY (guarded patterns):",
+            "        // case Integer i when i > 0 -> \"Positive\";",
+            "        // case Integer i            -> \"Non-positive\";",
+            "",
+            "        // ── User role and permission dispatch ─────────────────────────────",
+            "        record User(String name, String role, boolean isActive) {}",
+            "",
+            "        Object user = new User(\"Priya\", \"ADMIN\", true);",
+            "        String access = switch (user) {",
+            "            case User u when !u.isActive()          -> \"Account disabled\";",
+            "            case User u when u.role().equals(\"ADMIN\") -> u.name() + \" — Full Access\";",
+            "            case User u when u.role().equals(\"EDITOR\") -> u.name() + \" — Edit Access\";",
+            "            case User u                             -> u.name() + \" — Read Only\";",
+            "            default                                 -> \"Unknown user\";",
+            "        };",
+            "        System.out.println(access); // Priya — Full Access",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Guarded Pattern Ordering — More Specific First",
+          "text": "When using guarded patterns, order your cases from most specific to least specific. The switch checks cases top-to-bottom and the first match wins. If a less specific case appears before a more specific one, the more specific case becomes unreachable and the compiler will warn you. Example: case Integer i -> 'any int' before case Integer i when i > 0 -> 'positive' — the second case is dead code. Always put guarded patterns (with when) before unguarded patterns of the same type: case Integer i when i < 0 (specific) before case Integer i (general catch-all)."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "switch-with-null",
+      "title": "Handling null in Switch — Java 21",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In classic switch (all versions) and enhanced switch without pattern matching, passing <code>null</code> as the selector throws a <code>NullPointerException</code>. Java 21 pattern matching switch adds explicit <strong><code>case null</code></strong> support — you can handle the null case directly inside the switch instead of wrapping the switch in a null check. This makes pattern matching switch the first switch form that is fully null-safe when <code>case null</code> is included."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SwitchWithNull.java",
+          "lines": [
+            "public class SwitchWithNull {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── Classic switch: null throws NullPointerException ───────────────",
+            "        String s = null;",
+            "        // switch (s) { case \"A\": ... }  // ❌ NullPointerException!",
+            "",
+            "        // ── Classic fix: null-check BEFORE switch ────────────────────────",
+            "        if (s != null) {",
+            "            switch (s) {",
+            "                case \"A\": System.out.println(\"A\"); break;",
+            "                default:  System.out.println(\"Other\");",
+            "            }",
+            "        } else {",
+            "            System.out.println(\"Null input\");",
+            "        }",
+            "",
+            "        // ── Java 21: case null inside pattern matching switch ─────────────",
+            "        Object obj = null;",
+            "        String result = switch (obj) {",
+            "            case null        -> \"Null value received\";",
+            "            case Integer i   -> \"Integer: \" + i;",
+            "            case String str  -> \"String: \" + str;",
+            "            default          -> \"Other: \" + obj;",
+            "        };",
+            "        System.out.println(result); // Null value received",
+            "",
+            "        // ── case null combined with default ───────────────────────────────",
+            "        Object o2 = null;",
+            "        switch (o2) {",
+            "            case null, default -> System.out.println(\"Null or unmatched\");",
+            "            case String s2     -> System.out.println(\"String: \" + s2);",
+            "        }",
+            "        // Output: Null or unmatched",
+            "",
+            "        // ── Practical: API response handling with null ────────────────────",
+            "        processResponse(null);",
+            "        processResponse(\"SUCCESS\");",
+            "        processResponse(\"ERROR\");",
+            "        processResponse(\"TIMEOUT\");",
+            "    }",
+            "",
+            "    static void processResponse(String response) {",
+            "        String action = switch (response) {",
+            "            case null      -> \"No response received — retry\";",
+            "            case \"SUCCESS\" -> \"Process completed\";",
+            "            case \"ERROR\"   -> \"Handle error and alert team\";",
+            "            default        -> \"Unknown response: \" + response;",
+            "        };",
+            "        System.out.println(action);",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Switch Bugs That Fool Everyone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the most frequent switch-related mistakes in Java — from forgotten breaks to type confusion and null traps."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SwitchMistakes.java",
+          "lines": [
+            "// ❌ MISTAKE 1: Forgetting break — accidental fall-through",
+            "int x = 2;",
+            "switch (x) {",
+            "    case 1: System.out.println(\"One\");",
+            "    case 2: System.out.println(\"Two\");   // Executes",
+            "    case 3: System.out.println(\"Three\"); // Also executes — bug!",
+            "}",
+            "// ✅ Fix: add break after every case, or use enhanced switch",
+            "",
+            "// ❌ MISTAKE 2: Using non-constant in case label",
+            "int limit = 10;",
+            "// switch (x) { case limit: ... }  // ❌ Compile error — limit is not final",
+            "// ✅ Fix: make it final: final int LIMIT = 10;",
+            "",
+            "// ❌ MISTAKE 3: Switching on null String — NullPointerException",
+            "String s = null;",
+            "// switch (s) { case \"A\": ... }  // ❌ NullPointerException at runtime",
+            "// ✅ Fix: null-check first, or use Java 21 case null",
+            "",
+            "// ❌ MISTAKE 4: Using long, float, double, boolean as switch selector",
+            "// long l = 10L;",
+            "// switch (l) { ... }    // ❌ Compile error — long not supported",
+            "// float f = 1.0f;",
+            "// switch (f) { ... }    // ❌ Compile error — float not supported",
+            "// ✅ Supported: byte, short, int, char, String, enum, and patterns (Java 21)",
+            "",
+            "// ❌ MISTAKE 5: Duplicate case values",
+            "// switch (x) {",
+            "//     case 5: ...;",
+            "//     case 5: ...;  // ❌ Compile error: duplicate case label",
+            "// }",
+            "",
+            "// ❌ MISTAKE 6: Missing default in switch expression — compile error",
+            "// int i = 5;",
+            "// String r = switch (i) {",
+            "//     case 1 -> \"One\";",
+            "//     case 2 -> \"Two\";",
+            "//     // ❌ Compile error: switch expression does not cover all possible input values",
+            "// };",
+            "// ✅ Fix: add default -> \"...\";",
+            "",
+            "// ❌ MISTAKE 7: String switch is case-sensitive",
+            "String day = \"monday\";",
+            "switch (day) {",
+            "    case \"Monday\": System.out.println(\"Weekday\"); break;",
+            "    default: System.out.println(\"No match\"); // This runs — 'monday' != 'Monday'",
+            "}",
+            "// ✅ Fix: normalize before switch: switch (day.substring(0,1).toUpperCase() + day.substring(1).toLowerCase())",
+            "// Or simpler: switch (day.toUpperCase()) { case \"MONDAY\": ... }",
+            "",
+            "// ❌ MISTAKE 8: Using return in switch statement thinking it exits switch",
+            "// return inside a switch in a void method is a compile error.",
+            "// return exits the METHOD, not just the switch.",
+            "// In non-void methods it is valid — and acts like break + exits the method.",
+            "",
+            "// ❌ MISTAKE 9: yield used in switch statement (not expression)",
+            "// switch (x) {",
+            "//     case 1: yield \"One\"; // ❌ Compile error — yield only in switch expression",
+            "// }",
+            "",
+            "// ❌ MISTAKE 10: Ordering pattern cases — less specific before more specific",
+            "// Object o = 5;",
+            "// switch (o) {",
+            "//     case Integer i  -> ...;           // Catches ALL integers",
+            "//     case Integer i when i > 0 -> ...; // ❌ Unreachable — compiler warning",
+            "// }",
+            "// ✅ Fix: most specific (guarded) cases first"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These anti-patterns around switch usage indicate poor design decisions that make code harder to read, maintain, and extend."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Using switch for Range Conditions",
+              "text": "Writing switch (score / 10) { case 10: ... case 9: ... } is a workaround to simulate range testing in switch. While it works for simple cases, it is fragile — what if score is negative? What if the range changes? If the condition is inherently a range (score >= 90), use if-else which expresses intent directly. Reserve switch for matching against specific discrete values, not ranges coerced into discrete form."
+            },
+            {
+              "icon": "🚫",
+              "title": "Classic Switch Without default",
+              "text": "Omitting default from a classic switch statement means unmatched values silently do nothing — no error, no log, nothing. This makes runtime bugs invisible. Every classic switch should have a default case, even if it just logs an unexpected value or throws an exception. In switch expressions, the compiler enforces exhaustiveness — missing cases cause compile errors. Apply the same discipline to switch statements manually."
+            },
+            {
+              "icon": "🚫",
+              "title": "Intentional Fall-Through Without Comment",
+              "text": "Writing consecutive cases without break and without a comment explaining the intention. Any reader (including future-you) will assume it is a bug and add a break, breaking your logic. If fall-through is genuinely intentional, always add: // fall through — intentional. Consider also using the @SuppressWarnings('fallthrough') annotation and a descriptive comment. Better yet, use enhanced switch comma-separated labels (case 1, 2, 3 ->) which express grouping without any fall-through risk."
+            },
+            {
+              "icon": "🚫",
+              "title": "String Switch Without Null Check",
+              "text": "Switching on a String variable that could be null without a prior null check is a latent NullPointerException. In classic and Java 14 enhanced switch, null always causes NPE. Never switch on an externally-supplied String (from user input, API responses, databases) without null handling: if (s == null) { ... } before the switch, or use Java 21 case null in a pattern matching switch."
+            },
+            {
+              "icon": "🚫",
+              "title": "Massive Switch Statements as Dispatch Tables",
+              "text": "A switch with 20+ cases dispatching to different behaviour based on a type or status string is a code smell — it is a procedural dispatch table masquerading as OOP. The open-closed principle says new behaviour should be added by adding code (new classes), not modifying existing switch statements. Consider replacing large type-dispatch switches with polymorphism (subclasses/interfaces), strategy pattern, or Map-based dispatch."
+            },
+            {
+              "icon": "🚫",
+              "title": "Mixing Arrow and Colon Labels in the Same Switch",
+              "text": "Java does not allow mixing arrow labels (case X ->) and colon labels (case X:) in the same switch block — it is a compile error. Choose one style per switch. Arrow style is preferred for switch expressions; colon style is the classic for switch statements. When migrating from classic to enhanced switch, convert the entire switch to arrow style at once."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Switch in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples show how switch is used in real enterprise Java and Spring Boot codebases — from enum-based state machines to pattern-matched API response handling."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "OrderStateMachine.java — Enum Switch in a State Machine",
+          "lines": [
+            "package com.techsustainify.order;",
+            "",
+            "public class OrderStateMachine {",
+            "",
+            "    enum OrderStatus {",
+            "        PENDING, PAYMENT_RECEIVED, CONFIRMED, PROCESSING,",
+            "        SHIPPED, OUT_FOR_DELIVERY, DELIVERED, CANCELLED, REFUNDED",
+            "    }",
+            "",
+            "    // ── Determine next valid status transitions ────────────────────────────",
+            "    public OrderStatus nextStatus(OrderStatus current) {",
+            "        return switch (current) {",
+            "            case PENDING            -> OrderStatus.PAYMENT_RECEIVED;",
+            "            case PAYMENT_RECEIVED   -> OrderStatus.CONFIRMED;",
+            "            case CONFIRMED          -> OrderStatus.PROCESSING;",
+            "            case PROCESSING         -> OrderStatus.SHIPPED;",
+            "            case SHIPPED            -> OrderStatus.OUT_FOR_DELIVERY;",
+            "            case OUT_FOR_DELIVERY   -> OrderStatus.DELIVERED;",
+            "            case DELIVERED,",
+            "                 CANCELLED,",
+            "                 REFUNDED           -> current;  // Terminal states — no next",
+            "        };",
+            "    }",
+            "",
+            "    // ── Customer-facing status message ────────────────────────────────────",
+            "    public String getCustomerMessage(OrderStatus status) {",
+            "        return switch (status) {",
+            "            case PENDING            -> \"We have received your order.\";",
+            "            case PAYMENT_RECEIVED   -> \"Payment confirmed. Processing your order.\";",
+            "            case CONFIRMED          -> \"Your order has been confirmed!\";",
+            "            case PROCESSING         -> \"Your order is being prepared.\";",
+            "            case SHIPPED            -> \"Your order has been shipped.\";",
+            "            case OUT_FOR_DELIVERY   -> \"Your order is out for delivery today!\";",
+            "            case DELIVERED          -> \"Your order has been delivered. Enjoy!\";",
+            "            case CANCELLED          -> \"Your order has been cancelled.\";",
+            "            case REFUNDED           -> \"Your refund has been processed.\";",
+            "        };",
+            "    }",
+            "",
+            "    // ── Check if cancellation is still possible ───────────────────────────",
+            "    public boolean isCancellable(OrderStatus status) {",
+            "        return switch (status) {",
+            "            case PENDING, PAYMENT_RECEIVED, CONFIRMED -> true;",
+            "            default -> false;",
+            "        };",
+            "    }",
+            "",
+            "    // ── Internal action for each status ──────────────────────────────────",
+            "    public void performAction(OrderStatus status, String orderId) {",
+            "        switch (status) {",
+            "            case CONFIRMED -> {",
+            "                System.out.println(\"[\" + orderId + \"] Sending confirmation email\");",
+            "                System.out.println(\"[\" + orderId + \"] Reserving inventory\");",
+            "            }",
+            "            case SHIPPED -> {",
+            "                System.out.println(\"[\" + orderId + \"] Generating tracking number\");",
+            "                System.out.println(\"[\" + orderId + \"] Notifying logistics partner\");",
+            "            }",
+            "            case DELIVERED -> {",
+            "                System.out.println(\"[\" + orderId + \"] Sending feedback request\");",
+            "                System.out.println(\"[\" + orderId + \"] Releasing payment to seller\");",
+            "            }",
+            "            case CANCELLED -> {",
+            "                System.out.println(\"[\" + orderId + \"] Initiating refund\");",
+            "                System.out.println(\"[\" + orderId + \"] Restoring inventory\");",
+            "            }",
+            "            default -> System.out.println(\"[\" + orderId + \"] Status updated: \" + status);",
+            "        }",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EventProcessor.java — Pattern Matching Switch for Event Handling",
+          "lines": [
+            "package com.techsustainify.event;",
+            "",
+            "import java.time.LocalDateTime;",
+            "",
+            "public class EventProcessor {",
+            "",
+            "    // ── Sealed event hierarchy ────────────────────────────────────────────",
+            "    sealed interface AppEvent",
+            "        permits UserCreatedEvent, OrderPlacedEvent, PaymentFailedEvent,",
+            "                SystemAlertEvent {}",
+            "",
+            "    record UserCreatedEvent(String userId, String email, LocalDateTime at)",
+            "        implements AppEvent {}",
+            "    record OrderPlacedEvent(String orderId, double amount, String userId)",
+            "        implements AppEvent {}",
+            "    record PaymentFailedEvent(String orderId, String reason, int attemptCount)",
+            "        implements AppEvent {}",
+            "    record SystemAlertEvent(String level, String message)",
+            "        implements AppEvent {}",
+            "",
+            "    // ── Pattern matching switch for event dispatch ────────────────────────",
+            "    public void handleEvent(AppEvent event) {",
+            "        switch (event) {",
+            "            case UserCreatedEvent u -> {",
+            "                System.out.println(\"New user: \" + u.email());",
+            "                sendWelcomeEmail(u.email());",
+            "                createUserProfile(u.userId());",
+            "            }",
+            "            case OrderPlacedEvent o when o.amount() > 10000 -> {",
+            "                System.out.println(\"High-value order: ₹\" + o.amount());",
+            "                notifyAccountsTeam(o.orderId());",
+            "                applyLoyaltyPoints(o.userId(), o.amount());",
+            "            }",
+            "            case OrderPlacedEvent o -> {",
+            "                System.out.println(\"Order placed: \" + o.orderId());",
+            "                processStandardOrder(o.orderId());",
+            "            }",
+            "            case PaymentFailedEvent p when p.attemptCount() >= 3 -> {",
+            "                System.out.println(\"Payment failed 3+ times: \" + p.orderId());",
+            "                blockOrder(p.orderId());",
+            "                alertFraudTeam(p.orderId());",
+            "            }",
+            "            case PaymentFailedEvent p -> {",
+            "                System.out.println(\"Payment failed (attempt \" + p.attemptCount() + \"): \" + p.reason());",
+            "                scheduleRetry(p.orderId());",
+            "            }",
+            "            case SystemAlertEvent a when a.level().equals(\"CRITICAL\") -> {",
+            "                System.out.println(\"CRITICAL ALERT: \" + a.message());",
+            "                pageOnCallEngineer(a.message());",
+            "            }",
+            "            case SystemAlertEvent a -> {",
+            "                System.out.println(\"Alert [\" + a.level() + \"]: \" + a.message());",
+            "            }",
+            "        }",
+            "    }",
+            "",
+            "    // ── Stub methods ──────────────────────────────────────────────────────",
+            "    void sendWelcomeEmail(String email)           { System.out.println(\"Email sent to \" + email); }",
+            "    void createUserProfile(String id)             { System.out.println(\"Profile created: \" + id); }",
+            "    void notifyAccountsTeam(String orderId)       { System.out.println(\"Accounts notified\"); }",
+            "    void applyLoyaltyPoints(String id, double amt){ System.out.println(\"Points added\"); }",
+            "    void processStandardOrder(String orderId)     { System.out.println(\"Processing: \" + orderId); }",
+            "    void blockOrder(String orderId)               { System.out.println(\"Blocked: \" + orderId); }",
+            "    void alertFraudTeam(String orderId)           { System.out.println(\"Fraud alert\"); }",
+            "    void scheduleRetry(String orderId)            { System.out.println(\"Retry scheduled\"); }",
+            "    void pageOnCallEngineer(String msg)           { System.out.println(\"Paging engineer!\"); }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "switch-flowchart",
+      "title": "Switch Decision Flowchart — Which Form to Use",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Use this decision process to choose the correct switch form for your situation."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1",  "label": "🔀 Need multi-way branching",        "sublabel": "Which switch form should I use?",                  "type": "start"    },
+            { "id": "2",  "label": "❓ Testing type of an object?",      "sublabel": "instanceof-style checks needed?",                   "type": "decision" },
+            { "id": "3",  "label": "✅ Pattern Matching Switch",         "sublabel": "case TypeName var -> ... (Java 21)",                "type": "end"      },
+            { "id": "4",  "label": "❓ Need the result as a value?",     "sublabel": "Assign to variable, return, or use in expression?", "type": "decision" },
+            { "id": "5",  "label": "✅ Switch Expression (Java 14+)",    "sublabel": "String x = switch(...) { case A -> ...; };",        "type": "process"  },
+            { "id": "6",  "label": "✅ Classic Switch Statement",        "sublabel": "switch(...) { case A: ...; break; }",              "type": "process"  },
+            { "id": "7",  "label": "❓ Multiple values → same result?",  "sublabel": "Group them?",                                       "type": "decision" },
+            { "id": "8",  "label": "✅ Comma labels (Java 14+)",        "sublabel": "case 1, 2, 3 -> result;",                           "type": "end"      },
+            { "id": "9",  "label": "✅ Stacked cases (classic)",        "sublabel": "case 1: case 2: case 3: result; break;",            "type": "end"      },
+            { "id": "10", "label": "❓ Multi-statement case block?",     "sublabel": "More than one line in a case arm?",                 "type": "decision" },
+            { "id": "11", "label": "✅ Use yield in block",             "sublabel": "case X -> { ... yield value; }",                    "type": "end"      },
+            { "id": "12", "label": "✅ Single expression",              "sublabel": "case X -> singleExpression;",                       "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1",  "to": "2",  "label": "Start"                    },
+            { "from": "2",  "to": "3",  "label": "YES — type patterns"      },
+            { "from": "2",  "to": "4",  "label": "NO"                       },
+            { "from": "4",  "to": "5",  "label": "YES — need value"         },
+            { "from": "4",  "to": "6",  "label": "NO — control flow only"   },
+            { "from": "5",  "to": "7",  "label": "Multiple values?"         },
+            { "from": "7",  "to": "8",  "label": "YES + Java 14+"           },
+            { "from": "7",  "to": "9",  "label": "YES + classic"            },
+            { "from": "7",  "to": "10", "label": "NO"                       },
+            { "from": "10", "to": "11", "label": "YES"                      },
+            { "from": "10", "to": "12", "label": "NO"                       }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Switch Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are consistently asked in Java developer interviews. Switch fall-through, switch expression, yield, and pattern matching are high-frequency topics."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is the difference between switch statement and switch expression in Java?",
+              "a": "Switch statement: used for control flow. Executes a block of code for the matching case. Does not produce a value that can be assigned. Uses colon labels (case X:) and requires break to prevent fall-through. Has been in Java since version 1. Switch expression (Java 14+): produces a value — can be assigned, returned, or used in another expression. Uses arrow labels (case X ->) that prevent fall-through by default, or colon labels with yield to produce a value. Is exhaustive — every possible input must be covered (compile error otherwise). More concise and safer. Both can use: int, char, byte, short, String, enum as the selector. Switch expressions additionally support type patterns (Java 21+).",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is fall-through in switch? When is it useful?",
+              "a": "Fall-through is when execution continues from a matched case into the next case without stopping because there is no break statement. Example: switch(x) { case 2: print('Two'); case 3: print('Three'); } — if x=2, both 'Two' and 'Three' are printed. Unintentional fall-through (forgotten break) is a very common bug. Intentional fall-through is used to group multiple cases that share the same result: case 6: case 7: System.out.println('Weekend'); break; — both 6 and 7 reach the same code. Enhanced switch (Java 14+) arrow labels eliminate fall-through entirely — each arrow case is independent. Best practice: always use break in classic switch cases unless fall-through is deliberate — and document it with a comment when it is.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What data types are supported as switch selector in Java?",
+              "a": "Supported: byte, short, int, char (primitives). Their wrappers: Byte, Short, Integer, Character. String (Java 7+). enum (all versions). Any reference type for pattern matching (Java 21+). NOT supported: long, float, double, boolean, and their wrappers Long, Float, Double, Boolean. Why long is excluded: the JVM switch bytecodes (tableswitch and lookupswitch) are designed for 32-bit int values. Adding long would require significant bytecode changes for limited benefit — use if-else for long values. float/double are excluded because floating-point equality is unreliable — 0.1 + 0.2 != 0.3. boolean is excluded because if-else already serves that purpose cleanly.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What is the yield keyword in Java? How is it different from return?",
+              "a": "yield (Java 14+) is used inside a switch expression to produce the value of the switch expression for that case. It is similar to return but scoped to the switch expression — it does not exit the enclosing method. return exits the entire method. Example: int result = switch(x) { case 1 -> { int val = compute(); yield val; } default -> 0; }; — yield val provides the value for the switch expression's case 1 arm, and then execution continues after the switch. yield is only valid in switch expressions — using it in a switch statement is a compile error. yield is not needed with single-expression arrow cases (case x -> value) — the value is implicit. yield is required in block arrow cases (case x -> { ... }) or colon cases (case x: ... yield value;).",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. Can we use String in a switch? Is the comparison case-sensitive?",
+              "a": "Yes — String is supported in switch from Java 7. The comparison uses .equals() internally, so it IS case-sensitive. 'Monday' and 'monday' are different cases. Example: switch('start') { case 'START': ... } — does NOT match, default executes. To make it case-insensitive, normalize before switching: switch(input.toUpperCase()) { case 'START': ... }. Critical: passing null as the selector in String switch (classic or Java 14) throws NullPointerException at runtime — always null-check first, or use Java 21 case null in a pattern matching switch. Internally, Java translates String switch to a hashCode() check followed by equals() — this makes it efficient even with many cases.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. What is pattern matching switch (Java 21)? How does it differ from classic switch?",
+              "a": "Pattern matching switch (JEP 441, standard Java 21) extends switch to match on type patterns — similar to instanceof pattern matching but inside a switch. case Integer i -> matches if the selector is an Integer and binds it to i. case String s when s.length() > 5 -> guarded pattern — matches only if String AND length > 5. Classic switch: matches only constant values — literals, enum constants, or final variables. Limited to int/char/String/enum types. Pattern matching switch: matches types, subclasses, records, sealed types. Works on Object and any reference type. Supports guarded patterns (when clauses). Handles null directly (case null). Is exhaustive — compiler enforces all cases. No fall-through with arrow labels. Pattern matching switch replaces verbose if-instanceof chains and is the preferred modern dispatch mechanism in Java 21+.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. What is the output? Explain.\nint x = 2;\nswitch (x) {\n    case 1: System.out.println(\"One\");\n    case 2: System.out.println(\"Two\");\n    case 3: System.out.println(\"Three\");\n    default: System.out.println(\"Default\");\n}",
+              "a": "Output: Two, Three, Default. Explanation: x = 2 matches case 2. Since there is no break after any case, execution falls through: case 2 prints 'Two', then execution continues to case 3 (prints 'Three'), then continues to default (prints 'Default'). This is classic fall-through — one of the most common Java beginner bugs. Fix: add break after each case: case 2: System.out.println('Two'); break; — then only 'Two' is printed. Alternatively, use enhanced switch: String r = switch(x) { case 2 -> 'Two'; ... } — no fall-through possible.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q8. Can default be placed anywhere in a switch? Does position matter?",
+              "a": "Yes — default can be placed anywhere in the switch block: at the beginning, middle, or end. Syntactically valid in all positions. However, position affects execution only when fall-through is involved. If a case matches, execution jumps to that case — default is skipped, regardless of its position. If no case matches, execution jumps to default. Example: switch(3) { default: print('D'); break; case 3: print('Three'); break; } — case 3 matches, 'Three' is printed, default is never reached. But: switch(3) { default: print('D'); case 3: print('Three'); } — case 3 matches, prints 'Three', and because default has no break it would fall through to... wait, default is before case 3 here, so after case 3 executes (no break), the switch ends. Convention: always place default last — it maximizes readability and avoids fall-through confusion.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q9. What happens if the switch selector is null?",
+              "a": "Classic switch (all versions) and enhanced switch expression without pattern matching: passing null throws NullPointerException at runtime — immediately, at the switch evaluation step. Example: String s = null; switch(s) { ... } — NullPointerException. Pattern matching switch (Java 21+): supports explicit case null. If case null is present, null is matched and handled. If case null is absent, null still throws NullPointerException — same behaviour as classic switch. Safe approach for pre-Java-21: if (s != null) before the switch. Safe approach for Java 21+: include case null -> 'handle null' inside a pattern matching switch. Null combined with default: case null, default -> 'catch-all' — handles both null and any unmatched value together.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q10. Why can't we use long, float, or double as a switch selector?",
+              "a": "long is not supported because the JVM switch bytecodes (tableswitch and lookupswitch) operate on int (32-bit) values. Adding long would require new bytecode instructions for limited practical benefit since long range values are rarely switched on. Use if-else for long comparisons. float and double are not supported because floating-point equality is imprecise — 0.1 + 0.2 is not exactly 0.3 in IEEE 754 representation. A case 0.3: label might never match even for computations that 'should' equal 0.3. This would make float/double switch unreliable and error-prone. Use if/else with epsilon comparison for float/double. boolean is not supported because if/else already handles boolean branching idiomatically and adding boolean to switch would offer no benefit.",
+              "tag": "Tricky"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Java Switch Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Attempt each question independently before reading the answer — active recall is far more effective than passive reading."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output?\nint x = 1;\nswitch (x) {\n    case 1:\n    case 2:\n        System.out.println(\"One or Two\");\n        break;\n    case 3:\n        System.out.println(\"Three\");\n        break;\n    default:\n        System.out.println(\"Other\");\n}",
+              "a": "Output: One or Two. x = 1 matches case 1. Case 1 has no statements and no break — it falls through to case 2. Case 2 prints 'One or Two' and breaks. This is intentional fall-through used to group cases 1 and 2 together. The same result can be achieved more cleanly with enhanced switch: case 1, 2 -> System.out.println('One or Two');",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Rewrite this classic switch as an enhanced switch expression:\nint month = 4;\nint days;\nswitch (month) {\n    case 2: days = 28; break;\n    case 4: case 6: case 9: case 11: days = 30; break;\n    default: days = 31;\n}\nSystem.out.println(days);",
+              "a": "int month = 4;\nint days = switch (month) {\n    case 2          -> 28;\n    case 4, 6, 9, 11 -> 30;\n    default         -> 31;\n};\nSystem.out.println(days); // 30\n\nThe enhanced version uses comma-separated case labels (case 4, 6, 9, 11) eliminating stacked empty cases, no break required, and the switch directly produces the value that is assigned to days. Much cleaner.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. What is the output? Explain.\nint day = 3;\nswitch (day) {\n    default: System.out.println(\"Default\");\n    case 1:  System.out.println(\"One\"); break;\n    case 3:  System.out.println(\"Three\"); break;\n}",
+              "a": "Output: Three. day = 3 matches case 3 — execution jumps directly to it (prints 'Three') and breaks. The default case is not executed even though it appears first — default only runs when NO case matches. If day were 5 (no matching case), execution would jump to default (prints 'Default'), then fall through to case 1 (prints 'One') because default has no break.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. Will this compile? If not, why?\nint x = 5;\nString result = switch (x) {\n    case 1 -> \"One\";\n    case 2 -> \"Two\";\n    case 5 -> \"Five\";\n};",
+              "a": "Does NOT compile. Error: switch expression does not cover all possible input values. A switch expression must be exhaustive — it must cover every possible value of the selector type. int has billions of possible values — only 1, 2, and 5 are covered. Fix: add a default case: default -> 'Other'; — this covers all remaining values. If the selector were an enum and all constants were covered, default would not be required. The exhaustiveness requirement is a safety feature of switch expressions — it prevents runtime cases where the switch cannot produce a value.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. What is the output and why?\nString s = \"hello\";\nswitch (s) {\n    case \"hello\": System.out.println(\"Match!\"); break;\n    case \"Hello\": System.out.println(\"Capital H\"); break;\n    default: System.out.println(\"No match\");\n}",
+              "a": "Output: Match! String switch uses .equals() for comparison which is case-sensitive. 'hello' exactly equals 'hello' — so case 'hello' matches and prints 'Match!'. Case 'Hello' (capital H) would only match if s were exactly 'Hello'. This demonstrates that String switch is case-sensitive. To perform case-insensitive matching, normalize before switching: switch (s.toLowerCase()) { case 'hello': ... }.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. Write a switch expression that returns the number of days in a month. Use String month names. Throw IllegalArgumentException for invalid input.",
+              "a": "int getDaysInMonth(String month) {\n    return switch (month.toUpperCase()) {\n        case \"JANUARY\", \"MARCH\", \"MAY\", \"JULY\",\n             \"AUGUST\", \"OCTOBER\", \"DECEMBER\" -> 31;\n        case \"APRIL\", \"JUNE\",\n             \"SEPTEMBER\", \"NOVEMBER\"          -> 30;\n        case \"FEBRUARY\"                        -> 28;\n        default -> throw new IllegalArgumentException(\n            \"Invalid month: \" + month\n        );\n    };\n}\n\nKey points: toUpperCase() normalizes input for case-insensitive matching. Comma-separated labels group months with the same day count. throw in default — switch expressions can throw exceptions as their 'value'. IllegalArgumentException for invalid input follows standard Java convention.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What is the output? Explain yield.\nint x = 8;\nString result = switch (x) {\n    case 10, 9 -> \"A\";\n    case 8 -> {\n        String grade = \"B\";\n        System.out.println(\"Processing grade B\");\n        yield grade;\n    }\n    default -> \"C or below\";\n};\nSystem.out.println(\"Result: \" + result);",
+              "a": "Output:\nProcessing grade B\nResult: B\n\nx = 8 matches case 8. The case 8 arm has a block body ({}). Inside: grade = 'B' is assigned, 'Processing grade B' is printed, then yield grade produces 'B' as the value of the switch expression. yield provides the value for this block arm — without it, the block would have no value to yield and it would be a compile error. The switch expression's result is 'B', assigned to result. The second println prints 'Result: B'.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "8. Write a pattern matching switch (Java 21) that processes different event types: UserEvent(String userId), OrderEvent(String orderId, double amount), SystemEvent(String level). For OrderEvent with amount > 5000, print 'HIGH VALUE'. For SystemEvent with level CRITICAL, print 'ALERT'. Handle null.",
+              "a": "sealed interface Event permits UserEvent, OrderEvent, SystemEvent {}\nrecord UserEvent(String userId)                    implements Event {}\nrecord OrderEvent(String orderId, double amount)   implements Event {}\nrecord SystemEvent(String level)                   implements Event {}\n\nvoid process(Event e) {\n    switch (e) {\n        case null                                  -> System.out.println(\"No event\");\n        case UserEvent u                           -> System.out.println(\"User: \" + u.userId());\n        case OrderEvent o when o.amount() > 5000   -> System.out.println(\"HIGH VALUE order: \" + o.orderId());\n        case OrderEvent o                          -> System.out.println(\"Order: \" + o.orderId() + \" ₹\" + o.amount());\n        case SystemEvent s when s.level().equals(\"CRITICAL\") -> System.out.println(\"ALERT: \" + s.level());\n        case SystemEvent s                         -> System.out.println(\"System [\" + s.level() + \"]\");\n    }\n}\n\nKey: sealed interface ensures exhaustiveness (no default needed). Guarded cases (when) appear before unguarded cases of the same type. case null handles null directly. Pattern-matched variables (u, o, s) are scoped to their case arm.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Switch: From Simple Dispatch to Powerful Pattern Matching",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java's switch has evolved from a simple multi-way branch with fall-through quirks into one of the most expressive features of modern Java. The <strong>classic switch statement</strong> is reliable for basic branching — but requires discipline with <code>break</code>. The <strong>enhanced switch expression</strong> (Java 14+) eliminates fall-through, produces values, and enforces exhaustiveness — making it the preferred form for most switching needs. The <strong>pattern matching switch</strong> (Java 21) brings type-safe dispatch, guarded conditions, and null handling into a single, concise construct."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Professional Java code favours switch expressions over classic switch statements for their safety and conciseness. It uses <strong>enum + switch expression</strong> for state machines, <strong>pattern matching switch</strong> for type-based dispatch over sealed hierarchies, and <strong>if-else</strong> when ranges or compound conditions are needed. Understanding when to use which form — and the pitfalls of fall-through and null — is a mark of Java mastery."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept",                          "Tool / Syntax",                              "Key Rule"],
+          "rows": [
+            ["Classic switch statement",    "switch(x) { case A: ... break; }",           "Needs break. Fall-through possible."],
+            ["Enhanced switch expression",  "var r = switch(x) { case A -> ...; };",      "Java 14+. No fall-through. Produces value."],
+            ["Arrow label",                 "case X -> expression",                       "No fall-through. Concise."],
+            ["Block arm",                   "case X -> { ... yield value; }",             "Multi-statement. yield provides value."],
+            ["Colon + yield",               "case X: yield value;",                       "Traditional label in switch expression."],
+            ["yield keyword",               "yield value;",                               "Produces switch expression value. Not return."],
+            ["default case",                "default -> ...",                              "Required in switch expression. Recommended always."],
+            ["Comma-separated labels",      "case 1, 2, 3 -> ...",                        "Java 14+. Replaces stacked cases."],
+            ["Fall-through",                "Missing break in classic switch",             "Usually a bug. Document if intentional."],
+            ["String switch",               "switch(str) — Java 7+",                      "Case-sensitive. Null causes NPE."],
+            ["Enum switch",                 "switch(enumVal) — all versions",             "Exhaustive. No default needed if all covered."],
+            ["Pattern matching switch",     "case TypeName var -> (Java 21)",             "Type patterns. Replaces instanceof chains."],
+            ["Guarded pattern",             "case Type t when condition -> ...",           "Java 21. Most specific cases first."],
+            ["Null in switch",              "case null -> ... (Java 21)",                 "Only in pattern matching switch."],
+            ["Unsupported types",           "long, float, double, boolean",               "Not allowed as switch selector."]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java for Loop</strong> — where you will use switch alongside loops to build complete iteration and control flow logic for real programs. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Switch",
+    "items": [
+      {
+        "q": "What is a switch statement in Java?",
+        "a": "A switch statement is a multi-way branch control flow construct that evaluates one expression and executes the matching case block. It is a cleaner alternative to a long if-else-if chain when testing a single variable against multiple constant values. Syntax: switch (expression) { case value1: statements; break; ... default: statements; }. Supported types: int, char, byte, short, their wrappers, String (Java 7+), enum. Without break, execution falls through to the next case."
+      },
+      {
+        "q": "What is the difference between switch statement and switch expression in Java?",
+        "a": "Switch statement: executes code, does not produce a value, uses colon labels (case X:), needs break to prevent fall-through. Switch expression (Java 14+): produces a value (assignable/returnable), uses arrow labels (case X ->) that prevent fall-through, or colon labels with yield. Switch expressions are exhaustive — compiler enforces that all cases are covered. Switch expressions are preferred — more concise, safer, and expression-oriented."
+      },
+      {
+        "q": "What is fall-through in Java switch?",
+        "a": "Fall-through is when execution continues from a matched case into the next case without stopping because there is no break. Usually a bug (forgotten break). Intentional fall-through groups multiple cases sharing the same code: case 6: case 7: print('Weekend'); break. Enhanced switch (Java 14+) arrow labels eliminate fall-through entirely. Always use break in classic switch, or document intentional fall-through with a comment."
+      },
+      {
+        "q": "Can we use String in switch in Java?",
+        "a": "Yes — String switch is supported since Java 7. Comparison uses .equals() — case-sensitive ('Monday' != 'monday'). Null causes NullPointerException — always null-check before switching on String, or use Java 21 case null in a pattern matching switch. Normalize with .toUpperCase() for case-insensitive matching. Internally uses hashCode() + equals() — efficient even with many cases."
+      },
+      {
+        "q": "What is the yield keyword in Java switch?",
+        "a": "yield (Java 14+) produces a value from a switch expression's block case arm. It is like return but only for switch expressions — it does not exit the method. Required in: block arrow cases (case X -> { ... yield value; }) and colon cases (case X: yield value;). Not needed for single-expression arrow cases (case X -> value — yield is implicit). yield is only valid in switch expressions, not switch statements — using it in a switch statement is a compile error."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java If-Else",  "path": "/java/java-if-else" },
+    "next": { "label": "Java While-Loop →",   "path": "/java/java-while-loop" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Classic Switch",            "dd": "All Java versions" },
+      { "dt": "String in Switch",          "dd": "Java 7+" },
+      { "dt": "Switch Expression",         "dd": "Java 14+ (standard)" },
+      { "dt": "yield Keyword",             "dd": "Java 14+" },
+      { "dt": "Pattern Matching Switch",   "dd": "Java 21+ (standard)" },
+      { "dt": "Guarded Patterns (when)",   "dd": "Java 21+" },
+      { "dt": "case null Support",         "dd": "Java 21+" },
+      { "dt": "Unsupported Types",         "dd": "long, float, double, boolean" }
+    ],
+    "relatedArticles": [
+      { "label": "Java if-else",              "path": "/java/java-if-else" },
+      { "label": "Java Operators",            "path": "/java/java-operators" },
+      { "label": "Java for Loop",             "path": "/java/java-for-loop" },
+      { "label": "Java Enum",                 "path": "/java/java-enum" },
+      { "label": "Java Pattern Matching",     "path": "/java/java-pattern-matching" },
+      { "label": "Java Sealed Classes",       "path": "/java/java-sealed-classes" },
+      { "label": "Java Records",              "path": "/java/java-records" },
+      { "label": "Java instanceof Operator",  "path": "/java/java-instanceof" }
+    ],
+    "tags": [
+      "Switch Statement", "Switch Expression", "Enhanced Switch",
+      "Fall-Through", "break", "default", "case",
+      "yield", "Arrow Labels", "Comma Labels",
+      "String Switch", "Enum Switch", "Pattern Matching Switch",
+      "Guarded Patterns", "when clause", "case null",
+      "Java 7", "Java 14", "Java 21",
+      "Sealed Classes", "Records", "instanceof",
+      "State Machine", "Multi-way Branch", "Control Flow"
+    ]
+  }
+}

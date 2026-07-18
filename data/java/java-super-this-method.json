@@ -1,0 +1,1685 @@
+{
+  "meta": {
+    "title": "Java super and this Keywords (Methods & Fields) — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java super and this keywords for methods and fields — this keyword usage, super keyword usage, accessing hidden fields, calling overridden methods, method chaining, differences, common mistakes, and real-world examples. Updated March 2026.",
+    "keywords": "java super keyword, java this keyword, java super method, java this method, java super vs this, java this reference, java super field access, java this field access, java method chaining this, java super overridden method, java this keyword uses, java super keyword uses, java this vs super, java super keyword examples, java this keyword examples, java hidden field super, java keyword interview questions",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-super-this-keywords",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java super and this Keywords (Methods & Fields) — Syntax, Uses, Examples & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java super and this keywords for methods and fields — this reference, super method call, hidden field access, method chaining, differences, real-world examples, pitfalls, and interview questions.",
+      "url": "https://www.techsustainify.com/java/java-super-this-keywords",
+      "image": "https://www.techsustainify.com/images/java-super-this-keywords-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java super and this Keywords Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-05-15T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java super Keyword",
+          "Java this Keyword",
+          "Java super Method",
+          "Java this Method",
+          "Java super Field",
+          "Java this Field",
+          "Method Chaining",
+          "Java OOP",
+          "Java Inheritance",
+          "Java Basics"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java super and this Keywords (Methods & Fields) — Syntax, Uses & Best Practices 2026",
+      "description": "Complete guide to Java super and this keywords — method calls, field access, method chaining, hidden fields, differences, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-super-this-keywords-og.png",
+      "imageAlt": "Java super and this Keywords Guide 2026 - Tech Sustainify",
+      "readingTime": "20 minutes",
+      "level": "Beginner to Intermediate",
+      "label1": "Reading Time",
+      "data1": "20 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java super and this Keywords (Methods & Fields) — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering Java super and this keywords for methods and fields — this reference uses, super method call, hidden field access, method chaining, differences, real-world examples, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-05-15",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner",
+        "wordCount": 5800,
+        "timeRequired": "PT20M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java this Keyword" },
+          { "@type": "Thing", "name": "Java super Keyword" },
+          { "@type": "Thing", "name": "Java Method Invocation" },
+          { "@type": "Thing", "name": "Java Field Access" }
+        ],
+        "keywords": "java super keyword, java this keyword, super method call, this reference, hidden field, method chaining, java inheritance, java OOP"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java super and this Keywords" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the this keyword in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The this keyword in Java is a reference variable that refers to the current object — the object on which the current instance method or constructor is being invoked. It is used to: (1) Disambiguate instance variables from local variables or parameters with the same name (this.name = name). (2) Pass the current object as an argument to another method. (3) Return the current object from a method (enables method chaining). (4) Call another constructor in the same class using this() — covered in the constructors topic. this cannot be used in static methods because static methods have no associated object."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the super keyword in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The super keyword in Java refers to the immediate parent class of the current class. In the context of methods and fields (not constructors), it is used to: (1) Call an overridden method of the parent class from inside the overriding method — super.methodName(). (2) Access a hidden field of the parent class when the subclass declares a field with the same name — super.fieldName. super cannot be used in static methods or in a class that has no parent (though all classes have Object as the root). super always refers to the direct parent — not grandparent or higher."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between super and this in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "this refers to the current object (the instance the method is called on). super refers to the parent class of the current class. this is used to access current object's members and avoid shadowing conflicts. super is used to access parent class members that are hidden or overridden. this can be used in any instance method; super is used in subclasses to reach up to the parent. Neither can be used in static methods. In constructors, this() calls same-class constructor and super() calls parent constructor — these are covered separately."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can we use super keyword in a static method?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No — the super keyword cannot be used in a static method. super refers to the parent class in the context of a specific object instance, and static methods have no associated instance (no 'this'). Attempting to use super in a static method causes a compile-time error: 'non-static variable super cannot be referenced from a static context'. Similarly, the this keyword also cannot be used in static methods for the same reason — both keywords require an object context."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can super skip levels in an inheritance hierarchy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No — super always refers only to the DIRECT (immediate) parent class. It cannot skip levels to access a grandparent or higher ancestor. For example, if C extends B extends A, inside C you can use super to access B's members — but you cannot use super.super to access A's members (super.super is a compile error in Java). If you need to call A's method from C, the only way is if B's method calls super (A's version) inside it, and C calls super (B's version), which chains up."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-05-15",
+      "dateModified": "2026-03-20",
+      "readingTime": "20 minutes",
+      "wordCount": 5800,
+      "difficulty": "Beginner",
+      "chapter": 20,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-this-super",         "title": "What are this and super Keywords?" },
+        { "id": "this-keyword-uses",           "title": "this Keyword — All Uses" },
+        { "id": "this-field-access",           "title": "this for Field Access (Disambiguation)" },
+        { "id": "this-method-call",            "title": "this for Method Calls" },
+        { "id": "this-as-argument",            "title": "this as Method Argument" },
+        { "id": "this-return",                 "title": "this as Return Value (Method Chaining)" },
+        { "id": "super-keyword-uses",          "title": "super Keyword — All Uses" },
+        { "id": "super-method-call",           "title": "super for Method Calls (Overridden Methods)" },
+        { "id": "super-field-access",          "title": "super for Field Access (Hidden Fields)" },
+        { "id": "super-vs-this",               "title": "super vs this — Key Differences" },
+        { "id": "static-context",              "title": "this and super in Static Context" },
+        { "id": "common-mistakes",             "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",               "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",         "title": "Real-World Production Code Examples" },
+        { "id": "keyword-flowchart",           "title": "this and super Resolution Flowchart" },
+        { "id": "interview-questions",         "title": "Interview Questions" },
+        { "id": "practice-questions",          "title": "Practice Questions" },
+        { "id": "conclusion-heading",          "title": "Conclusion" },
+        { "id": "faq-heading",                 "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-super-this-keywords" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-super-this-keywords" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-super-this-keywords" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-super-this-constructor",
+      "next": "https://www.techsustainify.com/java/java-inheritance"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-oop",
+      "contentTopic": "java-super-this-keywords",
+      "chapterNumber": 20,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java super and this Keywords" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java super and this Keywords (Methods & Fields) — Syntax, Uses, Examples & Best Practices",
+    "subtitle": "Everything you need to know about Java super and this keywords in the context of methods and fields — this reference disambiguation, super method calls, hidden field access, method chaining, static context rules, differences, anti-patterns, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "20 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "20 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-this-super",
+      "title": "What are this and super Keywords in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In Java, <strong>this</strong> and <strong>super</strong> are two special <em>reference keywords</em> that are available inside instance methods and constructors. They provide a way to explicitly refer to specific objects and class members when there is ambiguity or when you need to reach beyond the current class."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>this</code> is a reference to the <strong>current object</strong> — the specific instance on which the method is being called. It resolves ambiguity between instance fields and local variables, enables passing the current object as an argument, and powers fluent method chaining. <code>super</code> is a reference to the <strong>parent class</strong> of the current object's class. It allows a subclass to explicitly call an overridden parent method or access a field hidden by a same-named subclass field."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 this and super at a Glance — Methods & Fields",
+          "text": "this keyword uses: (1) this.field — disambiguate instance field from local variable. (2) this.method() — call another instance method on current object. (3) pass this as argument — send current object to another method. (4) return this — enable method chaining (fluent API). super keyword uses: (1) super.method() — call parent's overridden version of a method. (2) super.field — access parent's hidden field when subclass has same-named field. Both: cannot be used in static methods. super always refers to direct parent only — not grandparent."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "this-keyword-uses",
+      "title": "this Keyword — All Uses in Methods and Fields",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>this</code> keyword has four distinct uses in the context of methods and fields (excluding the constructor use <code>this()</code> which was covered separately). Understanding each use clearly prevents a whole class of subtle bugs."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "1️⃣",
+              "title": "this.field — Disambiguate Field from Local Variable",
+              "text": "When a method parameter or local variable has the same name as an instance field, 'this.field' explicitly refers to the instance field. Without 'this', the local variable shadows the field. Most common in constructors and setters: this.name = name. Required when names clash; optional (but readable) when no clash exists."
+            },
+            {
+              "icon": "2️⃣",
+              "title": "this.method() — Call Current Object's Method",
+              "text": "this.method() explicitly calls another instance method on the current object. The 'this.' prefix is optional when calling instance methods from within the same class — Java resolves it automatically. However, writing it explicitly makes the intent clear: 'I am calling a method of this same object.' Useful for documentation and clarity in complex classes."
+            },
+            {
+              "icon": "3️⃣",
+              "title": "Pass this as Argument",
+              "text": "The current object can be passed as an argument to another method or constructor using 'this'. Example: eventSystem.register(this) — registers the current object as a listener. Or: someHelper.process(this) — passes current object to a helper for processing. This pattern is common in observer, listener, and callback designs."
+            },
+            {
+              "icon": "4️⃣",
+              "title": "Return this — Method Chaining (Fluent API)",
+              "text": "Returning 'this' from a method allows the caller to chain multiple method calls on the same object in one expression: obj.setName('A').setAge(25).setEmail('a@b.com'). This is the foundation of the Builder pattern and Fluent API design. Each method does its work on the object and returns the same object reference, enabling the next call."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "this-field-access",
+      "title": "this for Field Access — Resolving Shadowing",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The most common use of <code>this</code> is resolving <strong>variable shadowing</strong> — when a method parameter or local variable has the same name as an instance field. Without <code>this</code>, the local variable takes precedence (shadows the field). <code>this.fieldName</code> always explicitly refers to the instance field, regardless of any local variable with the same name."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ThisFieldAccess.java",
+          "lines": [
+            "public class Employee {",
+            "",
+            "    // Instance fields",
+            "    private String name;",
+            "    private int    age;",
+            "    private double salary;",
+            "    private String department;",
+            "",
+            "    // ─── Constructor — 'this' required to distinguish field from parameter ──",
+            "    public Employee(String name, int age, double salary, String department) {",
+            "        this.name       = name;       // field = parameter",
+            "        this.age        = age;",
+            "        this.salary     = salary;",
+            "        this.department = department;",
+            "    }",
+            "",
+            "    // ─── Setter — 'this' required ─────────────────────────────────────────",
+            "    public void setName(String name) {",
+            "        this.name = name;   // ✅ 'this.name' = field; 'name' = parameter",
+            "    }",
+            "",
+            "    // ─── Method with local var — 'this' distinguishes field ───────────────",
+            "    public void applyRaise(double salary) {",
+            "        // 'salary' here is the PARAMETER (raise amount), not the field",
+            "        double previousSalary = this.salary;  // 'this.salary' = field",
+            "        this.salary = this.salary + salary;   // field += parameter",
+            "        System.out.printf(\"Salary updated: ₹%.0f → ₹%.0f%n\",",
+            "                          previousSalary, this.salary);",
+            "    }",
+            "",
+            "    // ─── When 'this' is optional — no shadowing ──────────────────────────",
+            "    public void promote(String newDepartment) {",
+            "        // No local 'department' var — 'this.' optional but can be written for clarity",
+            "        department     = newDepartment;         // ✅ works",
+            "        this.department = newDepartment;        // ✅ also works — more explicit",
+            "    }",
+            "",
+            "    // ─── Silent bug WITHOUT 'this' ────────────────────────────────────────",
+            "    public void setBuggyAge(int age) {",
+            "        age = age;   // ❌ Assigns parameter to itself — field 'this.age' unchanged!",
+            "        // No compile error — silent bug",
+            "    }",
+            "",
+            "    public void display() {",
+            "        System.out.println(name + \" | \" + department + \" | ₹\" + salary);",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        Employee e = new Employee(\"Meera\", 28, 60000, \"Engineering\");",
+            "        e.display();         // Meera | Engineering | ₹60000.0",
+            "",
+            "        e.applyRaise(10000);  // Salary updated: ₹60000 → ₹70000",
+            "        e.display();          // Meera | Engineering | ₹70000.0",
+            "",
+            "        e.setBuggyAge(35);    // Bug: age field still 28",
+            "        // e.age would show 28, not 35 — silent assignment-to-self bug",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ The Silent this Bug — Most Dangerous Mistake",
+          "text": "Writing 'age = age' (without this) in a setter or constructor where both sides refer to the LOCAL variable — not the field — is a silent bug. No compile error, no runtime exception. The field stays at its default value. Always use 'this.field = parameter' in constructors and setters. Configure your IDE to show 'assignment has no effect' warning to catch this automatically. This is one of the most common bugs in beginner Java code."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "this-method-call",
+      "title": "this for Method Calls — Calling Current Object's Methods",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Inside an instance method, you can call other instance methods of the same object with or without the <code>this.</code> prefix. Java resolves unqualified method calls to the current object automatically. Writing <code>this.methodName()</code> explicitly makes the code more readable in complex classes — it clearly documents that the method belongs to the current object, not a local helper or static utility."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ThisMethodCall.java",
+          "lines": [
+            "public class Order {",
+            "",
+            "    private String  orderId;",
+            "    private double  subtotal;",
+            "    private double  discountAmount;",
+            "    private double  taxAmount;",
+            "    private double  total;",
+            "    private boolean isProcessed;",
+            "",
+            "    public Order(String orderId, double subtotal) {",
+            "        this.orderId  = orderId;",
+            "        this.subtotal = subtotal;",
+            "        this.isProcessed = false;",
+            "    }",
+            "",
+            "    // ─── Private helper methods ───────────────────────────────────────────",
+            "    private double calculateDiscount() {",
+            "        return subtotal > 1000 ? subtotal * 0.10 : 0;",
+            "    }",
+            "",
+            "    private double calculateTax(double amountAfterDiscount) {",
+            "        return amountAfterDiscount * 0.18; // 18% GST",
+            "    }",
+            "",
+            "    private void updateTotal() {",
+            "        // 'this.method()' calls — explicit, self-documenting",
+            "        this.discountAmount = this.calculateDiscount();         // this. optional",
+            "        double afterDiscount = subtotal - discountAmount;",
+            "        this.taxAmount = this.calculateTax(afterDiscount);      // this. optional",
+            "        this.total     = afterDiscount + taxAmount;",
+            "    }",
+            "",
+            "    // ─── Public method calls private helpers ──────────────────────────────",
+            "    public void process() {",
+            "        if (isProcessed) {",
+            "            System.out.println(\"Order \" + orderId + \" already processed.\");",
+            "            return;",
+            "        }",
+            "        updateTotal();          // same as: this.updateTotal();",
+            "        this.isProcessed = true;",
+            "        this.printSummary();    // explicit this. — clearly a method of this object",
+            "    }",
+            "",
+            "    public void printSummary() {",
+            "        System.out.println(\"Order   : \" + orderId);",
+            "        System.out.printf (\"Subtotal: ₹%.2f%n\", subtotal);",
+            "        System.out.printf (\"Discount: ₹%.2f%n\", discountAmount);",
+            "        System.out.printf (\"Tax     : ₹%.2f%n\", taxAmount);",
+            "        System.out.printf (\"Total   : ₹%.2f%n\", total);",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        Order o = new Order(\"ORD-2024-001\", 1500.0);",
+            "        o.process();",
+            "        // Order   : ORD-2024-001",
+            "        // Subtotal: ₹1500.00",
+            "        // Discount: ₹150.00",
+            "        // Tax     : ₹243.00",
+            "        // Total   : ₹1593.00",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "this-as-argument",
+      "title": "this as Method Argument — Passing Current Object",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>this</code> keyword can be passed as an <strong>argument to another method or constructor</strong>, sending a reference to the current object. This pattern is common in <em>Observer</em>, <em>Listener</em>, <em>Callback</em>, and <em>Delegation</em> designs — where an object needs to register itself with another object or hand itself off for processing."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ThisAsArgument.java",
+          "lines": [
+            "// Event listener pattern — passing 'this' to register current object",
+            "",
+            "interface ClickListener {",
+            "    void onClick(String buttonName);",
+            "}",
+            "",
+            "class Button {",
+            "    private String       name;",
+            "    private ClickListener listener;",
+            "",
+            "    Button(String name) { this.name = name; }",
+            "",
+            "    public void setListener(ClickListener listener) {",
+            "        this.listener = listener;",
+            "    }",
+            "",
+            "    public void click() {",
+            "        if (listener != null) listener.onClick(name);",
+            "    }",
+            "}",
+            "",
+            "// Controller implements ClickListener and passes itself",
+            "class FormController implements ClickListener {",
+            "",
+            "    private Button submitBtn;",
+            "    private Button cancelBtn;",
+            "    private String formData;",
+            "",
+            "    FormController(String formData) {",
+            "        this.formData  = formData;",
+            "        this.submitBtn = new Button(\"Submit\");",
+            "        this.cancelBtn = new Button(\"Cancel\");",
+            "",
+            "        // ✅ Passing 'this' — registering current object as the listener",
+            "        submitBtn.setListener(this);   // 'this' = current FormController instance",
+            "        cancelBtn.setListener(this);",
+            "    }",
+            "",
+            "    @Override",
+            "    public void onClick(String buttonName) {",
+            "        if (\"Submit\".equals(buttonName)) {",
+            "            System.out.println(\"Submitting form: \" + formData);",
+            "        } else if (\"Cancel\".equals(buttonName)) {",
+            "            System.out.println(\"Form cancelled.\");",
+            "        }",
+            "    }",
+            "",
+            "    public void simulateUserAction() {",
+            "        submitBtn.click();",
+            "        cancelBtn.click();",
+            "    }",
+            "}",
+            "",
+            "// Another pattern: passing 'this' to a helper/utility class",
+            "class OrderValidator {",
+            "    public boolean validate(Order order) {",
+            "        return order != null && order.getTotal() > 0;",
+            "    }",
+            "}",
+            "",
+            "class Order {",
+            "    private double total;",
+            "    Order(double total) { this.total = total; }",
+            "    public double getTotal() { return total; }",
+            "",
+            "    public boolean isValid() {",
+            "        OrderValidator validator = new OrderValidator();",
+            "        return validator.validate(this);  // ✅ passing 'this' to helper",
+            "    }",
+            "}",
+            "",
+            "public class ThisAsArgument {",
+            "    public static void main(String[] args) {",
+            "        FormController form = new FormController(\"user@example.com\");",
+            "        form.simulateUserAction();",
+            "        // Output:",
+            "        // Submitting form: user@example.com",
+            "        // Form cancelled.",
+            "",
+            "        Order o = new Order(1500.0);",
+            "        System.out.println(\"Order valid: \" + o.isValid()); // true",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Avoid Passing 'this' from a Constructor — this Escape",
+          "text": "Passing 'this' from a constructor (this escape) is dangerous — the object is not fully constructed yet when the reference is handed out. Other code may access the object before all fields are initialized, leading to null fields or incorrect state. This is especially problematic in multi-threaded code. Rule: never pass 'this' to another object or start a thread from inside a constructor. Complete all initialization first, then register/publish the object after the constructor finishes."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "this-return",
+      "title": "Returning this — Method Chaining and Fluent APIs",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When an instance method <strong>returns <code>this</code></strong>, it returns a reference to the current object. The caller can then immediately call another method on the returned object — chaining multiple calls in a single expression. This technique is called <strong>method chaining</strong> or <strong>fluent interface</strong> design, and it is the foundation of the Builder pattern, StringBuilder, Stream API, and many modern Java APIs."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "MethodChaining.java",
+          "lines": [
+            "// ─── Fluent Builder using 'return this' ──────────────────────────────────",
+            "public class EmailMessage {",
+            "",
+            "    private String from;",
+            "    private String to;",
+            "    private String cc;",
+            "    private String subject;",
+            "    private String body;",
+            "    private boolean isHtml;",
+            "    private int     priority; // 1=high, 2=normal, 3=low",
+            "",
+            "    // ─── Each setter returns 'this' — enables chaining ────────────────────",
+            "    public EmailMessage from(String from) {",
+            "        this.from = from;",
+            "        return this;           // ← return this = same object",
+            "    }",
+            "",
+            "    public EmailMessage to(String to) {",
+            "        this.to = to;",
+            "        return this;",
+            "    }",
+            "",
+            "    public EmailMessage cc(String cc) {",
+            "        this.cc = cc;",
+            "        return this;",
+            "    }",
+            "",
+            "    public EmailMessage subject(String subject) {",
+            "        this.subject = subject;",
+            "        return this;",
+            "    }",
+            "",
+            "    public EmailMessage body(String body) {",
+            "        this.body   = body;",
+            "        this.isHtml = false;",
+            "        return this;",
+            "    }",
+            "",
+            "    public EmailMessage htmlBody(String body) {",
+            "        this.body   = body;",
+            "        this.isHtml = true;",
+            "        return this;",
+            "    }",
+            "",
+            "    public EmailMessage highPriority() {",
+            "        this.priority = 1;",
+            "        return this;",
+            "    }",
+            "",
+            "    public void send() {",
+            "        System.out.println(\"Sending email:\");",
+            "        System.out.println(\"  From    : \" + from);",
+            "        System.out.println(\"  To      : \" + to);",
+            "        if (cc != null) System.out.println(\"  CC      : \" + cc);",
+            "        System.out.println(\"  Subject : \" + subject);",
+            "        System.out.println(\"  Priority: \" + (priority == 1 ? \"HIGH\" : \"Normal\"));",
+            "        System.out.println(\"  Body    : \" + body);",
+            "    }",
+            "}",
+            "",
+            "public class MethodChaining {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ❌ Without chaining — verbose, repetitive variable",
+            "        EmailMessage msg1 = new EmailMessage();",
+            "        msg1.from(\"admin@company.com\");",
+            "        msg1.to(\"user@example.com\");",
+            "        msg1.subject(\"Welcome\");",
+            "        msg1.body(\"Welcome to our platform!\");",
+            "        msg1.send();",
+            "",
+            "        System.out.println(\"---\");",
+            "",
+            "        // ✅ With chaining — clean, readable, expressive",
+            "        new EmailMessage()",
+            "            .from(\"no-reply@company.com\")",
+            "            .to(\"priya@example.com\")",
+            "            .cc(\"manager@company.com\")",
+            "            .subject(\"Order Confirmed — #ORD-2024-881\")",
+            "            .htmlBody(\"<h1>Your order is confirmed!</h1>\")",
+            "            .highPriority()",
+            "            .send();",
+            "        // Output:",
+            "        // Sending email:",
+            "        //   From    : no-reply@company.com",
+            "        //   To      : priya@example.com",
+            "        //   CC      : manager@company.com",
+            "        //   Subject : Order Confirmed — #ORD-2024-881",
+            "        //   Priority: HIGH",
+            "        //   Body    : <h1>Your order is confirmed!</h1>",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Java's Built-in return this — StringBuilder Example",
+          "text": "Java's own StringBuilder is the most-used example of return this chaining: new StringBuilder().append('Hello').append(', ').append('World').append('!').toString(). Every append() method modifies the buffer and returns 'this' — the same StringBuilder. This is why you can chain append() calls indefinitely. The Stream API, Optional, and many Spring framework methods (MockMvcRequestBuilders, ResponseEntity) also use this pattern extensively."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "super-keyword-uses",
+      "title": "super Keyword — All Uses in Methods and Fields",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In the context of methods and fields (excluding the constructor use <code>super()</code>), the <code>super</code> keyword has two distinct uses: calling an overridden parent method, and accessing a hidden parent field. Both are used exclusively in <strong>subclass instance methods</strong>."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "1️⃣",
+              "title": "super.method() — Call Parent's Overridden Method",
+              "text": "When a subclass overrides a method, the parent's version is no longer called automatically. super.methodName() explicitly invokes the parent class's version of that overridden method from within the overriding method. Use case: the subclass wants to EXTEND (add to) the parent's behaviour rather than completely REPLACE it. The parent's logic runs first, then the subclass adds its own logic on top."
+            },
+            {
+              "icon": "2️⃣",
+              "title": "super.field — Access Parent's Hidden Field",
+              "text": "When a subclass declares a field with the same name as a parent class field, the subclass field HIDES the parent field — both exist in memory, but the unqualified name refers to the subclass field. super.fieldName explicitly accesses the parent's version of the field. Note: field hiding is rarely used and generally considered poor practice. Method overriding is almost always preferred over field hiding."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "super-method-call",
+      "title": "super for Method Calls — Invoking Overridden Parent Methods",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>super.methodName()</code> calls the <strong>parent class's version</strong> of a method that the current class has overridden. This is used when the subclass wants to <em>augment</em> the parent's behaviour — adding extra logic before or after the parent's implementation — rather than replacing it entirely. Without <code>super.method()</code>, the parent's implementation is simply skipped."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SuperMethodCall.java",
+          "lines": [
+            "class Logger {",
+            "    public void log(String message) {",
+            "        System.out.println(\"[LOG] \" + message);",
+            "    }",
+            "",
+            "    public String format(String text) {",
+            "        return text.trim();",
+            "    }",
+            "}",
+            "",
+            "class TimestampLogger extends Logger {",
+            "",
+            "    // ✅ Extends parent behaviour — calls super.log() then adds timestamp",
+            "    @Override",
+            "    public void log(String message) {",
+            "        super.log(message);   // ← parent's log() runs first",
+            "        System.out.println(\"    [at: \" + java.time.LocalTime.now() + \"]\");",
+            "    }",
+            "",
+            "    // ✅ Extends parent format — adds uppercase on top of trim",
+            "    @Override",
+            "    public String format(String text) {",
+            "        String trimmed = super.format(text); // parent trims first",
+            "        return trimmed.toUpperCase();         // child adds uppercase",
+            "    }",
+            "}",
+            "",
+            "class AuditLogger extends TimestampLogger {",
+            "",
+            "    private String auditUser;",
+            "",
+            "    AuditLogger(String user) { this.auditUser = user; }",
+            "",
+            "    // ✅ Three-level chain: AuditLogger → TimestampLogger → Logger",
+            "    @Override",
+            "    public void log(String message) {",
+            "        super.log(message);   // calls TimestampLogger.log() which calls Logger.log()",
+            "        System.out.println(\"    [audit by: \" + auditUser + \"]\");",
+            "    }",
+            "}",
+            "",
+            "// Real-world pattern: Template Method with super",
+            "class Animal {",
+            "    public String describe() {",
+            "        return \"I am an animal\";",
+            "    }",
+            "}",
+            "",
+            "class Dog extends Animal {",
+            "    private String breed;",
+            "    Dog(String breed) { this.breed = breed; }",
+            "",
+            "    @Override",
+            "    public String describe() {",
+            "        // ✅ Get parent description and extend it",
+            "        return super.describe() + \", specifically a \" + breed + \" dog\";",
+            "    }",
+            "}",
+            "",
+            "class GuideDog extends Dog {",
+            "    GuideDog(String breed) { super(breed); }",
+            "",
+            "    @Override",
+            "    public String describe() {",
+            "        return super.describe() + \", trained as a guide dog\";",
+            "        // Result: super.describe() calls Dog.describe()",
+            "        //         which calls super.describe() = Animal.describe()",
+            "        // Final: 'I am an animal, specifically a Labrador dog, trained as a guide dog'",
+            "    }",
+            "}",
+            "",
+            "public class SuperMethodCall {",
+            "    public static void main(String[] args) {",
+            "",
+            "        TimestampLogger tl = new TimestampLogger();",
+            "        tl.log(\"Server started\");",
+            "        // Output:",
+            "        // [LOG] Server started",
+            "        //     [at: 10:45:23.123456]",
+            "",
+            "        System.out.println(tl.format(\"  hello world  \"));",
+            "        // Output: HELLO WORLD",
+            "",
+            "        AuditLogger al = new AuditLogger(\"admin\");",
+            "        al.log(\"Payment processed\");",
+            "        // Output:",
+            "        // [LOG] Payment processed",
+            "        //     [at: 10:45:23.124001]",
+            "        //     [audit by: admin]",
+            "",
+            "        GuideDog gd = new GuideDog(\"Labrador\");",
+            "        System.out.println(gd.describe());",
+            "        // Output: I am an animal, specifically a Labrador dog, trained as a guide dog",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 super.method() Goes Only One Level Up",
+          "text": "super.method() always calls the DIRECT parent's version — never a grandparent directly. In the AuditLogger example above: AuditLogger.log() calls super.log() which is TimestampLogger.log(). Inside TimestampLogger.log(), super.log() calls Logger.log(). This creates a natural chain where each level augments the one above it. You cannot write super.super.log() in Java — it is a compile error. The chaining happens naturally through each class calling super.method()."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "super-field-access",
+      "title": "super for Field Access — Accessing Hidden Parent Fields",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When a subclass declares a field with the <strong>same name</strong> as a field in the parent class, the subclass field <em>hides</em> the parent field (not overrides — only methods are overridden, fields are hidden). Both fields exist in memory simultaneously — the parent's field as part of the inherited state, and the subclass's field as the new declaration. <code>super.fieldName</code> provides access to the parent's hidden field from within the subclass."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SuperFieldAccess.java",
+          "lines": [
+            "class Shape {",
+            "    // Parent field",
+            "    String color = \"White\";",
+            "    int    sides = 0;",
+            "}",
+            "",
+            "class ColoredShape extends Shape {",
+            "    // ⚠️ Hides parent's 'color' field — both exist in memory",
+            "    String color = \"Red\";   // Subclass field — hides Shape.color",
+            "",
+            "    public void showColors() {",
+            "        System.out.println(\"Subclass color : \" + color);        // Red",
+            "        System.out.println(\"this.color     : \" + this.color);   // Red (same)",
+            "        System.out.println(\"super.color    : \" + super.color);  // White (parent's)",
+            "    }",
+            "",
+            "    public void showSides() {",
+            "        // 'sides' not hidden — only one 'sides' field (inherited from Shape)",
+            "        System.out.println(\"sides      : \" + sides);        // 0 (inherited)",
+            "        System.out.println(\"super.sides: \" + super.sides);  // 0 (same field)",
+            "        System.out.println(\"this.sides : \" + this.sides);   // 0 (same field)",
+            "    }",
+            "}",
+            "",
+            "// ─── Field hiding vs Method overriding — CRITICAL DIFFERENCE ─────────────",
+            "class Base {",
+            "    String type = \"Base field\";",
+            "    public String getType() { return \"Base method\"; }",
+            "}",
+            "",
+            "class Child extends Base {",
+            "    String type = \"Child field\";  // HIDES parent field",
+            "",
+            "    @Override",
+            "    public String getType() { return \"Child method\"; }  // OVERRIDES parent method",
+            "}",
+            "",
+            "public class SuperFieldAccess {",
+            "    public static void main(String[] args) {",
+            "",
+            "        ColoredShape cs = new ColoredShape();",
+            "        cs.showColors();",
+            "        // Output:",
+            "        // Subclass color : Red",
+            "        // this.color     : Red",
+            "        // super.color    : White",
+            "",
+            "        System.out.println(\"--- Field hiding vs Method overriding ---\");",
+            "",
+            "        Base ref = new Child();   // Parent reference, child object",
+            "",
+            "        // FIELD ACCESS — resolved by REFERENCE TYPE (compile-time)",
+            "        System.out.println(ref.type);       // Base field ← reference is Base",
+            "",
+            "        // METHOD CALL — resolved by OBJECT TYPE (runtime — polymorphism)",
+            "        System.out.println(ref.getType());  // Child method ← object is Child",
+            "",
+            "        // Key insight: fields are HIDDEN (static binding), methods are OVERRIDDEN (dynamic)",
+            "        Child childRef = new Child();",
+            "        System.out.println(childRef.type);         // Child field",
+            "        System.out.println(childRef.getType());    // Child method",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Field Hiding vs Method Overriding — A Critical Distinction",
+          "text": "Fields in Java are HIDDEN (not overridden). When a parent reference points to a child object, field access uses the REFERENCE TYPE (compile-time), while method calls use the OBJECT TYPE (runtime). This means 'parentRef.fieldName' accesses the PARENT's field even when the object is a child — unlike methods where dynamic dispatch picks the child's overridden version. This is why public fields are dangerous in inheritance hierarchies — behaviour depends on reference type, not object type, which is counter-intuitive. Always use methods (getters) to expose state, never public fields in inheritable classes."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "super-vs-this",
+      "title": "super vs this — Key Differences",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "While both <code>this</code> and <code>super</code> are reference keywords available in instance context, they refer to fundamentally different targets and serve different purposes."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "this", "super"],
+          "rows": [
+            ["Refers to",              "Current object (the instance the method runs on)",        "Parent class of the current class"],
+            ["Field access",           "this.field — current object's field (disambiguates shadow)", "super.field — parent's hidden field"],
+            ["Method call",            "this.method() — current object's method",                "super.method() — parent's overridden method"],
+            ["Constructor call",       "this() — another constructor in same class",              "super() — parent class constructor"],
+            ["Can be returned?",       "Yes — return this enables method chaining",               "No — super is not a standalone object reference"],
+            ["Can be passed as arg?",  "Yes — pass current object to another method",             "No — cannot pass super as an argument"],
+            ["In static methods?",     "No — no object in static context",                        "No — no object in static context"],
+            ["Skips levels?",          "N/A",                                                      "No — only direct parent, not grandparent"],
+            ["Auto-inserted?",         "Never auto-inserted for methods/fields",                  "Never auto-inserted for methods/fields"],
+            ["Primary purpose",        "Disambiguate current object's members, method chaining",  "Access parent's overridden/hidden members"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SuperVsThis.java",
+          "lines": [
+            "class Vehicle {",
+            "    String type  = \"Vehicle\";",
+            "    int    speed = 60;",
+            "",
+            "    public void describe() {",
+            "        System.out.println(\"Vehicle: type=\" + type + \", speed=\" + speed);",
+            "    }",
+            "}",
+            "",
+            "class Car extends Vehicle {",
+            "    String type  = \"Car\";   // Hides Vehicle.type",
+            "    int    doors = 4;",
+            "",
+            "    public void showAll() {",
+            "        // 'this' — current object's fields",
+            "        System.out.println(\"this.type  : \" + this.type);   // Car",
+            "        System.out.println(\"this.doors : \" + this.doors);  // 4",
+            "        System.out.println(\"this.speed : \" + this.speed);  // 60 (inherited)",
+            "",
+            "        // 'super' — parent's field",
+            "        System.out.println(\"super.type : \" + super.type);  // Vehicle",
+            "        System.out.println(\"super.speed: \" + super.speed); // 60 (same — not hidden)",
+            "    }",
+            "",
+            "    @Override",
+            "    public void describe() {",
+            "        super.describe();   // ← call parent's version first",
+            "        // then add car-specific info",
+            "        System.out.println(\"Car  : type=\" + this.type + \", doors=\" + this.doors);",
+            "    }",
+            "",
+            "    // Method chaining with 'this'",
+            "    public Car setDoors(int doors) {",
+            "        this.doors = doors;",
+            "        return this;   // ← return this for chaining",
+            "    }",
+            "",
+            "    public Car setSpeed(int speed) {",
+            "        this.speed = speed;",
+            "        return this;",
+            "    }",
+            "}",
+            "",
+            "public class SuperVsThis {",
+            "    public static void main(String[] args) {",
+            "        Car c = new Car();",
+            "        c.showAll();",
+            "        // this.type  : Car",
+            "        // this.doors : 4",
+            "        // this.speed : 60",
+            "        // super.type : Vehicle",
+            "        // super.speed: 60",
+            "",
+            "        System.out.println(\"---\");",
+            "        c.describe();",
+            "        // Vehicle: type=Vehicle, speed=60",
+            "        // Car  : type=Car, doors=4",
+            "",
+            "        System.out.println(\"---\");",
+            "        // Method chaining with 'this'",
+            "        c.setDoors(2).setSpeed(120);",
+            "        c.describe();",
+            "        // Vehicle: type=Vehicle, speed=120",
+            "        // Car  : type=Car, doors=2",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "static-context",
+      "title": "this and super in Static Context — Why They Don't Work",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Neither <code>this</code> nor <code>super</code> can be used inside a <strong>static method</strong> or a <strong>static initializer block</strong>. The reason is fundamental: static methods belong to the <em>class</em>, not to any specific <em>object</em>. When a static method executes, there is no current object — there is no <em>this</em>. And without a current object, there is no basis for <em>super</em> either."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StaticContext.java",
+          "lines": [
+            "class Parent {",
+            "    static int staticCount = 0;",
+            "    int        instanceId;",
+            "",
+            "    Parent() {",
+            "        staticCount++;",
+            "        this.instanceId = staticCount;  // ✅ 'this' valid in constructor",
+            "    }",
+            "",
+            "    static void staticMethod() {",
+            "        System.out.println(\"Parent static: \" + staticCount);",
+            "        // this.instanceId  // ❌ COMPILE ERROR: cannot use this in static context",
+            "        // super.something  // ❌ COMPILE ERROR: cannot use super in static context",
+            "    }",
+            "",
+            "    void instanceMethod() {",
+            "        System.out.println(\"Instance id: \" + this.instanceId);  // ✅ valid",
+            "    }",
+            "}",
+            "",
+            "class Child extends Parent {",
+            "",
+            "    String name;",
+            "",
+            "    Child(String name) {",
+            "        super();           // ✅ super() in constructor — valid",
+            "        this.name = name;  // ✅ this in constructor — valid",
+            "    }",
+            "",
+            "    @Override",
+            "    void instanceMethod() {",
+            "        super.instanceMethod();  // ✅ super.method() in instance method — valid",
+            "        System.out.println(\"Child name: \" + this.name); // ✅ this in instance method",
+            "    }",
+            "",
+            "    static void childStatic() {",
+            "        // System.out.println(this.name);          // ❌ COMPILE ERROR",
+            "        // System.out.println(super.staticCount);  // ❌ COMPILE ERROR",
+            "        System.out.println(Parent.staticCount);    // ✅ Use class name for static",
+            "    }",
+            "}",
+            "",
+            "public class StaticContext {",
+            "    public static void main(String[] args) {",
+            "        // Static method — no object needed",
+            "        Parent.staticMethod();    // Output: Parent static: 0",
+            "",
+            "        Child c1 = new Child(\"Arjun\");",
+            "        Child c2 = new Child(\"Divya\");",
+            "",
+            "        c1.instanceMethod();",
+            "        // Instance id: 1",
+            "        // Child name: Arjun",
+            "",
+            "        Child.childStatic();     // Output: Parent static: 2",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 The Golden Rule — this and super Need an Object",
+          "text": "Both this and super fundamentally require an object to operate on. this = 'the object this method is running on'. super = 'the parent class part of the object this method is running on'. Static methods run without any object — they are class-level operations. No object means no this, which means no super. When you need to access instance state from a static method, you must receive an explicit object reference as a parameter: myStaticMethod(ClassName obj) and then use obj.field or obj.method()."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These mistakes involving <code>this</code> and <code>super</code> are consistently found in Java beginner code. Most produce subtle runtime bugs rather than compile errors — making them especially dangerous."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "KeywordMistakes.java",
+          "lines": [
+            "class Animal {",
+            "    String name = \"Animal\";",
+            "    public void sound() { System.out.println(\"Generic sound\"); }",
+            "}",
+            "",
+            "class Dog extends Animal {",
+            "    String name = \"Dog\"; // hides Animal.name",
+            "",
+            "    // ❌ MISTAKE 1: Missing 'this' in setter — silent field-not-set bug",
+            "    String breed;",
+            "    public void setBreed(String breed) {",
+            "        breed = breed;       // ❌ param assigned to itself — field unchanged",
+            "    }",
+            "    // ✅ Fix: this.breed = breed;",
+            "",
+            "    // ❌ MISTAKE 2: Using 'this' in static method",
+            "    // public static void staticDemo() {",
+            "    //     System.out.println(this.name); // ❌ COMPILE ERROR",
+            "    // }",
+            "",
+            "    // ❌ MISTAKE 3: Expecting super to skip to grandparent",
+            "    // If Dog extends Mammal extends Animal,",
+            "    // super.sound() calls Mammal.sound() NOT Animal.sound() directly",
+            "",
+            "    // ❌ MISTAKE 4: Forgetting super.method() — accidentally replacing, not extending",
+            "    @Override",
+            "    public void sound() {",
+            "        // Missing super.sound() — parent's logic is completely lost",
+            "        System.out.println(\"Woof!\");",
+            "        // If parent had important side effects (logging, event firing), they are GONE",
+            "    }",
+            "",
+            "    // ✅ Fix: call super.sound() when parent behaviour should be preserved",
+            "    public void soundExtended() {",
+            "        super.sound();         // Parent logic runs first",
+            "        System.out.println(\"Woof!\"); // Then child adds its own",
+            "    }",
+            "",
+            "    // ❌ MISTAKE 5: Confusing field hiding with method overriding",
+            "    public void showName() {",
+            "        System.out.println(name);       // Dog (subclass field)",
+            "        System.out.println(this.name);  // Dog (same)",
+            "        System.out.println(super.name); // Animal (parent's hidden field)",
+            "        // BUT via parent reference: parentRef.name = Animal (compile-time resolution)",
+            "    }",
+            "",
+            "    // ❌ MISTAKE 6: Returning 'this' from void method accidentally — compile error",
+            "    // public void setBreedVoid(String breed) {",
+            "    //     this.breed = breed;",
+            "    //     return this;  // ❌ COMPILE ERROR: void method cannot return value",
+            "    // }",
+            "    // ✅ Fix: change return type to Dog (or Animal) to enable chaining",
+            "    public Dog setBreedFixed(String breed) {",
+            "        this.breed = breed;",
+            "        return this;  // ✅ Now valid — method returns Dog",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These anti-patterns involving <code>this</code> and <code>super</code> appear in code reviews and lead to maintenance issues, subtle bugs, or code that is difficult to understand."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Field Hiding with Same-Named Subclass Fields",
+              "text": "Declaring a field in a subclass with the same name as a parent field creates a hidden field situation — both exist, accessing either requires care, and the behaviour when accessed via a parent reference is counter-intuitive (parent's field is used). Avoid field hiding entirely — it is almost never intentional design. Use different field names in subclasses, or consolidate the field in the parent with protected access. Method overriding is a feature; field hiding is almost always an accident."
+            },
+            {
+              "icon": "🚫",
+              "title": "Skipping super.method() in Critical Lifecycle Methods",
+              "text": "In frameworks like Android (onCreate, onResume), Spring, or JUnit (setUp, tearDown), overriding lifecycle methods without calling super.method() breaks the framework's internal initialization. Rule: if you override a method from a framework base class, check whether the parent's implementation does something important. When in doubt, call super.method(). The @CallSuper annotation (in Android) documents methods where super must be called."
+            },
+            {
+              "icon": "🚫",
+              "title": "Excessive this. Everywhere",
+              "text": "Writing 'this.' before every single field access and method call — even when there is no shadowing — makes code unnecessarily verbose. this.name when there is no local 'name' variable, and this.process() when calling a private method, adds noise without clarity. Use this. when it adds value: in constructors/setters (disambiguates parameter), when returning this, or when passing this as an argument. Elsewhere, let Java's automatic resolution work."
+            },
+            {
+              "icon": "🚫",
+              "title": "Deep Method Chaining on Mutable State",
+              "text": "While returning this enables fluent APIs, chaining 10+ method calls on a mutable object makes error handling and debugging very difficult — if one method throws an exception mid-chain, it's hard to identify which step failed. For complex construction with many optional parameters, prefer the Builder pattern (separate builder object) over chaining methods directly on the target object. Builders are easier to validate, test, and reason about."
+            },
+            {
+              "icon": "🚫",
+              "title": "Using super.method() to Bypass Invariant Enforcement",
+              "text": "Sometimes a developer uses super.method() in an inner method to 'skip' validation that the overriding method adds. Example: a child class adds validation in processPayment(), but internally calls super.processPayment() to bypass it. This breaks encapsulation and the class's contract. If internal bypass is needed, refactor the parent to have a separate protected doProcess() (template method pattern) that subclasses can call without bypassing validation."
+            },
+            {
+              "icon": "🚫",
+              "title": "Public Fields in Inheritable Classes",
+              "text": "Declaring public (non-final) fields in classes designed for inheritance causes field hiding problems as soon as a subclass declares a field with the same name. Since field access is resolved by reference type (not object type), behaviour becomes unpredictable when using polymorphism. Always make fields private in inheritable classes and expose them via protected or public getter methods. Methods participate in polymorphism; fields do not."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples demonstrate idiomatic <code>this</code> and <code>super</code> usage in real enterprise Java patterns — domain model builders, layered service classes, and framework-style lifecycle methods."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "QueryBuilder.java — Fluent API with return this",
+          "lines": [
+            "package com.techsustainify.db.query;",
+            "",
+            "import java.util.ArrayList;",
+            "import java.util.List;",
+            "",
+            "// Fluent SQL query builder — heavy use of 'return this'",
+            "public class QueryBuilder {",
+            "",
+            "    private String        table;",
+            "    private List<String>  columns     = new ArrayList<>();",
+            "    private List<String>  conditions  = new ArrayList<>();",
+            "    private List<String>  orderBy     = new ArrayList<>();",
+            "    private Integer       limit;",
+            "    private Integer       offset;",
+            "",
+            "    public QueryBuilder from(String table) {",
+            "        this.table = table;",
+            "        return this;",
+            "    }",
+            "",
+            "    public QueryBuilder select(String... cols) {",
+            "        for (String col : cols) this.columns.add(col);",
+            "        return this;",
+            "    }",
+            "",
+            "    public QueryBuilder where(String condition) {",
+            "        this.conditions.add(condition);",
+            "        return this;",
+            "    }",
+            "",
+            "    public QueryBuilder orderBy(String column, String direction) {",
+            "        this.orderBy.add(column + \" \" + direction);",
+            "        return this;",
+            "    }",
+            "",
+            "    public QueryBuilder limit(int limit) {",
+            "        this.limit = limit;",
+            "        return this;",
+            "    }",
+            "",
+            "    public QueryBuilder offset(int offset) {",
+            "        this.offset = offset;",
+            "        return this;",
+            "    }",
+            "",
+            "    public String build() {",
+            "        StringBuilder sql = new StringBuilder(\"SELECT \");",
+            "        sql.append(columns.isEmpty() ? \"*\" : String.join(\", \", columns));",
+            "        sql.append(\" FROM \").append(table);",
+            "        if (!conditions.isEmpty())",
+            "            sql.append(\" WHERE \").append(String.join(\" AND \", conditions));",
+            "        if (!orderBy.isEmpty())",
+            "            sql.append(\" ORDER BY \").append(String.join(\", \", orderBy));",
+            "        if (limit  != null) sql.append(\" LIMIT \").append(limit);",
+            "        if (offset != null) sql.append(\" OFFSET \").append(offset);",
+            "        return sql.toString();",
+            "    }",
+            "}",
+            "",
+            "class QueryBuilderDemo {",
+            "    public static void main(String[] args) {",
+            "        String query = new QueryBuilder()",
+            "            .from(\"orders\")",
+            "            .select(\"order_id\", \"customer_name\", \"total_amount\")",
+            "            .where(\"status = 'PENDING'\")",
+            "            .where(\"total_amount > 500\")",
+            "            .orderBy(\"created_at\", \"DESC\")",
+            "            .limit(20)",
+            "            .offset(40)",
+            "            .build();",
+            "",
+            "        System.out.println(query);",
+            "        // SELECT order_id, customer_name, total_amount FROM orders",
+            "        // WHERE status = 'PENDING' AND total_amount > 500",
+            "        // ORDER BY created_at DESC LIMIT 20 OFFSET 40",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "AuditableEntity.java — super.method() in Lifecycle Pattern",
+          "lines": [
+            "package com.techsustainify.entity;",
+            "",
+            "import java.time.LocalDateTime;",
+            "",
+            "// Base entity — all entities extend this",
+            "public abstract class AuditableEntity {",
+            "",
+            "    private Long          id;",
+            "    private LocalDateTime createdAt;",
+            "    private LocalDateTime updatedAt;",
+            "    private String        createdBy;",
+            "    private String        updatedBy;",
+            "",
+            "    // Called before INSERT — subclasses MUST call super.onPrePersist()",
+            "    public void onPrePersist(String actor) {",
+            "        this.createdAt = LocalDateTime.now();",
+            "        this.updatedAt = this.createdAt;",
+            "        this.createdBy = actor;",
+            "        this.updatedBy = actor;",
+            "        System.out.println(\"[AuditableEntity] onPrePersist: \" + actor);",
+            "    }",
+            "",
+            "    // Called before UPDATE — subclasses MUST call super.onPreUpdate()",
+            "    public void onPreUpdate(String actor) {",
+            "        this.updatedAt = LocalDateTime.now();",
+            "        this.updatedBy = actor;",
+            "        System.out.println(\"[AuditableEntity] onPreUpdate: \" + actor);",
+            "    }",
+            "",
+            "    public Long          getId()        { return id; }",
+            "    public LocalDateTime getCreatedAt() { return createdAt; }",
+            "    public LocalDateTime getUpdatedAt() { return updatedAt; }",
+            "    public String        getCreatedBy() { return createdBy; }",
+            "}",
+            "",
+            "public class UserEntity extends AuditableEntity {",
+            "",
+            "    private String username;",
+            "    private String email;",
+            "    private String role;",
+            "",
+            "    public UserEntity(String username, String email, String role) {",
+            "        this.username = username;",
+            "        this.email    = email;",
+            "        this.role     = role;",
+            "    }",
+            "",
+            "    @Override",
+            "    public void onPrePersist(String actor) {",
+            "        super.onPrePersist(actor);         // ✅ Parent's audit fields set first",
+            "        // Then add entity-specific pre-persist logic",
+            "        System.out.println(\"[UserEntity] Setting default role if absent\");",
+            "        if (this.role == null) this.role = \"USER\";",
+            "    }",
+            "",
+            "    @Override",
+            "    public void onPreUpdate(String actor) {",
+            "        super.onPreUpdate(actor);          // ✅ Parent updates updatedAt/updatedBy",
+            "        System.out.println(\"[UserEntity] Logging user update event\");",
+            "    }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return String.format(\"User[%s | %s | %s | created=%s]\",",
+            "                             username, email, role, getCreatedAt());",
+            "    }",
+            "}",
+            "",
+            "class LifecycleDemo {",
+            "    public static void main(String[] args) {",
+            "        UserEntity user = new UserEntity(\"ravi_k\", \"ravi@company.com\", null);",
+            "        user.onPrePersist(\"system\");",
+            "        // [AuditableEntity] onPrePersist: system",
+            "        // [UserEntity] Setting default role if absent",
+            "",
+            "        System.out.println(user);",
+            "        // User[ravi_k | ravi@company.com | USER | created=2026-03-20T10:45:23]",
+            "",
+            "        user.onPreUpdate(\"admin\");",
+            "        // [AuditableEntity] onPreUpdate: admin",
+            "        // [UserEntity] Logging user update event",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "keyword-flowchart",
+      "title": "this and super Resolution Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This flowchart shows how the compiler resolves <code>this</code> and <code>super</code> references when encountered in Java source code."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1",  "label": "▶ this or super used in code",          "sublabel": "inside a method or constructor",            "type": "start"    },
+            { "id": "2",  "label": "🔍 Is it in a static method/block?",    "sublabel": "static context check",                    "type": "decision" },
+            { "id": "3",  "label": "❌ Compile Error",                      "sublabel": "this/super not allowed in static context", "type": "end"      },
+            { "id": "4",  "label": "🔍 Is it 'this' or 'super'?",           "sublabel": "",                                         "type": "decision" },
+            { "id": "5",  "label": "📍 'this' — current object",            "sublabel": "resolve to current instance",              "type": "process"  },
+            { "id": "6",  "label": "⬆️ 'super' — parent class",             "sublabel": "resolve to direct parent class",          "type": "process"  },
+            { "id": "7",  "label": "🔍 Field or method access?",            "sublabel": "this.field / this.method()",               "type": "decision" },
+            { "id": "8",  "label": "✅ Current object's field/method",      "sublabel": "resolves shadowing",                       "type": "end"      },
+            { "id": "9",  "label": "🔍 Field or method access?",            "sublabel": "super.field / super.method()",             "type": "decision" },
+            { "id": "10", "label": "✅ Parent's hidden field",              "sublabel": "bypasses subclass field",                  "type": "end"      },
+            { "id": "11", "label": "✅ Parent's overridden method",         "sublabel": "bypasses dynamic dispatch",                "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1",  "to": "2",  "label": "Encountered"           },
+            { "from": "2",  "to": "3",  "label": "YES — static context"  },
+            { "from": "2",  "to": "4",  "label": "NO — instance context" },
+            { "from": "4",  "to": "5",  "label": "this"                  },
+            { "from": "4",  "to": "6",  "label": "super"                 },
+            { "from": "5",  "to": "7",  "label": "Determine usage"       },
+            { "from": "7",  "to": "8",  "label": "Either"                },
+            { "from": "6",  "to": "9",  "label": "Determine usage"       },
+            { "from": "9",  "to": "10", "label": "Field access"          },
+            { "from": "9",  "to": "11", "label": "Method call"           }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java super and this Keywords Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are consistently asked in Java fresher and mid-level interviews, OCPJP certification exams, and campus placement tests covering Java OOP concepts."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What are the uses of the this keyword in Java?",
+              "a": "The this keyword in Java has four uses in methods and fields: (1) this.field — disambiguate an instance field from a local variable or parameter with the same name (e.g., this.name = name in constructors/setters). (2) this.method() — explicitly call another instance method on the current object (optional when no ambiguity exists). (3) Pass this as argument — send the current object reference to another method or constructor. (4) Return this — enable method chaining by returning the current object from a method. Additionally, this() is used in constructors to call another constructor in the same class (covered in the constructors topic). this cannot be used in static methods.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What are the uses of the super keyword in Java?",
+              "a": "The super keyword in Java has two uses in methods and fields: (1) super.method() — call the parent class's version of an overridden method. Used when the subclass wants to extend (not completely replace) the parent's behaviour. (2) super.field — access the parent class's field when the subclass has a field with the same name (field hiding). Additionally, super() in constructors calls the parent constructor (covered separately). super cannot be used in static methods, and always refers only to the direct parent — not grandparent.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is the difference between this and super in Java?",
+              "a": "this refers to the current object — the instance the method is running on. super refers to the parent class of the current class. this.field/this.method() accesses current object's members; super.field/super.method() accesses parent's hidden/overridden members. this can be returned (return this) and passed as an argument; super cannot. Both cannot be used in static methods. this() and super() in constructors are the constructor-call forms of these keywords — they must be the first statement and cannot coexist in the same constructor.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. Can we use the super keyword to call a grandparent's method directly?",
+              "a": "No — super always refers to the DIRECT parent only. You cannot write super.super.method() — this is a compile error in Java. If C extends B extends A, inside C you can call super.method() which calls B's version. If B's method calls super.method(), it calls A's version. So A's method is reachable, but only through the chain — not directly from C. The chaining is enforced by each class calling super in sequence. This design ensures each level of the hierarchy has control over what runs before it delegates upward.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. Can we use the this keyword in a static method?",
+              "a": "No — this cannot be used in a static method. this refers to the current object, but static methods belong to the class and can be called without creating any object. There is no 'current object' in a static context. Attempting to use this in a static method causes a compile error: 'non-static variable this cannot be referenced from a static context'. The same applies to super. To access instance state from a static method, receive the object as a method parameter and use it explicitly.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q6. What is the difference between field hiding and method overriding in Java?",
+              "a": "Method overriding: when a subclass defines a method with the same signature as a parent method. The call is resolved at RUNTIME based on the actual object type (dynamic dispatch/polymorphism). Parent reference pointing to child object calls the CHILD's method. Field hiding: when a subclass declares a field with the same name as a parent field. The access is resolved at COMPILE TIME based on the REFERENCE TYPE — not the object type. Parent reference pointing to child object accesses the PARENT's field. This is why public fields in inheritable classes are dangerous — they don't participate in polymorphism.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. What is method chaining and how is 'return this' used for it?",
+              "a": "Method chaining is a design pattern where multiple method calls are chained in a single expression: obj.methodA().methodB().methodC(). It works by having each method return the current object (return this) instead of void. The returned object reference is used to call the next method. Benefits: highly readable code — reads almost like English ('new EmailMessage.from(x).to(y).subject(z).send()'). Used by: Java's StringBuilder (append().append().toString()), Stream API, Spring's MockMvc, and the Builder pattern. The return type must match the class type (or supertype) — returning void prevents chaining.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. When should you call super.method() in an overriding method?",
+              "a": "Call super.method() when the subclass wants to EXTEND (add to) the parent's behaviour — not completely replace it. Use cases: (1) The parent method has important side effects (logging, event firing, metric recording) that must run. (2) You are overriding a framework lifecycle method (Android's onCreate, Spring's afterPropertiesSet) where the parent does critical initialization. (3) You want to augment output — like a describe() method that adds to the parent's description. Do NOT call super.method() when: you intend to completely replace the parent's behaviour. The key question: does the parent's implementation do something that should always happen regardless of the subclass?",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q9. What is the output of this code?\nclass A { int x = 10; public void show() { System.out.println(x); } }\nclass B extends A { int x = 20; @Override public void show() { System.out.println(x); System.out.println(super.x); } }\n// A ref = new B(); ref.show(); ref.x = ?",
+              "a": "ref.show() outputs: 20 (first line — B's x, dynamic dispatch calls B.show()), then 10 (second line — super.x = A's x). ref.x = 10 — field access through a parent reference uses the REFERENCE TYPE (A), so it returns A's x = 10 even though the object is a B. Key takeaway: method calls use runtime object type (polymorphism — B.show() runs). Field access uses compile-time reference type (no polymorphism — A.x is returned via A ref). This is the classic demonstration of method overriding vs field hiding.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q10. What is 'this escape' and why is it dangerous?",
+              "a": "'This escape' (or unsafe publication of 'this') occurs when the current object reference (this) is passed out of the constructor before the object is fully constructed — e.g., passing this to another object's method, adding this to a static collection, or starting a thread with a reference to this inside a constructor. Danger: (1) The receiving code may immediately call methods on the partially constructed object — fields could be null or at default values. (2) In multi-threaded code, other threads may see the object before all fields are safely published. (3) If the class is subclassed, the subclass constructor hasn't run yet when super() is called — even more fields are uninitialized. Fix: complete all initialization in the constructor, then publish/register the object after the constructor returns — in a factory method or init() call.",
+              "tag": "Advanced"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your this and super Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Attempt each question independently before reading the answer — active recall significantly improves long-term retention compared to passive reading."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output?\nclass A {\n    int x = 5;\n    void show() { System.out.println(\"A: \" + x); }\n}\nclass B extends A {\n    int x = 10;\n    @Override\n    void show() {\n        System.out.println(\"B: \" + x);\n        System.out.println(\"super: \" + super.x);\n        super.show();\n    }\n}\npublic class Test {\n    public static void main(String[] args) { new B().show(); }\n}",
+              "a": "Output: 'B: 10' then 'super: 5' then 'A: 5'. Explanation: new B().show() calls B's overriding show(). Inside B.show(): 'x' refers to B's field (10) → prints 'B: 10'. 'super.x' accesses A's hidden field (5) → prints 'super: 5'. 'super.show()' calls A's show() — inside A.show(), 'x' refers to A's own field (5) → prints 'A: 5'. Note: inside A.show(), there is no shadowing — A only knows its own x = 5.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Find the bug:\nclass Rectangle {\n    private double width;\n    private double height;\n    public Rectangle(double width, double height) {\n        width  = width;\n        height = height;\n    }\n    public double area() { return width * height; }\n}\n// new Rectangle(5, 3).area() returns?",
+              "a": "Bug: 'width = width' and 'height = height' assign each parameter to itself — the instance fields are never updated (they remain at default 0.0). So area() returns 0.0 * 0.0 = 0.0, not 15.0. Fix: use 'this.width = width; this.height = height;'. The this. prefix is required here to distinguish field (this.width) from parameter (width). Without this., both sides of the assignment refer to the local parameter — a classic silent bug with no compile error.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Will this compile? What is the output?\nclass Animal {\n    public void eat() { System.out.println(\"Animal eating\"); }\n}\nclass Dog extends Animal {\n    @Override\n    public void eat() {\n        super.eat();\n        System.out.println(\"Dog eating\");\n    }\n    public void action() {\n        this.eat();\n    }\n}\npublic class Test {\n    public static void main(String[] args) { new Dog().action(); }\n}",
+              "a": "Yes, it compiles. Output: 'Animal eating' then 'Dog eating'. new Dog().action() → action() calls this.eat() — since object is a Dog, this.eat() calls Dog's eat(). Inside Dog.eat(): super.eat() calls Animal.eat() → prints 'Animal eating'. Then Dog.eat() continues → prints 'Dog eating'. The this.eat() call inside action() is equivalent to just eat() — the 'this.' is optional but valid. Dynamic dispatch ensures Dog's eat() runs, not Animal's.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. Rewrite using method chaining:\nStringBuilder sb = new StringBuilder();\nsb.append(\"Hello\");\nsb.append(\", \");\nsb.append(\"World\");\nsb.append(\"!\");\nString result = sb.toString();\nSystem.out.println(result);",
+              "a": "String result = new StringBuilder().append(\"Hello\").append(\", \").append(\"World\").append(\"!\").toString(); System.out.println(result); — StringBuilder.append() returns 'this' (the same StringBuilder), enabling the chain. Each append() call modifies the internal buffer and returns the same StringBuilder object. toString() at the end converts the buffer to a String. This produces 'Hello, World!' — identical to the verbose version but in one expression.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "5. What is the output? Explain why.\nclass Parent {\n    String name = \"Parent\";\n    void display() { System.out.println(name); }\n}\nclass Child extends Parent {\n    String name = \"Child\";\n    @Override\n    void display() { System.out.println(name); }\n}\npublic class Test {\n    public static void main(String[] args) {\n        Parent p = new Child();\n        System.out.println(p.name);\n        p.display();\n    }\n}",
+              "a": "Output: 'Parent' (line 1) then 'Child' (line 2). p.name — field access via Parent reference → compile-time resolution → Parent's 'name' field = 'Parent'. Fields are HIDDEN, not overridden — reference type decides which field. p.display() — method call via Parent reference with Child object → runtime resolution (dynamic dispatch) → Child's display() runs → prints 'Child'. Methods ARE overridden — object type decides which method. This output perfectly demonstrates: same reference, two different resolution mechanisms for fields vs methods.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. Design a fluent Person class where you can chain: new Person().name(\"Arjun\").age(25).city(\"Mumbai\") and then call print() to display all fields.",
+              "a": "public class Person {\n    private String name;\n    private int    age;\n    private String city;\n\n    public Person name(String name) { this.name = name; return this; }\n    public Person age(int age)      { this.age  = age;  return this; }\n    public Person city(String city) { this.city = city; return this; }\n\n    public void print() {\n        System.out.println(\"Name: \" + name + \", Age: \" + age + \", City: \" + city);\n    }\n\n    public static void main(String[] args) {\n        new Person().name(\"Arjun\").age(25).city(\"Mumbai\").print();\n        // Output: Name: Arjun, Age: 25, City: Mumbai\n    }\n} — Key: each setter returns 'this' (current Person object). The return type is Person, not void. The chain: name() returns Person → .age() called on same Person → .age() returns Person → .city() called → .city() returns Person → .print() called. All calls are on the same object.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What is the output? Why is the field access surprising?\nclass Base {\n    int value = 100;\n    int getValue() { return value; }\n}\nclass Derived extends Base {\n    int value = 200;\n    @Override\n    int getValue() { return value; }\n}\npublic class Test {\n    public static void main(String[] args) {\n        Base obj = new Derived();\n        System.out.println(obj.value);      // Line 1\n        System.out.println(obj.getValue()); // Line 2\n    }\n}",
+              "a": "Output: 100 (line 1) then 200 (line 2). Line 1 — obj.value: obj is declared as Base. Field access is resolved by REFERENCE TYPE at compile time (no polymorphism). Reference is Base → Base.value = 100. Line 2 — obj.getValue(): method call is resolved by OBJECT TYPE at runtime (dynamic dispatch). Object is Derived → Derived.getValue() runs → returns this.value = Derived's value = 200. The same reference 'obj' gives different results depending on whether you access a field directly or through a method. This is why public fields in inheritable classes are dangerous — always use getter methods to ensure polymorphic behaviour.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Identify all uses of 'this' and 'super' in this code and explain each:\nclass Vehicle {\n    protected String brand;\n    protected int speed;\n    Vehicle(String brand, int speed) { this.brand = brand; this.speed = speed; }\n    public String info() { return brand + \"@\" + speed; }\n}\nclass ElectricCar extends Vehicle {\n    private int batteryKWh;\n    ElectricCar(String brand, int speed, int batteryKWh) {\n        super(brand, speed);\n        this.batteryKWh = batteryKWh;\n    }\n    @Override\n    public String info() { return super.info() + \"+\" + batteryKWh + \"kWh\"; }\n    public ElectricCar setBattery(int kWh) { this.batteryKWh = kWh; return this; }\n}",
+              "a": "Uses of 'this': (1) this.brand = brand — in Vehicle constructor: disambiguates field 'brand' from parameter 'brand'. (2) this.speed = speed — same, disambiguates field from parameter. (3) this.batteryKWh = batteryKWh — in ElectricCar constructor: disambiguates field from parameter. (4) return this — in setBattery(): returns current ElectricCar object, enabling method chaining. Uses of 'super': (5) super(brand, speed) — in ElectricCar constructor: calls Vehicle's parameterized constructor to initialize inherited fields. (6) super.info() — in ElectricCar.info(): calls Vehicle's overridden info() to get 'brand@speed', then appends battery info on top. Result: ElectricCar.info() returns e.g. 'Tesla@200+100kWh'.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — this and super: The Two Lenses of Java OOP",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>this</code> and <code>super</code> are two lenses through which Java code looks at its own object hierarchy. <code>this</code> looks <em>inward</em> — at the current object, its own fields and methods. <code>super</code> looks <em>upward</em> — at the parent class, its implementation before it was overridden, its fields before they were hidden. Together they give subclasses full visibility into both their own state and their inherited state."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Mastering these keywords separates clean OOP code from buggy, confused code. The hallmarks: <code>this.field = param</code> in every constructor and setter, <code>super.method()</code> whenever extending (not replacing) parent behaviour, <code>return this</code> for fluent APIs, never using either in static contexts, and always preferring method overriding over field hiding."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Use Case", "Keyword", "Syntax", "Purpose"],
+          "rows": [
+            ["Disambiguate field from param",  "this",  "this.field = param",       "Prevent silent assignment-to-self bug in constructors/setters"],
+            ["Call own instance method",       "this",  "this.method()",            "Explicit self-call — optional but readable"],
+            ["Pass current object",            "this",  "someMethod(this)",         "Observer, listener, delegation patterns"],
+            ["Enable method chaining",         "this",  "return this",              "Fluent API, Builder pattern"],
+            ["Call parent overridden method",  "super", "super.method()",           "Extend (not replace) parent behaviour"],
+            ["Access parent hidden field",     "super", "super.field",              "Reach parent's same-named field — rare, avoid field hiding"],
+            ["Cannot use in",                  "both",  "static method/block",      "No object context in static scope"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Inheritance</strong> — where you will see how <code>super</code> fits into the full inheritance model and how the combination of constructor chaining, method overriding, and field access patterns you have now mastered enables powerful class hierarchy designs. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java super and this Keywords",
+    "items": [
+      {
+        "q": "What is the this keyword in Java?",
+        "a": "The this keyword is a reference to the current object — the instance the method or constructor is running on. Uses: (1) this.field to disambiguate instance field from local variable (this.name = name). (2) this.method() to explicitly call current object's method. (3) Pass this as argument to another method. (4) Return this from a method to enable method chaining. Cannot be used in static methods — no object exists in static context."
+      },
+      {
+        "q": "What is the super keyword in Java?",
+        "a": "The super keyword refers to the parent class of the current class. In methods and fields (not constructors): (1) super.method() calls the parent's overridden version of a method — used to extend, not replace, parent behaviour. (2) super.field accesses the parent's field when the subclass has a same-named field (field hiding). super cannot be used in static methods and always refers to the direct parent only — not grandparent."
+      },
+      {
+        "q": "What is the difference between super and this in Java?",
+        "a": "this refers to the current object; super refers to the parent class. this.field/this.method() accesses current object's members; super.field/super.method() accesses parent's hidden/overridden members. this can be returned and passed as argument; super cannot. Both are unavailable in static methods. In constructors: this() calls same-class constructor; super() calls parent constructor — both must be the first statement."
+      },
+      {
+        "q": "Can we use super keyword in a static method?",
+        "a": "No — super cannot be used in a static method. super requires an object context (it refers to the parent class part of the current object). Static methods have no associated object instance. The compile error is: 'non-static variable super cannot be referenced from a static context'. The same applies to this. To access instance-level members from a static method, receive an explicit object reference as a parameter."
+      },
+      {
+        "q": "Can super skip levels in an inheritance hierarchy?",
+        "a": "No — super always refers only to the DIRECT parent. You cannot write super.super.method() — it is a compile error. If C extends B extends A, from inside C: super.method() calls B's version. If B.method() calls super.method(), it calls A's version. The chain happens naturally — each level calls super, which goes one more level up. You cannot jump from C directly to A, bypassing B."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Constructors",     "path": "/java/java-constructors" },
+    "next": { "label": "Java Abstraction →",      "path": "/java/java-abstraction" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "this refers to",      "dd": "Current object instance" },
+      { "dt": "super refers to",     "dd": "Direct parent class" },
+      { "dt": "this.field",          "dd": "Disambiguates field from local var" },
+      { "dt": "super.method()",      "dd": "Calls parent's overridden method" },
+      { "dt": "return this",         "dd": "Enables method chaining" },
+      { "dt": "super.field",         "dd": "Accesses parent's hidden field" },
+      { "dt": "In static methods?",  "dd": "❌ Neither this nor super allowed" },
+      { "dt": "super skips levels?", "dd": "❌ Direct parent only" }
+    ],
+    "relatedArticles": [
+      { "label": "Java super() and this() Constructors", "path": "/java/java-super-this-constructor" },
+      { "label": "Java Inheritance",                     "path": "/java/java-inheritance" },
+      { "label": "Java Method Overriding",               "path": "/java/java-method-overriding" },
+      { "label": "Java Scope",                           "path": "/java/java-scope" },
+      { "label": "Java OOP Concepts",                    "path": "/java/java-oops" },
+      { "label": "Java Abstract Class",                  "path": "/java/java-abstract-class" },
+      { "label": "Java final Keyword",                   "path": "/java/java-final-keyword" },
+      { "label": "Java Access Modifiers",                "path": "/java/java-access-modifiers" }
+    ],
+    "tags": ["this Keyword", "super Keyword", "Method Chaining", "return this", "super.method()", "this.field", "Field Hiding", "Method Overriding", "Fluent API", "Builder Pattern", "Java OOP", "Java Inheritance", "Static Context", "this Escape", "Java Best Practices"]
+  }
+}

@@ -1,0 +1,1522 @@
+{
+  "meta": {
+    "title": "Java Scope — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Scope — local scope, instance scope, class (static) scope, block scope, method scope, loop scope, variable shadowing, scope vs lifetime, and best practices. Covers all variable visibility and accessibility patterns in Java. Updated March 2026.",
+    "keywords": "java scope, java variable scope, java local scope, java instance scope, java class scope, java static scope, java block scope, java method scope, java scope of variables, java variable shadowing, java scope vs lifetime, java loop variable scope, java scope rules, java scope best practices, java scope interview questions, java scope examples, java visibility, java access scope",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-scope",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Scope — Variable Visibility, Types, Examples & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java Scope — local, instance, class/static, block, method, and loop scope. Variable shadowing, scope vs lifetime, real-world examples, pitfalls, and interview questions.",
+      "url": "https://www.techsustainify.com/java/java-scope",
+      "image": "https://www.techsustainify.com/images/java-scope-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Scope Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-04-01T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Scope",
+          "Variable Scope",
+          "Local Scope",
+          "Instance Scope",
+          "Class Scope",
+          "Block Scope",
+          "Variable Shadowing",
+          "Scope vs Lifetime",
+          "Java Basics",
+          "Java Variables"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Scope — Variable Visibility, Types & Best Practices 2026",
+      "description": "Complete guide to Java Scope — local, instance, static, block, loop scope, variable shadowing, scope vs lifetime, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-scope-og.png",
+      "imageAlt": "Java Scope Guide 2026 - Tech Sustainify",
+      "readingTime": "20 minutes",
+      "level": "Beginner",
+      "label1": "Reading Time",
+      "data1": "20 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Scope — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering all Java Scope types — local scope, instance scope, class/static scope, block scope, method scope, loop scope, variable shadowing, scope vs lifetime, real-world examples, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-04-01",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner",
+        "wordCount": 5800,
+        "timeRequired": "PT20M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Variable Scope" },
+          { "@type": "Thing", "name": "Java Local Scope" },
+          { "@type": "Thing", "name": "Java Instance Scope" },
+          { "@type": "Thing", "name": "Java Static Scope" }
+        ],
+        "keywords": "java scope, variable scope, local scope, instance scope, class scope, block scope, variable shadowing, scope vs lifetime, java variables"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Scope" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is scope in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Scope in Java defines the region of a program where a variable is declared, accessible, and can be used. Outside its scope, the variable does not exist for the compiler. Java has four main types of scope: local scope (inside a method or block), instance scope (non-static fields of a class — one per object), class/static scope (static fields — shared across all instances), and block scope (inside any pair of curly braces {} — if, for, while, try, etc.). Scope determines variable visibility and helps prevent naming conflicts and unintended access."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between local scope and instance scope in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Local scope: variables declared inside a method, constructor, or block. They exist only while that method/block is executing. They are not accessible outside and are destroyed when execution leaves the scope. Must be explicitly initialized before use. Instance scope: variables declared as non-static fields inside a class but outside any method. They belong to an object (instance). Each object has its own copy. They are initialized to default values (0, null, false) automatically. They are accessible from any instance method in the class using 'this' or directly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is variable shadowing in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Variable shadowing occurs when a local variable (or parameter) in a method has the same name as an instance variable (field) of the class. The local variable 'shadows' the field — inside that method, the name refers to the local variable, not the field. To access the shadowed field, use 'this.fieldName'. Shadowing is allowed in Java but is generally considered poor practice unless intentional (e.g., in constructors and setters where parameters often match field names and this.field = field is the convention)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between scope and lifetime in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Scope is a compile-time concept — it defines the region of source code where a variable name is visible and can be referenced. Lifetime is a runtime concept — it defines how long the variable's memory actually exists in the JVM. For local variables, scope and lifetime are closely tied — the variable's memory is allocated when execution enters the block and freed when it exits. For instance variables, the scope is the class body, but the lifetime is tied to the object's life in the heap — from creation (new) until garbage collection. A variable can be out of scope but still alive in memory (e.g., an object referenced from another live object)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can two local variables have the same name in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No — two local variables cannot have the same name in overlapping scopes within the same method. Java does not allow a local variable to be redeclared in an inner block if a variable with the same name already exists in the enclosing scope (unlike C/C++). This is a compile-time error: 'variable X is already defined in method Y'. However, two local variables CAN have the same name if they exist in completely separate, non-nested blocks (e.g., separate if and else blocks, or sequential for loops with the same loop variable name)."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-04-01",
+      "dateModified": "2026-03-20",
+      "readingTime": "20 minutes",
+      "wordCount": 5800,
+      "difficulty": "Beginner",
+      "chapter": 8,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-scope",           "title": "What is Scope in Java?" },
+        { "id": "types-of-scope",          "title": "Types of Scope in Java" },
+        { "id": "local-scope",             "title": "Local Scope (Method Scope)" },
+        { "id": "block-scope",             "title": "Block Scope" },
+        { "id": "loop-scope",              "title": "Loop Variable Scope" },
+        { "id": "instance-scope",          "title": "Instance Scope (Object Scope)" },
+        { "id": "class-scope",             "title": "Class Scope (Static Scope)" },
+        { "id": "parameter-scope",         "title": "Method Parameter Scope" },
+        { "id": "variable-shadowing",      "title": "Variable Shadowing" },
+        { "id": "scope-vs-lifetime",       "title": "Scope vs Lifetime" },
+        { "id": "scope-and-access",        "title": "Scope vs Access Modifiers" },
+        { "id": "common-mistakes",         "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",           "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",     "title": "Real-World Production Code Examples" },
+        { "id": "scope-flowchart",         "title": "Scope Flowchart" },
+        { "id": "interview-questions",     "title": "Interview Questions" },
+        { "id": "practice-questions",      "title": "Practice Questions" },
+        { "id": "conclusion-heading",      "title": "Conclusion" },
+        { "id": "faq-heading",             "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-scope" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-scope" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-scope" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-variables",
+      "next": "https://www.techsustainify.com/java/java-operators"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-basics",
+      "contentTopic": "java-scope",
+      "chapterNumber": 8,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Scope" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Scope — Types, Rules, Examples & Best Practices",
+    "subtitle": "Everything you need to know about Java Scope — local scope, instance scope, class/static scope, block scope, loop scope, variable shadowing, scope vs lifetime, scope vs access modifiers, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "20 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "8 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-scope",
+      "title": "What is Scope in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Scope</strong> in Java defines the <strong>region of a program</strong> where a variable is declared, visible, and can be used. Outside its scope, the variable simply does not exist for the compiler — attempting to access it produces a <strong>compile-time error</strong>. Scope is not about security or runtime access control; it is about <strong>name visibility</strong> within the source code."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every variable in Java has a scope that begins at the point of its declaration and ends at the closing curly brace <code>}</code> of the block in which it was declared. This rule applies universally — whether the variable is inside a method, a for loop, an if block, or declared as a field of a class. Understanding scope is essential for writing correct, readable, and bug-free Java programs."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Scope serves several important purposes: it <strong>prevents naming conflicts</strong> between variables in different parts of a program, it enables <strong>memory management</strong> (local variables are released when they go out of scope), and it enforces <strong>encapsulation</strong> by limiting where data can be accessed and modified."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java Scope at a Glance",
+          "text": "Java has four primary scope types: (1) Local Scope — variables declared inside a method or constructor, accessible only within that method. (2) Block Scope — variables declared inside any {} block (if, for, while, try), accessible only within that block. (3) Instance Scope — non-static fields of a class, one copy per object, accessible throughout the class via 'this'. (4) Class/Static Scope — static fields, one copy shared across all instances, accessible throughout the class. Additionally: Method Parameter Scope is a sub-type of local scope."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "types-of-scope",
+      "title": "Types of Scope in Java — Overview",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java variables can be declared in different locations, and the location determines the type of scope. Here is a clear overview of all scope types before we dive into each one in detail."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Scope Type", "Where Declared", "Accessible From", "Lifetime", "Default Value?"],
+          "rows": [
+            ["Local Scope",          "Inside a method or constructor body",          "Only within that method/constructor",           "Stack — created on method call, destroyed on return",      "❌ No — must initialize before use"],
+            ["Block Scope",          "Inside any {} block (if, for, while, try)",    "Only within that specific {} block",            "Stack — created on block entry, destroyed on block exit",  "❌ No — must initialize before use"],
+            ["Method Parameter",     "In method signature (parameter list)",         "Only within that method body",                  "Stack — same as local scope",                              "✅ Yes — receives caller's argument value"],
+            ["Instance Scope",       "Inside class, outside any method (non-static)","Any instance method in the class (via this)",   "Heap — lives as long as the object lives",                 "✅ Yes — int→0, boolean→false, Object→null"],
+            ["Class/Static Scope",   "Inside class, outside any method (static)",    "Anywhere the class is accessible (class name)", "Method area — lives as long as the class is loaded",       "✅ Yes — same defaults as instance fields"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ScopeOverview.java",
+          "lines": [
+            "public class ScopeOverview {",
+            "",
+            "    // ─── Instance Scope (Object Scope) ───────────────────────────────────",
+            "    int instanceVar = 10;          // One copy per object",
+            "",
+            "    // ─── Class/Static Scope ───────────────────────────────────────────────",
+            "    static int classVar = 100;     // One copy shared across ALL objects",
+            "",
+            "    // ─── Method Parameter Scope ──────────────────────────────────────────",
+            "    public void demonstrate(int param) {  // 'param' scoped to this method",
+            "",
+            "        // ─── Local Scope ──────────────────────────────────────────────────",
+            "        int localVar = 42;          // Only accessible inside this method",
+            "",
+            "        System.out.println(instanceVar); // ✅ Instance var accessible",
+            "        System.out.println(classVar);    // ✅ Static var accessible",
+            "        System.out.println(param);       // ✅ Parameter accessible",
+            "        System.out.println(localVar);    // ✅ Local var accessible",
+            "",
+            "        if (true) {",
+            "            // ─── Block Scope ─────────────────────────────────────────────",
+            "            int blockVar = 99;      // Only accessible inside this if-block",
+            "            System.out.println(localVar);  // ✅ Outer local var accessible",
+            "            System.out.println(blockVar);  // ✅ Block var accessible here",
+            "        }",
+            "        // System.out.println(blockVar); // ❌ COMPILE ERROR — out of scope",
+            "    }",
+            "",
+            "    public void otherMethod() {",
+            "        System.out.println(instanceVar); // ✅ Instance var accessible",
+            "        System.out.println(classVar);    // ✅ Static var accessible",
+            "        // System.out.println(localVar); // ❌ COMPILE ERROR — not in scope",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "local-scope",
+      "title": "Local Scope (Method Scope)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>local variable</strong> is declared inside a <strong>method, constructor, or initializer block</strong>. Its scope begins at the point of declaration and ends at the closing <code>}</code> of the method or block in which it is declared. Local variables are stored on the <strong>call stack</strong> — they are created when execution enters the method and destroyed when the method returns."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📌",
+              "title": "Key Characteristics",
+              "text": "1. Accessible only within the method/constructor where declared.\n2. NOT accessible from other methods, even in the same class.\n3. NO default value — must be explicitly initialized before use or the compiler throws an error.\n4. Cannot have access modifiers (public, private, etc.) — they are always implicitly local.\n5. Stored on the call stack — automatically reclaimed when method exits."
+            },
+            {
+              "icon": "🔁",
+              "title": "Lifetime on the Stack",
+              "text": "Each method call creates a new stack frame. Local variables live in this stack frame. When the method returns, the stack frame is popped — all local variables vanish. If the same method is called again, brand-new local variables are created. This is why local variables have NO default values — the memory slot is freshly allocated each time."
+            },
+            {
+              "icon": "⚠️",
+              "title": "Must Initialize Before Use",
+              "text": "Unlike instance and static fields, local variables are NOT automatically initialized. Attempting to read a local variable before assigning it causes a compile error: 'variable X might not have been initialized'. This is Java's definite assignment check — the compiler traces all code paths and ensures the variable is assigned before any possible read."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "LocalScope.java",
+          "lines": [
+            "public class LocalScope {",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Declared and initialized — accessible in this method",
+            "        int score = 85;",
+            "        String grade = calculateGrade(score);",
+            "        System.out.println(\"Score: \" + score + \" | Grade: \" + grade);",
+            "        // Output: Score: 85 | Grade: B",
+            "",
+            "        // ✅ Local variable declared later in method — valid",
+            "        double multiplier = 1.5;",
+            "        System.out.println(\"Bonus score: \" + (score * multiplier));",
+            "",
+            "        // ❌ COMPILE ERROR: grade is in scope here, but 'result' is not",
+            "        // System.out.println(result); // result is inside calculateGrade, not here",
+            "    }",
+            "",
+            "    public static String calculateGrade(int marks) {",
+            "        // 'result' is a local variable — exists ONLY inside this method",
+            "        String result;",
+            "",
+            "        if (marks >= 90)      result = \"A\";",
+            "        else if (marks >= 75) result = \"B\";",
+            "        else if (marks >= 60) result = \"C\";",
+            "        else if (marks >= 40) result = \"D\";",
+            "        else                  result = \"F\";",
+            "",
+            "        // ✅ 'result' safely read — all code paths assign it",
+            "        return result;",
+            "",
+            "        // Once this method returns, 'result' and 'marks' are gone from memory",
+            "    }",
+            "",
+            "    public static void uninitializedDemo() {",
+            "        int x;                           // Declared but NOT initialized",
+            "        // System.out.println(x);        // ❌ COMPILE ERROR: variable x might",
+            "                                         //    not have been initialized",
+            "",
+            "        int y;",
+            "        if (true) { y = 10; }",
+            "        // System.out.println(y);        // ❌ COMPILE ERROR: compiler can't",
+            "                                         //    guarantee y is always assigned",
+            "",
+            "        int z;",
+            "        z = 20;",
+            "        System.out.println(z);           // ✅ Fine — z is assigned before read",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "block-scope",
+      "title": "Block Scope",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Block scope</strong> applies to variables declared inside any pair of curly braces <code>{}</code> — including <code>if</code>, <code>else</code>, <code>for</code>, <code>while</code>, <code>do-while</code>, <code>try</code>, <code>catch</code>, <code>switch</code>, and even standalone <code>{}</code> blocks. A block-scoped variable exists only within that specific block and is completely inaccessible outside it, even in the same method."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "BlockScope.java",
+          "lines": [
+            "public class BlockScope {",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        int age = 20;",
+            "",
+            "        // ─── if-block scope ──────────────────────────────────────────────",
+            "        if (age >= 18) {",
+            "            String eligibility = \"Eligible to vote\"; // Block-scoped",
+            "            System.out.println(eligibility);           // ✅ Accessible here",
+            "        }",
+            "        // System.out.println(eligibility); // ❌ COMPILE ERROR — out of scope",
+            "",
+            "        // ─── else-block scope ─────────────────────────────────────────────",
+            "        if (age >= 18) {",
+            "            String msg = \"Adult\";",
+            "        } else {",
+            "            String msg = \"Minor\";  // ✅ Same name 'msg' is fine — different blocks",
+            "        }",
+            "        // Both 'msg' variables are completely independent — non-overlapping scopes",
+            "",
+            "        // ─── try-catch block scope ────────────────────────────────────────",
+            "        try {",
+            "            int result = 10 / 0;",
+            "        } catch (ArithmeticException e) {",
+            "            // 'e' is scoped to this catch block only",
+            "            System.out.println(\"Caught: \" + e.getMessage());",
+            "        }",
+            "        // System.out.println(e); // ❌ COMPILE ERROR — 'e' out of scope",
+            "",
+            "        // ─── Standalone block scope ───────────────────────────────────────",
+            "        {",
+            "            int temp = 42;         // Scoped to this standalone block",
+            "            System.out.println(\"Temp inside block: \" + temp); // ✅",
+            "        }",
+            "        // System.out.println(temp); // ❌ COMPILE ERROR — temp out of scope",
+            "",
+            "        // ─── Java does NOT allow inner-block re-declaration of outer var ──",
+            "        int value = 5;",
+            "        {",
+            "            // int value = 10; // ❌ COMPILE ERROR: variable value is already",
+            "                               //    defined in method main(String[])",
+            "            value = 10;        // ✅ Re-assignment is fine — declaration is not",
+            "        }",
+            "        System.out.println(value); // Output: 10",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 Java vs C/C++: Inner Block Re-declaration",
+          "text": "In C/C++, declaring a variable in an inner block with the same name as an outer variable is allowed (inner shadows outer). Java explicitly FORBIDS this — you cannot re-declare a local variable in an inner block if the same name is already in scope in the enclosing method. This is a compile-time error in Java. Java only allows re-declaration in completely separate, non-nested blocks (like separate if and else, or two sequential for loops)."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "loop-scope",
+      "title": "Loop Variable Scope",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Variables declared in the <strong>initialization part of a for loop</strong> (e.g., <code>int i = 0</code>) are scoped to the entire for loop — including the condition, update expression, and loop body. They are completely inaccessible after the loop ends. This is one of the most commonly used and most useful forms of block scope in Java — it prevents loop counter variables from polluting the method's outer scope."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "LoopScope.java",
+          "lines": [
+            "import java.util.List;",
+            "",
+            "public class LoopScope {",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ─── for loop — 'i' scoped to loop only ──────────────────────────",
+            "        for (int i = 0; i < 5; i++) {",
+            "            System.out.print(i + \" \"); // ✅ 'i' accessible inside loop",
+            "        }",
+            "        System.out.println();",
+            "        // System.out.println(i); // ❌ COMPILE ERROR — 'i' out of scope",
+            "",
+            "        // ✅ Re-using 'i' in a second loop is perfectly fine — separate scopes",
+            "        for (int i = 10; i < 15; i++) {",
+            "            System.out.print(i + \" \");",
+            "        }",
+            "        System.out.println();",
+            "        // Output: 0 1 2 3 4",
+            "        //         10 11 12 13 14",
+            "",
+            "        // ─── while loop — variable declared outside has wider scope ───────",
+            "        int count = 0;          // Declared OUTSIDE — accessible after loop",
+            "        while (count < 3) {",
+            "            System.out.print(\"count=\" + count + \" \");",
+            "            count++;",
+            "        }",
+            "        System.out.println(\"Final count: \" + count); // ✅ count=3 accessible",
+            "",
+            "        // ─── Enhanced for loop — element variable scoped to loop ──────────",
+            "        List<String> cities = List.of(\"Delhi\", \"Mumbai\", \"Bangalore\");",
+            "        for (String city : cities) {",
+            "            System.out.println(\"City: \" + city); // ✅ 'city' in scope",
+            "        }",
+            "        // System.out.println(city); // ❌ COMPILE ERROR — 'city' out of scope",
+            "",
+            "        // ─── Variable declared inside loop body — re-created each iteration",
+            "        for (int j = 0; j < 3; j++) {",
+            "            int squared = j * j;  // New variable each iteration",
+            "            System.out.println(j + \"² = \" + squared);",
+            "        }",
+            "        // Output:",
+            "        // 0² = 0",
+            "        // 1² = 1",
+            "        // 2² = 4",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Prefer for-loop Variables Over while-loop Variables",
+          "text": "When your loop counter is only needed inside the loop, always use a for loop (where the variable is scoped to the loop) rather than declaring the counter outside a while loop (where it pollutes the method scope). for (int i = 0; i < n; i++) { } keeps 'i' contained. Using a while loop forces you to declare 'int i = 0' before the loop, where it remains accessible (and potentially confusing) after the loop ends. Narrow scope = less chance of bugs."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "instance-scope",
+      "title": "Instance Scope (Object Scope)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Instance variables</strong> (also called <em>fields</em> or <em>instance fields</em>) are declared inside a class but <strong>outside any method, constructor, or block</strong>, without the <code>static</code> keyword. Each object (instance) of the class gets its own independent copy of every instance variable. Their scope is the entire class body — any instance method, constructor, or instance initializer block can access them directly or via <code>this</code>."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📌",
+              "title": "Key Characteristics",
+              "text": "1. One copy per object — each new object gets its own set of instance variables.\n2. Automatically initialized to default values: int/short/byte/long → 0, float/double → 0.0, char → '\\u0000', boolean → false, any object reference → null.\n3. Accessible from any instance method or constructor in the class.\n4. Can have access modifiers (private, protected, public) controlling visibility outside the class.\n5. Stored in the heap memory — lives as long as the object lives."
+            },
+            {
+              "icon": "🔗",
+              "title": "Accessing with 'this'",
+              "text": "The 'this' keyword explicitly refers to the current object's instance variables. It is required when a local variable or parameter has the same name as an instance variable (shadowing). Convention in constructors and setters: this.name = name; — left side is the field, right side is the parameter. Without 'this', the parameter shadows the field and the assignment has no effect on the object."
+            },
+            {
+              "icon": "💾",
+              "title": "Heap Memory",
+              "text": "Instance variables are stored in the heap, inside the object's memory block. They are created when the object is created (new ClassName()) and garbage-collected when no references to the object remain. This is why instance variables DO have default values — the JVM zero-initializes the heap memory when it allocates a new object."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InstanceScope.java",
+          "lines": [
+            "public class BankAccount {",
+            "",
+            "    // ─── Instance variables — scope: entire class, lifetime: object's life ──",
+            "    private String accountNumber;   // Default: null",
+            "    private String holderName;       // Default: null",
+            "    private double balance;          // Default: 0.0",
+            "    private boolean isActive;        // Default: false",
+            "",
+            "    // ─── Constructor — instance variables set via 'this' ──────────────────",
+            "    public BankAccount(String accountNumber, String holderName, double initialDeposit) {",
+            "        this.accountNumber = accountNumber; // 'this.X' = instance var; 'X' = param",
+            "        this.holderName    = holderName;",
+            "        this.balance       = initialDeposit;",
+            "        this.isActive      = true;",
+            "    }",
+            "",
+            "    // ─── Instance methods — all access instance vars directly ─────────────",
+            "    public void deposit(double amount) {",
+            "        if (!isActive) {             // Accessing 'isActive' — instance var",
+            "            System.out.println(\"Account inactive. Cannot deposit.\");",
+            "            return;",
+            "        }",
+            "        double previousBalance = balance; // Local variable",
+            "        balance += amount;                // Modifying instance var 'balance'",
+            "        System.out.printf(\"Deposited ₹%.2f | Balance: ₹%.2f → ₹%.2f%n\",",
+            "                          amount, previousBalance, balance);",
+            "    }",
+            "",
+            "    public void withdraw(double amount) {",
+            "        if (balance < amount) {",
+            "            System.out.println(\"Insufficient balance.\");",
+            "            return;",
+            "        }",
+            "        balance -= amount;",
+            "        System.out.printf(\"Withdrawn ₹%.2f | Remaining balance: ₹%.2f%n\",",
+            "                          amount, balance);",
+            "    }",
+            "",
+            "    public void printStatement() {",
+            "        // All instance vars accessible here",
+            "        System.out.println(\"Account : \" + accountNumber);",
+            "        System.out.println(\"Holder  : \" + holderName);",
+            "        System.out.printf (\"Balance : ₹%.2f%n\", balance);",
+            "        System.out.println(\"Status  : \" + (isActive ? \"Active\" : \"Inactive\"));",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        // Each object has its own copy of all instance variables",
+            "        BankAccount acc1 = new BankAccount(\"ACC001\", \"Priya\", 10000);",
+            "        BankAccount acc2 = new BankAccount(\"ACC002\", \"Rahul\", 5000);",
+            "",
+            "        acc1.deposit(2000);",
+            "        acc2.withdraw(1000);",
+            "",
+            "        acc1.printStatement(); // Shows acc1's own balance = 12000",
+            "        acc2.printStatement(); // Shows acc2's own balance = 4000",
+            "        // Each object's instance variables are independent",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "class-scope",
+      "title": "Class Scope (Static Scope)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Static variables</strong> (class variables) are declared with the <code>static</code> keyword inside a class but outside any method. There is <strong>only one copy</strong> of a static variable, shared across <em>all</em> instances of the class. Their scope is the entire class — accessible from both instance methods and static methods. They are loaded into memory when the class is loaded by the JVM and remain until the class is unloaded."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ClassScope.java",
+          "lines": [
+            "public class Counter {",
+            "",
+            "    // ─── Static (class-scope) variable — ONE copy, shared by ALL instances ──",
+            "    private static int totalObjectsCreated = 0;  // Class-level counter",
+            "    private static final String APP_NAME = \"MyApp\"; // Constant — class scope",
+            "",
+            "    // ─── Instance variables — one per object ────────────────────────────────",
+            "    private int id;",
+            "    private String name;",
+            "",
+            "    public Counter(String name) {",
+            "        totalObjectsCreated++;         // Modifies SHARED static var",
+            "        this.id   = totalObjectsCreated;",
+            "        this.name = name;",
+            "        System.out.println(APP_NAME + \": Created '\" + name + \"' (id=\" + id + \")\");",
+            "    }",
+            "",
+            "    // Static method — can access ONLY static scope (no 'this', no instance vars)",
+            "    public static int getTotalCreated() {",
+            "        return totalObjectsCreated;",
+            "        // return id;    // ❌ COMPILE ERROR: cannot reference instance var from static context",
+            "        // return name;  // ❌ COMPILE ERROR: same reason",
+            "    }",
+            "",
+            "    // Instance method — can access BOTH instance and static scope",
+            "    public void describe() {",
+            "        System.out.println(\"[\" + APP_NAME + \"] id=\" + id",
+            "                         + \" | name=\" + name",
+            "                         + \" | total=\" + totalObjectsCreated);",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        System.out.println(\"Total before: \" + Counter.getTotalCreated()); // 0",
+            "",
+            "        Counter c1 = new Counter(\"Alpha\");",
+            "        Counter c2 = new Counter(\"Beta\");",
+            "        Counter c3 = new Counter(\"Gamma\");",
+            "",
+            "        // All three objects share the same 'totalObjectsCreated'",
+            "        c1.describe(); // id=1, total=3",
+            "        c2.describe(); // id=2, total=3",
+            "        c3.describe(); // id=3, total=3",
+            "",
+            "        System.out.println(\"Total created: \" + Counter.getTotalCreated()); // 3",
+            "",
+            "        // ✅ Accessing static var via class name (recommended)",
+            "        System.out.println(Counter.totalObjectsCreated); // if public",
+            "",
+            "        // ⚠️ Accessing static var via object reference (misleading — avoid)",
+            "        // System.out.println(c1.totalObjectsCreated); // Works but confusing",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Static Context Cannot Access Instance Members",
+          "text": "A static method or static block can only access static variables and call static methods. It cannot access instance variables or call instance methods — because static context has no 'this' (no object). Attempting to do so causes a compile error: 'non-static variable X cannot be referenced from a static context'. This is one of the most common errors for beginners. Conversely, instance methods CAN access both static and instance members freely."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "parameter-scope",
+      "title": "Method Parameter Scope",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Method parameters</strong> are a special sub-type of local scope. They are declared in the <strong>method signature</strong> and are accessible throughout the entire method body. Their scope starts from the method's opening brace and ends at the closing brace. Parameters receive their values from the caller's arguments and behave exactly like local variables inside the method — including the same rules about not re-declaring them."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ParameterScope.java",
+          "lines": [
+            "public class ParameterScope {",
+            "",
+            "    // 'base' and 'height' are parameters — scoped to this method body",
+            "    public static double triangleArea(double base, double height) {",
+            "        double area = 0.5 * base * height; // 'area' is a local var",
+            "        return area;",
+            "        // 'base', 'height', 'area' all cease to exist after return",
+            "    }",
+            "",
+            "    // Parameters cannot be re-declared inside the method",
+            "    public static void process(int value) {",
+            "        System.out.println(\"Received: \" + value); // ✅ parameter in scope",
+            "        // int value = 10; // ❌ COMPILE ERROR: variable value is already defined",
+            "",
+            "        value = value * 2; // ✅ Re-assignment is fine (doesn't affect caller)",
+            "        System.out.println(\"Doubled: \" + value);",
+            "    }",
+            "",
+            "    // Demonstrating Java's pass-by-value: parameter is a COPY",
+            "    public static void tryToModify(int number) {",
+            "        number = 999; // Only modifies the LOCAL COPY — caller unchanged",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        System.out.println(triangleArea(6.0, 4.0)); // Output: 12.0",
+            "",
+            "        process(5);",
+            "        // Output: Received: 5",
+            "        //         Doubled: 10",
+            "",
+            "        int x = 50;",
+            "        tryToModify(x);",
+            "        System.out.println(x); // Output: 50 — unchanged (pass-by-value)",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "variable-shadowing",
+      "title": "Variable Shadowing in Java",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Variable shadowing</strong> occurs when a <strong>local variable or method parameter</strong> in a method has the <strong>same name</strong> as an <strong>instance variable (field)</strong> of the class. Inside that method, the name refers to the local variable — it <em>shadows</em> the field. To access the instance variable when it is shadowed, you must use the <code>this</code> keyword: <code>this.fieldName</code>."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "VariableShadowing.java",
+          "lines": [
+            "public class Student {",
+            "",
+            "    // Instance variables (fields)",
+            "    private String name;",
+            "    private int    age;",
+            "    private double marks;",
+            "",
+            "    // ✅ Constructor — parameter names shadow field names intentionally",
+            "    // Convention: this.field = parameter to distinguish them",
+            "    public Student(String name, int age, double marks) {",
+            "        this.name  = name;    // 'this.name'  = field; 'name'  = parameter",
+            "        this.age   = age;     // 'this.age'   = field; 'age'   = parameter",
+            "        this.marks = marks;   // 'this.marks' = field; 'marks' = parameter",
+            "    }",
+            "",
+            "    // ❌ BUG: Missing 'this' — shadowing causes assignment to do nothing",
+            "    public void setBuggyName(String name) {",
+            "        name = name;  // ❌ Assigns parameter to itself — field NOT updated!",
+            "        // 'name' here refers to the parameter, NOT the field",
+            "        // This is a silent bug — no compile error, wrong runtime behaviour",
+            "    }",
+            "",
+            "    // ✅ CORRECT: 'this' disambiguates field from local variable",
+            "    public void setName(String name) {",
+            "        this.name = name;  // 'this.name' = field, 'name' = parameter",
+            "    }",
+            "",
+            "    // Local variable shadows field — 'this' needed to access field",
+            "    public void displayWithShadow() {",
+            "        String name = \"Shadow Name\"; // Local var shadows instance field 'name'",
+            "        System.out.println(\"Local name  : \" + name);       // Shadow Name",
+            "        System.out.println(\"Field name  : \" + this.name);  // original field",
+            "        System.out.println(\"Age (field) : \" + age);        // No shadow — direct",
+            "    }",
+            "",
+            "    // No shadowing — field accessed directly",
+            "    public void display() {",
+            "        System.out.println(\"Name : \" + name);   // field 'name' directly",
+            "        System.out.println(\"Age  : \" + age);",
+            "        System.out.println(\"Marks: \" + marks);",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        Student s = new Student(\"Ananya\", 19, 88.5);",
+            "        s.display();",
+            "        // Output: Name : Ananya | Age : 19 | Marks: 88.5",
+            "",
+            "        s.setBuggyName(\"New Name\"); // Bug: field not updated",
+            "        s.display();",
+            "        // Output: Name : Ananya  ← STILL old name — bug!",
+            "",
+            "        s.setName(\"New Name\");      // Correct: field updated",
+            "        s.display();",
+            "        // Output: Name : New Name ← correctly updated",
+            "",
+            "        s.displayWithShadow();",
+            "        // Local name  : Shadow Name",
+            "        // Field name  : New Name",
+            "        // Age (field) : 19",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ The Silent Shadowing Bug",
+          "text": "The most dangerous shadowing bug: 'name = name' in a setter or constructor where both sides refer to the local parameter — not the field. The compiler produces NO error or warning. The field is silently left at its default value (null for Strings). This is why always using 'this.field = parameter' in constructors and setters is the standard Java convention — not just style, but correctness. Enable 'assignment has no effect' warnings in your IDE to catch this automatically."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "scope-vs-lifetime",
+      "title": "Scope vs Lifetime — An Important Distinction",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Scope</strong> and <strong>lifetime</strong> are two related but distinct concepts that beginners often confuse. Scope is a <strong>compile-time, source-code concept</strong> — the region of code where a variable name is visible. Lifetime is a <strong>runtime, memory concept</strong> — how long the actual storage for the variable exists in the JVM's memory."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "Scope", "Lifetime"],
+          "rows": [
+            ["Definition",    "Region of code where variable name is visible",      "Duration for which variable's memory exists in JVM"],
+            ["Concept type",  "Compile-time — determined by the compiler",           "Runtime — determined by JVM execution"],
+            ["For locals",    "From declaration to end of enclosing {}",             "Stack frame active — created on method entry, freed on method exit"],
+            ["For instance",  "Entire class body (with proper access modifier)",     "From 'new' until garbage collector collects the object"],
+            ["For static",    "Entire class body + anywhere class is accessible",    "From class loading to class unloading (usually entire program duration"],
+            ["Relationship",  "Out of scope does not always mean lifetime ended",    "A variable can be alive (in memory) but out of scope (unreachable by name)"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ScopeVsLifetime.java",
+          "lines": [
+            "import java.util.ArrayList;",
+            "import java.util.List;",
+            "",
+            "public class ScopeVsLifetime {",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ─── Case 1: Local variable — scope and lifetime closely tied ──────",
+            "        {",
+            "            int x = 42;",
+            "            // 'x' is in scope here; its stack memory is alive",
+            "        }",
+            "        // 'x' is OUT OF SCOPE — compile error if accessed",
+            "        // 'x' stack memory is also freed — scope end ≈ lifetime end for locals",
+            "",
+            "        // ─── Case 2: Object reference vs object lifetime ───────────────────",
+            "        List<String> list = new ArrayList<>(); // 'list' ref in scope",
+            "        list.add(\"Item1\");",
+            "        list.add(\"Item2\");",
+            "",
+            "        // Now we assign 'list' to another variable before going out of scope",
+            "        List<String> savedRef = list; // 'savedRef' also points to same object",
+            "",
+            "        {",
+            "            // 'list' is still in scope inside this block",
+            "            list.add(\"Item3\");",
+            "        }",
+            "",
+            "        // 'list' name goes out of scope when method ends — but the ArrayList",
+            "        // object on the heap is STILL ALIVE because 'savedRef' holds a reference",
+            "        // Scope of 'list' ended at method return, but object lifetime continues",
+            "        System.out.println(savedRef); // Output: [Item1, Item2, Item3]",
+            "",
+            "        // ─── Case 3: Object is alive but unreachable (eligible for GC) ─────",
+            "        String temp = \"Hello\";",
+            "        temp = null;  // 'temp' still in scope, but String object unreachable",
+            "        // The String 'Hello' is now eligible for garbage collection",
+            "        // Its lifetime is essentially over, even though 'temp' name is in scope",
+            "",
+            "        // ─── Case 4: Static variable — outlives all instances ─────────────",
+            "        // Static vars live for the entire duration of the program (class load)",
+            "        // Their scope is the class; their lifetime is the program's lifetime",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "scope-and-access",
+      "title": "Scope vs Access Modifiers — Not the Same Thing",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Beginners often confuse <strong>scope</strong> with <strong>access modifiers</strong> (<code>public</code>, <code>private</code>, <code>protected</code>). They are related but different mechanisms. Scope is determined by <em>where a variable is declared</em> (inside a method vs inside a class). Access modifiers control <em>which other classes can see</em> a class member — they only apply to class members (fields and methods), not to local variables."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🔒",
+              "title": "private — Class Scope, Restricted Access",
+              "text": "A private field has instance or class scope (accessible throughout the class). But its access is restricted — only code within the same class can use it. Other classes cannot access it even via an object reference. Most instance variables should be private — this is the foundation of encapsulation."
+            },
+            {
+              "icon": "🔓",
+              "title": "public — Class Scope, Open Access",
+              "text": "A public field has instance or class scope (accessible throughout the class). Its access is open — any class anywhere can access it via an object reference (instance) or class name (static). Public fields violate encapsulation and are generally a bad practice for mutable state — prefer private with public getters/setters."
+            },
+            {
+              "icon": "📦",
+              "title": "Local Variables — No Access Modifiers",
+              "text": "Local variables (inside methods, blocks, for loops) CANNOT have any access modifier (public, private, protected, static). Attempting to add one causes a compile error. Local variables are inherently 'private to the block' — there's no need for access control because they're already inaccessible by definition outside their block."
+            },
+            {
+              "icon": "🛡️",
+              "title": "protected — Package + Subclass Scope",
+              "text": "A protected field has instance or class scope within its class. Its access extends to: all code in the same package, AND subclasses in any package. Used in inheritance hierarchies where subclasses need direct access to parent fields — though passing data via constructor or protected getters is often cleaner."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ScopeVsAccess.java",
+          "lines": [
+            "public class Person {",
+            "",
+            "    private   String name;    // Instance scope + private access",
+            "    protected int    age;     // Instance scope + protected access",
+            "    public    String country; // Instance scope + public access  (avoid for mutable)",
+            "    static    int    count;   // Class scope   + package (default) access",
+            "",
+            "    public Person(String name, int age, String country) {",
+            "        this.name    = name;",
+            "        this.age     = age;",
+            "        this.country = country;",
+            "        count++;",
+            "    }",
+            "",
+            "    public String getName() { return name; } // Getter — controlled access to private",
+            "    public void setName(String name) { this.name = name; }",
+            "}",
+            "",
+            "class AccessDemo {",
+            "    public static void main(String[] args) {",
+            "        Person p = new Person(\"Sita\", 25, \"India\");",
+            "",
+            "        // ❌ Cannot access private field from outside class",
+            "        // System.out.println(p.name); // COMPILE ERROR",
+            "",
+            "        // ✅ Access via public getter",
+            "        System.out.println(p.getName()); // Sita",
+            "",
+            "        // ✅ Public field — directly accessible (but bad practice for mutable state)",
+            "        System.out.println(p.country);   // India",
+            "",
+            "        // ✅ Package-default static field — accessible within same package",
+            "        System.out.println(Person.count); // 1",
+            "",
+            "        // Local variable — no access modifier allowed",
+            "        // private int localVar = 5; // ❌ COMPILE ERROR: illegal modifier",
+            "        int localVar = 5;  // ✅ No modifier — implicitly block-scoped",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Scope Bugs That Fool Everyone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These scope-related mistakes are extremely common in beginner Java code and often produce subtle bugs — sometimes no compile error at all, just wrong runtime behaviour."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ScopeMistakes.java",
+          "lines": [
+            "public class ScopeMistakes {",
+            "",
+            "    int result; // Instance variable",
+            "",
+            "    // ❌ MISTAKE 1: Variable declared inside if — inaccessible outside",
+            "    public void mistake1() {",
+            "        int score = 75;",
+            "        if (score >= 60) {",
+            "            String status = \"Pass\"; // Scoped to if-block",
+            "        }",
+            "        // System.out.println(status); // ❌ COMPILE ERROR: cannot find symbol",
+            "",
+            "        // ✅ Fix: declare outside the if-block",
+            "        String statusFixed;",
+            "        if (score >= 60) {",
+            "            statusFixed = \"Pass\";",
+            "        } else {",
+            "            statusFixed = \"Fail\";",
+            "        }",
+            "        System.out.println(statusFixed); // ✅ Works",
+            "    }",
+            "",
+            "    // ❌ MISTAKE 2: Shadowing without 'this' — silent bug in setter",
+            "    public void setResult(int result) {",
+            "        result = result; // ❌ Assigns param to itself — field 'result' unchanged!",
+            "    }",
+            "    // ✅ Fix:",
+            "    public void setResultFixed(int result) {",
+            "        this.result = result; // ✅ 'this.result' = field, 'result' = param",
+            "    }",
+            "",
+            "    // ❌ MISTAKE 3: Reading uninitialized local variable",
+            "    public void mistake3(boolean flag) {",
+            "        int value;",
+            "        if (flag) { value = 10; }",
+            "        // System.out.println(value); // ❌ COMPILE ERROR: variable value might",
+            "                                      //    not have been initialized",
+            "        // ✅ Fix: provide else branch or initialize to default",
+            "        int valueFixed = 0;",
+            "        if (flag) { valueFixed = 10; }",
+            "        System.out.println(valueFixed); // ✅ Always initialized",
+            "    }",
+            "",
+            "    // ❌ MISTAKE 4: Accessing loop variable outside loop",
+            "    public void mistake4() {",
+            "        for (int i = 0; i < 5; i++) { /* work */ }",
+            "        // System.out.println(i); // ❌ COMPILE ERROR: cannot find symbol 'i'",
+            "",
+            "        // ✅ Fix: declare outside loop if needed after loop",
+            "        int i;",
+            "        for (i = 0; i < 5; i++) { /* work */ }",
+            "        System.out.println(\"Final i: \" + i); // ✅ i = 5",
+            "    }",
+            "",
+            "    // ❌ MISTAKE 5: Accessing instance variable from static context",
+            "    public static void mistake5() {",
+            "        // System.out.println(result); // ❌ COMPILE ERROR:",
+            "                                       //  non-static variable result cannot",
+            "                                       //  be referenced from a static context",
+            "        // ✅ Fix: create an object, or make the field static if shared",
+            "        ScopeMistakes obj = new ScopeMistakes();",
+            "        System.out.println(obj.result); // ✅ Access via object reference",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These scope-related anti-patterns appear in code reviews and lead to maintenance problems, subtle bugs, or code that is hard to understand. Each one represents a misuse of Java's scoping mechanism."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Declaring Variables Too Early (Wide Scope)",
+              "text": "Declaring all variables at the top of a method (C-style) gives them unnecessary wide scope. This makes code harder to read, increases cognitive load, and hides the actual point of first use. Rule: declare variables as close as possible to where they are first used, in the narrowest possible scope. Modern Java style: int count = 0; // right before the loop, not at method top."
+            },
+            {
+              "icon": "🚫",
+              "title": "Using Instance Variables as Temporary Method Storage",
+              "text": "Using instance fields to pass data between private methods (instead of using local variables or method parameters) is a sign of poor design. It makes methods stateful when they shouldn't be, complicates testing, causes thread-safety issues, and pollutes the object's state. If data is only needed within a method call, it must be a local variable or parameter — not a field."
+            },
+            {
+              "icon": "🚫",
+              "title": "Public Static Mutable Fields",
+              "text": "public static fields (non-final) are global mutable state — any class anywhere can modify them. This is the Java equivalent of global variables and causes unpredictable behaviour, especially in multi-threaded applications. If shared constant data is needed, use public static final (constants). For shared mutable state, use proper encapsulation with synchronized methods or concurrent data structures."
+            },
+            {
+              "icon": "🚫",
+              "title": "Intentional Shadowing Without 'this'",
+              "text": "Naming local variables the same as fields without using 'this' to distinguish them (outside constructors/setters) creates confusion about which variable is being accessed. Reader must mentally track which 'name' refers to what. Unless in a constructor or setter (where it is the established convention), avoid naming local variables the same as fields. Use a prefix or suffix if needed: tempName, newValue."
+            },
+            {
+              "icon": "🚫",
+              "title": "Re-using Loop Variables Outside the Loop",
+              "text": "Declaring 'int i = 0' before a loop specifically to use 'i' after the loop end value is acceptable, but re-using the same 'int i' for a completely unrelated loop or purpose in the same method is confusing. Give variables meaningful names that reflect their purpose — 'indexForUsers', 'counterForRetries' — rather than single-letter variables shared across different loops in the same method."
+            },
+            {
+              "icon": "🚫",
+              "title": "Ignoring Default Values of Instance Variables",
+              "text": "Relying on implicit default values (int → 0, boolean → false, Object → null) without explicit initialization can make code confusing — readers cannot tell if the default was intentional or an oversight. For primitive types used as flags or counters, explicit initialization is clearer: 'private int retryCount = 0;' vs 'private int retryCount;'. Always initialize fields whose default value is meaningful to the class's behaviour."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Scope in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples demonstrate correct and intentional scope usage in real enterprise Java codebases — showing how proper scoping at each level contributes to clean, maintainable code."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "OrderProcessor.java — Scope Best Practices in Production",
+          "lines": [
+            "package com.techsustainify.order.service;",
+            "",
+            "import java.util.List;",
+            "import java.util.ArrayList;",
+            "",
+            "public class OrderProcessor {",
+            "",
+            "    // ─── Class/Static scope — shared constants ────────────────────────────",
+            "    private static final double  GST_RATE          = 0.18;",
+            "    private static final double  FREE_SHIPPING_MIN = 500.0;",
+            "    private static final double  SHIPPING_CHARGE   = 49.0;",
+            "    private static       int     totalOrdersProcessed = 0;",
+            "",
+            "    // ─── Instance scope — per-processor state ─────────────────────────────",
+            "    private final String processorId;",
+            "    private final String warehouseLocation;",
+            "    private       int    ordersProcessedByThis;",
+            "",
+            "    public OrderProcessor(String processorId, String warehouseLocation) {",
+            "        this.processorId        = processorId;       // 'this' required — shadowing",
+            "        this.warehouseLocation  = warehouseLocation;",
+            "        this.ordersProcessedByThis = 0;",
+            "    }",
+            "",
+            "    public OrderSummary processOrder(List<OrderItem> items, String customerName) {",
+            "",
+            "        // ─── Local scope — computation variables, narrowest possible scope ─",
+            "        double subtotal = 0.0;",
+            "        List<String> appliedDiscounts = new ArrayList<>();",
+            "",
+            "        // Loop variable 'item' scoped to enhanced for loop",
+            "        for (OrderItem item : items) {",
+            "            double itemTotal = item.getPrice() * item.getQuantity(); // block-scoped",
+            "            subtotal += itemTotal;",
+            "        }",
+            "        // 'itemTotal' not accessible here — correctly out of scope",
+            "",
+            "        // ─── Block scope — discount calculation ───────────────────────────",
+            "        double discountAmount = 0.0;",
+            "        if (subtotal > 2000) {",
+            "            double bulkDiscount = subtotal * 0.10; // Scoped to this if-block",
+            "            discountAmount += bulkDiscount;",
+            "            appliedDiscounts.add(\"Bulk discount 10%: -₹\" + bulkDiscount);",
+            "        }",
+            "",
+            "        double discountedSubtotal = subtotal - discountAmount;",
+            "        double gst      = discountedSubtotal * GST_RATE;     // Static var used",
+            "        double shipping = discountedSubtotal >= FREE_SHIPPING_MIN",
+            "                          ? 0.0 : SHIPPING_CHARGE;           // Static vars used",
+            "        double grandTotal = discountedSubtotal + gst + shipping;",
+            "",
+            "        // ─── Update both instance and class scope ─────────────────────────",
+            "        ordersProcessedByThis++;    // Instance scope — this processor's count",
+            "        totalOrdersProcessed++;      // Class scope — global count",
+            "",
+            "        return new OrderSummary(customerName, subtotal, discountAmount,",
+            "                               gst, shipping, grandTotal, appliedDiscounts,",
+            "                               warehouseLocation, processorId);",
+            "    }",
+            "",
+            "    // Static method — only accesses static scope",
+            "    public static int getTotalOrdersProcessed() {",
+            "        return totalOrdersProcessed;",
+            "    }",
+            "",
+            "    // Instance method — accesses both instance and static scope",
+            "    public String getProcessorStats() {",
+            "        return processorId + \" processed \" + ordersProcessedByThis",
+            "               + \" orders (global total: \" + totalOrdersProcessed + \")\";",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "scope-flowchart",
+      "title": "Scope Flowchart — How Java Resolves Variable Names",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When you use a variable name in Java code, the compiler follows a specific lookup order to find its declaration. Understanding this order helps explain why shadowing works and why access errors occur."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "▶ Variable name used in code",          "sublabel": "e.g. 'count'",                                "type": "start"    },
+            { "id": "2", "label": "🔍 Is it declared in current block?",   "sublabel": "innermost {} block",                          "type": "decision" },
+            { "id": "3", "label": "✅ Use that variable",                  "sublabel": "block-scoped or local",                       "type": "process"  },
+            { "id": "4", "label": "🔍 Is it a method parameter?",          "sublabel": "check method signature",                      "type": "decision" },
+            { "id": "5", "label": "✅ Use that parameter",                 "sublabel": "parameter scope",                             "type": "process"  },
+            { "id": "6", "label": "🔍 Is it in an enclosing block?",       "sublabel": "walk up nested {} blocks",                    "type": "decision" },
+            { "id": "7", "label": "✅ Use enclosing block's variable",     "sublabel": "outer local scope",                           "type": "process"  },
+            { "id": "8", "label": "🔍 Is it an instance or static field?", "sublabel": "check class-level declarations",              "type": "decision" },
+            { "id": "9", "label": "✅ Use field (instance via this / static via class)", "sublabel": "class scope", "type": "process"  },
+            { "id": "10","label": "❌ Compile Error: cannot find symbol",   "sublabel": "variable not in scope",                       "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1",  "to": "2",  "label": "Look up name"            },
+            { "from": "2",  "to": "3",  "label": "YES — found"             },
+            { "from": "2",  "to": "4",  "label": "NO"                      },
+            { "from": "4",  "to": "5",  "label": "YES — found"             },
+            { "from": "4",  "to": "6",  "label": "NO"                      },
+            { "from": "6",  "to": "7",  "label": "YES — found"             },
+            { "from": "6",  "to": "8",  "label": "NO"                      },
+            { "from": "8",  "to": "9",  "label": "YES — found"             },
+            { "from": "8",  "to": "10", "label": "NO — not found anywhere" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Scope Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are consistently asked in Java fresher interviews, OCPJP/OCA certification exams, and campus placement tests covering Java fundamentals."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is variable scope in Java? How many types of scope are there?",
+              "a": "Scope in Java defines the region of source code where a variable name is declared, visible, and accessible. Outside its scope, the variable does not exist for the compiler. Java has four main scope types: (1) Local scope — variables declared inside a method or constructor, accessible only within that method. (2) Block scope — variables inside any {} block (if, for, while, try), accessible only within that block. (3) Instance scope — non-static class fields, one copy per object, accessible in any instance method. (4) Class/Static scope — static fields, one shared copy across all instances, accessible in both static and instance contexts.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between local variables and instance variables in terms of scope and initialization?",
+              "a": "Local variables: declared inside a method/block, accessible only within that method/block, stored on the stack, NO default value — must be explicitly initialized before use (compiler error if not). Instance variables: declared inside a class but outside any method, accessible from all instance methods in the class, stored in the heap (inside the object), DO have default values — int→0, double→0.0, boolean→false, Object→null. Local variables have no access modifiers; instance variables can be public, private, protected, or package-default.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is variable shadowing in Java? Give an example.",
+              "a": "Shadowing occurs when a local variable or parameter has the same name as an instance field. Inside that method, the name refers to the local variable — it 'shadows' the field. To access the field, use 'this.fieldName'. Most common case: constructors and setters — 'public void setName(String name) { this.name = name; }'. The most dangerous bug: forgetting 'this' — 'name = name' assigns the parameter to itself with no effect on the field. Always use 'this.field = param' in constructors/setters. Use IDE warnings to catch missing 'this' assignments.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. Can two local variables have the same name in the same method in Java?",
+              "a": "No — not in overlapping (nested) scopes. Java does not allow re-declaring a local variable in an inner block if the same name is already declared in the enclosing scope. This is a compile-time error: 'variable X is already defined in method Y'. This differs from C/C++ where inner-block re-declaration is allowed. However, two local variables CAN share the same name if they are in completely separate, non-nested scopes — e.g., two separate sequential for-loop variables both named 'i', or variables named 'msg' in separate if and else blocks.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. What is the difference between scope and lifetime in Java?",
+              "a": "Scope is a compile-time concept — the region of source code where a variable name is visible. Lifetime is a runtime concept — how long the variable's memory actually exists in the JVM. For local variables, scope and lifetime are closely tied — stack frame created on method entry, freed on exit. For objects: the variable (reference) might go out of scope, but the object on the heap can still be alive if other references point to it. Example: String s = 'Hello'; savedRef = s; s = null; — 's' still in scope but 'Hello' object is only alive because savedRef holds it. Understanding this difference is key for understanding garbage collection.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. Why can't a static method access instance variables directly?",
+              "a": "Static methods belong to the class — they have no 'this' reference. An instance variable exists once per object — to access it, you need a specific object (a 'this'). Since static methods can be called without creating any object (ClassName.method()), there is no object and no 'this', so there is no instance variable to access. The compiler enforces this: 'non-static variable X cannot be referenced from a static context'. Fix: either create an object and access via reference, or make the variable static if it truly should be class-level.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q7. What is the scope of a loop variable declared in a for-loop?",
+              "a": "A variable declared in the initialization part of a for-loop (e.g., 'for (int i = 0; i < n; i++)') is scoped to the entire for-loop — including the condition, update expression, and loop body. It is completely inaccessible after the loop ends. This is intentional and a best practice — loop counters should not leak into the surrounding method scope. If you need the loop variable's final value after the loop, declare it outside: 'int i; for (i = 0; ...) {}' — then 'i' is accessible after. The same variable name 'i' can be reused in a second, separate for-loop in the same method.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. What is the default value of an instance variable in Java? What about a local variable?",
+              "a": "Instance variables (fields) ARE automatically initialized by the JVM: int/byte/short/long → 0, float/double → 0.0, char → '\\u0000' (null character), boolean → false, any object reference (String, array, etc.) → null. Local variables are NOT automatically initialized — using an uninitialized local variable causes a compile-time error: 'variable X might not have been initialized'. This is Java's definite assignment check — the compiler statically analyzes all code paths to ensure the variable is assigned before any possible read.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q9. What are the scope rules for catch block parameters?",
+              "a": "The exception variable in a catch block (e.g., 'catch (Exception e)') is scoped to that specific catch block only — it is accessible inside the catch block and nowhere else. It behaves like a block-scoped local variable. If you have multiple catch blocks, each has its own exception variable, independently scoped. You cannot access the catch variable outside the catch block or in subsequent catch or finally blocks (unless you assign it to an outer variable inside the catch). This is why 'e' in catch (Exception e) is not accessible in the finally block.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q10. How does scope relate to the concept of encapsulation in Java OOP?",
+              "a": "Scope and encapsulation work together but are different. Scope determines WHERE a variable can be accessed by name. Encapsulation determines WHO can access a class member from outside the class. By making instance variables private (encapsulation) and providing controlled access via public methods (getters/setters), we limit exposure of internal state. Scope alone (instance scope) means all methods in the class can see the variable — but that's still controlled compared to global access. Combining narrow scope (local vars for temporary data) with private access (for fields that shouldn't be touched from outside) is the foundation of well-designed Java classes.",
+              "tag": "Advanced"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Scope Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Attempt each question independently before reading the answer — active recall produces significantly better long-term retention than passive reading."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output of the following code?\nint x = 5;\n{\n    int y = 10;\n    x = x + y;\n    System.out.println(\"Inside: x=\" + x + \", y=\" + y);\n}\nSystem.out.println(\"Outside: x=\" + x);\n// System.out.println(y); — is this valid?",
+              "a": "Output: 'Inside: x=15, y=10' then 'Outside: x=15'. Explanation: 'x' is declared in the method scope — accessible both inside and outside the block. 'y' is declared inside the block — accessible only within that block. After the block closes, x retains its modified value (15) because it is in the outer scope. The commented line 'System.out.println(y)' would cause a COMPILE ERROR — 'y' is out of scope after the block closes.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Will this compile? What is the output?\npublic class Test {\n    int value = 100;\n    public void show() {\n        int value = 50;\n        System.out.println(value);\n        System.out.println(this.value);\n    }\n    public static void main(String[] args) {\n        new Test().show();\n    }\n}",
+              "a": "Yes, this compiles successfully. Output: 50 (line 1), 100 (line 2). The local variable 'value = 50' shadows the instance field 'value = 100'. Inside show(), the unqualified 'value' refers to the local variable (50). 'this.value' explicitly refers to the instance field (100). This is a classic shadowing example — legal in Java in constructors and setters as a convention, but should be used carefully elsewhere to avoid confusion.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Find the bug:\npublic class Box {\n    int width;\n    int height;\n    public Box(int width, int height) {\n        width = width;\n        height = height;\n    }\n    public int area() { return width * height; }\n}\n// new Box(5, 3).area() returns?",
+              "a": "Bug: 'width = width' and 'height = height' assign each parameter to itself — the instance fields 'width' and 'height' are never updated. They remain at default value 0. So new Box(5, 3).area() returns 0 * 0 = 0, not 15. Fix: use 'this.width = width; this.height = height;'. The 'this.' prefix is required here to distinguish field (this.width) from parameter (width). Without this, the right-hand 'width' refers to the parameter and the left-hand 'width' also refers to the parameter — a self-assignment with no effect on the field.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. What is the output?\npublic class ScopeTest {\n    static int count = 0;\n    int id;\n    public ScopeTest() {\n        count++;\n        id = count;\n    }\n    public static void main(String[] args) {\n        ScopeTest a = new ScopeTest();\n        ScopeTest b = new ScopeTest();\n        ScopeTest c = new ScopeTest();\n        System.out.println(a.id + \" \" + b.id + \" \" + c.id);\n        System.out.println(ScopeTest.count);\n    }\n}",
+              "a": "Output: '1 2 3' (line 1), '3' (line 2). 'count' is a static variable — one shared copy across all instances. Each constructor call increments the shared 'count' and assigns the current value to the new object's instance 'id'. So a.id=1, b.id=2, c.id=3 (each gets a unique id). ScopeTest.count = 3 because three objects were created. This demonstrates the difference between static scope (shared) and instance scope (per-object).",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Will this compile? Explain.\npublic void demo() {\n    int x = 10;\n    if (x > 5) {\n        int result = x * 2;\n        System.out.println(result);\n    }\n    if (x > 3) {\n        int result = x * 3;\n        System.out.println(result);\n    }\n}",
+              "a": "Yes, this compiles successfully. The two 'result' variables appear to have the same name, but they are in completely separate, non-nested if-blocks. Each block has its own independent scope — the first 'result' goes out of scope when the first if-block closes, and the second 'result' is a brand-new variable in the second if-block. Java only forbids re-declaration in NESTED (overlapping) scopes — not in sequential, separate scopes. Output: 20 (first block) then 30 (second block), since x=10 satisfies both conditions.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. What is the output, and why?\npublic class LoopTest {\n    public static void main(String[] args) {\n        for (int i = 0; i < 3; i++) {\n            int square = i * i;\n        }\n        int i = 100;\n        System.out.println(i);\n    }\n}",
+              "a": "Output: 100. The for-loop's 'int i = 0' is scoped to the loop — it does not exist after the loop ends. Declaring 'int i = 100' AFTER the loop is perfectly valid — it is a new, independent local variable in the method scope. There is no conflict because the loop's 'i' is completely out of scope by that point. 'square' is also scoped inside the loop body — new each iteration, gone each iteration. This is one of the benefits of for-loop variable scoping: counter names can be freely reused after the loop.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. Identify all scope-related issues in this code:\npublic class Issues {\n    public int total;\n    public static void calculate(int a, int b) {\n        int sum = a + b;\n        total = sum;\n        System.out.println(total);\n    }\n}",
+              "a": "Issue 1: 'total = sum' — COMPILE ERROR. 'total' is a non-static (instance) field, but calculate() is a static method. Static methods cannot access instance variables directly — there is no 'this' in a static context. Fix: either make 'total' static ('static int total'), or create an Issues object to access it ('new Issues().total = sum'), or make calculate() an instance method. Issue 2: 'public int total' — exposing a mutable instance field as public violates encapsulation. Should be 'private int total' with a getter method. Issue 3: Side-effect design — a method called 'calculate' that modifies state (total) is confusing; it should either return the sum or be named to reflect the side effect.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. What does the following output, and what scope concept does it demonstrate?\npublic class Chain {\n    int x = 1;\n    void method1() {\n        int x = 2;\n        method2();\n        System.out.println(x);\n    }\n    void method2() {\n        x = 99;\n        System.out.println(x);\n    }\n    public static void main(String[] args) { new Chain().method1(); }\n}",
+              "a": "Output: 99 (from method2), then 2 (from method1). Demonstration of scope independence between methods. In method1: local 'int x = 2' shadows the instance field 'x = 1'. Then method2() is called. In method2: there is no local 'x' declared, so 'x = 99' refers to the instance field (this.x). The instance field is changed to 99, and method2 prints 99. Back in method1: the local 'x' is still 2 (method2 modified the field, not method1's local variable). Prints 2. The instance field x is now 99, but method1's local x remains 2 — they are completely independent variables that happen to share a name.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Scope: The Invisible Architecture of Every Java Program",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Scope is one of those foundational concepts that silently governs every line of Java you write. Every variable access, every method call, every object creation — all depend on scope rules working correctly. Mastering scope means understanding <strong>where data lives, how long it lasts, and who can reach it</strong> — not just theoretically, but instinctively."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The hallmarks of scope mastery in professional Java code: variables declared in the narrowest possible scope, local variables used for temporary computation, instance fields used only for object state, static fields used only for truly shared class-level data, <code>this</code> used consistently in constructors and setters, and no variables given wider scope than they need. These habits prevent an entire class of bugs before they can ever appear."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Scope Type", "Declared In", "Accessible From", "Default Value?", "Typical Use"],
+          "rows": [
+            ["Local",          "Method/constructor body",              "Only that method",               "No — must init",   "Temporary computation, loop counters, method results"],
+            ["Block",          "Any {} block (if/for/while/try)",      "Only that block",                "No — must init",   "Variables needed in one branch, loop body, catch handler"],
+            ["Parameter",      "Method signature",                     "Entire method body",             "From caller",       "Passing data into a method"],
+            ["Instance",       "Class body, non-static",               "All instance methods via this",  "Yes — JVM default", "Object state — data that varies per instance"],
+            ["Static/Class",   "Class body, static keyword",           "All methods, via class name",    "Yes — JVM default", "Shared constants, counters, configuration, singletons"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Operators</strong> — where you'll learn how to build the expressions and conditions that make use of these variables, and how operator precedence determines the order of evaluation in complex expressions. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Scope",
+    "items": [
+      {
+        "q": "What is scope in Java?",
+        "a": "Scope in Java defines the region of a program where a variable is declared, visible, and accessible. Outside its scope, the variable does not exist for the compiler — accessing it produces a compile-time error. Java has four main scope types: local scope (inside a method), block scope (inside any {} block), instance scope (non-static class fields), and class/static scope (static fields). Scope is a compile-time concept that determines variable visibility and name lookup rules."
+      },
+      {
+        "q": "What is the difference between local scope and instance scope in Java?",
+        "a": "Local scope: variables declared inside a method or constructor. Accessible only within that method. Stored on the stack. No default value — must be explicitly initialized before use. Instance scope: non-static fields declared inside a class. Accessible from any instance method in the class. Stored on the heap inside the object. Automatically initialized to default values (0, false, null). Local variables exist only during method execution; instance variables exist as long as the object exists."
+      },
+      {
+        "q": "What is variable shadowing in Java?",
+        "a": "Shadowing occurs when a local variable or parameter has the same name as an instance field. Inside that method, the unqualified name refers to the local variable — it 'shadows' the field. To access the field, prefix it with 'this.fieldName'. The classic case is in constructors and setters: 'this.name = name' where 'this.name' is the field and 'name' is the parameter. The bug version — 'name = name' without 'this' — silently assigns the parameter to itself, leaving the field unchanged."
+      },
+      {
+        "q": "What is the difference between scope and lifetime in Java?",
+        "a": "Scope is a compile-time concept — the region of source code where a variable name is visible and can be referenced. Lifetime is a runtime concept — how long the variable's memory actually exists in the JVM. For local variables, scope and lifetime are closely tied (both tied to the stack frame). For objects: an object reference may go out of scope, but the object on the heap stays alive as long as any reference points to it. Understanding this difference is essential for understanding garbage collection in Java."
+      },
+      {
+        "q": "Can two local variables have the same name in Java?",
+        "a": "No — not in overlapping (nested) scopes within the same method. Re-declaring a local variable in an inner block when the same name is already in scope in the enclosing scope is a compile-time error. However, two local variables CAN have the same name if they are in completely separate, non-nested scopes — such as two separate sequential for loops (both using 'i' as the loop variable) or variables in separate if and else blocks. Java is stricter than C/C++ in this regard — no inner-block re-declaration allowed."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Method Overriding",   "path": "/java/java-method-overriding" },
+    "next": { "label": "Java Recursion →",   "path": "/java/java-recursion" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Scope Types",          "dd": "Local, Block, Instance, Class/Static" },
+      { "dt": "Local default value?", "dd": "❌ No — must initialize before use" },
+      { "dt": "Instance default?",    "dd": "✅ Yes — 0, false, null auto-assigned" },
+      { "dt": "Static default?",      "dd": "✅ Yes — same defaults as instance" },
+      { "dt": "Shadowing fix",        "dd": "Use this.fieldName to access field" },
+      { "dt": "Loop var scope",       "dd": "Scoped to entire for-loop, gone after" },
+      { "dt": "Static + instance",    "dd": "Static methods cannot access instance vars" }
+    ],
+    "relatedArticles": [
+      { "label": "Java Variables",          "path": "/java/java-variables" },
+      { "label": "Java Operators",          "path": "/java/java-operators" },
+      { "label": "Java Data Types",         "path": "/java/java-datatype" },
+      { "label": "Java if-else",            "path": "/java/java-if-else" },
+      { "label": "Java for Loop",           "path": "/java/java-for-loop" },
+      { "label": "Java OOP Concepts",       "path": "/java/java-oops" },
+      { "label": "Java this Keyword",       "path": "/java/java-this-keyword" },
+      { "label": "Java static Keyword",     "path": "/java/java-static-keyword" }
+    ],
+    "tags": ["Java Scope", "Variable Scope", "Local Scope", "Instance Scope", "Class Scope", "Static Scope", "Block Scope", "Variable Shadowing", "Scope vs Lifetime", "this Keyword", "Java Variables", "Java Basics", "Loop Scope", "Method Scope", "Java Best Practices"]
+  }
+}

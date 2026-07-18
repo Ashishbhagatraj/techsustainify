@@ -1,0 +1,2320 @@
+{
+  "meta": {
+    "title": "Java Interface — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Interfaces — interface declaration, implementing interfaces, default methods, static methods, private methods, functional interfaces, marker interfaces, interface vs abstract class, multiple interface implementation, sealed interfaces, and interview questions. Updated March 2026.",
+    "keywords": "java interface, java interface example, java interface syntax, java implements keyword, java default method, java static method interface, java private method interface, java functional interface, java marker interface, java interface vs abstract class, java multiple interface, java interface best practices, java interface interview questions, java sealed interface, java interface inheritance, java SAM interface, java interface constants, java interface java8",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-interface",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Interface — implements, default, functional & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java Interfaces — declaration, implements, default methods, static methods, private methods, functional interfaces, marker interfaces, interface vs abstract class, sealed interfaces, real-world examples & interview questions.",
+      "url": "https://www.techsustainify.com/java/java-interface",
+      "image": "https://www.techsustainify.com/images/java-interface-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Interface Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-03-05T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Interface",
+          "Java implements",
+          "Default Methods",
+          "Functional Interface",
+          "Marker Interface",
+          "Java OOP",
+          "SAM Interface",
+          "Sealed Interface",
+          "Interface vs Abstract Class",
+          "Java Best Practices"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Interface — implements, default, functional & Best Practices 2026",
+      "description": "Complete guide to Java Interfaces — declaration, implements, default/static/private methods, functional interfaces, marker interfaces, sealed interfaces, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-interface-og.png",
+      "imageAlt": "Java Interface Guide 2026 - Tech Sustainify",
+      "readingTime": "28 minutes",
+      "level": "Beginner to Intermediate",
+      "label1": "Reading Time",
+      "data1": "28 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner to Intermediate"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Interface — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering all Java Interface concepts — interface declaration, implementing interfaces, default methods, static methods, private methods (Java 9+), functional interfaces, marker interfaces, interface vs abstract class, multiple implementation, sealed interfaces (Java 17+), real-world examples, anti-patterns, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-03-05",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner",
+        "wordCount": 7400,
+        "timeRequired": "PT28M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Interface" },
+          { "@type": "Thing", "name": "Functional Interface" },
+          { "@type": "Thing", "name": "Default Methods Java 8" },
+          { "@type": "Thing", "name": "Sealed Interface Java 17" }
+        ],
+        "keywords": "java interface, implements keyword, default method, static method interface, functional interface, marker interface, sealed interface, interface vs abstract class, multiple interface, SAM"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Interface" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an interface in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An interface in Java is a completely abstract type that defines a CONTRACT — a set of method signatures that implementing classes must provide. Declared with the 'interface' keyword, it specifies WHAT a class must do, without dictating HOW. Since Java 8, interfaces can also contain default methods (concrete implementations) and static methods. Since Java 9, private methods are allowed as internal helpers. Interfaces are the primary mechanism for achieving multiple type implementation in Java."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between an interface and an abstract class in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Interface: defines a pure contract; all fields are implicitly public static final (constants); abstract methods are implicitly public; supports multiple implementation (a class can implement many interfaces); no constructor; default/static/private methods allowed since Java 8/9. Abstract class: can have both abstract and concrete methods; can have instance fields with any modifier; supports only single inheritance; has constructors; better for sharing common implementation across related classes. Rule: use interface for defining a capability/contract (Serializable, Comparable). Use abstract class for a common base with shared state/behaviour among closely related types."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a functional interface in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A functional interface is an interface with exactly ONE abstract method (SAM — Single Abstract Method). It may have any number of default or static methods. The @FunctionalInterface annotation enforces this at compile time. Functional interfaces are the foundation of Java 8 lambda expressions and method references — a lambda is essentially an anonymous implementation of the single abstract method. Built-in examples: Runnable (run()), Callable (call()), Comparator (compare()), Predicate (test()), Function (apply()), Consumer (accept()), Supplier (get())."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are default methods in Java interfaces?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Default methods (Java 8+) are concrete method implementations inside an interface, declared with the 'default' keyword. They solve the API evolution problem: adding a new method to an existing interface would break all implementing classes. With default methods, a new method can be added with a default implementation — existing implementors work unchanged and can override the default if needed. They also enable interface composition patterns. Conflict: if a class implements two interfaces with the same default method, the class MUST explicitly override to resolve the ambiguity."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can an interface extend another interface in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — an interface CAN extend one or MORE other interfaces using the 'extends' keyword (not 'implements'). This is interface inheritance and it allows building rich interface hierarchies. Example: 'public interface ReadWriteRepository extends ReadRepository, WriteRepository'. An interface that extends multiple interfaces inherits all their abstract methods and default methods. A class implementing the derived interface must implement ALL inherited abstract methods from the entire hierarchy."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-03-05",
+      "dateModified": "2026-03-20",
+      "readingTime": "28 minutes",
+      "wordCount": 7400,
+      "difficulty": "Beginner to Intermediate",
+      "chapter": 20,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-interface",          "title": "What is an Interface in Java?" },
+        { "id": "interface-declaration",      "title": "Interface Declaration & Syntax" },
+        { "id": "implementing-interface",     "title": "Implementing an Interface" },
+        { "id": "interface-members",          "title": "Interface Members — Fields, Methods & Rules" },
+        { "id": "default-methods",            "title": "Default Methods (Java 8+)" },
+        { "id": "static-methods",             "title": "Static Methods in Interfaces (Java 8+)" },
+        { "id": "private-methods",            "title": "Private Methods in Interfaces (Java 9+)" },
+        { "id": "multiple-interfaces",        "title": "Implementing Multiple Interfaces" },
+        { "id": "interface-inheritance",      "title": "Interface Extending Interface" },
+        { "id": "functional-interface",       "title": "Functional Interfaces & Lambdas" },
+        { "id": "marker-interface",           "title": "Marker Interfaces" },
+        { "id": "interface-vs-abstract",      "title": "Interface vs Abstract Class" },
+        { "id": "sealed-interface",           "title": "Sealed Interfaces (Java 17+)" },
+        { "id": "common-mistakes",            "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",              "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",        "title": "Real-World Production Code Examples" },
+        { "id": "interface-flowchart",        "title": "Interface Flowchart" },
+        { "id": "interview-questions",        "title": "Interview Questions" },
+        { "id": "practice-questions",         "title": "Practice Questions" },
+        { "id": "conclusion-heading",         "title": "Conclusion" },
+        { "id": "faq-heading",                "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-interface" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-interface" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-interface" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-inheritance",
+      "next": "https://www.techsustainify.com/java/java-polymorphism"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-oop",
+      "contentTopic": "java-interface",
+      "chapterNumber": 20,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Interface" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Interface — Declaration, implements, default Methods & Best Practices",
+    "subtitle": "Everything you need to know about Java Interfaces — interface declaration, implementing interfaces, default/static/private methods, functional interfaces, marker interfaces, interface vs abstract class, sealed interfaces (Java 17+), anti-patterns, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "28 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner to Intermediate" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "20 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-interface",
+      "title": "What is an Interface in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "An <strong>interface</strong> in Java is a <strong>reference type</strong> — similar to a class — that defines a <em>contract</em>: a set of method signatures that any implementing class must honour. An interface specifies <strong>WHAT</strong> must be done, without prescribing <strong>HOW</strong>. It is the purest expression of abstraction in Java — separating the definition of a capability from any specific implementation of that capability."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Think of an interface as a <strong>legal contract</strong>. The interface says: <em>'Any class that signs this contract agrees to provide these methods.'</em> A <code>Printable</code> interface contract says every implementing class will provide a <code>print()</code> method. A <code>Comparable</code> contract says every implementing class will provide a <code>compareTo()</code> method. The interface does not care how — only that the method exists and is callable."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Interfaces have evolved significantly across Java versions. In <strong>Java 7 and earlier</strong>, interfaces could only contain abstract methods and constants. <strong>Java 8</strong> added <code>default</code> methods (concrete implementations) and <code>static</code> methods — solving the API evolution problem. <strong>Java 9</strong> added <code>private</code> methods for internal interface helper logic. <strong>Java 17</strong> introduced <code>sealed</code> interfaces — restricting which classes can implement them. Modern Java interfaces are rich, powerful constructs."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java Interface at a Glance",
+          "text": "An interface in Java can contain: (1) Abstract methods — implicitly public abstract; implementing classes MUST provide the body. (2) Constants — implicitly public static final; shared by all implementors. (3) Default methods (Java 8+) — concrete implementations with the 'default' keyword; can be overridden. (4) Static methods (Java 8+) — belong to the interface itself; called via InterfaceName.method(). (5) Private methods (Java 9+) — internal helpers for default/static methods; NOT inherited. A class uses 'implements' to adopt an interface's contract. An interface uses 'extends' to inherit from other interfaces. A class can implement multiple interfaces simultaneously."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interface-declaration",
+      "title": "Interface Declaration & Syntax — Anatomy of a Java Interface",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Declaring a Java interface follows a specific structure. Understanding the syntax and implicit rules for each element prevents the most common interface-related compile errors."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📌",
+              "title": "Full Syntax",
+              "text": "[accessModifier] interface InterfaceName\n        [extends Interface1, Interface2, ...] {\n\n    // Constants (implicitly public static final)\n    TYPE CONSTANT_NAME = value;\n\n    // Abstract methods (implicitly public abstract)\n    returnType methodName(params);\n\n    // Default method (Java 8+)\n    default returnType methodName(params) { body }\n\n    // Static method (Java 8+)\n    static returnType methodName(params)  { body }\n\n    // Private method (Java 9+)\n    private returnType methodName(params) { body }\n}"
+            },
+            {
+              "icon": "📋",
+              "title": "Interface Naming Conventions",
+              "text": "• PascalCase — same as classes\n• Name as a capability/adjective: Runnable, Serializable, Closeable, Comparable, Iterable\n• Or as a noun representing a role: Repository, Service, Handler, Processor\n• Avoid 'IInterface' prefix (Hungarian notation) — not idiomatic Java\n• Good: Payable, Sortable, EventListener, NotificationSender\n• Avoid vague names: Manager, Helper, Util as interface names"
+            },
+            {
+              "icon": "⚙️",
+              "title": "Interface Modifiers",
+              "text": "Access: public (visible everywhere) or default/package-private (same package only). Top-level interfaces CANNOT be private or protected.\nNon-access:\n• abstract — implicit; every interface is abstract (no need to write)\n• sealed (Java 17+) — restricts permitted implementors\n• @FunctionalInterface — annotation validating exactly one abstract method\nNote: 'abstract interface' is redundant — omit 'abstract'; the compiler adds it."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InterfaceDeclarationDemo.java",
+          "lines": [
+            "// ── MINIMAL INTERFACE ─────────────────────────────────",
+            "public interface Greetable {",
+            "    void greet(String name); // implicitly: public abstract void greet(String name)",
+            "}",
+            "",
+            "// ── COMPLETE INTERFACE (Java 9+) ──────────────────────",
+            "public interface PaymentGateway {",
+            "",
+            "    // ── CONSTANTS (implicitly public static final) ────",
+            "    int    MAX_RETRY_ATTEMPTS    = 3;",
+            "    double PLATFORM_FEE_PERCENT  = 1.5;",
+            "    String DEFAULT_CURRENCY      = \"INR\";",
+            "",
+            "    // ── ABSTRACT METHODS (implicitly public abstract) ─",
+            "    PaymentResult processPayment(PaymentRequest request);",
+            "    RefundResult  processRefund(String transactionId, double amount);",
+            "    boolean       isAvailable();",
+            "",
+            "    // ── DEFAULT METHOD (Java 8+) ───────────────────────",
+            "    // Concrete implementation — implementing classes inherit this",
+            "    // and can override if needed",
+            "    default PaymentResult processWithRetry(PaymentRequest request) {",
+            "        for (int attempt = 1; attempt <= MAX_RETRY_ATTEMPTS; attempt++) {",
+            "            logAttempt(attempt); // Calls private helper",
+            "            PaymentResult result = processPayment(request);",
+            "            if (result.isSuccess()) return result;",
+            "            if (attempt < MAX_RETRY_ATTEMPTS) waitBeforeRetry(attempt);",
+            "        }",
+            "        return PaymentResult.failure(\"All \" + MAX_RETRY_ATTEMPTS + \" attempts failed\");",
+            "    }",
+            "",
+            "    default String formatAmount(double amount) {",
+            "        return DEFAULT_CURRENCY + \" \" + String.format(\"%.2f\", amount);",
+            "    }",
+            "",
+            "    // ── STATIC METHOD (Java 8+) ────────────────────────",
+            "    // Belongs to the interface itself — called as PaymentGateway.validate()",
+            "    static boolean validateRequest(PaymentRequest request) {",
+            "        return request != null",
+            "            && request.getAmount() > 0",
+            "            && request.getCurrency() != null",
+            "            && !request.getCurrency().isBlank();",
+            "    }",
+            "",
+            "    // ── PRIVATE METHODS (Java 9+) ─────────────────────",
+            "    // Internal helpers — NOT inherited by implementing classes",
+            "    private void logAttempt(int attempt) {",
+            "        System.out.printf(\"[PaymentGateway] Attempt %d of %d%n\",",
+            "                          attempt, MAX_RETRY_ATTEMPTS);",
+            "    }",
+            "",
+            "    private void waitBeforeRetry(int attempt) {",
+            "        try {",
+            "            Thread.sleep(500L * attempt); // Exponential backoff",
+            "        } catch (InterruptedException e) {",
+            "            Thread.currentThread().interrupt();",
+            "        }",
+            "    }",
+            "",
+            "    private static String buildErrorMessage(int attempts) {",
+            "        return \"Payment failed after \" + attempts + \" attempts\";",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "implementing-interface",
+      "title": "Implementing an Interface — The implements Keyword",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A class adopts an interface's contract using the <code>implements</code> keyword. Once a class declares it implements an interface, it <strong>must provide a concrete body for every abstract method</strong> in that interface — or declare itself <code>abstract</code> to defer the obligation to its subclasses. Failing to implement all abstract methods is a compile-time error."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📌",
+              "title": "implements Syntax",
+              "text": "public class ClassName extends ParentClass\n        implements Interface1, Interface2, ... {\n    // Must implement ALL abstract methods\n    // from ALL implemented interfaces\n    // @Override annotation strongly recommended\n}\n\nNote: 'extends' (if present) always comes BEFORE 'implements'."
+            },
+            {
+              "icon": "✅",
+              "title": "Implementation Rules",
+              "text": "1. MUST implement ALL abstract methods — or declare the class abstract.\n2. Implemented methods MUST be public — interface methods are implicitly public; narrowing is a compile error.\n3. @Override is recommended — catches method signature typos.\n4. Can inherit default methods without overriding — but MUST override if two interfaces provide the same default method.\n5. Can use super to call a specific interface's default: InterfaceName.super.method()."
+            },
+            {
+              "icon": "🔄",
+              "title": "IS-A Contract",
+              "text": "When a class implements an interface, 'instanceof' returns true for that interface type. A UPIGateway that implements PaymentGateway IS-A PaymentGateway. This enables polymorphism through interfaces — code written against the interface type works with ANY implementing class, decoupling callers from implementations."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ImplementingInterfaceDemo.java",
+          "lines": [
+            "// ── INTERFACE ─────────────────────────────────────────",
+            "public interface Drawable {",
+            "    void draw();",
+            "    void resize(double factor);",
+            "    default String getDescription() {",
+            "        return \"A drawable shape\";",
+            "    }",
+            "}",
+            "",
+            "public interface Colourable {",
+            "    void setColour(String colour);",
+            "    String getColour();",
+            "}",
+            "",
+            "// ── CONCRETE CLASS implementing ONE interface ──────────",
+            "public class Circle implements Drawable {",
+            "",
+            "    private double radius;",
+            "    private double x, y; // Centre coordinates",
+            "",
+            "    public Circle(double radius, double x, double y) {",
+            "        this.radius = radius;",
+            "        this.x = x;",
+            "        this.y = y;",
+            "    }",
+            "",
+            "    @Override",
+            "    public void draw() {",
+            "        System.out.printf(\"Drawing Circle at (%.1f, %.1f) radius=%.1f%n\",",
+            "                          x, y, radius);",
+            "    }",
+            "",
+            "    @Override",
+            "    public void resize(double factor) {",
+            "        if (factor <= 0) throw new IllegalArgumentException(\"Factor must be positive\");",
+            "        this.radius *= factor;",
+            "        System.out.printf(\"Circle resized by %.1fx → radius=%.1f%n\", factor, radius);",
+            "    }",
+            "",
+            "    // Optional: override the default method",
+            "    @Override",
+            "    public String getDescription() {",
+            "        return String.format(\"Circle at (%.1f,%.1f) with radius %.1f\", x, y, radius);",
+            "    }",
+            "}",
+            "",
+            "// ── CONCRETE CLASS implementing TWO interfaces ─────────",
+            "public class Rectangle implements Drawable, Colourable {",
+            "",
+            "    private double width, height;",
+            "    private String colour;",
+            "",
+            "    public Rectangle(double width, double height, String colour) {",
+            "        this.width  = width;",
+            "        this.height = height;",
+            "        this.colour = colour;",
+            "    }",
+            "",
+            "    // Drawable contract",
+            "    @Override",
+            "    public void draw() {",
+            "        System.out.printf(\"Drawing %s Rectangle [%.1f x %.1f]%n\",",
+            "                          colour, width, height);",
+            "    }",
+            "",
+            "    @Override",
+            "    public void resize(double factor) {",
+            "        width  *= factor;",
+            "        height *= factor;",
+            "    }",
+            "",
+            "    // Colourable contract",
+            "    @Override",
+            "    public void setColour(String colour) { this.colour = colour; }",
+            "",
+            "    @Override",
+            "    public String getColour() { return colour; }",
+            "}",
+            "",
+            "// ── ABSTRACT CLASS — defers implementation ─────────────",
+            "public abstract class AbstractShape implements Drawable {",
+            "    // Does NOT implement draw() or resize() — forces subclasses to",
+            "    // Still gets the default getDescription() from Drawable",
+            "",
+            "    protected String shapeName;",
+            "    protected AbstractShape(String name) { this.shapeName = name; }",
+            "}",
+            "",
+            "// ── POLYMORPHISM via interface type ───────────────────",
+            "// List<Drawable> canvas = new ArrayList<>();",
+            "// canvas.add(new Circle(5, 0, 0));",
+            "// canvas.add(new Rectangle(4, 6, \"Blue\"));",
+            "// canvas.forEach(Drawable::draw); // Dynamic dispatch!"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interface-members",
+      "title": "Interface Members — Fields, Methods & Implicit Rules",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every member of a Java interface has <strong>implicit modifiers</strong> added by the compiler — regardless of what you write. Understanding these implicit rules prevents confusion about why certain code compiles and other code does not."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Member Type", "Implicit Modifiers", "Can Override?", "Example"],
+          "rows": [
+            ["Field (variable)",      "public static final",    "❌ No — it's a constant",              "int MAX_SIZE = 100;"],
+            ["Abstract method",       "public abstract",        "✅ Yes — MUST be overridden",          "void process(Request r);"],
+            ["Default method",        "public",                 "✅ Yes — OPTIONAL to override",        "default void log() { ... }"],
+            ["Static method",         "public (or private J9+)","❌ No — called on interface itself",   "static boolean isValid(x) { ... }"],
+            ["Private method (J9+)",  "private",                "❌ No — only within interface",        "private void helper() { ... }"],
+            ["Private static (J9+)",  "private static",         "❌ No — only within interface",        "private static int calc() { ... }"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InterfaceMembersDemo.java",
+          "lines": [
+            "public interface CacheStore {",
+            "",
+            "    // ── CONSTANTS: implicitly public static final ──────",
+            "    int    DEFAULT_TTL_SECONDS = 3600;    // = public static final int",
+            "    int    MAX_ENTRIES         = 10_000;  // = public static final int",
+            "    String NULL_SENTINEL       = \"__NULL__\";",
+            "",
+            "    // ── ABSTRACT METHODS: implicitly public abstract ───",
+            "    void   put(String key, Object value, int ttlSeconds);",
+            "    Object get(String key);",
+            "    void   evict(String key);",
+            "    void   clear();",
+            "    int    size();",
+            "",
+            "    // ── DEFAULT METHODS (Java 8+): implicitly public ───",
+            "    default void putWithDefaultTTL(String key, Object value) {",
+            "        validateKey(key);  // calls private helper",
+            "        put(key, value, DEFAULT_TTL_SECONDS);",
+            "    }",
+            "",
+            "    default boolean contains(String key) {",
+            "        return get(key) != null;",
+            "    }",
+            "",
+            "    default boolean isEmpty() {",
+            "        return size() == 0;",
+            "    }",
+            "",
+            "    // ── STATIC METHOD (Java 8+): belongs to interface ──",
+            "    static CacheStore noOp() {",
+            "        return new CacheStore() {",
+            "            @Override public void   put(String k, Object v, int t) {}",
+            "            @Override public Object get(String k)   { return null; }",
+            "            @Override public void   evict(String k) {}",
+            "            @Override public void   clear()         {}",
+            "            @Override public int    size()          { return 0; }",
+            "        };",
+            "    }",
+            "",
+            "    // ── PRIVATE METHOD (Java 9+): only usable inside interface",
+            "    private void validateKey(String key) {",
+            "        if (key == null || key.isBlank())",
+            "            throw new IllegalArgumentException(\"Cache key cannot be blank\");",
+            "        if (key.length() > 250)",
+            "            throw new IllegalArgumentException(\"Cache key too long\");",
+            "    }",
+            "",
+            "    // ── PRIVATE STATIC METHOD (Java 9+) ───────────────",
+            "    private static String normaliseKey(String key) {",
+            "        return key.trim().toLowerCase();",
+            "    }",
+            "}",
+            "",
+            "// Accessing the constant — three ways (all equivalent):",
+            "// CacheStore.DEFAULT_TTL_SECONDS",
+            "// new RedisCacheStore().DEFAULT_TTL_SECONDS  (via instance — works but discouraged)",
+            "// Inside implementing class: DEFAULT_TTL_SECONDS  (directly)"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "default-methods",
+      "title": "Default Methods (Java 8+) — Evolving APIs Without Breaking Changes",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Default methods</strong> are concrete method implementations inside an interface, declared with the <code>default</code> keyword. Introduced in Java 8, they solved a critical API design challenge: before Java 8, adding a new method to a published interface immediately broke <em>every existing implementation</em>. With default methods, a new method can carry a sensible default implementation — existing implementations continue working unchanged."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🔧",
+              "title": "Why Default Methods Exist — API Evolution",
+              "text": "Before Java 8: adding forEach() to java.util.Collection would require updating every custom Collection implementation in the world. After Java 8: forEach() was added as a default method — existing implementations inherited a working forEach() using Iterator internally. No existing code broke. This is why the Java 8 Stream API integration was possible without breaking decades of existing Collection code."
+            },
+            {
+              "icon": "⚖️",
+              "title": "Default Method Resolution Rules",
+              "text": "When multiple sources provide a method with the same signature, Java resolves in this priority order:\n1. Class or superclass method WINS over any interface default.\n2. More specific interface wins over less specific (derived interface over base).\n3. If two unrelated interfaces have the same default — the implementing class MUST explicitly override to resolve the conflict (compile error otherwise).\n4. Call a specific interface's default: InterfaceName.super.methodName()."
+            },
+            {
+              "icon": "🏗️",
+              "title": "Default Methods for Interface Composition",
+              "text": "Default methods enable a form of 'mixin' — small, reusable behaviour that can be mixed into any class implementing the interface. Example: a 'Loggable' interface with a default log() method can be implemented by any class to gain logging capability. A 'Retryable' interface can provide a default executeWithRetry() used by any service. This is the foundation of modern Java's composable design."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "DefaultMethodsDemo.java",
+          "lines": [
+            "// ── INTERFACE WITH DEFAULT METHODS ────────────────────",
+            "public interface Repository<T, ID> {",
+            "",
+            "    // Abstract — must be implemented",
+            "    T              findById(ID id);",
+            "    java.util.List<T> findAll();",
+            "    T              save(T entity);",
+            "    void           deleteById(ID id);",
+            "    long           count();",
+            "",
+            "    // ── DEFAULT METHODS — shared convenience operations ──",
+            "",
+            "    default boolean existsById(ID id) {",
+            "        return findById(id) != null;",
+            "    }",
+            "",
+            "    default boolean isEmpty() {",
+            "        return count() == 0;",
+            "    }",
+            "",
+            "    default void saveAll(java.util.List<T> entities) {",
+            "        if (entities == null) throw new IllegalArgumentException(\"List cannot be null\");",
+            "        entities.forEach(this::save); // Uses abstract save() via method ref",
+            "    }",
+            "",
+            "    default java.util.Optional<T> findByIdOptional(ID id) {",
+            "        return java.util.Optional.ofNullable(findById(id));",
+            "    }",
+            "}",
+            "",
+            "// ── CONCRETE IMPLEMENTATION — only 4 abstract methods ──",
+            "public class InMemoryUserRepository implements Repository<User, String> {",
+            "",
+            "    private final java.util.Map<String, User> store = new java.util.HashMap<>();",
+            "",
+            "    @Override",
+            "    public User findById(String id) { return store.get(id); }",
+            "",
+            "    @Override",
+            "    public java.util.List<User> findAll() {",
+            "        return java.util.List.copyOf(store.values());",
+            "    }",
+            "",
+            "    @Override",
+            "    public User save(User user) {",
+            "        store.put(user.getId(), user);",
+            "        return user;",
+            "    }",
+            "",
+            "    @Override",
+            "    public void deleteById(String id) { store.remove(id); }",
+            "",
+            "    @Override",
+            "    public long count() { return store.size(); }",
+            "",
+            "    // existsById(), isEmpty(), saveAll(), findByIdOptional()",
+            "    // are all inherited from Repository — no code needed!",
+            "}",
+            "",
+            "// ── DEFAULT METHOD CONFLICT RESOLUTION ────────────────",
+            "interface A {",
+            "    default void greet() { System.out.println(\"Hello from A\"); }",
+            "}",
+            "interface B {",
+            "    default void greet() { System.out.println(\"Hello from B\"); }",
+            "}",
+            "class C implements A, B {",
+            "    @Override",
+            "    public void greet() {",
+            "        A.super.greet(); // ✅ Explicitly choose A's version",
+            "        // OR B.super.greet(); for B's version",
+            "        // OR write completely new: System.out.println(\"Hello from C\");",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Class Always Wins Over Interface Default",
+          "text": "If a class (or its superclass) defines a method with the same signature as an interface's default method, the class's version ALWAYS takes priority — even if the class doesn't explicitly override the interface method. Example: if class Animal defines 'void describe()' and a class Dog extends Animal and implements Describable (which has 'default void describe()'), Dog inherits Animal.describe(), not Describable.describe(). The class hierarchy always beats the interface default."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "static-methods",
+      "title": "Static Methods in Interfaces (Java 8+)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Static methods in interfaces</strong> (Java 8+) belong to the <em>interface itself</em> — not to implementing classes or objects. They are called directly on the interface: <code>InterfaceName.methodName()</code>. They are NOT inherited by implementing classes and cannot be overridden. They serve as namespace-organised utility methods tightly associated with the interface's purpose."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🛠️",
+              "title": "Purpose of Static Interface Methods",
+              "text": "Factory methods: 'Comparator.comparing(keyExtractor)' — creates a Comparator without needing a separate utility class. Validation utilities: 'PaymentGateway.validateRequest(req)'. Default instance creation: 'Executor.newVirtualThreadPerTaskExecutor()'. Before Java 8, these would live in separate utility classes (Collections, Arrays). Static interface methods place utilities where they logically belong — on the interface itself."
+            },
+            {
+              "icon": "🚫",
+              "title": "Static Methods Are NOT Inherited",
+              "text": "Unlike default methods, static interface methods are NOT inherited by implementing classes. If UPIGateway implements PaymentGateway, calling 'UPIGateway.validateRequest(req)' is a compile error — it must be 'PaymentGateway.validateRequest(req)'. This is by design — static methods are tied to the interface namespace, not to instances. This avoids confusion with method hiding."
+            },
+            {
+              "icon": "🏭",
+              "title": "Real Java API Examples",
+              "text": "Comparator.comparing(User::getName) — factory for key-based comparator\nComparator.naturalOrder() / reverseOrder()\nPredicate.not(Predicate) — negates a predicate\nFunction.identity() — returns its argument\nList.of(elements), Set.of(elements), Map.of(k,v) — immutable collection factories\nStream.of(elements) — stream factory\nAll of these are static methods on interfaces, called via the interface name."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StaticInterfaceMethodsDemo.java",
+          "lines": [
+            "import java.util.*;",
+            "import java.util.function.*;",
+            "",
+            "public interface Validator<T> {",
+            "",
+            "    // Abstract — must be implemented",
+            "    ValidationResult validate(T value);",
+            "",
+            "    // Default — composable validators",
+            "    default Validator<T> and(Validator<T> other) {",
+            "        return value -> {",
+            "            ValidationResult first = this.validate(value);",
+            "            if (!first.isValid()) return first;",
+            "            return other.validate(value);",
+            "        };",
+            "    }",
+            "",
+            "    default Validator<T> or(Validator<T> other) {",
+            "        return value -> {",
+            "            ValidationResult first = this.validate(value);",
+            "            if (first.isValid()) return first;",
+            "            return other.validate(value);",
+            "        };",
+            "    }",
+            "",
+            "    // ── STATIC FACTORY METHODS ────────────────────────",
+            "    // Called as: Validator.notNull(), Validator.minLength(5)",
+            "",
+            "    static <T> Validator<T> notNull() {",
+            "        return value -> value == null",
+            "            ? ValidationResult.invalid(\"Value cannot be null\")",
+            "            : ValidationResult.valid();",
+            "    }",
+            "",
+            "    static Validator<String> notBlank() {",
+            "        return value -> (value == null || value.isBlank())",
+            "            ? ValidationResult.invalid(\"Value cannot be blank\")",
+            "            : ValidationResult.valid();",
+            "    }",
+            "",
+            "    static Validator<String> minLength(int min) {",
+            "        return value -> (value != null && value.length() >= min)",
+            "            ? ValidationResult.valid()",
+            "            : ValidationResult.invalid(\"Must be at least \" + min + \" characters\");",
+            "    }",
+            "",
+            "    static Validator<String> maxLength(int max) {",
+            "        return value -> (value != null && value.length() <= max)",
+            "            ? ValidationResult.valid()",
+            "            : ValidationResult.invalid(\"Must not exceed \" + max + \" characters\");",
+            "    }",
+            "",
+            "    static Validator<String> matchesPattern(String regex) {",
+            "        return value -> (value != null && value.matches(regex))",
+            "            ? ValidationResult.valid()",
+            "            : ValidationResult.invalid(\"Does not match required pattern\");",
+            "    }",
+            "",
+            "    static Validator<Integer> inRange(int min, int max) {",
+            "        return value -> (value != null && value >= min && value <= max)",
+            "            ? ValidationResult.valid()",
+            "            : ValidationResult.invalid(\"Must be between \" + min + \" and \" + max);",
+            "    }",
+            "}",
+            "",
+            "// ── USAGE — composing validators ──────────────────────",
+            "// Validator<String> passwordValidator =",
+            "//     Validator.notBlank()",
+            "//              .and(Validator.minLength(8))",
+            "//              .and(Validator.maxLength(50))",
+            "//              .and(Validator.matchesPattern(\".*[A-Z].*\"))",
+            "//              .and(Validator.matchesPattern(\".*[0-9].*\"));",
+            "//",
+            "// ValidationResult r = passwordValidator.validate(\"MyPass123\");",
+            "// System.out.println(r.isValid()); // true"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "private-methods",
+      "title": "Private Methods in Interfaces (Java 9+)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Private methods in interfaces</strong> (Java 9+) are concrete methods inside an interface that are <em>only accessible within the interface itself</em>. They are NOT inherited by implementing classes and NOT accessible from outside the interface. Their sole purpose is to <strong>eliminate code duplication</strong> among default and static methods within the same interface."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🔒",
+              "title": "Two Types of Private Interface Methods",
+              "text": "private instance methods: can be called by default methods in the same interface. They have access to 'this' (the implementing object) via the default method context.\nprivate static methods: can be called by static methods AND default methods in the same interface. They cannot access 'this'. Use private static when the helper doesn't need the implementing object's state."
+            },
+            {
+              "icon": "🎯",
+              "title": "Why Private Methods Matter",
+              "text": "Before Java 9: if two default methods shared common logic, you had to either duplicate the code or expose a helper as another default method (polluting the interface's public API with implementation details). Java 9 private methods solve this cleanly — the shared logic is extracted to a private helper that is invisible to implementing classes and external callers."
+            },
+            {
+              "icon": "📏",
+              "title": "Private Method Rules",
+              "text": "1. Must have a body — cannot be abstract.\n2. Cannot be default (the keywords cannot be combined).\n3. private instance methods: callable by default methods.\n4. private static methods: callable by both default and static methods.\n5. NOT inherited — not visible outside the interface.\n6. Cannot be accessed via InterfaceName.super — they are implementation details, not contract."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "PrivateMethodsDemo.java",
+          "lines": [
+            "public interface AuditableService {",
+            "",
+            "    // Abstract — implementing class provides these",
+            "    String getServiceName();",
+            "    Object executeOperation(String operationName, Object payload);",
+            "",
+            "    // ── DEFAULT METHODS — use private helpers ─────────",
+            "",
+            "    default Object executeWithAudit(String operationName, Object payload) {",
+            "        logStart(operationName);                         // Private instance",
+            "        long startTime = System.currentTimeMillis();",
+            "        try {",
+            "            Object result = executeOperation(operationName, payload);",
+            "            long elapsed  = System.currentTimeMillis() - startTime;",
+            "            logSuccess(operationName, elapsed);          // Private instance",
+            "            return result;",
+            "        } catch (Exception e) {",
+            "            logFailure(operationName, e);                // Private instance",
+            "            throw e;",
+            "        }",
+            "    }",
+            "",
+            "    default Object executeWithAuditAndRetry(String op, Object payload, int maxRetries) {",
+            "        logStart(op);                                    // Reusing private helper",
+            "        for (int i = 1; i <= maxRetries; i++) {",
+            "            try {",
+            "                Object result = executeOperation(op, payload);",
+            "                logSuccess(op, 0);",
+            "                return result;",
+            "            } catch (Exception e) {",
+            "                if (i == maxRetries) {",
+            "                    logFailure(op, e);",
+            "                    throw e;",
+            "                }",
+            "                logRetry(op, i, maxRetries);             // Private instance",
+            "            }",
+            "        }",
+            "        throw new IllegalStateException(\"Should not reach here\");",
+            "    }",
+            "",
+            "    // ── STATIC DEFAULT — uses private static helper ───",
+            "    static String buildCorrelationId() {",
+            "        return generateId();                             // Private static",
+            "    }",
+            "",
+            "    // ── PRIVATE INSTANCE HELPERS ──────────────────────",
+            "    // NOT inherited — NOT visible outside interface",
+            "    private void logStart(String operation) {",
+            "        System.out.printf(\"[%s] START: %s%n\", getServiceName(), operation);",
+            "    }",
+            "",
+            "    private void logSuccess(String operation, long elapsedMs) {",
+            "        System.out.printf(\"[%s] SUCCESS: %s (%dms)%n\",",
+            "                          getServiceName(), operation, elapsedMs);",
+            "    }",
+            "",
+            "    private void logFailure(String operation, Exception e) {",
+            "        System.out.printf(\"[%s] FAILURE: %s — %s%n\",",
+            "                          getServiceName(), operation, e.getMessage());",
+            "    }",
+            "",
+            "    private void logRetry(String op, int attempt, int max) {",
+            "        System.out.printf(\"[%s] RETRY %d/%d: %s%n\",",
+            "                          getServiceName(), attempt, max, op);",
+            "    }",
+            "",
+            "    // ── PRIVATE STATIC HELPER ─────────────────────────",
+            "    private static String generateId() {",
+            "        return \"CID-\" + java.util.UUID.randomUUID().toString().substring(0, 8);",
+            "    }",
+            "}",
+            "",
+            "// Implementing class — none of the private methods are visible here",
+            "public class OrderService implements AuditableService {",
+            "",
+            "    @Override",
+            "    public String getServiceName() { return \"OrderService\"; }",
+            "",
+            "    @Override",
+            "    public Object executeOperation(String op, Object payload) {",
+            "        System.out.println(\"Executing \" + op + \" with \" + payload);",
+            "        return \"Result of \" + op;",
+            "    }",
+            "    // Uses inherited executeWithAudit() and executeWithAuditAndRetry()",
+            "    // private helpers (logStart, logSuccess etc.) are completely hidden",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "multiple-interfaces",
+      "title": "Implementing Multiple Interfaces — Java's Answer to Multiple Inheritance",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A Java class can <strong>implement multiple interfaces simultaneously</strong> — this is how Java achieves the benefits of multiple inheritance without the Diamond Problem. Each interface the class implements adds a new type to the class, enabling extremely flexible polymorphic code. A class can declare its capabilities through multiple interface implementations, and callers can use whichever type fits their need."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🔀",
+              "title": "Multiple IS-A Relationships",
+              "text": "When a class implements multiple interfaces, it satisfies multiple IS-A relationships simultaneously. A Duck class that implements Flyable, Swimmable, and Quackable IS-A Flyable, IS-A Swimmable, and IS-A Quackable. Each interface type can be used as the reference type for a Duck variable. This lets different parts of the codebase interact with a Duck only through the capability they care about."
+            },
+            {
+              "icon": "⚡",
+              "title": "Diamond Problem — How Java Resolves It",
+              "text": "When two interfaces provide the same default method and a class implements both, Java forces the implementor to resolve the conflict explicitly by overriding the method. Inside the override, the class can call a specific interface's default using 'InterfaceName.super.methodName()'. This explicit resolution makes the intent clear and avoids hidden ambiguity — unlike C++ multiple inheritance where the conflict resolution can be subtle."
+            },
+            {
+              "icon": "🎨",
+              "title": "Interface Segregation Principle",
+              "text": "Don't force clients to depend on methods they don't use. Instead of one fat interface, create multiple focused ones. A Printer that prints documents should implement Printable. A Scanner that scans should implement Scannable. An all-in-one device implements both. Clients that only print use Printable — they're unaffected if Scannable changes. This is the 'I' in SOLID."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "MultipleInterfacesDemo.java",
+          "lines": [
+            "// ── SEGREGATED INTERFACES ─────────────────────────────",
+            "public interface Readable {",
+            "    String read(String source);",
+            "    boolean canRead(String source);",
+            "}",
+            "",
+            "public interface Writable {",
+            "    void write(String destination, String content);",
+            "    boolean canWrite(String destination);",
+            "}",
+            "",
+            "public interface Seekable {",
+            "    void seek(long position);",
+            "    long currentPosition();",
+            "}",
+            "",
+            "public interface Closeable {",
+            "    void close();",
+            "    boolean isClosed();",
+            "    default void closeQuietly() {",
+            "        try { if (!isClosed()) close(); }",
+            "        catch (Exception ignored) {}",
+            "    }",
+            "}",
+            "",
+            "// ── CLASS IMPLEMENTING MULTIPLE INTERFACES ─────────────",
+            "public class FileStream implements Readable, Writable, Seekable, Closeable {",
+            "",
+            "    private final String filePath;",
+            "    private long   position;",
+            "    private boolean closed;",
+            "",
+            "    public FileStream(String filePath) {",
+            "        this.filePath = filePath;",
+            "        this.position = 0;",
+            "        this.closed   = false;",
+            "    }",
+            "",
+            "    // Readable contract",
+            "    @Override public boolean canRead(String src) { return !closed; }",
+            "    @Override public String  read(String src) {",
+            "        if (closed) throw new IllegalStateException(\"Stream is closed\");",
+            "        System.out.println(\"Reading from \" + filePath + \" at pos \" + position);",
+            "        return \"content\";",
+            "    }",
+            "",
+            "    // Writable contract",
+            "    @Override public boolean canWrite(String dest) { return !closed; }",
+            "    @Override public void write(String dest, String content) {",
+            "        if (closed) throw new IllegalStateException(\"Stream is closed\");",
+            "        System.out.println(\"Writing to \" + filePath + \": \" + content);",
+            "    }",
+            "",
+            "    // Seekable contract",
+            "    @Override public void seek(long pos) { this.position = pos; }",
+            "    @Override public long currentPosition() { return position; }",
+            "",
+            "    // Closeable contract",
+            "    @Override public void    close()    { this.closed = true; }",
+            "    @Override public boolean isClosed() { return closed; }",
+            "}",
+            "",
+            "// ── POLYMORPHIC USAGE — each caller uses only what it needs ─",
+            "static void copyContent(Readable src, Writable dest) {",
+            "    // This method doesn't know FileStream exists",
+            "    // It only cares about Readable and Writable",
+            "    if (src.canRead(\"src\") && dest.canWrite(\"dest\")) {",
+            "        String content = src.read(\"src\");",
+            "        dest.write(\"dest\", content);",
+            "    }",
+            "}",
+            "",
+            "static void resetStream(Seekable seekable) {",
+            "    seekable.seek(0);",
+            "    System.out.println(\"Stream reset to position 0\");",
+            "}",
+            "",
+            "// FileStream satisfies ALL four types:",
+            "// Readable    r = new FileStream(\"file.txt\"); ✅",
+            "// Writable    w = new FileStream(\"file.txt\"); ✅",
+            "// Seekable    s = new FileStream(\"file.txt\"); ✅",
+            "// Closeable   c = new FileStream(\"file.txt\"); ✅"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interface-inheritance",
+      "title": "Interface Extending Interface — Building Rich Type Hierarchies",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "An interface can <strong>extend one or more other interfaces</strong> using the <code>extends</code> keyword (NOT <code>implements</code>). This creates an <em>interface hierarchy</em> where the derived interface inherits all abstract and default methods from its parent interfaces and can add new methods. A class implementing the derived interface must satisfy the contracts of the entire hierarchy."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InterfaceInheritanceDemo.java",
+          "lines": [
+            "// ── BASE INTERFACES ───────────────────────────────────",
+            "public interface ReadRepository<T, ID> {",
+            "    T                      findById(ID id);",
+            "    java.util.List<T>      findAll();",
+            "    long                   count();",
+            "    boolean                existsById(ID id);",
+            "}",
+            "",
+            "public interface WriteRepository<T, ID> {",
+            "    T    save(T entity);",
+            "    void deleteById(ID id);",
+            "    void deleteAll();",
+            "    void saveAll(java.util.List<T> entities);",
+            "}",
+            "",
+            "// ── DERIVED INTERFACE — extends two base interfaces ────",
+            "// A class implementing this MUST satisfy BOTH contracts",
+            "public interface CrudRepository<T, ID>",
+            "        extends ReadRepository<T, ID>, WriteRepository<T, ID> {",
+            "",
+            "    // Additional methods beyond read + write",
+            "    T update(ID id, T updatedEntity);",
+            "",
+            "    // Default — uses inherited abstract methods",
+            "    default boolean existsAndDelete(ID id) {",
+            "        if (!existsById(id)) return false; // from ReadRepository",
+            "        deleteById(id);                     // from WriteRepository",
+            "        return true;",
+            "    }",
+            "",
+            "    default T saveIfNotExists(ID id, T entity) {",
+            "        if (existsById(id)) return findById(id); // from ReadRepository",
+            "        return save(entity);                       // from WriteRepository",
+            "    }",
+            "}",
+            "",
+            "// ── FURTHER DERIVED — adds paging and search ──────────",
+            "public interface PagedRepository<T, ID> extends CrudRepository<T, ID> {",
+            "",
+            "    java.util.List<T> findPage(int pageNumber, int pageSize);",
+            "    java.util.List<T> search(String query);",
+            "    long countMatching(String query);",
+            "",
+            "    default int totalPages(int pageSize) {",
+            "        long total = count(); // Inherited from ReadRepository via CrudRepository",
+            "        return (int) Math.ceil((double) total / pageSize);",
+            "    }",
+            "}",
+            "",
+            "// ── IMPLEMENTATION — must fulfil ENTIRE hierarchy ──────",
+            "public class UserRepository implements PagedRepository<User, String> {",
+            "",
+            "    private final java.util.Map<String, User> store = new java.util.LinkedHashMap<>();",
+            "",
+            "    // ReadRepository methods",
+            "    @Override public User               findById(String id)  { return store.get(id); }",
+            "    @Override public java.util.List<User> findAll()          { return java.util.List.copyOf(store.values()); }",
+            "    @Override public long                 count()            { return store.size(); }",
+            "    @Override public boolean              existsById(String id) { return store.containsKey(id); }",
+            "",
+            "    // WriteRepository methods",
+            "    @Override public User save(User u)    { store.put(u.getId(), u); return u; }",
+            "    @Override public void deleteById(String id) { store.remove(id); }",
+            "    @Override public void deleteAll()     { store.clear(); }",
+            "    @Override public void saveAll(java.util.List<User> users) { users.forEach(this::save); }",
+            "",
+            "    // CrudRepository method",
+            "    @Override public User update(String id, User updated) {",
+            "        if (!store.containsKey(id)) throw new java.util.NoSuchElementException();",
+            "        store.put(id, updated);",
+            "        return updated;",
+            "    }",
+            "",
+            "    // PagedRepository methods",
+            "    @Override public java.util.List<User> findPage(int page, int size) {",
+            "        return store.values().stream()",
+            "               .skip((long) page * size).limit(size).toList();",
+            "    }",
+            "    @Override public java.util.List<User> search(String q) {",
+            "        return store.values().stream()",
+            "               .filter(u -> u.getName().toLowerCase().contains(q.toLowerCase()))",
+            "               .toList();",
+            "    }",
+            "    @Override public long countMatching(String q) { return search(q).size(); }",
+            "    // existsAndDelete(), saveIfNotExists(), totalPages() all inherited as defaults!",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "functional-interface",
+      "title": "Functional Interfaces & Lambdas — The Heart of Modern Java",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>functional interface</strong> is an interface with <strong>exactly one abstract method</strong> (SAM — Single Abstract Method). It may have any number of default, static, or private methods. The <code>@FunctionalInterface</code> annotation signals intent and enforces the single-abstract-method constraint at compile time. Functional interfaces are the <strong>target types for lambda expressions and method references</strong> — Java's most significant feature addition since generics."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "⚡",
+              "title": "Built-in Functional Interfaces (java.util.function)",
+              "text": "Java 8 ships with 43 functional interfaces in java.util.function. The 4 core categories:\n• Predicate<T>: T → boolean — test(T t)\n• Function<T,R>: T → R — apply(T t)\n• Consumer<T>: T → void — accept(T t)\n• Supplier<T>: () → T — get()\nSpecialised variants: BiFunction<T,U,R>, UnaryOperator<T>, BinaryOperator<T>, IntPredicate, LongFunction, etc."
+            },
+            {
+              "icon": "🔗",
+              "title": "Lambda Expressions",
+              "text": "A lambda is a concise, inline implementation of a functional interface. Syntax: '(params) -> body'. If the body is a single expression, no return or braces needed. Examples:\nRunnable r = () -> System.out.println(\"Hi\");\nPredicate<String> isLong = s -> s.length() > 10;\nFunction<String,Integer> strLen = String::length; (method ref)\nComparator<User> byAge = (a, b) -> Integer.compare(a.getAge(), b.getAge());"
+            },
+            {
+              "icon": "📐",
+              "title": "Composing Functional Interfaces",
+              "text": "Built-in functional interfaces provide composition methods:\nPredicate: and(), or(), negate()\nFunction: andThen(), compose()\nComparator: thenComparing(), reversed()\n\nExample:\nPredicate<String> notNull = s -> s != null;\nPredicate<String> notBlank = s -> !s.isBlank();\nPredicate<String> valid = notNull.and(notBlank);\n// valid.test(\"hello\") → true"
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "FunctionalInterfaceDemo.java",
+          "lines": [
+            "import java.util.*;",
+            "import java.util.function.*;",
+            "import java.util.stream.*;",
+            "",
+            "// ── CUSTOM FUNCTIONAL INTERFACE ───────────────────────",
+            "@FunctionalInterface",
+            "public interface OrderProcessor {",
+            "    ProcessingResult process(Order order);",
+            "",
+            "    // Default and static — do NOT count as abstract",
+            "    default OrderProcessor andThen(OrderProcessor next) {",
+            "        return order -> {",
+            "            ProcessingResult r = this.process(order);",
+            "            return r.isSuccess() ? next.process(order) : r;",
+            "        };",
+            "    }",
+            "",
+            "    static OrderProcessor noOp() {",
+            "        return order -> ProcessingResult.success();",
+            "    }",
+            "}",
+            "",
+            "// ── USING LAMBDAS WITH BUILT-IN FUNCTIONAL INTERFACES ─",
+            "public class FunctionalDemo {",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        List<String> names = List.of(\"Ravi\", \"Priya\", \"Arjun\", \"Meena\", \"Dev\");",
+            "",
+            "        // Predicate<T>: T → boolean",
+            "        Predicate<String> longName   = name -> name.length() > 4;",
+            "        Predicate<String> startsWithP = name -> name.startsWith(\"P\");",
+            "",
+            "        // Function<T,R>: T → R",
+            "        Function<String, String> toUpper = String::toUpperCase;",
+            "        Function<String, Integer> length  = String::length;",
+            "",
+            "        // Consumer<T>: T → void",
+            "        Consumer<String> printer  = System.out::println;",
+            "        Consumer<String> withTag  = name -> System.out.println(\"[USER] \" + name);",
+            "",
+            "        // Supplier<T>: () → T",
+            "        Supplier<List<String>> listFactory = ArrayList::new;",
+            "",
+            "        // Comparator",
+            "        Comparator<String> byLength = Comparator.comparingInt(String::length)",
+            "                                                 .thenComparing(Comparator.naturalOrder());",
+            "",
+            "        // ── STREAM PIPELINE using all of the above ────",
+            "        List<String> result = names.stream()",
+            "            .filter(longName.or(startsWithP))       // Predicate composition",
+            "            .map(toUpper)                            // Function",
+            "            .sorted(byLength)                        // Comparator",
+            "            .collect(Collectors.toList());",
+            "",
+            "        result.forEach(printer);                     // Consumer",
+            "        // Output: PRIYA, MEENA, ARJUN",
+            "",
+            "        // ── CUSTOM FUNCTIONAL INTERFACE with lambda ───",
+            "        OrderProcessor validate = order ->",
+            "            order.isValid() ? ProcessingResult.success()",
+            "                            : ProcessingResult.failure(\"Invalid order\");",
+            "",
+            "        OrderProcessor charge = order ->",
+            "            order.hasPayment() ? ProcessingResult.success()",
+            "                               : ProcessingResult.failure(\"No payment\");",
+            "",
+            "        OrderProcessor pipeline = validate.andThen(charge); // Composing!",
+            "",
+            "        // ── BiFunction — two input params ──────────────",
+            "        BiFunction<String, Integer, String> repeat =",
+            "            (str, times) -> str.repeat(times);",
+            "        System.out.println(repeat.apply(\"Java\", 3)); // JavaJavaJava",
+            "",
+            "        // ── UnaryOperator — same input and output type ─",
+            "        UnaryOperator<String> trim  = String::trim;",
+            "        UnaryOperator<String> lower = String::toLowerCase;",
+            "        UnaryOperator<String> normalise = trim.andThen(lower);",
+            "        System.out.println(normalise.apply(\"  HELLO  \")); // hello",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "marker-interface",
+      "title": "Marker Interfaces — Tagging Without Methods",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>marker interface</strong> (also called a <em>tag interface</em>) is an interface with <strong>no methods and no fields</strong>. Its only purpose is to mark or tag a class as having a certain property — to communicate metadata about the class to the JVM, frameworks, or other code. The tag is detectable via <code>instanceof</code> or reflection."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🏷️",
+              "title": "Built-in Marker Interfaces",
+              "text": "java.io.Serializable: marks a class whose objects can be converted to a byte stream. JVM's ObjectOutputStream checks instanceof Serializable before serialising.\njava.lang.Cloneable: marks a class whose objects can be cloned via Object.clone(). Without this, clone() throws CloneNotSupportedException.\njava.util.RandomAccess: marks List implementations supporting constant-time positional access — Collections.binarySearch() uses instanceof RandomAccess to choose the optimal algorithm."
+            },
+            {
+              "icon": "🔍",
+              "title": "Modern Alternative — Annotations",
+              "text": "Since Java 5, annotations are the preferred way to tag classes with metadata. '@Override', '@Deprecated', '@Entity', '@Service' all serve as modern 'markers'. Annotations are more powerful: they can carry data, be targeted at specific element types, and be processed at compile time, runtime, or both. Marker interfaces are still used in legacy code and for IS-A checks via instanceof."
+            },
+            {
+              "icon": "🛡️",
+              "title": "Custom Marker Interface Use Cases",
+              "text": "In domain-driven design: 'interface DomainEvent {}' — marks all events. Frameworks check 'if (obj instanceof DomainEvent)' to route appropriately. Security: 'interface Sensitive {}' — marks DTOs containing sensitive data; a serialisation filter checks for this marker. Audit: 'interface Auditable {}' — an AOP aspect intercepts calls on Auditable classes. Each is simple and effective for type-based dispatch."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "MarkerInterfaceDemo.java",
+          "lines": [
+            "// ── BUILT-IN: Serializable marker ─────────────────────",
+            "import java.io.Serializable;",
+            "",
+            "public class UserProfile implements Serializable {",
+            "    // No additional methods from Serializable — it's a marker!",
+            "    private static final long serialVersionUID = 1L;",
+            "    private String userId;",
+            "    private String displayName;",
+            "    // JVM allows ObjectOutputStream to serialise this class",
+            "}",
+            "",
+            "// ── CUSTOM MARKER INTERFACE ───────────────────────────",
+            "",
+            "// Marker 1: Signals that a class's toString() output is safe to log",
+            "public interface SafeToLog {",
+            "    // No methods — just a tag",
+            "}",
+            "",
+            "// Marker 2: Signals that a DTO may contain sensitive PII data",
+            "public interface ContainsPII {",
+            "    // No methods — just a tag",
+            "}",
+            "",
+            "// Marker 3: Signals that a domain event is important for audit",
+            "public interface AuditableEvent {",
+            "    // No methods — just a tag",
+            "}",
+            "",
+            "// ── CLASSES USING MARKERS ─────────────────────────────",
+            "public class OrderCreatedEvent implements AuditableEvent, SafeToLog {",
+            "    private final String orderId;",
+            "    private final double amount;",
+            "    private final String customerId;",
+            "",
+            "    public OrderCreatedEvent(String orderId, double amount, String customerId) {",
+            "        this.orderId    = orderId;",
+            "        this.amount     = amount;",
+            "        this.customerId = customerId;",
+            "    }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return \"OrderCreatedEvent{orderId='\" + orderId + \"', amount=\" + amount + \"}\";",
+            "    }",
+            "}",
+            "",
+            "public class PaymentDetailsDTO implements ContainsPII {",
+            "    private String cardNumber;   // PII — must be masked in logs",
+            "    private String cvv;",
+            "    private String cardHolder;",
+            "}",
+            "",
+            "// ── MARKER CHECKED AT RUNTIME ─────────────────────────",
+            "public class EventPublisher {",
+            "",
+            "    public void publish(Object event) {",
+            "        // Check marker — only log events that declare they are safe",
+            "        if (event instanceof SafeToLog) {",
+            "            System.out.println(\"[EVENT LOG] \" + event);",
+            "        } else {",
+            "            System.out.println(\"[EVENT LOG] Event published (details hidden)\");",
+            "        }",
+            "",
+            "        // Check audit marker",
+            "        if (event instanceof AuditableEvent) {",
+            "            auditTrail.record(event);",
+            "        }",
+            "    }",
+            "}",
+            "",
+            "public class DataLogger {",
+            "    public void log(Object data) {",
+            "        if (data instanceof ContainsPII) {",
+            "            // Mask or skip PII data",
+            "            System.out.println(\"[LOG] <PII data masked>\");",
+            "        } else {",
+            "            System.out.println(\"[LOG] \" + data);",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interface-vs-abstract",
+      "title": "Interface vs Abstract Class — When to Use Which",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Choosing between an <strong>interface</strong> and an <strong>abstract class</strong> is one of the most common design decisions in Java OOP. Both provide abstraction, but they serve fundamentally different purposes. The distinction has become more nuanced since Java 8 added default methods to interfaces, but the core guidance remains clear."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "Interface", "Abstract Class"],
+          "rows": [
+            ["Primary purpose",      "Define a CAPABILITY / CONTRACT",                "Define a COMMON BASE with shared state"],
+            ["Instantiation",        "❌ Cannot be instantiated",                      "❌ Cannot be instantiated"],
+            ["Fields",               "Only public static final constants",             "Any modifier — instance fields allowed"],
+            ["Constructors",         "❌ No constructors",                             "✅ Has constructors (called via super())"],
+            ["Method types",         "abstract, default, static, private",             "abstract, concrete, final, static"],
+            ["Multiple use",         "✅ A class implements many interfaces",          "❌ A class extends only ONE abstract class"],
+            ["State",                "❌ No instance state",                           "✅ Can have mutable instance state"],
+            ["IS-A relationship",    "Capability-based — can be unrelated classes",   "Type-based — closely related hierarchy"],
+            ["Evolution",            "Adding methods requires default impl.",          "Can add methods freely (not breaking)"],
+            ["Use when",             "Defining a capability any class can adopt",     "Sharing code among closely related classes"],
+            ["Real examples",        "Runnable, Comparable, Serializable",             "AbstractList, HttpServlet, Template classes"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InterfaceVsAbstractDemo.java",
+          "lines": [
+            "// ── USE INTERFACE: defining a capability ──────────────",
+            "// Any class — related or not — can be Exportable",
+            "public interface Exportable {",
+            "    byte[]  exportToBytes();",
+            "    String  exportToJson();",
+            "    default void exportToFile(String path) {",
+            "        // Default: write bytes to file",
+            "        try (var out = new java.io.FileOutputStream(path)) {",
+            "            out.write(exportToBytes());",
+            "        } catch (java.io.IOException e) {",
+            "            throw new RuntimeException(\"Export failed\", e);",
+            "        }",
+            "    }",
+            "}",
+            "",
+            "// Unrelated classes can both be Exportable",
+            "class Invoice implements Exportable { /* ... */ }",
+            "class UserReport implements Exportable { /* ... */ }",
+            "class ConfigSnapshot implements Exportable { /* ... */ }",
+            "",
+            "// ── USE ABSTRACT CLASS: shared state + template ───────",
+            "// All reports SHARE common fields and the generate() skeleton",
+            "public abstract class BaseReport {",
+            "",
+            "    // Shared state — only possible in abstract class",
+            "    protected final String  reportId;",
+            "    protected final String  generatedBy;",
+            "    protected final java.time.LocalDateTime generatedAt;",
+            "",
+            "    protected BaseReport(String generatedBy) {",
+            "        this.reportId    = java.util.UUID.randomUUID().toString();",
+            "        this.generatedBy = generatedBy;",
+            "        this.generatedAt = java.time.LocalDateTime.now();",
+            "    }",
+            "",
+            "    // Template method — fixed algorithm with overridable steps",
+            "    public final String generate() {",
+            "        String header = buildHeader();",
+            "        String body   = buildBody();  // Abstract — must override",
+            "        String footer = buildFooter();",
+            "        return header + \"\\n\" + body + \"\\n\" + footer;",
+            "    }",
+            "",
+            "    protected abstract String buildBody(); // Must override",
+            "",
+            "    protected String buildHeader() {",
+            "        return \"=== Report: \" + reportId + \" | By: \" + generatedBy + \" ===\";",
+            "    }",
+            "",
+            "    protected String buildFooter() {",
+            "        return \"Generated at: \" + generatedAt;",
+            "    }",
+            "}",
+            "",
+            "// Subclasses only implement what differs",
+            "class SalesReport extends BaseReport {",
+            "    SalesReport(String by) { super(by); }",
+            "    @Override",
+            "    protected String buildBody() { return \"Sales data here...\"; }",
+            "}",
+            "",
+            "// ── BEST OF BOTH: interface + abstract class ──────────",
+            "// Pattern used in java.util (AbstractList implements List)",
+            "public interface ReportGenerator {",
+            "    Report generate(ReportRequest request);",
+            "    String getSupportedFormat();",
+            "}",
+            "",
+            "// Abstract class provides partial implementation",
+            "public abstract class AbstractReportGenerator implements ReportGenerator {",
+            "",
+            "    protected final ReportRepository repository;",
+            "",
+            "    protected AbstractReportGenerator(ReportRepository repo) {",
+            "        this.repository = repo;",
+            "    }",
+            "",
+            "    // Concrete — shared logic for all generators",
+            "    protected void validateRequest(ReportRequest request) {",
+            "        if (request == null) throw new IllegalArgumentException();",
+            "    }",
+            "",
+            "    // Abstract — each format implements differently",
+            "    protected abstract ReportBody formatBody(java.util.List<?> data);",
+            "}",
+            "// PdfReportGenerator, ExcelReportGenerator, CsvReportGenerator all extend this"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "sealed-interface",
+      "title": "Sealed Interfaces (Java 17+) — Controlled Extensibility",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Sealed interfaces</strong> (Java 17, JEP 409) restrict which classes or interfaces can implement them. Declared with the <code>sealed</code> keyword and a <code>permits</code> clause, they give API designers <strong>controlled extensibility</strong> — the interface is open for use but closed for implementation to an explicit, known set of types. This enables exhaustive pattern matching in switch expressions."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🔒",
+              "title": "Sealed Interface Rules",
+              "text": "1. Declared with 'sealed' + 'permits ClassName, ...' listing every permitted implementor.\n2. Permitted classes MUST directly implement or extend the sealed interface.\n3. Permitted classes MUST be in the same package (or module) as the sealed interface.\n4. Each permitted class must be one of: 'final' (no further subclassing), 'sealed' (further restricts), or 'non-sealed' (opens back up for extension)."
+            },
+            {
+              "icon": "🎯",
+              "title": "Why Sealed Interfaces Matter",
+              "text": "Enables exhaustive switch pattern matching — if all permitted types are known, the compiler can verify that a switch covers all cases without a default. This is how Java models algebraic data types (sum types). Example: a Shape sealed interface with Circle, Rectangle, Triangle as permitted types — a switch on Shape must handle all three, and the compiler enforces this. This is safer than open hierarchies where new subclasses can appear unexpectedly."
+            },
+            {
+              "icon": "🔗",
+              "title": "Sealed Interfaces + Records",
+              "text": "Java records (Java 16+) pair beautifully with sealed interfaces. Records are implicitly final, making them perfect permitted types — they carry data without mutable state. Pattern: 'sealed interface Shape permits Circle, Rectangle, Triangle' where each is a record: 'record Circle(double radius) implements Shape'. This is modern Java's concise, type-safe algebraic data type pattern used in compilers, parsers, and domain event hierarchies."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SealedInterfaceDemo.java",
+          "lines": [
+            "// ── SEALED INTERFACE (Java 17+) ───────────────────────",
+            "public sealed interface Shape",
+            "    permits Circle, Rectangle, Triangle, RegularPolygon {",
+            "",
+            "    double getArea();",
+            "    double getPerimeter();",
+            "",
+            "    default String describe() {",
+            "        return String.format(\"%s | Area: %.2f | Perimeter: %.2f\",",
+            "               getClass().getSimpleName(), getArea(), getPerimeter());",
+            "    }",
+            "}",
+            "",
+            "// ── PERMITTED IMPLEMENTORS ────────────────────────────",
+            "",
+            "// 'final' — cannot be further subclassed",
+            "public final class Circle implements Shape {",
+            "    private final double radius;",
+            "    public Circle(double radius) {",
+            "        if (radius <= 0) throw new IllegalArgumentException();",
+            "        this.radius = radius;",
+            "    }",
+            "    @Override public double getArea()      { return Math.PI * radius * radius; }",
+            "    @Override public double getPerimeter() { return 2 * Math.PI * radius; }",
+            "    public double getRadius() { return radius; }",
+            "}",
+            "",
+            "// Using a record — concise and implicitly final",
+            "public record Rectangle(double width, double height) implements Shape {",
+            "    public Rectangle {  // Compact constructor — validation",
+            "        if (width <= 0 || height <= 0)",
+            "            throw new IllegalArgumentException(\"Dimensions must be positive\");",
+            "    }",
+            "    @Override public double getArea()      { return width * height; }",
+            "    @Override public double getPerimeter() { return 2 * (width + height); }",
+            "}",
+            "",
+            "public record Triangle(double a, double b, double c) implements Shape {",
+            "    public Triangle {",
+            "        if (a + b <= c || b + c <= a || a + c <= b)",
+            "            throw new IllegalArgumentException(\"Invalid triangle sides\");",
+            "    }",
+            "    @Override public double getArea() {",
+            "        double s = (a + b + c) / 2;",
+            "        return Math.sqrt(s * (s-a) * (s-b) * (s-c));",
+            "    }",
+            "    @Override public double getPerimeter() { return a + b + c; }",
+            "}",
+            "",
+            "// 'non-sealed' — reopens the hierarchy for further extension",
+            "public non-sealed class RegularPolygon implements Shape {",
+            "    protected final int    sides;",
+            "    protected final double sideLength;",
+            "    public RegularPolygon(int sides, double sideLength) {",
+            "        this.sides = sides; this.sideLength = sideLength;",
+            "    }",
+            "    @Override public double getArea() {",
+            "        return (sides * sideLength * sideLength)",
+            "             / (4 * Math.tan(Math.PI / sides));",
+            "    }",
+            "    @Override public double getPerimeter() { return sides * sideLength; }",
+            "}",
+            "",
+            "// ── EXHAUSTIVE SWITCH PATTERN MATCHING (Java 21) ──────",
+            "public class ShapeCalculator {",
+            "",
+            "    // Compiler KNOWS all permitted types — exhaustive switch, NO default needed",
+            "    public static String describeShape(Shape shape) {",
+            "        return switch (shape) {",
+            "            case Circle c      -> \"Circle with radius \" + c.getRadius();",
+            "            case Rectangle r   -> \"Rectangle \" + r.width() + \" × \" + r.height();",
+            "            case Triangle t    -> \"Triangle with sides \" + t.a() + \", \" + t.b() + \", \" + t.c();",
+            "            case RegularPolygon p -> \"Regular \" + p.sides + \"-gon\";",
+            "            // No default needed — compiler verifies exhaustiveness!",
+            "        };",
+            "    }",
+            "",
+            "    public static double totalArea(java.util.List<Shape> shapes) {",
+            "        return shapes.stream()",
+            "                     .mapToDouble(Shape::getArea)",
+            "                     .sum();",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Bugs That Trip Everyone Up",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These interface-related mistakes appear consistently in Java beginner and intermediate code. Each one either causes a compile-time error or a subtle design problem that surfaces later during maintenance."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InterfaceMistakes.java",
+          "lines": [
+            "// ❌ MISTAKE 1: Making interface method non-public in implementing class",
+            "interface Printable { void print(); } // implicitly public",
+            "class Document implements Printable {",
+            "    // void print() { } // ❌ Compile error — reduces public to default",
+            "    public void print() { System.out.println(\"Printing\"); } // ✅ Must be public",
+            "}",
+            "",
+            "// ❌ MISTAKE 2: Treating interface constants as instance variables",
+            "interface Config {",
+            "    int MAX_RETRY = 3; // implicitly public static final",
+            "}",
+            "class MyService implements Config {",
+            "    public void serve() {",
+            "        // int MAX_RETRY = 5; // ❌ Cannot reassign — it's final",
+            "        // Worse: accessing it via 'this.MAX_RETRY' is misleading",
+            "        System.out.println(MAX_RETRY); // ✅ Direct access — but use Config.MAX_RETRY",
+            "    }",
+            "}",
+            "",
+            "// ❌ MISTAKE 3: Writing 'abstract' explicitly on interface methods",
+            "interface Vehicle {",
+            "    public abstract void start(); // 'public abstract' is redundant — already implicit",
+            "    void stop();                  // ✅ Cleaner — same result",
+            "}",
+            "",
+            "// ❌ MISTAKE 4: Using 'implements' between interfaces",
+            "// interface B implements A { } // ❌ Compile error — interfaces use 'extends'",
+            "interface A { void methodA(); }",
+            "interface B extends A { void methodB(); } // ✅ Correct",
+            "",
+            "// ❌ MISTAKE 5: Forgetting to implement all abstract methods",
+            "interface Flyable { void fly(); void land(); }",
+            "// class Eagle implements Flyable {",
+            "//     public void fly() { System.out.println(\"Flying\"); }",
+            "//     // ❌ Compile error: Eagle is not abstract and does not override land()",
+            "// }",
+            "// ✅ Fix: implement both, or declare class abstract",
+            "class Eagle implements Flyable {",
+            "    @Override public void fly()  { System.out.println(\"Flying high!\"); }",
+            "    @Override public void land() { System.out.println(\"Landing safely.\"); }",
+            "}",
+            "",
+            "// ❌ MISTAKE 6: Two interfaces with conflicting defaults — not resolving",
+            "interface Logger   { default void log() { System.out.println(\"Logger\"); } }",
+            "interface Auditor  { default void log() { System.out.println(\"Auditor\"); } }",
+            "// class Service implements Logger, Auditor { } // ❌ Compile error — ambiguous default",
+            "// ✅ Fix: explicitly resolve the conflict",
+            "class Service implements Logger, Auditor {",
+            "    @Override",
+            "    public void log() {",
+            "        Logger.super.log();  // Pick one, or write your own",
+            "        Auditor.super.log();",
+            "    }",
+            "}",
+            "",
+            "// ❌ MISTAKE 7: Calling interface static method via implementing class",
+            "interface MathOps { static int square(int n) { return n * n; } }",
+            "class Calculator implements MathOps { }",
+            "// Calculator.square(5); // ❌ Compile error — static interface methods not inherited",
+            "// ✅ Fix:",
+            "MathOps.square(5); // ✅ Called on the interface itself"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These interface anti-patterns are consistently rejected in professional code reviews. Each violates design principles and makes codebases harder to maintain, test, and evolve."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Constant Interface Anti-Pattern",
+              "text": "Using an interface purely to hold constants that classes implement to 'inherit' them. Example: 'interface Constants { int MAX=100; String BASE_URL=\"...\"; }'. Implementing classes inherit these constants but now have 'Constants' as a public IS-A type — a meaningless API commitment. Classes should not implement interfaces just for constant access. Fix: use a final utility class with private constructor: 'public final class AppConstants { private AppConstants(){} public static final int MAX = 100; }'"
+            },
+            {
+              "icon": "🚫",
+              "title": "Fat Interface — Violating ISP",
+              "text": "An interface with 20+ methods that no single class realistically needs all of. Implementing classes must provide empty/stub implementations for irrelevant methods. Any change to the interface forces updates across all implementors. Fix: apply Interface Segregation Principle — split into focused, cohesive interfaces. A UserService doesn't need to implement UserRepository, UserNotificationService, and UserAuditService all in one contract."
+            },
+            {
+              "icon": "🚫",
+              "title": "Overusing Default Methods as Implementation",
+              "text": "Adding substantial business logic as default methods, effectively turning the interface into a partial abstract class. Interfaces should define contracts and optionally provide thin convenience defaults. When a default method is long, complex, or depends on many other methods — it signals the logic belongs in an abstract class or a shared utility. The interface is becoming a tangled mix of contract and implementation."
+            },
+            {
+              "icon": "🚫",
+              "title": "Missing @FunctionalInterface Annotation",
+              "text": "Defining an interface intended as a lambda target without @FunctionalInterface. Without the annotation, accidentally adding a second abstract method is a compile-but-silently-breaks situation — all lambdas targeting that interface now fail. @FunctionalInterface is a defensive annotation: if someone adds a second abstract method, it immediately fails to compile. Always annotate intentional functional interfaces."
+            },
+            {
+              "icon": "🚫",
+              "title": "Interface for Everything — Even Non-Contractual Types",
+              "text": "Some developers create an interface for every class 'just in case'. 'UserService' interface with 'UserServiceImpl' as the only implementation forever. This adds a layer of abstraction with no value — every change requires updating both the interface and the class. Create interfaces when: multiple implementations exist or are expected, you want to decouple callers from implementations, or you're designing a library API. Don't create 1:1 interface-class pairs reflexively."
+            },
+            {
+              "icon": "🚫",
+              "title": "Exposing Implementation Detail Through Interface",
+              "text": "Adding framework-specific or technology-specific methods to a domain interface. Example: 'interface UserRepository { ... ; EntityManager getEntityManager(); }'. Now every caller of UserRepository is coupled to JPA/Hibernate. The interface should model the domain contract only. Technology details belong in the implementing class. Keep interfaces pure — they represent what the caller needs, not what the implementation uses."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Interfaces in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples demonstrate carefully designed interfaces from real enterprise Java applications — showing how interface hierarchies, default methods, functional interfaces, and sealed interfaces combine in production-grade code."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "NotificationChannel.java — Interface with Full Feature Set",
+          "lines": [
+            "package com.techsustainify.notification;",
+            "",
+            "import java.util.concurrent.CompletableFuture;",
+            "",
+            "/**",
+            " * Contract for notification delivery channels.",
+            " * Implementations: EmailChannel, SmsChannel, PushChannel, WhatsAppChannel.",
+            " * Uses default methods for retry logic and async delivery.",
+            " */",
+            "public interface NotificationChannel {",
+            "",
+            "    // ── CONSTANTS ─────────────────────────────────────",
+            "    int    DEFAULT_MAX_RETRIES     = 3;",
+            "    long   DEFAULT_RETRY_DELAY_MS  = 1000L;",
+            "    int    MAX_MESSAGE_LENGTH       = 1600;",
+            "",
+            "    // ── ABSTRACT CONTRACT ─────────────────────────────",
+            "    String  getChannelName();",
+            "    boolean isAvailable();",
+            "    DeliveryResult deliver(NotificationMessage message);",
+            "    boolean supportsRichContent();",
+            "",
+            "    // ── DEFAULT METHODS ───────────────────────────────",
+            "",
+            "    /** Deliver with exponential backoff retry */",
+            "    default DeliveryResult deliverWithRetry(NotificationMessage message) {",
+            "        return deliverWithRetry(message, DEFAULT_MAX_RETRIES);",
+            "    }",
+            "",
+            "    default DeliveryResult deliverWithRetry(NotificationMessage msg, int maxRetries) {",
+            "        validateMessage(msg);                           // private helper",
+            "        for (int attempt = 1; attempt <= maxRetries; attempt++) {",
+            "            if (!isAvailable()) {",
+            "                return DeliveryResult.failure(getChannelName() + \" unavailable\");",
+            "            }",
+            "            DeliveryResult result = deliver(msg);",
+            "            if (result.isSuccess()) {",
+            "                logDelivery(msg, attempt);              // private helper",
+            "                return result;",
+            "            }",
+            "            if (attempt < maxRetries) {",
+            "                sleepWithBackoff(attempt);              // private static helper",
+            "            }",
+            "        }",
+            "        return DeliveryResult.failure(\"Delivery failed after \" + maxRetries + \" attempts\");",
+            "    }",
+            "",
+            "    /** Non-blocking async delivery */",
+            "    default CompletableFuture<DeliveryResult> deliverAsync(NotificationMessage msg) {",
+            "        return CompletableFuture.supplyAsync(() -> deliverWithRetry(msg));",
+            "    }",
+            "",
+            "    /** Check if this channel can handle the given message type */",
+            "    default boolean canHandle(NotificationMessage message) {",
+            "        if (message == null) return false;",
+            "        if (!supportsRichContent() && message.isRichContent()) return false;",
+            "        return message.getBody().length() <= MAX_MESSAGE_LENGTH;",
+            "    }",
+            "",
+            "    // ── STATIC FACTORY ────────────────────────────────",
+            "    static NotificationChannel noOp() {",
+            "        return new NotificationChannel() {",
+            "            @Override public String  getChannelName()       { return \"NoOp\"; }",
+            "            @Override public boolean isAvailable()           { return true; }",
+            "            @Override public DeliveryResult deliver(NotificationMessage m)",
+            "                                     { return DeliveryResult.success(\"NoOp\"); }",
+            "            @Override public boolean supportsRichContent()   { return false; }",
+            "        };",
+            "    }",
+            "",
+            "    // ── PRIVATE HELPERS ───────────────────────────────",
+            "    private void validateMessage(NotificationMessage message) {",
+            "        if (message == null)",
+            "            throw new IllegalArgumentException(\"Message cannot be null\");",
+            "        if (message.getRecipientId() == null || message.getRecipientId().isBlank())",
+            "            throw new IllegalArgumentException(\"Recipient ID required\");",
+            "        if (message.getBody() == null || message.getBody().isBlank())",
+            "            throw new IllegalArgumentException(\"Message body required\");",
+            "    }",
+            "",
+            "    private void logDelivery(NotificationMessage msg, int attempts) {",
+            "        System.out.printf(\"[%s] Delivered to %s in %d attempt(s)%n\",",
+            "                          getChannelName(), msg.getRecipientId(), attempts);",
+            "    }",
+            "",
+            "    private static void sleepWithBackoff(int attempt) {",
+            "        try {",
+            "            Thread.sleep(DEFAULT_RETRY_DELAY_MS * attempt);",
+            "        } catch (InterruptedException e) {",
+            "            Thread.currentThread().interrupt();",
+            "        }",
+            "    }",
+            "}",
+            "",
+            "// ── CONCRETE IMPLEMENTATION ───────────────────────────",
+            "public class EmailChannel implements NotificationChannel {",
+            "",
+            "    private final EmailClient     client;",
+            "    private final String          fromAddress;",
+            "    private       boolean         circuitOpen;",
+            "",
+            "    public EmailChannel(EmailClient client, String fromAddress) {",
+            "        this.client      = client;",
+            "        this.fromAddress = fromAddress;",
+            "        this.circuitOpen = false;",
+            "    }",
+            "",
+            "    @Override public String  getChannelName()     { return \"EMAIL\"; }",
+            "    @Override public boolean supportsRichContent() { return true; }",
+            "    @Override public boolean isAvailable()         { return !circuitOpen && client.isConnected(); }",
+            "",
+            "    @Override",
+            "    public DeliveryResult deliver(NotificationMessage message) {",
+            "        try {",
+            "            client.send(",
+            "                message.getRecipientEmail(),",
+            "                fromAddress,",
+            "                message.getSubject(),",
+            "                message.getBody(),",
+            "                message.isRichContent()",
+            "            );",
+            "            return DeliveryResult.success(\"Email sent\");",
+            "        } catch (EmailException e) {",
+            "            return DeliveryResult.failure(e.getMessage());",
+            "        }",
+            "    }",
+            "    // deliverWithRetry(), deliverAsync(), canHandle() all inherited!"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "DomainEvent.java — Sealed Interface + Records Pattern",
+          "lines": [
+            "package com.techsustainify.domain.event;",
+            "",
+            "import java.time.Instant;",
+            "import java.util.UUID;",
+            "",
+            "/**",
+            " * Sealed interface — all domain events in the Order bounded context.",
+            " * Enables exhaustive pattern matching in event handlers.",
+            " * Permitted types are immutable records.",
+            " */",
+            "public sealed interface OrderDomainEvent",
+            "    permits OrderDomainEvent.OrderPlaced,",
+            "            OrderDomainEvent.OrderConfirmed,",
+            "            OrderDomainEvent.OrderShipped,",
+            "            OrderDomainEvent.OrderDelivered,",
+            "            OrderDomainEvent.OrderCancelled {",
+            "",
+            "    // Common contract for all events",
+            "    String  orderId();",
+            "    String  eventId();",
+            "    Instant occurredAt();",
+            "",
+            "    default String getEventType() {",
+            "        return getClass().getSimpleName();",
+            "    }",
+            "",
+            "    // ── PERMITTED RECORDS — each is final by nature ───",
+            "",
+            "    record OrderPlaced(",
+            "        String orderId,",
+            "        String customerId,",
+            "        double totalAmount,",
+            "        String eventId,",
+            "        Instant occurredAt",
+            "    ) implements OrderDomainEvent {",
+            "        public OrderPlaced(String orderId, String customerId, double total) {",
+            "            this(orderId, customerId, total,",
+            "                 UUID.randomUUID().toString(), Instant.now());",
+            "        }",
+            "    }",
+            "",
+            "    record OrderConfirmed(",
+            "        String orderId,",
+            "        String confirmedBy,",
+            "        String eventId,",
+            "        Instant occurredAt",
+            "    ) implements OrderDomainEvent {",
+            "        public OrderConfirmed(String orderId, String confirmedBy) {",
+            "            this(orderId, confirmedBy, UUID.randomUUID().toString(), Instant.now());",
+            "        }",
+            "    }",
+            "",
+            "    record OrderShipped(",
+            "        String orderId,",
+            "        String trackingNumber,",
+            "        String carrier,",
+            "        Instant estimatedDelivery,",
+            "        String eventId,",
+            "        Instant occurredAt",
+            "    ) implements OrderDomainEvent {",
+            "        public OrderShipped(String orderId, String tracking,",
+            "                            String carrier, Instant eta) {",
+            "            this(orderId, tracking, carrier, eta,",
+            "                 UUID.randomUUID().toString(), Instant.now());",
+            "        }",
+            "    }",
+            "",
+            "    record OrderDelivered(",
+            "        String orderId, String eventId, Instant occurredAt",
+            "    ) implements OrderDomainEvent {",
+            "        public OrderDelivered(String orderId) {",
+            "            this(orderId, UUID.randomUUID().toString(), Instant.now());",
+            "        }",
+            "    }",
+            "",
+            "    record OrderCancelled(",
+            "        String orderId,",
+            "        String reason,",
+            "        String cancelledBy,",
+            "        String eventId,",
+            "        Instant occurredAt",
+            "    ) implements OrderDomainEvent {",
+            "        public OrderCancelled(String orderId, String reason, String by) {",
+            "            this(orderId, reason, by, UUID.randomUUID().toString(), Instant.now());",
+            "        }",
+            "    }",
+            "}",
+            "",
+            "// ── EVENT HANDLER — exhaustive switch, no default ─────",
+            "public class OrderEventHandler {",
+            "",
+            "    public void handle(OrderDomainEvent event) {",
+            "        // Compiler verifies ALL five cases are covered — no default needed!",
+            "        switch (event) {",
+            "            case OrderDomainEvent.OrderPlaced e ->",
+            "                System.out.printf(\"Order placed: %s for customer %s (₹%.2f)%n\",",
+            "                    e.orderId(), e.customerId(), e.totalAmount());",
+            "",
+            "            case OrderDomainEvent.OrderConfirmed e ->",
+            "                System.out.printf(\"Order confirmed: %s by %s%n\",",
+            "                    e.orderId(), e.confirmedBy());",
+            "",
+            "            case OrderDomainEvent.OrderShipped e ->",
+            "                System.out.printf(\"Order shipped: %s via %s (track: %s)%n\",",
+            "                    e.orderId(), e.carrier(), e.trackingNumber());",
+            "",
+            "            case OrderDomainEvent.OrderDelivered e ->",
+            "                System.out.printf(\"Order delivered: %s at %s%n\",",
+            "                    e.orderId(), e.occurredAt());",
+            "",
+            "            case OrderDomainEvent.OrderCancelled e ->",
+            "                System.out.printf(\"Order cancelled: %s — Reason: %s%n\",",
+            "                    e.orderId(), e.reason());",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interface-flowchart",
+      "title": "Interface Flowchart — From Declaration to Runtime Dispatch",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This flowchart shows the complete lifecycle of a Java interface — from declaration and implementation through to runtime polymorphic dispatch."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1",  "label": "📜 Interface Declared",            "sublabel": "interface Payable { void pay(); }",            "type": "start" },
+            { "id": "2",  "label": "🔍 Class implements Interface",    "sublabel": "class UPI implements Payable",                 "type": "process" },
+            { "id": "3",  "label": "✅ All abstract methods provided?","sublabel": "UPI.pay() body implemented",                   "type": "decision" },
+            { "id": "4",  "label": "❌ Compile error",                 "sublabel": "Missing method implementation",               "type": "process" },
+            { "id": "5",  "label": "📦 Object created",               "sublabel": "Payable p = new UPI();",                      "type": "process" },
+            { "id": "6",  "label": "📞 Method called on interface ref","sublabel": "p.pay() — which version?",                    "type": "process" },
+            { "id": "7",  "label": "🔎 JVM vtable lookup",            "sublabel": "Runtime type = UPI",                          "type": "process" },
+            { "id": "8",  "label": "✅ UPI.pay() executes",            "sublabel": "Dynamic dispatch — runtime polymorphism",     "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "class uses" },
+            { "from": "2", "to": "3", "label": "check" },
+            { "from": "3", "to": "4", "label": "NO" },
+            { "from": "3", "to": "5", "label": "YES — compile OK" },
+            { "from": "5", "to": "6", "label": "call" },
+            { "from": "6", "to": "7", "label": "lookup" },
+            { "from": "7", "to": "8", "label": "dispatch" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Interface Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are consistently asked in Java fresher and experienced developer interviews, campus placements, and OCPJP certification exams."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is an interface in Java? How is it different from a class?",
+              "a": "An interface is a reference type that defines a contract — a set of method signatures that implementing classes must provide. Unlike a class, an interface: (1) Cannot be instantiated directly. (2) Has no constructors. (3) All fields are implicitly public static final (constants). (4) Traditional abstract methods are implicitly public abstract. (5) A class can implement multiple interfaces simultaneously (vs single class inheritance). (6) Since Java 8+: can have default, static methods. Since Java 9+: can have private methods. Interface represents CAPABILITY/BEHAVIOUR contract. Class represents a TYPE with state and behaviour.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What are default methods in interfaces? Why were they introduced?",
+              "a": "Default methods (Java 8+) are concrete method implementations inside an interface, declared with the 'default' keyword. They were introduced to solve the API evolution problem: before Java 8, adding a method to a published interface broke all existing implementing classes. With default methods, a new method can carry a default implementation — existing implementors inherit a working default and can override if needed. This enabled Java 8's Stream API to be added to the existing Collection interface (forEach(), spliterator(), stream()) without breaking all existing Collection implementations. Conflict resolution: if a class implements two interfaces with the same default method, it MUST explicitly override to resolve the ambiguity.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. Can an interface extend another interface? Can it extend a class?",
+              "a": "An interface CAN extend one or MORE other interfaces using 'extends' (NOT 'implements'). Interface inheritance allows building rich type hierarchies — 'interface ReadWriteRepository extends ReadRepository, WriteRepository'. An interface inherits all abstract methods and default methods from parent interfaces. A class implementing the derived interface must implement ALL inherited abstract methods from the entire hierarchy. An interface CANNOT extend a class — only interfaces can be extended by interfaces. Extends is for class-to-class and interface-to-interface. Implements is for class-to-interface.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What is a functional interface? What is @FunctionalInterface?",
+              "a": "A functional interface has exactly ONE abstract method (SAM — Single Abstract Method). It can have any number of default, static, or private methods. @FunctionalInterface is an annotation that enforces this at compile time — if someone accidentally adds a second abstract method, the compile fails immediately. Functional interfaces are the target types for lambda expressions and method references. Built-in examples: Runnable (run()), Callable (call()), Comparator (compare()), and the entire java.util.function package — Predicate, Function, Consumer, Supplier, BiFunction, etc. Without @FunctionalInterface, a class can still target an interface with one abstract method as a lambda — the annotation is defensive documentation, not a technical requirement.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q5. What is the difference between an interface and an abstract class in Java?",
+              "a": "Interface: defines a capability/contract; fields are public static final constants only; methods are implicitly public; no constructors; no instance state; a class can implement multiple interfaces; used for cross-cutting capabilities (Serializable, Comparable, Runnable). Abstract class: can have both abstract and concrete methods; can have instance fields with any modifier; has constructors; supports only single inheritance; can have mutable state; used for closely related types sharing common implementation. Rule: use interface for 'can-do' capabilities any unrelated class might need. Use abstract class for 'is-a' base type with shared state and behaviour among closely related classes. Best pattern: interface for the contract, abstract class for partial implementation (e.g., AbstractList implements List).",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q6. Can interfaces have constructors in Java?",
+              "a": "No — interfaces CANNOT have constructors. Constructors are used to initialise object state (instance fields), but interfaces have no instance state (no instance fields — only public static final constants). Since interfaces cannot be instantiated directly (you cannot write 'new Runnable()'), there is no object to initialise. The 'new InterfaceName()' syntax only works for anonymous class instantiation — not a true interface constructor call. If you need shared initialisation logic for all implementors, put it in an abstract class that implements the interface.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. What happens when a class implements two interfaces with the same default method?",
+              "a": "It is a compile-time error — Java cannot automatically choose which default to use. The implementing class MUST explicitly override the method to resolve the conflict. Inside the override, the class can: (1) Choose one interface's default: 'A.super.method()' or 'B.super.method()'. (2) Write a completely new implementation. (3) Call both in sequence. This explicit resolution makes intent clear. Contrast: if a class extends a superclass that provides a concrete method AND implements an interface with a default method of the same name — the SUPERCLASS METHOD WINS. Class hierarchy always beats interface defaults.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. What are marker interfaces? Give examples and their modern alternative.",
+              "a": "A marker interface has no methods and no fields — its sole purpose is to tag a class as having a certain property, detectable via instanceof or reflection. Examples: java.io.Serializable (enables serialisation), java.lang.Cloneable (enables clone()), java.util.RandomAccess (signals O(1) index access for List). Modern alternative: annotations. @Entity, @Service, @Override, @Deprecated all serve as markers with more power — they can carry data, be targeted at specific elements, and be processed by annotation processors at compile time or runtime via reflection. Marker interfaces remain relevant for IS-A type checks (instanceof Serializable) while annotations are preferred for most new metadata needs.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q9. What are sealed interfaces (Java 17+)? How do they help?",
+              "a": "Sealed interfaces (Java 17, JEP 409) restrict which classes or interfaces can implement them, declared with 'sealed' and 'permits ClassName, ...'. Benefits: (1) Exhaustive pattern matching — the compiler knows all permitted types and can verify a switch covers all cases without a default clause. (2) Controlled extensibility — the interface is available for use everywhere but only specific types can implement it. (3) Domain modelling — models algebraic data types (sum types). Each permitted type must be final, sealed, or non-sealed. Combined with records, they enable concise, type-safe domain event and result type hierarchies. Switch pattern matching in Java 21 fully leverages sealed interfaces for exhaustive, compiler-verified dispatch.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q10. Can we declare variables inside an interface? What are their implicit modifiers?",
+              "a": "Yes — variables declared inside an interface are implicitly 'public static final' — i.e., they are constants. This happens regardless of what modifiers you write. 'int MAX = 100;' in an interface is automatically 'public static final int MAX = 100;'. Consequences: (1) They must be initialised at the point of declaration — no lazy initialisation. (2) They cannot be reassigned — final. (3) They are accessed via the interface name: InterfaceName.CONSTANT. (4) They are inherited by implementing classes, but accessing via the class name is misleading. Anti-pattern: creating an interface purely to hold constants (Constant Interface Anti-Pattern) — use a final utility class instead.",
+              "tag": "Frequently Asked"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Interface Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Attempt each question independently before reading the answer — active recall significantly improves retention and understanding."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output?\ninterface Greet { default void hello() { System.out.println(\"Interface hello\"); }}\nclass Base   { public void hello() { System.out.println(\"Base hello\"); }}\nclass Child extends Base implements Greet { }\npublic class Test {\n    public static void main(String[] args) {\n        new Child().hello();\n    }\n}",
+              "a": "Output: 'Base hello'. This demonstrates the default method resolution rule: a class's (or superclass's) concrete method ALWAYS wins over an interface's default method. Child extends Base (which has a concrete hello()) and implements Greet (which has a default hello()). Java resolves to Base.hello() — the class hierarchy beats the interface default. No compile error — no ambiguity because the rule is unambiguous. If Base did NOT have hello(), then Greet's default would be inherited and 'Interface hello' would print.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Will this compile? Identify and fix all issues.\ninterface Drawable {\n    void draw();\n    static void staticHelper() { System.out.println(\"Static helper\"); }\n}\nclass Canvas implements Drawable {\n    protected void draw() { System.out.println(\"Drawing\"); }\n    public void render() { Canvas.staticHelper(); }\n}",
+              "a": "Two issues: (1) 'protected void draw()' — COMPILE ERROR. Interface abstract methods are implicitly public. Implementing them with 'protected' narrows the access modifier — illegal. Fix: 'public void draw()'. (2) 'Canvas.staticHelper()' — COMPILE ERROR. Static interface methods are NOT inherited by implementing classes. They can only be called on the interface itself. Fix: 'Drawable.staticHelper()'. Corrected class: 'public class Canvas implements Drawable { public void draw() { System.out.println(\"Drawing\"); } public void render() { Drawable.staticHelper(); } }'",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Design a functional interface 'StringTransformer' that takes a String and returns a String. Use it with lambdas to: (a) uppercase, (b) reverse, (c) trim+lowercase. Then compose them.",
+              "a": "@FunctionalInterface interface StringTransformer { String transform(String input); default StringTransformer andThen(StringTransformer next) { return input -> next.transform(this.transform(input)); } }  Usage: StringTransformer toUpper   = String::toUpperCase; StringTransformer reverse    = s -> new StringBuilder(s).reverse().toString(); StringTransformer normalise  = s -> s.trim().toLowerCase();  StringTransformer pipeline = normalise.andThen(toUpper).andThen(reverse);  System.out.println(toUpper.transform(\"hello\"));     // HELLO System.out.println(reverse.transform(\"Java\"));       // avaJ System.out.println(normalise.transform(\"  HELLO  \")); // hello System.out.println(pipeline.transform(\"  Java  \"));   // avaj  Note: andThen() as a default method enables composition just like Function.andThen() in java.util.function.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. Two interfaces A and B both have 'default void log()'. Class C implements both. Show how to resolve the conflict — (a) using A's version, (b) using B's version, (c) writing a completely new version.",
+              "a": "interface A { default void log() { System.out.println(\"A log\"); } } interface B { default void log() { System.out.println(\"B log\"); } }  class C implements A, B { @Override public void log() { // Option a: use A's version A.super.log(); // Option b: use B's version // B.super.log(); // Option c: completely new // System.out.println(\"C custom log\"); } }  If C does NOT override log(), it is a COMPILE ERROR — Java cannot choose between A's and B's defaults. The @Override and explicit resolution is mandatory. You can also call both: A.super.log(); B.super.log(); System.out.println(\"C own message\"); — all three in sequence.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. What is wrong with this code? Fix it.\ninterface AppConstants {\n    String DB_URL = \"jdbc:mysql://localhost:3306/app\";\n    int MAX_CONNECTIONS = 10;\n    String API_KEY = \"secret-key-12345\";\n}\nclass DatabaseService implements AppConstants {\n    public void connect() {\n        System.out.println(\"Connecting to \" + DB_URL);\n    }\n}",
+              "a": "This is the Constant Interface Anti-Pattern — an interface used purely for constants. Problems: (1) DatabaseService now has 'AppConstants' as a public IS-A type — a meaningless API commitment that leaks implementation detail. (2) Every class needing constants must implement the interface, polluting their type hierarchy. (3) API_KEY as a public interface constant is visible globally — security concern. Fix: use a final utility class with a private constructor. public final class AppConstants { private AppConstants() {} public static final String DB_URL = \"jdbc:mysql://localhost:3306/app\"; public static final int MAX_CONNECTIONS = 10; private static final String API_KEY = \"secret-key-12345\"; // private! } — DatabaseService removes 'implements AppConstants' and uses 'AppConstants.DB_URL' directly.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. Implement a sealed interface 'Result<T>' with two permitted records: 'Success<T>' (holds a value T) and 'Failure<T>' (holds an error message String). Write a method that uses exhaustive switch pattern matching.",
+              "a": "public sealed interface Result<T> permits Result.Success, Result.Failure { record Success<T>(T value) implements Result<T> {} record Failure<T>(String error) implements Result<T> {}  static <T> Result<T> of(java.util.function.Supplier<T> supplier) { try { return new Success<>(supplier.get()); } catch (Exception e) { return new Failure<>(e.getMessage()); } }  default boolean isSuccess() { return this instanceof Success; } default T getOrThrow() { return switch (this) { case Success<T> s -> s.value(); case Failure<T> f -> throw new RuntimeException(f.error()); }; } }  Usage: Result<Integer> r1 = Result.of(() -> Integer.parseInt(\"42\")); Result<Integer> r2 = Result.of(() -> Integer.parseInt(\"abc\")); String msg1 = switch (r1) { case Result.Success<Integer> s -> \"Value: \" + s.value(); case Result.Failure<Integer> f -> \"Error: \" + f.error(); }; System.out.println(msg1); // Value: 42",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. Explain why 'new Runnable() { ... }' is an anonymous class and how it relates to a lambda. Show both forms.",
+              "a": "Runnable is a functional interface with one abstract method: 'void run()'. Before Java 8, the only way to provide an inline implementation was an anonymous class: Runnable r1 = new Runnable() { @Override public void run() { System.out.println(\"Running via anonymous class\"); } };  With Java 8 lambdas, any functional interface can be implemented with a lambda expression: Runnable r2 = () -> System.out.println(\"Running via lambda\");  Both are semantically equivalent for single-method interfaces. Differences: (1) Lambda is more concise. (2) Lambda captures 'this' from the enclosing class; anonymous class creates its own 'this'. (3) Anonymous class can hold state (fields); lambdas cannot (they capture effectively-final variables). (4) Anonymous classes can extend abstract classes; lambdas target only functional interfaces. (5) Lambdas are implemented via invokedynamic (more efficient); anonymous classes create separate .class files.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Design an interface hierarchy for a payment system: PaymentGateway (base) → SecurePaymentGateway (adds encryption contract) → InternationalPaymentGateway (adds currency conversion). Show a class implementing the most derived interface.",
+              "a": "interface PaymentGateway { PaymentResult process(double amount, String currency); boolean isAvailable(); default PaymentResult processWithValidation(double amount, String currency) { if (amount <= 0) return PaymentResult.failure(\"Invalid amount\"); if (!isAvailable()) return PaymentResult.failure(\"Gateway unavailable\"); return process(amount, currency); } }  interface SecurePaymentGateway extends PaymentGateway { String encryptPayload(String payload); boolean verifySignature(String payload, String signature); default PaymentResult processSecurely(double amount, String currency, String payload) { String encrypted = encryptPayload(payload); return processWithValidation(amount, currency); } }  interface InternationalPaymentGateway extends SecurePaymentGateway { double convertCurrency(double amount, String from, String to); String[] getSupportedCurrencies(); default PaymentResult processInternational(double amount, String from, String to, String payload) { double converted = convertCurrency(amount, from, to); return processSecurely(converted, to, payload); } }  class StripeGateway implements InternationalPaymentGateway { @Override public PaymentResult process(double a, String c) { return PaymentResult.success(\"Stripe: \" + a + \" \" + c); } @Override public boolean isAvailable() { return true; } @Override public String encryptPayload(String p) { return \"ENC:\" + p; } @Override public boolean verifySignature(String p, String s) { return true; } @Override public double convertCurrency(double a, String f, String t) { return a * 0.012; } @Override public String[] getSupportedCurrencies() { return new String[]{\"INR\",\"USD\",\"EUR\"}; } }",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Interfaces: The Backbone of Java's Flexibility",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Interfaces are the <strong>most powerful abstraction mechanism in Java</strong>. They enable programming to contracts rather than implementations — the fundamental principle behind testable, extensible, maintainable enterprise software. Every major Java framework — Spring, Hibernate, JUnit, Java EE — is built on carefully designed interface hierarchies that allow any implementation to be swapped without changing the calling code."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Modern Java interfaces are richer than ever: <strong>default methods</strong> enable API evolution and mixin-style composition; <strong>static methods</strong> provide namespace-clean factory utilities; <strong>private methods</strong> enable internal helpers without polluting the public API; <strong>functional interfaces</strong> power the entire lambda and Stream ecosystem; <strong>sealed interfaces</strong> bring algebraic data type safety to Java. Mastering interfaces is mastering Java's type system."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept",                   "Key Rule",                                                          "Example"],
+          "rows": [
+            ["interface keyword",          "Declares a contract — no instantiation, no constructors",          "public interface Payable { void pay(); }"],
+            ["implements keyword",         "Class adopts contract — must provide all abstract methods",         "class UPI implements Payable"],
+            ["Abstract method",            "Implicitly public abstract — must be overridden as public",         "PaymentResult process(Request r);"],
+            ["Interface constant",         "Implicitly public static final — use InterfaceName.CONST",          "int MAX_RETRY = 3;"],
+            ["default method (J8+)",       "Concrete impl — inherited, overridable, conflict requires override", "default void retry() { ... }"],
+            ["static method (J8+)",        "Belongs to interface — called via InterfaceName.method()",          "static boolean validate(r) { ... }"],
+            ["private method (J9+)",       "Internal helper — NOT inherited by implementing classes",           "private void logAttempt() { ... }"],
+            ["Functional interface",       "Exactly one abstract method — target for lambdas",                  "@FunctionalInterface interface Transform { String apply(String s); }"],
+            ["Marker interface",           "No methods — tags a class for runtime or framework detection",      "class DTO implements Serializable { }"],
+            ["sealed interface (J17+)",    "Restricts permitted types — enables exhaustive switch",             "sealed interface Shape permits Circle, Rect"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Polymorphism</strong> — where you will see how interfaces and inheritance work together to create programs where one reference type handles many different implementations, how runtime dispatch enables extensible architectures, and how modern Java's pattern matching switch takes polymorphic dispatch to a new level of expressiveness. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Interface",
+    "items": [
+      {
+        "q": "What is an interface in Java?",
+        "a": "An interface in Java is a reference type that defines a contract — a set of method signatures that any implementing class must provide. Declared with the 'interface' keyword, it specifies WHAT must be done without specifying HOW. Since Java 8+, interfaces can also have default methods (concrete implementations), static methods, and since Java 9+, private methods. A class adopts an interface's contract using 'implements'. One class can implement multiple interfaces simultaneously."
+      },
+      {
+        "q": "What is the difference between an interface and an abstract class in Java?",
+        "a": "Interface: defines a capability/contract; fields are public static final constants; no instance state; no constructors; a class can implement multiple interfaces. Abstract class: can have abstract and concrete methods; can have instance fields; has constructors; only single inheritance. Use interface for 'can-do' capabilities any class might need (Serializable, Comparable). Use abstract class for a common base with shared state among closely related types. Best pattern: interface defines the contract, abstract class provides partial implementation."
+      },
+      {
+        "q": "What is a functional interface in Java?",
+        "a": "A functional interface has exactly one abstract method (SAM — Single Abstract Method). It may have default, static, or private methods. The @FunctionalInterface annotation enforces the single-abstract-method rule at compile time. Functional interfaces are the target types for lambda expressions and method references. Built-in examples from java.util.function: Predicate<T>, Function<T,R>, Consumer<T>, Supplier<T>, BiFunction<T,U,R>. Any interface with one abstract method can be used as a lambda target, with or without @FunctionalInterface."
+      },
+      {
+        "q": "What are default methods in Java interfaces?",
+        "a": "Default methods (Java 8+) are concrete implementations inside an interface, declared with the 'default' keyword. They solve the API evolution problem: adding a new method to a published interface no longer breaks all existing implementations — the default method provides a fallback implementation. Implementing classes can override them. Conflict: if two interfaces provide the same default method, the implementing class MUST explicitly override to resolve the ambiguity, optionally calling a specific interface's default with 'InterfaceName.super.method()'."
+      },
+      {
+        "q": "Can an interface extend another interface in Java?",
+        "a": "Yes — an interface can extend one or more other interfaces using 'extends' (not 'implements'). This builds interface hierarchies where the derived interface inherits all abstract and default methods from its parents and can add new ones. A class implementing the derived interface must implement ALL inherited abstract methods from the entire hierarchy. An interface CANNOT extend a class — only interface-to-interface and class-to-class for extends; interface-to-class uses 'implements'."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Inner-Class",    "path": "/java/java-inner-class" },
+    "next": { "label": "Java Enums →",   "path": "/java/java-enums" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Interface keyword",       "dd": "interface — defines a contract" },
+      { "dt": "implements keyword",      "dd": "class adopts interface contract" },
+      { "dt": "Abstract methods",        "dd": "implicitly public abstract" },
+      { "dt": "Interface constants",     "dd": "implicitly public static final" },
+      { "dt": "Multiple implement",      "dd": "✅ A class can implement many interfaces" },
+      { "dt": "Functional interface",    "dd": "Exactly one abstract method — lambda target" }
+    ],
+    "relatedArticles": [
+      { "label": "Java Inheritance",         "path": "/java/java-inheritance" },
+      { "label": "Java Polymorphism",        "path": "/java/java-polymorphism" },
+      { "label": "Java Abstraction",         "path": "/java/java-abstraction" },
+      { "label": "Java Abstract Class",      "path": "/java/java-abstract-class" },
+      { "label": "Java Lambda Expressions",  "path": "/java/java-lambda" },
+      { "label": "Java Functional Interface","path": "/java/java-functional-interface" },
+      { "label": "Java Access Modifiers",    "path": "/java/java-access-modifiers" },
+      { "label": "Java Records",             "path": "/java/java-records" }
+    ],
+    "tags": ["Java Interface", "implements keyword", "Default Methods", "Static Interface Methods", "Private Interface Methods", "Functional Interface", "Marker Interface", "Sealed Interface", "Interface vs Abstract Class", "SAM Interface", "Lambda Expressions", "Interface Segregation Principle", "Constant Interface Anti-Pattern", "Java 8 Interface", "Java 17 Sealed"]
+  }
+}

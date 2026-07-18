@@ -1,0 +1,1927 @@
+{
+  "meta": {
+    "title": "Java Packages and API — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Packages and API with package declaration, import statements, built-in Java API packages, user-defined packages, access modifiers with packages, java.lang, java.util, java.io, java.math, best practices, common mistakes, and real-world examples. Updated March 2026.",
+    "keywords": "java packages, java api, java package declaration, java import statement, java built-in packages, java user defined packages, java lang package, java util package, java io package, java math package, java access modifiers packages, java package interview questions, java package best practices, java package examples, java classpath packages",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-packages-api",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Packages and API — Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java Packages and API — package declaration, import statements, built-in Java API packages, user-defined packages, access modifiers, java.lang, java.util, java.io, java.math, real-world examples, pitfalls, and interview questions.",
+      "url": "https://www.techsustainify.com/java/java-packages-api",
+      "image": "https://www.techsustainify.com/images/java-packages-api-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Packages and API Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-03-01T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Packages",
+          "Java API",
+          "Java Import Statement",
+          "Java Built-in Packages",
+          "Java User Defined Packages",
+          "Java java.lang Package",
+          "Java java.util Package",
+          "Java Access Modifiers",
+          "Java Classpath",
+          "Java 21"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Packages and API — Syntax, Examples & Best Practices 2026",
+      "description": "Complete guide to Java Packages and API — package declaration, import, built-in packages, user-defined packages, access modifiers, java.lang/util/io/math, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-packages-api-og.png",
+      "imageAlt": "Java Packages and API Guide 2026 - Tech Sustainify",
+      "readingTime": "20 minutes",
+      "level": "Beginner to Intermediate",
+      "label1": "Reading Time",
+      "data1": "20 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner to Intermediate"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Packages and API — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering all Java Packages and API concepts — package declaration, import statements, built-in Java API packages, user-defined packages, access modifiers with packages, commonly used API classes, real-world examples, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-03-01",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner to Intermediate",
+        "wordCount": 5800,
+        "timeRequired": "PT20M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Packages" },
+          { "@type": "Thing", "name": "Java API" },
+          { "@type": "Thing", "name": "Java Import Statement" },
+          { "@type": "Thing", "name": "Java Built-in Packages" }
+        ],
+        "keywords": "java packages, java api, java package declaration, java import statement, java built-in packages, java user defined packages, java lang package, java util package, java access modifiers packages"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Packages and API" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a package in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A package in Java is a namespace that groups related classes, interfaces, enumerations, and annotations together. It serves two key purposes: organization (related types are stored together, making large codebases navigable) and access control (package-private visibility restricts access to only classes in the same package). Packages map directly to directory structures on disk — a class in package com.example.service must physically reside in a com/example/service/ directory. The package declaration must be the very first statement in a Java source file (before imports and class declaration): package com.example.service; Every Java program is in a package — if no package is declared, the class belongs to the unnamed default package, which is fine for small experiments but unsuitable for production code."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the Java API?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Java API (Application Programming Interface) is the collection of pre-written classes, interfaces, and packages that ship with every Java installation as part of the Java Standard Library (also called the Java Class Library or JCL). It provides ready-to-use implementations for common programming tasks: data structures (java.util), input/output (java.io, java.nio), networking (java.net), mathematics (java.math), string manipulation (java.lang), date/time handling (java.time), concurrency (java.util.concurrent), and much more. Using the Java API means you do not have to implement fundamental operations from scratch — you import the needed package and use battle-tested, optimized, and well-documented classes. The full Java API documentation is available at docs.oracle.com/en/java/javase/."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between import and package in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The package statement and import statement serve different purposes. package declares which package the current class BELONGS TO — it defines the class's address in the Java namespace. There can be only one package declaration per file and it must be the first statement. import makes classes from OTHER packages available in the current file by their simple name — without import, you must use the fully qualified class name (e.g., java.util.ArrayList) every time. import does not copy or include code — it is purely a compile-time shortcut that tells the compiler where to look for a type name. java.lang is the only package that is automatically imported — all other packages require explicit import statements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a wildcard import in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A wildcard import uses an asterisk (*) to import all public types from a package in one statement: import java.util.*; — this makes all public classes in java.util (ArrayList, HashMap, Scanner, etc.) available by their simple names. Wildcard imports do NOT import sub-packages — import java.util.* does NOT import java.util.concurrent.*. They also do NOT affect performance at runtime — the Java compiler resolves exactly which classes are used and only includes those. The debate: wildcard imports are concise but can cause ambiguity when two packages have classes with the same name (e.g., java.util.Date and java.sql.Date). Specific imports are preferred in professional code for clarity and IDE navigation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which Java package is imported automatically?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The java.lang package is the only package that Java imports automatically into every source file — you never need to write import java.lang.*; explicitly. It contains the most fundamental classes in Java: String, Integer, Long, Double, Boolean, Math, Object, System, StringBuilder, Thread, Runnable, Exception, RuntimeException, NullPointerException, ArithmeticException, and more. All other packages — including java.util, java.io, java.net, java.time, java.math, and every third-party library — must be explicitly imported. This is why you can use String and System.out.println() without any import statement, but must import Scanner, ArrayList, and LocalDate."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner to Intermediate",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-03-01",
+      "dateModified": "2026-03-20",
+      "readingTime": "20 minutes",
+      "wordCount": 5800,
+      "difficulty": "Beginner to Intermediate",
+      "chapter": 10,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-package",              "title": "What is a Package in Java?" },
+        { "id": "package-syntax-rules",         "title": "Package Declaration — Syntax & Rules" },
+        { "id": "import-statement",             "title": "Import Statement — Types & Usage" },
+        { "id": "builtin-packages",             "title": "Built-in Java API Packages" },
+        { "id": "java-lang-package",            "title": "java.lang — The Auto-Imported Package" },
+        { "id": "java-util-package",            "title": "java.util — Collections & Utilities" },
+        { "id": "java-io-package",              "title": "java.io & java.nio — Input/Output" },
+        { "id": "java-math-package",            "title": "java.math — Precise Arithmetic" },
+        { "id": "java-time-package",            "title": "java.time — Modern Date & Time API" },
+        { "id": "user-defined-packages",        "title": "User-Defined Packages" },
+        { "id": "access-modifiers-packages",    "title": "Access Modifiers & Package Visibility" },
+        { "id": "static-import",                "title": "Static Import" },
+        { "id": "common-mistakes",              "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",                "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",          "title": "Real-World Production Code Examples" },
+        { "id": "packages-flowchart",           "title": "Package Structure Flow Diagram" },
+        { "id": "interview-questions",          "title": "Interview Questions" },
+        { "id": "practice-questions",           "title": "Practice Questions" },
+        { "id": "conclusion-heading",           "title": "Conclusion" },
+        { "id": "faq-heading",                  "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-packages-api" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-packages-api" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-packages-api" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-break-continue",
+      "next": "https://www.techsustainify.com/java/java-arrays"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-core",
+      "contentTopic": "java-packages-api",
+      "chapterNumber": 10,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner-intermediate",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Packages and API" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Packages and API — Syntax, Structure, Examples & Best Practices",
+    "subtitle": "Everything you need to know about Java Packages and the Java API — package declaration, import statements, built-in Java API packages, user-defined packages, access modifiers with packages, static imports, the most important API classes, anti-patterns, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "20 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner to Intermediate" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "10 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-package",
+      "title": "What is a Package in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>package</strong> in Java is a <strong>namespace mechanism</strong> that groups related classes, interfaces, enumerations, and annotations into a single logical unit. Think of it as a folder system for your Java code — just as you organize files into folders on your computer, you organize Java types into packages. Packages solve two fundamental problems that arise in large projects: <em>name collision</em> (two classes with the same name in different packages coexist peacefully) and <em>controlled access</em> (package-private members are only visible within the same package)."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Packages in Java are <strong>directly mapped to the directory structure</strong> on disk. A class declared in package <code>com.techsustainify.service</code> must physically reside in a directory path <code>com/techsustainify/service/</code> relative to the source root. This one-to-one mapping between packages and directories is enforced by the Java compiler — if the directory structure does not match the package declaration, the code will not compile."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <strong>Java API</strong> (Application Programming Interface) is the massive collection of pre-built packages and classes that ship with every Java installation — the Java Standard Library. It provides thousands of ready-to-use classes for collections, I/O, networking, math, concurrency, date/time, and much more. Learning which packages exist in the Java API and what they contain is one of the most practical skills a Java developer can develop."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java Packages & API at a Glance",
+          "text": "Package = namespace that groups related classes + maps to directory structure on disk. package statement must be the FIRST statement in a Java file (before imports, before class). import makes class names from other packages available without full qualification. java.lang is the ONLY package auto-imported — all others require explicit import. Wildcard import (import java.util.*;) imports all public types in a package — not sub-packages. Static import allows using static members without class name prefix. User-defined packages follow reverse domain naming: com.companyname.module. Access modifier + package: package-private (no modifier) = visible only within same package. Java API key packages: java.lang, java.util, java.io, java.math, java.time, java.net, java.util.concurrent."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "package-syntax-rules",
+      "title": "Package Declaration — Syntax & Rules",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>package</code> statement declares which package a Java source file belongs to. It must be the <strong>absolute first statement</strong> in the file — before any import statements, before any class declarations, and before any comments (though comments above the package statement are technically allowed). Only one package statement is permitted per source file."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📋",
+              "title": "Package Declaration Syntax & Rules",
+              "text": "Syntax: package packageName;\nExample: package com.techsustainify.service;\n\nRules: (1) Must be the FIRST statement in the source file. (2) Only ONE package declaration allowed per file. (3) Package name must be a valid Java identifier — lowercase letters, digits, underscores. (4) Multi-level packages use dots: com.company.module.submodule. (5) Package name maps directly to directory path: com/company/module/submodule/. (6) If omitted, the class belongs to the unnamed default package — acceptable for experiments, but never for production code. (7) By convention, package names use reverse domain notation to guarantee global uniqueness: com.google.gson, org.springframework.core, io.netty.channel."
+            },
+            {
+              "icon": "📁",
+              "title": "Package-to-Directory Mapping",
+              "text": "Java enforces a strict one-to-one mapping between package names and directory structure. Package: com.techsustainify.model → Directory: src/com/techsustainify/model/. The Java compiler (javac) and classloader use this mapping to locate class files. If EmployeeService.java declares package com.techsustainify.service; but is saved in the wrong directory, the compiler produces: error: class EmployeeService is public, should be declared in a file named EmployeeService.java. Modern IDEs (IntelliJ IDEA, Eclipse, VS Code) enforce this automatically — creating a class in a package auto-creates the matching directory structure."
+            },
+            {
+              "icon": "🏷️",
+              "title": "Naming Conventions — Reverse Domain",
+              "text": "The standard Java convention for package names is reverse Internet domain notation: com.companyname.projectname.module. Examples: com.google.gson (Google's Gson library), org.springframework.boot (Spring Boot), io.micrometer.core (Micrometer metrics), com.techsustainify.tutorial. Why reverse domain? It guarantees global uniqueness — two companies with different domains cannot produce a package name collision. Rules: all lowercase, no hyphens (use underscores if necessary), avoid Java keywords as package name segments. Segments beginning with digits are technically invalid Java identifiers — a leading underscore is the workaround: com.example._123module."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "PackageDeclarationExamples.java",
+          "lines": [
+            "// ✅ File: src/com/techsustainify/model/Employee.java",
+            "package com.techsustainify.model;  // ← FIRST statement — mandatory",
+            "",
+            "// Import statements come AFTER package declaration",
+            "import java.time.LocalDate;",
+            "import java.util.Objects;",
+            "",
+            "// Class declaration comes last",
+            "public class Employee {",
+            "    private final String name;",
+            "    private final String department;",
+            "    private final LocalDate joiningDate;",
+            "",
+            "    public Employee(String name, String department, LocalDate joiningDate) {",
+            "        this.name       = Objects.requireNonNull(name, \"name must not be null\");",
+            "        this.department = Objects.requireNonNull(department, \"department must not be null\");",
+            "        this.joiningDate = Objects.requireNonNull(joiningDate, \"joiningDate must not be null\");",
+            "    }",
+            "",
+            "    public String getName()         { return name; }",
+            "    public String getDepartment()   { return department; }",
+            "    public LocalDate getJoiningDate() { return joiningDate; }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return \"Employee{name='\" + name + \"', dept='\" + department",
+            "               + \"', joined=\" + joiningDate + \"}\";",
+            "    }",
+            "}",
+            "",
+            "// ─────────────────────────────────────────────",
+            "// ✅ File: src/com/techsustainify/service/EmployeeService.java",
+            "// package com.techsustainify.service;",
+            "//",
+            "// import com.techsustainify.model.Employee;  // ← import from another package",
+            "// import java.time.LocalDate;",
+            "// import java.util.ArrayList;",
+            "// import java.util.List;",
+            "//",
+            "// public class EmployeeService {",
+            "//     private List<Employee> employees = new ArrayList<>();",
+            "//",
+            "//     public void hire(String name, String dept) {",
+            "//         employees.add(new Employee(name, dept, LocalDate.now()));",
+            "//         System.out.println(\"Hired: \" + name + \" in \" + dept);",
+            "//     }",
+            "//",
+            "//     public List<Employee> getAll() { return List.copyOf(employees); }",
+            "// }",
+            "",
+            "// ─────────────────────────────────────────────",
+            "// ❌ Default (unnamed) package — NO package declaration",
+            "// Acceptable for quick tests, never for production",
+            "// public class QuickTest {",
+            "//     public static void main(String[] args) {",
+            "//         System.out.println(\"This class is in the unnamed default package\");",
+            "//     }",
+            "// }"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "import-statement",
+      "title": "Import Statement — Types, Usage & Rules",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>import</code> statement makes types from other packages available in the current file by their <strong>simple name</strong> instead of requiring the fully qualified name every time. Without import, you must write <code>java.util.ArrayList</code> every time you use it. With <code>import java.util.ArrayList;</code>, you can simply write <code>ArrayList</code>. Import is purely a <strong>compile-time convenience</strong> — it does not affect performance, does not load extra code, and does not change the compiled bytecode."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "1️⃣",
+              "title": "Single-Type Import (Specific Import)",
+              "text": "Imports exactly one class or interface by its full name:\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport java.time.LocalDate;\n\nThis is the preferred style in professional Java code — it is explicit, unambiguous, and makes it immediately clear which specific classes the file depends on. Modern IDEs (IntelliJ, Eclipse) auto-manage specific imports — they add the exact import when you use a class and remove unused ones automatically. Google Java Style Guide mandates specific imports over wildcard imports."
+            },
+            {
+              "icon": "🌟",
+              "title": "Wildcard Import (On-Demand Import)",
+              "text": "Imports all public types from an entire package at once:\nimport java.util.*;\nimport java.io.*;\n\nConvenient when many types from one package are used. Does NOT import sub-packages — import java.util.* does NOT import java.util.concurrent.* or java.util.function.*. Does NOT affect compile or runtime performance — the compiler resolves exactly which classes are needed. Potential downside: name ambiguity — if two imported packages both contain a class named Date (java.util.Date and java.sql.Date), the compiler reports an ambiguous symbol error and you must use the fully qualified name for at least one."
+            },
+            {
+              "icon": "⚡",
+              "title": "Static Import",
+              "text": "Imports static members (fields and methods) of a class so they can be used without the class name prefix:\nimport static java.lang.Math.PI;\nimport static java.lang.Math.sqrt;\nimport static java.lang.Math.pow;\n// Then use: double r = sqrt(pow(x, 2) + pow(y, 2));\n// Instead of: double r = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));\n\nAlso useful for test code: import static org.junit.jupiter.api.Assertions.*; — allows assertEquals(), assertTrue() directly. Use judiciously — overuse makes code harder to understand (readers cannot tell which class a static method belongs to)."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ImportStatements.java",
+          "lines": [
+            "package com.techsustainify.demo;",
+            "",
+            "// ✅ Single-type imports — preferred in professional code",
+            "import java.util.ArrayList;",
+            "import java.util.HashMap;",
+            "import java.util.List;",
+            "import java.util.Map;",
+            "import java.util.Collections;",
+            "import java.time.LocalDate;",
+            "import java.time.format.DateTimeFormatter;",
+            "",
+            "// ✅ Static import — use static members without class name",
+            "import static java.lang.Math.PI;",
+            "import static java.lang.Math.sqrt;",
+            "import static java.lang.Math.pow;",
+            "",
+            "public class ImportStatements {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Using imported classes by simple name",
+            "        List<String> cities = new ArrayList<>();",
+            "        cities.add(\"Delhi\");",
+            "        cities.add(\"Mumbai\");",
+            "        cities.add(\"Bangalore\");",
+            "        Collections.sort(cities);",
+            "        System.out.println(\"Sorted cities: \" + cities);",
+            "",
+            "        // ✅ Using Map — imported from java.util",
+            "        Map<String, Integer> population = new HashMap<>();",
+            "        population.put(\"Delhi\",     32941000);",
+            "        population.put(\"Mumbai\",    20667656);",
+            "        population.put(\"Bangalore\", 13193000);",
+            "        population.forEach((city, pop) ->",
+            "            System.out.printf(\"%-12s: %,d%n\", city, pop));",
+            "",
+            "        // ✅ Using LocalDate — imported from java.time",
+            "        LocalDate today = LocalDate.now();",
+            "        DateTimeFormatter fmt = DateTimeFormatter.ofPattern(\"dd MMMM yyyy\");",
+            "        System.out.println(\"Today: \" + today.format(fmt));",
+            "",
+            "        // ✅ Using static import — PI, sqrt, pow without Math. prefix",
+            "        double radius = 7.5;",
+            "        double area        = PI * pow(radius, 2);",
+            "        double circumference = 2 * PI * radius;",
+            "        double diagonal    = sqrt(pow(radius, 2) + pow(radius, 2));",
+            "        System.out.printf(\"Circle r=%.1f: area=%.2f, circ=%.2f, diag=%.2f%n\",",
+            "                          radius, area, circumference, diagonal);",
+            "",
+            "        // ✅ Fully qualified name — no import needed",
+            "        java.util.Scanner sc = new java.util.Scanner(System.in);",
+            "        // Verbose but valid — used when import is omitted or ambiguous",
+            "        sc.close();",
+            "",
+            "        // ✅ Name collision — both java.util.Date and java.sql.Date exist",
+            "        // If both are imported, use fully qualified names to resolve ambiguity:",
+            "        java.util.Date utilDate = new java.util.Date();",
+            "        java.sql.Date  sqlDate  = new java.sql.Date(System.currentTimeMillis());",
+            "        System.out.println(\"util.Date : \" + utilDate);",
+            "        System.out.println(\"sql.Date  : \" + sqlDate);",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "builtin-packages",
+      "title": "Built-in Java API Packages — The Standard Library",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The Java Standard Library ships with hundreds of packages containing thousands of classes. Knowing which packages exist and what they contain is a practical superpower — it prevents you from reinventing solutions that Java already provides. The table below covers the most important packages every Java developer must know."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Package", "Purpose", "Key Classes / Interfaces"],
+          "rows": [
+            ["java.lang",               "Fundamental classes — auto-imported",                  "String, Integer, Math, Object, System, StringBuilder, Thread, Exception, Runnable"],
+            ["java.util",               "Data structures, collections, utilities",               "ArrayList, HashMap, HashSet, LinkedList, Collections, Arrays, Scanner, Optional, UUID"],
+            ["java.util.concurrent",    "Thread-safe collections & concurrency utilities",       "ConcurrentHashMap, ExecutorService, Executors, Future, CountDownLatch, Semaphore"],
+            ["java.util.function",      "Functional interfaces (Java 8+)",                      "Function, Consumer, Supplier, Predicate, BiFunction, UnaryOperator"],
+            ["java.util.stream",        "Stream API for functional-style operations (Java 8+)", "Stream, Collectors, IntStream, LongStream, DoubleStream"],
+            ["java.io",                 "Byte/character I/O, serialization",                    "File, InputStream, OutputStream, BufferedReader, PrintWriter, Serializable"],
+            ["java.nio.file",           "Modern file system operations (Java 7+)",              "Path, Paths, Files, StandardOpenOption, FileVisitor"],
+            ["java.net",                "Networking — URLs, sockets, HTTP",                     "URL, URI, Socket, ServerSocket, HttpURLConnection, InetAddress"],
+            ["java.math",               "Arbitrary-precision arithmetic",                       "BigDecimal, BigInteger, MathContext, RoundingMode"],
+            ["java.time",               "Modern date/time API (Java 8+, replaces java.util.Date)", "LocalDate, LocalTime, LocalDateTime, ZonedDateTime, Duration, Period, DateTimeFormatter"],
+            ["java.sql",                "JDBC database connectivity",                           "Connection, Statement, PreparedStatement, ResultSet, DriverManager, Date, Timestamp"],
+            ["java.lang.reflect",       "Runtime class inspection and manipulation",            "Class, Method, Field, Constructor, Modifier"],
+            ["java.text",               "Text formatting — numbers, dates, messages",           "NumberFormat, DecimalFormat, SimpleDateFormat, MessageFormat"],
+            ["java.security",           "Cryptography, authentication, authorization",          "MessageDigest, KeyPair, SecureRandom, Signature, Certificate"]
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "💡 How to Explore the Java API",
+          "text": "The official Java API documentation (Javadoc) is your best friend. Bookmark it: https://docs.oracle.com/en/java/javase/21/docs/api/. Every class, method, parameter, return type, and exception is documented with examples. In IntelliJ IDEA: Ctrl+Click on any class name to jump to its source. Ctrl+Q shows quick Javadoc. In Eclipse: hover over a class name to see its documentation. The habit of reading the official Javadoc before writing utility code — to check if Java already has it — is what separates professional developers from beginners."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "java-lang-package",
+      "title": "java.lang — The Automatically Imported Package",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>java.lang</code> is the only Java package that is <strong>automatically imported into every Java source file</strong>. It contains the absolute bedrock of the Java language — classes so fundamental that Java programs cannot function without them. You use <code>java.lang</code> classes constantly without realizing it: every time you declare a <code>String</code>, call <code>System.out.println()</code>, use <code>Math.abs()</code>, catch a <code>NullPointerException</code>, or create a <code>Thread</code>."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "JavaLangPackage.java",
+          "lines": [
+            "// No import needed — java.lang is auto-imported",
+            "public class JavaLangPackage {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ String — most used class in java.lang",
+            "        String name = \"TechSustainify\";",
+            "        System.out.println(\"Length    : \" + name.length());            // 14",
+            "        System.out.println(\"Upper     : \" + name.toUpperCase());        // TECHSUSTAINIFY",
+            "        System.out.println(\"Contains  : \" + name.contains(\"Sustain\")); // true",
+            "        System.out.println(\"Replace   : \" + name.replace(\"Tech\", \"Pro\")); // ProSustainify",
+            "        System.out.println(\"Substring : \" + name.substring(4, 12));    // Sustaini",
+            "        System.out.println(\"Starts    : \" + name.startsWith(\"Tech\"));  // true",
+            "        System.out.println(\"Index     : \" + name.indexOf(\"Sustain\"));  // 4",
+            "        System.out.println(\"CharAt    : \" + name.charAt(0));           // T",
+            "",
+            "        // ✅ StringBuilder — mutable string (also java.lang)",
+            "        StringBuilder sb = new StringBuilder();",
+            "        sb.append(\"Java\");",
+            "        sb.append(\" \").append(\"Packages\");",
+            "        sb.insert(0, \"Learning \");",
+            "        sb.reverse();",
+            "        System.out.println(\"SB        : \" + sb);       // segatkcaP avaJ gninraeL",
+            "        sb.reverse();                                     // Restore",
+            "        System.out.println(\"Restored  : \" + sb);       // Learning Java Packages",
+            "",
+            "        // ✅ Math — mathematical operations (java.lang)",
+            "        System.out.println(\"abs(-7)   : \" + Math.abs(-7));              // 7",
+            "        System.out.println(\"max(9,3)  : \" + Math.max(9, 3));            // 9",
+            "        System.out.println(\"min(9,3)  : \" + Math.min(9, 3));            // 3",
+            "        System.out.println(\"pow(2,10) : \" + (int) Math.pow(2, 10));     // 1024",
+            "        System.out.println(\"sqrt(144) : \" + Math.sqrt(144));            // 12.0",
+            "        System.out.println(\"floor(3.9): \" + Math.floor(3.9));           // 3.0",
+            "        System.out.println(\"ceil(3.1) : \" + Math.ceil(3.1));            // 4.0",
+            "        System.out.println(\"round(3.5): \" + Math.round(3.5));           // 4",
+            "        System.out.println(\"PI        : \" + Math.PI);                   // 3.141592...",
+            "        System.out.println(\"random()  : \" + Math.random());             // [0.0, 1.0)",
+            "        System.out.println(\"log(E)    : \" + Math.log(Math.E));          // 1.0",
+            "",
+            "        // ✅ Integer, Long, Double — Wrapper classes (java.lang)",
+            "        int parsed = Integer.parseInt(\"42\");",
+            "        System.out.println(\"parseInt  : \" + parsed);                    // 42",
+            "        System.out.println(\"MAX_VALUE : \" + Integer.MAX_VALUE);         // 2147483647",
+            "        System.out.println(\"MIN_VALUE : \" + Integer.MIN_VALUE);         // -2147483648",
+            "        System.out.println(\"toBinary  : \" + Integer.toBinaryString(255)); // 11111111",
+            "        System.out.println(\"toHex     : \" + Integer.toHexString(255));    // ff",
+            "        System.out.println(\"valueOf   : \" + Integer.valueOf(\"100\"));    // 100",
+            "        double d = Double.parseDouble(\"3.14\");",
+            "        System.out.println(\"parseDouble: \" + d);                        // 3.14",
+            "        System.out.println(\"isNaN     : \" + Double.isNaN(0.0 / 0.0));   // true",
+            "",
+            "        // ✅ System — system-level utilities (java.lang)",
+            "        long startTime = System.currentTimeMillis();",
+            "        long startNano = System.nanoTime();",
+            "        // ... do some work ...",
+            "        for (int i = 0; i < 1_000_000; i++) { }",
+            "        System.out.printf(\"Elapsed   : %d ms%n\",",
+            "                          System.currentTimeMillis() - startTime);",
+            "        System.out.println(\"JVM arch  : \" + System.getProperty(\"os.arch\"));",
+            "        System.out.println(\"Java ver  : \" + System.getProperty(\"java.version\"));",
+            "",
+            "        // ✅ Object — root of all Java classes (java.lang)",
+            "        Object obj = new Object();",
+            "        System.out.println(\"hashCode  : \" + obj.hashCode());",
+            "        System.out.println(\"class     : \" + obj.getClass().getName());  // java.lang.Object",
+            "",
+            "        // ✅ Handling java.lang exceptions — no import needed",
+            "        try {",
+            "            int[] arr = new int[3];",
+            "            arr[5] = 10;  // Throws ArrayIndexOutOfBoundsException (java.lang)",
+            "        } catch (ArrayIndexOutOfBoundsException e) {",
+            "            System.out.println(\"Caught    : \" + e.getClass().getSimpleName());",
+            "        }",
+            "        try {",
+            "            String s = null;",
+            "            s.length();  // Throws NullPointerException (java.lang)",
+            "        } catch (NullPointerException e) {",
+            "            System.out.println(\"Caught    : \" + e.getClass().getSimpleName());",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "java-util-package",
+      "title": "java.util — Collections, Data Structures & Utilities",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>java.util</code> is the second most important package in the Java API. It contains the entire <strong>Java Collections Framework</strong> (List, Set, Map, Queue and their implementations), utility classes for sorting, searching, and randomness, the <code>Scanner</code> for input, <code>Optional</code> for null-safety, and <code>UUID</code> for unique identifiers. If <code>java.lang</code> is Java's heartbeat, <code>java.util</code> is its muscle."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "JavaUtilPackage.java",
+          "lines": [
+            "import java.util.*;",
+            "import java.util.stream.Collectors;",
+            "",
+            "public class JavaUtilPackage {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ ArrayList — dynamic, ordered, allows duplicates",
+            "        List<String> languages = new ArrayList<>(List.of(\"Java\", \"Python\", \"Go\", \"Rust\"));",
+            "        languages.add(\"Kotlin\");",
+            "        languages.remove(\"Go\");",
+            "        System.out.println(\"ArrayList     : \" + languages);",
+            "        System.out.println(\"Contains Java : \" + languages.contains(\"Java\")); // true",
+            "        System.out.println(\"Size          : \" + languages.size());            // 4",
+            "",
+            "        // ✅ HashMap — key-value pairs, O(1) average lookup",
+            "        Map<String, Integer> scores = new HashMap<>();",
+            "        scores.put(\"Alice\",   95);",
+            "        scores.put(\"Bob\",     82);",
+            "        scores.put(\"Charlie\", 91);",
+            "        scores.put(\"Alice\",   98); // Overwrites existing key",
+            "        System.out.println(\"\\nHashMap       : \" + scores);",
+            "        System.out.println(\"Alice's score : \" + scores.get(\"Alice\"));       // 98",
+            "        System.out.println(\"Bob exists    : \" + scores.containsKey(\"Bob\")); // true",
+            "        scores.getOrDefault(\"Diana\", 0); // Returns 0 — Diana not present",
+            "        scores.forEach((name, score) ->",
+            "            System.out.printf(\"  %-10s: %d%n\", name, score));",
+            "",
+            "        // ✅ HashSet — unique elements, O(1) contains",
+            "        Set<String> uniqueTags = new HashSet<>(List.of(\"java\", \"oop\", \"java\", \"api\"));",
+            "        System.out.println(\"\\nHashSet (unique): \" + uniqueTags); // no duplicates",
+            "",
+            "        // ✅ LinkedList — doubly-linked, O(1) add/remove at ends",
+            "        Queue<String> taskQueue = new LinkedList<>();",
+            "        taskQueue.offer(\"Task A\");",
+            "        taskQueue.offer(\"Task B\");",
+            "        taskQueue.offer(\"Task C\");",
+            "        System.out.println(\"\\nQueue peek    : \" + taskQueue.peek());  // Task A",
+            "        System.out.println(\"Queue poll    : \" + taskQueue.poll());  // Task A (removed)",
+            "        System.out.println(\"Queue size    : \" + taskQueue.size()); // 2",
+            "",
+            "        // ✅ TreeMap — sorted by key, O(log n) operations",
+            "        Map<String, Integer> sorted = new TreeMap<>(scores);",
+            "        System.out.println(\"\\nTreeMap (sorted): \" + sorted);",
+            "",
+            "        // ✅ Collections utility class",
+            "        List<Integer> nums = new ArrayList<>(List.of(5, 2, 8, 1, 9, 3));",
+            "        Collections.sort(nums);",
+            "        System.out.println(\"\\nSorted        : \" + nums);",
+            "        System.out.println(\"Max           : \" + Collections.max(nums));  // 9",
+            "        System.out.println(\"Min           : \" + Collections.min(nums));  // 1",
+            "        System.out.println(\"Frequency 5   : \" + Collections.frequency(nums, 5)); // 1",
+            "        Collections.reverse(nums);",
+            "        System.out.println(\"Reversed      : \" + nums);",
+            "        Collections.shuffle(nums, new Random(42)); // Reproducible shuffle",
+            "        System.out.println(\"Shuffled      : \" + nums);",
+            "",
+            "        // ✅ Arrays utility class",
+            "        int[] arr = {5, 2, 8, 1, 9, 3};",
+            "        Arrays.sort(arr);",
+            "        System.out.println(\"\\nArrays.sort   : \" + Arrays.toString(arr));",
+            "        System.out.println(\"binarySearch 8: \" + Arrays.binarySearch(arr, 8)); // index 4",
+            "        int[] copy = Arrays.copyOf(arr, arr.length);",
+            "        System.out.println(\"Arrays.copyOf : \" + Arrays.toString(copy));",
+            "        int[] filled = new int[5];",
+            "        Arrays.fill(filled, 7);",
+            "        System.out.println(\"Arrays.fill 7 : \" + Arrays.toString(filled));",
+            "",
+            "        // ✅ Optional — null-safe container (java.util, Java 8+)",
+            "        Optional<String> present = Optional.of(\"Hello\");",
+            "        Optional<String> empty   = Optional.empty();",
+            "        System.out.println(\"\\nOptional      : \" + present.get());               // Hello",
+            "        System.out.println(\"OrElse        : \" + empty.orElse(\"Default\"));       // Default",
+            "        System.out.println(\"IsPresent     : \" + present.isPresent());           // true",
+            "        present.ifPresent(v -> System.out.println(\"Value         : \" + v));     // Hello",
+            "",
+            "        // ✅ UUID — universally unique identifier",
+            "        UUID id = UUID.randomUUID();",
+            "        System.out.println(\"\\nUUID          : \" + id); // e.g. 550e8400-e29b-41d4-a716-446655440000",
+            "",
+            "        // ✅ Scanner — reading input (java.util)",
+            "        // Scanner sc = new Scanner(System.in);",
+            "        // System.out.print(\"Enter name: \");",
+            "        // String input = sc.nextLine();",
+            "        // sc.close();",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "java-io-package",
+      "title": "java.io & java.nio — Input/Output Operations",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>java.io</code> is the original Java I/O package — it provides stream-based I/O for reading and writing bytes and characters, working with files, and Java object serialization. <code>java.nio</code> (New I/O, introduced in Java 1.4) and its sub-package <code>java.nio.file</code> (Java 7) provide a modern, more powerful file API through <code>Path</code>, <code>Files</code>, and <code>Paths</code>. For new code, <strong>always prefer java.nio.file over java.io.File</strong>."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "JavaIOPackage.java",
+          "lines": [
+            "import java.io.*;",
+            "import java.nio.file.*;",
+            "import java.nio.charset.StandardCharsets;",
+            "import java.util.List;",
+            "",
+            "public class JavaIOPackage {",
+            "    public static void main(String[] args) throws IOException {",
+            "",
+            "        // ✅ java.nio.file.Path & Files — modern API (preferred)",
+            "        Path filePath = Paths.get(\"demo_output.txt\");",
+            "",
+            "        // Write lines to file",
+            "        List<String> lines = List.of(",
+            "            \"Java Packages and API\",",
+            "            \"Learning java.io and java.nio\",",
+            "            \"TechSustainify Tutorial 2026\"",
+            "        );",
+            "        Files.write(filePath, lines, StandardCharsets.UTF_8);",
+            "        System.out.println(\"✅ File written: \" + filePath.toAbsolutePath());",
+            "",
+            "        // Read all lines from file",
+            "        List<String> readBack = Files.readAllLines(filePath, StandardCharsets.UTF_8);",
+            "        System.out.println(\"Lines read: \" + readBack.size());",
+            "        readBack.forEach(line -> System.out.println(\"  > \" + line));",
+            "",
+            "        // Check file properties using Files",
+            "        System.out.println(\"Exists  : \" + Files.exists(filePath));",
+            "        System.out.println(\"Size    : \" + Files.size(filePath) + \" bytes\");",
+            "        System.out.println(\"Readable: \" + Files.isReadable(filePath));",
+            "",
+            "        // Append to file",
+            "        Files.writeString(filePath, \"\\nAppended line\",",
+            "                          StandardOpenOption.APPEND);",
+            "        System.out.println(\"✅ Appended to file\");",
+            "",
+            "        // Read entire file as string",
+            "        String content = Files.readString(filePath, StandardCharsets.UTF_8);",
+            "        System.out.println(\"Full content:\\n\" + content);",
+            "",
+            "        // Copy, move, delete",
+            "        Path copyPath = Paths.get(\"demo_copy.txt\");",
+            "        Files.copy(filePath, copyPath, StandardCopyOption.REPLACE_EXISTING);",
+            "        System.out.println(\"✅ File copied to: \" + copyPath);",
+            "        Files.delete(copyPath);",
+            "        System.out.println(\"✅ Copy deleted\");",
+            "        Files.delete(filePath);",
+            "        System.out.println(\"✅ Original deleted\");",
+            "",
+            "        // ✅ java.io.BufferedReader — character-based streaming read",
+            "        String csvData = \"Alice,30,HR\\nBob,25,IT\\nCarol,28,Finance\";",
+            "        try (BufferedReader br = new BufferedReader(",
+            "                new StringReader(csvData))) {  // StringReader for in-memory demo",
+            "            String line;",
+            "            System.out.println(\"\\nBufferedReader:\");",
+            "            while ((line = br.readLine()) != null) {",
+            "                String[] parts = line.split(\",\");",
+            "                System.out.printf(\"  Name: %-8s Age: %s Dept: %s%n\",",
+            "                                  parts[0], parts[1], parts[2]);",
+            "            }",
+            "        } // Auto-closes BufferedReader — try-with-resources",
+            "",
+            "        // ✅ java.io.PrintWriter — formatted text output",
+            "        StringWriter sw = new StringWriter();",
+            "        try (PrintWriter pw = new PrintWriter(sw)) {",
+            "            pw.printf(\"%-10s %5s %10s%n\", \"Name\", \"Age\", \"Department\");",
+            "            pw.printf(\"%-10s %5d %10s%n\", \"Alice\", 30, \"HR\");",
+            "            pw.printf(\"%-10s %5d %10s%n\", \"Bob\",   25, \"IT\");",
+            "        }",
+            "        System.out.println(\"\\nPrintWriter output:\\n\" + sw);",
+            "",
+            "        // ✅ Path operations",
+            "        Path base = Paths.get(\"/home/user/projects/java\");",
+            "        System.out.println(\"\\nPath operations:\");",
+            "        System.out.println(\"  FileName  : \" + base.getFileName()); // java",
+            "        System.out.println(\"  Parent    : \" + base.getParent());   // /home/user/projects",
+            "        System.out.println(\"  NameCount : \" + base.getNameCount()); // 4",
+            "        System.out.println(\"  Name(0)   : \" + base.getName(0));    // home",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "java-math-package",
+      "title": "java.math — Arbitrary-Precision Arithmetic",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>java.math</code> provides two critical classes for situations where primitive <code>double</code> and <code>long</code> are simply not precise enough: <strong>BigDecimal</strong> for exact decimal arithmetic (financial calculations, tax, currency) and <strong>BigInteger</strong> for arbitrarily large integers (cryptography, factorial of large numbers, number theory). These classes are slower than primitives but completely accurate — never use <code>double</code> for money calculations."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "JavaMathPackage.java",
+          "lines": [
+            "import java.math.BigDecimal;",
+            "import java.math.BigInteger;",
+            "import java.math.MathContext;",
+            "import java.math.RoundingMode;",
+            "",
+            "public class JavaMathPackage {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ❌ Why double fails for money — classic precision bug",
+            "        double d1 = 0.1 + 0.2;",
+            "        System.out.println(\"double 0.1+0.2 = \" + d1);         // 0.30000000000000004 ❌",
+            "        System.out.println(\"double 1.03-0.42 = \" + (1.03-0.42)); // 0.6100000000000001 ❌",
+            "",
+            "        // ✅ BigDecimal — exact decimal arithmetic",
+            "        BigDecimal b1 = new BigDecimal(\"0.1\");   // ALWAYS use String constructor",
+            "        BigDecimal b2 = new BigDecimal(\"0.2\");",
+            "        System.out.println(\"BigDecimal 0.1+0.2 = \" + b1.add(b2));         // 0.3 ✅",
+            "",
+            "        // ✅ Financial calculation — GST example",
+            "        BigDecimal price   = new BigDecimal(\"1499.00\");",
+            "        BigDecimal gstRate = new BigDecimal(\"0.18\");  // 18% GST",
+            "        BigDecimal gst     = price.multiply(gstRate).setScale(2, RoundingMode.HALF_UP);",
+            "        BigDecimal total   = price.add(gst);",
+            "        System.out.println(\"\\n--- GST Calculation ---\");",
+            "        System.out.println(\"Base Price  : ₹\" + price);   // 1499.00",
+            "        System.out.println(\"GST (18%)   : ₹\" + gst);     // 269.82",
+            "        System.out.println(\"Total       : ₹\" + total);   // 1768.82",
+            "",
+            "        // ✅ BigDecimal arithmetic operations",
+            "        BigDecimal a = new BigDecimal(\"100.50\");",
+            "        BigDecimal b = new BigDecimal(\"33.25\");",
+            "        System.out.println(\"\\nBigDecimal ops:\");",
+            "        System.out.println(\"  add      : \" + a.add(b));                                  // 133.75",
+            "        System.out.println(\"  subtract : \" + a.subtract(b));                            // 67.25",
+            "        System.out.println(\"  multiply : \" + a.multiply(b));                            // 3341.6250",
+            "        System.out.println(\"  divide   : \" + a.divide(b, 4, RoundingMode.HALF_UP));     // 3.0226",
+            "        System.out.println(\"  compareTo: \" + a.compareTo(b));                           // 1 (a > b)",
+            "        System.out.println(\"  abs      : \" + new BigDecimal(\"-50.5\").abs());           // 50.5",
+            "        System.out.println(\"  scale    : \" + a.scale());                               // 2",
+            "        System.out.println(\"  precision: \" + a.precision());                           // 5",
+            "",
+            "        // ✅ BigDecimal — always use HALF_UP for rounding money",
+            "        BigDecimal val = new BigDecimal(\"2.345\");",
+            "        System.out.println(\"  HALF_UP  : \" + val.setScale(2, RoundingMode.HALF_UP));   // 2.35",
+            "        System.out.println(\"  HALF_DOWN: \" + val.setScale(2, RoundingMode.HALF_DOWN)); // 2.34",
+            "        System.out.println(\"  FLOOR    : \" + val.setScale(2, RoundingMode.FLOOR));     // 2.34",
+            "        System.out.println(\"  CEILING  : \" + val.setScale(2, RoundingMode.CEILING));   // 2.35",
+            "",
+            "        // ✅ BigInteger — arbitrarily large integers",
+            "        BigInteger big1 = new BigInteger(\"99999999999999999999999999999\");",
+            "        BigInteger big2 = new BigInteger(\"11111111111111111111111111111\");",
+            "        System.out.println(\"\\n--- BigInteger ---\");",
+            "        System.out.println(\"  add      : \" + big1.add(big2));",
+            "        System.out.println(\"  multiply : \" + big1.multiply(big2));",
+            "        System.out.println(\"  isPrime  : \" + big1.isProbablePrime(50));",
+            "",
+            "        // ✅ Factorial of 50 — impossible with long, trivial with BigInteger",
+            "        BigInteger factorial = BigInteger.ONE;",
+            "        for (int i = 2; i <= 50; i++) {",
+            "            factorial = factorial.multiply(BigInteger.valueOf(i));",
+            "        }",
+            "        System.out.println(\"  50!      : \" + factorial);",
+            "        // 30414093201713378043612608166979581188299763898377856200000000000",
+            "",
+            "        // ✅ MathContext — precision control for BigDecimal division",
+            "        BigDecimal x = new BigDecimal(\"10\");",
+            "        BigDecimal y = new BigDecimal(\"3\");",
+            "        BigDecimal result = x.divide(y, new MathContext(10));",
+            "        System.out.println(\"  10/3 (10 sig digits): \" + result); // 3.333333333",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "java-time-package",
+      "title": "java.time — The Modern Date & Time API",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>java.time</code> package (introduced in Java 8, JSR-310) is the <strong>definitive replacement for the legacy <code>java.util.Date</code> and <code>Calendar</code> classes</strong>, which were notoriously confusing, mutable, and poorly designed. <code>java.time</code> provides an immutable, thread-safe, and richly expressive API for dates, times, durations, periods, and time zones. In all new Java code, <strong>always use java.time</strong> — never java.util.Date or java.util.Calendar."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "JavaTimePackage.java",
+          "lines": [
+            "import java.time.*;",
+            "import java.time.format.DateTimeFormatter;",
+            "import java.time.temporal.ChronoUnit;",
+            "",
+            "public class JavaTimePackage {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ LocalDate — date without time or timezone",
+            "        LocalDate today     = LocalDate.now();",
+            "        LocalDate birthday  = LocalDate.of(1995, Month.JULY, 15);",
+            "        LocalDate nextMonth = today.plusMonths(1);",
+            "        LocalDate lastYear  = today.minusYears(1);",
+            "        System.out.println(\"Today         : \" + today);",
+            "        System.out.println(\"Birthday      : \" + birthday);",
+            "        System.out.println(\"Next month    : \" + nextMonth);",
+            "        System.out.println(\"Last year     : \" + lastYear);",
+            "        System.out.println(\"Day of week   : \" + today.getDayOfWeek());   // e.g. MONDAY",
+            "        System.out.println(\"Day of year   : \" + today.getDayOfYear());   // 1-366",
+            "        System.out.println(\"Is leap year  : \" + today.isLeapYear());",
+            "        System.out.println(\"Before birthday: \" + today.isBefore(birthday));",
+            "",
+            "        // ✅ LocalTime — time without date or timezone",
+            "        LocalTime now          = LocalTime.now();",
+            "        LocalTime meetingTime  = LocalTime.of(14, 30, 0); // 2:30 PM",
+            "        LocalTime afterTwoHrs  = meetingTime.plusHours(2);",
+            "        System.out.println(\"\\nCurrent time  : \" + now);",
+            "        System.out.println(\"Meeting       : \" + meetingTime); // 14:30",
+            "        System.out.println(\"+2 hours      : \" + afterTwoHrs); // 16:30",
+            "        System.out.println(\"Hour          : \" + now.getHour());",
+            "        System.out.println(\"Minute        : \" + now.getMinute());",
+            "",
+            "        // ✅ LocalDateTime — date + time, no timezone",
+            "        LocalDateTime dateTime   = LocalDateTime.now();",
+            "        LocalDateTime deadline   = LocalDateTime.of(2026, 12, 31, 23, 59, 59);",
+            "        System.out.println(\"\\nDateTime      : \" + dateTime);",
+            "        System.out.println(\"Deadline      : \" + deadline);",
+            "        System.out.println(\"Before deadline: \" + dateTime.isBefore(deadline));",
+            "",
+            "        // ✅ ZonedDateTime — with timezone",
+            "        ZonedDateTime istNow = ZonedDateTime.now(ZoneId.of(\"Asia/Kolkata\"));",
+            "        ZonedDateTime utcNow = ZonedDateTime.now(ZoneId.of(\"UTC\"));",
+            "        ZonedDateTime nyNow  = ZonedDateTime.now(ZoneId.of(\"America/New_York\"));",
+            "        System.out.println(\"\\nIST           : \" + istNow);",
+            "        System.out.println(\"UTC           : \" + utcNow);",
+            "        System.out.println(\"New York      : \" + nyNow);",
+            "",
+            "        // ✅ Duration — time-based amount (hours, minutes, seconds)",
+            "        LocalTime start = LocalTime.of(9, 0);",
+            "        LocalTime end   = LocalTime.of(17, 30);",
+            "        Duration workDay = Duration.between(start, end);",
+            "        System.out.println(\"\\nWork duration : \" + workDay);          // PT8H30M",
+            "        System.out.println(\"Hours         : \" + workDay.toHours()); // 8",
+            "        System.out.println(\"Minutes total : \" + workDay.toMinutes()); // 510",
+            "",
+            "        // ✅ Period — date-based amount (years, months, days)",
+            "        LocalDate dob    = LocalDate.of(1995, 7, 15);",
+            "        LocalDate refDay = LocalDate.of(2026, 3, 20);",
+            "        Period age = Period.between(dob, refDay);",
+            "        System.out.println(\"\\nAge           : \" + age.getYears() + \" years, \"",
+            "                           + age.getMonths() + \" months, \"",
+            "                           + age.getDays() + \" days\");",
+            "        long daysOld = ChronoUnit.DAYS.between(dob, refDay);",
+            "        System.out.println(\"Days old      : \" + daysOld);",
+            "",
+            "        // ✅ DateTimeFormatter — formatting and parsing",
+            "        DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern(\"dd/MM/yyyy\");",
+            "        DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern(\"dd MMMM yyyy, hh:mm a\");",
+            "        DateTimeFormatter iso  = DateTimeFormatter.ISO_LOCAL_DATE;",
+            "        System.out.println(\"\\nFormatted     : \" + today.format(fmt1)); // 20/03/2026",
+            "        System.out.println(\"Formatted     : \" + dateTime.format(fmt2));",
+            "        System.out.println(\"ISO format    : \" + today.format(iso));    // 2026-03-20",
+            "",
+            "        // ✅ Parsing a date string",
+            "        LocalDate parsed = LocalDate.parse(\"25/12/2025\",",
+            "                               DateTimeFormatter.ofPattern(\"dd/MM/yyyy\"));",
+            "        System.out.println(\"Parsed date   : \" + parsed);              // 2025-12-25",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "user-defined-packages",
+      "title": "User-Defined Packages — Structuring Your Own Code",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Beyond using the Java API, you will create your own packages to organize your application's source code. A well-designed package structure reflects your application's architecture — it groups classes by their responsibility and layer, makes navigation intuitive, and controls what is visible across package boundaries."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🏗️",
+              "title": "Common Package Structures in Production",
+              "text": "Layer-based (traditional): com.company.app.model, com.company.app.service, com.company.app.repository, com.company.app.controller, com.company.app.util, com.company.app.exception. Feature-based (modern, preferred for large systems): com.company.app.employee, com.company.app.payroll, com.company.app.reporting — each feature package contains its own model, service, repository, and controller. The feature-based structure is favored in microservices and domain-driven design because each feature's code is co-located and can be independently extracted into a separate service."
+            },
+            {
+              "icon": "📦",
+              "title": "Sub-Packages — Not Inherited",
+              "text": "Java packages are NOT hierarchical in terms of access — a sub-package does NOT have special access to its parent package. com.example.app and com.example.app.service are completely separate, independent packages. Package-private members in com.example.app are NOT visible in com.example.app.service — only public and protected members (with inheritance) are accessible. This surprises many beginners who assume sub-packages can access parent package internals. Each package is a completely isolated namespace — only the naming convention (dots) creates the visual hierarchy; there is no actual inheritance of access rights."
+            },
+            {
+              "icon": "🔧",
+              "title": "Compiling and Running with Packages",
+              "text": "Compiling: javac -d out src/com/techsustainify/model/Employee.java — the -d flag specifies the output directory root; javac creates the matching subdirectory structure automatically. Running: java -cp out com.techsustainify.Main — the fully qualified class name (package + class) is required. With multiple source files: javac -d out src/**/*.java or use a build tool (Maven, Gradle) which handles compilation, packaging, and dependency management automatically. In practice, you will almost always use a build tool — manual javac commands are for learning purposes only."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "UserDefinedPackages — Full Project Structure",
+          "lines": [
+            "// ── Project structure ──────────────────────────",
+            "// src/",
+            "//   com/techsustainify/",
+            "//     model/",
+            "//       Product.java",
+            "//     service/",
+            "//       ProductService.java",
+            "//     repository/",
+            "//       ProductRepository.java",
+            "//     exception/",
+            "//       ProductNotFoundException.java",
+            "//     Main.java",
+            "// ───────────────────────────────────────────────",
+            "",
+            "// ✅ FILE: com/techsustainify/model/Product.java",
+            "package com.techsustainify.model;",
+            "",
+            "import java.math.BigDecimal;",
+            "import java.util.Objects;",
+            "",
+            "public class Product {",
+            "    private final String  id;",
+            "    private final String  name;",
+            "    private final BigDecimal price;",
+            "    private       int     stock;",
+            "",
+            "    public Product(String id, String name, BigDecimal price, int stock) {",
+            "        this.id    = Objects.requireNonNull(id,    \"id must not be null\");",
+            "        this.name  = Objects.requireNonNull(name,  \"name must not be null\");",
+            "        this.price = Objects.requireNonNull(price, \"price must not be null\");",
+            "        this.stock = stock;",
+            "    }",
+            "",
+            "    public String     getId()    { return id; }",
+            "    public String     getName()  { return name; }",
+            "    public BigDecimal getPrice() { return price; }",
+            "    public int        getStock() { return stock; }",
+            "    public void       setStock(int s) { this.stock = s; }",
+            "",
+            "    @Override public String toString() {",
+            "        return String.format(\"Product{id='%s', name='%s', price=%s, stock=%d}\",",
+            "                             id, name, price, stock);",
+            "    }",
+            "}",
+            "",
+            "// ✅ FILE: com/techsustainify/exception/ProductNotFoundException.java",
+            "package com.techsustainify.exception;",
+            "",
+            "public class ProductNotFoundException extends RuntimeException {",
+            "    public ProductNotFoundException(String productId) {",
+            "        super(\"Product not found: \" + productId);",
+            "    }",
+            "}",
+            "",
+            "// ✅ FILE: com/techsustainify/repository/ProductRepository.java",
+            "package com.techsustainify.repository;",
+            "",
+            "import com.techsustainify.model.Product;",
+            "import com.techsustainify.exception.ProductNotFoundException;",
+            "import java.util.Collection;",
+            "import java.util.HashMap;",
+            "import java.util.Map;",
+            "",
+            "public class ProductRepository {",
+            "    private final Map<String, Product> store = new HashMap<>();",
+            "",
+            "    public void save(Product p)  { store.put(p.getId(), p); }",
+            "",
+            "    public Product findById(String id) {",
+            "        Product p = store.get(id);",
+            "        if (p == null) throw new ProductNotFoundException(id);",
+            "        return p;",
+            "    }",
+            "",
+            "    public Collection<Product> findAll() { return store.values(); }",
+            "    public boolean exists(String id)    { return store.containsKey(id); }",
+            "    public void delete(String id)       { store.remove(id); }",
+            "}",
+            "",
+            "// ✅ FILE: com/techsustainify/service/ProductService.java",
+            "package com.techsustainify.service;",
+            "",
+            "import com.techsustainify.model.Product;",
+            "import com.techsustainify.repository.ProductRepository;",
+            "import java.math.BigDecimal;",
+            "import java.util.Collection;",
+            "import java.util.UUID;",
+            "",
+            "public class ProductService {",
+            "    private final ProductRepository repo = new ProductRepository();",
+            "",
+            "    public Product addProduct(String name, BigDecimal price, int stock) {",
+            "        String  id = UUID.randomUUID().toString().substring(0, 8).toUpperCase();",
+            "        Product p  = new Product(id, name, price, stock);",
+            "        repo.save(p);",
+            "        System.out.println(\"  Added  : \" + p);",
+            "        return p;",
+            "    }",
+            "",
+            "    public Product getProduct(String id) { return repo.findById(id); }",
+            "    public Collection<Product> getAllProducts() { return repo.findAll(); }",
+            "",
+            "    public void updateStock(String id, int delta) {",
+            "        Product p = repo.findById(id);",
+            "        p.setStock(p.getStock() + delta);",
+            "        System.out.println(\"  Updated: \" + p);",
+            "    }",
+            "}",
+            "",
+            "// ✅ FILE: com/techsustainify/Main.java",
+            "package com.techsustainify;",
+            "",
+            "import com.techsustainify.service.ProductService;",
+            "import com.techsustainify.model.Product;",
+            "import com.techsustainify.exception.ProductNotFoundException;",
+            "import java.math.BigDecimal;",
+            "",
+            "public class Main {",
+            "    public static void main(String[] args) {",
+            "        ProductService svc = new ProductService();",
+            "",
+            "        Product laptop = svc.addProduct(\"Laptop Pro\", new BigDecimal(\"89999.00\"), 10);",
+            "        Product phone  = svc.addProduct(\"SmartPhone X\", new BigDecimal(\"29999.00\"), 25);",
+            "        svc.addProduct(\"Wireless Mouse\", new BigDecimal(\"999.00\"), 50);",
+            "",
+            "        System.out.println(\"\\nAll Products:\");",
+            "        svc.getAllProducts().forEach(p -> System.out.println(\"  \" + p));",
+            "",
+            "        System.out.println(\"\\nUpdate stock:\");",
+            "        svc.updateStock(laptop.getId(), -2); // Sold 2 laptops",
+            "",
+            "        System.out.println(\"\\nGet specific product:\");",
+            "        Product found = svc.getProduct(phone.getId());",
+            "        System.out.println(\"  Found: \" + found.getName());",
+            "",
+            "        System.out.println(\"\\nTry non-existent product:\");",
+            "        try {",
+            "            svc.getProduct(\"INVALID_ID\");",
+            "        } catch (ProductNotFoundException e) {",
+            "            System.out.println(\"  Error: \" + e.getMessage());",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "access-modifiers-packages",
+      "title": "Access Modifiers & Package Visibility",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java's four access modifiers work in direct conjunction with packages. Understanding their interaction is essential for designing clean APIs and enforcing encapsulation. The <strong>package-private</strong> level (no modifier) is one of Java's most underused and most powerful encapsulation tools."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Modifier", "Same Class", "Same Package", "Subclass (diff pkg)", "Anywhere"],
+          "rows": [
+            ["public",           "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes — visible everywhere"],
+            ["protected",        "✅ Yes", "✅ Yes", "✅ Yes", "❌ No — only via inheritance"],
+            ["(no modifier) package-private", "✅ Yes", "✅ Yes", "❌ No", "❌ No — package only"],
+            ["private",          "✅ Yes", "❌ No",  "❌ No",  "❌ No — class only"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "AccessModifiersPackages.java",
+          "lines": [
+            "// ✅ FILE: com/techsustainify/engine/QueryEngine.java",
+            "package com.techsustainify.engine;",
+            "",
+            "public class QueryEngine {",
+            "",
+            "    // public — visible to ALL packages",
+            "    public String executeQuery(String sql) {",
+            "        validate(sql);",
+            "        String plan = buildPlan(sql);",
+            "        return runPlan(plan);",
+            "    }",
+            "",
+            "    // package-private — visible ONLY inside com.techsustainify.engine",
+            "    // Other packages cannot call this — it is an internal implementation detail",
+            "    String buildPlan(String sql) {",
+            "        return \"PLAN[\" + sql.toUpperCase() + \"]\";",
+            "    }",
+            "",
+            "    // package-private — internal utility",
+            "    boolean validate(String sql) {",
+            "        if (sql == null || sql.isBlank()) {",
+            "            throw new IllegalArgumentException(\"SQL cannot be blank\");",
+            "        }",
+            "        return true;",
+            "    }",
+            "",
+            "    // private — visible only inside THIS class",
+            "    private String runPlan(String plan) {",
+            "        return \"RESULT of \" + plan;",
+            "    }",
+            "}",
+            "",
+            "// ✅ FILE: com/techsustainify/engine/QueryOptimizer.java",
+            "// This is in the SAME package — can access package-private members",
+            "package com.techsustainify.engine;",
+            "",
+            "public class QueryOptimizer {",
+            "    private final QueryEngine engine = new QueryEngine();",
+            "",
+            "    public String optimizeAndExecute(String sql) {",
+            "        // ✅ Can access buildPlan() — same package",
+            "        String plan = engine.buildPlan(sql);",
+            "        System.out.println(\"Optimizing plan: \" + plan);",
+            "        return engine.executeQuery(sql);",
+            "    }",
+            "}",
+            "",
+            "// ✅ FILE: com/techsustainify/api/QueryController.java",
+            "// DIFFERENT package — can only access public members",
+            "package com.techsustainify.api;",
+            "",
+            "import com.techsustainify.engine.QueryEngine;",
+            "",
+            "public class QueryController {",
+            "    private final QueryEngine engine = new QueryEngine();",
+            "",
+            "    public String handleQuery(String sql) {",
+            "        // ✅ CAN call executeQuery() — it is public",
+            "        return engine.executeQuery(sql);",
+            "        // ❌ CANNOT call engine.buildPlan() — package-private, different package",
+            "        // ❌ CANNOT call engine.validate() — package-private, different package",
+            "        // Compile error: buildPlan() is not public in QueryEngine;",
+            "        //                cannot be accessed from outside package",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "static-import",
+      "title": "Static Import — Using Static Members Without Class Prefix",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Static import</strong> (introduced in Java 5) allows you to import <code>static</code> methods and fields directly, so they can be used without qualifying them with the class name. It is most useful for heavily used constants like <code>Math.PI</code>, test assertions like <code>Assertions.assertEquals</code>, and factory methods. Use it judiciously — overuse makes code confusing because readers cannot tell which class a static member belongs to."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StaticImport.java",
+          "lines": [
+            "package com.techsustainify.demo;",
+            "",
+            "// ✅ Static import — import specific static members",
+            "import static java.lang.Math.PI;",
+            "import static java.lang.Math.sqrt;",
+            "import static java.lang.Math.pow;",
+            "import static java.lang.Math.abs;",
+            "import static java.lang.Math.max;",
+            "import static java.lang.Math.min;",
+            "",
+            "// ✅ Static import of constants from a custom class",
+            "import static com.techsustainify.demo.AppConstants.MAX_RETRIES;",
+            "import static com.techsustainify.demo.AppConstants.DEFAULT_TIMEOUT_MS;",
+            "import static com.techsustainify.demo.AppConstants.APP_NAME;",
+            "",
+            "// ✅ Wildcard static import — imports ALL static members",
+            "// import static java.lang.Math.*;  // Use with care — reduces clarity",
+            "",
+            "public class StaticImport {",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Using Math constants/methods WITHOUT Math. prefix",
+            "        double radius = 5.0;",
+            "        double area   = PI * pow(radius, 2);       // No Math.PI, Math.pow",
+            "        double circum = 2 * PI * radius;",
+            "        double hyp    = sqrt(pow(3, 2) + pow(4, 2)); // 5.0",
+            "        System.out.printf(\"Circle r=%.1f: area=%.2f, circumference=%.2f%n\",",
+            "                          radius, area, circum);",
+            "        System.out.println(\"Hypotenuse: \" + hyp);",
+            "        System.out.println(\"abs(-42)  : \" + abs(-42));  // 42",
+            "        System.out.println(\"max(9,4)  : \" + max(9, 4)); // 9",
+            "        System.out.println(\"min(9,4)  : \" + min(9, 4)); // 4",
+            "",
+            "        // ✅ Using custom constants directly",
+            "        System.out.println(\"\\nApp: \" + APP_NAME);",
+            "        System.out.println(\"Max retries : \" + MAX_RETRIES);",
+            "        System.out.println(\"Timeout(ms) : \" + DEFAULT_TIMEOUT_MS);",
+            "",
+            "        // ✅ When static import helps vs hurts readability",
+            "        // GOOD: abs(x) is universally understood",
+            "        // GOOD: PI is universally understood",
+            "        // BAD:  processOrder(id) — which class does processOrder come from?",
+            "        // Rule: if the static member's name is self-documenting and globally",
+            "        //       recognizable, static import is fine. Otherwise, keep the class name.",
+            "    }",
+            "}",
+            "",
+            "// ✅ AppConstants.java — same package",
+            "// package com.techsustainify.demo;",
+            "// public class AppConstants {",
+            "//     public static final int    MAX_RETRIES        = 3;",
+            "//     public static final long   DEFAULT_TIMEOUT_MS = 5000L;",
+            "//     public static final String APP_NAME           = \"TechSustainify App\";",
+            "//     private AppConstants() { /* prevent instantiation */ }",
+            "// }"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the most common package and import mistakes in Java — from directory-package mismatches and forgotten imports, to the classic <code>double</code> precision bug that makes <code>java.math.BigDecimal</code> essential, to the fall-through of sub-package access rules."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "PackageMistakes.java",
+          "lines": [
+            "// ❌ MISTAKE 1: Package declaration does not match directory",
+            "// File saved at: src/com/example/Employee.java",
+            "// But declares:  package com.example.model;",
+            "// Compiler error: class Employee is public, should be in file Employee.java",
+            "// inside directory com/example/model/",
+            "// ✅ Fix: either move file to com/example/model/ or change package to com.example",
+            "",
+            "// ❌ MISTAKE 2: Placing package declaration after import",
+            "// import java.util.List;",
+            "// package com.example;           // ❌ COMPILE ERROR — package must be FIRST",
+            "// public class MyClass { }",
+            "// ✅ Fix: package always comes before imports and class",
+            "",
+            "// ❌ MISTAKE 3: Assuming wildcard import covers sub-packages",
+            "import java.util.*;",
+            "// java.util.* does NOT import java.util.concurrent.* or java.util.function.*",
+            "// ❌ ExecutorService executors = ...; // COMPILE ERROR — not in java.util.*",
+            "// ✅ Fix: explicitly import java.util.concurrent.ExecutorService",
+            "import java.util.concurrent.ExecutorService;",
+            "import java.util.concurrent.Executors;",
+            "",
+            "// ❌ MISTAKE 4: Assuming sub-package inherits parent package access",
+            "// com.example.service.UserService CANNOT access package-private members",
+            "// of com.example — they are SEPARATE packages despite the naming",
+            "// ✅ Fix: make the member public, or move the class into the same package",
+            "",
+            "// ❌ MISTAKE 5: Using double for money — precision bug",
+            "double price1 = 19.99;",
+            "double tax1   = 0.18;",
+            "double total1 = price1 * (1 + tax1);",
+            "System.out.println(\"double total: \" + total1); // 23.588200000000003 — WRONG",
+            "// ✅ Fix: use BigDecimal for ALL financial arithmetic",
+            "import java.math.BigDecimal;",
+            "import java.math.RoundingMode;",
+            "BigDecimal price2 = new BigDecimal(\"19.99\");",
+            "BigDecimal tax2   = new BigDecimal(\"0.18\");",
+            "BigDecimal total2 = price2.multiply(BigDecimal.ONE.add(tax2))",
+            "                         .setScale(2, RoundingMode.HALF_UP);",
+            "System.out.println(\"BigDecimal total: \" + total2); // 23.59 — CORRECT",
+            "",
+            "// ❌ MISTAKE 6: new BigDecimal(0.1) — still uses double imprecision!",
+            "BigDecimal wrong = new BigDecimal(0.1);  // ❌ Same floating-point imprecision",
+            "System.out.println(\"BD from double: \" + wrong);",
+            "// 0.1000000000000000055511151231257827021181583404541015625 — WRONG",
+            "BigDecimal right = new BigDecimal(\"0.1\"); // ✅ Always use String constructor",
+            "System.out.println(\"BD from String: \" + right); // 0.1 — CORRECT",
+            "",
+            "// ❌ MISTAKE 7: Using java.util.Date for new code",
+            "// java.util.Date is mutable, poorly designed, and deprecated in spirit.",
+            "// ✅ Fix: always use java.time.LocalDate / LocalDateTime / ZonedDateTime",
+            "import java.time.LocalDate;",
+            "LocalDate today = LocalDate.now(); // ✅ Immutable, thread-safe, expressive",
+            "",
+            "// ❌ MISTAKE 8: Import ambiguity — both java.util.Date and java.sql.Date",
+            "// import java.util.*;",
+            "// import java.sql.*;",
+            "// Date d = new Date(); // ❌ COMPILE ERROR: reference to Date is ambiguous",
+            "// ✅ Fix: use fully qualified names for ambiguous types",
+            "java.util.Date utilDate = new java.util.Date();",
+            "java.sql.Date  sqlDate  = new java.sql.Date(System.currentTimeMillis());"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These anti-patterns represent common misuses of packages and the Java API in professional code. Each one either causes maintenance problems, correctness bugs, or signals poor understanding of Java's design."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Putting Everything in the Default Package",
+              "text": "Placing all classes in the unnamed default package (no package declaration) is fine for tiny experiments but unacceptable in any real project. It makes classes impossible to import from other packages, prevents proper access control, causes IDE navigation chaos, and signals no understanding of Java project structure. Every production Java class must be in a named package following the reverse domain convention. Build tools like Maven and Gradle will also not package default-package classes correctly in JARs."
+            },
+            {
+              "icon": "🚫",
+              "title": "Wildcard Imports in Production Code",
+              "text": "import java.util.*; is convenient during development but is rejected in most professional codebases and style guides (Google Java Style: specific imports only). Wildcard imports hide which classes are actually used, can cause silent ambiguity when two packages share a class name, and make code navigation harder — you cannot Ctrl+Click an import to jump to the class. Enable 'Optimize Imports' in your IDE to auto-manage specific imports. The one exception: test code with import static org.junit.jupiter.api.Assertions.* is widely accepted because all assertions clearly belong to JUnit."
+            },
+            {
+              "icon": "🚫",
+              "title": "Using double/float for Financial Calculations",
+              "text": "Using primitive double or float for any monetary amount — price, tax, discount, interest rate, total — is a critical correctness bug, not just a code smell. IEEE 754 floating-point arithmetic cannot represent most decimal fractions exactly: 0.1 + 0.2 == 0.3 is FALSE in Java. For all financial and currency arithmetic, use java.math.BigDecimal with String constructor and explicit RoundingMode. ALWAYS: new BigDecimal(\"19.99\") — NEVER: new BigDecimal(19.99). Passing a double to BigDecimal's double constructor defeats the purpose entirely."
+            },
+            {
+              "icon": "🚫",
+              "title": "Using java.util.Date or Calendar in New Code",
+              "text": "java.util.Date and java.util.Calendar are deprecated in spirit — they are mutable, poorly designed, non-thread-safe, and confusing (months in Calendar are 0-based). Since Java 8, the java.time package provides everything you need — immutably, thread-safely, and expressively. New code should use LocalDate, LocalDateTime, ZonedDateTime, Duration, Period, and DateTimeFormatter exclusively. If you encounter a legacy API requiring java.util.Date, use the conversion methods: Date.from(instant) and date.toInstant(). Code reviews should reject any new java.util.Date usage."
+            },
+            {
+              "icon": "🚫",
+              "title": "God Package — Dumping All Classes in One Package",
+              "text": "Putting all classes in a single package (e.g., com.company.app with 100+ classes) eliminates the organizational and access-control benefits of packages entirely. It is the package equivalent of a 10,000-line God class. Split by layer (model, service, repository, controller) or by feature (user, product, order, payment). A good rule of thumb: if a package contains more than 15-20 classes, consider splitting it. Package structure should reflect your architecture — if your architecture is well-designed, your package structure will be naturally modular."
+            },
+            {
+              "icon": "🚫",
+              "title": "Overusing Static Import",
+              "text": "Static import of non-obvious static members makes code cryptic. When a reader sees processOrder(id) in your code, they have no idea which class it belongs to — they must search the imports or hover with an IDE. This slows comprehension and makes bugs harder to spot. Reserve static import for: universally known constants (PI, E, MAX_VALUE), test assertion methods (assertEquals, assertTrue in JUnit files), and factory/builder methods where the class name is obvious from context. Never static-import business logic methods or domain-specific utility methods."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Packages & API in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples show idiomatic, production-grade Java package and API usage — patterns seen in real Spring Boot services, financial applications, and enterprise Java codebases."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InvoiceService.java — Financial Calculation with java.math & java.time",
+          "lines": [
+            "package com.techsustainify.billing;",
+            "",
+            "import java.math.BigDecimal;",
+            "import java.math.RoundingMode;",
+            "import java.time.LocalDate;",
+            "import java.time.format.DateTimeFormatter;",
+            "import java.util.ArrayList;",
+            "import java.util.Collections;",
+            "import java.util.List;",
+            "import java.util.UUID;",
+            "",
+            "public class InvoiceService {",
+            "",
+            "    private static final BigDecimal GST_RATE  = new BigDecimal(\"0.18\");",
+            "    private static final DateTimeFormatter FMT =",
+            "            DateTimeFormatter.ofPattern(\"dd MMM yyyy\");",
+            "",
+            "    public record LineItem(String description, int qty, BigDecimal unitPrice) {",
+            "        public BigDecimal subtotal() {",
+            "            return unitPrice.multiply(BigDecimal.valueOf(qty))",
+            "                           .setScale(2, RoundingMode.HALF_UP);",
+            "        }",
+            "    }",
+            "",
+            "    public record Invoice(String invoiceNo, String customer,",
+            "                          LocalDate issueDate, LocalDate dueDate,",
+            "                          List<LineItem> items, BigDecimal subtotal,",
+            "                          BigDecimal gst, BigDecimal total) {}",
+            "",
+            "    public Invoice generateInvoice(String customer, List<LineItem> items) {",
+            "        String    invoiceNo = \"INV-\" + UUID.randomUUID().toString()",
+            "                                            .substring(0, 8).toUpperCase();",
+            "        LocalDate issueDate = LocalDate.now();",
+            "        LocalDate dueDate   = issueDate.plusDays(30);",
+            "",
+            "        // BigDecimal accumulation — never double",
+            "        BigDecimal subtotal = items.stream()",
+            "            .map(LineItem::subtotal)",
+            "            .reduce(BigDecimal.ZERO, BigDecimal::add);",
+            "",
+            "        BigDecimal gst   = subtotal.multiply(GST_RATE)",
+            "                                   .setScale(2, RoundingMode.HALF_UP);",
+            "        BigDecimal total = subtotal.add(gst);",
+            "",
+            "        return new Invoice(invoiceNo, customer, issueDate, dueDate,",
+            "                           Collections.unmodifiableList(items),",
+            "                           subtotal, gst, total);",
+            "    }",
+            "",
+            "    public void printInvoice(Invoice inv) {",
+            "        System.out.println(\"╔══════════════════════════════════════════════╗\");",
+            "        System.out.printf( \"║  INVOICE: %-35s║%n\", inv.invoiceNo());",
+            "        System.out.printf( \"║  Customer: %-34s║%n\", inv.customer());",
+            "        System.out.printf( \"║  Issued  : %-34s║%n\", inv.issueDate().format(FMT));",
+            "        System.out.printf( \"║  Due     : %-34s║%n\", inv.dueDate().format(FMT));",
+            "        System.out.println(\"╠══════════════════════════════════════════════╣\");",
+            "        System.out.printf( \"║  %-25s %5s %12s║%n\", \"Description\", \"Qty\", \"Amount\");",
+            "        System.out.println(\"║──────────────────────────────────────────────║\");",
+            "        for (LineItem item : inv.items()) {",
+            "            System.out.printf(\"║  %-25s %5d %11s ║%n\",",
+            "                item.description(), item.qty(), \"₹\" + item.subtotal());",
+            "        }",
+            "        System.out.println(\"╠══════════════════════════════════════════════╣\");",
+            "        System.out.printf( \"║  %-33s ₹%9s║%n\", \"Subtotal\",    inv.subtotal());",
+            "        System.out.printf( \"║  %-33s ₹%9s║%n\", \"GST (18%)\",   inv.gst());",
+            "        System.out.printf( \"║  %-33s ₹%9s║%n\", \"TOTAL\",       inv.total());",
+            "        System.out.println(\"╚══════════════════════════════════════════════╝\");",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        InvoiceService svc = new InvoiceService();",
+            "        List<LineItem> items = List.of(",
+            "            new LineItem(\"Java Course (Annual)\",   1, new BigDecimal(\"4999.00\")),",
+            "            new LineItem(\"Tech eBooks Bundle\",      2, new BigDecimal(\"799.00\")),",
+            "            new LineItem(\"Premium Support (3 mo)\", 1, new BigDecimal(\"1499.00\"))",
+            "        );",
+            "        Invoice inv = svc.generateInvoice(\"Rahul Sharma\", items);",
+            "        svc.printInvoice(inv);",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "UserActivityLogger.java — java.time & java.util in Production",
+          "lines": [
+            "package com.techsustainify.audit;",
+            "",
+            "import java.time.LocalDateTime;",
+            "import java.time.ZoneId;",
+            "import java.time.ZonedDateTime;",
+            "import java.time.format.DateTimeFormatter;",
+            "import java.time.temporal.ChronoUnit;",
+            "import java.util.*;",
+            "import java.util.concurrent.ConcurrentHashMap;",
+            "import java.util.stream.Collectors;",
+            "",
+            "public class UserActivityLogger {",
+            "",
+            "    private static final DateTimeFormatter LOG_FMT =",
+            "            DateTimeFormatter.ofPattern(\"yyyy-MM-dd HH:mm:ss\");",
+            "",
+            "    public record ActivityEvent(String userId, String action,",
+            "                                ZonedDateTime timestamp, Map<String, String> metadata) {",
+            "        @Override public String toString() {",
+            "            return String.format(\"[%s] USER=%s ACTION=%s META=%s\",",
+            "                timestamp.withZoneSameInstant(ZoneId.of(\"Asia/Kolkata\"))",
+            "                         .format(LOG_FMT),",
+            "                userId, action, metadata);",
+            "        }",
+            "    }",
+            "",
+            "    // ConcurrentHashMap from java.util.concurrent — thread-safe",
+            "    private final Map<String, List<ActivityEvent>> eventStore =",
+            "            new ConcurrentHashMap<>();",
+            "",
+            "    public void log(String userId, String action, Map<String, String> meta) {",
+            "        ActivityEvent event = new ActivityEvent(",
+            "            userId, action,",
+            "            ZonedDateTime.now(ZoneId.of(\"Asia/Kolkata\")),",
+            "            Collections.unmodifiableMap(meta)",
+            "        );",
+            "        eventStore.computeIfAbsent(userId, k -> Collections.synchronizedList(",
+            "                       new ArrayList<>())).add(event);",
+            "        System.out.println(\"  Logged: \" + event);",
+            "    }",
+            "",
+            "    public List<ActivityEvent> getRecentActivity(String userId, int lastNMinutes) {",
+            "        ZonedDateTime cutoff = ZonedDateTime.now(ZoneId.of(\"Asia/Kolkata\"))",
+            "                                            .minus(lastNMinutes, ChronoUnit.MINUTES);",
+            "        return eventStore.getOrDefault(userId, Collections.emptyList())",
+            "                         .stream()",
+            "                         .filter(e -> e.timestamp().isAfter(cutoff))",
+            "                         .collect(Collectors.toList());",
+            "    }",
+            "",
+            "    public Map<String, Long> getActionSummary(String userId) {",
+            "        return eventStore.getOrDefault(userId, Collections.emptyList())",
+            "                         .stream()",
+            "                         .collect(Collectors.groupingBy(",
+            "                             ActivityEvent::action,",
+            "                             Collectors.counting()));",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        UserActivityLogger logger = new UserActivityLogger();",
+            "",
+            "        logger.log(\"user_101\", \"LOGIN\",    Map.of(\"ip\", \"192.168.1.10\", \"device\", \"Chrome\"));",
+            "        logger.log(\"user_101\", \"VIEW_PAGE\", Map.of(\"page\", \"/dashboard\"));",
+            "        logger.log(\"user_101\", \"PURCHASE\",  Map.of(\"item\", \"Java Course\", \"amount\", \"4999\"));",
+            "        logger.log(\"user_101\", \"VIEW_PAGE\", Map.of(\"page\", \"/profile\"));",
+            "        logger.log(\"user_102\", \"LOGIN\",     Map.of(\"ip\", \"10.0.0.5\", \"device\", \"Firefox\"));",
+            "        logger.log(\"user_101\", \"LOGOUT\",    Map.of(\"session_duration\", \"45min\"));",
+            "",
+            "        System.out.println(\"\\nAction summary for user_101:\");",
+            "        logger.getActionSummary(\"user_101\").forEach((action, count) ->",
+            "            System.out.printf(\"  %-12s: %d time(s)%n\", action, count));",
+            "",
+            "        System.out.println(\"\\nRecent activity (last 60 min):\");",
+            "        logger.getRecentActivity(\"user_101\", 60).forEach(",
+            "            e -> System.out.println(\"  \" + e.action() + \" @ \" +",
+            "                 e.timestamp().format(DateTimeFormatter.ofPattern(\"HH:mm:ss\"))));",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "packages-flowchart",
+      "title": "Package Structure Flow Diagram",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This diagram shows how a Java source file's package declaration, import statements, and class definition relate to each other, and how the Java compiler resolves class references using packages and the classpath."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "📄 Java Source File",         "sublabel": ".java file on disk",                               "type": "start"    },
+            { "id": "2", "label": "📦 package statement",        "sublabel": "FIRST line — declares this class's package",        "type": "process"  },
+            { "id": "3", "label": "📥 import statements",        "sublabel": "Bring in types from other packages by simple name", "type": "process"  },
+            { "id": "4", "label": "🏗️ class declaration",       "sublabel": "The actual class/interface/enum/record",            "type": "process"  },
+            { "id": "5", "label": "🔍 Compiler resolves types",  "sublabel": "Looks up imports + classpath + java.lang auto",     "type": "decision" },
+            { "id": "6", "label": "✅ Compiles to .class",       "sublabel": "Bytecode stored in matching directory",             "type": "end"      },
+            { "id": "7", "label": "❌ Compile Error",            "sublabel": "Cannot find symbol / package mismatch",             "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1", "to": "2",  "label": "Parse"                          },
+            { "from": "2", "to": "3",  "label": "Register package"               },
+            { "from": "3", "to": "4",  "label": "Register imports"               },
+            { "from": "4", "to": "5",  "label": "Type resolution"                },
+            { "from": "5", "to": "6",  "label": "All types resolved"             },
+            { "from": "5", "to": "7",  "label": "Unresolved type / wrong dir"    }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Packages & API Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Package and API questions test your understanding of Java's namespace system, visibility rules, the standard library, and practical use of key API classes. These appear consistently in Java interviews at all experience levels."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is a package in Java? Why is it used?",
+              "a": "A package in Java is a namespace that groups related classes, interfaces, enumerations, and annotations together. It serves three key purposes: (1) Organization — related types are stored together, making large codebases navigable and maintainable. (2) Name collision prevention — two classes with the same name (e.g., Date in java.util and java.sql) can coexist in separate packages without conflict. (3) Access control — the package-private access level (no modifier) restricts visibility to classes in the same package, enabling strong encapsulation. Packages map directly to directory structures — com.example.service maps to com/example/service/ on disk.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. Which package is imported automatically in every Java program?",
+              "a": "java.lang is the only package automatically imported into every Java source file — you never need to write import java.lang.*. It contains the most fundamental Java classes: String, Integer, Long, Double, Boolean, Character, Byte, Short, Float — all primitive wrapper classes. Also: Math, Object, System, StringBuilder, StringBuffer, Thread, Runnable, Exception, RuntimeException, Error, NullPointerException, ArithmeticException, IndexOutOfBoundsException, ClassCastException, and many more. This is why you can use String and System.out.println() without any import statement — they are in java.lang. All other packages, including java.util, java.io, java.time, and all third-party libraries, require explicit import.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is the difference between import java.util.ArrayList and import java.util.*?",
+              "a": "import java.util.ArrayList is a single-type import — it imports exactly one class (ArrayList) from java.util. import java.util.* is a wildcard (on-demand) import — it imports all public types in java.util (ArrayList, HashMap, HashSet, LinkedList, Collections, Arrays, Scanner, Optional, etc.). Key facts about wildcard import: (1) It does NOT import sub-packages — import java.util.* does NOT import java.util.concurrent.* or java.util.function.*. (2) It does NOT affect performance — the compiler resolves only actually-used classes. (3) It can cause ambiguity — if java.util and java.sql both have a Date class and both are wildcard-imported, Date becomes ambiguous. Single-type imports are preferred in professional code for clarity and to avoid ambiguity.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q4. What is package-private (default) access in Java?",
+              "a": "Package-private (no access modifier) is Java's fourth access level — used when NO modifier is written before a class, field, method, or constructor. A package-private member is visible ONLY to classes in the SAME package. Classes in other packages — even sub-packages — cannot access it. Example: if class QueryEngine in com.example.engine has a package-private method buildPlan(), then QueryOptimizer in the same package can call it, but QueryController in com.example.api cannot. Package-private is the strongest encapsulation after private — it is a powerful tool for hiding implementation details within a package while exposing only the public API. It is Java's way of creating 'internal-to-package' APIs.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. Why should you never use double for financial calculations? What is the alternative?",
+              "a": "double uses IEEE 754 binary floating-point representation, which cannot exactly represent most decimal fractions. 0.1 + 0.2 in double gives 0.30000000000000004, not 0.3. In financial calculations, these tiny errors accumulate across thousands of transactions and produce incorrect totals, taxes, and balances — a serious business bug. The correct alternative is java.math.BigDecimal, which stores decimal numbers exactly. Critical rules: (1) Always use the String constructor — new BigDecimal(\"0.1\") is exact; new BigDecimal(0.1) inherits the double's imprecision. (2) Always specify RoundingMode explicitly — HALF_UP for financial rounding. (3) Use setScale(2, RoundingMode.HALF_UP) for monetary values to ensure consistent 2 decimal places.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q6. What is the difference between java.util.Date and java.time.LocalDate?",
+              "a": "java.util.Date (pre-Java 8): mutable (dangerous in multithreaded code), represents both date and time in a single object, months are zero-indexed (January = 0), does not handle timezones cleanly, poorly designed API, mostly deprecated methods. java.time.LocalDate (Java 8+, JSR-310): immutable and thread-safe, represents ONLY a date (no time, no timezone), months are 1-indexed (January = 1), rich, expressive API with plus/minus operations, formatting, comparison, period calculation. The java.time package completely replaces java.util.Date and Calendar for new code. Use LocalDate for dates only, LocalDateTime for date+time without timezone, ZonedDateTime for timezone-aware date+time. Convert legacy Date to LocalDate via: date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate().",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. Can a sub-package access the package-private members of its parent package?",
+              "a": "NO — sub-packages have NO special access to parent package members in Java. com.example.app and com.example.app.service are completely independent, isolated packages. The dot-separated naming convention creates only a visual hierarchy — there is no actual inheritance of access rights. Package-private members in com.example.app are accessible ONLY within com.example.app — NOT from com.example.app.service, not from com.example, not from anywhere outside. This surprises developers who assume Java packages work like directory permissions. If you need a class in a sub-package to access something in the parent package, you must make that member public (or protected if inheritance is involved) — there is no intermediate visibility level.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q8. What is static import? When should and should not you use it?",
+              "a": "Static import (import static) allows using static methods and fields directly without the class name prefix. Example: import static java.lang.Math.PI; — then use PI directly instead of Math.PI. USE static import for: (1) Universally recognized constants — PI, E, MAX_VALUE. (2) JUnit test assertions — import static org.junit.jupiter.api.Assertions.*; allows assertEquals() directly. (3) Enum values used repeatedly — import static com.example.Status.*; to use ACTIVE instead of Status.ACTIVE. DO NOT use static import for: (1) Business logic utility methods — readers cannot tell which class they belong to. (2) Generic names — if multiple classes have a static method named format(), imports would clash. (3) Overused in non-test code — it makes the codebase harder to understand and navigate.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q9. What happens if you have import java.util.* and import java.sql.* and use Date?",
+              "a": "Both java.util.Date and java.sql.Date exist. When you write import java.util.* and import java.sql.*, both packages are on-demand-imported. If you then write Date d = new Date(); in your code, the Java compiler cannot determine which Date you mean — both are available through the wildcard imports. It reports a compile-time error: 'reference to Date is ambiguous.' The fix: use the fully qualified class name for whichever (or both) you need: java.util.Date utilDate = new java.util.Date(); java.sql.Date sqlDate = new java.sql.Date(...);. This is one reason professional code prefers single-type imports over wildcard imports — single-type imports make this conflict immediately visible and force you to resolve it explicitly.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q10. What are some of the most important packages in the Java API and what do they contain?",
+              "a": "The most important Java API packages: java.lang (auto-imported): String, Math, Integer, System, Object, Thread, Exception. java.util: ArrayList, HashMap, HashSet, LinkedList, TreeMap, Collections, Arrays, Scanner, Optional, UUID, Random. java.util.concurrent: ExecutorService, Executors, ConcurrentHashMap, Future, CountDownLatch, Semaphore. java.util.stream: Stream, Collectors, IntStream — for functional-style collection processing. java.io: File, BufferedReader, PrintWriter, InputStream, OutputStream, Serializable. java.nio.file: Path, Paths, Files — modern file API (use instead of java.io.File). java.math: BigDecimal, BigInteger — for precise arithmetic. java.time: LocalDate, LocalDateTime, ZonedDateTime, Duration, Period, DateTimeFormatter — modern date/time. java.sql: Connection, PreparedStatement, ResultSet — for JDBC database connectivity. java.net: URL, HttpURLConnection, Socket — for networking.",
+              "tag": "Must Know"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Packages & API Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Challenge yourself with these practice questions. Attempt each independently before reading the answer — writing and tracing code by hand significantly improves retention and interview readiness."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. A Java file is saved at src/com/example/util/StringHelper.java. What must the first executable statement in this file be?",
+              "a": "The first executable statement must be: package com.example.util; — The package declaration must match the directory structure exactly (com/example/util/ → com.example.util). It must be the very first statement in the file — before any import statements, before any class declarations, and before any blank lines (though comments above it are technically allowed). If this statement is missing or incorrect, the Java compiler will report an error because the class's declared package does not match its physical location on disk.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What is the output of this code and why?\nSystem.out.println(0.1 + 0.2 == 0.3);\nSystem.out.println(new BigDecimal(\"0.1\").add(new BigDecimal(\"0.2\")).compareTo(new BigDecimal(\"0.3\")));",
+              "a": "Line 1 prints: false. 0.1 and 0.2 cannot be represented exactly in IEEE 754 double precision. Their sum is approximately 0.30000000000000004, not exactly 0.3. The == comparison fails. Line 2 prints: 0. BigDecimal constructed from String represents values exactly. new BigDecimal(\"0.1\").add(new BigDecimal(\"0.2\")) is exactly 0.3. compareTo(new BigDecimal(\"0.3\")) returns 0 (equal). Key lesson: never compare doubles with == for exact equality, especially in financial code. Always use BigDecimal (String constructor) for exact decimal arithmetic. compareTo() is correct for BigDecimal equality checks — equals() also checks scale (0.3 vs 0.30 are equals() false but compareTo() zero).",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "3. Write a program using java.time to calculate how many days until the next New Year (January 1st of next year) from today's date.",
+              "a": "import java.time.LocalDate;\nimport java.time.temporal.ChronoUnit;\n\npublic class DaysToNewYear {\n    public static void main(String[] args) {\n        LocalDate today      = LocalDate.now();\n        LocalDate nextNewYear = LocalDate.of(today.getYear() + 1, 1, 1);\n        long daysUntil = ChronoUnit.DAYS.between(today, nextNewYear);\n        System.out.println(\"Today        : \" + today);\n        System.out.println(\"Next New Year: \" + nextNewYear);\n        System.out.println(\"Days until   : \" + daysUntil);\n    }\n}\n// Uses java.time.LocalDate for immutable, type-safe date representation\n// Uses ChronoUnit.DAYS.between() for accurate day counting (handles leap years)\n// today.getYear() + 1 ensures we always target the NEXT year, not the current",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. Explain the output:\npackage com.example.a;\npublic class A {\n    String secret = \"hidden\";   // package-private\n    public String visible = \"public\";\n}\n\npackage com.example.b;\nimport com.example.a.A;\npublic class B {\n    public static void main(String[] args) {\n        A a = new A();\n        System.out.println(a.visible);  // Line A\n        System.out.println(a.secret);   // Line B\n    }\n}",
+              "a": "Line A compiles and prints: public — visible is declared public, so it is accessible from any package including com.example.b. Line B causes a COMPILE ERROR: secret has no access modifier (package-private) — it is only visible within com.example.a. Class B is in com.example.b — a completely different package. Despite the apparent parent-child relationship of the package names, com.example.a and com.example.b are independent packages with no shared access. The compiler error: secret is not public in com.example.a.A; cannot be accessed from outside package. Fix: make secret public, or move class B into com.example.a.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Using java.util, write a program that: creates a list of 5 student names, sorts them alphabetically, removes all names shorter than 4 characters, and prints the final list.",
+              "a": "import java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.List;\n\npublic class StudentFilter {\n    public static void main(String[] args) {\n        List<String> names = new ArrayList<>(\n            List.of(\"Raj\", \"Ananya\", \"Zoe\", \"Priya\", \"Bo\"));\n        System.out.println(\"Original : \" + names);\n\n        Collections.sort(names);  // Alphabetical sort\n        System.out.println(\"Sorted   : \" + names); // [Ananya, Bo, Priya, Raj, Zoe]\n\n        names.removeIf(name -> name.length() < 4); // Remove short names\n        System.out.println(\"Filtered : \" + names); // [Ananya, Priya]\n    }\n}\n// Collections.sort() — in-place sort from java.util\n// removeIf() — List method using Predicate (lambda) — removes Bo, Raj, Zoe (< 4 chars)",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "6. What is wrong with this code? How many errors can you find?\n// File: src/MyApp.java\nimport java.util.ArrayList;\npackage com.example;\npublic class MyApp {\n    public static void main(String[] args) {\n        BigDecimal price = new BigDecimal(9.99);\n    }\n}",
+              "a": "Three errors: Error 1: import java.util.ArrayList; comes BEFORE package com.example; — the package declaration must be the FIRST statement. The import must come after the package line. Error 2: BigDecimal is used but not imported. Need: import java.math.BigDecimal; Error 3: new BigDecimal(9.99) uses the double constructor — this inherits floating-point imprecision. 9.99 as a double is not exactly 9.99. Should use String constructor: new BigDecimal(\"9.99\"). Additionally, ArrayList is imported but never used — a dead import (not a compile error, but an IDE warning and code smell). Fixed version: package com.example; import java.math.BigDecimal; public class MyApp { public static void main(String[] args) { BigDecimal price = new BigDecimal(\"9.99\"); } }",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. Write a program using java.math.BigDecimal to calculate compound interest: P = 10000, rate = 8.5% per annum, time = 3 years. Formula: A = P * (1 + r)^n. Round to 2 decimal places.",
+              "a": "import java.math.BigDecimal;\nimport java.math.MathContext;\nimport java.math.RoundingMode;\n\npublic class CompoundInterest {\n    public static void main(String[] args) {\n        BigDecimal principal = new BigDecimal(\"10000\");\n        BigDecimal rate      = new BigDecimal(\"0.085\"); // 8.5% = 0.085\n        int        years     = 3;\n\n        // (1 + r)^n using MathContext for precision\n        BigDecimal factor = BigDecimal.ONE.add(rate); // 1.085\n        BigDecimal amount = principal;\n        for (int i = 0; i < years; i++) {\n            amount = amount.multiply(factor); // Compound each year\n        }\n        amount = amount.setScale(2, RoundingMode.HALF_UP);\n\n        BigDecimal interest = amount.subtract(principal);\n        System.out.println(\"Principal : ₹\" + principal);\n        System.out.println(\"Rate      : 8.5% p.a.\");\n        System.out.println(\"Years     : \" + years);\n        System.out.println(\"Amount    : ₹\" + amount);   // ₹12772.85\n        System.out.println(\"Interest  : ₹\" + interest); // ₹2772.85\n    }\n}",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "8. How would you properly organize a simple e-commerce application into packages? Describe the package structure and what each package contains.",
+              "a": "Recommended package structure for an e-commerce app using layer-based organization:\n\ncom.ecommerce (root — holds only the main application entry point)\ncom.ecommerce.model — domain entities: Product, Order, Customer, Cart, Payment\ncom.ecommerce.service — business logic: ProductService, OrderService, PaymentService, CartService\ncom.ecommerce.repository — data access: ProductRepository, OrderRepository, CustomerRepository\ncom.ecommerce.controller — API endpoints / UI handlers: ProductController, OrderController\ncom.ecommerce.exception — custom exceptions: ProductNotFoundException, InsufficientStockException, PaymentFailedException\ncom.ecommerce.util — stateless helper classes: PriceCalculator, ValidationUtils, DateUtils\ncom.ecommerce.config — app configuration: DatabaseConfig, SecurityConfig\n\nPrinciples applied: (1) Each package has a single clear responsibility. (2) Dependencies flow inward: controller → service → repository. (3) model classes have no package dependencies. (4) exception and util are shared cross-cutting packages. (5) Package-private visibility can hide repository implementation details from controller layer.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Packages & API: Java's Organizational Backbone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Packages are not just a code organization tool — they are Java's fundamental namespace, visibility control, and architectural expression mechanism. Every professional Java codebase is a carefully designed package hierarchy that reflects the application's architecture, enforces encapsulation through access control, and prevents naming conflicts at scale. <strong>How you organize your packages reveals how clearly you understand your system's design.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The Java API — hundreds of packages and thousands of battle-tested classes — is one of Java's greatest strengths. Before writing any utility code, ask: does the Java API already have this? The answer is almost always yes. <code>java.time</code> for dates, <code>java.math.BigDecimal</code> for money, <code>java.util</code> for collections, <code>java.nio.file</code> for files — these are not optional libraries but core skills every Java developer must master. <strong>Knowing the API deeply is what separates a Java programmer from a Java developer.</strong>"
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept", "Key Point", "Best Practice"],
+          "rows": [
+            ["package declaration",       "First statement in file — maps to directory",               "Always use reverse domain: com.company.module"],
+            ["import (single-type)",      "Import exactly one class — preferred in prod code",         "Let your IDE manage imports; never leave unused imports"],
+            ["import (wildcard)",         "import pkg.* — all types but NOT sub-packages",             "Avoid in production; use in test static imports only"],
+            ["static import",             "Use static members without class name prefix",               "Only for universally known constants and JUnit assertions"],
+            ["java.lang",                 "Auto-imported — String, Math, Integer, System",              "Know it deeply — you use it in every program"],
+            ["java.util",                 "Collections, Arrays, Scanner, Optional, UUID",              "Master ArrayList, HashMap, Collections, Arrays"],
+            ["java.math.BigDecimal",       "Exact decimal arithmetic — use for all money",              "Always String constructor; always set RoundingMode"],
+            ["java.time",                 "Modern date/time — replaces java.util.Date",                "LocalDate, LocalDateTime, ZonedDateTime, DateTimeFormatter"],
+            ["package-private access",    "No modifier — visible only in same package",               "Use to hide implementation details within a module"],
+            ["Sub-packages",              "No inherited access — fully isolated namespaces",           "Never assume sub-package can see parent package internals"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Arrays</strong> — the foundational data structure where everything you have learned about loops, break/continue, and the Java API comes together for traversal, searching, sorting, and manipulation. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Packages and API",
+    "items": [
+      {
+        "q": "What is a package in Java?",
+        "a": "A package in Java is a namespace that groups related classes, interfaces, enumerations, and annotations together. It serves three purposes: organization (related types stored together), name collision prevention (same-named classes in different packages coexist), and access control (package-private visibility). Packages map directly to directory structure — com.example.service maps to com/example/service/ on disk. The package declaration must be the first statement in a Java source file. If omitted, the class belongs to the unnamed default package — acceptable for experiments, never for production code."
+      },
+      {
+        "q": "What is the Java API?",
+        "a": "The Java API (Application Programming Interface) is the collection of pre-written packages and classes that ship with every Java installation as the Java Standard Library. It provides ready-to-use implementations for common tasks: data structures (java.util), I/O (java.io, java.nio), math (java.math), date/time (java.time), networking (java.net), concurrency (java.util.concurrent), and more. Before writing any utility code, always check if the Java API already provides it — it almost always does, and the built-in implementations are battle-tested, optimized, and well-documented."
+      },
+      {
+        "q": "Which package is automatically imported in Java?",
+        "a": "java.lang is the only package automatically imported into every Java source file. It contains the most fundamental Java classes: String, Integer, Long, Double, Boolean, Math, Object, System, StringBuilder, Thread, Runnable, Exception, RuntimeException, NullPointerException, ArithmeticException, and all primitive wrapper classes. This is why you can use String and System.out.println() without any import statement. All other packages — including java.util, java.io, java.time, java.math, and every third-party library — must be explicitly imported."
+      },
+      {
+        "q": "Why should you use BigDecimal instead of double for money?",
+        "a": "double uses IEEE 754 binary floating-point, which cannot represent most decimal fractions exactly. 0.1 + 0.2 in double gives 0.30000000000000004 — not 0.3. In financial calculations, these tiny errors accumulate and produce wrong totals, taxes, and balances. java.math.BigDecimal represents decimals exactly. Always use the String constructor — new BigDecimal(\"19.99\") is exact; new BigDecimal(19.99) inherits the double's imprecision. Always specify RoundingMode — HALF_UP for financial values. Never use double, float, or the double-based BigDecimal constructor for any monetary calculation."
+      },
+      {
+        "q": "What is the difference between package-private and private access in Java?",
+        "a": "private restricts access to only the declaring class itself — no other class, not even other classes in the same package, can access private members. package-private (no modifier) allows access to any class in the same package, but blocks access from all other packages (including sub-packages). This distinction is important for encapsulation design: use private for members that are purely internal implementation of a single class. Use package-private for members that need to be shared within a module/package but should not be exposed as part of the public API. Sub-packages do NOT inherit package-private access — each package is completely isolated."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Polymorphism", "path": "/java/java-polymorphism" },
+    "next": { "label": "Java Inner-Class →",              "path": "/java/java-inner-class" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "package statement",       "dd": "First line of file — maps to directory structure" },
+      { "dt": "Auto-imported package",   "dd": "java.lang only — String, Math, System, Integer etc." },
+      { "dt": "Single-type import",      "dd": "import java.util.ArrayList; — preferred in prod code" },
+      { "dt": "Wildcard import",         "dd": "import java.util.*; — all types but NOT sub-packages" },
+      { "dt": "Static import",           "dd": "import static java.lang.Math.PI; — no class prefix needed" },
+      { "dt": "Money arithmetic",        "dd": "Always use BigDecimal — never double or float" },
+      { "dt": "Date/Time",               "dd": "Always use java.time — never java.util.Date" },
+      { "dt": "Package-private access",  "dd": "No modifier — visible only within the same package" },
+      { "dt": "Sub-package access",      "dd": "Sub-packages do NOT inherit parent package's access" }
+    ],
+    "relatedArticles": [
+      { "label": "Java Break and Continue",     "path": "/java/java-break-continue" },
+      { "label": "Java Arrays",                 "path": "/java/java-arrays" },
+      { "label": "Java For Loop",               "path": "/java/java-for-loop" },
+      { "label": "Java While Loop",             "path": "/java/java-while-loop" },
+      { "label": "Java If-Else",                "path": "/java/java-if-else" },
+      { "label": "Java Switch Statement",       "path": "/java/java-switch" },
+      { "label": "Java Operators",              "path": "/java/java-operators" },
+      { "label": "Java Variables & Data Types", "path": "/java/java-variables" }
+    ],
+    "tags": [
+      "Java Packages", "Java API", "Java Import Statement", "Java Built-in Packages",
+      "Java User Defined Packages", "Java java.lang Package", "Java java.util Package",
+      "Java java.math BigDecimal", "Java java.time Package", "Java Package Access Modifiers",
+      "Java Package Interview Questions", "Java Package Best Practices", "Java Classpath",
+      "Java Static Import", "Java Wildcard Import", "Java Package Private",
+      "Java Core", "Java Beginner", "Java 21", "Java Tutorial 2026"
+    ]
+  }
+}

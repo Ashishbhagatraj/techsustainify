@@ -1,0 +1,1718 @@
+{
+  "meta": {
+    "title": "Java Enums — Complete Guide with Syntax, Methods, Constructors & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Enums with syntax, constructors, fields, methods, abstract methods, EnumSet, EnumMap, ordinal, name, values(), valueOf(), switch with enum, singleton pattern, real-world examples, and interview questions. Covers Java 21 enum features. Updated March 2026.",
+    "keywords": "java enum, java enum example, java enum constructor, java enum methods, java enum with fields, java enum abstract method, java enumset, java enummap, java enum ordinal, java enum name, java enum values, java enum valueof, java switch enum, java enum best practices, java enum interview questions, java enum vs constant, java enum singleton, java enum implements interface, java 21 enum",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-enum",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Enums — Syntax, Constructors, Methods & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java Enums — declaration, constructors, fields, methods, abstract methods, EnumSet, EnumMap, enum with switch, singleton pattern, real-world examples, pitfalls, and interview questions.",
+      "url": "https://www.techsustainify.com/java/java-enum",
+      "image": "https://www.techsustainify.com/images/java-enum-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Enums Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-03-10T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Enum",
+          "Java Enumeration",
+          "EnumSet",
+          "EnumMap",
+          "Java Constants",
+          "Java OOP",
+          "Enum Constructor",
+          "Enum Methods",
+          "Enum Abstract Methods",
+          "Java 21"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Enums — Syntax, Methods, Constructors & Best Practices 2026",
+      "description": "Complete guide to Java Enums — declaration, fields, constructors, abstract methods, EnumSet, EnumMap, switch integration, singleton pattern, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-enum-og.png",
+      "imageAlt": "Java Enum Guide 2026 - Tech Sustainify",
+      "readingTime": "25 minutes",
+      "level": "Intermediate",
+      "label1": "Reading Time",
+      "data1": "25 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Intermediate"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Enums — Complete Guide with Syntax, Constructors, Methods & Best Practices 2026",
+        "description": "A comprehensive beginner-to-advanced guide covering all Java enum features — basic declaration, fields, constructors, instance methods, abstract methods, interface implementation, EnumSet, EnumMap, enum in switch, singleton pattern, real-world production examples, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-03-10",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Intermediate",
+        "wordCount": 7000,
+        "timeRequired": "PT25M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Enum" },
+          { "@type": "Thing", "name": "Java Enumeration Type" },
+          { "@type": "Thing", "name": "EnumSet and EnumMap" },
+          { "@type": "Thing", "name": "Java Type-Safe Constants" }
+        ],
+        "keywords": "java enum, enum constructor, enum methods, EnumSet, EnumMap, enum switch, enum interface, enum singleton, java best practices"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Enums" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an enum in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An enum (enumeration) in Java is a special class type that represents a fixed set of named constants. Introduced in Java 5, enums are type-safe, meaning the compiler prevents assigning invalid values — unlike using plain int or String constants. An enum can have fields, constructors, and methods, making it far more powerful than traditional constant groups. Example: enum Day { MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY }."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a Java enum have a constructor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Java enums can have constructors, but they must be private or package-private (default) — never public or protected. This is enforced by the compiler because enum instances are created only at class-loading time, not by user code. The constructor is called once per constant, when the enum class is loaded. Example: enum Planet { EARTH(5.972e24, 6.371e6); private final double mass; private final double radius; Planet(double mass, double radius) { this.mass = mass; this.radius = radius; } }."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between enum and final class with constants in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Enum advantages over final class with static final constants: (1) Type safety — compiler rejects invalid enum values; int constants allow any integer. (2) Namespace — enum constants live in their own type, no clashing. (3) Iteration — Enum.values() gives all constants; no equivalent for static fields. (4) switch support — enums work cleanly in switch without magic numbers. (5) Built-in methods — name(), ordinal(), valueOf() come free. (6) Singleton guarantee — JVM ensures exactly one instance per constant. Final class constants have none of these guarantees."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a Java enum implement an interface?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Java enums can implement one or more interfaces, but cannot extend any class (they implicitly extend java.lang.Enum). This is how you give each enum constant its own behaviour: declare an abstract method in the enum (each constant provides its own implementation) or implement an interface and have the enum body provide the implementation. This pattern enables polymorphism with enums — treating enum constants as objects with behaviour, not just named values."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are EnumSet and EnumMap in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "EnumSet is a specialized, high-performance Set implementation designed exclusively for enum types. Internally, it uses a bit vector (long bitmask) — making operations like add, contains, and remove O(1) with extremely low memory footprint. EnumMap is a specialized Map implementation where keys must be enum constants. Both are significantly faster than HashSet/HashMap for enum keys because they use array-based internals indexed by enum ordinal. Always prefer EnumSet over HashSet and EnumMap over HashMap when working with enum keys."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-03-10",
+      "dateModified": "2026-03-20",
+      "readingTime": "25 minutes",
+      "wordCount": 7000,
+      "difficulty": "Intermediate",
+      "chapter": 19,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-enum",              "title": "What is an Enum in Java?" },
+        { "id": "enum-declaration",          "title": "Declaring an Enum" },
+        { "id": "enum-under-the-hood",       "title": "How Enums Work Under the Hood" },
+        { "id": "enum-built-in-methods",     "title": "Built-in Enum Methods" },
+        { "id": "enum-fields-constructors",  "title": "Enum with Fields & Constructors" },
+        { "id": "enum-instance-methods",     "title": "Enum with Instance Methods" },
+        { "id": "enum-abstract-methods",     "title": "Enum with Abstract Methods" },
+        { "id": "enum-implements-interface", "title": "Enum Implementing an Interface" },
+        { "id": "enum-in-switch",            "title": "Enum in switch Statement" },
+        { "id": "enum-singleton",            "title": "Enum as Singleton Pattern" },
+        { "id": "enumset",                   "title": "EnumSet — High-Performance Set for Enums" },
+        { "id": "enummap",                   "title": "EnumMap — High-Performance Map for Enums" },
+        { "id": "enum-vs-constants",         "title": "Enum vs Static Final Constants" },
+        { "id": "enum-bad-practices",        "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",       "title": "Real-World Production Code Examples" },
+        { "id": "enum-flowchart",            "title": "Enum Feature Map" },
+        { "id": "interview-questions",       "title": "Interview Questions" },
+        { "id": "practice-questions",        "title": "Practice Questions" },
+        { "id": "conclusion-heading",        "title": "Conclusion" },
+        { "id": "faq-heading",               "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-enum" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-enum" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-enum" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-switch",
+      "next": "https://www.techsustainify.com/java/java-annotations"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-oop",
+      "contentTopic": "java-enum",
+      "chapterNumber": 19,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "intermediate",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Enums" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Enums — Syntax, Constructors, Methods & Best Practices",
+    "subtitle": "A complete guide to Java Enums — from basic declaration to advanced patterns: enum fields, constructors, abstract methods, interface implementation, EnumSet, EnumMap, singleton pattern, switch integration, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "25 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Intermediate" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "19 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-enum",
+      "title": "What is an Enum in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "An <strong>enum</strong> (short for <em>enumeration</em>) in Java is a <strong>special class type</strong> that represents a <strong>fixed, well-known set of named constants</strong>. Introduced in <strong>Java 5 (JDK 1.5)</strong>, enums solve a fundamental problem in programming: how do you represent a variable that should only ever hold one of a limited set of predefined values — like days of the week, months, order statuses, or HTTP methods — in a way that the <strong>compiler enforces the constraint</strong> for you?"
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Before enums, the standard pattern was using <code>static final int</code> constants (the <em>int enum pattern</em>). This approach was type-unsafe — a method expecting a <code>DAY</code> constant could silently receive <code>42</code> with no compiler error. Java enums eliminate this entire class of bugs by creating a <strong>dedicated type</strong>. A method that expects a <code>Day</code> enum simply cannot receive anything that is not a valid <code>Day</code> constant."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "What makes Java enums uniquely powerful compared to other languages is that <strong>they are full-fledged classes</strong>. Unlike C/C++ enums which are essentially named integers, Java enums can have <strong>fields, constructors, instance methods, abstract methods</strong>, and can <strong>implement interfaces</strong>. Every Java enum implicitly extends <code>java.lang.Enum&lt;E&gt;</code> and is treated as a <code>public static final</code> instance of its own type."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java Enum at a Glance",
+          "text": "An enum in Java is: (1) A type-safe replacement for int/String constant groups. (2) A full class — can have fields, constructors, and methods. (3) Implicitly extends java.lang.Enum — cannot extend any other class. (4) Can implement interfaces. (5) Thread-safe by design — JVM guarantees one instance per constant. (6) Serialization-safe — enum constants are serialized by name, not by value. (7) Compatible with switch statements and expressions natively."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enum-declaration",
+      "title": "Declaring an Enum — From Simple to Structured",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Enum declaration syntax uses the <code>enum</code> keyword instead of <code>class</code> or <code>interface</code>. By convention, enum type names use <strong>PascalCase</strong> (like class names), and the <strong>constants use SCREAMING_SNAKE_CASE</strong> (all uppercase with underscores). Enums can be declared at the top level, as a member of a class, or even inside a method (local enum)."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EnumDeclaration.java",
+          "lines": [
+            "// ✅ Top-level enum — simplest form",
+            "public enum Day {",
+            "    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY",
+            "}",
+            "",
+            "// ✅ Member enum inside a class",
+            "public class Order {",
+            "    public enum Status {",
+            "        PENDING, CONFIRMED, PROCESSING, SHIPPED, DELIVERED, CANCELLED",
+            "    }",
+            "    private Status currentStatus;",
+            "}",
+            "",
+            "// ✅ Enum in its own file (recommended for reuse)",
+            "// File: HttpMethod.java",
+            "public enum HttpMethod {",
+            "    GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS, TRACE",
+            "}",
+            "",
+            "// ✅ Using the enum",
+            "public class EnumUsage {",
+            "    public static void main(String[] args) {",
+            "",
+            "        Day today = Day.WEDNESDAY;",
+            "        System.out.println(today);           // Output: WEDNESDAY",
+            "        System.out.println(today.name());    // Output: WEDNESDAY",
+            "        System.out.println(today.ordinal()); // Output: 2  (0-indexed)",
+            "",
+            "        // ✅ Comparing enums — use == (not .equals())",
+            "        if (today == Day.WEDNESDAY) {",
+            "            System.out.println(\"It's mid-week!\");",
+            "        }",
+            "",
+            "        // ✅ Iterating all constants",
+            "        for (Day day : Day.values()) {",
+            "            System.out.println(day.ordinal() + \" -> \" + day);",
+            "        }",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 == vs .equals() for Enums",
+          "text": "Unlike String comparison, you should use == (not .equals()) to compare enum constants. Because the JVM guarantees exactly one instance per enum constant, == is both safe and correct — two references to Day.MONDAY will always point to the exact same object. .equals() also works but is redundant. Using == also provides a NullPointerException advantage: null == Day.MONDAY returns false without throwing NPE, while null.equals(Day.MONDAY) throws NPE."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enum-under-the-hood",
+      "title": "How Enums Work Under the Hood — The Compiler's Secret",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When the Java compiler encounters an enum declaration, it translates it into a <strong>regular Java class</strong> that extends <code>java.lang.Enum&lt;E&gt;</code>. Understanding this transformation demystifies enum behaviour, explains why certain operations are forbidden, and reveals why enums are thread-safe and serialization-safe by design."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EnumUnderTheHood.java — What the compiler generates",
+          "lines": [
+            "// What YOU write:",
+            "public enum Season {",
+            "    SPRING, SUMMER, AUTUMN, WINTER",
+            "}",
+            "",
+            "// What the COMPILER approximately generates:",
+            "public final class Season extends Enum<Season> {",
+            "",
+            "    // One public static final instance per constant",
+            "    public static final Season SPRING = new Season(\"SPRING\", 0);",
+            "    public static final Season SUMMER = new Season(\"SUMMER\", 1);",
+            "    public static final Season AUTUMN = new Season(\"AUTUMN\", 2);",
+            "    public static final Season WINTER = new Season(\"WINTER\", 3);",
+            "",
+            "    // Private constructor — users cannot create new instances",
+            "    private Season(String name, int ordinal) {",
+            "        super(name, ordinal); // Enum base class constructor",
+            "    }",
+            "",
+            "    // Compiler generates values() — returns array of all constants",
+            "    public static Season[] values() {",
+            "        return new Season[]{ SPRING, SUMMER, AUTUMN, WINTER };",
+            "    }",
+            "",
+            "    // Compiler generates valueOf() — looks up by name",
+            "    public static Season valueOf(String name) {",
+            "        return (Season) Enum.valueOf(Season.class, name);",
+            "    }",
+            "}",
+            "",
+            "// This explains WHY:",
+            "// 1. You cannot 'new' an enum: new Season() — COMPILE ERROR",
+            "// 2. Enums are final — cannot be extended (subclassed)",
+            "// 3. Enums cannot extend another class (already extends Enum)",
+            "// 4. Enum constructors must be private (instances created at class-load time)",
+            "// 5. Enums are thread-safe — JVM class loading is synchronized"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 Enum and Serialization Safety",
+          "text": "Java's serialization mechanism gives enums special treatment. When an enum constant is serialized, only its name is written to the stream. During deserialization, valueOf() is called to retrieve the canonical instance — guaranteeing that deserialized enum constants are the SAME instance as in the running JVM. This makes enums immune to the 'broken singleton via deserialization' vulnerability that affects regular classes."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enum-built-in-methods",
+      "title": "Built-in Enum Methods — The Free API Every Enum Gets",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every Java enum automatically inherits a rich set of methods from <code>java.lang.Enum&lt;E&gt;</code> and gains a few compiler-generated static methods. These built-in methods cover the most common enum operations — no boilerplate needed."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📛",
+              "title": "name() — Returns the constant's declared name",
+              "text": "Returns the exact name of the constant as declared in the enum body. Example: Day.MONDAY.name() returns \"MONDAY\". Unlike toString(), name() is final and cannot be overridden — it always returns the precise declaration name. Useful when you need the canonical string representation of the constant for logging, serialization, or database storage."
+            },
+            {
+              "icon": "🔢",
+              "title": "ordinal() — Returns the zero-based position",
+              "text": "Returns the position (index) of the constant in the enum declaration, starting from 0. Day.MONDAY.ordinal() = 0, Day.TUESDAY.ordinal() = 1, etc. WARNING: Never use ordinal() as a substitute for the constant's semantic value (e.g., don't store ordinal in a database). If you insert a new constant between existing ones, all ordinals after it shift — breaking persisted data."
+            },
+            {
+              "icon": "🔄",
+              "title": "values() — Returns all constants as an array",
+              "text": "Compiler-generated static method that returns a new array containing all enum constants in declaration order. Example: Day.values() returns [MONDAY, TUESDAY, ..., SUNDAY]. Used for iteration, populating dropdowns, and building sets. Note: It returns a NEW array each call (defensive copy) — cache it if calling repeatedly in performance-critical code."
+            },
+            {
+              "icon": "🔍",
+              "title": "valueOf(String) — Lookup by name",
+              "text": "Compiler-generated static method that returns the enum constant with the specified name. Example: Day.valueOf(\"FRIDAY\") returns Day.FRIDAY. Case-sensitive — valueOf(\"friday\") throws IllegalArgumentException. Throws IllegalArgumentException for unknown names and NullPointerException for null. Use in safe wrapper: try { Day.valueOf(input) } catch (IllegalArgumentException e) { /* handle */ }."
+            },
+            {
+              "icon": "⚖️",
+              "title": "compareTo(E) — Compares by ordinal",
+              "text": "Inherited from Comparable<E>. Compares two enum constants based on their ordinal values. Day.MONDAY.compareTo(Day.FRIDAY) returns a negative number (MONDAY < FRIDAY). Useful for sorting enum-keyed collections. Since enums implement Comparable, they work naturally with sorted collections like TreeSet and TreeMap."
+            },
+            {
+              "icon": "📦",
+              "title": "getDeclaringClass() — Returns the enum's Class",
+              "text": "Returns the Class object corresponding to the enum type of the constant. Useful in generic contexts where you need the enum's class at runtime — for reflection, enum set creation, or dynamic valueOf lookup. Different from getClass() when called on an enum constant that has a constant-specific body (an anonymous subclass)."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EnumBuiltInMethods.java",
+          "lines": [
+            "public enum Planet {",
+            "    MERCURY, VENUS, EARTH, MARS, JUPITER, SATURN, URANUS, NEPTUNE",
+            "}",
+            "",
+            "public class EnumMethodsDemo {",
+            "    public static void main(String[] args) {",
+            "",
+            "        Planet p = Planet.EARTH;",
+            "",
+            "        // name() — exact declaration name",
+            "        System.out.println(p.name());             // EARTH",
+            "",
+            "        // ordinal() — zero-based position",
+            "        System.out.println(p.ordinal());          // 2",
+            "",
+            "        // toString() — same as name() by default, overridable",
+            "        System.out.println(p.toString());         // EARTH",
+            "",
+            "        // values() — all constants",
+            "        Planet[] allPlanets = Planet.values();",
+            "        System.out.println(allPlanets.length);    // 8",
+            "",
+            "        // valueOf() — lookup by name (case-sensitive)",
+            "        Planet mars = Planet.valueOf(\"MARS\");",
+            "        System.out.println(mars);                 // MARS",
+            "",
+            "        // Safe valueOf with error handling",
+            "        String input = \"PLUTO\"; // Not a planet anymore!",
+            "        Planet found = null;",
+            "        try {",
+            "            found = Planet.valueOf(input);",
+            "        } catch (IllegalArgumentException e) {",
+            "            System.out.println(input + \" is not a recognized planet.\");",
+            "        }",
+            "",
+            "        // compareTo() — by ordinal",
+            "        System.out.println(Planet.MERCURY.compareTo(Planet.NEPTUNE)); // negative",
+            "        System.out.println(Planet.NEPTUNE.compareTo(Planet.MERCURY)); // positive",
+            "",
+            "        // Iterating with ordinal and name",
+            "        System.out.println(\"\\nAll planets:\");",
+            "        for (Planet planet : Planet.values()) {",
+            "            System.out.printf(\"  [%d] %s%n\", planet.ordinal(), planet.name());",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enum-fields-constructors",
+      "title": "Enum with Fields & Constructors — The Power Move",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The real power of Java enums over simple constant groups is the ability to <strong>attach data to each constant</strong>. By giving an enum fields and a constructor, each constant carries its own payload — making the enum a <strong>self-contained, type-safe data structure</strong>. The constructor is called once per constant at class-loading time, with the arguments provided in the constant declaration."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EnumWithFieldsAndConstructors.java",
+          "lines": [
+            "// ✅ Enum with fields — each constant carries associated data",
+            "public enum Planet {",
+            "",
+            "    // Each constant calls the constructor with its specific values",
+            "    MERCURY (3.303e+23,  2.4397e6),",
+            "    VENUS   (4.869e+24,  6.0518e6),",
+            "    EARTH   (5.972e+24,  6.3710e6),",
+            "    MARS    (6.419e+23,  3.3972e6),",
+            "    JUPITER (1.899e+27,  7.1492e7),",
+            "    SATURN  (5.685e+26,  6.0268e7),",
+            "    URANUS  (8.683e+25,  2.5559e7),",
+            "    NEPTUNE (1.024e+26,  2.4746e7);",
+            "",
+            "    // Fields — conventionally final (constants shouldn't change)",
+            "    private final double massKg;        // Mass in kilograms",
+            "    private final double radiusMeters;  // Radius in meters",
+            "",
+            "    // Constructor MUST be private (or package-private)",
+            "    Planet(double massKg, double radiusMeters) {",
+            "        this.massKg = massKg;",
+            "        this.radiusMeters = radiusMeters;",
+            "    }",
+            "",
+            "    // Accessors",
+            "    public double getMassKg()       { return massKg; }",
+            "    public double getRadiusMeters() { return radiusMeters; }",
+            "",
+            "    // Computed method using fields",
+            "    public double surfaceGravity() {",
+            "        final double G = 6.67300E-11;",
+            "        return G * massKg / (radiusMeters * radiusMeters);",
+            "    }",
+            "",
+            "    public double surfaceWeight(double massOnEarth) {",
+            "        return massOnEarth * surfaceGravity() / EARTH.surfaceGravity();",
+            "    }",
+            "}",
+            "",
+            "public class PlanetDemo {",
+            "    public static void main(String[] args) {",
+            "        double earthWeight = 75.0; // kg",
+            "        System.out.println(\"Your weight on each planet (kg):\");",
+            "        for (Planet planet : Planet.values()) {",
+            "            System.out.printf(\"  %-10s: %.2f kg%n\",",
+            "                planet, planet.surfaceWeight(earthWeight));",
+            "        }",
+            "        // Output:",
+            "        // MERCURY   : 28.33 kg",
+            "        // VENUS     : 67.87 kg",
+            "        // EARTH     : 75.00 kg",
+            "        // MARS      : 28.46 kg",
+            "        // ...",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Enum Constructor Rules — Hard Compiler Constraints",
+          "text": "Enum constructors are ALWAYS private or package-private. Declaring them public or protected is a COMPILE ERROR. You also CANNOT call 'new Planet(...)' from any code — instances are created exclusively by the JVM during class initialization. This is the mechanism that guarantees exactly one instance per constant — the cornerstone of enum's thread safety and serialization correctness."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "HttpStatusCode.java — Real-World Enum with Fields",
+          "lines": [
+            "// Real-world example: HTTP Status Codes with code and description",
+            "public enum HttpStatus {",
+            "",
+            "    // 2xx Success",
+            "    OK                   (200, \"OK\"),",
+            "    CREATED              (201, \"Created\"),",
+            "    ACCEPTED             (202, \"Accepted\"),",
+            "    NO_CONTENT           (204, \"No Content\"),",
+            "",
+            "    // 3xx Redirection",
+            "    MOVED_PERMANENTLY    (301, \"Moved Permanently\"),",
+            "    NOT_MODIFIED         (304, \"Not Modified\"),",
+            "",
+            "    // 4xx Client Errors",
+            "    BAD_REQUEST          (400, \"Bad Request\"),",
+            "    UNAUTHORIZED         (401, \"Unauthorized\"),",
+            "    FORBIDDEN            (403, \"Forbidden\"),",
+            "    NOT_FOUND            (404, \"Not Found\"),",
+            "    METHOD_NOT_ALLOWED   (405, \"Method Not Allowed\"),",
+            "    CONFLICT             (409, \"Conflict\"),",
+            "    UNPROCESSABLE_ENTITY (422, \"Unprocessable Entity\"),",
+            "    TOO_MANY_REQUESTS    (429, \"Too Many Requests\"),",
+            "",
+            "    // 5xx Server Errors",
+            "    INTERNAL_SERVER_ERROR(500, \"Internal Server Error\"),",
+            "    BAD_GATEWAY          (502, \"Bad Gateway\"),",
+            "    SERVICE_UNAVAILABLE  (503, \"Service Unavailable\");",
+            "",
+            "    private final int    code;",
+            "    private final String description;",
+            "",
+            "    HttpStatus(int code, String description) {",
+            "        this.code        = code;",
+            "        this.description = description;",
+            "    }",
+            "",
+            "    public int    getCode()        { return code; }",
+            "    public String getDescription() { return description; }",
+            "    public boolean isSuccess()     { return code >= 200 && code < 300; }",
+            "    public boolean isClientError() { return code >= 400 && code < 500; }",
+            "    public boolean isServerError() { return code >= 500 && code < 600; }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return code + \" \" + description;",
+            "    }",
+            "",
+            "    // Reverse lookup — find enum by numeric code",
+            "    public static HttpStatus fromCode(int code) {",
+            "        for (HttpStatus status : values()) {",
+            "            if (status.code == code) return status;",
+            "        }",
+            "        throw new IllegalArgumentException(\"Unknown HTTP status code: \" + code);",
+            "    }",
+            "}",
+            "",
+            "// Usage",
+            "HttpStatus status = HttpStatus.NOT_FOUND;",
+            "System.out.println(status);                  // 404 Not Found",
+            "System.out.println(status.isClientError());  // true",
+            "System.out.println(HttpStatus.fromCode(200)); // 200 OK"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enum-instance-methods",
+      "title": "Enum with Instance Methods — Behaviour Attached to Constants",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Enums can define <strong>instance methods</strong> — behaviour that operates on the data carried by each constant. This transforms an enum from a passive named value into an <strong>active domain object</strong>. Methods on enums follow the same rules as class methods: they can access fields, call other methods, use <code>this</code>, and return any type."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EnumWithMethods.java",
+          "lines": [
+            "public enum DayOfWeek {",
+            "",
+            "    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;",
+            "",
+            "    // ✅ Instance method — available on every constant",
+            "    public boolean isWeekend() {",
+            "        return this == SATURDAY || this == SUNDAY;",
+            "    }",
+            "",
+            "    public boolean isWeekday() {",
+            "        return !isWeekend();",
+            "    }",
+            "",
+            "    // Get the next day (wraps around)",
+            "    public DayOfWeek next() {",
+            "        DayOfWeek[] days = values();",
+            "        return days[(this.ordinal() + 1) % days.length];",
+            "    }",
+            "",
+            "    // Get the previous day",
+            "    public DayOfWeek previous() {",
+            "        DayOfWeek[] days = values();",
+            "        return days[(this.ordinal() - 1 + days.length) % days.length];",
+            "    }",
+            "",
+            "    // Human-readable label (overrides toString)",
+            "    @Override",
+            "    public String toString() {",
+            "        String name = this.name();",
+            "        return name.charAt(0) + name.substring(1).toLowerCase();",
+            "    }",
+            "}",
+            "",
+            "public class DayDemo {",
+            "    public static void main(String[] args) {",
+            "        DayOfWeek today = DayOfWeek.FRIDAY;",
+            "",
+            "        System.out.println(today + \" is a weekend: \" + today.isWeekend()); // false",
+            "        System.out.println(\"Tomorrow: \" + today.next());                   // Saturday",
+            "        System.out.println(\"Yesterday: \" + today.previous());              // Thursday",
+            "",
+            "        System.out.println(\"\\nWeekdays this week:\");",
+            "        for (DayOfWeek day : DayOfWeek.values()) {",
+            "            if (day.isWeekday()) {",
+            "                System.out.println(\"  \" + day);",
+            "            }",
+            "        }",
+            "        // Output:",
+            "        // Monday, Tuesday, Wednesday, Thursday, Friday",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enum-abstract-methods",
+      "title": "Enum with Abstract Methods — Per-Constant Behaviour",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java enums can declare <strong>abstract methods</strong>, forcing each constant to provide its own implementation. This is the most powerful enum pattern — it gives each constant a <strong>unique, polymorphic behaviour</strong> while keeping everything inside a single, well-contained type. This pattern is sometimes called the <em>constant-specific class body</em>."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "AbstractMethodEnum.java",
+          "lines": [
+            "// ✅ Enum with abstract method — each constant implements its own logic",
+            "public enum Operation {",
+            "",
+            "    ADD(\"+\") {",
+            "        @Override",
+            "        public double apply(double x, double y) { return x + y; }",
+            "    },",
+            "",
+            "    SUBTRACT(\"-\") {",
+            "        @Override",
+            "        public double apply(double x, double y) { return x - y; }",
+            "    },",
+            "",
+            "    MULTIPLY(\"×\") {",
+            "        @Override",
+            "        public double apply(double x, double y) { return x * y; }",
+            "    },",
+            "",
+            "    DIVIDE(\"÷\") {",
+            "        @Override",
+            "        public double apply(double x, double y) {",
+            "            if (y == 0) throw new ArithmeticException(\"Division by zero\");",
+            "            return x / y;",
+            "        }",
+            "    };",
+            "",
+            "    private final String symbol;",
+            "",
+            "    Operation(String symbol) {",
+            "        this.symbol = symbol;",
+            "    }",
+            "",
+            "    // Abstract method — EVERY constant must implement this",
+            "    public abstract double apply(double x, double y);",
+            "",
+            "    @Override",
+            "    public String toString() { return symbol; }",
+            "}",
+            "",
+            "public class Calculator {",
+            "    public static void main(String[] args) {",
+            "        double x = 10.0, y = 3.0;",
+            "",
+            "        for (Operation op : Operation.values()) {",
+            "            System.out.printf(\"%.1f %s %.1f = %.2f%n\",",
+            "                x, op, y, op.apply(x, y));",
+            "        }",
+            "        // Output:",
+            "        // 10.0 + 3.0  = 13.00",
+            "        // 10.0 - 3.0  =  7.00",
+            "        // 10.0 × 3.0  = 30.00",
+            "        // 10.0 ÷ 3.0  =  3.33",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Abstract Methods vs Interface — When to Use Each",
+          "text": "Use enum abstract methods when the behaviour is specific to THIS enum's domain and all constants must implement it. Use interface implementation when the behaviour is shared across multiple types (not just this enum). The abstract method approach is more concise; the interface approach is more flexible and enables polymorphism across the broader codebase. In practice, many production enums use both — abstract methods for core behaviour, interfaces for cross-cutting contracts."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enum-implements-interface",
+      "title": "Enum Implementing an Interface — Cross-Type Polymorphism",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java enums <strong>cannot extend a class</strong> (they already extend <code>java.lang.Enum</code>), but they <strong>can implement one or more interfaces</strong>. This is the mechanism for integrating enums into broader type hierarchies — allowing enum constants to be used wherever the interface type is expected, enabling <strong>true polymorphism</strong> between enums and regular classes."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EnumWithInterface.java",
+          "lines": [
+            "// ✅ Interface that enums and regular classes can both implement",
+            "public interface Discountable {",
+            "    double getDiscountPercentage();",
+            "    default double applyDiscount(double originalPrice) {",
+            "        return originalPrice * (1 - getDiscountPercentage() / 100);",
+            "    }",
+            "}",
+            "",
+            "// ✅ Enum implementing the interface",
+            "public enum CustomerTier implements Discountable {",
+            "",
+            "    STANDARD  (0.0,  \"No discount\"),",
+            "    SILVER    (5.0,  \"5% discount\"),",
+            "    GOLD      (10.0, \"10% discount\"),",
+            "    PLATINUM  (20.0, \"20% discount\"),",
+            "    ENTERPRISE(30.0, \"30% discount — negotiated rate\");",
+            "",
+            "    private final double discountPercent;",
+            "    private final String description;",
+            "",
+            "    CustomerTier(double discountPercent, String description) {",
+            "        this.discountPercent = discountPercent;",
+            "        this.description     = description;",
+            "    }",
+            "",
+            "    @Override",
+            "    public double getDiscountPercentage() { return discountPercent; }",
+            "    public String getDescription()        { return description; }",
+            "}",
+            "",
+            "// ✅ Method accepting the interface — works with enum AND regular classes",
+            "public class BillingService {",
+            "",
+            "    public double calculateFinalPrice(double price, Discountable tier) {",
+            "        return tier.applyDiscount(price);",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        BillingService billing = new BillingService();",
+            "        double basePrice = 10000.0;",
+            "",
+            "        for (CustomerTier tier : CustomerTier.values()) {",
+            "            double finalPrice = billing.calculateFinalPrice(basePrice, tier);",
+            "            System.out.printf(\"%-12s | %s | Final: ₹%.2f%n\",",
+            "                tier, tier.getDescription(), finalPrice);",
+            "        }",
+            "        // STANDARD     | No discount           | Final: ₹10000.00",
+            "        // SILVER       | 5% discount           | Final: ₹9500.00",
+            "        // GOLD         | 10% discount          | Final: ₹9000.00",
+            "        // PLATINUM     | 20% discount          | Final: ₹8000.00",
+            "        // ENTERPRISE   | 30% discount — ...    | Final: ₹7000.00",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enum-in-switch",
+      "title": "Enum in switch Statement — The Natural Fit",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Enums and <code>switch</code> were practically made for each other. When you use an enum in a switch, you get <strong>compile-time exhaustiveness checking</strong> (in modern IDEs and with Java's pattern matching switch), clean case labels without magic numbers, and full type safety. Java 14+ switch expressions with arrow syntax make this combination even more elegant."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EnumInSwitch.java",
+          "lines": [
+            "public enum Season { SPRING, SUMMER, MONSOON, AUTUMN, WINTER }",
+            "",
+            "public class SwitchWithEnum {",
+            "    public static void main(String[] args) {",
+            "",
+            "        Season current = Season.MONSOON;",
+            "",
+            "        // ✅ Traditional switch statement with enum",
+            "        switch (current) {",
+            "            case SPRING:",
+            "                System.out.println(\"Flowers blooming — time for picnics!\");",
+            "                break;",
+            "            case SUMMER:",
+            "                System.out.println(\"Heat wave — stay hydrated!\");",
+            "                break;",
+            "            case MONSOON:",
+            "                System.out.println(\"Heavy rains — carry an umbrella!\");",
+            "                break;",
+            "            case AUTUMN:",
+            "                System.out.println(\"Leaves falling — cosy sweater weather.\");",
+            "                break;",
+            "            case WINTER:",
+            "                System.out.println(\"Cold winds — time for hot chai!\");",
+            "                break;",
+            "        }",
+            "",
+            "        // ✅ Java 14+ switch EXPRESSION with enum — cleaner and exhaustive",
+            "        String advice = switch (current) {",
+            "            case SPRING  -> \"Light layers, enjoy the outdoors\";",
+            "            case SUMMER  -> \"Sunscreen, hydration, and AC\";",
+            "            case MONSOON -> \"Waterproof jacket and boots\";",
+            "            case AUTUMN  -> \"Wind-resistant jacket\";",
+            "            case WINTER  -> \"Wool coat, gloves, and scarf\";",
+            "        };",
+            "        System.out.println(\"Advice: \" + advice);",
+            "",
+            "        // ✅ Note: With enum in switch expression, no 'default' needed",
+            "        // if ALL constants are covered — compiler verifies exhaustiveness.",
+            "        // If you add a new constant (e.g., HEATWAVE) without updating",
+            "        // the switch, you get a COMPILE ERROR. This is a HUGE safety benefit.",
+            "",
+            "        // ✅ Enum in switch with multiple cases per branch",
+            "        boolean isRainyDay = switch (current) {",
+            "            case MONSOON -> true;",
+            "            case SPRING, SUMMER, AUTUMN, WINTER -> false;",
+            "        };",
+            "        System.out.println(\"Carry umbrella: \" + isRainyDay); // true",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Exhaustiveness — The Killer Feature of Enum + Switch",
+          "text": "With Java 14+ switch expressions over an enum, the compiler verifies that ALL enum constants are handled. If you add a new constant (say, Season.HEATWAVE) and forget to update a switch expression, you get a COMPILE ERROR — not a silent runtime bug. This is one of the strongest arguments for using enums: they turn missed-case bugs into compile-time errors. Never possible with int or String constants."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enum-singleton",
+      "title": "Enum as Singleton Pattern — The Gold Standard",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In his book <em>Effective Java</em>, Joshua Bloch calls the <strong>enum singleton</strong> \"the best way to implement a singleton in Java\". A single-element enum provides a singleton that is <strong>thread-safe by design</strong>, <strong>serialization-safe</strong>, and <strong>protected against reflection attacks</strong> — all guarantees that the traditional Singleton patterns (static field, double-checked locking) require complex boilerplate to achieve."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EnumSingleton.java",
+          "lines": [
+            "// ✅ Enum Singleton — the safest, simplest Singleton in Java",
+            "public enum DatabaseConnectionManager {",
+            "",
+            "    INSTANCE; // Single element = single instance, guaranteed by JVM",
+            "",
+            "    private static final String DB_URL      = \"jdbc:postgresql://localhost:5432/appdb\";",
+            "    private static final String DB_USER     = \"appuser\";",
+            "    private static final int    POOL_SIZE   = 10;",
+            "",
+            "    private final java.util.concurrent.Semaphore connectionPool;",
+            "",
+            "    // Constructor runs ONCE — when the enum class is loaded",
+            "    DatabaseConnectionManager() {",
+            "        this.connectionPool = new java.util.concurrent.Semaphore(POOL_SIZE);",
+            "        System.out.println(\"Connection pool initialized with \" + POOL_SIZE + \" connections\");",
+            "    }",
+            "",
+            "    public void executeQuery(String sql) {",
+            "        try {",
+            "            connectionPool.acquire();",
+            "            System.out.println(\"Executing: \" + sql);",
+            "            // ... actual DB logic ...",
+            "        } catch (InterruptedException e) {",
+            "            Thread.currentThread().interrupt();",
+            "        } finally {",
+            "            connectionPool.release();",
+            "        }",
+            "    }",
+            "",
+            "    public int getAvailableConnections() {",
+            "        return connectionPool.availablePermits();",
+            "    }",
+            "}",
+            "",
+            "// ✅ Usage — access the singleton via INSTANCE",
+            "public class App {",
+            "    public static void main(String[] args) {",
+            "        DatabaseConnectionManager db1 = DatabaseConnectionManager.INSTANCE;",
+            "        DatabaseConnectionManager db2 = DatabaseConnectionManager.INSTANCE;",
+            "",
+            "        System.out.println(db1 == db2); // true — always the same instance",
+            "",
+            "        db1.executeQuery(\"SELECT * FROM users WHERE active = true\");",
+            "        System.out.println(\"Available connections: \" + db2.getAvailableConnections());",
+            "    }",
+            "}",
+            "",
+            "// ✅ WHY enum singleton beats traditional Singleton:",
+            "// 1. Thread safety — JVM class loading is synchronized, no race condition",
+            "// 2. Serialization — enum constants are deserialized by name, no duplicate",
+            "// 3. Reflection-proof — cannot call constructor via reflection on enums",
+            "// 4. Zero boilerplate — no volatile, no synchronized block, no readResolve()"
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Enum Singleton", "Double-Checked Locking", "Static Holder"],
+          "rows": [
+            ["Thread Safety",         "✅ Guaranteed by JVM",          "⚠️ Needs volatile keyword",     "✅ Guaranteed by JVM"],
+            ["Serialization Safe",    "✅ Built-in",                   "❌ Needs readResolve()",         "❌ Needs readResolve()"],
+            ["Reflection Attack",     "✅ Impossible",                 "❌ Vulnerable",                  "❌ Vulnerable"],
+            ["Lazy Initialization",   "⚠️ Class-load time (eager)",   "✅ First call only",             "✅ First call only (Holder)"],
+            ["Code Simplicity",       "✅ 1 line",                     "❌ 10+ lines of boilerplate",   "⚠️ Inner class needed"],
+            ["Recommended by JB",     "✅ Effective Java Item 3",      "❌ Fragile",                     "⚠️ Acceptable"],
+            ["Extends a Class",       "❌ Cannot (extends Enum)",      "✅ Yes",                         "✅ Yes"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enumset",
+      "title": "EnumSet — The High-Performance Set for Enum Types",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>EnumSet</code> is a specialized <code>Set</code> implementation in <code>java.util</code> designed <strong>exclusively for enum types</strong>. Internally, it represents the set as a <strong>bit vector</strong> (a <code>long</code> bitmask for enums with up to 64 constants, a <code>long[]</code> for more). This makes all operations — <code>add</code>, <code>remove</code>, <code>contains</code>, <code>iterator</code> — execute in <strong>O(1) constant time</strong> with near-zero memory overhead. Always prefer <code>EnumSet</code> over <code>HashSet</code> when the element type is an enum."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EnumSetDemo.java",
+          "lines": [
+            "import java.util.EnumSet;",
+            "",
+            "public enum Permission {",
+            "    READ, WRITE, DELETE, EXECUTE, ADMIN, AUDIT, EXPORT",
+            "}",
+            "",
+            "public class EnumSetDemo {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Create from specific constants",
+            "        EnumSet<Permission> readOnlyUser =",
+            "            EnumSet.of(Permission.READ);",
+            "",
+            "        EnumSet<Permission> regularUser =",
+            "            EnumSet.of(Permission.READ, Permission.WRITE, Permission.EXPORT);",
+            "",
+            "        EnumSet<Permission> adminUser =",
+            "            EnumSet.allOf(Permission.class);  // All permissions",
+            "",
+            "        EnumSet<Permission> noPermissions =",
+            "            EnumSet.noneOf(Permission.class); // Empty set",
+            "",
+            "        // ✅ Range — constants between two (inclusive), by ordinal",
+            "        EnumSet<Permission> basicPerms =",
+            "            EnumSet.range(Permission.READ, Permission.EXECUTE);",
+            "        // Contains: READ, WRITE, DELETE, EXECUTE",
+            "",
+            "        // ✅ Complement — everything NOT in the given set",
+            "        EnumSet<Permission> nonAdminPerms =",
+            "            EnumSet.complementOf(EnumSet.of(Permission.ADMIN, Permission.AUDIT));",
+            "",
+            "        // ✅ Set operations",
+            "        System.out.println(regularUser.contains(Permission.WRITE));   // true",
+            "        System.out.println(regularUser.contains(Permission.DELETE));  // false",
+            "",
+            "        // ✅ Mutable — add/remove operations",
+            "        EnumSet<Permission> updatedPerms = EnumSet.copyOf(regularUser);",
+            "        updatedPerms.add(Permission.DELETE);",
+            "        updatedPerms.remove(Permission.EXPORT);",
+            "        System.out.println(updatedPerms); // [READ, WRITE, DELETE]",
+            "",
+            "        // ✅ Iteration — always in declaration order",
+            "        System.out.println(\"Admin permissions:\");",
+            "        for (Permission perm : adminUser) {",
+            "            System.out.println(\"  \" + perm);",
+            "        }",
+            "",
+            "        // ✅ Practical: check if user has ALL required permissions",
+            "        EnumSet<Permission> requiredToDelete =",
+            "            EnumSet.of(Permission.READ, Permission.DELETE);",
+            "        boolean canDelete = adminUser.containsAll(requiredToDelete);",
+            "        System.out.println(\"Admin can delete: \" + canDelete); // true",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 EnumSet Factory Methods Quick Reference",
+          "text": "EnumSet.of(E e) — single element. EnumSet.of(E e1, E e2, ...) — specific elements. EnumSet.allOf(Class<E>) — all constants. EnumSet.noneOf(Class<E>) — empty set. EnumSet.range(E from, E to) — range by ordinal (inclusive). EnumSet.complementOf(EnumSet<E>) — everything not in given set. EnumSet.copyOf(EnumSet<E>) — mutable copy. EnumSet has NO public constructor — always use factory methods."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enummap",
+      "title": "EnumMap — The High-Performance Map for Enum Keys",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>EnumMap</code> is a specialized <code>Map</code> implementation in <code>java.util</code> where <strong>keys must be enum constants</strong>. Internally, it uses a plain <strong>Object array</strong> indexed by enum ordinal — making get and put O(1) with practically zero hashing overhead. It consumes significantly less memory than <code>HashMap</code> and iterates in enum declaration order. Always prefer <code>EnumMap</code> over <code>HashMap</code> when keys are enum constants."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EnumMapDemo.java",
+          "lines": [
+            "import java.util.EnumMap;",
+            "import java.util.List;",
+            "import java.util.ArrayList;",
+            "",
+            "public enum TaskPriority { LOW, MEDIUM, HIGH, CRITICAL }",
+            "",
+            "public class EnumMapDemo {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ EnumMap — keys are enum constants",
+            "        EnumMap<TaskPriority, List<String>> taskBoard =",
+            "            new EnumMap<>(TaskPriority.class);",
+            "",
+            "        // Initialize with empty lists for each priority",
+            "        for (TaskPriority priority : TaskPriority.values()) {",
+            "            taskBoard.put(priority, new ArrayList<>());",
+            "        }",
+            "",
+            "        // Add tasks",
+            "        taskBoard.get(TaskPriority.CRITICAL).add(\"Fix production outage\");",
+            "        taskBoard.get(TaskPriority.CRITICAL).add(\"Security patch deployment\");",
+            "        taskBoard.get(TaskPriority.HIGH).add(\"Complete Q4 feature release\");",
+            "        taskBoard.get(TaskPriority.HIGH).add(\"Code review for payment module\");",
+            "        taskBoard.get(TaskPriority.MEDIUM).add(\"Update API documentation\");",
+            "        taskBoard.get(TaskPriority.LOW).add(\"Refactor legacy login module\");",
+            "",
+            "        // ✅ Iteration always in enum declaration order (LOW → CRITICAL)",
+            "        System.out.println(\"=== Task Board ===\");",
+            "        taskBoard.forEach((priority, tasks) -> {",
+            "            if (!tasks.isEmpty()) {",
+            "                System.out.println(\"[\" + priority + \"]\");",
+            "                tasks.forEach(t -> System.out.println(\"  - \" + t));",
+            "            }",
+            "        });",
+            "",
+            "        // ✅ Get tasks by priority",
+            "        List<String> critical = taskBoard.get(TaskPriority.CRITICAL);",
+            "        System.out.println(\"\\nCritical tasks: \" + critical.size()); // 2",
+            "",
+            "        // ✅ Count tasks per priority",
+            "        taskBoard.forEach((p, list) ->",
+            "            System.out.printf(\"%-10s: %d task(s)%n\", p, list.size()));",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enum-vs-constants",
+      "title": "Enum vs Static Final Constants — Why Enum Wins",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Before enums, the Java community relied on the <strong>int enum pattern</strong> or the <strong>String enum pattern</strong> — groups of <code>public static final</code> constants. Joshua Bloch's <em>Effective Java</em> dedicates an entire item (Item 34) to explaining why enums are superior. The difference is not aesthetic — it is architectural."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concern", "static final int/String Constants", "Java Enum"],
+          "rows": [
+            ["Type Safety",             "❌ Any int can be passed — compiler silent",           "✅ Only valid enum constants accepted — compile error otherwise"],
+            ["Namespace Pollution",     "❌ All constants in same class scope",                 "✅ Each enum is its own type — zero naming collision"],
+            ["Printability",            "❌ int prints as 42, not 'MONDAY'",                    "✅ toString() prints 'MONDAY' by default"],
+            ["Iterating all values",    "❌ No built-in way to iterate constants",              "✅ values() gives all constants in order"],
+            ["Adding behaviour",        "❌ Constants are primitives — no methods",             "✅ Each constant can have fields, methods, constructor"],
+            ["switch support",          "⚠️ Works, but uses magic numbers",                    "✅ Works cleanly, compiler checks exhaustiveness"],
+            ["Ordering",               "❌ ordinal not reliable — no guarantee",               "✅ ordinal() gives stable declaration order"],
+            ["Serialization",          "❌ int value changes if constants reordered",          "✅ Serialized by name — immune to reordering"],
+            ["Singleton guarantee",    "❌ Multiple instances possible",                       "✅ JVM guarantees exactly one instance per constant"],
+            ["EnumSet / EnumMap",       "❌ Not applicable",                                   "✅ O(1) bit-vector collections available"],
+            ["Refactoring safety",     "❌ Adding new constant requires manual search",        "✅ New constant causes compile errors where switch is non-exhaustive"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ConstantsVsEnum.java — Side by Side",
+          "lines": [
+            "// ❌ OLD WAY: int enum pattern — fragile, unsafe, unreadable",
+            "public class OrderStatusConstants {",
+            "    public static final int PENDING    = 0;",
+            "    public static final int CONFIRMED  = 1;",
+            "    public static final int SHIPPED    = 2;",
+            "    public static final int DELIVERED  = 3;",
+            "    public static final int CANCELLED  = 4;",
+            "}",
+            "",
+            "// This compiles — and is a BUG waiting to happen:",
+            "void processOrder(int status) { ... }",
+            "processOrder(999);           // No compile error!",
+            "processOrder(OrderStatusConstants.PENDING + 50); // Silent bug!",
+            "",
+            "// ✅ NEW WAY: Enum — type-safe, self-documenting, feature-rich",
+            "public enum OrderStatus {",
+            "    PENDING, CONFIRMED, SHIPPED, DELIVERED, CANCELLED;",
+            "",
+            "    public boolean isFinalState() {",
+            "        return this == DELIVERED || this == CANCELLED;",
+            "    }",
+            "    public boolean canTransitionTo(OrderStatus next) {",
+            "        return switch (this) {",
+            "            case PENDING    -> next == CONFIRMED || next == CANCELLED;",
+            "            case CONFIRMED  -> next == SHIPPED   || next == CANCELLED;",
+            "            case SHIPPED    -> next == DELIVERED;",
+            "            case DELIVERED, CANCELLED -> false; // Final states",
+            "        };",
+            "    }",
+            "}",
+            "",
+            "// This is a COMPILE ERROR — impossible to pass invalid status:",
+            "void processOrder(OrderStatus status) { ... }",
+            "processOrder(999);         // COMPILE ERROR: incompatible types",
+            "processOrder(OrderStatus.PENDING); // ✅ Only valid values accepted"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enum-bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These enum anti-patterns consistently appear in enterprise Java codebases and are frequently flagged in senior code reviews. Each represents a misuse of enum's power or a violation of its intended design contract."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Using ordinal() as a Semantic Value",
+              "text": "Storing ordinal() in a database or using it as a business value is a critical mistake. ordinal() is a positional index, not a stable identifier. If you insert a new constant between existing ones, every constant after it shifts — corrupting all stored data. Always store name() or a dedicated field (like a code or id) instead. Example: instead of db.save(status.ordinal()), use db.save(status.name()) or db.save(status.getCode())."
+            },
+            {
+              "icon": "🚫",
+              "title": "Mutable Enum Fields",
+              "text": "Enum fields should always be final. Since constants are effectively singletons shared by the entire JVM, a mutable field creates a global mutable state — the worst kind of state in concurrent applications. If you find yourself needing a non-final enum field, your enum has too much responsibility. Separate the mutable state into a dedicated class."
+            },
+            {
+              "icon": "🚫",
+              "title": "Using Enum.valueOf() Without Error Handling",
+              "text": "Day.valueOf(\"FRIDAY\") is fine. Day.valueOf(userInput) is a ticking time bomb. Any invalid string causes IllegalArgumentException, any null causes NullPointerException. Always wrap external input valueOf() calls in a try-catch or pre-validate with a lookup map. For APIs that accept string representations, build a safe fromString() method that returns Optional<YourEnum> instead."
+            },
+            {
+              "icon": "🚫",
+              "title": "Giant Enums as Configuration Registries",
+              "text": "Putting dozens of configuration values into a single enum (AppConfig.DATABASE_URL, AppConfig.MAIL_HOST, AppConfig.S3_BUCKET) creates an ever-growing, hard-to-maintain type. Enums are for FIXED sets of domain values — not runtime configuration. Use @ConfigurationProperties (Spring), Properties files, or dedicated config classes for configuration. Enums are for things like DayOfWeek, HttpMethod, OrderStatus — not for dynamic environment values."
+            },
+            {
+              "icon": "🚫",
+              "title": "Comparing Enums with .equals() Instead of ==",
+              "text": "While enum.equals(other) works correctly (it internally uses ==), there's no reason to use it. Using == for enum comparison is both idiomatic and provides a null safety advantage: null == MyEnum.VALUE returns false without NPE, while null.equals(MyEnum.VALUE) throws NPE. Always use == for enum comparison."
+            },
+            {
+              "icon": "🚫",
+              "title": "Overloading Enum with Unrelated Responsibilities",
+              "text": "An enum named OrderStatus that also handles order pricing, PDF generation, and email notifications violates the Single Responsibility Principle. Enum constants should represent a VALUE in a domain — not manage the entire workflow. Keep enums focused. Business logic that operates ON enum values belongs in service classes; simple behaviour intrinsic TO the value (like isWeekend() on DayOfWeek) belongs in the enum itself."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Enums in Enterprise Java",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples show how enums appear in production-grade Spring Boot microservice architectures — handling state machines, role-based access, and type-safe API contracts."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "OrderStateMachine.java — Enum as a State Machine",
+          "lines": [
+            "package com.techsustainify.order.domain;",
+            "",
+            "import java.util.EnumSet;",
+            "import java.util.Set;",
+            "",
+            "/**",
+            " * Order lifecycle state machine implemented as an enum.",
+            " * Each state knows its valid transitions — preventing illegal state changes",
+            " * at the domain model level, not just in service code.",
+            " */",
+            "public enum OrderState {",
+            "",
+            "    DRAFT {",
+            "        @Override",
+            "        public Set<OrderState> validTransitions() {",
+            "            return EnumSet.of(PENDING_PAYMENT, CANCELLED);",
+            "        }",
+            "    },",
+            "    PENDING_PAYMENT {",
+            "        @Override",
+            "        public Set<OrderState> validTransitions() {",
+            "            return EnumSet.of(PAYMENT_CONFIRMED, PAYMENT_FAILED, CANCELLED);",
+            "        }",
+            "    },",
+            "    PAYMENT_CONFIRMED {",
+            "        @Override",
+            "        public Set<OrderState> validTransitions() {",
+            "            return EnumSet.of(PROCESSING, CANCELLED);",
+            "        }",
+            "    },",
+            "    PAYMENT_FAILED {",
+            "        @Override",
+            "        public Set<OrderState> validTransitions() {",
+            "            return EnumSet.of(PENDING_PAYMENT, CANCELLED);",
+            "        }",
+            "    },",
+            "    PROCESSING {",
+            "        @Override",
+            "        public Set<OrderState> validTransitions() {",
+            "            return EnumSet.of(SHIPPED, CANCELLED);",
+            "        }",
+            "    },",
+            "    SHIPPED {",
+            "        @Override",
+            "        public Set<OrderState> validTransitions() {",
+            "            return EnumSet.of(DELIVERED, RETURN_REQUESTED);",
+            "        }",
+            "    },",
+            "    DELIVERED {",
+            "        @Override",
+            "        public Set<OrderState> validTransitions() {",
+            "            return EnumSet.of(RETURN_REQUESTED, COMPLETED);",
+            "        }",
+            "    },",
+            "    RETURN_REQUESTED {",
+            "        @Override",
+            "        public Set<OrderState> validTransitions() {",
+            "            return EnumSet.of(RETURN_APPROVED, RETURN_REJECTED);",
+            "        }",
+            "    },",
+            "    RETURN_APPROVED  { @Override public Set<OrderState> validTransitions() { return EnumSet.of(REFUNDED); } },",
+            "    RETURN_REJECTED  { @Override public Set<OrderState> validTransitions() { return EnumSet.of(COMPLETED); } },",
+            "    REFUNDED         { @Override public Set<OrderState> validTransitions() { return EnumSet.noneOf(OrderState.class); } },",
+            "    COMPLETED        { @Override public Set<OrderState> validTransitions() { return EnumSet.noneOf(OrderState.class); } },",
+            "    CANCELLED        { @Override public Set<OrderState> validTransitions() { return EnumSet.noneOf(OrderState.class); } };",
+            "",
+            "    // Each constant MUST implement this",
+            "    public abstract Set<OrderState> validTransitions();",
+            "",
+            "    public boolean canTransitionTo(OrderState target) {",
+            "        return validTransitions().contains(target);",
+            "    }",
+            "",
+            "    public boolean isFinalState() {",
+            "        return validTransitions().isEmpty();",
+            "    }",
+            "",
+            "    public OrderState transitionTo(OrderState target) {",
+            "        if (!canTransitionTo(target)) {",
+            "            throw new IllegalStateException(",
+            "                \"Invalid transition: \" + this + \" → \" + target +",
+            "                \". Valid transitions: \" + validTransitions());",
+            "        }",
+            "        return target;",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "UserRole.java — Role-Based Access Control with Enum",
+          "lines": [
+            "package com.techsustainify.auth.domain;",
+            "",
+            "import java.util.EnumSet;",
+            "import java.util.Set;",
+            "",
+            "public enum UserRole {",
+            "",
+            "    GUEST(EnumSet.of(Permission.READ)),",
+            "",
+            "    CUSTOMER(EnumSet.of(",
+            "        Permission.READ,",
+            "        Permission.WRITE,",
+            "        Permission.EXPORT",
+            "    )),",
+            "",
+            "    SUPPORT_AGENT(EnumSet.of(",
+            "        Permission.READ,",
+            "        Permission.WRITE,",
+            "        Permission.AUDIT",
+            "    )),",
+            "",
+            "    MANAGER(EnumSet.of(",
+            "        Permission.READ,",
+            "        Permission.WRITE,",
+            "        Permission.DELETE,",
+            "        Permission.AUDIT,",
+            "        Permission.EXPORT",
+            "    )),",
+            "",
+            "    ADMIN(EnumSet.allOf(Permission.class));",
+            "",
+            "    private final Set<Permission> permissions;",
+            "",
+            "    UserRole(EnumSet<Permission> permissions) {",
+            "        // Defensive copy — prevents external mutation",
+            "        this.permissions = EnumSet.copyOf(permissions);",
+            "    }",
+            "",
+            "    public boolean hasPermission(Permission permission) {",
+            "        return permissions.contains(permission);",
+            "    }",
+            "",
+            "    public boolean hasAllPermissions(Permission... required) {",
+            "        for (Permission p : required) {",
+            "            if (!permissions.contains(p)) return false;",
+            "        }",
+            "        return true;",
+            "    }",
+            "",
+            "    public Set<Permission> getPermissions() {",
+            "        return EnumSet.copyOf(permissions); // Return copy, never expose internal state",
+            "    }",
+            "}",
+            "",
+            "// Usage in a service method",
+            "public void deleteUser(UserRole callerRole, long targetUserId) {",
+            "    if (!callerRole.hasPermission(Permission.DELETE)) {",
+            "        throw new AccessDeniedException(",
+            "            \"Role \" + callerRole + \" does not have DELETE permission\");",
+            "    }",
+            "    userRepository.deleteById(targetUserId);",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enum-flowchart",
+      "title": "Enum Feature Map — Choosing the Right Enum Pattern",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Use this decision guide to choose the right enum pattern for your use case."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1",  "label": "📋 You need a set of named constants",            "sublabel": "e.g. Days, Statuses, Roles",              "type": "start"    },
+            { "id": "2",  "label": "💾 Do constants need associated data?",            "sublabel": "e.g. HTTP code + description",            "type": "decision" },
+            { "id": "3",  "label": "⚡ Do constants need different behaviours?",      "sublabel": "e.g. each op does something different",   "type": "decision" },
+            { "id": "4",  "label": "🔌 Integrate with external type hierarchy?",      "sublabel": "Can enum implement an interface?",        "type": "decision" },
+            { "id": "5",  "label": "🧩 Simple Enum",                                  "sublabel": "enum Day { MON, TUE... }",                "type": "end"      },
+            { "id": "6",  "label": "🏗️ Enum with Fields + Constructor",               "sublabel": "HttpStatus(code, description)",           "type": "end"      },
+            { "id": "7",  "label": "🎨 Enum with Abstract Methods",                   "sublabel": "Operation { ADD { apply() {...} } }",     "type": "end"      },
+            { "id": "8",  "label": "🔗 Enum implementing Interface",                  "sublabel": "enum Role implements Discountable",       "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1", "to": "2",  "label": "Start" },
+            { "from": "2", "to": "3",  "label": "YES — add fields" },
+            { "from": "2", "to": "5",  "label": "NO" },
+            { "from": "3", "to": "7",  "label": "YES — per-constant logic" },
+            { "from": "3", "to": "4",  "label": "NO" },
+            { "from": "4", "to": "8",  "label": "YES" },
+            { "from": "4", "to": "6",  "label": "NO — fields only" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Enum Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are consistently asked in Java developer interviews from fresher to senior level, in OCPJP certification exams, and in senior-level architecture discussions."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is an enum in Java? How is it different from a class?",
+              "a": "An enum is a special Java type that defines a fixed set of named constants (MONDAY, TUESDAY, etc.). Differences from a regular class: (1) Enum implicitly extends java.lang.Enum — cannot extend any other class. (2) Enum constants are public static final instances of the enum type itself, created by JVM at class load time. (3) Enum constructors must be private/package-private — users cannot instantiate enums. (4) Enum is implicitly final — cannot be subclassed. (5) Enum gets free methods: values(), valueOf(), name(), ordinal(). (6) Enum constants are serialized by name (not value), making them serialization-safe. Similarities: can have fields, constructors, methods, implement interfaces.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. Can an enum have a constructor? What access modifier is required?",
+              "a": "Yes. Enum constructors must be private or package-private (default). Declaring public or protected is a COMPILE ERROR. The constructor is called once per constant at class-loading time, with the arguments specified in the constant declaration: enum Planet { EARTH(5.972e24, 6.371e6); Planet(double mass, double radius) { ... } }. Users cannot call the constructor explicitly — 'new Planet(...)' causes a compile error. This restriction guarantees exactly one instance per constant — the foundation of enum's thread safety.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is the difference between name() and toString() in enums?",
+              "a": "name() is final — always returns the exact constant name as declared in the enum body (e.g., 'MONDAY'). It cannot be overridden. toString() by default also returns the constant name (same as name()), but it CAN be overridden to return a custom representation. Example: override toString() to return 'Monday' (title case) instead of 'MONDAY'. Use name() when you need the canonical, unchangeable identifier (for serialization, valueOf() lookup, logging). Use toString() for human-readable display where a custom format may be needed.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q4. Why should you never use ordinal() to represent an enum's business value?",
+              "a": "ordinal() returns the constant's POSITIONAL INDEX in the declaration — 0-based. It is NOT a stable business identifier. If you add a new constant between existing ones (e.g., adding DRAFT before PENDING), every constant after it has its ordinal shifted by 1. Any database rows or files storing ordinal values are now corrupted. Joshua Bloch's rule: 'Never derive a value associated with an enum from its ordinal.' Instead, declare a dedicated field: enum Status { PENDING(1), ACTIVE(2) ... } and store status.getCode(). Your ordinal is an implementation detail, never a business value.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q5. Can an enum extend a class or implement an interface?",
+              "a": "Enum CANNOT extend a class — it already implicitly extends java.lang.Enum, and Java supports only single inheritance. Attempting 'enum Day extends MyClass' is a COMPILE ERROR. Enum CAN implement one or more interfaces. This is the mechanism for integrating enums into type hierarchies: 'enum UserRole implements Authorizable'. Each constant can provide its own interface implementation, either through shared methods in the enum body or through constant-specific class bodies. Interfaces are the recommended extensibility mechanism for enums.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. What are EnumSet and EnumMap? Why should you prefer them over HashSet and HashMap?",
+              "a": "EnumSet is a Set backed by a bit vector (long bitmask) — every operation is O(1) with near-zero memory overhead. EnumMap is a Map backed by an Object array indexed by enum ordinal — put/get are O(1) without hash collision overhead. Why prefer them: (1) Performance — faster than HashSet/HashMap for enum-typed keys. (2) Memory — significantly smaller footprint. (3) Iteration order — always follows enum declaration order. (4) Null handling — EnumSet doesn't allow null elements; EnumMap allows one null value but not null keys. Use EnumSet.of(), allOf(), noneOf(), range(), complementOf() factory methods — no public constructor.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q7. Why is enum the best Singleton implementation in Java?",
+              "a": "Enum singleton (enum AppConfig { INSTANCE; }) beats all traditional patterns because: (1) Thread safety — JVM class loading is synchronized; no race condition, no volatile/synchronized needed. (2) Serialization safety — enum constants are deserialized by name, guaranteeing the same instance is returned; regular singletons need readResolve() to prevent duplicate instances via deserialization. (3) Reflection safety — Java's Constructor.newInstance() throws IllegalArgumentException for enum types; regular singletons are vulnerable to reflection attacks. (4) Zero boilerplate — traditional double-checked locking requires volatile + synchronization + null check. Effective Java (Joshua Bloch) recommends enum singleton as the best approach.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q8. What is a constant-specific class body in an enum?",
+              "a": "A constant-specific class body is when an enum constant provides its own implementation of an abstract method (or overrides a concrete method) directly in the constant declaration: enum Op { ADD { public int apply(int x, int y) { return x + y; } }, ... public abstract int apply(int x, int y); }. Each constant with a body is compiled as an anonymous subclass of the enum. This pattern enables per-constant polymorphic behaviour — each constant IS a different kind of the enum type, but all still belong to the enum type. getClass() on such a constant returns the anonymous class; getDeclaringClass() returns the enum type.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q9. How does switch handle enums? What is the exhaustiveness benefit?",
+              "a": "Enums work natively with switch statements and expressions. In traditional switch statements, enum case labels use the constant name without the enum type prefix (case MONDAY, not case Day.MONDAY). In Java 14+ switch expressions over enums, the compiler verifies EXHAUSTIVENESS — if every enum constant is handled, no default is needed. If you add a new constant later and forget to update the switch expression, you get a COMPILE ERROR (not a silent runtime bug falling through to default). This is one of enum's strongest safety benefits — it turns missed-case logic errors into compile-time errors.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q10. What happens when you serialize and deserialize an enum constant?",
+              "a": "Java gives enums special serialization treatment. When an enum constant is serialized, only its NAME is written to the stream (not its ordinal or fields). During deserialization, Enum.valueOf(EnumClass.class, name) is called to retrieve the canonical JVM instance. This means: (1) Deserialized enum constants are ALWAYS the same object as in the running JVM (== comparison holds). (2) Enum constants are immune to 'broken singleton via deserialization' — the vulnerability that affects regular singleton classes. (3) Renaming an enum constant is a BREAKING CHANGE for serialized data — the name stored in old streams will fail to resolve. Always think about serialized data before renaming enum constants.",
+              "tag": "Advanced"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Enum Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Attempt each question independently before reading the answer. These questions test both conceptual understanding and practical application — the exact mix found in senior Java interviews."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. Will this compile? If yes, what does it print?\nenum Color { RED, GREEN, BLUE }\nColor c = Color.GREEN;\nSystem.out.println(c.ordinal());\nSystem.out.println(c.name());\nSystem.out.println(c);",
+              "a": "Yes, this compiles and prints:\n1\nGREEN\nGREEN\nordinal() returns 1 (GREEN is at index 1, 0-based). name() returns 'GREEN' — the exact declaration name. toString() by default also returns 'GREEN' (same as name()). All three outputs are from built-in enum methods — no additional code needed.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What is wrong with this enum design?\npublic enum Config {\n    DB_URL, DB_USER, DB_PASSWORD, SMTP_HOST, SMTP_PORT,\n    JWT_SECRET, JWT_EXPIRY, S3_BUCKET, REDIS_HOST;\n    public String getValue() {\n        return System.getenv(name());\n    }\n}",
+              "a": "Multiple issues: (1) Enums represent FIXED, KNOWN constants — runtime environment configuration is dynamic, not fixed. Config values change between environments; enum constants don't. (2) Exposing credentials (DB_PASSWORD, JWT_SECRET) via an enum accessible everywhere violates the principle of least privilege. (3) This enum will keep growing as the app grows — a violation of the Open/Closed Principle for enums. (4) getValue() depends on external state (env vars) — enums should be self-contained value objects. Fix: Use Spring @ConfigurationProperties, application.yml, or a dedicated Config class with proper injection.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "3. Implement a safe valueOf wrapper:\nWrite a utility method 'fromString' for any enum type that returns Optional<T> instead of throwing IllegalArgumentException.",
+              "a": "public static <T extends Enum<T>> Optional<T> fromString(Class<T> enumClass, String name) {\n    if (name == null || name.isBlank()) return Optional.empty();\n    try {\n        return Optional.of(Enum.valueOf(enumClass, name.trim().toUpperCase()));\n    } catch (IllegalArgumentException e) {\n        return Optional.empty();\n    }\n}\n// Usage:\nOptional<Day> day = fromString(Day.class, userInput);\nday.ifPresent(d -> System.out.println('Valid day: ' + d));\n// OR for fast lookup, build a Map once: Map<String, Day> LOOKUP = Arrays.stream(Day.values()).collect(Collectors.toMap(Day::name, d -> d));",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. What is the output? Explain why.\nenum Singleton { INSTANCE; Singleton() { System.out.println(\"Constructor called\"); } }\nSingleton a = Singleton.INSTANCE;\nSingleton b = Singleton.INSTANCE;\nSystem.out.println(a == b);",
+              "a": "Output:\nConstructor called\ntrue\n'Constructor called' prints ONCE — when the enum class is first loaded by JVM (the first time Singleton.INSTANCE is accessed). It does NOT print again for b because b just retrieves the same already-created instance. 'a == b' is true because JVM guarantees exactly one instance per enum constant. This is the enum singleton pattern — the constructor runs once, and every access returns that same instance.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Design an enum for a traffic light system that: (a) knows its next state, (b) knows how long to stay in each state (in seconds), (c) cannot be instantiated with invalid duration.",
+              "a": "public enum TrafficLight {\n    RED(60) {\n        @Override public TrafficLight next() { return GREEN; }\n    },\n    GREEN(45) {\n        @Override public TrafficLight next() { return YELLOW; }\n    },\n    YELLOW(5) {\n        @Override public TrafficLight next() { return RED; }\n    };\n\n    private final int durationSeconds;\n\n    TrafficLight(int durationSeconds) {\n        if (durationSeconds <= 0) throw new IllegalArgumentException('Duration must be positive');\n        this.durationSeconds = durationSeconds;\n    }\n\n    public int getDurationSeconds() { return durationSeconds; }\n    public abstract TrafficLight next();\n}\n// Usage: TrafficLight current = TrafficLight.RED;\n// current.getDurationSeconds() → 60, current.next() → GREEN",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "6. Why does this code compile but potentially produce wrong results?\nenum Priority { LOW, MEDIUM, HIGH, CRITICAL }\n// In database saving:\ndb.save(\"priority\", task.getPriority().ordinal());\n// In database reading:\nPriority p = Priority.values()[resultSet.getInt(\"priority\")];",
+              "a": "This compiles and runs but is a FRAGILE design. If a new constant is inserted between existing ones — say, NORMAL is added between LOW and MEDIUM: enum Priority { LOW, NORMAL, MEDIUM, HIGH, CRITICAL } — every stored ordinal shifts. A stored 1 (MEDIUM) now retrieves NORMAL from the new declaration. Data corruption happens silently, no exception. Fix: Store name() not ordinal(): db.save('priority', task.getPriority().name()); and retrieve with: Priority p = Priority.valueOf(resultSet.getString('priority')); Now adding NORMAL never affects existing data.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. Complete this code to make it compile and print correctly:\nenum Discount {\n    STUDENT(___),\n    SENIOR(___);\n    private final double rate;\n    ___(double rate) { this.rate = rate; }\n    public double apply(double price) { return price * (1 - ___); }\n}\nSystem.out.println(Discount.STUDENT.apply(1000)); // Should print 800.0\nSystem.out.println(Discount.SENIOR.apply(1000));  // Should print 700.0",
+              "a": "enum Discount {\n    STUDENT(0.20),  // 20% discount → 800.0\n    SENIOR(0.30);   // 30% discount → 700.0\n    private final double rate;\n    Discount(double rate) { this.rate = rate; } // private constructor\n    public double apply(double price) { return price * (1 - rate); }\n}\nOutput:\n800.0\n700.0\nKey points filled in: (1) Constructor arguments in constant declaration (0.20, 0.30). (2) Constructor name matches enum name — Discount(double rate). (3) Uses this.rate in apply(). The constructor is implicitly private.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "8. When would you choose EnumSet.complementOf() over manually building a set? Give a production use case.",
+              "a": "EnumSet.complementOf(sourceSet) creates a set of all constants NOT in the source set. Use it when: you know what to EXCLUDE rather than what to INCLUDE — and you don't want to maintain two parallel sets that might get out of sync. Production use case: Permission access control. Instead of listing every non-admin permission manually, define ADMIN_ONLY permissions and derive others: EnumSet<Permission> ADMIN_ONLY = EnumSet.of(Permission.DELETE_USER, Permission.MANAGE_ROLES, Permission.VIEW_AUDIT_LOG); EnumSet<Permission> ALL_USER_PERMISSIONS = EnumSet.complementOf(ADMIN_ONLY); When a new permission is added to the enum, it automatically appears in ALL_USER_PERMISSIONS — no manual sync needed. This is the maintenance safety advantage.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Enums: Java's Most Underused Power Feature",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java enums are one of the language's most powerful and most underused features. Many developers treat them as <em>\"just named constants\"</em> — and miss the full picture. A Java enum is a <strong>type-safe, self-contained, behaviour-bearing domain object</strong>. It can carry data, enforce state transitions, define polymorphic behaviour per constant, integrate into type hierarchies via interfaces, and serve as a thread-safe singleton — all within a single, compile-time-verified type."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The hallmark of a senior Java developer is knowing when to reach for an enum: when you have a <strong>fixed set of related constants</strong> that represent a domain concept — order statuses, HTTP methods, user roles, operation types, days, seasons, permissions — an enum is almost always the right choice. The combination of <strong>compiler exhaustiveness checking in switch</strong>, <strong>EnumSet/EnumMap performance</strong>, and <strong>constant-specific behaviour via abstract methods</strong> makes enums a cornerstone of clean, maintainable enterprise Java."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Pattern",                          "When to Use",                                                "Key Benefit"],
+          "rows": [
+            ["Simple enum",                              "Named constants with no data",                               "Type safety + iteration"],
+            ["Enum with fields + constructor",           "Constants need associated data (code, label, rate)",         "Self-contained data object"],
+            ["Enum with instance methods",               "Shared behaviour across all constants",                      "Domain behaviour co-located with values"],
+            ["Enum with abstract methods",               "Each constant needs different behaviour",                    "Per-constant polymorphism"],
+            ["Enum implementing interface",              "Enum needs to participate in broader type hierarchy",        "Cross-type polymorphism"],
+            ["Enum in switch expression",                "Multi-way branching on enum value",                          "Compiler-enforced exhaustiveness"],
+            ["Enum as singleton",                        "Thread-safe, serialization-safe singleton needed",           "Zero boilerplate safety"],
+            ["EnumSet / EnumMap",                        "Collections of/keyed by enum constants",                    "O(1) bit-vector performance"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Annotations</strong> — another powerful meta-programming feature that works hand-in-hand with enums in modern Java frameworks. Understanding how annotations interact with enums (like enum values as annotation attributes) will complete your picture of Java's type-level programming model. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Enums",
+    "items": [
+      {
+        "q": "What is an enum in Java?",
+        "a": "An enum (enumeration) in Java is a special class type that represents a fixed set of named constants. Introduced in Java 5, enums are type-safe — the compiler prevents assigning invalid values, unlike int or String constants. Java enums are full classes: they can have fields, constructors, instance methods, abstract methods, and implement interfaces. Every enum implicitly extends java.lang.Enum and gets built-in methods: values(), valueOf(), name(), ordinal(), and compareTo()."
+      },
+      {
+        "q": "Can a Java enum have a constructor?",
+        "a": "Yes. Enum constructors must be private or package-private — never public or protected (compile error). The constructor is called once per constant when the enum class loads, with arguments specified in the constant declaration: enum Planet { EARTH(5.972e24, 6.371e6); Planet(double mass, double radius) { ... } }. Users cannot invoke the constructor directly — 'new Planet(...)' is a compile error. This ensures exactly one instance per constant: the foundation of enum's thread safety."
+      },
+      {
+        "q": "What is the difference between enum and final class with constants in Java?",
+        "a": "Enum advantages: (1) Type safety — compiler rejects invalid values; any int passes for int constants. (2) Iteration — values() gives all constants in order; no equivalent for static fields. (3) switch support with exhaustiveness checking in Java 14+. (4) Built-in serialization safety — serialized by name, not ordinal. (5) Thread-safe singleton guarantee per constant. (6) EnumSet and EnumMap — bit-vector collections not available for plain constants. (7) Each constant can carry data and have its own behaviour. Static final constants offer none of these guarantees."
+      },
+      {
+        "q": "Can a Java enum implement an interface?",
+        "a": "Yes. Enums cannot extend a class (they already extend Enum) but can implement one or more interfaces. The enum body provides the implementation, or each constant can provide its own via a constant-specific class body. This enables true polymorphism: a method accepting an interface type can work with both enum constants and regular class instances transparently. Interface implementation is the primary extensibility mechanism for enums."
+      },
+      {
+        "q": "What are EnumSet and EnumMap in Java?",
+        "a": "EnumSet is a Set implementation for enum types, backed by a bit vector — all operations are O(1) with minimal memory usage. It maintains enum declaration order during iteration. EnumMap is a Map with enum keys, backed by an Object array indexed by ordinal — O(1) get/put without hash overhead. Both are significantly faster and more memory-efficient than HashSet and HashMap for enum-typed elements/keys. Always prefer them when working with enum collections. Factory methods: EnumSet.of(), allOf(), noneOf(), range(), complementOf()."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Interface", "path": "/java/java-interface" },
+    "next": { "label": "Java Date →",       "path": "/java/java-date" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Introduced In",      "dd": "Java 5 (JDK 1.5)" },
+      { "dt": "Extends",            "dd": "java.lang.Enum (implicit)" },
+      { "dt": "Can Extend Class?",  "dd": "❌ No — already extends Enum" },
+      { "dt": "Can Implement?",     "dd": "✅ Yes — interfaces allowed" },
+      { "dt": "Constructor Access", "dd": "private or package-private only" },
+      { "dt": "Thread Safe?",       "dd": "✅ JVM class-loading guarantee" },
+      { "dt": "Serialization",      "dd": "By name — immune to reordering" }
+    ],
+    "relatedArticles": [
+      { "label": "Java switch Statement",  "path": "/java/java-switch" },
+      { "label": "Java Annotations",       "path": "/java/java-annotations" },
+      { "label": "Java Interfaces",        "path": "/java/java-interface" },
+      { "label": "Java Collections",       "path": "/java/java-collections" },
+      { "label": "Java Design Patterns",   "path": "/java/java-design-patterns" },
+      { "label": "Java Generics",          "path": "/java/java-generics" },
+      { "label": "Java OOP Concepts",      "path": "/java/java-oop" },
+      { "label": "Java Keywords",          "path": "/java/java-keyword" }
+    ],
+    "tags": ["Java Enum", "Enumeration", "EnumSet", "EnumMap", "Enum Constructor", "Enum Methods", "Abstract Enum", "Enum Interface", "Enum Singleton", "Constant-Specific Body", "State Machine", "SCREAMING_SNAKE_CASE", "Type Safety", "Java 5", "Effective Java", "Clean Code", "Java Best Practices"]
+  }
+}

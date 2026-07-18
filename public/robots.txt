@@ -1,14 +1,5 @@
-import { MetadataRoute } from "next";
+User-agent: *
+Allow: /
+Disallow: /api/
 
-export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: [
-      {
-        userAgent: "*",
-        allow: "/",
-        disallow: ["/api/", "/_next/"],
-      },
-    ],
-    sitemap: "https://techsustainify.com/sitemap.xml",
-  };
-}
+Sitemap: https://techsustainify.com/sitemap.xml

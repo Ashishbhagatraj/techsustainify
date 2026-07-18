@@ -1,0 +1,468 @@
+{
+  "meta": {
+    "title": "What is Rust? | Rust Programming Tutorial for Beginners 2026 | Tech Sustainify",
+    "description": "Learn Rust programming language with this complete beginner-friendly Rust tutorial 2026. Covers Rust history, ownership, borrowing, memory safety, Cargo, traits, structs, async Rust, Rust vs C++, and real-world applications.",
+    "keywords": "what is rust, rust programming language, rust tutorial for beginners, rust ownership, rust borrowing, rust memory safety, cargo rust, rust structs, rust enums, rust async programming, rust tutorial 2026",
+    "author": "Tech Sustainify",
+    "canonical": "https://www.techsustainify.com/rust/rust-home",
+    "ogTitle": "What is Rust? Complete Rust Tutorial for Beginners 2026",
+    "ogDescription": "Learn Rust programming from scratch including ownership, borrowing, Cargo, structs, enums, traits, async programming, and memory-safe systems development.",
+    "ogUrl": "https://www.techsustainify.com/rust/rust-home",
+    "ogImage": "https://www.techsustainify.com/images/rust-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "17 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-01-01",
+    "schemaDateModified": "2026-05-27",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 4700
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "Rust Tutorial", "path": "/rust/rust-home" },
+    { "position": 3, "name": "What is Rust?" }
+  ],
+
+  "articleHeader": {
+    "badge": "🦀 Rust",
+    "title": "What is Rust Programming Language?",
+    "subtitle": "A complete beginner-friendly guide to Rust covering ownership, borrowing, Cargo, memory safety, async programming, structs, enums, and why Rust is the fastest-growing systems programming language in 2026."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-05-27", "value": "May 2026" },
+    { "icon": "⏱️", "label": "Read Time", "value": "17 min" },
+    { "icon": "🎯", "label": "Level", "value": "Beginner" }
+  ],
+
+  "sections": [
+    {
+      "sectionId": "what-is-rust",
+      "title": "What is Rust?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Rust is a modern systems programming language</strong> focused on performance, memory safety, and fearless concurrency. It was originally created by <strong>Graydon Hoare</strong> at Mozilla Research and officially released in <strong>2010</strong>."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Rust is designed to provide the speed of <strong>C and C++</strong> while eliminating common programming problems like <strong>null pointer dereferencing</strong>, <strong>buffer overflows</strong>, and <strong>data races</strong>. Rust achieves this through its revolutionary <strong>ownership and borrowing system</strong>."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Rust is widely used in <strong>operating systems</strong>, <strong>web servers</strong>, <strong>embedded systems</strong>, <strong>game engines</strong>, <strong>blockchain development</strong>, and <strong>high-performance backend systems</strong>. Companies like Microsoft, Amazon, Discord, Cloudflare, and Dropbox actively use Rust in production."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "history-of-rust",
+      "title": "History of Rust Programming Language",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "2006", "text": " — Graydon Hoare started the Rust project as a personal experiment." },
+            { "strong": "2010", "text": " — Mozilla officially sponsored Rust and released early public versions." },
+            { "strong": "2015", "text": " — Rust 1.0 stable version released." },
+            { "strong": "2016-2024", "text": " — Rust became the most loved programming language on Stack Overflow surveys." },
+            { "strong": "2025-2026", "text": " — Rust adoption rapidly increased in AI infrastructure, cloud computing, operating systems, and WebAssembly." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "features-of-rust",
+      "title": "Key Features of Rust",
+      "blocks": [
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "⚡",
+              "title": "High Performance",
+              "text": "Rust compiles directly to native machine code and delivers performance comparable to C and C++."
+            },
+            {
+              "icon": "🛡️",
+              "title": "Memory Safety",
+              "text": "Rust prevents memory leaks, dangling pointers, and null pointer errors without needing a garbage collector."
+            },
+            {
+              "icon": "🧵",
+              "title": "Fearless Concurrency",
+              "text": "Rust prevents data races at compile time, making concurrent programming safer."
+            },
+            {
+              "icon": "📦",
+              "title": "Cargo Package Manager",
+              "text": "Cargo simplifies dependency management, project creation, testing, and building."
+            },
+            {
+              "icon": "🌐",
+              "title": "Cross Platform",
+              "text": "Rust programs run on Windows, Linux, macOS, and embedded devices."
+            },
+            {
+              "icon": "🔒",
+              "title": "Ownership System",
+              "text": "Rust uses ownership and borrowing rules to manage memory automatically."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "rust-architecture",
+      "title": "How Rust Works",
+      "blocks": [
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "📝 Write Rust Code", "sublabel": "main.rs", "type": "start" },
+            { "id": "2", "label": "⚙️ Rust Compiler", "sublabel": "rustc compiler", "type": "process" },
+            { "id": "3", "label": "🔍 Ownership Checking", "sublabel": "Borrow checker", "type": "decision" },
+            { "id": "4", "label": "📦 Machine Code", "sublabel": "Native executable", "type": "data" },
+            { "id": "5", "label": "🖥️ Operating System", "sublabel": "Runs executable", "type": "process" },
+            { "id": "6", "label": "✅ Output", "sublabel": "Program executes", "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "compile" },
+            { "from": "2", "to": "3", "label": "check ownership" },
+            { "from": "3", "to": "4", "label": "safe code" },
+            { "from": "4", "to": "5", "label": "execute" },
+            { "from": "5", "to": "6", "label": "output" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "ownership-system",
+      "title": "Rust Ownership and Borrowing",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The most important concept in Rust is <strong>ownership</strong>. Every value in Rust has exactly one owner. When the owner goes out of scope, Rust automatically frees memory."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🦀 Rust",
+          "label": "ownership.rs",
+          "lines": [
+            "fn main() {",
+            "    let name = String::from(\"Rust\");",
+            "    print_name(name);",
+            "}",
+            "",
+            "fn print_name(text: String) {",
+            "    println!(\"{}\", text);",
+            "}"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Rust also supports borrowing using references (&) so values can be accessed without transferring ownership."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "cargo-package-manager",
+      "title": "Cargo — Rust Package Manager",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Cargo is Rust's official build tool and package manager."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>cargo new app</code> — create new project" },
+            { "html": "<code>cargo run</code> — compile and run project" },
+            { "html": "<code>cargo build</code> — build executable" },
+            { "html": "<code>cargo test</code> — run tests" },
+            { "html": "<code>cargo add serde</code> — install dependency" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "rust-vs-cpp",
+      "title": "Rust vs C++ Comparison",
+      "blocks": [
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Rust", "C++"],
+          "rows": [
+            ["Memory Safety", "Built-in ownership system", "Manual memory management"],
+            ["Garbage Collector", "❌ No", "❌ No"],
+            ["Concurrency Safety", "Compile-time safety", "Developer responsibility"],
+            ["Syntax Complexity", "Modern and strict", "Very complex"],
+            ["Performance", "Very Fast", "Very Fast"],
+            ["Null Safety", "✅ Prevented", "❌ Possible"],
+            ["Learning Curve", "Medium-Hard", "Hard"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "hello-world",
+      "title": "Your First Rust Program",
+      "blocks": [
+        {
+          "type": "codeBox",
+          "lang": "🦀 Rust",
+          "label": "main.rs",
+          "lines": [
+            "fn main() {",
+            "    println!(\"Hello, World!\");",
+            "}"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Hello, World!"
+          ]
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "fn main() {\n    println!(\"Hello, Rust!\");\n}"
+        }
+      ]
+    },
+
+    {
+      "sectionId": "where-rust-used",
+      "title": "Where is Rust Used?",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            {
+              "strong": "🖥️ Operating Systems",
+              "text": " — Rust is used for operating system kernels and low-level systems programming."
+            },
+            {
+              "strong": "🌐 Web Servers",
+              "text": " — Rust powers ultra-fast web frameworks like Actix and Axum."
+            },
+            {
+              "strong": "☁️ Cloud Infrastructure",
+              "text": " — Cloudflare, AWS, and Microsoft use Rust for backend infrastructure."
+            },
+            {
+              "strong": "🎮 Game Engines",
+              "text": " — Rust is used in modern game engines and graphics systems."
+            },
+            {
+              "strong": "⛓️ Blockchain",
+              "text": " — Solana and Polkadot blockchain ecosystems heavily use Rust."
+            },
+            {
+              "strong": "🌍 WebAssembly",
+              "text": " — Rust is one of the best languages for WebAssembly development."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Rust",
+      "blocks": [
+        {
+          "type": "prosConsTable",
+          "pros": [
+            {
+              "title": "Excellent Performance",
+              "text": "Rust provides C/C++ level speed."
+            },
+            {
+              "title": "Memory Safe",
+              "text": "Rust eliminates common memory bugs."
+            },
+            {
+              "title": "Modern Tooling",
+              "text": "Cargo and Rust tooling are developer friendly."
+            },
+            {
+              "title": "Safe Concurrency",
+              "text": "Rust prevents data races during compilation."
+            }
+          ],
+          "cons": [
+            {
+              "title": "Steep Learning Curve",
+              "text": "Ownership and lifetimes are difficult for beginners."
+            },
+            {
+              "title": "Long Compile Times",
+              "text": "Large Rust projects may compile slowly."
+            },
+            {
+              "title": "Smaller Ecosystem",
+              "text": "Rust ecosystem is smaller than JavaScript or Python."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-rust",
+      "title": "Why Learn Rust in 2026?",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            {
+              "strong": "💼 High Salary",
+              "text": " — Rust developers are among the highest-paid developers globally."
+            },
+            {
+              "strong": "🚀 Fastest Growing Language",
+              "text": " — Rust adoption is rapidly increasing in cloud and systems development."
+            },
+            {
+              "strong": "🛡️ Safer Than C++",
+              "text": " — Rust provides memory safety without sacrificing performance."
+            },
+            {
+              "strong": "🌐 WebAssembly Future",
+              "text": " — Rust is becoming a major language for WebAssembly applications."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Rust Interview Questions",
+      "blocks": [
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is ownership in Rust?",
+              "a": "Ownership is Rust's memory management system where every value has one owner. When the owner goes out of scope, memory is automatically cleaned up.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is borrowing in Rust?",
+              "a": "Borrowing allows accessing data without taking ownership using references (&).",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q3. What is Cargo?",
+              "a": "Cargo is Rust's package manager and build tool used for dependency management and project compilation.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. Why is Rust memory safe?",
+              "a": "Rust uses ownership, borrowing, and lifetime checking to prevent memory errors at compile time.",
+              "tag": "Important"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion",
+      "title": "Conclusion",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Rust is one of the most powerful programming languages in modern software development.</strong> It combines the speed of C++ with modern safety guarantees, making it ideal for systems programming, cloud infrastructure, WebAssembly, and high-performance backend development."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If you want to build <strong>fast, secure, and reliable software</strong>, Rust is an excellent language to learn in 2026."
+        }
+      ]
+    }
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "q": "Is Rust difficult to learn?",
+        "a": "Rust has a steeper learning curve than Python or JavaScript because of ownership and borrowing concepts, but it becomes easier with practice."
+      },
+      {
+        "q": "Is Rust faster than Python?",
+        "a": "Yes. Rust is significantly faster because it compiles to native machine code."
+      },
+      {
+        "q": "Does Rust have a garbage collector?",
+        "a": "No. Rust manages memory using ownership rules instead of a garbage collector."
+      },
+      {
+        "q": "What companies use Rust?",
+        "a": "Microsoft, Amazon, Discord, Cloudflare, Mozilla, and Dropbox use Rust in production systems."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": {
+      "label": "← Previous",
+      "path": "/rust/rust-home"
+    },
+    "next": {
+      "label": "Next: Rust Intro →",
+      "path": "/rust/rust-intro"
+    }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Created by", "dd": "Graydon Hoare" },
+      { "dt": "Released", "dd": "2010" },
+      { "dt": "Developed by", "dd": "Rust Foundation" },
+      { "dt": "Type", "dd": "Systems Programming Language" },
+      { "dt": "Package Manager", "dd": "Cargo" },
+      { "dt": "Latest", "dd": "Rust 1.89+" }
+    ],
+
+    "relatedArticles": [
+      { "label": "Rust Intro", "path": "/rust/rust-intro" },
+      { "label": "Rust Installation", "path": "/rust/rust-installation" },
+      { "label": "Rust Variables", "path": "/rust/rust-variables" },
+      { "label": "Rust Ownership", "path": "/rust/rust-ownership" },
+      { "label": "Rust Structs", "path": "/rust/rust-structs" },
+      { "label": "Rust Enums", "path": "/rust/rust-enums" },
+      { "label": "Rust Traits", "path": "/rust/rust-traits" }
+    ],
+
+    "tags": [
+      "Rust",
+      "Cargo",
+      "Ownership",
+      "Borrowing",
+      "Memory Safety",
+      "Concurrency",
+      "Systems Programming",
+      "WebAssembly",
+      "Async Rust",
+      "Traits"
+    ]
+  }
+}

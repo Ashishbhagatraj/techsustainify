@@ -1,0 +1,503 @@
+{
+  "meta": {
+    "title": "What is Node.js? | Node.js Tutorial for Beginners 2026 | Tech Sustainify",
+    "description": "Learn Node.js with this complete beginner-friendly guide 2026. Covers Node.js history, architecture, event loop, npm, modules, Express.js, APIs, backend development, and why Node.js is one of the best backend technologies.",
+    "keywords": "what is node js, node js tutorial, node js tutorial for beginners, learn node js 2026, node js backend, node js api, express js, npm, event loop, javascript runtime",
+    "author": "Tech Sustainify",
+    "canonical": "https://www.techsustainify.com/nodejs/node-home",
+    "ogTitle": "What is Node.js? Complete Node.js Tutorial for Beginners 2026",
+    "ogDescription": "Complete beginner-friendly guide to Node.js. Learn Node.js architecture, npm, modules, APIs, Express.js, backend development, and server-side JavaScript.",
+    "ogUrl": "https://www.techsustainify.com/nodejs/node-home",
+    "ogImage": "https://www.techsustainify.com/images/nodejs-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "18 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-01-01",
+    "schemaDateModified": "2026-05-27",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 5100
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "Node.js Tutorial", "path": "/nodejs/node-home" },
+    { "position": 3, "name": "What is Node.js?" }
+  ],
+
+  "articleHeader": {
+    "badge": "🟢 Node.js",
+    "title": "What is Node.js?",
+    "subtitle": "A complete beginner-friendly guide to Node.js — covering runtime architecture, event loop, npm, Express.js, APIs, modules, and modern backend development."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-05-27", "value": "May 2026" },
+    { "icon": "⏱️", "label": "Read Time", "value": "18 min" },
+    { "icon": "🎯", "label": "Level", "value": "Beginner" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-nodejs",
+      "title": "What is Node.js?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Node.js</strong> is an open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript outside the browser. It is built on Google's powerful <strong>V8 JavaScript Engine</strong> used in Chrome."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Node.js enables developers to build fast and scalable backend applications using JavaScript. Before Node.js, JavaScript was mainly limited to browsers, but Node.js made JavaScript a full-stack language."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Today, Node.js powers APIs, real-time applications, chat systems, streaming platforms, and enterprise backend systems used by companies like Netflix, PayPal, LinkedIn, Uber, and Walmart."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "history-nodejs",
+      "title": "History of Node.js",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "2009", "text": " — Node.js created by Ryan Dahl." },
+            { "strong": "2010", "text": " — npm package manager introduced." },
+            { "strong": "2011", "text": " — Node.js gained massive popularity among backend developers." },
+            { "strong": "2015", "text": " — Node.js Foundation established." },
+            { "strong": "2019", "text": " — Node.js merged with JS Foundation to form OpenJS Foundation." },
+            { "strong": "2024-2026", "text": " — Node.js became one of the most dominant backend runtimes for APIs and microservices." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "features-nodejs",
+      "title": "Key Features of Node.js",
+      "blocks": [
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "⚡",
+              "title": "Fast Performance",
+              "text": "Built on the high-speed V8 JavaScript Engine."
+            },
+            {
+              "icon": "🔄",
+              "title": "Event-Driven",
+              "text": "Uses an event-driven architecture for handling requests efficiently."
+            },
+            {
+              "icon": "🧵",
+              "title": "Non-Blocking I/O",
+              "text": "Handles multiple requests asynchronously without blocking execution."
+            },
+            {
+              "icon": "🌐",
+              "title": "Cross-Platform",
+              "text": "Runs on Windows, Linux, and macOS."
+            },
+            {
+              "icon": "📦",
+              "title": "npm Ecosystem",
+              "text": "Largest package ecosystem with millions of libraries."
+            },
+            {
+              "icon": "🚀",
+              "title": "Scalable",
+              "text": "Perfect for scalable backend systems and APIs."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "how-nodejs-works",
+      "title": "How Node.js Works",
+      "blocks": [
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "👨‍💻 Client Request", "type": "start" },
+            { "id": "2", "label": "🟢 Node.js Server", "type": "process" },
+            { "id": "3", "label": "🔄 Event Loop", "type": "process" },
+            { "id": "4", "label": "📂 Non-Blocking Operations", "type": "decision" },
+            { "id": "5", "label": "⚙️ Process Request", "type": "process" },
+            { "id": "6", "label": "✅ Send Response", "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2" },
+            { "from": "2", "to": "3" },
+            { "from": "3", "to": "4" },
+            { "from": "4", "to": "5" },
+            { "from": "5", "to": "6" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "event-loop",
+      "title": "What is Event Loop in Node.js?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <strong>Event Loop</strong> is the core mechanism of Node.js that allows asynchronous execution. Instead of waiting for tasks like file reading or database queries to finish, Node.js continues executing other tasks."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This non-blocking architecture makes Node.js extremely fast and scalable for real-time applications."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "npm-section",
+      "title": "What is npm?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>npm (Node Package Manager)</strong> is the default package manager for Node.js. It provides access to millions of open-source packages."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🟢 Terminal",
+          "label": "npm commands",
+          "lines": [
+            "npm init -y",
+            "npm install express",
+            "npm install mongoose",
+            "npm start"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "modules-nodejs",
+      "title": "Node.js Modules",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Modules are reusable blocks of code in Node.js. Node.js supports both built-in modules and custom modules."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Module", "Purpose"],
+          "rows": [
+            ["fs", "File system operations"],
+            ["http", "Create web servers"],
+            ["path", "Handle file paths"],
+            ["os", "Operating system information"],
+            ["events", "Event handling"],
+            ["express", "Web framework for APIs"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "hello-world-nodejs",
+      "title": "Your First Node.js Program",
+      "blocks": [
+        {
+          "type": "codeBox",
+          "lang": "🟢 Node.js",
+          "label": "app.js",
+          "lines": [
+            "console.log('Hello Node.js!');"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Hello Node.js!"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "http-server",
+      "title": "Create Simple HTTP Server",
+      "blocks": [
+        {
+          "type": "codeBox",
+          "lang": "🟢 Node.js",
+          "label": "server.js",
+          "lines": [
+            "const http = require('http');",
+            "",
+            "const server = http.createServer((req, res) => {",
+            "  res.write('Welcome to Node.js Server');",
+            "  res.end();",
+            "});",
+            "",
+            "server.listen(3000);"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "expressjs",
+      "title": "What is Express.js?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Express.js</strong> is the most popular web framework for Node.js. It simplifies routing, APIs, middleware handling, and backend application development."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🟢 Express.js",
+          "label": "server.js",
+          "lines": [
+            "const express = require('express');",
+            "const app = express();",
+            "",
+            "app.get('/', (req, res) => {",
+            "  res.send('Hello Express.js');",
+            "});",
+            "",
+            "app.listen(3000);"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "nodejs-vs-other",
+      "title": "Node.js vs Other Backend Technologies",
+      "blocks": [
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Node.js", "PHP", "Java", "Python"],
+          "rows": [
+            ["Language", "JavaScript", "PHP", "Java", "Python"],
+            ["Architecture", "Event-Driven", "Thread-Based", "Multi-Threaded", "Interpreted"],
+            ["Performance", "Very Fast", "Medium", "Fast", "Medium"],
+            ["Best For", "Real-Time Apps", "CMS", "Enterprise Apps", "AI & APIs"],
+            ["Scalability", "Excellent", "Medium", "Excellent", "Good"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-nodejs",
+      "title": "Advantages and Disadvantages of Node.js",
+      "blocks": [
+        {
+          "type": "prosConsTable",
+          "pros": [
+            {
+              "title": "Single Language",
+              "text": "Use JavaScript for both frontend and backend."
+            },
+            {
+              "title": "Fast Execution",
+              "text": "Powered by V8 engine."
+            },
+            {
+              "title": "Massive Ecosystem",
+              "text": "npm provides millions of packages."
+            },
+            {
+              "title": "Real-Time Support",
+              "text": "Excellent for chat apps and streaming systems."
+            }
+          ],
+          "cons": [
+            {
+              "title": "Single Threaded",
+              "text": "CPU-intensive tasks may reduce performance."
+            },
+            {
+              "title": "Callback Complexity",
+              "text": "Nested callbacks can create callback hell."
+            },
+            {
+              "title": "Rapid Ecosystem Changes",
+              "text": "Frequent updates can sometimes cause instability."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "where-nodejs-used",
+      "title": "Where is Node.js Used?",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🌐 Backend APIs", "text": " — Build REST APIs and GraphQL APIs." },
+            { "strong": "💬 Real-Time Applications", "text": " — Chat apps and live systems." },
+            { "strong": "🎬 Streaming Platforms", "text": " — Video and music streaming services." },
+            { "strong": "🛒 E-Commerce", "text": " — Backend systems for online stores." },
+            { "strong": "☁️ Microservices", "text": " — Modern scalable cloud applications." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-nodejs",
+      "title": "Why Learn Node.js in 2026?",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "💼 High Demand", "text": " — Node.js developers are highly demanded worldwide." },
+            { "strong": "⚡ Fast Backend Development", "text": " — Build APIs quickly with Express.js." },
+            { "strong": "🌐 Full Stack JavaScript", "text": " — Use JavaScript everywhere." },
+            { "strong": "🚀 Startup Friendly", "text": " — Popular choice for startups and SaaS apps." },
+            { "strong": "📦 Huge Community", "text": " — Massive ecosystem and support." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-nodejs",
+      "title": "Node.js Interview Questions",
+      "blocks": [
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is Node.js?",
+              "a": "Node.js is a JavaScript runtime environment used for backend development.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is npm?",
+              "a": "npm is the default package manager for Node.js.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q3. What is Event Loop?",
+              "a": "Event Loop handles asynchronous operations in Node.js.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What is Express.js?",
+              "a": "Express.js is a web framework for building APIs and backend applications in Node.js.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. Why is Node.js fast?",
+              "a": "Node.js is fast because it uses the V8 engine and non-blocking asynchronous architecture.",
+              "tag": "Important"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-nodejs",
+      "title": "Conclusion",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Node.js</strong> revolutionized backend development by bringing JavaScript to the server side. Its fast execution, event-driven architecture, and massive npm ecosystem make it one of the best backend technologies in modern web development."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If you want to become a full-stack developer or backend engineer in 2026, learning <strong>Node.js</strong> is one of the smartest career choices."
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-nodejs",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "Is Node.js a programming language?",
+        "a": "No. Node.js is a JavaScript runtime environment."
+      },
+      {
+        "q": "Can Node.js build APIs?",
+        "a": "Yes. Node.js is widely used for building REST APIs and backend services."
+      },
+      {
+        "q": "What is npm in Node.js?",
+        "a": "npm is Node.js package manager used to install libraries and dependencies."
+      },
+      {
+        "q": "Is Node.js good for beginners?",
+        "a": "Yes. If you already know JavaScript, Node.js is beginner-friendly."
+      },
+      {
+        "q": "Should I learn Node.js in 2026?",
+        "a": "Yes. Node.js remains one of the most popular backend technologies."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": {
+      "label": "← Previous",
+      "path": "/nodejs/node-introduction"
+    },
+    "next": {
+      "label": "Next: Node.js Installation →",
+      "path": "/nodejs/node-installation"
+    }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Created by", "dd": "Ryan Dahl" },
+      { "dt": "Released", "dd": "2009" },
+      { "dt": "Language", "dd": "JavaScript" },
+      { "dt": "Runtime", "dd": "V8 Engine" },
+      { "dt": "Package Manager", "dd": "npm" },
+      { "dt": "Popular Framework", "dd": "Express.js" }
+    ],
+
+    "relatedArticles": [
+      { "label": "Node.js Installation", "path": "/nodejs/node-installation" },
+      { "label": "Node.js Modules", "path": "/nodejs/node-modules" },
+      { "label": "Node.js File System", "path": "/nodejs/node-file-system" },
+      { "label": "Node.js Event Loop", "path": "/nodejs/node-event-loop" },
+      { "label": "Express.js Tutorial", "path": "/nodejs/expressjs" },
+      { "label": "Node.js REST API", "path": "/nodejs/node-rest-api" }
+    ],
+
+    "tags": [
+      "Node.js",
+      "Express.js",
+      "npm",
+      "Backend",
+      "JavaScript",
+      "API",
+      "Event Loop",
+      "Server",
+      "REST API",
+      "Full Stack",
+      "MongoDB",
+      "Web Development"
+    ]
+  }
+}

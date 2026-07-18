@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "title": "What is Go Language? | Golang Tutorial for Beginners 2026 | Tech Sustainify",
+    "description": "Learn Go programming language with this complete beginner-friendly Golang tutorial 2026. Covers Go history, goroutines, channels, concurrency, Go modules, structs, interfaces, Go vs Python, and real-world backend development.",
+    "keywords": "what is golang, go programming language, golang tutorial for beginners, go concurrency, goroutines, channels in go, go modules, go structs, go interfaces, golang tutorial 2026",
+    "author": "Tech Sustainify",
+    "canonical": "https://www.techsustainify.com/go/go-home",
+    "ogTitle": "What is Go Language? Complete Golang Tutorial for Beginners 2026",
+    "ogDescription": "Learn Go programming from scratch including goroutines, channels, concurrency, structs, interfaces, Go modules, and backend development.",
+    "ogUrl": "https://www.techsustainify.com/go/go-home",
+    "ogImage": "https://www.techsustainify.com/images/go-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "16 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-01-01",
+    "schemaDateModified": "2026-05-27",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 4500
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "Go Tutorial", "path": "/go/go-home" },
+    { "position": 3, "name": "What is Go?" }
+  ],
+
+  "articleHeader": {
+    "badge": "🐹 Go",
+    "title": "What is Go Programming Language?",
+    "subtitle": "A complete beginner-friendly guide to Go (Golang) covering concurrency, goroutines, channels, structs, interfaces, modules, and why Go is one of the best backend languages in 2026."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-05-27", "value": "May 2026" },
+    { "icon": "⏱️", "label": "Read Time", "value": "16 min" },
+    { "icon": "🎯", "label": "Level", "value": "Beginner" }
+  ],
+
+  "sections": [
+    {
+      "sectionId": "what-is-go",
+      "title": "What is Go?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Go (also called Golang)</strong> is an open-source, statically typed, compiled programming language developed by <strong>Google</strong>. It was created by <strong>Robert Griesemer, Rob Pike, and Ken Thompson</strong> and officially released in <strong>2009</strong>."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Go was designed to be <strong>simple, fast, scalable, and efficient</strong>. It combines the speed of compiled languages like C++ with the simplicity and developer productivity of modern languages."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Go is widely used for <strong>backend development</strong>, <strong>cloud computing</strong>, <strong>microservices</strong>, <strong>DevOps tools</strong>, <strong>distributed systems</strong>, and <strong>network servers</strong>. Popular tools like Docker, Kubernetes, Terraform, and Prometheus are written in Go."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "history-of-go",
+      "title": "History of Go Language",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "2007", "text": " — Google engineers started developing Go internally." },
+            { "strong": "2009", "text": " — Go was officially announced as an open-source language." },
+            { "strong": "2012", "text": " — Go 1.0 stable version released." },
+            { "strong": "2015", "text": " — Go became popular for cloud-native development." },
+            { "strong": "2020-2026", "text": " — Go became one of the top backend and DevOps programming languages." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "features-of-go",
+      "title": "Key Features of Go Language",
+      "blocks": [
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "⚡",
+              "title": "Fast Compilation",
+              "text": "Go compiles extremely fast compared to Java and C++."
+            },
+            {
+              "icon": "🧵",
+              "title": "Built-in Concurrency",
+              "text": "Go supports goroutines and channels for lightweight concurrent programming."
+            },
+            {
+              "icon": "📦",
+              "title": "Simple Syntax",
+              "text": "Go syntax is clean, minimal, and easy to learn."
+            },
+            {
+              "icon": "☁️",
+              "title": "Cloud Native",
+              "text": "Go is heavily used in cloud infrastructure and microservices."
+            },
+            {
+              "icon": "🌐",
+              "title": "Cross Platform",
+              "text": "Go programs run on Windows, Linux, and macOS."
+            },
+            {
+              "icon": "🛡️",
+              "title": "Memory Safe",
+              "text": "Go includes garbage collection and memory safety features."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "how-go-works",
+      "title": "How Go Code Executes",
+      "blocks": [
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "📝 Write Go Code", "sublabel": "main.go", "type": "start" },
+            { "id": "2", "label": "⚙️ Go Compiler", "sublabel": "go build", "type": "process" },
+            { "id": "3", "label": "📦 Machine Code", "sublabel": "native executable", "type": "data" },
+            { "id": "4", "label": "🖥️ Operating System", "sublabel": "runs executable", "type": "process" },
+            { "id": "5", "label": "✅ Output", "sublabel": "program output", "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "compile" },
+            { "from": "2", "to": "3", "label": "generate binary" },
+            { "from": "3", "to": "4", "label": "execute" },
+            { "from": "4", "to": "5", "label": "output" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "goroutines-and-channels",
+      "title": "Goroutines and Channels",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Go is famous for its lightweight concurrency system called <strong>goroutines</strong>. Goroutines allow functions to run concurrently using very little memory."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐹 Go",
+          "label": "goroutine.go",
+          "lines": [
+            "package main",
+            "",
+            "import \"fmt\"",
+            "",
+            "func hello() {",
+            "    fmt.Println(\"Hello from Goroutine\")",
+            "}",
+            "",
+            "func main() {",
+            "    go hello()",
+            "    fmt.Scanln()",
+            "}"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Go also provides channels for safe communication between goroutines."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "go-modules",
+      "title": "Go Modules",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Go Modules are used for dependency management in Go projects."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>go mod init app</code> — create new module" },
+            { "html": "<code>go run main.go</code> — run Go program" },
+            { "html": "<code>go build</code> — build executable" },
+            { "html": "<code>go get gin</code> — install package" },
+            { "html": "<code>go mod tidy</code> — clean dependencies" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "go-vs-python",
+      "title": "Go vs Python Comparison",
+      "blocks": [
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Go", "Python"],
+          "rows": [
+            ["Typing", "Statically Typed", "Dynamically Typed"],
+            ["Performance", "Very Fast", "Slower"],
+            ["Compilation", "Compiled", "Interpreted"],
+            ["Concurrency", "Built-in Goroutines", "Threading/AsyncIO"],
+            ["Learning Curve", "Easy", "Very Easy"],
+            ["Use Cases", "Backend, Cloud", "AI, Automation"],
+            ["Memory Usage", "Low", "Higher"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "hello-world",
+      "title": "Your First Go Program",
+      "blocks": [
+        {
+          "type": "codeBox",
+          "lang": "🐹 Go",
+          "label": "main.go",
+          "lines": [
+            "package main",
+            "",
+            "import \"fmt\"",
+            "",
+            "func main() {",
+            "    fmt.Println(\"Hello, World!\")",
+            "}"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Hello, World!"
+          ]
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}"
+        }
+      ]
+    },
+
+    {
+      "sectionId": "where-go-used",
+      "title": "Where is Go Used?",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            {
+              "strong": "☁️ Cloud Computing",
+              "text": " — Go powers Kubernetes, Docker, and Terraform."
+            },
+            {
+              "strong": "🌐 Backend APIs",
+              "text": " — Go is widely used for REST APIs and microservices."
+            },
+            {
+              "strong": "⚙️ DevOps Tools",
+              "text": " — Modern DevOps tools are heavily written in Go."
+            },
+            {
+              "strong": "📡 Networking",
+              "text": " — Go is excellent for network servers and distributed systems."
+            },
+            {
+              "strong": "🚀 High Performance Services",
+              "text": " — Go handles massive traffic efficiently."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Go",
+      "blocks": [
+        {
+          "type": "prosConsTable",
+          "pros": [
+            {
+              "title": "Very Fast",
+              "text": "Go compiles quickly and runs efficiently."
+            },
+            {
+              "title": "Easy to Learn",
+              "text": "Go syntax is simple and beginner friendly."
+            },
+            {
+              "title": "Excellent Concurrency",
+              "text": "Goroutines simplify concurrent programming."
+            },
+            {
+              "title": "Perfect for Backend",
+              "text": "Go is ideal for APIs and cloud services."
+            }
+          ],
+          "cons": [
+            {
+              "title": "Limited Generics Support",
+              "text": "Generics were introduced late and are still evolving."
+            },
+            {
+              "title": "Smaller Ecosystem",
+              "text": "Go ecosystem is smaller than JavaScript and Python."
+            },
+            {
+              "title": "Less Flexible",
+              "text": "Go intentionally avoids many advanced language features."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-go",
+      "title": "Why Learn Go in 2026?",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            {
+              "strong": "💼 High Demand",
+              "text": " — Go developers are highly demanded in cloud and backend companies."
+            },
+            {
+              "strong": "☁️ Cloud Native Future",
+              "text": " — Kubernetes and cloud infrastructure rely heavily on Go."
+            },
+            {
+              "strong": "⚡ Excellent Performance",
+              "text": " — Go is faster than scripting languages."
+            },
+            {
+              "strong": "🚀 Scalable Applications",
+              "text": " — Go is built for scalable distributed systems."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Go Interview Questions",
+      "blocks": [
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is Go language?",
+              "a": "Go is a statically typed compiled programming language developed by Google for backend and cloud development.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What are goroutines?",
+              "a": "Goroutines are lightweight threads managed by the Go runtime.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q3. What are channels in Go?",
+              "a": "Channels allow goroutines to communicate safely with each other.",
+              "tag": "Important"
+            },
+            {
+              "q": "Q4. What is Go used for?",
+              "a": "Go is used for cloud computing, APIs, DevOps tools, networking, and backend systems.",
+              "tag": "Common Question"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion",
+      "title": "Conclusion",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Go is one of the best backend and cloud programming languages in modern software development.</strong> It offers simplicity, performance, concurrency, and scalability."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If you want to build <strong>high-performance APIs, cloud systems, microservices, and DevOps tools</strong>, Go is an excellent language to learn in 2026."
+        }
+      ]
+    }
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "q": "Is Go easy to learn?",
+        "a": "Yes. Go is considered one of the easiest backend programming languages."
+      },
+      {
+        "q": "What is Golang used for?",
+        "a": "Go is used for backend development, cloud computing, networking, and DevOps."
+      },
+      {
+        "q": "Is Go faster than Python?",
+        "a": "Yes. Go is compiled and significantly faster than Python."
+      },
+      {
+        "q": "Does Go support concurrency?",
+        "a": "Yes. Go has built-in concurrency support through goroutines and channels."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": {
+      "label": "← Previous",
+      "path": "/go/go-home"
+    },
+    "next": {
+      "label": "Next: Go Intro →",
+      "path": "/go/go-intro"
+    }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Developed by", "dd": "Google" },
+      { "dt": "Released", "dd": "2009" },
+      { "dt": "Type", "dd": "Compiled Language" },
+      { "dt": "Concurrency", "dd": "Goroutines" },
+      { "dt": "Package Tool", "dd": "Go Modules" },
+      { "dt": "Latest", "dd": "Go 1.25+" }
+    ],
+
+    "relatedArticles": [
+      { "label": "Go Intro", "path": "/go/go-intro" },
+      { "label": "Go Installation", "path": "/go/go-installation" },
+      { "label": "Go Variables", "path": "/go/go-variables" },
+      { "label": "Go Functions", "path": "/go/go-functions" },
+      { "label": "Go Structs", "path": "/go/go-structs" },
+      { "label": "Go Interfaces", "path": "/go/go-interfaces" },
+      { "label": "Go Goroutines", "path": "/go/go-goroutines" }
+    ],
+
+    "tags": [
+      "Go",
+      "Golang",
+      "Goroutines",
+      "Channels",
+      "Concurrency",
+      "Go Modules",
+      "Cloud Computing",
+      "Backend Development",
+      "Microservices",
+      "DevOps"
+    ]
+  }
+}

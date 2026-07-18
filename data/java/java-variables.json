@@ -1,0 +1,1664 @@
+{
+  "meta": {
+    "title": "Java Variables — Complete Guide with Types, Scope, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Variables — local, instance, static, types, scope, naming conventions, var keyword, final variables, constants, and best practices. Covers all variable patterns in Java. Updated March 2026.",
+    "keywords": "java variables, java local variable, java instance variable, java static variable, java variable types, java variable scope, java var keyword, java final variable, java constants, java variable naming, java variable declaration, java variable initialization, java type inference, java variable best practices, java variable interview questions, java 21 variables",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-variables",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Variables — Types, Scope, var Keyword & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java Variables — local, instance, static, data types, scope, naming conventions, var keyword, final variables, constants, and real-world production examples.",
+      "url": "https://www.techsustainify.com/java/java-variables",
+      "image": "https://www.techsustainify.com/images/java-variables-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Variables Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-03-01T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Variables",
+          "Java Local Variable",
+          "Java Instance Variable",
+          "Java Static Variable",
+          "Java var Keyword",
+          "Java Final Variable",
+          "Java Constants",
+          "Java Scope",
+          "Java Data Types",
+          "Java 21"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Variables — Types, Scope, var Keyword & Best Practices 2026",
+      "description": "Complete guide to Java Variables — local, instance, static, naming, scope, var keyword, final, constants & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-variables-og.png",
+      "imageAlt": "Java Variables Guide 2026 - Tech Sustainify",
+      "readingTime": "20 minutes",
+      "level": "Beginner",
+      "label1": "Reading Time",
+      "data1": "20 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Variables — Complete Guide with Types, Scope, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner guide covering all Java variable types — local, instance, static — data types, scope, naming conventions, var keyword, final variables, constants, default values, shadowing, and real-world production examples.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-03-01",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner",
+        "wordCount": 6500,
+        "timeRequired": "PT20M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Variables" },
+          { "@type": "Thing", "name": "Java Variable Scope" },
+          { "@type": "Thing", "name": "Java var Keyword" },
+          { "@type": "Thing", "name": "Java Constants" }
+        ],
+        "keywords": "java variables, local variable, instance variable, static variable, scope, var keyword, final, constants, naming conventions, default values, shadowing"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Variables" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are the types of variables in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Java has three types of variables based on where they are declared: (1) Local variables — declared inside a method, constructor, or block. They exist only within that scope and must be initialized before use. No default value. (2) Instance variables (non-static fields) — declared inside a class but outside any method. Each object gets its own copy. They have default values (0, false, null). (3) Static variables (class variables) — declared with the static keyword inside a class but outside methods. Shared across all instances of the class. Also have default values."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the var keyword in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "var is a reserved type name introduced in Java 10 for local variable type inference. Instead of writing the full type, you write var and the compiler infers the type from the right-hand side: var name = 'Alice'; — compiler infers String. var list = new ArrayList<String>(); — compiler infers ArrayList<String>. var can only be used for local variables with an initializer — not for fields, method parameters, return types, or catch parameters (except catch from Java 10). var is still statically typed — the type is fixed at compile time, not at runtime. It improves readability for long generic types."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between local, instance, and static variables in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Local variable: declared inside a method/block, no default value (must initialize before use), stored on stack, scope limited to the declaring block, not accessible with this or class name. Instance variable: declared in class body outside methods, has default value (0/false/null), stored on heap with the object, each object has its own copy, accessed via this.fieldName or object.fieldName. Static variable: declared with static keyword in class body, has default value, stored in method area (shared memory), one copy shared by all objects, accessed via ClassName.fieldName."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the naming conventions for variables in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Java variable naming follows camelCase convention: start with a lowercase letter, capitalize each subsequent word — firstName, totalAmount, isActive. Rules: must start with a letter, underscore (_), or dollar sign ($) — not a digit. Cannot be a Java keyword (int, class, static, etc.). Case-sensitive — count and Count are different variables. Constants (static final) use UPPER_SNAKE_CASE — MAX_SIZE, DEFAULT_TIMEOUT, PI. Avoid single-letter names except for loop counters (i, j, k) and simple lambdas. Use meaningful, descriptive names — customerAge not ca, invoiceTotal not t."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a final variable in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A final variable in Java can only be assigned once — after the first assignment, its value cannot be changed. For primitives, final means the value is constant. For objects, final means the reference cannot be reassigned, but the object's internal state can still be modified. Local final variables must be initialized before use. Instance final variables must be initialized either at declaration or in every constructor. Static final variables (constants) must be initialized at declaration or in a static block. Convention: name static final constants in UPPER_SNAKE_CASE — public static final double PI = 3.14159;"
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-03-01",
+      "dateModified": "2026-03-20",
+      "readingTime": "20 minutes",
+      "wordCount": 6500,
+      "difficulty": "Beginner",
+      "chapter": 4,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-variable",           "title": "What is a Variable?" },
+        { "id": "types-of-variables",         "title": "Types of Variables in Java" },
+        { "id": "local-variable",             "title": "Local Variables" },
+        { "id": "instance-variable",          "title": "Instance Variables" },
+        { "id": "static-variable",            "title": "Static Variables" },
+        { "id": "variable-comparison",        "title": "Local vs Instance vs Static — Comparison" },
+        { "id": "data-types",                 "title": "Data Types for Variables" },
+        { "id": "default-values",             "title": "Default Values of Variables" },
+        { "id": "var-keyword",                "title": "var Keyword — Type Inference (Java 10+)" },
+        { "id": "final-variable",             "title": "final Variables & Constants" },
+        { "id": "naming-conventions",         "title": "Naming Conventions" },
+        { "id": "scope-and-lifetime",         "title": "Scope & Lifetime of Variables" },
+        { "id": "variable-shadowing",         "title": "Variable Shadowing" },
+        { "id": "common-mistakes",            "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",              "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",        "title": "Real-World Production Code Examples" },
+        { "id": "variables-flowchart",        "title": "Variable Type Decision Flowchart" },
+        { "id": "interview-questions",        "title": "Interview Questions" },
+        { "id": "practice-questions",         "title": "Practice Questions" },
+        { "id": "conclusion-heading",         "title": "Conclusion" },
+        { "id": "faq-heading",               "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-variables" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-variables" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-variables" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-data-types",
+      "next": "https://www.techsustainify.com/java/java-operators"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-fundamentals",
+      "contentTopic": "java-variables",
+      "chapterNumber": 4,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Variables" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Variables — Types, Scope, var Keyword & Best Practices",
+    "subtitle": "Everything you need to know about Java Variables — what they are, three types (local, instance, static), data types, default values, var keyword, final variables, constants, naming conventions, scope and lifetime, variable shadowing, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "20 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "4 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-variable",
+      "title": "What is a Variable in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>variable</strong> is a named container that holds a value in memory. When you declare a variable in Java, the JVM reserves a memory location, gives it a name, and associates a <strong>data type</strong> with it. The data type determines what kind of value the variable can hold — a whole number, a decimal, a single character, a true/false flag, or a reference to an object."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every variable in Java has three essential components: <strong>(1) Type</strong> — what kind of data it stores (<code>int</code>, <code>String</code>, <code>double</code>, etc.). <strong>(2) Name</strong> — the identifier used to access it (<code>age</code>, <code>userName</code>, <code>totalPrice</code>). <strong>(3) Value</strong> — the actual data stored (<code>25</code>, <code>\"Alice\"</code>, <code>99.99</code>). Java is a <strong>statically typed</strong> language — every variable's type is fixed at compile time and cannot change at runtime."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "VariableBasics.java",
+          "lines": [
+            "public class VariableBasics {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── Variable declaration and initialization ──────────────────────",
+            "        // Syntax: dataType variableName = value;",
+            "",
+            "        int age = 25;                  // integer variable",
+            "        double price = 99.99;           // decimal variable",
+            "        char grade = 'A';               // single character",
+            "        boolean isActive = true;        // true or false",
+            "        String name = \"Priya\";         // text (String is a class, not primitive)",
+            "",
+            "        // ── Declaration without initialization ───────────────────────────",
+            "        int score;           // Declared but not yet initialized",
+            "        // System.out.println(score); // ❌ Compile error: variable not initialized",
+            "        score = 95;          // Now initialized — safe to use",
+            "        System.out.println(score);  // 95",
+            "",
+            "        // ── Multiple variables of same type ──────────────────────────────",
+            "        int x = 10, y = 20, z = 30;",
+            "        System.out.println(x + y + z);  // 60",
+            "",
+            "        // ── Reassigning a variable ───────────────────────────────────────",
+            "        int count = 1;",
+            "        count = 2;   // Reassigned — old value 1 is gone",
+            "        count = 3;",
+            "        System.out.println(count);  // 3",
+            "",
+            "        // ── Printing variables ───────────────────────────────────────────",
+            "        System.out.println(\"Name: \" + name);       // Name: Priya",
+            "        System.out.println(\"Age: \" + age);         // Age: 25",
+            "        System.out.println(\"Price: \" + price);     // Price: 99.99",
+            "        System.out.println(\"Active: \" + isActive); // Active: true",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java Variable at a Glance",
+          "text": "Declaration: dataType variableName; — reserves memory. Initialization: variableName = value; — stores a value. Declaration + Initialization: dataType variableName = value; — both at once. Java is statically typed — type is fixed at compile time. Local variables must be explicitly initialized before use — no default. Instance and static variables get default values automatically (0, false, null). Variable names are case-sensitive: age and Age are different variables."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "types-of-variables",
+      "title": "Types of Variables in Java",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java classifies variables into <strong>three types</strong> based on where they are declared — which determines their <em>scope</em> (where they can be accessed), <em>lifetime</em> (how long they exist in memory), and <em>default values</em> (what value they hold before explicit assignment)."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "1️⃣",
+              "title": "Local Variables",
+              "text": "Declared inside a method, constructor, or block. Scope is limited to that block — cannot be accessed from outside. No default value — must be initialized before use or the compiler will refuse to compile. Stored on the stack. Created when the method is called, destroyed when the method returns. Cannot have access modifiers (public, private, etc.)."
+            },
+            {
+              "icon": "2️⃣",
+              "title": "Instance Variables (Non-static Fields)",
+              "text": "Declared inside a class body but outside any method, without the static keyword. Each object (instance) of the class gets its own separate copy. Have default values — 0 for numeric types, false for boolean, null for object references. Stored on the heap along with the object. Lifetime matches the object — created when object is created, destroyed when object is garbage collected. Can have access modifiers."
+            },
+            {
+              "icon": "3️⃣",
+              "title": "Static Variables (Class Variables)",
+              "text": "Declared inside a class body with the static keyword, outside any method. Only one copy exists for the entire class — shared across all instances. Have default values like instance variables. Stored in the method area (class memory). Lifetime matches the class — loaded when class is loaded, destroyed when JVM shuts down or class is unloaded. Accessed via ClassName.variableName. Can have access modifiers."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "local-variable",
+      "title": "Local Variables — Method-Level Variables",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Local variables</strong> are declared inside a method, constructor, block (<code>if</code>, <code>for</code>, <code>while</code>, <code>try</code>), or lambda. They are the most commonly used variables in Java and have the tightest scope — they exist only within the block they are declared in. The compiler <strong>does not assign default values</strong> to local variables — using an uninitialized local variable is a compile-time error."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "LocalVariables.java",
+          "lines": [
+            "public class LocalVariables {",
+            "",
+            "    public void calculateTotal() {",
+            "        // ── Basic local variable ─────────────────────────────────────────",
+            "        int quantity = 5;          // Local to calculateTotal()",
+            "        double unitPrice = 150.0;  // Local to calculateTotal()",
+            "        double total = quantity * unitPrice;",
+            "        System.out.println(\"Total: \" + total);  // Total: 750.0",
+            "    }  // quantity, unitPrice, total are destroyed here",
+            "",
+            "    public void scopeDemo() {",
+            "        int outer = 10;  // Accessible throughout scopeDemo()",
+            "",
+            "        if (outer > 5) {",
+            "            int inner = 20;  // Local to this if-block only",
+            "            System.out.println(outer + inner);  // 30 — both accessible here",
+            "        }",
+            "        // System.out.println(inner);  // ❌ Compile error: inner out of scope",
+            "",
+            "        for (int i = 0; i < 3; i++) {  // i is local to the for loop",
+            "            System.out.println(\"i = \" + i);",
+            "        }",
+            "        // System.out.println(i);  // ❌ Compile error: i out of scope",
+            "    }",
+            "",
+            "    public void uninitialized() {",
+            "        int x;  // Declared but not initialized",
+            "        // System.out.println(x);  // ❌ Compile error: variable x not initialized",
+            "",
+            "        x = 42;  // Now initialized",
+            "        System.out.println(x);  // ✅ 42",
+            "    }",
+            "",
+            "    public void conditionalInit() {",
+            "        int result;",
+            "        boolean condition = true;",
+            "",
+            "        if (condition) {",
+            "            result = 100;",
+            "        }",
+            "        // System.out.println(result);",
+            "        // ❌ Compile error — compiler cannot guarantee result was initialized",
+            "        // (even though condition is always true — compiler doesn't evaluate)",
+            "",
+            "        // ✅ Fix: initialize in all branches or give default",
+            "        int safeResult = 0;  // Default value",
+            "        if (condition) {",
+            "            safeResult = 100;",
+            "        }",
+            "        System.out.println(safeResult);  // 100",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        LocalVariables lv = new LocalVariables();",
+            "        lv.calculateTotal();",
+            "        lv.scopeDemo();",
+            "        lv.uninitialized();",
+            "        lv.conditionalInit();",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Local Variables Have No Default Value",
+          "text": "Unlike instance and static variables, local variables are NOT automatically initialized. Using an uninitialized local variable is a compile-time error — the compiler will refuse to compile: 'variable x might not have been initialized'. This is a safety feature — it prevents accidental use of garbage values. Always initialize local variables either at declaration (int count = 0;) or before their first use. The compiler performs definite assignment analysis — it checks that the variable is initialized on every possible code path before use."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "instance-variable",
+      "title": "Instance Variables — Object-Level Fields",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Instance variables</strong> (also called <em>fields</em> or <em>non-static fields</em>) are declared inside a class body but outside any method or block, without the <code>static</code> keyword. They represent the <em>state</em> of an object — each object created from the class gets its own private copy of every instance variable. Changes to one object's instance variable do not affect another object's copy."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InstanceVariables.java",
+          "lines": [
+            "public class Student {",
+            "",
+            "    // ── Instance variables — each Student object gets its own copy ───────",
+            "    String name;         // Default: null",
+            "    int age;             // Default: 0",
+            "    double gpa;          // Default: 0.0",
+            "    boolean isEnrolled;  // Default: false",
+            "",
+            "    // ── Constructor — sets instance variables at creation ────────────────",
+            "    public Student(String name, int age, double gpa) {",
+            "        this.name = name;  // 'this' distinguishes instance var from param",
+            "        this.age  = age;",
+            "        this.gpa  = gpa;",
+            "        this.isEnrolled = true;  // Default for new students",
+            "    }",
+            "",
+            "    // ── Instance method — accesses instance variables ────────────────────",
+            "    public void displayInfo() {",
+            "        System.out.println(\"Name: \" + name);",
+            "        System.out.println(\"Age: \" + age);",
+            "        System.out.println(\"GPA: \" + gpa);",
+            "        System.out.println(\"Enrolled: \" + isEnrolled);",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── Each object has its OWN copy of instance variables ───────────",
+            "        Student s1 = new Student(\"Priya\", 20, 8.5);",
+            "        Student s2 = new Student(\"Rahul\", 22, 7.8);",
+            "",
+            "        s1.displayInfo();",
+            "        // Name: Priya | Age: 20 | GPA: 8.5 | Enrolled: true",
+            "",
+            "        s2.displayInfo();",
+            "        // Name: Rahul | Age: 22 | GPA: 7.8 | Enrolled: true",
+            "",
+            "        // ── Changing s1's variable does NOT affect s2 ────────────────────",
+            "        s1.gpa = 9.0;",
+            "        System.out.println(\"s1 GPA: \" + s1.gpa);  // 9.0",
+            "        System.out.println(\"s2 GPA: \" + s2.gpa);  // 7.8 — unchanged",
+            "",
+            "        // ── Default values (no constructor called) ───────────────────────",
+            "        Student s3 = new Student(\"\", 0, 0.0);",
+            "        // Without explicit initialization in constructor,",
+            "        // int → 0, double → 0.0, boolean → false, String → null",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "static-variable",
+      "title": "Static Variables — Class-Level Shared Variables",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Static variables</strong> (also called <em>class variables</em>) are declared with the <code>static</code> keyword inside a class body, outside any method. There is <strong>only one copy</strong> of a static variable — shared by all instances of the class. If one object changes a static variable, the change is visible to all other objects. Static variables are ideal for data that belongs to the class as a whole, not to individual objects — such as counters, configuration constants, and shared state."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StaticVariables.java",
+          "lines": [
+            "public class BankAccount {",
+            "",
+            "    // ── Static variable — ONE copy shared by ALL BankAccount objects ─────",
+            "    static int totalAccounts = 0;         // Tracks how many accounts exist",
+            "    static double interestRate = 6.5;     // Same rate for all accounts",
+            "",
+            "    // ── Instance variables — each account has its own ────────────────────",
+            "    String accountHolder;",
+            "    double balance;",
+            "    int accountNumber;",
+            "",
+            "    public BankAccount(String holder, double initialBalance) {",
+            "        this.accountHolder = holder;",
+            "        this.balance       = initialBalance;",
+            "        totalAccounts++;                   // Increment shared counter",
+            "        this.accountNumber = totalAccounts; // Unique number per account",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        System.out.println(\"Accounts: \" + BankAccount.totalAccounts);  // 0",
+            "",
+            "        BankAccount acc1 = new BankAccount(\"Priya\", 50000.0);",
+            "        BankAccount acc2 = new BankAccount(\"Rahul\", 75000.0);",
+            "        BankAccount acc3 = new BankAccount(\"Anita\", 30000.0);",
+            "",
+            "        // ── Static variable accessed via class name (preferred) ───────────",
+            "        System.out.println(\"Total accounts: \" + BankAccount.totalAccounts);  // 3",
+            "",
+            "        // ── Also accessible via instance (not recommended — misleading) ───",
+            "        System.out.println(acc1.totalAccounts);  // 3 — same value",
+            "",
+            "        // ── Changing static variable affects ALL instances ────────────────",
+            "        BankAccount.interestRate = 7.0;  // Rate change for all accounts",
+            "        System.out.println(acc1.interestRate);  // 7.0",
+            "        System.out.println(acc2.interestRate);  // 7.0 — same, it's shared",
+            "",
+            "        // ── Instance variables remain independent ─────────────────────────",
+            "        System.out.println(acc1.balance);  // 50000.0",
+            "        System.out.println(acc2.balance);  // 75000.0 — different",
+            "",
+            "        // ── Account numbers assigned correctly ────────────────────────────",
+            "        System.out.println(acc1.accountNumber);  // 1",
+            "        System.out.println(acc2.accountNumber);  // 2",
+            "        System.out.println(acc3.accountNumber);  // 3",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Access Static Variables via Class Name",
+          "text": "Always access static variables using the class name — BankAccount.totalAccounts — not via an instance reference — acc1.totalAccounts. Both compile and work, but the class-name syntax makes it immediately clear that the variable is shared (static), not object-specific. Code reviewers and tools like IntelliJ and SonarLint flag instance-style access to static members as a warning. This is especially important when reading code — seeing ClassName.field instantly signals 'this is shared state'."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "variable-comparison",
+      "title": "Local vs Instance vs Static — Complete Comparison",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Understanding the differences between the three variable types is fundamental to writing correct Java programs. The table below summarizes all key differences side by side."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "Local Variable", "Instance Variable", "Static Variable"],
+          "rows": [
+            ["Declared in",         "Inside method / block",           "Inside class, outside method",    "Inside class with static keyword"],
+            ["Keyword",             "None",                            "None (no static)",                "static"],
+            ["Default value",       "❌ None — must initialize",      "✅ 0 / false / null",             "✅ 0 / false / null"],
+            ["Scope",               "Declaring block only",            "Entire class (via this)",         "Entire class + all instances"],
+            ["Lifetime",            "Method execution",                "Object lifetime",                 "Class lifetime (JVM session)"],
+            ["Memory location",     "Stack",                           "Heap (with object)",              "Method area (shared)"],
+            ["Copies",              "One per method call",             "One per object instance",         "One per class (shared by all)"],
+            ["Access modifier",     "❌ Not allowed",                 "✅ public/private/protected",     "✅ public/private/protected"],
+            ["Access via",          "Variable name directly",          "this.name or object.name",        "ClassName.name (preferred)"],
+            ["Thread safety",       "✅ Safe (stack-local)",          "⚠️ Not safe if shared",          "⚠️ Not safe — shared state"],
+            ["Use case",            "Temp computation, loop vars",     "Object state / properties",       "Counters, constants, shared config"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "data-types",
+      "title": "Data Types for Variables",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every Java variable must have a declared type. Java has two categories of data types: <strong>primitive types</strong> — the 8 built-in value types — and <strong>reference types</strong> — objects, arrays, and interfaces. The type determines what values the variable can hold and how much memory it occupies."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "DataTypes.java",
+          "lines": [
+            "public class DataTypes {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── PRIMITIVE TYPES ──────────────────────────────────────────────",
+            "",
+            "        // Integer types",
+            "        byte   b  = 100;          // 8-bit  | -128 to 127",
+            "        short  s  = 30000;         // 16-bit | -32,768 to 32,767",
+            "        int    i  = 2_000_000;     // 32-bit | ~±2.1 billion (most common)",
+            "        long   l  = 9_000_000_000L; // 64-bit | very large numbers (suffix L)",
+            "",
+            "        // Floating-point types",
+            "        float  f  = 3.14f;         // 32-bit | 7 decimal digits precision (suffix f)",
+            "        double d  = 3.14159265358; // 64-bit | 15-16 decimal digits (most common)",
+            "",
+            "        // Character type",
+            "        char   c  = 'A';           // 16-bit | single Unicode character",
+            "        char   c2 = 65;            // Also 'A' — stored as Unicode code point",
+            "        char   c3 = '\\u0041';      // Also 'A' — Unicode escape",
+            "",
+            "        // Boolean type",
+            "        boolean flag = true;       // true or false only",
+            "",
+            "        // ── REFERENCE TYPES ─────────────────────────────────────────────",
+            "",
+            "        // String — most common reference type",
+            "        String name = \"Tech Sustainify\";",
+            "",
+            "        // Array",
+            "        int[] scores = {95, 87, 72};",
+            "        String[] cities = {\"Delhi\", \"Mumbai\", \"Bangalore\"};",
+            "",
+            "        // Object",
+            "        Object obj = new Object();",
+            "",
+            "        // ── Numeric separators (Java 7+) — readability ──────────────────",
+            "        int million  = 1_000_000;       // Same as 1000000",
+            "        long billion = 1_000_000_000L;   // Same as 1000000000L",
+            "        double pi    = 3.141_592_653;    // Same as 3.141592653",
+            "",
+            "        // ── Type sizes and ranges ────────────────────────────────────────",
+            "        System.out.println(\"int max: \"    + Integer.MAX_VALUE);  // 2147483647",
+            "        System.out.println(\"long max: \"   + Long.MAX_VALUE);     // 9223372036854775807",
+            "        System.out.println(\"double max: \" + Double.MAX_VALUE);   // 1.7976...E308",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Type", "Size", "Range / Values", "Default", "Example"],
+          "rows": [
+            ["byte",    "8-bit",  "-128 to 127",                       "0",     "byte b = 100;"],
+            ["short",   "16-bit", "-32,768 to 32,767",                 "0",     "short s = 500;"],
+            ["int",     "32-bit", "-2,147,483,648 to 2,147,483,647",   "0",     "int i = 42;"],
+            ["long",    "64-bit", "-9.2×10¹⁸ to 9.2×10¹⁸",           "0L",    "long l = 99L;"],
+            ["float",   "32-bit", "~±3.4×10³⁸, 7 digits precision",   "0.0f",  "float f = 3.14f;"],
+            ["double",  "64-bit", "~±1.7×10³⁰⁸, 15 digits precision", "0.0",   "double d = 3.14;"],
+            ["char",    "16-bit", "0 to 65,535 (Unicode)",             "'\\u0000'", "char c = 'A';"],
+            ["boolean", "1-bit",  "true or false",                     "false", "boolean b = true;"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "default-values",
+      "title": "Default Values of Variables",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java automatically assigns <strong>default values</strong> to <em>instance variables</em> and <em>static variables</em> when they are declared without initialization. <strong>Local variables do NOT get default values</strong> — using them before initialization causes a compile-time error. Understanding default values is important because uninitialized instance fields quietly hold these defaults — which can lead to subtle bugs if you forget to set them in a constructor."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "DefaultValues.java",
+          "lines": [
+            "public class DefaultValues {",
+            "",
+            "    // ── Instance variables — get default values automatically ────────────",
+            "    byte    defaultByte;     // 0",
+            "    short   defaultShort;    // 0",
+            "    int     defaultInt;      // 0",
+            "    long    defaultLong;     // 0L",
+            "    float   defaultFloat;    // 0.0f",
+            "    double  defaultDouble;   // 0.0",
+            "    char    defaultChar;     // '\\u0000' (null character)",
+            "    boolean defaultBoolean;  // false",
+            "    String  defaultString;   // null",
+            "    int[]   defaultArray;    // null",
+            "",
+            "    public void printDefaults() {",
+            "        System.out.println(\"byte:    \" + defaultByte);     // 0",
+            "        System.out.println(\"short:   \" + defaultShort);    // 0",
+            "        System.out.println(\"int:     \" + defaultInt);      // 0",
+            "        System.out.println(\"long:    \" + defaultLong);     // 0",
+            "        System.out.println(\"float:   \" + defaultFloat);    // 0.0",
+            "        System.out.println(\"double:  \" + defaultDouble);   // 0.0",
+            "        System.out.println(\"char:    \" + defaultChar);     // (empty)",
+            "        System.out.println(\"boolean: \" + defaultBoolean);  // false",
+            "        System.out.println(\"String:  \" + defaultString);   // null",
+            "        System.out.println(\"array:   \" + defaultArray);    // null",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        new DefaultValues().printDefaults();",
+            "",
+            "        // ── Local variables — NO default value ───────────────────────────",
+            "        int localInt;",
+            "        // System.out.println(localInt);  // ❌ Compile error",
+            "",
+            "        String localStr;",
+            "        // System.out.println(localStr);  // ❌ Compile error",
+            "",
+            "        // ✅ Must initialize before use",
+            "        int safeLocal = 0;",
+            "        System.out.println(safeLocal);  // 0",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 Default Value Summary",
+          "text": "byte, short, int, long → 0. float → 0.0f. double → 0.0. char → '\\u0000' (null character, not '0'). boolean → false. Any object reference (String, arrays, custom classes) → null. These defaults apply to instance variables and static variables only. Local variables have NO default — compiler enforces initialization. Relying silently on default null for String or object fields is a common source of NullPointerException bugs — always initialize fields explicitly in constructors."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "var-keyword",
+      "title": "var Keyword — Local Variable Type Inference (Java 10+)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java 10 introduced <strong>local variable type inference</strong> via the <code>var</code> keyword. Instead of writing the explicit type, you write <code>var</code> and the compiler <em>infers</em> the type from the right-hand side expression. <code>var</code> is <strong>not a dynamic type</strong> — the variable is still statically typed at compile time, the type is just written by the compiler instead of you. This reduces verbosity for long generic types while keeping full type safety."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "VarKeyword.java",
+          "lines": [
+            "import java.util.*;",
+            "import java.util.stream.*;",
+            "",
+            "public class VarKeyword {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── Basic var usage ──────────────────────────────────────────────",
+            "        var name    = \"Priya\";       // Inferred: String",
+            "        var age     = 25;             // Inferred: int",
+            "        var price   = 99.99;          // Inferred: double",
+            "        var active  = true;           // Inferred: boolean",
+            "",
+            "        System.out.println(name + \" is \" + age); // Priya is 25",
+            "",
+            "        // ── var shines with long generic types ───────────────────────────",
+            "        // Without var:",
+            "        HashMap<String, List<Integer>> oldStyle = new HashMap<String, List<Integer>>();",
+            "",
+            "        // With var — much cleaner:",
+            "        var map = new HashMap<String, List<Integer>>();",
+            "        // Inferred: HashMap<String, List<Integer>>",
+            "",
+            "        var numbers = new ArrayList<String>();",
+            "        // Inferred: ArrayList<String>",
+            "        numbers.add(\"Delhi\");",
+            "        numbers.add(\"Mumbai\");",
+            "",
+            "        // ── var in for-each loop ─────────────────────────────────────────",
+            "        for (var city : numbers) {",
+            "            System.out.println(city.toUpperCase()); // city is String",
+            "        }",
+            "",
+            "        // ── var in traditional for loop ──────────────────────────────────",
+            "        for (var i = 0; i < 3; i++) {  // i is int",
+            "            System.out.println(i);",
+            "        }",
+            "",
+            "        // ── var with streams ─────────────────────────────────────────────",
+            "        var result = numbers.stream()",
+            "                            .filter(s -> s.startsWith(\"D\"))",
+            "                            .collect(Collectors.toList());",
+            "        System.out.println(result);  // [Delhi]",
+            "",
+            "        // ── RESTRICTIONS — where var CANNOT be used ──────────────────────",
+            "        // ❌ var without initializer",
+            "        // var x;  // Compile error: cannot infer type",
+            "",
+            "        // ❌ var with null initializer",
+            "        // var obj = null;  // Compile error: cannot infer type from null",
+            "",
+            "        // ❌ var is LOCAL ONLY — not for fields or method params",
+            "        // (shown in class-level code below)",
+            "    }",
+            "",
+            "    // ❌ var NOT allowed as field type",
+            "    // var fieldName = \"test\";  // Compile error",
+            "",
+            "    // ❌ var NOT allowed as method parameter",
+            "    // void process(var input) { }  // Compile error",
+            "",
+            "    // ❌ var NOT allowed as return type",
+            "    // var getValue() { return 42; }  // Compile error",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 var — When to Use and When Not to",
+          "text": "USE var when: the type is obvious from the right-hand side (var name = 'Alice'; — clearly String), the type name is long and generic (var map = new HashMap<String, List<Integer>>();), in for-each loops (for (var item : list)), with stream intermediate variables. AVOID var when: the right-hand side doesn't clearly communicate the type (var result = process(); — what type is result?), it reduces readability for team members, for primitive literals where the type is already short (int x = 0; is clearer than var x = 0;). var is about reducing noise — not about hiding types."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "final-variable",
+      "title": "final Variables & Constants",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>final</code> keyword applied to a variable means it can be <strong>assigned only once</strong>. After the first assignment, any attempt to reassign it causes a compile-time error. For <strong>primitive</strong> final variables, the value itself is constant. For <strong>reference</strong> final variables, the <em>reference</em> is fixed — you cannot point it to a different object — but the object's internal state can still be modified. <strong>Constants</strong> in Java are declared as <code>public static final</code> and named in <code>UPPER_SNAKE_CASE</code>."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "FinalVariables.java",
+          "lines": [
+            "import java.util.ArrayList;",
+            "import java.util.List;",
+            "",
+            "public class FinalVariables {",
+            "",
+            "    // ── Constants — public static final — class-level constants ──────────",
+            "    public static final double PI          = 3.14159265358979;",
+            "    public static final int    MAX_RETRIES = 3;",
+            "    public static final String APP_NAME    = \"Tech Sustainify\";",
+            "",
+            "    // ── Final instance variable — must be set in constructor ──────────────",
+            "    private final String username;",
+            "    private final int    userId;",
+            "",
+            "    public FinalVariables(String username, int userId) {",
+            "        this.username = username;  // Assigned once in constructor",
+            "        this.userId   = userId;",
+            "        // this.username = \"other\"; // ❌ Compile error: already assigned",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── Final local variable ─────────────────────────────────────────",
+            "        final int MAX_SCORE = 100;",
+            "        // MAX_SCORE = 200;  // ❌ Compile error: cannot assign to final",
+            "        System.out.println(\"Max score: \" + MAX_SCORE);",
+            "",
+            "        // ── Final primitive — value is fixed ─────────────────────────────",
+            "        final double TAX_RATE = 0.18;",
+            "        double total = 500.0 * (1 + TAX_RATE);",
+            "        System.out.println(\"Total with tax: \" + total);  // 590.0",
+            "",
+            "        // ── Final reference — REFERENCE is fixed, object state is not ────",
+            "        final List<String> cities = new ArrayList<>();",
+            "        cities.add(\"Delhi\");    // ✅ Allowed — modifying the object",
+            "        cities.add(\"Mumbai\");   // ✅ Allowed",
+            "        System.out.println(cities);  // [Delhi, Mumbai]",
+            "",
+            "        // cities = new ArrayList<>(); // ❌ Compile error: cannot reassign final ref",
+            "",
+            "        // ── Constants accessed via class name ────────────────────────────",
+            "        System.out.println(FinalVariables.PI);           // 3.14159265358979",
+            "        System.out.println(FinalVariables.MAX_RETRIES);  // 3",
+            "        System.out.println(FinalVariables.APP_NAME);     // Tech Sustainify",
+            "",
+            "        // ── var + final together (Java 10+) ─────────────────────────────",
+            "        final var greeting = \"Hello, Java!\";",
+            "        System.out.println(greeting);  // Hello, Java!",
+            "        // greeting = \"Bye\";  // ❌ Compile error",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 final vs Constants — Quick Rules",
+          "text": "final local variable: cannot be reassigned after first assignment. final instance variable: must be initialized at declaration or in every constructor. final static variable (constant): must be initialized at declaration or in a static block. Naming: local final → camelCase (final int maxScore = 100). Class-level constant → UPPER_SNAKE_CASE (public static final int MAX_SIZE = 50). final reference: the reference is fixed, not the object — you can call mutating methods on a final object reference. For truly immutable objects, the class itself must be immutable (like String)."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "naming-conventions",
+      "title": "Naming Conventions — Writing Readable Java Variable Names",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java has well-established naming conventions that every professional developer follows. These are not enforced by the compiler — they are community standards that make code readable, maintainable, and consistent across teams and projects. Following them signals professionalism and makes code reviews much smoother."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📌",
+              "title": "Variables & Parameters — camelCase",
+              "text": "Start with a lowercase letter. Capitalize the first letter of each subsequent word. Examples: firstName, totalAmount, isActive, customerAge, invoiceTotal, maxRetryCount. Avoid abbreviations unless universally understood (url, id, html are fine; cstmr for customer is not). Single-letter names are only acceptable for loop counters (i, j, k) and short lambda parameters."
+            },
+            {
+              "icon": "📌",
+              "title": "Constants — UPPER_SNAKE_CASE",
+              "text": "All static final variables use all uppercase letters with words separated by underscores. Examples: MAX_SIZE, DEFAULT_TIMEOUT, PI, MAX_RETRY_COUNT, BASE_URL, APP_VERSION. This naming instantly signals to any reader that the value is constant and shared — a visual contract. Never use camelCase for constants."
+            },
+            {
+              "icon": "📌",
+              "title": "Boolean Variables — is / has / can Prefix",
+              "text": "Boolean variables and methods should read as yes/no questions. Use prefixes: isActive, isEnrolled, hasPermission, canEdit, isEmpty, wasDeleted. This makes conditions read naturally: if (isActive), if (hasPermission). Avoid names like active or enrolled alone for booleans — they are ambiguous."
+            },
+            {
+              "icon": "📌",
+              "title": "Valid Identifier Rules",
+              "text": "Must start with a letter (a-z, A-Z), underscore (_), or dollar sign ($). Cannot start with a digit. Cannot be a Java keyword (int, class, return, static, etc.). Can contain letters, digits, underscores, dollar signs. Case-sensitive — count and Count are different. Length limit is effectively unlimited. Avoid $ and _ as prefixes in application code — reserved for generated/framework code conventions."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "NamingConventions.java — Good vs Bad",
+          "lines": [
+            "public class NamingConventions {",
+            "",
+            "    // ── ✅ GOOD naming ────────────────────────────────────────────────────",
+            "    private String firstName;",
+            "    private int    customerAge;",
+            "    private double totalInvoiceAmount;",
+            "    private boolean isAccountActive;",
+            "    private boolean hasAdminPermission;",
+            "",
+            "    public static final int    MAX_LOGIN_ATTEMPTS = 5;",
+            "    public static final String DEFAULT_CURRENCY   = \"INR\";",
+            "    public static final double GST_RATE           = 0.18;",
+            "",
+            "    // ── ❌ BAD naming — avoid these ──────────────────────────────────────",
+            "    private String fn;            // ❌ Cryptic abbreviation",
+            "    private int    a;             // ❌ Meaningless single letter (not a loop)",
+            "    private double TotalAmount;   // ❌ Starts with uppercase (looks like class)",
+            "    private boolean active;       // ❌ Ambiguous for boolean — use isActive",
+            "    private int    max_retries;   // ❌ snake_case for variable (use camelCase)",
+            "",
+            "    // ❌ Constants with wrong naming",
+            "    private static final int maxSize = 100;    // ❌ Should be MAX_SIZE",
+            "    private static final double pi = 3.14;    // ❌ Should be PI",
+            "",
+            "    // ── ✅ Valid but unusual identifiers (avoid in practice) ──────────────",
+            "    int _count = 0;     // Valid but avoid leading underscore",
+            "    int $temp  = 0;     // Valid but $ is for generated code",
+            "    int i2     = 0;     // Valid — digit not at start",
+            "",
+            "    // ── ❌ Invalid identifiers — compile error ────────────────────────────",
+            "    // int 2count = 0;   // ❌ Starts with digit",
+            "    // int int = 0;      // ❌ Reserved keyword",
+            "    // int my-var = 0;   // ❌ Hyphen not allowed",
+            "    // int my var = 0;   // ❌ Space not allowed",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "scope-and-lifetime",
+      "title": "Scope & Lifetime of Variables",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Scope</strong> defines where in the code a variable can be accessed. <strong>Lifetime</strong> defines how long the variable exists in memory. These two concepts are closely related but distinct — a variable's scope is determined by where it's declared in the source code, while its lifetime is a runtime concept tied to execution context and garbage collection."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ScopeAndLifetime.java",
+          "lines": [
+            "public class ScopeAndLifetime {",
+            "",
+            "    // ── Class scope — accessible anywhere in this class ──────────────────",
+            "    static int classVar = 100;       // Static: lives as long as the class",
+            "    int instanceVar = 200;            // Instance: lives as long as the object",
+            "",
+            "    public void methodScope() {",
+            "        // ── Method scope — accessible only in this method ────────────────",
+            "        int methodVar = 300;",
+            "        System.out.println(classVar);    // ✅ Accessible",
+            "        System.out.println(instanceVar); // ✅ Accessible",
+            "        System.out.println(methodVar);   // ✅ Accessible",
+            "",
+            "        if (methodVar > 100) {",
+            "            // ── Block scope — only inside this if block ──────────────────",
+            "            int blockVar = 400;",
+            "            System.out.println(blockVar);    // ✅ Accessible",
+            "            System.out.println(methodVar);   // ✅ Accessible (outer scope)",
+            "        }",
+            "        // System.out.println(blockVar); // ❌ blockVar out of scope here",
+            "",
+            "        for (int i = 0; i < 3; i++) {",
+            "            // ── Loop scope — i exists only within the loop ───────────────",
+            "            int loopBody = i * 10;  // New variable each iteration",
+            "            System.out.println(loopBody);",
+            "        }",
+            "        // System.out.println(i);       // ❌ i out of scope",
+            "        // System.out.println(loopBody); // ❌ loopBody out of scope",
+            "",
+            "    }  // methodVar is destroyed here",
+            "",
+            "    public void anotherMethod() {",
+            "        // System.out.println(methodVar); // ❌ methodVar not accessible here",
+            "        System.out.println(instanceVar);  // ✅ Instance var is accessible",
+            "        System.out.println(classVar);     // ✅ Static var is accessible",
+            "    }",
+            "",
+            "    // ── Try-with-resources scope ─────────────────────────────────────────",
+            "    public void tryScope() {",
+            "        try {",
+            "            int tryVar = 10;",
+            "            System.out.println(tryVar);",
+            "        } catch (Exception e) {",
+            "            // tryVar not accessible here",
+            "        }",
+            "        // tryVar not accessible here",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        ScopeAndLifetime obj = new ScopeAndLifetime();",
+            "        obj.methodScope();",
+            "        obj.anotherMethod();",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "variable-shadowing",
+      "title": "Variable Shadowing — When Inner Hides Outer",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Variable shadowing</strong> occurs when a variable declared in an inner scope has the <em>same name</em> as a variable in an outer scope. The inner variable <em>shadows</em> (hides) the outer one within its scope. In Java, a local variable can shadow an instance variable — the local variable takes precedence inside the method. The <code>this</code> keyword is used to explicitly refer to the instance variable when both exist in scope."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "VariableShadowing.java",
+          "lines": [
+            "public class VariableShadowing {",
+            "",
+            "    // Instance variable",
+            "    int value = 100;",
+            "    String name = \"Instance Name\";",
+            "",
+            "    public void shadowDemo() {",
+            "        // Local variable shadows instance variable",
+            "        int value = 200;  // Shadows this.value",
+            "",
+            "        System.out.println(value);        // 200 — local variable",
+            "        System.out.println(this.value);   // 100 — instance variable via 'this'",
+            "    }",
+            "",
+            "    // ── Most common shadowing: constructor/method parameter vs field ─────",
+            "    public VariableShadowing(String name) {",
+            "        // Parameter 'name' shadows instance field 'name'",
+            "        System.out.println(name);       // Parameter value (passed in)",
+            "        System.out.println(this.name);  // Instance field: \"Instance Name\"",
+            "",
+            "        // ✅ Correct assignment using this",
+            "        this.name = name;  // Assigns parameter value to instance field",
+            "    }",
+            "",
+            "    // ── Block-level shadowing ────────────────────────────────────────────",
+            "    public void blockShadow() {",
+            "        int x = 10;  // Outer local",
+            "",
+            "        for (int i = 0; i < 3; i++) {",
+            "            // ❌ Cannot re-declare x inside — Java does not allow local-to-local",
+            "            // int x = 20;  // Compile error: variable x already defined",
+            "            // Note: Java prevents shadowing LOCAL with another LOCAL in same method",
+            "            // But a local CAN shadow an INSTANCE variable (shown above)",
+            "        }",
+            "    }",
+            "",
+            "    // ── Static context — no 'this' available ─────────────────────────────",
+            "    static int count = 0;",
+            "",
+            "    public static void staticShadow() {",
+            "        int count = 99;  // Shadows static field",
+            "        System.out.println(count);                         // 99 — local",
+            "        System.out.println(VariableShadowing.count);       // 0 — static field",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        VariableShadowing obj = new VariableShadowing(\"Constructor Param\");",
+            "        obj.shadowDemo();",
+            "        staticShadow();",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Shadowing Rules in Java",
+          "text": "A local variable CAN shadow an instance variable (same name allowed — use this.varName to access the instance one). A local variable CANNOT shadow another local variable in the same method scope — compiler error: 'variable already defined'. In a static method, there is no this — use ClassName.staticVar to access the static field when shadowed. Shadowing is most commonly seen (and intentionally used) in constructors and setters where the parameter name matches the field name: this.name = name is the idiomatic pattern."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Variable Bugs That Fool Everyone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the most common variable-related mistakes in Java — frequently seen in beginner code and surprisingly also in experienced developer codebases under time pressure."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "VariableMistakes.java",
+          "lines": [
+            "// ❌ MISTAKE 1: Using uninitialized local variable",
+            "int score;",
+            "// System.out.println(score);  // Compile error: variable score not initialized",
+            "// ✅ Fix: initialize before use",
+            "int safeScore = 0;",
+            "",
+            "// ❌ MISTAKE 2: int overflow — result wraps around silently",
+            "int max = Integer.MAX_VALUE;  // 2147483647",
+            "int overflow = max + 1;       // -2147483648 — silent wrap, no exception!",
+            "System.out.println(overflow); // -2147483648",
+            "// ✅ Fix: use long for large numbers",
+            "long safeValue = (long) max + 1;  // 2147483648 — correct",
+            "",
+            "// ❌ MISTAKE 3: Integer division truncates — losing decimal part",
+            "int a = 7, b = 2;",
+            "double result = a / b;         // 3.0 — NOT 3.5! Division done as int",
+            "System.out.println(result);    // 3.0",
+            "// ✅ Fix: cast one operand to double",
+            "double correct = (double) a / b;  // 3.5",
+            "",
+            "// ❌ MISTAKE 4: Confusing = (assignment) with == (comparison)",
+            "int x = 5;",
+            "// if (x = 10) { }  // Compile error: int cannot be used as boolean",
+            "// ✅ Use == for comparison",
+            "if (x == 10) { System.out.println(\"ten\"); }",
+            "",
+            "// ❌ MISTAKE 5: float precision — unexpected decimal behavior",
+            "float f = 0.1f + 0.2f;",
+            "System.out.println(f);          // 0.3 (might show 0.3 or 0.30000001)",
+            "// ✅ Use double for better precision; use BigDecimal for exact money calculations",
+            "",
+            "// ❌ MISTAKE 6: Accessing static variable via instance — misleading",
+            "// BankAccount acc = new BankAccount();",
+            "// acc.interestRate = 7.0;  // Misleads readers — looks like instance field",
+            "// ✅ Fix: BankAccount.interestRate = 7.0;",
+            "",
+            "// ❌ MISTAKE 7: char arithmetic surprise",
+            "char c = 'A';",
+            "System.out.println(c + 1);    // 66 — int result, not 'B'",
+            "System.out.println((char)(c + 1)); // 'B' — must cast back to char",
+            "",
+            "// ❌ MISTAKE 8: Forgetting L suffix for large long literals",
+            "// long bigNum = 10000000000;    // Compile error: int literal out of range",
+            "long bigNum = 10_000_000_000L;   // ✅ Correct with L suffix",
+            "",
+            "// ❌ MISTAKE 9: Comparing strings with == instead of .equals()",
+            "String s1 = new String(\"hello\");",
+            "String s2 = new String(\"hello\");",
+            "System.out.println(s1 == s2);       // false — different objects",
+            "System.out.println(s1.equals(s2));  // true ✅ — compare content"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These anti-patterns represent common misuses of variables in professional Java code. Each one makes code harder to read, maintain, or reason about."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Reusing the Same Variable for Different Purposes",
+              "text": "Using one variable to hold different meanings at different points in a method — int temp = calculateTax(); then later temp = processRefund(); — makes the code impossible to understand. Declare a new variable with a meaningful name for each distinct value. Variable declarations are cheap; the confusion from reuse is expensive. This is sometimes called 'variable recycling' and it is universally rejected in code reviews."
+            },
+            {
+              "icon": "🚫",
+              "title": "Declaring All Variables at the Top of a Method",
+              "text": "A legacy style from older languages: declaring all local variables at the top of a method regardless of where they are used. Modern Java practice is to declare variables as close as possible to their first use — this keeps scope tight, makes the code easier to follow, and reduces the chance of accidental misuse. The compiler optimizes either way, so there is no performance reason to declare early."
+            },
+            {
+              "icon": "🚫",
+              "title": "Using Magic Numbers Instead of Named Constants",
+              "text": "Writing if (retries > 3) or price * 1.18 instead of named constants MAX_RETRIES and GST_RATE. Magic numbers have no self-documenting meaning — readers must guess what 3 or 1.18 means. When the value changes, you must hunt down every occurrence. Fix: declare public static final constants with descriptive names. The constant is written once, read everywhere, and changed in one place."
+            },
+            {
+              "icon": "🚫",
+              "title": "Overly Wide Scope — Variables Declared Too Early",
+              "text": "Declaring a variable outside a loop when it is only needed inside, or as an instance variable when it should be local. Wide scope increases the chance of accidental modification, makes thread-safety harder, and confuses readers about the variable's purpose. The principle of least scope: declare a variable in the smallest scope that correctly satisfies its use. If a variable is only needed inside an if-block, declare it inside the if-block."
+            },
+            {
+              "icon": "🚫",
+              "title": "Not Making Variables final When They Should Be",
+              "text": "Failing to mark local variables and method parameters as final when they are never reassigned. Making variables final communicates intent ('this value will not change'), prevents accidental reassignment bugs, and enables better compiler/JIT optimization. In modern Java codebases, many teams enforce that all variables that are never reassigned must be declared final. This is trivially enforced with tools like Checkstyle or SpotBugs."
+            },
+            {
+              "icon": "🚫",
+              "title": "Meaningless or Cryptic Variable Names",
+              "text": "Names like d, tmp, x1, x2, val, data, obj, or result without context. These force every reader to mentally trace the code to understand what the variable holds. Meaningful names act as inline documentation: customerDiscountAmount explains itself; cda does not. The extra characters cost nothing at runtime — the compiler optimizes away names. Invest in names — they are the most read part of any codebase."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Variables in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples show how variable types, naming, scope, and final are applied in real enterprise Java and Spring Boot codebases."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "OrderService.java — Variables in a Service Class",
+          "lines": [
+            "package com.techsustainify.service;",
+            "",
+            "import java.util.Objects;",
+            "",
+            "@Service",
+            "public class OrderService {",
+            "",
+            "    // ── Constants — static final, UPPER_SNAKE_CASE ───────────────────────",
+            "    private static final double GST_RATE          = 0.18;",
+            "    private static final int    MAX_ITEMS_PER_ORDER = 50;",
+            "    private static final String DEFAULT_CURRENCY   = \"INR\";",
+            "",
+            "    // ── Static variable — shared counter ─────────────────────────────────",
+            "    private static int totalOrdersProcessed = 0;",
+            "",
+            "    // ── Instance variables — injected dependencies ────────────────────────",
+            "    private final OrderRepository orderRepository;",
+            "    private final NotificationService notificationService;",
+            "",
+            "    // ── Constructor injection with requireNonNull ────────────────────────",
+            "    public OrderService(OrderRepository orderRepository,",
+            "                        NotificationService notificationService) {",
+            "        this.orderRepository    = Objects.requireNonNull(orderRepository);",
+            "        this.notificationService = Objects.requireNonNull(notificationService);",
+            "    }",
+            "",
+            "    // ── Method with local variables ───────────────────────────────────────",
+            "    public double calculateOrderTotal(Order order) {",
+            "        Objects.requireNonNull(order, \"order must not be null\");",
+            "",
+            "        // Local variables — declared close to use, named meaningfully",
+            "        final double subtotal    = order.getSubtotal();",
+            "        final double gstAmount   = subtotal * GST_RATE;",
+            "        final double totalAmount = subtotal + gstAmount;",
+            "",
+            "        return totalAmount;",
+            "    }",
+            "",
+            "    public boolean processOrder(Order order) {",
+            "        Objects.requireNonNull(order, \"order must not be null\");",
+            "",
+            "        // Local boolean with descriptive name",
+            "        final boolean isValidOrder = order.getItems().size() <= MAX_ITEMS_PER_ORDER",
+            "                                    && order.getSubtotal() > 0;",
+            "",
+            "        if (!isValidOrder) {",
+            "            return false;",
+            "        }",
+            "",
+            "        // var for obvious types — reduces verbosity",
+            "        var savedOrder = orderRepository.save(order);",
+            "        var customerId = savedOrder.getCustomerId();",
+            "",
+            "        notificationService.sendConfirmation(customerId);",
+            "        totalOrdersProcessed++;  // Increment shared static counter",
+            "",
+            "        return true;",
+            "    }",
+            "",
+            "    public static int getTotalOrdersProcessed() {",
+            "        return totalOrdersProcessed;",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "UserProfile.java — Instance Variables with Proper Design",
+          "lines": [
+            "package com.techsustainify.model;",
+            "",
+            "import java.time.LocalDate;",
+            "import java.util.Objects;",
+            "",
+            "public class UserProfile {",
+            "",
+            "    // ── Constants ────────────────────────────────────────────────────────",
+            "    public static final int MIN_AGE          = 18;",
+            "    public static final int MAX_USERNAME_LEN = 50;",
+            "",
+            "    // ── Static variable — shared across all instances ────────────────────",
+            "    private static int totalUsersCreated = 0;",
+            "",
+            "    // ── Instance variables — state of a single UserProfile ───────────────",
+            "    private final int    userId;        // Immutable after construction",
+            "    private final String username;      // Immutable after construction",
+            "    private String       email;         // Mutable — can be updated",
+            "    private boolean      isActive;      // Boolean with is-prefix",
+            "    private boolean      hasVerifiedEmail;",
+            "    private LocalDate    dateOfBirth;",
+            "    private int          loginCount;    // Tracks login frequency",
+            "",
+            "    public UserProfile(int userId, String username, String email) {",
+            "        this.userId   = userId;",
+            "        this.username = Objects.requireNonNull(username, \"username required\");",
+            "        this.email    = Objects.requireNonNull(email,    \"email required\");",
+            "        this.isActive = true;",
+            "        this.hasVerifiedEmail = false;",
+            "        this.loginCount = 0;",
+            "        totalUsersCreated++;",
+            "    }",
+            "",
+            "    // ── Method with local variables — tight scope ─────────────────────────",
+            "    public boolean isEligibleForPremium() {",
+            "        final int MIN_LOGINS = 10;",
+            "        final boolean meetsLoginThreshold = loginCount >= MIN_LOGINS;",
+            "        final boolean isVerified = hasVerifiedEmail && isActive;",
+            "        return meetsLoginThreshold && isVerified;",
+            "    }",
+            "",
+            "    public void recordLogin() {",
+            "        if (!isActive) return;",
+            "",
+            "        // Local variable for intermediate calculation",
+            "        var today = LocalDate.now();  // var — type obvious from method name",
+            "        loginCount++;",
+            "        System.out.println(username + \" logged in on \" + today);",
+            "    }",
+            "",
+            "    // Getters / setters omitted for brevity",
+            "    public static int getTotalUsersCreated() { return totalUsersCreated; }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "variables-flowchart",
+      "title": "Variable Type Decision Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When writing Java code, use this decision process to choose the correct variable type — getting this right prevents scope leaks, unintended sharing, and subtle bugs."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1",  "label": "📦 Need to store a value",              "sublabel": "What kind of variable should I use?",           "type": "start"    },
+            { "id": "2",  "label": "❓ Shared across ALL instances?",       "sublabel": "One copy for the entire class?",                "type": "decision" },
+            { "id": "3",  "label": "✅ Static Variable",                    "sublabel": "static dataType name; — class-level",           "type": "process"  },
+            { "id": "4",  "label": "❓ Value never changes?",               "sublabel": "A constant — no reassignment?",                 "type": "decision" },
+            { "id": "5",  "label": "✅ Constant",                           "sublabel": "static final — UPPER_SNAKE_CASE",               "type": "process"  },
+            { "id": "6",  "label": "❓ Needed only inside a method/block?", "sublabel": "Temp result, loop counter, calculation?",       "type": "decision" },
+            { "id": "7",  "label": "✅ Local Variable",                     "sublabel": "dataType name = value; — must initialize",      "type": "end"      },
+            { "id": "8",  "label": "✅ Instance Variable",                  "sublabel": "Object state — each instance gets own copy",    "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1", "to": "2",  "label": "Start"              },
+            { "from": "2", "to": "3",  "label": "YES — shared"       },
+            { "from": "3", "to": "4",  "label": "Check if constant"  },
+            { "from": "4", "to": "5",  "label": "YES — constant"     },
+            { "from": "4", "to": "3",  "label": "NO — mutable static"},
+            { "from": "2", "to": "6",  "label": "NO"                 },
+            { "from": "6", "to": "7",  "label": "YES — method-only"  },
+            { "from": "6", "to": "8",  "label": "NO — belongs to object" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Variables Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are consistently asked in Java developer interviews at all levels — from campus placements to senior engineer rounds. Variable types, scope, and the var keyword are frequently tested topics."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What are the types of variables in Java? Explain each.",
+              "a": "Java has three types of variables: (1) Local variables — declared inside methods, constructors, or blocks. No default value — must be initialized before use. Scope limited to the declaring block. Stored on the stack. (2) Instance variables — declared inside a class body but outside methods, without static. Each object has its own copy. Default values assigned automatically (0, false, null). Stored on the heap. Scope is the entire class. (3) Static variables — declared with the static keyword in the class body. Only one copy shared across all instances. Default values assigned. Stored in method area. Accessed via ClassName.variableName.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between instance variable and local variable?",
+              "a": "Instance variable: declared in class body outside methods. Belongs to an object — each instance has its own copy. Has a default value (0/false/null). Accessible throughout the class via this.varName. Lifetime matches the object. Can have access modifiers. Local variable: declared inside a method or block. Belongs to that method call. No default value — compile error if used uninitialized. Accessible only within the declaring block. Lifetime matches the method execution. Cannot have access modifiers. Key test: an instance variable uninitialized in a constructor will silently hold its default value (null for String — potential NPE later); a local variable uninitialized is a compile-time error.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is a static variable? When should you use it?",
+              "a": "A static variable (class variable) is declared with the static keyword inside a class but outside methods. There is only ONE copy shared by all instances of the class. It is created when the class is loaded and destroyed when the JVM exits. Use static variables for: shared counters (total objects created), shared configuration (interest rate, tax rate), constants (public static final), and shared state that belongs to the class rather than any individual object. Avoid mutable static variables in multi-threaded applications — they are shared state and require synchronization. Access via ClassName.variableName — not via instance reference.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What is the default value of instance variables in Java?",
+              "a": "Instance variables are automatically initialized by Java: byte, short, int, long → 0. float → 0.0f. double → 0.0. char → '\\u0000' (null character). boolean → false. Any object reference (String, arrays, custom classes) → null. Static variables get the same defaults. Local variables do NOT get defaults — using an uninitialized local variable is a compile-time error. The null default for object fields is a common source of NullPointerException when developers forget to initialize fields in constructors.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q5. What is the var keyword in Java? What are its limitations?",
+              "a": "var (Java 10+) enables local variable type inference — the compiler infers the variable's type from the initializer expression. var name = 'Alice'; — inferred as String. var list = new ArrayList<String>(); — inferred as ArrayList<String>. var is still statically typed — type is fixed at compile time. Limitations: (1) Only for local variables — not fields, parameters, or return types. (2) Must have an initializer — var x; is invalid. (3) Cannot initialize to null — var x = null; is invalid (type cannot be inferred). (4) Cannot be used in lambda parameter types (var x -> x.length() — invalid). Use var when the type is obvious from context; avoid when it reduces readability.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. What is a final variable in Java? What is the difference between final primitive and final reference?",
+              "a": "A final variable can be assigned only once. Reassignment causes a compile error. For final primitive (final int x = 10;): the VALUE is constant — cannot be changed. For final reference (final List<String> list = new ArrayList<>();): the REFERENCE is constant — cannot be reassigned to point to a different object. However, the object's internal state CAN be modified: list.add('item') is valid even if list is final. For a truly immutable object, the class itself must be immutable (like String). Constants are declared as public static final with UPPER_SNAKE_CASE names. Local final variables must be initialized before use. Instance final variables must be set in constructors.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. Can a local variable and an instance variable have the same name? What happens?",
+              "a": "Yes — a local variable can have the same name as an instance variable. The local variable shadows (hides) the instance variable within its scope. Inside the method, using the variable name refers to the local variable. To access the instance variable when shadowed, use this.variableName. Example: class has field int value = 100. Method declares int value = 200. Inside method: value = 200 (local), this.value = 100 (instance). This is intentionally used in constructors and setters: this.name = name; — parameter name shadows field name, this.name refers to the field. Java does NOT allow a local variable to shadow another local variable in the same method scope — that is a compile error.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. What is variable scope in Java? Explain with examples.",
+              "a": "Scope defines the region of code where a variable is accessible. Java has four scope levels: (1) Class scope: static variables — accessible throughout the class and (with qualifier) from outside. (2) Instance scope: instance variables — accessible throughout the class via this. (3) Method scope: local variables declared in method — accessible only within that method. (4) Block scope: variables declared inside a block (if, for, while, try) — accessible only within that block. Attempting to access a variable outside its scope is a compile error. Java uses block-based scoping (like C/C++), not function-based scoping (like JavaScript's var). The tighter the scope, the safer and more readable the code.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q9. What is the output? Explain.\nclass Test {\n    static int x = 10;\n    int y = 20;\n    void show() {\n        int x = 30;\n        System.out.println(x);\n        System.out.println(this.y);\n        System.out.println(Test.x);\n    }\n}",
+              "a": "Output when show() is called: 30, 20, 10. x inside show(): 30 — local variable x shadows the static field x. The local variable takes precedence within the method scope. this.y: 20 — accesses the instance variable y (no shadowing here). Test.x: 10 — accesses the static field x via class name, bypassing the local variable shadow. This demonstrates: (1) local variables shadow static variables in the same scope, (2) ClassName.staticVar always refers to the class field regardless of shadowing, (3) this.instanceVar always refers to the instance field.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q10. Why does int result = 7 / 2 give 3 and not 3.5?",
+              "a": "In Java, when both operands of / are integers (int, long), the result is also an integer — the decimal part is truncated (not rounded). 7 / 2 = 3 (remainder 1 is discarded). This is integer division. To get a floating-point result, at least one operand must be a double or float. Fix options: (1) Cast one operand: double result = (double) 7 / 2; → 3.5. (2) Use double literals: double result = 7.0 / 2; → 3.5. (3) Store in double, use double operands: double a = 7, b = 2; double result = a / b; → 3.5. Common bug: double result = a / b; where a and b are int — division happens as int first, then the result (3) is widened to double 3.0, not 3.5.",
+              "tag": "Tricky"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Java Variables Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Challenge yourself with these practice questions. Attempt each independently before reading the answer — active recall is proven to be 2–3x more effective than passive reading."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. Will this compile? If not, why?\npublic void calculate() {\n    int a;\n    int b = 10;\n    int c = a + b;\n    System.out.println(c);\n}",
+              "a": "Does NOT compile. Error: 'variable a might not have been initialized'. Local variable a is declared but never assigned a value. Java does not give local variables default values — using an uninitialized local variable is a compile-time error (not a runtime error). Fix: int a = 0; or assign a before the expression int c = a + b;. Note: if a were an instance variable instead of local, it would default to 0 and compile fine.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What is the output?\npublic class Counter {\n    static int count = 0;\n    int id;\n    public Counter() {\n        count++;\n        id = count;\n    }\n    public static void main(String[] args) {\n        Counter c1 = new Counter();\n        Counter c2 = new Counter();\n        Counter c3 = new Counter();\n        System.out.println(c1.id);\n        System.out.println(c2.id);\n        System.out.println(Counter.count);\n    }\n}",
+              "a": "Output: 1, 2, 3. count is a static variable — one shared copy. Each Counter() constructor increments the shared count and assigns the current value to the instance's id. After c1: count=1, c1.id=1. After c2: count=2, c2.id=2. After c3: count=3, c3.id=3. c1.id=1, c2.id=2, Counter.count=3. This demonstrates the classic use of static variables as shared counters — each instance gets a unique sequential ID from the shared counter.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. What is the output? Explain the shadowing.\npublic class Shadow {\n    int x = 50;\n    public void display() {\n        int x = 100;\n        System.out.println(x);\n        System.out.println(this.x);\n    }\n    public static void main(String[] args) {\n        new Shadow().display();\n    }\n}",
+              "a": "Output: 100, 50. Inside display(), the local variable int x = 100 shadows the instance variable x = 50. Using x alone refers to the local variable (100). Using this.x explicitly refers to the instance variable (50). This is the classic variable shadowing pattern — most commonly seen in constructors: this.name = name where parameter shadows field. The this keyword is used to disambiguate between instance variable and local variable when they share a name.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. What is wrong? Fix it.\npublic double calculateArea(double radius) {\n    final double result;\n    if (radius > 0) {\n        result = Math.PI * radius * radius;\n    }\n    return result;\n}",
+              "a": "Does NOT compile. Error: 'variable result might not have been initialized'. Although the if-block assigns result, the compiler cannot guarantee radius > 0 will always be true — so there is a code path (radius <= 0) where result is never assigned, and returning it would be unsafe. fix options — Option A (initialize with default): final double result; → change to double result = 0.0; remove final if needed. Option B (handle both branches): double result; if (radius > 0) { result = Math.PI * radius * radius; } else { result = 0.0; } return result;. Option C (direct return): return (radius > 0) ? Math.PI * radius * radius : 0.0; — cleanest.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Rewrite using var where appropriate:\nArrayList<HashMap<String, List<Integer>>> data = new ArrayList<HashMap<String, List<Integer>>>();\nHashMap<String, List<Integer>> entry = new HashMap<String, List<Integer>>();\nList<Integer> values = new ArrayList<Integer>();",
+              "a": "var data   = new ArrayList<HashMap<String, List<Integer>>>();\nvar entry  = new HashMap<String, List<Integer>>();\nvar values = new ArrayList<Integer>();\n\nvar eliminates repetition of the type on the right-hand side when it is already explicit from the constructor call. The type is still fully inferred and statically checked by the compiler — no type safety is lost. The code becomes significantly shorter and easier to read, especially for deeply nested generics. This is exactly the use case var was designed for.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. What is the output? Explain integer overflow.\npublic class Overflow {\n    public static void main(String[] args) {\n        int max = Integer.MAX_VALUE;\n        System.out.println(max);\n        System.out.println(max + 1);\n        long safe = (long) max + 1;\n        System.out.println(safe);\n    }\n}",
+              "a": "Output: 2147483647, -2147483648, 2147483648. max = Integer.MAX_VALUE = 2147483647 (largest int value). max + 1: integer overflow — adding 1 to the maximum int value wraps around to the minimum int value (-2147483648) silently. No exception is thrown — Java does not check for integer overflow. (long) max + 1: the cast to long happens first (max becomes 2147483647L), then + 1 produces 2147483648L — correct result. If max + 1L were used, both operands would be long. Takeaway: always use long when values may exceed Integer.MAX_VALUE (~2.1 billion).",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. Identify all variable types and issues:\npublic class Employee {\n    String department;\n    static String companyName = \"Tech Corp\";\n    public double calculateBonus(double salary) {\n        double rate;\n        double bonus = salary * rate;\n        return bonus;\n    }\n}",
+              "a": "Variable types: department — instance variable (String, default null). companyName — static variable (String, initialized to 'Tech Corp'). salary — local variable (method parameter, always initialized). rate — local variable (declared but NEVER initialized — compile error!). bonus — local variable (uses uninitialized rate — also compile error). Issues: (1) rate is a local variable without initialization — using it in salary * rate causes compile error: 'variable rate might not have been initialized'. (2) department is an instance variable with default null — if used without null check, could cause NPE. Fix: double rate = 0.15; (or pass as parameter). Also consider initializing department in constructor.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. What is the output? Explain why.\npublic class FinalTest {\n    public static void main(String[] args) {\n        final int x = 10;\n        final int y = 20;\n        final int sum = x + y;\n        System.out.println(sum);\n\n        final StringBuilder sb = new StringBuilder(\"Hello\");\n        sb.append(\" Java\");\n        System.out.println(sb);\n\n        // sb = new StringBuilder(\"New\"); // What happens here?\n    }\n}",
+              "a": "Output: 30, Hello Java. sum = x + y = 10 + 20 = 30. final int means the value cannot be reassigned — x, y, sum are all constant after initialization. sb.append(' Java'): valid — final reference means sb cannot be reassigned to a different StringBuilder object, but the object itself is mutable. Calling methods that mutate the StringBuilder's content is perfectly legal. The commented line sb = new StringBuilder('New') would cause a compile error: 'cannot assign a value to final variable sb'. Key insight: final on an object reference locks the reference, not the object's internal state. For truly immutable objects, the class must be designed immutable (like String).",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Variables: The Foundation of Every Java Program",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Variables are the most fundamental building block of any Java program — every computation, every piece of state, every result flows through them. Understanding the three types — <strong>local</strong>, <strong>instance</strong>, and <strong>static</strong> — and choosing the right one for each situation is a core Java skill. Local variables for temporary computation, instance variables for object state, static variables for class-wide shared data or constants."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Professional Java code treats variable design as a first-class concern: <strong>tight scope</strong> (declare where needed, not at the top), <strong>meaningful names</strong> (no magic numbers, no cryptic abbreviations), <strong>final where possible</strong> (signal immutability, prevent reassignment bugs), and <strong>correct types</strong> (long for large numbers, double for decimals, boolean with is/has prefix). These habits cost nothing at runtime but make code dramatically more readable, maintainable, and bug-resistant."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept",                        "Tool / Keyword",                         "Key Rule"],
+          "rows": [
+            ["Local variable",             "Declared in method/block",               "No default value — must initialize"],
+            ["Instance variable",          "Declared in class, no static",           "Default 0/false/null — per object copy"],
+            ["Static variable",            "static keyword in class",                "One shared copy — access via ClassName"],
+            ["Constant",                   "public static final + UPPER_SNAKE_CASE", "Assign once — never change"],
+            ["Type inference",             "var (Java 10+)",                         "Local only — type still static"],
+            ["final variable",             "final keyword",                          "Assign once — primitive or reference"],
+            ["Naming — variables",         "camelCase",                              "firstName, totalAmount, isActive"],
+            ["Naming — constants",         "UPPER_SNAKE_CASE",                       "MAX_SIZE, GST_RATE, DEFAULT_TIMEOUT"],
+            ["Default — primitives",       "0, 0.0, false, '\\u0000'",              "Instance/static only — not local"],
+            ["Default — objects",          "null",                                   "Instance/static only — not local"],
+            ["Integer overflow",           "Use long for large values",              "int silently wraps — no exception"],
+            ["Integer division",           "Cast to double first",                   "(double) a / b — not a / b"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Operators</strong> — where you will use variables in arithmetic, comparison, logical, and bitwise expressions to build the computation logic of your programs. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Variables",
+    "items": [
+      {
+        "q": "What are the types of variables in Java?",
+        "a": "Java has three types of variables: (1) Local variables — inside methods/blocks, no default value, must initialize before use, stack-stored, block-scoped. (2) Instance variables — in class body outside methods, default values (0/false/null), heap-stored, one copy per object. (3) Static variables — with static keyword in class body, default values, method-area-stored, one copy shared by all instances, accessed via ClassName.varName."
+      },
+      {
+        "q": "What is the var keyword in Java?",
+        "a": "var (Java 10+) is local variable type inference — the compiler infers the type from the right-hand side. var name = 'Alice'; is inferred as String. var is still statically typed — the type is fixed at compile time. Restrictions: local variables only (not fields/parameters/return types), must have an initializer, cannot be null. Use when the type is obvious from the right-hand side, especially for long generic types."
+      },
+      {
+        "q": "What is the difference between local, instance, and static variables in Java?",
+        "a": "Local: method/block scope, no default value, stack-stored, one per method call. Instance: class scope, default values, heap-stored, one per object. Static: class-wide scope, default values, method-area-stored, one copy shared by all objects. Use local for temp computation, instance for object state, static for shared data or constants."
+      },
+      {
+        "q": "What are the naming conventions for variables in Java?",
+        "a": "Variables use camelCase — start lowercase, capitalize each word: firstName, totalAmount, isActive. Constants (static final) use UPPER_SNAKE_CASE: MAX_SIZE, DEFAULT_TIMEOUT. Boolean variables use is/has/can prefix: isActive, hasPermission. Must start with letter, underscore, or $. Cannot be a Java keyword. Case-sensitive."
+      },
+      {
+        "q": "What is a final variable in Java?",
+        "a": "A final variable can only be assigned once. For primitives, the value is constant. For object references, the reference is fixed but the object's state can still be mutated. Local final must be initialized before use. Instance final must be set in every constructor. Static final constants use UPPER_SNAKE_CASE. Reassigning a final variable is a compile-time error."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Keywords",   "path": "/java/java-keywords" },
+    "next": { "label": "Java identifier →",    "path": "/java/java-identifier" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Variable Types",         "dd": "3 — local, instance, static" },
+      { "dt": "Local Default Value",    "dd": "None — must initialize manually" },
+      { "dt": "Instance Default",       "dd": "0 / false / null" },
+      { "dt": "Static Default",         "dd": "0 / false / null" },
+      { "dt": "var Keyword Since",      "dd": "Java 10" },
+      { "dt": "var Restriction",        "dd": "Local variables only" },
+      { "dt": "Constant Naming",        "dd": "UPPER_SNAKE_CASE" },
+      { "dt": "Variable Naming",        "dd": "camelCase" }
+    ],
+    "relatedArticles": [
+      { "label": "Java Data Types",              "path": "/java/java-data-types" },
+      { "label": "Java Operators",               "path": "/java/java-operators" },
+      { "label": "Java Type Casting",            "path": "/java/java-type-casting" },
+      { "label": "Java Wrapper Classes",         "path": "/java/java-wrapper-classes" },
+      { "label": "Java NullPointerException",    "path": "/java/java-nullpointerexception" },
+      { "label": "Java Classes & Objects",       "path": "/java/java-classes-objects" },
+      { "label": "Java Keywords",                "path": "/java/java-keyword" },
+      { "label": "Java String",                  "path": "/java/java-string" }
+    ],
+    "tags": [
+      "Variables", "Local Variable", "Instance Variable", "Static Variable",
+      "var Keyword", "Type Inference", "final Variable", "Constants",
+      "Scope", "Lifetime", "Variable Shadowing", "Default Values",
+      "camelCase", "UPPER_SNAKE_CASE", "Naming Conventions",
+      "int", "double", "boolean", "char", "String", "Java 10",
+      "Magic Numbers", "Integer Overflow", "Static Keyword", "this Keyword"
+    ]
+  }
+}

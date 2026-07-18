@@ -1,0 +1,1805 @@
+{
+  "meta": {
+    "title": "Java For Loop — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java For Loop with syntax, flow diagram, difference from while loop, enhanced for loop, nested for loops, break, continue, best practices, common mistakes, and real-world examples. Covers all for loop patterns in Java. Updated March 2026.",
+    "keywords": "java for loop, java for loop syntax, java for loop example, java for loop vs while, java enhanced for loop, java for each loop, java for loop array, java for loop break continue, java for loop nested, java for loop interview questions, java for loop best practices, java entry controlled loop, java for loop programs, java loop patterns",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-for-loop",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java For Loop — Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java For Loop — syntax, flow diagram, entry-controlled nature, difference from while loop, enhanced for loop, nested for loops, break, continue, real-world examples, pitfalls, and interview questions.",
+      "url": "https://www.techsustainify.com/java/java-for-loop",
+      "image": "https://www.techsustainify.com/images/java-for-loop-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java For Loop Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-03-01T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java For Loop",
+          "Java Entry Controlled Loop",
+          "Java Loop Control",
+          "Java Break Continue",
+          "Java Enhanced For Loop",
+          "Java For Each Loop",
+          "Java Nested For Loop",
+          "Java For Loop Examples",
+          "Java Loop Patterns",
+          "Java 21"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java For Loop — Syntax, Examples & Best Practices 2026",
+      "description": "Complete guide to Java For Loop — syntax, flow, difference from while, enhanced for loop, nested for loops, break, continue, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-for-loop-og.png",
+      "imageAlt": "Java For Loop Guide 2026 - Tech Sustainify",
+      "readingTime": "20 minutes",
+      "level": "Beginner to Intermediate",
+      "label1": "Reading Time",
+      "data1": "20 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner to Intermediate"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java For Loop — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering all Java For Loop concepts — syntax, flow diagram, entry-controlled nature, difference from while loop, enhanced for loop, nested for loops, break, continue, real-world examples, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-03-01",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner to Intermediate",
+        "wordCount": 5800,
+        "timeRequired": "PT20M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java For Loop" },
+          { "@type": "Thing", "name": "Java Entry Controlled Loop" },
+          { "@type": "Thing", "name": "Java Enhanced For Loop" },
+          { "@type": "Thing", "name": "Java Loop Control" }
+        ],
+        "keywords": "java for loop, java for loop syntax, java for loop vs while, java entry controlled loop, java enhanced for loop, java for each loop, java nested for loop, java for loop break continue"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java For Loop" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a for loop in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A for loop in Java is an entry-controlled loop that checks a boolean condition BEFORE executing the loop body. It is the most commonly used loop when the number of iterations is known in advance. The for loop header contains three parts: initialization (runs once before the loop starts), condition (checked before every iteration), and update (runs after every iteration). Syntax: for (initialization; condition; update) { // body }. If the condition is false initially, the body never executes. For loops are ideal for array traversal, fixed-range iteration, index-based processing, and any scenario where the iteration count is known or can be derived from a data structure's size."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between for loop and while loop in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Both are entry-controlled loops — they check the condition BEFORE executing the body. The difference is structural and semantic. A for loop keeps initialization, condition, and update together in the header: for(int i=0; i<n; i++) — making it compact and self-contained, ideal when the iteration count is known. A while loop separates initialization (before loop) and update (inside body) from the condition: while(condition) — making it more flexible for unknown iteration counts, event-driven loops, and reading until end-of-file. Rule of thumb: use for when you know HOW MANY times to iterate; use while when you know WHEN to stop but not exactly how many iterations that will take."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is enhanced for loop in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The enhanced for loop (also called for-each loop) was introduced in Java 5. It provides a clean, concise way to iterate over arrays and collections without managing an index variable. Syntax: for (Type element : arrayOrCollection) { // use element }. The loop automatically handles the index, boundary checking, and element retrieval. It is read-only — you cannot modify array/collection elements directly through the loop variable. Use enhanced for when you need every element in order and do not need the index. Use a traditional for loop when you need the index, need to iterate in reverse, need to modify elements, or need to skip elements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you have multiple variables in a Java for loop?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — Java allows multiple variables in the initialization and update sections of a for loop, separated by commas. Example: for (int i = 0, j = 10; i < j; i++, j--) { } — initializes both i=0 and j=10, updates both i++ and j-- each iteration. However, all variables in the initialization must be of the same type (or declared separately before the loop). The condition section still contains only one boolean expression, but it can reference multiple variables: i < j. This pattern is useful for two-pointer algorithms, converging iterators, and parallel index traversal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an infinite for loop in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An infinite for loop in Java is written as for(;;) — all three parts of the header (initialization, condition, update) are omitted. With no condition, Java treats it as always true and the loop runs forever until a break or return statement exits it. This is equivalent to while(true) and is used in the same scenarios: server event loops, game main loops, interactive shells, and retry patterns. The for(;;) form is a common idiom in systems programming and is slightly more compact than while(true). Always ensure a reachable break, return, or throw inside the body to prevent an unintended infinite loop."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner to Intermediate",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-03-01",
+      "dateModified": "2026-03-20",
+      "readingTime": "20 minutes",
+      "wordCount": 5800,
+      "difficulty": "Beginner to Intermediate",
+      "chapter": 6,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-for-loop",          "title": "What is a For Loop in Java?" },
+        { "id": "for-loop-syntax",            "title": "For Loop Syntax & Flow" },
+        { "id": "for-loop-examples",          "title": "For Loop Examples" },
+        { "id": "for-loop-vs-while",          "title": "For Loop vs While — Key Differences" },
+        { "id": "enhanced-for-loop",          "title": "Enhanced For Loop (For-Each)" },
+        { "id": "for-loop-array",             "title": "For Loop with Arrays" },
+        { "id": "break-continue-for-loop",    "title": "Break and Continue in For Loop" },
+        { "id": "nested-for-loop",            "title": "Nested For Loops" },
+        { "id": "for-loop-vs-do-while",       "title": "For Loop vs Do-While Loop" },
+        { "id": "infinite-for-loop",          "title": "Infinite For Loop" },
+        { "id": "common-mistakes",            "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",              "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",        "title": "Real-World Production Code Examples" },
+        { "id": "for-loop-flowchart",         "title": "For Loop Flow Diagram" },
+        { "id": "interview-questions",        "title": "Interview Questions" },
+        { "id": "practice-questions",         "title": "Practice Questions" },
+        { "id": "conclusion-heading",         "title": "Conclusion" },
+        { "id": "faq-heading",                "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-for-loop" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-for-loop" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-for-loop" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-operators",
+      "next": "https://www.techsustainify.com/java/java-while-loop"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-core",
+      "contentTopic": "java-for-loop",
+      "chapterNumber": 6,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner-intermediate",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java For Loop" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java For Loop — Syntax, Flow, Examples & Best Practices",
+    "subtitle": "Everything you need to know about Java For Loop — syntax, flow diagram, entry-controlled behavior, difference from while loop, enhanced for loop, array traversal, nested for loops, break, continue, anti-patterns, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "20 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner to Intermediate" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "6 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-for-loop",
+      "title": "What is a For Loop in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>for loop</strong> in Java is an <strong>entry-controlled loop</strong> — it checks a boolean condition <strong>before</strong> executing the loop body. If the condition is false on the very first check, the body never executes. The for loop is the <strong>most commonly used loop</strong> in Java because it keeps all loop control information — initialization, condition, and update — in one compact header, making it highly readable and predictable."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java provides three loop types: <code>for</code> (best when iteration count is known), <code>while</code> (condition checked before body — best for unknown count), and <code>do-while</code> (body executes first — best for at-least-once scenarios). The for loop shines when you know <em>exactly how many times</em> to iterate — traversing an array, printing a multiplication table, iterating over a range of numbers, or processing a fixed-size collection."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java 5 introduced the <strong>enhanced for loop</strong> (also called <em>for-each</em>), which further simplifies iterating over arrays and collections by eliminating the index variable entirely. Both forms are covered in depth in this guide — along with nested loops, labeled break/continue, infinite for loops, and production-grade usage patterns."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java For Loop at a Glance",
+          "text": "for loop is entry-controlled — condition is checked BEFORE the body. Body may execute zero times if condition is initially false. Header contains initialization, condition, and update — all in one place. Best use cases: known iteration count, array/collection traversal, index-based processing, pattern printing. Enhanced for loop (for-each): cleaner syntax for arrays and Iterable collections. break exits the loop immediately. continue skips the rest of the current iteration. Nested for loops: valid and widely used for 2D arrays, patterns, and matrix operations."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "for-loop-syntax",
+      "title": "For Loop — Syntax & Execution Flow",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>for</code> loop header has three parts separated by semicolons: <strong>initialization</strong>, <strong>condition</strong>, and <strong>update</strong>. Each part is optional — you can omit any or all of them — but both semicolons are always required. The body follows in curly braces."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📋",
+              "title": "For Loop Syntax",
+              "text": "for (initialization; condition; update) {\n    // body — executes while condition is true\n}\n\nThree header parts: (1) Initialization — runs ONCE before the loop starts. Typically declares and sets the loop variable: int i = 0. (2) Condition — a boolean expression checked BEFORE each iteration. If false, loop exits. If omitted, treated as always true (infinite loop). (3) Update — runs AFTER each iteration body. Typically increments or decrements: i++, i--, i+=2. Any or all parts can be omitted, but both semicolons (;;) are always required. No semicolon after the closing parenthesis — unlike do-while."
+            },
+            {
+              "icon": "🔄",
+              "title": "Execution Flow — Step by Step",
+              "text": "Step 1: Execute initialization (runs once only — at the very start). Step 2: Evaluate the condition. Step 3: If condition is FALSE — exit the loop; execute next statement after the loop. Step 4: If condition is TRUE — execute the loop body. Step 5: Execute the update statement. Step 6: Go back to Step 2. Key insight: initialization runs exactly once. The condition is checked before every iteration — including the very first. If condition is false from the start, the body never executes (0 iterations). This is the entry-controlled nature of the for loop."
+            },
+            {
+              "icon": "⚖️",
+              "title": "For Loop vs While — The Structural Difference",
+              "text": "for: initialization; condition; update are all in the header — compact and self-contained. Best when iteration count is known. while: initialization is before the loop, condition is in the header, update is inside the body — more spread out. Best when iteration count is unknown or condition is event-driven. The for loop is syntactic sugar for a while loop: for(int i=0; i<n; i++){body} is exactly equivalent to: int i=0; while(i<n){body; i++;}. Choose for loop when the iteration count or range is evident from the loop header itself — it communicates intent more clearly to readers."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ForLoopSyntax.java",
+          "lines": [
+            "public class ForLoopSyntax {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Basic for loop — print 1 to 5",
+            "        for (int i = 1; i <= 5; i++) {",
+            "            System.out.println(\"Count: \" + i);",
+            "        }",
+            "        // Output: Count: 1 through Count: 5",
+            "        // Note: i is NOT accessible here — scoped inside the for header",
+            "",
+            "        // ✅ Decrement loop — countdown from 5",
+            "        for (int i = 5; i >= 1; i--) {",
+            "            System.out.print(i + \" \"); // 5 4 3 2 1",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // ✅ Step of 2 — even numbers",
+            "        System.out.print(\"Even: \");",
+            "        for (int i = 2; i <= 20; i += 2) {",
+            "            System.out.print(i + \" \"); // 2 4 6 8 10 12 14 16 18 20",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // ✅ KEY DEMO: condition FALSE from start — body NEVER runs",
+            "        System.out.print(\"Never prints: \");",
+            "        for (int i = 10; i < 5; i++) {",
+            "            System.out.print(i); // This never executes",
+            "        }",
+            "        System.out.println(\"(nothing)\");",
+            "",
+            "        // ✅ Variable declared BEFORE loop — accessible outside",
+            "        int j;",
+            "        for (j = 0; j < 3; j++) {",
+            "            System.out.print(j + \" \"); // 0 1 2",
+            "        }",
+            "        System.out.println(\"j after loop: \" + j); // j = 3 — accessible!",
+            "",
+            "        // ✅ Multiple variables in initialization and update",
+            "        for (int a = 0, b = 10; a < b; a++, b--) {",
+            "            System.out.print(\"(\" + a + \",\" + b + \") \"); // (0,10) (1,9) (2,8) (3,7) (4,6)",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // ✅ Sum of numbers 1 to 100",
+            "        int sum = 0;",
+            "        for (int i = 1; i <= 100; i++) {",
+            "            sum += i;",
+            "        }",
+            "        System.out.println(\"Sum 1 to 100 = \" + sum); // 5050",
+            "",
+            "        // ✅ Omitting update — update inside body",
+            "        for (int i = 1; i <= 5; ) {",
+            "            System.out.print(i + \" \");",
+            "            i++;  // Update inside body",
+            "        }",
+            "        System.out.println();",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "for-loop-examples",
+      "title": "For Loop Examples — Common Patterns",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These examples cover the most frequently used for loop patterns in Java — from number processing and series generation to character printing and accumulator patterns. Each demonstrates why the for loop is the natural choice for known-count iteration."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ForLoopExamples.java",
+          "lines": [
+            "public class ForLoopExamples {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Example 1: Multiplication table",
+            "        int table = 7;",
+            "        System.out.println(\"--- Table of \" + table + \" ---\");",
+            "        for (int i = 1; i <= 10; i++) {",
+            "            System.out.printf(\"%d x %2d = %2d%n\", table, i, table * i);",
+            "        }",
+            "",
+            "        // ✅ Example 2: Factorial",
+            "        int n = 6;",
+            "        long factorial = 1;",
+            "        for (int i = 2; i <= n; i++) {",
+            "            factorial *= i;",
+            "        }",
+            "        System.out.println(n + \"! = \" + factorial); // 720",
+            "",
+            "        // ✅ Example 3: Check prime number",
+            "        int num = 29;",
+            "        boolean isPrime = num > 1;",
+            "        for (int i = 2; i <= Math.sqrt(num); i++) {",
+            "            if (num % i == 0) {",
+            "                isPrime = false;",
+            "                break;",
+            "            }",
+            "        }",
+            "        System.out.println(num + \" is prime: \" + isPrime); // true",
+            "",
+            "        // ✅ Example 4: Fibonacci series up to n terms",
+            "        int terms = 10;",
+            "        int a = 0, b = 1;",
+            "        System.out.print(\"Fibonacci: \");",
+            "        for (int i = 1; i <= terms; i++) {",
+            "            System.out.print(a + \" \");",
+            "            int temp = a + b;",
+            "            a = b;",
+            "            b = temp;",
+            "        }",
+            "        System.out.println();",
+            "        // Output: 0 1 1 2 3 5 8 13 21 34",
+            "",
+            "        // ✅ Example 5: Sum of even numbers 1 to 50",
+            "        int evenSum = 0;",
+            "        for (int i = 2; i <= 50; i += 2) {",
+            "            evenSum += i;",
+            "        }",
+            "        System.out.println(\"Sum of even 1-50: \" + evenSum); // 650",
+            "",
+            "        // ✅ Example 6: Reverse a string using for loop",
+            "        String original = \"TechSustainify\";",
+            "        StringBuilder reversed = new StringBuilder();",
+            "        for (int i = original.length() - 1; i >= 0; i--) {",
+            "            reversed.append(original.charAt(i));",
+            "        }",
+            "        System.out.println(\"Reversed: \" + reversed); // yfiniatsuShceT",
+            "",
+            "        // ✅ Example 7: Count vowels in a string",
+            "        String text = \"Java Programming Language\";",
+            "        int vowelCount = 0;",
+            "        String vowels = \"aeiouAEIOU\";",
+            "        for (int i = 0; i < text.length(); i++) {",
+            "            if (vowels.indexOf(text.charAt(i)) != -1) {",
+            "                vowelCount++;",
+            "            }",
+            "        }",
+            "        System.out.println(\"Vowels in '\" + text + \"': \" + vowelCount); // 8",
+            "",
+            "        // ✅ Example 8: Power of a number without Math.pow",
+            "        int base = 3, exponent = 5;",
+            "        long result = 1;",
+            "        for (int i = 1; i <= exponent; i++) {",
+            "            result *= base;",
+            "        }",
+            "        System.out.println(base + \"^\" + exponent + \" = \" + result); // 243",
+            "",
+            "        // ✅ Example 9: Print all prime numbers from 1 to 50",
+            "        System.out.print(\"Primes 1-50: \");",
+            "        for (int i = 2; i <= 50; i++) {",
+            "            boolean prime = true;",
+            "            for (int j = 2; j <= Math.sqrt(i); j++) {",
+            "                if (i % j == 0) { prime = false; break; }",
+            "            }",
+            "            if (prime) System.out.print(i + \" \");",
+            "        }",
+            "        System.out.println();",
+            "        // Output: 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47",
+            "",
+            "        // ✅ Example 10: GCD of two numbers using for loop",
+            "        int x = 48, y = 36;",
+            "        int gcd = 1;",
+            "        for (int i = 1; i <= Math.min(x, y); i++) {",
+            "            if (x % i == 0 && y % i == 0) {",
+            "                gcd = i;",
+            "            }",
+            "        }",
+            "        System.out.println(\"GCD(\" + x + \", \" + y + \") = \" + gcd); // 12",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "for-loop-vs-while",
+      "title": "For Loop vs While Loop — Key Differences",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Both <code>for</code> and <code>while</code> are entry-controlled loops — they check the condition before executing the body. The difference is <strong>structural and semantic</strong>: the for loop bundles initialization, condition, and update in one header; the while loop separates them. The choice communicates intent to every future reader of your code."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "for Loop", "while Loop"],
+          "rows": [
+            ["Loop type",                  "Entry-controlled",                                        "Entry-controlled"],
+            ["Condition checked",          "BEFORE body — every iteration",                           "BEFORE body — every iteration"],
+            ["Minimum executions",         "0 — body may never run if condition false",               "0 — body may never run if condition false"],
+            ["Initialization location",    "Inside loop header — self-contained",                     "Before the loop — external"],
+            ["Update location",            "Third part of header — always runs after body",           "Inside body — can be skipped with continue"],
+            ["Semicolon required",         "No semicolon after closing parenthesis",                  "No semicolon after closing parenthesis"],
+            ["Variable scope",             "Loop variable can be scoped inside header",               "Loop variable always external — wider scope"],
+            ["Best for",                   "Known iteration count, array traversal, index loops",     "Unknown count, event-driven, reading until EOF"],
+            ["Readability (known count)",  "Excellent — all info in one line",                        "Verbose — info spread across multiple lines"],
+            ["Readability (unknown count)","Awkward — empty parts look odd",                          "Natural — while(condition) is clear"],
+            ["Enhanced form",              "Enhanced for / for-each available",                       "No enhanced form"],
+            ["Common use cases",           "Array iteration, patterns, fixed range, matrix",          "Polling, file reading, game loops, retry"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ForLoopVsWhile.java",
+          "lines": [
+            "public class ForLoopVsWhile {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Known count — for loop is cleaner",
+            "        System.out.print(\"for (known count): \");",
+            "        for (int i = 1; i <= 5; i++) {",
+            "            System.out.print(i + \" \"); // 1 2 3 4 5",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // Same with while — more verbose",
+            "        System.out.print(\"while (known count): \");",
+            "        int i = 1;          // Initialization before loop",
+            "        while (i <= 5) {",
+            "            System.out.print(i + \" \"); // 1 2 3 4 5",
+            "            i++;            // Update inside body",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // ✅ Unknown count — while is more natural",
+            "        // Read digits of a number until none remain",
+            "        int number = 98765;",
+            "        System.out.print(\"Digits (while, natural): \");",
+            "        while (number > 0) {",
+            "            System.out.print(number % 10 + \" \");",
+            "            number /= 10;",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // Same with for — awkward empty init section",
+            "        int num2 = 98765;",
+            "        System.out.print(\"Digits (for, awkward): \");",
+            "        for (; num2 > 0; num2 /= 10) {",
+            "            System.out.print(num2 % 10 + \" \");",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // ✅ Variable scope difference — important!",
+            "        for (int x = 0; x < 3; x++) { }",
+            "        // System.out.println(x); // ❌ COMPILE ERROR — x not accessible here",
+            "",
+            "        int y = 0;",
+            "        while (y < 3) { y++; }",
+            "        System.out.println(\"y after while: \" + y); // ✅ y = 3 — accessible",
+            "",
+            "        // ✅ For loop with continue — update still runs (unlike while!)",
+            "        System.out.print(\"for continue: \");",
+            "        for (int k = 1; k <= 5; k++) {",
+            "            if (k == 3) continue; // Skips body but k++ in header STILL runs",
+            "            System.out.print(k + \" \"); // 1 2 4 5 — 3 skipped, no infinite loop",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // while with continue — must update BEFORE continue or infinite loop!",
+            "        System.out.print(\"while continue (safe): \");",
+            "        int m = 0;",
+            "        while (m < 5) {",
+            "            m++;            // Update BEFORE continue — critical!",
+            "            if (m == 3) continue;",
+            "            System.out.print(m + \" \"); // 1 2 4 5",
+            "        }",
+            "        System.out.println();",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enhanced-for-loop",
+      "title": "Enhanced For Loop (For-Each) — Clean Collection Iteration",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <strong>enhanced for loop</strong> (introduced in Java 5) provides a concise, readable way to iterate over <strong>arrays</strong> and any class that implements <strong>Iterable</strong> (List, Set, Map values, etc.). It eliminates index management entirely — no initialization, no condition, no update. Just element by element, from first to last."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "✅",
+              "title": "When to Use Enhanced For Loop",
+              "text": "Use enhanced for (for-each) when: (1) You need every element in order from first to last. (2) You do not need the index of each element. (3) You do not need to modify the array/collection during iteration. (4) You want clean, readable code that communicates 'process each element.' Perfect for: printing all elements, summing values, finding max/min, filtering, checking conditions across all elements. The enhanced for loop is the preferred idiom in modern Java code for array and collection traversal."
+            },
+            {
+              "icon": "🚫",
+              "title": "When NOT to Use Enhanced For Loop",
+              "text": "Do NOT use enhanced for when: (1) You need the index — use traditional for(int i=0; i<arr.length; i++). (2) You need to modify array elements — the loop variable is a copy (for primitives) or reference copy (for objects), not the actual slot. (3) You need to iterate in reverse. (4) You need to skip elements by index. (5) You need to iterate two arrays in parallel (two indices). (6) You need to remove elements from a List while iterating — use Iterator.remove() or removeIf(). In all these cases, fall back to the traditional for loop or Iterator."
+            },
+            {
+              "icon": "💡",
+              "title": "Enhanced For Loop — Read-Only Caveat",
+              "text": "For primitive arrays (int[], double[]), the loop variable is a copy of each value. Changing it does NOT change the array: for(int x : arr) { x = 0; } — the array is unchanged. For object arrays (String[], MyClass[]), the loop variable is a reference copy — you can call mutating methods on the object, but reassigning the variable (element = new MyClass()) does NOT affect the array. To truly modify array elements, use a traditional for loop with the index: arr[i] = newValue."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EnhancedForLoop.java",
+          "lines": [
+            "import java.util.*;",
+            "",
+            "public class EnhancedForLoop {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Enhanced for with int array",
+            "        int[] numbers = {10, 20, 30, 40, 50};",
+            "        System.out.print(\"Elements: \");",
+            "        for (int num : numbers) {",
+            "            System.out.print(num + \" \"); // 10 20 30 40 50",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // ✅ Sum using enhanced for",
+            "        int sum = 0;",
+            "        for (int num : numbers) {",
+            "            sum += num;",
+            "        }",
+            "        System.out.println(\"Sum: \" + sum); // 150",
+            "",
+            "        // ✅ Enhanced for with String array",
+            "        String[] fruits = {\"Apple\", \"Banana\", \"Cherry\", \"Date\"};",
+            "        for (String fruit : fruits) {",
+            "            System.out.println(\"Fruit: \" + fruit);",
+            "        }",
+            "",
+            "        // ✅ Enhanced for with ArrayList",
+            "        List<String> cities = new ArrayList<>(List.of(\"Delhi\", \"Mumbai\", \"Bangalore\", \"Hyderabad\"));",
+            "        System.out.println(\"Cities:\");",
+            "        for (String city : cities) {",
+            "            System.out.println(\"  - \" + city);",
+            "        }",
+            "",
+            "        // ✅ Enhanced for with 2D array — outer loop",
+            "        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};",
+            "        System.out.println(\"Matrix:\");",
+            "        for (int[] row : matrix) {       // Each row is an int[]",
+            "            for (int val : row) {         // Each value in the row",
+            "                System.out.printf(\"%3d\", val);",
+            "            }",
+            "            System.out.println();",
+            "        }",
+            "",
+            "        // ✅ Find max using enhanced for",
+            "        int[] scores = {85, 92, 78, 96, 88};",
+            "        int max = scores[0];",
+            "        for (int score : scores) {",
+            "            if (score > max) max = score;",
+            "        }",
+            "        System.out.println(\"Max score: \" + max); // 96",
+            "",
+            "        // ❌ Enhanced for does NOT modify primitive array",
+            "        int[] arr = {1, 2, 3};",
+            "        for (int x : arr) {",
+            "            x = x * 10; // Modifies copy — arr is UNCHANGED",
+            "        }",
+            "        System.out.println(\"arr[0] after attempt: \" + arr[0]); // Still 1",
+            "",
+            "        // ✅ Correct way to modify — use traditional for with index",
+            "        for (int i = 0; i < arr.length; i++) {",
+            "            arr[i] = arr[i] * 10; // Modifies actual array slot",
+            "        }",
+            "        System.out.println(\"arr[0] after fix: \" + arr[0]); // 10",
+            "",
+            "        // ✅ Enhanced for with Set (unordered — no index guarantee)",
+            "        Set<Integer> primeSet = new HashSet<>(Set.of(2, 3, 5, 7, 11));",
+            "        System.out.print(\"Primes: \");",
+            "        for (int p : primeSet) {",
+            "            System.out.print(p + \" \"); // Order not guaranteed for HashSet",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // ✅ Enhanced for with Map.entrySet()",
+            "        Map<String, Integer> scores2 = new LinkedHashMap<>();",
+            "        scores2.put(\"Alice\", 95);",
+            "        scores2.put(\"Bob\", 87);",
+            "        scores2.put(\"Carol\", 92);",
+            "        for (Map.Entry<String, Integer> entry : scores2.entrySet()) {",
+            "            System.out.printf(\"%s: %d%n\", entry.getKey(), entry.getValue());",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "for-loop-array",
+      "title": "For Loop with Arrays — The Essential Pattern",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Arrays and for loops are inseparable in Java. The for loop is the primary tool for array traversal, searching, sorting, filling, copying, and manipulation. Understanding how to use for loops with single-dimensional, multi-dimensional, and jagged arrays is a core Java skill."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ForLoopArrays.java",
+          "lines": [
+            "import java.util.Arrays;",
+            "",
+            "public class ForLoopArrays {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Fill array with squares",
+            "        int[] squares = new int[10];",
+            "        for (int i = 0; i < squares.length; i++) {",
+            "            squares[i] = (i + 1) * (i + 1);",
+            "        }",
+            "        System.out.println(\"Squares: \" + Arrays.toString(squares));",
+            "        // [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]",
+            "",
+            "        // ✅ Linear search",
+            "        int[] data = {34, 7, 23, 32, 5, 62};",
+            "        int target = 23;",
+            "        int foundAt = -1;",
+            "        for (int i = 0; i < data.length; i++) {",
+            "            if (data[i] == target) {",
+            "                foundAt = i;",
+            "                break;",
+            "            }",
+            "        }",
+            "        System.out.println(target + \" found at index: \" + foundAt); // 2",
+            "",
+            "        // ✅ Reverse array in-place",
+            "        int[] arr = {1, 2, 3, 4, 5};",
+            "        for (int i = 0, j = arr.length - 1; i < j; i++, j--) {",
+            "            int temp = arr[i];",
+            "            arr[i] = arr[j];",
+            "            arr[j] = temp;",
+            "        }",
+            "        System.out.println(\"Reversed: \" + Arrays.toString(arr)); // [5, 4, 3, 2, 1]",
+            "",
+            "        // ✅ Bubble sort using nested for loops",
+            "        int[] toSort = {64, 34, 25, 12, 22, 11, 90};",
+            "        int n = toSort.length;",
+            "        for (int i = 0; i < n - 1; i++) {",
+            "            for (int j = 0; j < n - i - 1; j++) {",
+            "                if (toSort[j] > toSort[j + 1]) {",
+            "                    int temp = toSort[j];",
+            "                    toSort[j] = toSort[j + 1];",
+            "                    toSort[j + 1] = temp;",
+            "                }",
+            "            }",
+            "        }",
+            "        System.out.println(\"Sorted: \" + Arrays.toString(toSort));",
+            "        // [11, 12, 22, 25, 34, 64, 90]",
+            "",
+            "        // ✅ 2D array traversal",
+            "        int[][] matrix = {",
+            "            {1, 2, 3},",
+            "            {4, 5, 6},",
+            "            {7, 8, 9}",
+            "        };",
+            "        System.out.println(\"Matrix diagonal sum:\");",
+            "        int diagSum = 0;",
+            "        for (int i = 0; i < matrix.length; i++) {",
+            "            for (int j = 0; j < matrix[i].length; j++) {",
+            "                System.out.printf(\"%3d\", matrix[i][j]);",
+            "                if (i == j) diagSum += matrix[i][j]; // Main diagonal",
+            "            }",
+            "            System.out.println();",
+            "        }",
+            "        System.out.println(\"Diagonal sum: \" + diagSum); // 15",
+            "",
+            "        // ✅ Jagged array (different row lengths)",
+            "        int[][] jagged = {{1}, {2, 3}, {4, 5, 6}, {7, 8, 9, 10}};",
+            "        System.out.println(\"Jagged array:\");",
+            "        for (int i = 0; i < jagged.length; i++) {",
+            "            for (int j = 0; j < jagged[i].length; j++) { // jagged[i].length varies",
+            "                System.out.print(jagged[i][j] + \" \");",
+            "            }",
+            "            System.out.println();",
+            "        }",
+            "        // 1",
+            "        // 2 3",
+            "        // 4 5 6",
+            "        // 7 8 9 10",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "break-continue-for-loop",
+      "title": "Break and Continue in For Loop",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>break</code> and <code>continue</code> are loop control statements that alter the normal flow of a for loop. <code>break</code> exits the loop entirely. <code>continue</code> skips the current iteration's remaining body and proceeds to the update step, then condition check. A critical advantage of the for loop: the <strong>update expression in the header always executes after continue</strong> — unlike in a while loop where forgetting to update before <code>continue</code> causes an infinite loop."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🛑",
+              "title": "break in For Loop",
+              "text": "break immediately exits the for loop — the update and condition are not executed for that iteration. Execution resumes at the statement after the closing brace of the for loop. Use break for: early exit on target found (linear search), stopping when a condition is met (first invalid element), exiting infinite for(;;) loops, and limiting iterations in retry patterns. Labeled break (break label;) exits a specified outer loop when dealing with nested loops — used when inner loop needs to break out of multiple levels."
+            },
+            {
+              "icon": "⏭️",
+              "title": "continue in For Loop",
+              "text": "continue skips the remaining body of the current iteration and jumps to the update expression (i++ etc.), then to the condition check. This is a key advantage over while loops — in a for loop, continue can never accidentally skip the update because the update is in the header, not the body. Use continue for: skipping specific values (null checks, even/odd filtering), ignoring invalid data, processing only elements that meet a condition, and simplifying nested if-else inside loops by using guard-clause style with continue."
+            },
+            {
+              "icon": "🏷️",
+              "title": "Labeled break and continue",
+              "text": "Java supports labeled break and continue for nested loops. A label is an identifier followed by a colon placed before a loop: outer: for(...) { inner: for(...) { break outer; } }. break outer exits the outer loop entirely from inside the inner loop. continue outer skips to the outer loop's next iteration. Labels are rarely needed — most use cases can be solved by extracting to a method and using return. But they are valid Java and occasionally the cleanest solution for nested loop control flow, especially in matrix/grid traversal algorithms."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "BreakContinueForLoop.java",
+          "lines": [
+            "public class BreakContinueForLoop {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ break — exit on first match (linear search)",
+            "        System.out.println(\"--- break in for loop ---\");",
+            "        int[] arr = {3, 7, 1, 9, 4, 6, 2};",
+            "        int target = 9;",
+            "        int foundIndex = -1;",
+            "        for (int i = 0; i < arr.length; i++) {",
+            "            if (arr[i] == target) {",
+            "                foundIndex = i;",
+            "                break;  // Stop searching once found",
+            "            }",
+            "        }",
+            "        System.out.println(target + \" found at index: \" + foundIndex); // 3",
+            "",
+            "        // ✅ continue — skip specific values (print odd numbers only)",
+            "        System.out.println(\"\\n--- continue in for loop ---\");",
+            "        System.out.print(\"Odd numbers 1-10: \");",
+            "        for (int i = 1; i <= 10; i++) {",
+            "            if (i % 2 == 0) continue; // Skip even — i++ in header ALWAYS runs",
+            "            System.out.print(i + \" \"); // 1 3 5 7 9",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // ✅ continue — skip null/blank strings",
+            "        String[] names = {\"Alice\", null, \"Bob\", \"\", \"Charlie\", null, \"David\"};",
+            "        System.out.print(\"Valid names: \");",
+            "        for (String name : names) {",
+            "            if (name == null || name.isBlank()) continue;",
+            "            System.out.print(name + \" \");",
+            "        }",
+            "        System.out.println();",
+            "        // Output: Alice Bob Charlie David",
+            "",
+            "        // ✅ Labeled break — exit outer loop from inner",
+            "        System.out.println(\"\\n--- labeled break ---\");",
+            "        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};",
+            "        int searchVal = 5;",
+            "        int row = -1, col = -1;",
+            "        outer:                              // Label for outer loop",
+            "        for (int i = 0; i < matrix.length; i++) {",
+            "            for (int j = 0; j < matrix[i].length; j++) {",
+            "                if (matrix[i][j] == searchVal) {",
+            "                    row = i;",
+            "                    col = j;",
+            "                    break outer;            // Exit BOTH loops",
+            "                }",
+            "            }",
+            "        }",
+            "        System.out.println(searchVal + \" found at [\" + row + \"][\" + col + \"]\"); // [1][1]",
+            "",
+            "        // ✅ Labeled continue — skip outer iteration from inner",
+            "        System.out.println(\"\\n--- labeled continue ---\");",
+            "        System.out.println(\"Rows without any zero:\");",
+            "        outerLoop:",
+            "        for (int i = 0; i < matrix.length; i++) {",
+            "            for (int j = 0; j < matrix[i].length; j++) {",
+            "                if (matrix[i][j] == 0) {",
+            "                    continue outerLoop;     // Skip this entire row",
+            "                }",
+            "            }",
+            "            System.out.println(\"  Row \" + i + \": no zeros\");",
+            "        }",
+            "",
+            "        // ✅ break in infinite for(;;) loop",
+            "        System.out.println(\"\\n--- break in infinite for ---\");",
+            "        int count = 0;",
+            "        for (;;) {                          // Infinite loop",
+            "            count++;",
+            "            System.out.print(count + \" \");",
+            "            if (count == 5) break;          // Exit when count reaches 5",
+            "        }",
+            "        System.out.println(\"\\nStopped at: \" + count); // 5",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "💡 For Loop continue Advantage Over While Loop",
+          "text": "In a for loop, the update expression (i++) is in the header and always executes after continue — you cannot accidentally skip it. In a while loop, if you write the update AFTER the continue statement, it gets skipped and causes an infinite loop. This is one practical reason to prefer for loops over while loops for counter-based iteration: continue is safer by design. Always be aware that in a while loop, the update must come BEFORE any continue statement to avoid infinite loops."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "nested-for-loop",
+      "title": "Nested For Loops — Patterns, Arrays & Algorithms",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Nested for loops place one for loop inside another. The inner loop executes completely for every single iteration of the outer loop. Nested loops are essential for <strong>2D array operations</strong>, <strong>pattern printing</strong>, <strong>sorting algorithms</strong>, and <strong>combinatorial problems</strong>. The total number of body executions is the product of both loops' iteration counts."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "NestedForLoops.java",
+          "lines": [
+            "public class NestedForLoops {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Example 1: Multiplication table grid (1-5 x 1-5)",
+            "        System.out.println(\"Multiplication Table:\");",
+            "        for (int i = 1; i <= 5; i++) {",
+            "            for (int j = 1; j <= 5; j++) {",
+            "                System.out.printf(\"%4d\", i * j);",
+            "            }",
+            "            System.out.println();",
+            "        }",
+            "        //    1   2   3   4   5",
+            "        //    2   4   6   8  10",
+            "        //    3   6   9  12  15  etc.",
+            "",
+            "        // ✅ Example 2: Right triangle star pattern",
+            "        System.out.println(\"\\nRight Triangle:\");",
+            "        for (int i = 1; i <= 5; i++) {",
+            "            for (int j = 1; j <= i; j++) {",
+            "                System.out.print(\"* \");",
+            "            }",
+            "            System.out.println();",
+            "        }",
+            "        // *",
+            "        // * *",
+            "        // * * *",
+            "        // * * * *",
+            "        // * * * * *",
+            "",
+            "        // ✅ Example 3: Inverted triangle",
+            "        System.out.println(\"\\nInverted Triangle:\");",
+            "        for (int i = 5; i >= 1; i--) {",
+            "            for (int j = 1; j <= i; j++) {",
+            "                System.out.print(\"* \");",
+            "            }",
+            "            System.out.println();",
+            "        }",
+            "",
+            "        // ✅ Example 4: Number pattern — Floyd's triangle",
+            "        System.out.println(\"\\nFloyd's Triangle:\");",
+            "        int num = 1;",
+            "        for (int i = 1; i <= 5; i++) {",
+            "            for (int j = 1; j <= i; j++) {",
+            "                System.out.printf(\"%3d\", num++);",
+            "            }",
+            "            System.out.println();",
+            "        }",
+            "        //   1",
+            "        //   2  3",
+            "        //   4  5  6",
+            "        //   7  8  9 10",
+            "        //  11 12 13 14 15",
+            "",
+            "        // ✅ Example 5: Pyramid pattern (centered)",
+            "        System.out.println(\"\\nPyramid:\");",
+            "        int rows = 5;",
+            "        for (int i = 1; i <= rows; i++) {",
+            "            for (int s = 1; s <= rows - i; s++) System.out.print(\" \"); // Spaces",
+            "            for (int j = 1; j <= 2 * i - 1; j++) System.out.print(\"*\");  // Stars",
+            "            System.out.println();",
+            "        }",
+            "        //     *",
+            "        //    ***",
+            "        //   *****",
+            "        //  *******",
+            "        // *********",
+            "",
+            "        // ✅ Example 6: Diamond pattern",
+            "        System.out.println(\"\\nDiamond:\");",
+            "        int n = 5;",
+            "        // Upper half",
+            "        for (int i = 1; i <= n; i++) {",
+            "            for (int s = n; s > i; s--) System.out.print(\" \");",
+            "            for (int j = 1; j <= 2 * i - 1; j++) System.out.print(\"*\");",
+            "            System.out.println();",
+            "        }",
+            "        // Lower half",
+            "        for (int i = n - 1; i >= 1; i--) {",
+            "            for (int s = n; s > i; s--) System.out.print(\" \");",
+            "            for (int j = 1; j <= 2 * i - 1; j++) System.out.print(\"*\");",
+            "            System.out.println();",
+            "        }",
+            "",
+            "        // ✅ Example 7: Matrix multiplication (O(n³) — classic nested loop)",
+            "        int[][] A = {{1, 2}, {3, 4}};",
+            "        int[][] B = {{5, 6}, {7, 8}};",
+            "        int size = 2;",
+            "        int[][] C = new int[size][size];",
+            "        for (int i = 0; i < size; i++) {",
+            "            for (int j = 0; j < size; j++) {",
+            "                for (int k = 0; k < size; k++) {",
+            "                    C[i][j] += A[i][k] * B[k][j];",
+            "                }",
+            "            }",
+            "        }",
+            "        System.out.println(\"\\nMatrix C[0][0]: \" + C[0][0]); // 19",
+            "        System.out.println(\"Matrix C[1][1]: \" + C[1][1]); // 50",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Nested For Loop Performance — O(n²) and Beyond",
+          "text": "A nested for loop over n elements runs n×n = n² iterations — O(n²) time complexity. A triple-nested loop is O(n³). For small n (< 1000), this is fine. But for large datasets (n = 100,000+), O(n²) becomes unacceptably slow. Before writing nested loops, ask: can this be solved with a HashMap (reducing an O(n²) search to O(n))? Can the inner loop start from i+1 instead of 0 to avoid redundant pairs? Can caching or memoization reduce inner iterations? Nested loops are correct and readable — but always consider the time complexity implications for production code with large data."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "for-loop-vs-do-while",
+      "title": "For Loop vs Do-While Loop — When to Use Which",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The for loop and do-while loop are at opposite ends of the loop spectrum. The for loop is entry-controlled with a known count. The do-while is exit-controlled with a guaranteed first execution. Choosing between them correctly signals clear intent in your code."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "for Loop", "do-while Loop"],
+          "rows": [
+            ["Control type",            "Entry-controlled — checks before body",              "Exit-controlled — body runs before check"],
+            ["Minimum executions",      "0 — body may not run at all",                        "1 — body always runs at least once"],
+            ["Iteration count",         "Best when count is known",                           "Best when count is unknown, runs until condition"],
+            ["Header structure",        "init; condition; update — all in one line",           "Condition at the bottom only"],
+            ["Semicolon required",      "No — for(;;){} no trailing semicolon",               "Yes — while(condition); mandatory semicolon"],
+            ["Variable scope",          "Can scope variable inside header",                   "Variable always declared externally"],
+            ["Enhanced form",           "Yes — for-each for arrays/collections",              "No enhanced form"],
+            ["Best use cases",          "Arrays, fixed ranges, patterns, algorithms",         "Menus, input validation, game loops, retry"],
+            ["If condition false initially", "Body never executes — clean behaviour",         "Body still runs once — can be surprising"],
+            ["Code duplication",        "None — but prime read needed for some patterns",     "None — body written once, always runs first"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ForVsDoWhile.java",
+          "lines": [
+            "public class ForVsDoWhile {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ For loop — best for known count (array traversal)",
+            "        int[] grades = {85, 92, 78, 96, 88};",
+            "        int total = 0;",
+            "        for (int grade : grades) {",
+            "            total += grade;",
+            "        }",
+            "        System.out.println(\"Average: \" + (total / grades.length)); // 87",
+            "        // for-each is the natural, clearest choice here",
+            "",
+            "        // ✅ Do-while — best for 'must run at least once' (menu/validation)",
+            "        // Simulated: keep prompting until valid grade is entered",
+            "        int[] simulatedInputs = {-5, 150, 88}; // Invalid, invalid, valid",
+            "        int idx = 0;",
+            "        int validGrade;",
+            "        do {",
+            "            validGrade = simulatedInputs[idx++];",
+            "            System.out.println(\"Entered grade: \" + validGrade);",
+            "            if (validGrade < 0 || validGrade > 100)",
+            "                System.out.println(\"  Invalid! Try again.\");",
+            "        } while (validGrade < 0 || validGrade > 100);",
+            "        System.out.println(\"Valid grade accepted: \" + validGrade); // 88",
+            "",
+            "        // ✅ For loop for fixed game rounds — NOT do-while",
+            "        System.out.println(\"\\nPlaying 3 rounds:\");",
+            "        for (int round = 1; round <= 3; round++) {",
+            "            int score = (int)(Math.random() * 100);",
+            "            System.out.println(\"  Round \" + round + \" score: \" + score);",
+            "        }",
+            "        // Known count (3 rounds) = for loop is correct choice",
+            "",
+            "        // ✅ Do-while for unknown rounds — play until user stops",
+            "        String[] choices = {\"Y\", \"Y\", \"N\"}; // Simulated play-again choices",
+            "        int gameIdx = 0;",
+            "        int roundNum = 0;",
+            "        do {",
+            "            roundNum++;",
+            "            System.out.println(\"Playing round \" + roundNum + \"...\");",
+            "            String playAgain = choices[gameIdx++];",
+            "            System.out.println(\"Play again? \" + playAgain);",
+            "            if (playAgain.equalsIgnoreCase(\"N\")) break;",
+            "        } while (true);",
+            "        System.out.println(\"Total rounds played: \" + roundNum); // 3",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "infinite-for-loop",
+      "title": "Infinite For Loop — for(;;)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "An infinite for loop is written as <code>for(;;)</code> — all three header parts are omitted. With no condition, the loop runs forever. It is functionally identical to <code>while(true)</code> and must be exited with <code>break</code>, <code>return</code>, or by throwing an exception. The <code>for(;;)</code> form is a recognized Java idiom, often preferred in systems and server-side code for clarity."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InfiniteForLoop.java",
+          "lines": [
+            "import java.util.*;",
+            "",
+            "public class InfiniteForLoop {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Pattern 1: for(;;) as event loop (simulated)",
+            "        System.out.println(\"--- Event Processing Loop ---\");",
+            "        Queue<String> events = new LinkedList<>(List.of(\"CONNECT\", \"REQUEST\", \"RESPONSE\", \"SHUTDOWN\"));",
+            "        for (;;) {",
+            "            if (events.isEmpty()) {",
+            "                System.out.println(\"No more events. Exiting.\");",
+            "                break;",
+            "            }",
+            "            String event = events.poll();",
+            "            System.out.println(\"Processing: \" + event);",
+            "            if (\"SHUTDOWN\".equals(event)) {",
+            "                System.out.println(\"Shutdown received. Stopping loop.\");",
+            "                break;",
+            "            }",
+            "        }",
+            "",
+            "        // ✅ Pattern 2: Retry with max attempts using for(;;)",
+            "        System.out.println(\"\\n--- Retry Loop ---\");",
+            "        int maxRetries = 4;",
+            "        int attempt = 0;",
+            "        for (;;) {",
+            "            attempt++;",
+            "            System.out.println(\"Attempt \" + attempt + \": connecting...\");",
+            "            boolean connected = attempt == 3; // Simulated: succeeds on 3rd try",
+            "            if (connected) {",
+            "                System.out.println(\"✅ Connected on attempt \" + attempt);",
+            "                break;",
+            "            }",
+            "            if (attempt >= maxRetries) {",
+            "                System.out.println(\"❌ Failed after \" + maxRetries + \" attempts.\");",
+            "                break;",
+            "            }",
+            "            System.out.println(\"  Retrying in \" + (attempt * 500) + \"ms...\");",
+            "        }",
+            "",
+            "        // ✅ Pattern 3: Number guessing game frame (simulated input)",
+            "        System.out.println(\"\\n--- Guessing Game ---\");",
+            "        int secret = 42;",
+            "        int[] guesses = {10, 60, 42}; // Simulated guesses",
+            "        int gi = 0;",
+            "        for (;;) {",
+            "            int guess = guesses[gi++];",
+            "            System.out.println(\"Guess: \" + guess);",
+            "            if (guess == secret) {",
+            "                System.out.println(\"🎉 Correct in \" + gi + \" guesses!\");",
+            "                break;",
+            "            } else if (guess < secret) {",
+            "                System.out.println(\"  Too low.\");",
+            "            } else {",
+            "                System.out.println(\"  Too high.\");",
+            "            }",
+            "        }",
+            "",
+            "        // ✅ for(;;) vs while(true) — identical bytecode, different style",
+            "        // Both are accepted Java idioms.",
+            "        // for(;;) is more common in systems/server code.",
+            "        // while(true) reads more naturally as 'run forever'.",
+            "        // Choose based on your team's style guide.",
+            "        int counter = 0;",
+            "        for (;;) {",
+            "            if (++counter >= 3) break;",
+            "            System.out.println(\"for(;;) counter: \" + counter);",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Bugs That Fool Everyone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the most common for loop mistakes in Java — off-by-one errors, semicolon after the header, infinite loops from missing updates, and subtle scoping issues that trip up beginners and occasionally experienced developers too."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ForLoopMistakes.java",
+          "lines": [
+            "// ❌ MISTAKE 1: Semicolon after for header — empty body!",
+            "// for (int i = 0; i < 5; i++);   // ← This semicolon creates an empty body!",
+            "// {",
+            "//     System.out.println(i);       // This runs ONCE after the loop — outside it",
+            "// }",
+            "// The semicolon terminates the for statement; the block {} is a separate statement.",
+            "// ✅ Fix: no semicolon after the for header",
+            "for (int i = 0; i < 5; i++) {",
+            "    System.out.println(i);  // ✅ Correct",
+            "}",
+            "",
+            "// ❌ MISTAKE 2: Off-by-one — using < vs <=",
+            "int[] arr = {10, 20, 30, 40, 50};",
+            "// for (int i = 0; i <= arr.length; i++) {  // ❌ ArrayIndexOutOfBoundsException at i=5",
+            "//     System.out.println(arr[i]);",
+            "// }",
+            "// ✅ Fix: use < arr.length (not <=)",
+            "for (int i = 0; i < arr.length; i++) {",
+            "    System.out.print(arr[i] + \" \");  // ✅",
+            "}",
+            "System.out.println();",
+            "",
+            "// ❌ MISTAKE 3: Modifying loop variable inside body (unexpected behavior)",
+            "// for (int i = 0; i < 5; i++) {",
+            "//     System.out.println(i);",
+            "//     i++;  // ❌ i incremented TWICE per iteration — prints only 0, 2, 4",
+            "// }",
+            "// ✅ Fix: update ONLY in the header unless intentional",
+            "for (int i = 0; i < 5; i++) {",
+            "    System.out.print(i + \" \");  // 0 1 2 3 4 — correct",
+            "}",
+            "System.out.println();",
+            "",
+            "// ❌ MISTAKE 4: Variable scope — accessing loop variable outside loop",
+            "for (int i = 0; i < 3; i++) { }",
+            "// System.out.println(i);  // ❌ COMPILE ERROR: i not accessible here",
+            "// ✅ Fix: declare before loop if needed outside",
+            "int j;",
+            "for (j = 0; j < 3; j++) { }",
+            "System.out.println(\"j after loop: \" + j); // ✅ j = 3",
+            "",
+            "// ❌ MISTAKE 5: Float/double loop variable — precision errors",
+            "// for (double d = 0.0; d != 1.0; d += 0.1) {  // ❌ May NEVER equal exactly 1.0!",
+            "//     System.out.println(d);  // Runs forever or terminates unpredictably",
+            "// }",
+            "// ✅ Fix: use integer counter, or use < with tolerance",
+            "for (int i = 0; i <= 10; i++) {",
+            "    double d = i * 0.1;",
+            "    System.out.printf(\"%.1f \", d);  // 0.0 0.1 0.2 ... 1.0",
+            "}",
+            "System.out.println();",
+            "",
+            "// ❌ MISTAKE 6: ConcurrentModificationException in enhanced for + List modification",
+            "java.util.List<String> list = new java.util.ArrayList<>(java.util.List.of(\"A\",\"B\",\"C\"));",
+            "// for (String s : list) {",
+            "//     if (s.equals(\"B\")) list.remove(s);  // ❌ ConcurrentModificationException!",
+            "// }",
+            "// ✅ Fix: use removeIf (Java 8+) or Iterator",
+            "list.removeIf(s -> s.equals(\"B\"));  // ✅ Safe removal",
+            "System.out.println(\"List after remove: \" + list); // [A, C]",
+            "",
+            "// ❌ MISTAKE 7: Infinite loop from wrong condition direction",
+            "// for (int i = 0; i >= 0; i++) {  // ❌ i grows forever — infinite loop",
+            "//     System.out.println(i);",
+            "// }",
+            "// ✅ Fix: ensure condition becomes false — use i-- for countdown",
+            "for (int i = 5; i > 0; i--) {",
+            "    System.out.print(i + \" \");  // 5 4 3 2 1",
+            "}",
+            "System.out.println();"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These anti-patterns represent common misuses of for loops in professional Java code. Each one either causes bugs, reduces readability, or makes code harder to maintain and test."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Skipping Curly Braces",
+              "text": "Java allows a for loop with a single statement and no braces: for(int i=0; i<5; i++) System.out.println(i); — but this is dangerous and universally rejected in professional code. Adding a second statement below it while thinking it is inside the loop creates a silent logic bug (it runs only once, after the loop ends). Always use curly braces for all for loop bodies. Every major Java style guide (Google, Oracle) mandates braces. There are no exceptions to this rule in production code."
+            },
+            {
+              "icon": "🚫",
+              "title": "Hardcoding Magic Numbers",
+              "text": "Writing for(int i=0; i<7; i++) or for(int i=0; i<students.length; i++) with the literal 7 as a magic number makes intent unclear and changes fragile. Define named constants: private static final int DAYS_IN_WEEK = 7; then use for(int i=0; i<DAYS_IN_WEEK; i++). For array bounds, always use arr.length — never hardcode the size. SonarQube and other static analysis tools flag magic numbers in loop conditions as code quality violations."
+            },
+            {
+              "icon": "🚫",
+              "title": "Using Index When Enhanced For Suffices",
+              "text": "Writing for(int i=0; i<list.size(); i++) { process(list.get(i)); } when you do not need the index is unnecessarily verbose. The enhanced for loop for(String s : list) { process(s); } is shorter, more readable, and communicates 'process every element' without the noise of index management. Reserve the traditional indexed for loop for cases that genuinely require the index. Using it everywhere 'just in case' you need the index is an anti-pattern that clutters code."
+            },
+            {
+              "icon": "🚫",
+              "title": "Calling size() / length() in Every Iteration",
+              "text": "Writing for(int i=0; i<list.size(); i++) calls list.size() on every iteration. For ArrayList this is O(1) and harmless, but for custom collections or LinkedList variants it could be O(n), making the loop O(n²). Best practice: cache the size before the loop: int size = list.size(); for(int i=0; i<size; i++). For arrays, arr.length is a field access (O(1)) so caching is optional — but for collections, always cache the size for clarity and safety."
+            },
+            {
+              "icon": "🚫",
+              "title": "Deeply Nested For Loops Without Extraction",
+              "text": "Three or more levels of nested for loops create code that is nearly impossible to read, debug, and test. It is a strong signal to refactor: extract inner loops into separate methods with descriptive names (e.g. processRow, findColumn), replace O(n²) search loops with HashMap lookups, use Java Streams for filtering and transformation, or break the problem into smaller composable functions. Deep nesting also indicates O(n³) or worse complexity — always evaluate algorithmic alternatives before accepting cubic-time nested loops."
+            },
+            {
+              "icon": "🚫",
+              "title": "Mutating Collection While Iterating With For-Each",
+              "text": "Adding or removing elements from a List, Set, or Map while iterating it with an enhanced for loop causes ConcurrentModificationException at runtime. This is a common but easily avoided mistake. Never modify the collection being iterated in a for-each. Instead: use list.removeIf(predicate) for removals (Java 8+), collect items to a separate list and process after the loop, use Iterator explicitly with iterator.remove() for safe removal during iteration, or use a traditional indexed for loop when mutation is required."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — For Loop in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples show idiomatic, production-grade Java for loop usage — patterns seen in real Spring Boot services, data processing pipelines, and enterprise Java codebases."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ReportGenerator.java — Batch Report with For Loop",
+          "lines": [
+            "package com.techsustainify.reports;",
+            "",
+            "import java.util.*;",
+            "",
+            "public class ReportGenerator {",
+            "",
+            "    record Student(String name, int[] marks) {}",
+            "",
+            "    // ✅ Generate report for all students",
+            "    public void generateClassReport(List<Student> students) {",
+            "        if (students == null || students.isEmpty()) {",
+            "            System.out.println(\"No students to report.\");",
+            "            return;",
+            "        }",
+            "",
+            "        System.out.println(\"╔══════════════════════════════════════════╗\");",
+            "        System.out.println(\"║           CLASS PERFORMANCE REPORT       ║\");",
+            "        System.out.println(\"╚══════════════════════════════════════════╝\");",
+            "",
+            "        int classTotal = 0;",
+            "        int highestAverage = 0;",
+            "        String topper = \"\";",
+            "",
+            "        // ✅ For-each — no index needed for student processing",
+            "        for (Student student : students) {",
+            "            int sum = 0;",
+            "            int highest = 0;",
+            "            int lowest = Integer.MAX_VALUE;",
+            "",
+            "            // ✅ Traditional for — need index for subject numbering",
+            "            for (int i = 0; i < student.marks().length; i++) {",
+            "                int mark = student.marks()[i];",
+            "                sum += mark;",
+            "                if (mark > highest) highest = mark;",
+            "                if (mark < lowest) lowest = mark;",
+            "                System.out.printf(\"  Subject %d: %d%n\", i + 1, mark);",
+            "            }",
+            "",
+            "            int avg = sum / student.marks().length;",
+            "            classTotal += avg;",
+            "",
+            "            if (avg > highestAverage) {",
+            "                highestAverage = avg;",
+            "                topper = student.name();",
+            "            }",
+            "",
+            "            String grade = avg >= 90 ? \"A+\" : avg >= 80 ? \"A\" : avg >= 70 ? \"B\" : avg >= 60 ? \"C\" : \"F\";",
+            "            System.out.printf(\"%-15s | Avg: %3d | High: %3d | Low: %3d | Grade: %s%n\",",
+            "                student.name(), avg, highest, lowest, grade);",
+            "        }",
+            "",
+            "        System.out.println(\"Class Average: \" + (classTotal / students.size()));",
+            "        System.out.println(\"Top Performer: \" + topper + \" (\" + highestAverage + \")\");",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        List<Student> students = List.of(",
+            "            new Student(\"Alice\",   new int[]{92, 88, 95, 91, 89}),",
+            "            new Student(\"Bob\",     new int[]{75, 82, 70, 78, 85}),",
+            "            new Student(\"Charlie\", new int[]{60, 65, 58, 72, 68})",
+            "        );",
+            "        new ReportGenerator().generateClassReport(students);",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "DataProcessor.java — CSV Validation & Transformation",
+          "lines": [
+            "package com.techsustainify.data;",
+            "",
+            "import java.util.*;",
+            "",
+            "public class DataProcessor {",
+            "",
+            "    private static final int MAX_AGE = 120;",
+            "    private static final int MIN_AGE = 0;",
+            "    private static final int MAX_SALARY = 10_000_000;",
+            "",
+            "    record Employee(String name, int age, double salary) {}",
+            "",
+            "    // ✅ Validate and transform a batch of employee records",
+            "    public List<Employee> processEmployeeData(List<String[]> rawData) {",
+            "        List<Employee> validEmployees = new ArrayList<>();",
+            "        List<String> errors = new ArrayList<>();",
+            "",
+            "        // ✅ Traditional for with index — need row number for error reporting",
+            "        for (int i = 0; i < rawData.size(); i++) {",
+            "            String[] row = rawData.get(i);",
+            "            int rowNum = i + 1; // 1-based for human-readable error messages",
+            "",
+            "            if (row.length != 3) {",
+            "                errors.add(\"Row \" + rowNum + \": Expected 3 columns, got \" + row.length);",
+            "                continue;",
+            "            }",
+            "",
+            "            String name = row[0].strip();",
+            "            if (name.isBlank()) {",
+            "                errors.add(\"Row \" + rowNum + \": Name cannot be blank\");",
+            "                continue;",
+            "            }",
+            "",
+            "            int age;",
+            "            try {",
+            "                age = Integer.parseInt(row[1].strip());",
+            "            } catch (NumberFormatException e) {",
+            "                errors.add(\"Row \" + rowNum + \": Invalid age '\" + row[1] + \"'\");",
+            "                continue;",
+            "            }",
+            "            if (age < MIN_AGE || age > MAX_AGE) {",
+            "                errors.add(\"Row \" + rowNum + \": Age \" + age + \" out of range [\" + MIN_AGE + \"-\" + MAX_AGE + \"]\");",
+            "                continue;",
+            "            }",
+            "",
+            "            double salary;",
+            "            try {",
+            "                salary = Double.parseDouble(row[2].strip());",
+            "            } catch (NumberFormatException e) {",
+            "                errors.add(\"Row \" + rowNum + \": Invalid salary '\" + row[2] + \"'\");",
+            "                continue;",
+            "            }",
+            "            if (salary < 0 || salary > MAX_SALARY) {",
+            "                errors.add(\"Row \" + rowNum + \": Salary \" + salary + \" out of range\");",
+            "                continue;",
+            "            }",
+            "",
+            "            validEmployees.add(new Employee(name, age, salary));",
+            "        }",
+            "",
+            "        // ✅ For-each for reporting — no index needed",
+            "        if (!errors.isEmpty()) {",
+            "            System.out.println(\"\\n⚠️ Validation Errors:\");",
+            "            for (String error : errors) {",
+            "                System.out.println(\"  \" + error);",
+            "            }",
+            "        }",
+            "        System.out.println(\"\\n✅ Valid records: \" + validEmployees.size() + \"/\" + rawData.size());",
+            "        return validEmployees;",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        List<String[]> data = List.of(",
+            "            new String[]{\"Alice\", \"30\", \"75000\"},",
+            "            new String[]{\"Bob\", \"200\", \"50000\"},   // Invalid age",
+            "            new String[]{\"\", \"25\", \"60000\"},       // Blank name",
+            "            new String[]{\"Charlie\", \"abc\", \"80000\"}, // Invalid age format",
+            "            new String[]{\"Diana\", \"28\", \"90000\"}",
+            "        );",
+            "        new DataProcessor().processEmployeeData(data);",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "for-loop-flowchart",
+      "title": "For Loop Flow Diagram — Visualizing Execution",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This flowchart shows the execution flow of the for loop — highlighting how initialization runs exactly once, the condition is checked before every iteration including the first, and the update runs after every body execution but before the next condition check."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "▶ Start",                      "sublabel": "Begin execution",                         "type": "start"    },
+            { "id": "2", "label": "🔧 Initialization",            "sublabel": "int i = 0 — runs ONCE only",              "type": "process"  },
+            { "id": "3", "label": "🔍 Evaluate Condition",        "sublabel": "i < n — checked BEFORE every iteration",  "type": "decision" },
+            { "id": "4", "label": "⚙️ Execute Loop Body",         "sublabel": "Runs only if condition is TRUE",          "type": "process"  },
+            { "id": "5", "label": "🛑 break encountered?",        "sublabel": "Optional early exit",                     "type": "decision" },
+            { "id": "6", "label": "⏭️ continue encountered?",     "sublabel": "Skip to update step",                     "type": "decision" },
+            { "id": "7", "label": "🔄 Update Expression",         "sublabel": "i++ — runs after every iteration",        "type": "process"  },
+            { "id": "8", "label": "✅ Exit Loop",                 "sublabel": "Continue with next statement",            "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1", "to": "2",  "label": "Start"                         },
+            { "from": "2", "to": "3",  "label": "Check condition first time"    },
+            { "from": "3", "to": "8",  "label": "FALSE — exit"                  },
+            { "from": "3", "to": "4",  "label": "TRUE — execute body"           },
+            { "from": "4", "to": "5",  "label": "Check for break"               },
+            { "from": "5", "to": "8",  "label": "YES — exit immediately"        },
+            { "from": "5", "to": "6",  "label": "NO — check continue"           },
+            { "from": "6", "to": "7",  "label": "YES — skip to update"          },
+            { "from": "6", "to": "7",  "label": "NO — finish body, then update" },
+            { "from": "7", "to": "3",  "label": "Re-check condition"            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java For Loop Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "For loop questions test your understanding of entry-controlled loops, the three-part header, variable scope, enhanced for loop limitations, and the behavior of break and continue. These appear frequently in Java interviews at all levels."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What are the three parts of a Java for loop header? Are they all mandatory?",
+              "a": "The three parts are: (1) Initialization — declares and sets the loop variable; runs exactly once before the loop starts. (2) Condition — a boolean expression checked before every iteration; if false, the loop exits. (3) Update — modifies the loop variable after every body execution; runs before the next condition check. None of the three parts are mandatory — all can be omitted. But both semicolons separating them are always required. for(;;) omits all three parts and creates an infinite loop. for(;i<n;) omits initialization and update, using an externally declared variable. The parts are flexible, but the two semicolons in the header are non-negotiable.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between a for loop and an enhanced for loop in Java?",
+              "a": "A traditional for loop gives you full control: index, range, step size, reverse iteration, modification of elements. Syntax: for(int i=0; i<arr.length; i++). An enhanced for loop (for-each, Java 5+) is a simpler syntax for iterating every element of an array or Iterable: for(String s : list). It hides the index — you only get the element value. The enhanced for loop is read-only for primitive arrays — the loop variable is a copy of each value, not a reference to the slot. It cannot iterate in reverse, skip elements, or safely remove from a collection while iterating. Use enhanced for when you need all elements in order without index access; use traditional for when you need index, reverse order, element modification, or selective iteration.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is the output of this code?\nfor (int i = 0; i < 5; i++) {\n    if (i == 3) continue;\n    System.out.print(i + \" \");\n}",
+              "a": "Output: 0 1 2 4. Trace: i=0 — 0!=3, print 0. i=1 — 1!=3, print 1. i=2 — 2!=3, print 2. i=3 — 3==3, continue fires — skips print, but header i++ STILL runs (i becomes 4). i=4 — 4!=3, print 4. i=5 — condition 5<5 false, exit. Key point: in a for loop, continue does NOT skip the update expression (i++) — it skips only the remaining body statements and jumps to the update, then the condition. This is why 3 is skipped cleanly without an infinite loop. This distinguishes for loops from while loops where update placement around continue is critical.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q4. What is the scope of the loop variable in a for loop? How is it different from a while loop?",
+              "a": "A variable declared inside the for header (for(int i=0;...)) is scoped to the for loop block — it is not accessible outside. Attempting to use it after the loop is a compile error: for(int i=0; i<3; i++){} System.out.println(i); // COMPILE ERROR. In a while loop, the control variable is always declared before the loop: int i=0; while(i<3){i++;} — it remains accessible after the loop ends. This scope difference means: (1) For loops are more encapsulated — the counter cannot accidentally be used elsewhere. (2) If you need the loop counter's final value after the loop, declare it before: int i; for(i=0; i<3; i++){} — now i is accessible outside.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q5. Can you have multiple variables in a for loop? Give an example.",
+              "a": "Yes — multiple variables of the same type can be declared in the initialization section, and multiple update expressions are allowed, separated by commas. Example: for(int i=0, j=10; i<j; i++, j--) { System.out.println(i + \" \" + j); } — declares both i=0 and j=10, updates both each iteration, continues while i<j. Output: 0 10, 1 9, 2 8, 3 7, 4 6. Limitation: all variables in the initialization must be of the same type (or declared externally). You cannot write for(int i=0, String s=\"x\"; ...) — type mismatch. This pattern is useful for two-pointer algorithms, converging index traversal, and parallel array processing.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. What is the output?\nint i = 0;\nfor (; i < 3; i++) {\n    System.out.print(i + \" \");\n}\nSystem.out.print(\"Final: \" + i);",
+              "a": "Output: 0 1 2 Final: 3. The initialization section is empty — i was declared and initialized before the loop. The for loop runs normally: i=0 (print 0), i=1 (print 1), i=2 (print 2), i=3 (3<3 is false — exit). Because i was declared OUTSIDE the for header, it is accessible after the loop, and its final value (3) is printed. This is the correct way to access the loop variable's final value after a for loop — declare it before the header. Declaring it inside (for(int i=0;...)) would make it inaccessible after the loop.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q7. Why should you avoid using float or double as a for loop counter?",
+              "a": "Floating-point numbers have precision errors in binary representation. A loop like: for(double d=0.0; d!=1.0; d+=0.1) may never terminate — because 0.1 cannot be represented exactly in IEEE 754 binary floating point. After 10 additions, d might be 1.0000000000000002 rather than exactly 1.0, so d!=1.0 is always true and the loop is infinite. Fix: use an integer counter and compute the float value inside: for(int i=0; i<=10; i++) { double d = i * 0.1; }. Or use a < comparison with a tolerance: for(double d=0.0; d<1.0+1e-9; d+=0.1). The lesson: never test floating-point values for exact equality — in loop conditions or anywhere else.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q8. What is the output of this nested for loop?\nfor (int i = 1; i <= 3; i++) {\n    for (int j = i; j <= 3; j++) {\n        System.out.print(i + \"\" + j + \" \");\n    }\n}",
+              "a": "Output: 11 12 13 22 23 33. Trace: i=1: j runs from 1 to 3 → prints 11 12 13. i=2: j runs from 2 to 3 → prints 22 23. i=3: j runs from 3 to 3 → prints 33. Key: the inner loop starts from j=i, not j=1, so it runs fewer iterations as i increases. Total iterations: 3+2+1 = 6. This is a classic upper-triangular pattern — the inner loop starts at the current outer value, not always from 1. This pattern is used in algorithms like generating pairs (i,j) where j>=i (avoiding duplicates).",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q9. What happens if you modify a collection inside an enhanced for loop?",
+              "a": "Adding or removing elements from a List, Set, or Map while iterating it with an enhanced for loop causes java.util.ConcurrentModificationException at runtime. The enhanced for loop uses an Iterator internally, and the Iterator checks a modification count (modCount) at each step — if the count changed (because you added/removed an element), it throws the exception immediately. Solutions: (1) list.removeIf(predicate) — Java 8+, safe and concise. (2) Use an explicit Iterator: Iterator<String> it = list.iterator(); while(it.hasNext()){ if(condition) it.remove(); } — remove() on the iterator is safe. (3) Collect items to remove in a separate list, then call list.removeAll(toRemove) after the loop. (4) Use a traditional indexed for loop when modification requires the index.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q10. How many total iterations does this nested loop execute?\nfor (int i = 1; i <= 4; i++) {\n    for (int j = 1; j <= i; j++) {\n    }\n}",
+              "a": "Total iterations: 10. The inner loop runs i times for each value of i. When i=1: inner runs 1 time. When i=2: inner runs 2 times. When i=3: inner runs 3 times. When i=4: inner runs 4 times. Total: 1+2+3+4 = 10 iterations. This is the sum of the arithmetic series 1+2+...+n = n(n+1)/2 = 4×5/2 = 10. This pattern is O(n²/2) = O(n²). It appears in triangle pattern printing, generating unique pairs, and selection sort. Recognizing that the inner loop is not always n iterations — but 1, 2, 3, ..., n — is key to correctly analysing the time complexity of such loops.",
+              "tag": "Advanced"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your For Loop Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Challenge yourself with these practice questions. Attempt each independently before reading the answer — writing and tracing code by hand significantly improves retention and interview readiness."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output?\nfor (int i = 1; i <= 5; i++) {\n    if (i % 2 == 0) continue;\n    System.out.print(i + \" \");\n}",
+              "a": "Output: 1 3 5. Even values (2 and 4) are skipped by continue. Trace: i=1 — 1%2!=0, print 1. i=2 — 2%2==0, continue (skip print, i++ still runs). i=3 — 3%2!=0, print 3. i=4 — continue. i=5 — print 5. i=6 — 6<=5 false, exit. In a for loop, continue always runs the update (i++) before jumping back to the condition — so no infinite loop occurs when skipping even numbers.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What is printed after this code runs?\nint sum = 0;\nfor (int i = 1; i <= 10; i++) {\n    if (i % 3 == 0) continue;\n    sum += i;\n}\nSystem.out.println(sum);",
+              "a": "Output: 37. We skip all multiples of 3 (3, 6, 9) and sum the rest: 1+2+4+5+7+8+10 = 37. Verify: sum of 1..10 = 55. Subtract multiples of 3: 3+6+9 = 18. 55-18 = 37. Continue skips adding those numbers to sum but the loop variable i still increments normally through the for header.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Write a for loop program to check whether a given number is a perfect number (sum of its proper divisors equals the number itself). Example: 28 = 1+2+4+7+14.",
+              "a": "public class PerfectNumber {\n    public static void main(String[] args) {\n        int num = 28;\n        int divisorSum = 0;\n        for (int i = 1; i <= num / 2; i++) {  // Proper divisors up to num/2\n            if (num % i == 0) {\n                divisorSum += i;\n            }\n        }\n        if (divisorSum == num) {\n            System.out.println(num + \" is a perfect number.\"); // Yes\n        } else {\n            System.out.println(num + \" is not a perfect number.\");\n        }\n    }\n}\n// Perfect numbers up to 1000: 6, 28, 496\n// Key: iterate only up to num/2 — divisors larger than num/2 (other than num itself) don't exist",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. Trace the output of this code:\nint result = 0;\nfor (int i = 1; i <= 5; i++) {\n    result += i * i;\n    if (result > 20) break;\n}\nSystem.out.println(result);",
+              "a": "Output: 30. Trace: i=1 — result=0+1=1. 1>20? No. i=2 — result=1+4=5. 5>20? No. i=3 — result=5+9=14. 14>20? No. i=4 — result=14+16=30. 30>20? YES — break. Loop exits. System.out.println(30). The break fires AFTER adding i*i to result (30), not before. So result is 30 at the time of exit, not 14.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Using nested for loops, print the following pattern:\n1 2 3 4 5\n1 2 3 4\n1 2 3\n1 2\n1",
+              "a": "for (int i = 5; i >= 1; i--) {\n    for (int j = 1; j <= i; j++) {\n        System.out.print(j + \" \");\n    }\n    System.out.println();\n}\n// Outer loop i goes from 5 down to 1 (controls how many numbers per row)\n// Inner loop j goes from 1 to i (prints numbers 1 through i)\n// Row 1: i=5 → j: 1 2 3 4 5\n// Row 2: i=4 → j: 1 2 3 4\n// ... etc.\n// Key: outer loop decrements (i--), inner loop always starts from 1",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. What is the output? Why?\nint x = 0;\nfor (int i = 0; i < 5; i++) {\n    for (int j = 0; j < 5; j++) {\n        if (i == j) break;\n        x++;\n    }\n}\nSystem.out.println(x);",
+              "a": "Output: 10. The inner loop breaks when i==j. Trace by outer i value: i=0 — j=0: 0==0, break immediately. x unchanged (0 iterations). i=1 — j=0: 0!=1, x++. j=1: 1==1, break. (1 iteration, x=1). i=2 — j=0,1 x++ twice, break at j=2. (2 iterations, x=3). i=3 — j=0,1,2 x++ three times, break at j=3. (3 iterations, x=6). i=4 — j=0,1,2,3 x++ four times, break at j=4. (4 iterations, x=10). Total: 0+1+2+3+4 = 10. The break exits only the INNER loop — the outer loop continues normally.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. Write a program using a for loop to find all Armstrong numbers between 1 and 1000. (An Armstrong number equals the sum of its digits each raised to the power of the number of digits — e.g., 153 = 1³+5³+3³.)",
+              "a": "for (int num = 1; num <= 1000; num++) {\n    String s = String.valueOf(num);\n    int digits = s.length();\n    int sum = 0;\n    for (int i = 0; i < digits; i++) {\n        int digit = s.charAt(i) - '0';\n        int power = 1;\n        for (int p = 0; p < digits; p++) power *= digit; // digit^digits\n        sum += power;\n    }\n    if (sum == num) System.out.print(num + \" \");\n}\nSystem.out.println();\n// Output: 1 2 3 4 5 6 7 8 9 153 370 371 407\n// Alternative: use Math.pow(digit, digits) — simpler but uses double",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. What is the difference in variable accessibility after these two loops?\n// Loop A\nfor (int i = 0; i < 3; i++) { }\n\n// Loop B\nint j = 0;\nfor (; j < 3; j++) { }",
+              "a": "Loop A: i is declared inside the for header — it is scoped to the loop block only. After the loop, i is NOT accessible. Writing System.out.println(i) after Loop A is a compile-time error: 'cannot find symbol i'. Loop B: j is declared OUTSIDE the for header — it has the scope of the enclosing block (method, if-block, etc.). After the loop, j IS accessible and holds its final value (3). System.out.println(j) after Loop B correctly prints 3. Rule: if you need the loop counter after the loop ends, declare it before the loop. If the counter is only needed inside the loop, declare it in the header for better encapsulation.",
+              "difficulty": "Easy"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — For Loop: The Workhorse of Java Iteration",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>for</code> loop is Java's most versatile and widely used loop. Its three-part header — <strong>initialization, condition, update</strong> — keeps all iteration control in one compact, readable line. It is the natural choice whenever you know how many times to iterate, need an index, or are traversing an array or collection by position."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Mastering the for loop means understanding not just its syntax — <strong>the two mandatory semicolons, the scoping of the loop variable, the always-safe continue behavior</strong> — but also its variants: the <em>enhanced for loop</em> for clean collection iteration, <em>multiple variable headers</em> for two-pointer patterns, <em>labeled break/continue</em> for nested loop control, and <em>for(;;)</em> for intentional infinite loops. <strong>Choosing the right loop type — for, while, or do-while — and using the right variant — traditional or enhanced — is the mark of an experienced Java developer.</strong>"
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept", "Key Point", "When to Use"],
+          "rows": [
+            ["for loop syntax",            "for(init; condition; update){} — two semicolons, no trailing semicolon",  "Always — standard for loop"],
+            ["Entry-controlled",           "Condition checked BEFORE body — may execute 0 times",                     "When body should be skipped if condition false"],
+            ["vs while loop",              "for: known count, compact; while: unknown count, flexible",               "for: index/range; while: event-driven/unknown count"],
+            ["Enhanced for (for-each)",    "for(Type e : array/collection) — no index, read-only for primitives",     "All elements in order, no index needed"],
+            ["Multiple variables",         "for(int i=0, j=n-1; i<j; i++, j--)",                                     "Two-pointer, parallel index, converging iteration"],
+            ["break in for loop",          "Exits loop immediately — skips condition and update",                     "Early exit on target found or error condition"],
+            ["continue in for loop",       "Skips body, runs update (i++), then checks condition",                    "Skip specific values — update always safe in for"],
+            ["Labeled break/continue",     "break outerLabel; exits named outer loop",                                "Nested loop control — rarely needed; prefer method extraction"],
+            ["for(;;) infinite loop",      "All three parts omitted — runs forever until break/return",               "Event loops, server loops, retry patterns"],
+            ["Nested for loops",           "Inner runs fully per outer iteration — O(n²) minimum",                    "Patterns, 2D arrays, sorting — watch complexity"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java While Loop</strong> — the other entry-controlled loop, best for unknown iteration counts, event-driven conditions, and scenarios where the for loop's structure would feel forced or unnatural. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java For Loop",
+    "items": [
+      {
+        "q": "What is a for loop in Java?",
+        "a": "A for loop in Java is an entry-controlled loop that checks a boolean condition BEFORE executing the loop body. Its header contains three parts: initialization (runs once before the loop), condition (checked before every iteration), and update (runs after every iteration). If the condition is false initially, the body never executes (0 or more executions). The for loop is the most widely used Java loop because it is self-contained and ideal when the number of iterations is known in advance — for example, traversing an array, printing a multiplication table, or iterating over a range."
+      },
+      {
+        "q": "What is the difference between for loop and while loop in Java?",
+        "a": "Both are entry-controlled — they check the condition before executing the body. The structural difference: a for loop keeps initialization, condition, and update in one compact header — best for known iteration counts. A while loop separates them — initialization before, update inside — best for unknown counts or event-driven conditions. Functionally: for(int i=0; i<n; i++){body} is exactly equivalent to: int i=0; while(i<n){body; i++;}. The choice communicates intent — for says 'iterate this many times'; while says 'keep going until this condition changes'."
+      },
+      {
+        "q": "What is enhanced for loop (for-each) in Java?",
+        "a": "The enhanced for loop (Java 5+) provides concise iteration over arrays and Iterable collections without index management. Syntax: for(Type element : arrayOrCollection) { // use element }. It automatically handles index, bounds, and element retrieval. It is read-only for primitive arrays — the loop variable is a copy of each value, not the actual array slot. Use enhanced for when you need every element in order without index access. Use traditional for when you need the index, reverse iteration, element modification, or need to remove from a collection during iteration."
+      },
+      {
+        "q": "Can a for loop have multiple variables?",
+        "a": "Yes — multiple variables of the same type can be declared in the initialization section, and multiple update expressions are allowed, all separated by commas. Example: for(int i=0, j=10; i<j; i++, j--) — declares i=0 and j=10, and updates both each iteration. The condition still uses a single boolean expression but can reference both variables: i<j. This is useful for two-pointer algorithms and converging index traversal. Limitation: all initialization variables must be of the same type; you cannot mix types in the initialization section."
+      },
+      {
+        "q": "What is an infinite for loop in Java?",
+        "a": "An infinite for loop is written as for(;;) — all three header parts omitted. With no condition, Java treats it as always true, and the loop runs indefinitely until a break, return, or thrown exception exits it. It is equivalent to while(true) and is used for server event loops, game main loops, interactive shells, and retry patterns. Always ensure a reachable exit path (break/return) inside the body — otherwise your program hangs. The for(;;) idiom is common in systems code; while(true) is often preferred for readability in application code."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Do-While-Loop",  "path": "/java/java-do-while-loop" },
+    "next": { "label": "Java Break&Continue →", "path": "/java/java-break-continue" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Loop type",              "dd": "Entry-controlled (condition checked BEFORE body)" },
+      { "dt": "Minimum executions",     "dd": "0 — body may never run if condition is false" },
+      { "dt": "Header parts",           "dd": "Initialization; Condition; Update — two semicolons" },
+      { "dt": "vs while loop",          "dd": "for: compact, known count; while: flexible, unknown count" },
+      { "dt": "Enhanced for (for-each)","dd": "for(Type e : array) — clean, index-free iteration" },
+      { "dt": "Best use case",          "dd": "Arrays, fixed ranges, pattern printing, algorithms" },
+      { "dt": "Exit loop early",        "dd": "break statement" },
+      { "dt": "Skip iteration",         "dd": "continue — update (i++) in header always runs safely" },
+      { "dt": "Infinite for loop",      "dd": "for(;;) — all parts omitted, needs break/return" }
+    ],
+    "relatedArticles": [
+      { "label": "Java While Loop",              "path": "/java/java-while-loop" },
+      { "label": "Java Do While Loop",           "path": "/java/java-do-while-loop" },
+      { "label": "Java Arrays",                  "path": "/java/java-arrays" },
+      { "label": "Java If-Else",                 "path": "/java/java-if-else" },
+      { "label": "Java Switch Statement",        "path": "/java/java-switch" },
+      { "label": "Java Break & Continue",        "path": "/java/java-break-continue" },
+      { "label": "Java Operators",               "path": "/java/java-operators" },
+      { "label": "Java Variables & Data Types",  "path": "/java/java-variables" }
+    ],
+    "tags": [
+      "Java For Loop", "Java Entry Controlled Loop", "Java Loop Control", "Java Break Continue",
+      "Java Enhanced For Loop", "Java For Each Loop", "Java Nested For Loop", "Java For Loop Examples",
+      "Java Loop Patterns", "Java Loop Best Practices", "Java For Loop Interview Questions",
+      "for loop vs while", "Java Array Traversal", "Java For Loop Array",
+      "Java Core", "Java Beginner", "Java 21", "Java Tutorial 2026"
+    ]
+  }
+}

@@ -9,6 +9,7 @@ export const javaTopicsData = [
       { label: "Java Installation",    path: "/java/java-installation" },
       { label: "Java JDK,JVM,JRE",     path: "/java/java-jdk-jvm-jre" },
       { label: "Java Keywords",        path: "/java/java-keywords" },
+      { label: "Java Variables",       path: "/java/java-variables" },
       { label: "Java Identifier",      path: "/java/java-identifier" },
       { label: "Java Syntax",          path: "/java/java-syntax" },
       { label: "Java Comments",        path: "/java/java-comments" },
@@ -64,9 +65,9 @@ export const javaTopicsData = [
       { label: "Java Super()/This() Method",   path: "/java/java-super-this-method" },
       { label: "Java Abstraction",             path: "/java/java-abstraction" },
       { label: "Java Encapsulation",           path: "/java/java-encapsulation" },
-      { label: "Java Packages/API",            path: "/java/java-packages-api" },
       { label: "Java Inheritance",             path: "/java/java-inheritance" },
       { label: "Java Polymorphism",            path: "/java/java-polymorphism" },
+      { label: "Java Packages/API",            path: "/java/java-packages-api" },
       { label: "Java Inner Class",             path: "/java/java-inner-class" },
       { label: "Java Interface",               path: "/java/java-interface" },
       { label: "Java Enums",                   path: "/java/java-enums" },
@@ -77,8 +78,8 @@ export const javaTopicsData = [
   {
     heading: "Java Threads",
     topics: [
-      { label: "Java Single Thread", path: "/java/java-single-thread" },
-      { label: "Java Multi Thread",  path: "/java/java-multi-thread" },
+      { label: "Java Single-Thread", path: "/java/java-single-thread" },
+      { label: "Java Multi-Threading",  path: "/java/java-multi-thread" },
     ],
   },
   {
@@ -110,15 +111,15 @@ export const javaTopicsData = [
     heading: "Java Programming",
     topics: [
       { label: "Java Number System", path: "/java/java-number-system" },
-      { label: "Java Patterns",      path: "/java/java-patterns" },
+      // { label: "Java Patterns",      path: "/java/java-patterns" },
     ],
   },
-  {
-    heading: "Java MCQ",
-    topics: [
-      { label: "Java MCQ", path: "/java/java-mcq" },
-    ],
-  },
+  // {
+  //   heading: "Java MCQ",
+  //   topics: [
+  //     { label: "Java MCQ", path: "/java/java-mcq" },
+  //   ],
+  // },
   {
     heading: "Java Interview Question",
     topics: [

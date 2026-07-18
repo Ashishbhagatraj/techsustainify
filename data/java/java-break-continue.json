@@ -1,0 +1,1864 @@
+{
+  "meta": {
+    "title": "Java Break and Continue — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Break and Continue statements with syntax, flow diagrams, labeled break, labeled continue, break in switch, nested loop control, best practices, common mistakes, and real-world examples. Covers all break and continue patterns in Java. Updated March 2026.",
+    "keywords": "java break statement, java continue statement, java break continue, java labeled break, java labeled continue, java break in switch, java break in loop, java continue in loop, java nested loop break, java break continue interview questions, java break continue best practices, java loop control statements, java break continue examples, java break continue programs",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-break-continue",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Break and Continue — Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java Break and Continue — syntax, flow diagrams, labeled break, labeled continue, break in switch, nested loop control, real-world examples, pitfalls, and interview questions.",
+      "url": "https://www.techsustainify.com/java/java-break-continue",
+      "image": "https://www.techsustainify.com/images/java-break-continue-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Break and Continue Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-03-01T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Break Statement",
+          "Java Continue Statement",
+          "Java Loop Control",
+          "Java Labeled Break",
+          "Java Labeled Continue",
+          "Java Break in Switch",
+          "Java Nested Loop Control",
+          "Java Break Continue Examples",
+          "Java Loop Patterns",
+          "Java 21"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Break and Continue — Syntax, Examples & Best Practices 2026",
+      "description": "Complete guide to Java Break and Continue — syntax, flow, labeled break/continue, break in switch, nested loop control, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-break-continue-og.png",
+      "imageAlt": "Java Break and Continue Guide 2026 - Tech Sustainify",
+      "readingTime": "20 minutes",
+      "level": "Beginner to Intermediate",
+      "label1": "Reading Time",
+      "data1": "20 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner to Intermediate"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Break and Continue — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering all Java Break and Continue concepts — syntax, flow diagrams, labeled break, labeled continue, break in switch, nested loop control, real-world examples, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-03-01",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner to Intermediate",
+        "wordCount": 5800,
+        "timeRequired": "PT20M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Break Statement" },
+          { "@type": "Thing", "name": "Java Continue Statement" },
+          { "@type": "Thing", "name": "Java Labeled Break" },
+          { "@type": "Thing", "name": "Java Loop Control" }
+        ],
+        "keywords": "java break statement, java continue statement, java break continue, java labeled break, java labeled continue, java break in switch, java nested loop break, java loop control statements"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Break and Continue" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is break statement in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The break statement in Java is a loop control statement that immediately exits the innermost enclosing loop (for, while, do-while) or switch statement. When break is encountered, execution jumps to the first statement after the closing brace of the loop or switch. Break does not execute the rest of the loop body, the update expression, or the condition check — it simply stops the loop dead. It is used for: early exit when a target is found (linear search), stopping on first error, exiting infinite loops, and limiting retry attempts. Labeled break (break label;) can exit an outer loop from inside a nested inner loop."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is continue statement in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The continue statement in Java skips the remaining statements in the current iteration of a loop and jumps to the next iteration. In a for loop, continue jumps to the update expression (i++), then to the condition check. In a while or do-while loop, continue jumps directly to the condition check — so you must update the loop variable BEFORE the continue statement to avoid an infinite loop. Continue does not exit the loop — it only skips the current iteration. Use continue for: skipping invalid or null values, filtering elements, guard-clause style code, and skipping specific values in a loop (even/odd, multiples, etc.)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between break and continue in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "break and continue are both loop control statements, but they do very different things. break EXITS the loop entirely — the loop terminates immediately and execution continues after the loop. continue SKIPS the current iteration — the loop does not terminate; it moves to the next iteration (via update + condition check in for, or directly to condition in while/do-while). Analogy: In a race, break is like stopping the race completely; continue is like skipping one lap and continuing with the next. break also works inside switch statements; continue does not apply to switch. Both can be used with labels (labeled break, labeled continue) to control outer loops from inner loops."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is labeled break in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A labeled break in Java exits a specifically named (labeled) outer loop from inside a nested inner loop. A label is an identifier followed by a colon placed immediately before a loop statement: outerLoop: for(...) { for(...) { break outerLoop; } }. When break outerLoop executes, both the inner loop and the outer loop exit immediately — execution resumes after the outer loop. Without a label, break only exits the innermost enclosing loop. Labeled break is used when a condition found inside an inner loop needs to terminate the entire multi-level loop structure — for example, finding a value in a 2D matrix, or stopping all iterations on first error across nested loops."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does break work inside a switch statement in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — break is mandatory in traditional switch statements in Java (pre-Java 14). In a switch statement, case blocks fall through to the next case unless a break statement terminates them. Without break, once a matching case is found, all subsequent case blocks execute regardless of their value — this is called fall-through. Every case in a traditional switch should end with break (unless intentional fall-through is desired). Java 14+ introduced switch expressions with arrow syntax (case VALUE -> ) which do not fall through and do not require break. The break inside a switch only exits the switch — it does not affect any enclosing loop unless labeled break is used."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner to Intermediate",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-03-01",
+      "dateModified": "2026-03-20",
+      "readingTime": "20 minutes",
+      "wordCount": 5800,
+      "difficulty": "Beginner to Intermediate",
+      "chapter": 9,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-break-continue",       "title": "What are Break and Continue in Java?" },
+        { "id": "break-syntax-flow",             "title": "Break Statement — Syntax & Flow" },
+        { "id": "continue-syntax-flow",          "title": "Continue Statement — Syntax & Flow" },
+        { "id": "break-vs-continue",             "title": "Break vs Continue — Key Differences" },
+        { "id": "break-in-loops",                "title": "Break in For, While & Do-While Loops" },
+        { "id": "continue-in-loops",             "title": "Continue in For, While & Do-While Loops" },
+        { "id": "break-in-switch",               "title": "Break in Switch Statement" },
+        { "id": "labeled-break",                 "title": "Labeled Break — Exiting Outer Loops" },
+        { "id": "labeled-continue",              "title": "Labeled Continue — Skipping Outer Iterations" },
+        { "id": "break-continue-nested",         "title": "Break & Continue in Nested Loops" },
+        { "id": "infinite-loop-break",           "title": "Break to Exit Infinite Loops" },
+        { "id": "common-mistakes",               "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",                 "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",           "title": "Real-World Production Code Examples" },
+        { "id": "break-continue-flowchart",      "title": "Break & Continue Flow Diagrams" },
+        { "id": "interview-questions",           "title": "Interview Questions" },
+        { "id": "practice-questions",            "title": "Practice Questions" },
+        { "id": "conclusion-heading",            "title": "Conclusion" },
+        { "id": "faq-heading",                   "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-break-continue" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-break-continue" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-break-continue" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-do-while-loop",
+      "next": "https://www.techsustainify.com/java/java-arrays"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-core",
+      "contentTopic": "java-break-continue",
+      "chapterNumber": 9,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner-intermediate",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Break and Continue" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Break and Continue — Syntax, Flow, Examples & Best Practices",
+    "subtitle": "Everything you need to know about Java Break and Continue statements — syntax, flow diagrams, labeled break, labeled continue, break in switch, nested loop control, anti-patterns, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "20 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner to Intermediate" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "9 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-break-continue",
+      "title": "What are Break and Continue in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Break</strong> and <strong>Continue</strong> are Java's two <strong>loop control statements</strong> — they alter the normal sequential flow of a loop without changing the loop's condition. They give you fine-grained control over exactly when to stop a loop or skip an iteration, making loop logic cleaner and more expressive. Both work inside <code>for</code>, <code>while</code>, and <code>do-while</code> loops. <code>break</code> additionally works inside <code>switch</code> statements."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>break</code> <strong>exits the loop entirely</strong> — the moment break executes, the loop terminates immediately and execution continues with the first statement after the loop. <code>continue</code> <strong>skips the current iteration</strong> — it does not exit the loop; it moves to the next iteration. In a <code>for</code> loop, continue jumps to the update expression, then the condition. In a <code>while</code> or <code>do-while</code> loop, continue jumps directly to the condition check."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java also supports <strong>labeled break</strong> and <strong>labeled continue</strong> — variants that work across <em>nested loops</em>. A label identifies a specific outer loop, and <code>break label</code> or <code>continue label</code> targets that outer loop directly from inside an inner loop — without needing boolean flags or restructuring the code. Labels are placed immediately before the loop they name."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java Break & Continue at a Glance",
+          "text": "break: exits the innermost enclosing loop or switch immediately — execution resumes after the loop. continue: skips the rest of the current iteration — loop continues with next iteration. break in for loop: skips update AND condition — exits immediately. continue in for loop: skips body remainder, runs update (i++), then checks condition — update is always safe. continue in while/do-while: skips body remainder, jumps to condition — update must be BEFORE continue to avoid infinite loop. Labeled break (break label;): exits a named outer loop from inside a nested inner loop. Labeled continue (continue label;): skips to the next iteration of a named outer loop. break in switch: prevents fall-through to next case — mandatory in traditional switch."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "break-syntax-flow",
+      "title": "Break Statement — Syntax & Execution Flow",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>break</code> statement is a single keyword with no arguments (in its basic form). It can appear anywhere inside a loop body or switch block. When the Java runtime encounters <code>break</code>, it immediately transfers control to the statement after the closing brace of the enclosing loop or switch — skipping all remaining statements in the body, the update expression (in for loops), and the condition check."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📋",
+              "title": "Break Syntax — Basic & Labeled",
+              "text": "Basic break (exits innermost loop/switch):\nbreak;\n\nLabeled break (exits a named outer loop):\nouterLabel:\nfor (...) {\n    for (...) {\n        break outerLabel;  // exits BOTH loops\n    }\n}\n\nThe label is an identifier followed by a colon, placed on the line immediately before the loop it names. Label names follow Java identifier rules. Common label names: outer, outerLoop, mainLoop, searchLoop. Labels are case-sensitive. A label must always be immediately before a loop or block statement — you cannot label an arbitrary statement and break to it (unlike goto in C/C++)."
+            },
+            {
+              "icon": "🔄",
+              "title": "Break Execution Flow — Step by Step",
+              "text": "In a for loop: (1) break fires inside body. (2) Remaining body statements skipped. (3) Update expression (i++) NOT executed. (4) Condition NOT checked. (5) Loop exits — execution continues after the loop's closing brace. In a while/do-while loop: (1) break fires inside body. (2) Remaining body statements skipped. (3) Condition NOT checked. (4) Loop exits immediately. Key: break is unconditional once reached — it always exits. Typically placed inside an if statement to make it conditional: if (found) break;"
+            },
+            {
+              "icon": "⚖️",
+              "title": "Where Break Can and Cannot Be Used",
+              "text": "break CAN be used in: for loops, while loops, do-while loops, switch statements, and labeled blocks (using labeled break). break CANNOT be used in: if-else blocks without a surrounding loop or switch (compile error: 'break outside switch or loop'), try-catch-finally blocks directly (unless wrapping a loop), methods not containing a loop or switch. A common beginner mistake: placing break inside an if-else that is not itself inside a loop — this is a compile-time error in Java."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "BreakSyntax.java",
+          "lines": [
+            "public class BreakSyntax {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Basic break in for loop — exit when target found",
+            "        int[] numbers = {3, 7, 2, 9, 4, 6, 1};",
+            "        int target = 9;",
+            "        int foundAt = -1;",
+            "        for (int i = 0; i < numbers.length; i++) {",
+            "            if (numbers[i] == target) {",
+            "                foundAt = i;",
+            "                break;  // Exit immediately — skip remaining elements",
+            "            }",
+            "            System.out.println(\"Checking index \" + i + \": \" + numbers[i]);",
+            "        }",
+            "        // Prints: Checking index 0: 3, index 1: 7, index 2: 2",
+            "        // Then finds 9 at index 3 and breaks — index 4,5,6 never checked",
+            "        System.out.println(\"Found \" + target + \" at index: \" + foundAt); // 3",
+            "",
+            "        // ✅ break in while loop",
+            "        System.out.println(\"\\n--- break in while ---\");",
+            "        int n = 1;",
+            "        while (true) {          // Intentional infinite loop",
+            "            System.out.print(n + \" \");",
+            "            if (n == 5) break;  // Exit when n reaches 5",
+            "            n++;",
+            "        }",
+            "        System.out.println(\"\\nAfter while: n = \" + n); // 5",
+            "",
+            "        // ✅ break in do-while loop",
+            "        System.out.println(\"\\n--- break in do-while ---\");",
+            "        int i = 1;",
+            "        do {",
+            "            if (i == 4) {",
+            "                System.out.println(\"Breaking at i=\" + i);",
+            "                break;  // Exits before condition is checked",
+            "            }",
+            "            System.out.print(i + \" \");",
+            "            i++;",
+            "        } while (i <= 10);",
+            "        // Output: 1 2 3 Breaking at i=4",
+            "        System.out.println(\"After do-while: i = \" + i); // 4",
+            "",
+            "        // ✅ break skips update in for loop — important!",
+            "        System.out.println(\"\\n--- break skips update ---\");",
+            "        int j = 0;",
+            "        for (j = 0; j < 10; j++) {",
+            "            if (j == 3) break;  // j++ does NOT run for j=3",
+            "        }",
+            "        System.out.println(\"j after break: \" + j); // 3, NOT 4",
+            "        // If continue had been used instead, j would be 4 (update runs)",
+            "",
+            "        // ✅ Labeled break — exit outer loop from inner",
+            "        System.out.println(\"\\n--- labeled break ---\");",
+            "        int[][] grid = {{1,2,3},{4,5,6},{7,8,9}};",
+            "        int search = 5;",
+            "        int foundRow = -1, foundCol = -1;",
+            "        searchLoop:                          // Label on outer loop",
+            "        for (int r = 0; r < grid.length; r++) {",
+            "            for (int c = 0; c < grid[r].length; c++) {",
+            "                if (grid[r][c] == search) {",
+            "                    foundRow = r;",
+            "                    foundCol = c;",
+            "                    break searchLoop;        // Exits BOTH loops",
+            "                }",
+            "            }",
+            "        }",
+            "        System.out.println(search + \" found at [\" + foundRow + \"][\" + foundCol + \"]\"); // [1][1]",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "continue-syntax-flow",
+      "title": "Continue Statement — Syntax & Execution Flow",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>continue</code> statement skips the remaining statements in the <strong>current iteration</strong> of a loop and jumps to the next iteration. The loop itself does <em>not</em> terminate — only the current pass through the body is cut short. The exact jump target depends on the loop type: in a <code>for</code> loop, continue jumps to the <strong>update expression</strong>; in a <code>while</code> or <code>do-while</code>, it jumps directly to the <strong>condition check</strong>."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📋",
+              "title": "Continue Syntax — Basic & Labeled",
+              "text": "Basic continue (skips current iteration of innermost loop):\ncontinue;\n\nLabeled continue (skips to next iteration of a named outer loop):\nouterLoop:\nfor (...) {\n    for (...) {\n        continue outerLoop;  // skips inner loop remainder AND outer body remainder\n    }\n    // statements here are SKIPPED for this outer iteration\n}\n\nSame label syntax rules as labeled break — identifier + colon placed immediately before the loop. Labeled continue is useful when an inner-loop condition means the entire outer iteration should be skipped — for example, skipping a row in a matrix if any cell is invalid."
+            },
+            {
+              "icon": "🔄",
+              "title": "Continue Execution Flow — By Loop Type",
+              "text": "In a FOR loop: (1) continue fires. (2) Remaining body statements skipped. (3) Update expression (i++) ALWAYS runs — this is the key safety feature of for loops. (4) Condition checked. (5) If true, next iteration begins. In a WHILE loop: (1) continue fires. (2) Remaining body statements skipped — INCLUDING any update after continue! (3) Condition checked immediately. (4) Bug risk: if i++ is after the continue, it is skipped and i never changes — infinite loop! Fix: put i++ BEFORE the continue. In a DO-WHILE loop: same as while — continue jumps to the condition at the bottom, skipping any update that comes after continue in the body."
+            },
+            {
+              "icon": "⚠️",
+              "title": "The Critical Continue Difference: For vs While",
+              "text": "This is the most important distinction about continue. In a for loop, continue always executes i++ because the update is in the header — not the body. You cannot accidentally skip it. In a while loop, the update is inside the body. If you write: while(i<10){ if(i==5) continue; i++; } — when i==5, continue fires, i++ is skipped, i stays 5 forever — INFINITE LOOP. Fix: while(i<10){ i++; if(i==5) continue; ... } — always put the update BEFORE any continue in while/do-while loops. This is why many developers prefer for loops for counter-based iteration — continue is inherently safer."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ContinueSyntax.java",
+          "lines": [
+            "public class ContinueSyntax {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ continue in for loop — skip even numbers",
+            "        System.out.print(\"Odd numbers 1-10: \");",
+            "        for (int i = 1; i <= 10; i++) {",
+            "            if (i % 2 == 0) continue;  // Skip even — i++ in header STILL runs",
+            "            System.out.print(i + \" \");  // 1 3 5 7 9",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // ✅ continue in while loop — SAFE version (update before continue)",
+            "        System.out.print(\"\\nWhile continue (safe): \");",
+            "        int i = 0;",
+            "        while (i < 10) {",
+            "            i++;               // ✅ Update FIRST — before any continue",
+            "            if (i % 2 == 0) continue;  // Skip even",
+            "            System.out.print(i + \" \"); // 1 3 5 7 9",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // ❌ continue in while loop — INFINITE LOOP (update after continue)",
+            "        // int j = 0;",
+            "        // while (j < 10) {",
+            "        //     if (j == 5) continue;  // ❌ j never incremented when j==5",
+            "        //     j++;                    // Skipped when continue fires!",
+            "        // }",
+            "        // This loops forever at j=5 — never reaches j++",
+            "",
+            "        // ✅ continue in do-while loop — update before continue",
+            "        System.out.print(\"\\nDo-while continue: \");",
+            "        int k = 0;",
+            "        do {",
+            "            k++;              // ✅ Update before continue",
+            "            if (k % 3 == 0) continue;  // Skip multiples of 3",
+            "            System.out.print(k + \" \"); // 1 2 4 5 7 8 10",
+            "        } while (k < 10);",
+            "        System.out.println();",
+            "",
+            "        // ✅ continue to skip null/invalid values",
+            "        System.out.println(\"\\nValid entries only:\");",
+            "        String[] data = {\"Alice\", null, \"Bob\", \"\", \"Charlie\", \"  \", \"Diana\"};",
+            "        for (String entry : data) {",
+            "            if (entry == null || entry.isBlank()) continue; // Guard clause",
+            "            System.out.println(\"  Processing: \" + entry.strip());",
+            "        }",
+            "        // Output: Alice, Bob, Charlie, Diana (null/blank skipped)",
+            "",
+            "        // ✅ Labeled continue — skip to next outer iteration",
+            "        System.out.println(\"\\nLabeled continue — rows with all positive:\");",
+            "        int[][] matrix = {{1, 2, 3}, {4, -1, 6}, {7, 8, 9}};",
+            "        outerLoop:",
+            "        for (int r = 0; r < matrix.length; r++) {",
+            "            for (int c = 0; c < matrix[r].length; c++) {",
+            "                if (matrix[r][c] < 0) {",
+            "                    System.out.println(\"  Row \" + r + \" has negative — skipping\");",
+            "                    continue outerLoop;  // Skip rest of outer iteration",
+            "                }",
+            "            }",
+            "            // Only reached if no negative in this row",
+            "            System.out.println(\"  Row \" + r + \": all positive ✅\");",
+            "        }",
+            "        // Row 0: all positive ✅",
+            "        // Row 1 has negative — skipping",
+            "        // Row 2: all positive ✅",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "break-vs-continue",
+      "title": "Break vs Continue — Key Differences",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The choice between <code>break</code> and <code>continue</code> comes down to one question: <strong>do you want to stop the loop entirely, or just skip this one iteration?</strong> The table below covers every important dimension of the comparison."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "break", "continue"],
+          "rows": [
+            ["Action",                  "Exits the loop entirely",                              "Skips current iteration only"],
+            ["Loop continues?",         "NO — loop terminates immediately",                     "YES — moves to next iteration"],
+            ["Works in switch?",        "YES — prevents fall-through",                          "NO — cannot use continue in switch"],
+            ["For loop update (i++)",   "Skipped — does NOT run",                               "Runs — update always executes in for loop"],
+            ["While loop update",       "Skipped if after break",                               "Skipped if AFTER continue — must put before"],
+            ["Labeled form",            "break label; — exits named outer loop",                "continue label; — skips to next outer iteration"],
+            ["Jump destination",        "First statement after the loop/switch",                "For: update then condition. While/do-while: condition"],
+            ["Use case",                "Target found, error condition, max attempts reached",   "Skip invalid data, filter values, guard clauses"],
+            ["Analogy",                 "Stop the race entirely",                               "Skip this lap, continue the race"],
+            ["Compile error if used outside loop/switch", "YES — compile error",               "YES — compile error"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "BreakVsContinue.java",
+          "lines": [
+            "public class BreakVsContinue {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ SCENARIO: Process array — stop on negative, skip zero",
+            "        int[] values = {5, 3, 0, 7, -2, 8, 4};",
+            "",
+            "        // Using break — stops entirely at first negative",
+            "        System.out.print(\"With break: \");",
+            "        int sumBreak = 0;",
+            "        for (int v : values) {",
+            "            if (v < 0) break;          // STOP — negative found",
+            "            if (v == 0) continue;       // SKIP — zero, but keep going",
+            "            sumBreak += v;",
+            "            System.out.print(v + \" \");",
+            "        }",
+            "        System.out.println(\"| sum=\" + sumBreak);",
+            "        // Output: 5 3 7 | sum=15  (stops at -2, never reaches 8 or 4)",
+            "",
+            "        // Using continue only — skips negative too, processes all",
+            "        System.out.print(\"With continue: \");",
+            "        int sumContinue = 0;",
+            "        for (int v : values) {",
+            "            if (v <= 0) continue;       // SKIP zeros and negatives",
+            "            sumContinue += v;",
+            "            System.out.print(v + \" \");",
+            "        }",
+            "        System.out.println(\"| sum=\" + sumContinue);",
+            "        // Output: 5 3 7 8 4 | sum=27  (processes ALL positive values)",
+            "",
+            "        // ✅ KEY DIFFERENCE: break skips update, continue runs it",
+            "        System.out.println(\"\\n--- Update behavior ---\");",
+            "        int breakVal = 0;",
+            "        for (breakVal = 0; breakVal < 10; breakVal++) {",
+            "            if (breakVal == 5) break;  // breakVal stays 5 — i++ skipped",
+            "        }",
+            "        System.out.println(\"breakVal after break: \" + breakVal);   // 5",
+            "",
+            "        int contVal = 0;",
+            "        for (contVal = 0; contVal < 10; contVal++) {",
+            "            if (contVal == 5) continue; // contVal becomes 6 — i++ RUNS",
+            "            // loop completes normally",
+            "        }",
+            "        System.out.println(\"contVal after continue: \" + contVal); // 10",
+            "",
+            "        // ✅ break in switch vs continue NOT valid in switch",
+            "        System.out.println(\"\\n--- break in switch ---\");",
+            "        int day = 3;",
+            "        switch (day) {",
+            "            case 1: System.out.println(\"Monday\");    break;",
+            "            case 2: System.out.println(\"Tuesday\");   break;",
+            "            case 3: System.out.println(\"Wednesday\"); break; // ← exits switch",
+            "            case 4: System.out.println(\"Thursday\");  break;",
+            "            default: System.out.println(\"Other day\"); break;",
+            "        }",
+            "        // continue would be a compile error here — switch is not a loop",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "break-in-loops",
+      "title": "Break in For, While & Do-While Loops",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>break</code> behaves consistently across all three loop types — it always exits the <strong>innermost enclosing loop immediately</strong>. The subtle difference is what gets skipped: in a <code>for</code> loop, break skips the update expression; in <code>while</code> and <code>do-while</code>, it simply jumps past the closing brace."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "BreakInLoops.java",
+          "lines": [
+            "public class BreakInLoops {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ break in for loop — linear search",
+            "        System.out.println(\"--- break in for loop ---\");",
+            "        String[] names = {\"Alice\", \"Bob\", \"Charlie\", \"Diana\", \"Eve\"};",
+            "        String search = \"Charlie\";",
+            "        int index = -1;",
+            "        for (int i = 0; i < names.length; i++) {",
+            "            if (names[i].equals(search)) {",
+            "                index = i;",
+            "                break;  // Found — no need to check remaining elements",
+            "            }",
+            "        }",
+            "        System.out.println(search + \" at index: \" + index); // 2",
+            "",
+            "        // ✅ break in for loop — first number divisible by 7 above 50",
+            "        System.out.println(\"\\nFirst multiple of 7 above 50:\");",
+            "        for (int i = 51; i <= 200; i++) {",
+            "            if (i % 7 == 0) {",
+            "                System.out.println(i); // 56",
+            "                break;",
+            "            }",
+            "        }",
+            "",
+            "        // ✅ break in while loop — read until sentinel value",
+            "        System.out.println(\"\\n--- break in while loop ---\");",
+            "        int[] stream = {10, 20, 30, -1, 40, 50}; // -1 is sentinel",
+            "        int idx = 0;",
+            "        int total = 0;",
+            "        while (idx < stream.length) {",
+            "            int val = stream[idx++];",
+            "            if (val == -1) break;  // Stop at sentinel",
+            "            total += val;",
+            "            System.out.print(val + \" \");",
+            "        }",
+            "        System.out.println(\"\\nTotal before sentinel: \" + total); // 60",
+            "",
+            "        // ✅ break in while(true) — controlled exit",
+            "        System.out.println(\"\\n--- break in while(true) ---\");",
+            "        int attempt = 0;",
+            "        int[] pins = {1111, 2222, 9876}; // Simulated PIN entries",
+            "        int correctPin = 9876;",
+            "        while (true) {",
+            "            int entered = pins[attempt];",
+            "            attempt++;",
+            "            System.out.println(\"Attempt \" + attempt + \": \" + entered);",
+            "            if (entered == correctPin) {",
+            "                System.out.println(\"✅ Access granted!\");",
+            "                break;",
+            "            }",
+            "            if (attempt >= 3) {",
+            "                System.out.println(\"❌ Locked out.\");",
+            "                break;",
+            "            }",
+            "        }",
+            "",
+            "        // ✅ break in do-while — exit before condition check",
+            "        System.out.println(\"\\n--- break in do-while ---\");",
+            "        int count = 0;",
+            "        do {",
+            "            count++;",
+            "            System.out.print(count + \" \");",
+            "            if (count == 5) break;  // Exit before condition check",
+            "        } while (count < 100);",
+            "        System.out.println(\"\\nStopped at: \" + count); // 5",
+            "        // Without break, loop would run 100 times",
+            "",
+            "        // ✅ break to find first prime above 100",
+            "        System.out.println(\"\\nFirst prime above 100:\");",
+            "        for (int n = 101; ; n++) {  // No upper bound — break exits",
+            "            boolean prime = true;",
+            "            for (int d = 2; d <= Math.sqrt(n); d++) {",
+            "                if (n % d == 0) { prime = false; break; }",
+            "            }",
+            "            if (prime) {",
+            "                System.out.println(n); // 101",
+            "                break;",
+            "            }",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "continue-in-loops",
+      "title": "Continue in For, While & Do-While Loops",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>continue</code> skips the remainder of the current iteration. Its behavior differs subtly between loop types — specifically in what happens to the <strong>update expression</strong>. Understanding this distinction is critical to avoiding the most common <code>continue</code>-related bug: the infinite loop in <code>while</code> and <code>do-while</code> when the update is placed after <code>continue</code>."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ContinueInLoops.java",
+          "lines": [
+            "public class ContinueInLoops {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ continue in for loop — skip multiples of 3",
+            "        System.out.print(\"Non-multiples of 3 (1-15): \");",
+            "        for (int i = 1; i <= 15; i++) {",
+            "            if (i % 3 == 0) continue; // i++ in header runs regardless",
+            "            System.out.print(i + \" \"); // 1 2 4 5 7 8 10 11 13 14",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // ✅ continue in for loop — process only valid scores",
+            "        System.out.println(\"\\nValid scores only:\");",
+            "        int[] scores = {85, -5, 92, 101, 78, 0, 95};",
+            "        int validSum = 0;",
+            "        int validCount = 0;",
+            "        for (int score : scores) {",
+            "            if (score < 0 || score > 100) {",
+            "                System.out.println(\"  Skipping invalid score: \" + score);",
+            "                continue;",
+            "            }",
+            "            validSum += score;",
+            "            validCount++;",
+            "        }",
+            "        System.out.printf(\"Average of %d valid scores: %.1f%n\",",
+            "                          validCount, (double) validSum / validCount);",
+            "        // Average of 5 valid scores: 70.0",
+            "",
+            "        // ✅ continue in while loop — CORRECT pattern (update before continue)",
+            "        System.out.print(\"\\nWhile — non-multiples of 4 (1-20): \");",
+            "        int n = 0;",
+            "        while (n < 20) {",
+            "            n++;              // ✅ Update BEFORE continue — critical!",
+            "            if (n % 4 == 0) continue;",
+            "            System.out.print(n + \" \"); // 1 2 3 5 6 7 9 10 11 13 14 15 17 18 19",
+            "        }",
+            "        System.out.println();",
+            "",
+            "        // ✅ continue in do-while loop — skip blank lines in text",
+            "        System.out.println(\"\\nDo-while — non-blank lines:\");",
+            "        String[] lines = {\"Hello\", \"\", \"World\", \"  \", \"Java\", null, \"Rocks\"};",
+            "        int lineIdx = 0;",
+            "        do {",
+            "            String line = lines[lineIdx];",
+            "            lineIdx++;        // ✅ Update before continue",
+            "            if (line == null || line.isBlank()) continue;",
+            "            System.out.println(\"  Line: \" + line.strip());",
+            "        } while (lineIdx < lines.length);",
+            "        // Output: Hello, World, Java, Rocks",
+            "",
+            "        // ✅ continue as guard clause — cleaner than nested if-else",
+            "        System.out.println(\"\\nGuard clause style:\");",
+            "        String[] users = {\"alice\", null, \"\", \"BOB\", \"charlie\", \"  \"};",
+            "        for (String user : users) {",
+            "            // Guard clauses — skip early instead of deep nesting",
+            "            if (user == null)        continue;  // Guard 1",
+            "            if (user.isBlank())      continue;  // Guard 2",
+            "            if (user.length() > 10)  continue;  // Guard 3",
+            "            // Main logic — only valid users reach here",
+            "            System.out.println(\"  Welcome, \" + user.strip().toLowerCase() + \"!\");",
+            "        }",
+            "        // Output: Welcome, alice! Welcome, bob! Welcome, charlie!",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Continue in While/Do-While — Always Update Before Continue",
+          "text": "In while and do-while loops, the update statement (n++, i--, etc.) is inside the body. If your continue fires BEFORE the update, the update is permanently skipped for that iteration — and if the condition still holds, you get an infinite loop. The safe pattern: always put the update as the VERY FIRST statement in a while/do-while body, before any if-continue logic. In a for loop this is never an issue — the update (i++) is in the header and always runs regardless of continue. This is one concrete reason to prefer for loops over while loops for counter-based iteration."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "break-in-switch",
+      "title": "Break in Switch Statement — Preventing Fall-Through",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In Java's traditional <code>switch</code> statement, <code>break</code> plays a <strong>completely different role</strong> from loops — it prevents <strong>fall-through</strong>. Without a <code>break</code> at the end of a case block, execution continues into the next case block regardless of whether its value matches. This behavior is called fall-through, and forgetting <code>break</code> in switch is one of the most common Java bugs."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🛑",
+              "title": "Break Prevents Fall-Through",
+              "text": "In a traditional switch, after a matching case is found and its block executes, Java does NOT automatically stop at the next case keyword — it continues executing the next case's code. break; at the end of each case stops this. Without break, ALL subsequent cases execute until a break is found or the switch ends. Fall-through is a design choice in Java (inherited from C) — it allows multiple cases to share code — but accidental fall-through is a common bug. Always add break unless intentional fall-through is explicitly desired and documented."
+            },
+            {
+              "icon": "✅",
+              "title": "Java 14+ Switch Expressions — No Break Needed",
+              "text": "Java 14 introduced switch expressions with arrow syntax (case VALUE ->). These do NOT fall through — each arm is independent and break is not required. Syntax: switch(day) { case 1 -> 'Monday'; case 2 -> 'Tuesday'; default -> 'Other'; }. Switch expressions also return a value, making them usable in assignments and return statements. If you are using Java 14+, prefer switch expressions over traditional switch statements — they are cleaner, safer, and not susceptible to fall-through bugs."
+            },
+            {
+              "icon": "💡",
+              "title": "Intentional Fall-Through — When It's Valid",
+              "text": "Intentional fall-through is valid when multiple cases should run the same code. Example: case 'a': case 'e': case 'i': case 'o': case 'u': System.out.println('Vowel'); break; — all vowel cases fall through to the same println. Or: case SATURDAY: case SUNDAY: System.out.println('Weekend'); break; — both weekend days execute the same block. When intentional fall-through is used, always add a comment: // fall-through intentional — to signal to future readers that the missing break is deliberate, not a bug."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "BreakInSwitch.java",
+          "lines": [
+            "public class BreakInSwitch {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Traditional switch WITH break — correct",
+            "        int month = 4;",
+            "        System.out.println(\"--- Switch with break (correct) ---\");",
+            "        switch (month) {",
+            "            case 1:  System.out.println(\"January\");   break;",
+            "            case 2:  System.out.println(\"February\");  break;",
+            "            case 3:  System.out.println(\"March\");     break;",
+            "            case 4:  System.out.println(\"April\");     break; // ← exits switch",
+            "            case 5:  System.out.println(\"May\");       break;",
+            "            default: System.out.println(\"Other month\"); break;",
+            "        }",
+            "        // Output: April — correct",
+            "",
+            "        // ❌ Traditional switch WITHOUT break — fall-through bug",
+            "        System.out.println(\"\\n--- Switch WITHOUT break (fall-through bug) ---\");",
+            "        int val = 2;",
+            "        switch (val) {",
+            "            case 1: System.out.println(\"One\");",
+            "            case 2: System.out.println(\"Two\");    // Matches here",
+            "            case 3: System.out.println(\"Three\");  // ALSO runs — fall-through!",
+            "            case 4: System.out.println(\"Four\");   // ALSO runs — fall-through!",
+            "            default: System.out.println(\"Default\"); // ALSO runs!",
+            "        }",
+            "        // Output: Two Three Four Default — all cases after 2 execute!",
+            "",
+            "        // ✅ Intentional fall-through — multiple cases, same action",
+            "        System.out.println(\"\\n--- Intentional fall-through (valid) ---\");",
+            "        int dayNum = 6;",
+            "        String dayType;",
+            "        switch (dayNum) {",
+            "            case 1: case 2: case 3: case 4: case 5:",
+            "                dayType = \"Weekday\";  // fall-through intentional",
+            "                break;",
+            "            case 6: case 7:",
+            "                dayType = \"Weekend\";  // fall-through intentional",
+            "                break;",
+            "            default:",
+            "                dayType = \"Invalid\";",
+            "                break;",
+            "        }",
+            "        System.out.println(\"Day \" + dayNum + \" is: \" + dayType); // Weekend",
+            "",
+            "        // ✅ Java 14+ switch expression — no break needed",
+            "        System.out.println(\"\\n--- Java 14+ switch expression ---\");",
+            "        int m = 4;",
+            "        String monthName = switch (m) {",
+            "            case 1  -> \"January\";",
+            "            case 2  -> \"February\";",
+            "            case 3  -> \"March\";",
+            "            case 4  -> \"April\";     // No break needed",
+            "            case 5  -> \"May\";",
+            "            case 6  -> \"June\";",
+            "            case 7  -> \"July\";",
+            "            case 8  -> \"August\";",
+            "            case 9  -> \"September\";",
+            "            case 10 -> \"October\";",
+            "            case 11 -> \"November\";",
+            "            case 12 -> \"December\";",
+            "            default -> \"Invalid month\";",
+            "        };",
+            "        System.out.println(\"Month \" + m + \": \" + monthName); // April",
+            "",
+            "        // ✅ break in switch inside a loop — exits switch, NOT the loop",
+            "        System.out.println(\"\\n--- break in switch inside loop ---\");",
+            "        int[] commands = {1, 2, 3, 0, 4}; // 0 = STOP command",
+            "        for (int cmd : commands) {",
+            "            switch (cmd) {",
+            "                case 1: System.out.println(\"  Execute command 1\"); break; // exits switch",
+            "                case 2: System.out.println(\"  Execute command 2\"); break; // exits switch",
+            "                case 3: System.out.println(\"  Execute command 3\"); break; // exits switch",
+            "                case 0: System.out.println(\"  STOP received\");     break; // exits switch only!",
+            "                default: System.out.println(\"  Unknown: \" + cmd);  break;",
+            "            }",
+            "            // Loop still continues after switch break — cmd 4 will be processed",
+            "        }",
+            "        // To exit the loop from inside switch, use a boolean flag or labeled break",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Break in Switch Does NOT Exit an Enclosing Loop",
+          "text": "A very common misconception: break inside a switch statement exits ONLY the switch — not any enclosing loop. If you want to exit a loop from inside a switch that is inside the loop, you need either: (1) A labeled break — place a label on the loop and use break loopLabel; inside the switch case. (2) A boolean flag — set a flag inside the switch case and check it after the switch to break out of the loop. Simply writing break; inside a switch case when inside a for loop will exit the switch and continue the next loop iteration — not stop the loop."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "labeled-break",
+      "title": "Labeled Break — Exiting Outer Loops from Inside Nested Loops",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>labeled break</strong> exits a <em>specifically named</em> enclosing loop — not just the innermost one. This is Java's clean solution to the problem of needing to break out of multiple levels of nested loops at once. Without labeled break, you would need boolean flag variables passed between loop levels, which is messier and harder to read."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "LabeledBreak.java",
+          "lines": [
+            "public class LabeledBreak {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Problem without labeled break — needs boolean flag",
+            "        System.out.println(\"--- Without labeled break (flag approach) ---\");",
+            "        int[][] matrix = {{1,2,3},{4,5,6},{7,8,9}};",
+            "        int target = 6;",
+            "        boolean found = false;",
+            "        int fr = -1, fc = -1;",
+            "        for (int r = 0; r < matrix.length && !found; r++) {",
+            "            for (int c = 0; c < matrix[r].length && !found; c++) {",
+            "                if (matrix[r][c] == target) {",
+            "                    fr = r; fc = c;",
+            "                    found = true; // Sets flag — ugly but works",
+            "                }",
+            "            }",
+            "        }",
+            "        System.out.println(target + \" at [\" + fr + \"][\" + fc + \"]\"); // [1][2]",
+            "",
+            "        // ✅ Same with labeled break — cleaner",
+            "        System.out.println(\"\\n--- With labeled break (cleaner) ---\");",
+            "        int tr = -1, tc = -1;",
+            "        outerSearch:",
+            "        for (int r = 0; r < matrix.length; r++) {",
+            "            for (int c = 0; c < matrix[r].length; c++) {",
+            "                if (matrix[r][c] == target) {",
+            "                    tr = r; tc = c;",
+            "                    break outerSearch; // Exits BOTH loops immediately",
+            "                }",
+            "            }",
+            "        }",
+            "        System.out.println(target + \" at [\" + tr + \"][\" + tc + \"]\"); // [1][2]",
+            "",
+            "        // ✅ Labeled break with 3-level nesting",
+            "        System.out.println(\"\\n--- Labeled break — 3 levels ---\");",
+            "        int[][][] cube = {{{1,2},{3,4}}, {{5,6},{7,8}}, {{9,10},{11,12}}};",
+            "        int cubTarget = 8;",
+            "        int cx = -1, cy = -1, cz = -1;",
+            "        cubeSearch:",
+            "        for (int x = 0; x < cube.length; x++) {",
+            "            for (int y = 0; y < cube[x].length; y++) {",
+            "                for (int z = 0; z < cube[x][y].length; z++) {",
+            "                    if (cube[x][y][z] == cubTarget) {",
+            "                        cx = x; cy = y; cz = z;",
+            "                        break cubeSearch; // Exits all 3 loops",
+            "                    }",
+            "                }",
+            "            }",
+            "        }",
+            "        System.out.println(cubTarget + \" at [\" + cx + \"][\" + cy + \"][\" + cz + \"]\"); // [1][1][1]",
+            "",
+            "        // ✅ Labeled break — exit on first validation failure",
+            "        System.out.println(\"\\n--- Labeled break — batch validation ---\");",
+            "        String[][] records = {",
+            "            {\"Alice\", \"25\", \"HR\"},",
+            "            {\"Bob\",   \"\",   \"IT\"},   // Invalid — empty field",
+            "            {\"Carol\", \"30\", \"Finance\"}",
+            "        };",
+            "        boolean allValid = true;",
+            "        int failRow = -1, failCol = -1;",
+            "        validationLoop:",
+            "        for (int r = 0; r < records.length; r++) {",
+            "            for (int c = 0; c < records[r].length; c++) {",
+            "                if (records[r][c] == null || records[r][c].isBlank()) {",
+            "                    allValid = false;",
+            "                    failRow = r; failCol = c;",
+            "                    break validationLoop; // Stop immediately on first failure",
+            "                }",
+            "            }",
+            "        }",
+            "        if (allValid) {",
+            "            System.out.println(\"✅ All records valid.\");",
+            "        } else {",
+            "            System.out.println(\"❌ Invalid at row=\" + failRow + \", col=\" + failCol);",
+            "        }",
+            "        // Output: ❌ Invalid at row=1, col=1",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "labeled-continue",
+      "title": "Labeled Continue — Skipping Outer Loop Iterations",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>labeled continue</strong> skips to the <em>next iteration of a named outer loop</em> — not just the innermost one. It is useful when a condition found deep inside a nested loop means the entire outer iteration should be abandoned and the outer loop should move forward to its next iteration."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "LabeledContinue.java",
+          "lines": [
+            "public class LabeledContinue {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Skip entire row if any element is negative",
+            "        System.out.println(\"--- Rows with all non-negative values ---\");",
+            "        int[][] data = {",
+            "            {1, 2, 3},",
+            "            {4, -5, 6},   // Row 1 has negative — skip entire row",
+            "            {7, 8, 9},",
+            "            {10, -1, 12}  // Row 3 has negative — skip entire row",
+            "        };",
+            "        rowLoop:",
+            "        for (int r = 0; r < data.length; r++) {",
+            "            for (int c = 0; c < data[r].length; c++) {",
+            "                if (data[r][c] < 0) {",
+            "                    System.out.println(\"  Row \" + r + \" skipped (negative found)\");",
+            "                    continue rowLoop;  // Skip to next row",
+            "                }",
+            "            }",
+            "            // Only reached if row has no negatives",
+            "            System.out.print(\"  Row \" + r + \" valid: \");",
+            "            for (int val : data[r]) System.out.print(val + \" \");",
+            "            System.out.println();",
+            "        }",
+            "        // Row 0 valid: 1 2 3",
+            "        // Row 1 skipped (negative found)",
+            "        // Row 2 valid: 7 8 9",
+            "        // Row 3 skipped (negative found)",
+            "",
+            "        // ✅ Process only records where all fields are non-empty",
+            "        System.out.println(\"\\n--- Valid records only ---\");",
+            "        String[][] employees = {",
+            "            {\"Alice\",   \"Engineering\", \"Senior\"},",
+            "            {\"Bob\",     \"\",             \"Junior\"},  // Missing department",
+            "            {\"Charlie\", \"Marketing\",   \"Mid\"},",
+            "            {\"Diana\",   \"Finance\",      \"\"}         // Missing level",
+            "        };",
+            "        employeeLoop:",
+            "        for (int i = 0; i < employees.length; i++) {",
+            "            for (String field : employees[i]) {",
+            "                if (field == null || field.isBlank()) {",
+            "                    System.out.println(\"  Skipping \" + employees[i][0] + \" — incomplete data\");",
+            "                    continue employeeLoop;",
+            "                }",
+            "            }",
+            "            System.out.println(\"  Processing: \" + String.join(\", \", employees[i]));",
+            "        }",
+            "        // Processing: Alice, Engineering, Senior",
+            "        // Skipping Bob — incomplete data",
+            "        // Processing: Charlie, Marketing, Mid",
+            "        // Skipping Diana — incomplete data",
+            "",
+            "        // ✅ Labeled continue vs boolean flag — same result, labeled is cleaner",
+            "        System.out.println(\"\\n--- Flag approach (verbose) ---\");",
+            "        for (int r = 0; r < data.length; r++) {",
+            "            boolean hasNegative = false;",
+            "            for (int c = 0; c < data[r].length; c++) {",
+            "                if (data[r][c] < 0) { hasNegative = true; break; }",
+            "            }",
+            "            if (hasNegative) continue; // Extra check needed",
+            "            System.out.println(\"  Row \" + r + \" valid (flag approach)\");",
+            "        }",
+            "        // Same result — but requires extra boolean variable and extra if check",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "break-continue-nested",
+      "title": "Break & Continue in Nested Loops — Complete Patterns",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Nested loops are where the behavior of <code>break</code> and <code>continue</code> becomes most nuanced. Without labels, both statements affect only the <strong>innermost enclosing loop</strong>. With labels, they can target any named outer loop. This section consolidates all nested loop control patterns in one place."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "NestedLoopControl.java",
+          "lines": [
+            "public class NestedLoopControl {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Plain break — exits INNER loop only",
+            "        System.out.println(\"--- Plain break (exits inner only) ---\");",
+            "        for (int i = 1; i <= 3; i++) {",
+            "            System.out.print(\"i=\" + i + \": \");",
+            "            for (int j = 1; j <= 5; j++) {",
+            "                if (j == 3) break;  // Exits inner — outer continues",
+            "                System.out.print(j + \" \");",
+            "            }",
+            "            System.out.println();",
+            "        }",
+            "        // i=1: 1 2",
+            "        // i=2: 1 2",
+            "        // i=3: 1 2   (outer loop runs all 3 times)",
+            "",
+            "        // ✅ Plain continue — skips in INNER loop only",
+            "        System.out.println(\"\\n--- Plain continue (skips in inner only) ---\");",
+            "        for (int i = 1; i <= 3; i++) {",
+            "            System.out.print(\"i=\" + i + \": \");",
+            "            for (int j = 1; j <= 5; j++) {",
+            "                if (j == 3) continue; // Skips j=3 in inner — outer unaffected",
+            "                System.out.print(j + \" \");",
+            "            }",
+            "            System.out.println();",
+            "        }",
+            "        // i=1: 1 2 4 5",
+            "        // i=2: 1 2 4 5",
+            "        // i=3: 1 2 4 5",
+            "",
+            "        // ✅ Labeled break — exits OUTER loop",
+            "        System.out.println(\"\\n--- Labeled break (exits outer) ---\");",
+            "        outer:",
+            "        for (int i = 1; i <= 3; i++) {",
+            "            System.out.print(\"i=\" + i + \": \");",
+            "            for (int j = 1; j <= 5; j++) {",
+            "                if (j == 3) break outer; // Exits BOTH loops",
+            "                System.out.print(j + \" \");",
+            "            }",
+            "            System.out.println(\"(rest of outer body)\");",
+            "        }",
+            "        System.out.println(\"After outer\");",
+            "        // i=1: 1 2 After outer  (stops at j=3 in first outer iteration)",
+            "",
+            "        // ✅ Labeled continue — skips outer iteration",
+            "        System.out.println(\"\\n--- Labeled continue (skips outer iteration) ---\");",
+            "        outerLoop:",
+            "        for (int i = 1; i <= 3; i++) {",
+            "            System.out.print(\"i=\" + i + \": \");",
+            "            for (int j = 1; j <= 5; j++) {",
+            "                if (j == 3) continue outerLoop; // Skip rest of outer iteration",
+            "                System.out.print(j + \" \");",
+            "            }",
+            "            System.out.println(\"(this never prints — continue skips here)\");",
+            "        }",
+            "        System.out.println();",
+            "        // i=1: 1 2",
+            "        // i=2: 1 2",
+            "        // i=3: 1 2   (outer runs all 3 times but body after inner is skipped)",
+            "",
+            "        // ✅ Practical: generate all pairs (i,j) where i!=j and both prime",
+            "        System.out.println(\"\\nPrime pairs (i!=j, both prime, 2-20):\");",
+            "        for (int i = 2; i <= 20; i++) {",
+            "            if (!isPrime(i)) continue;  // Skip non-prime i",
+            "            for (int j = i + 1; j <= 20; j++) {",
+            "                if (!isPrime(j)) continue;  // Skip non-prime j",
+            "                System.out.println(\"  (\" + i + \", \" + j + \")\");",
+            "            }",
+            "        }",
+            "    }",
+            "",
+            "    static boolean isPrime(int n) {",
+            "        if (n < 2) return false;",
+            "        for (int i = 2; i <= Math.sqrt(n); i++) {",
+            "            if (n % i == 0) return false;",
+            "        }",
+            "        return true;",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "infinite-loop-break",
+      "title": "Break to Exit Infinite Loops — Controlled Loop Patterns",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Infinite loops — <code>while(true)</code> or <code>for(;;)</code> — are legitimate and widely used patterns in production Java code. They are always paired with <code>break</code> (or <code>return</code>) as the exit mechanism. The advantage of this pattern is that the exit condition is expressed inside the body, close to the logic that determines it, rather than shoehorned into the loop header."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InfiniteLoopBreak.java",
+          "lines": [
+            "import java.util.*;",
+            "",
+            "public class InfiniteLoopBreak {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Pattern 1: Process queue until empty",
+            "        System.out.println(\"--- Queue Processing ---\");",
+            "        Queue<String> taskQueue = new LinkedList<>(List.of(",
+            "            \"TASK_1\", \"TASK_2\", \"TASK_3\", \"SHUTDOWN\", \"TASK_4\"",
+            "        ));",
+            "        while (true) {",
+            "            if (taskQueue.isEmpty()) { System.out.println(\"Queue empty.\"); break; }",
+            "            String task = taskQueue.poll();",
+            "            System.out.println(\"Processing: \" + task);",
+            "            if (\"SHUTDOWN\".equals(task)) {",
+            "                System.out.println(\"Shutdown signal. Stopping.\");",
+            "                break;  // Exit on shutdown — TASK_4 never processed",
+            "            }",
+            "        }",
+            "",
+            "        // ✅ Pattern 2: Retry with max attempts + exponential backoff",
+            "        System.out.println(\"\\n--- Retry Pattern ---\");",
+            "        final int MAX_ATTEMPTS = 5;",
+            "        int attempt = 0;",
+            "        for (;;) {",
+            "            attempt++;",
+            "            boolean success = (attempt == 3); // Simulated: succeeds on 3rd try",
+            "            System.out.println(\"Attempt \" + attempt + \": \" + (success ? \"✅ OK\" : \"❌ Fail\"));",
+            "            if (success) { System.out.println(\"Done!\"); break; }",
+            "            if (attempt >= MAX_ATTEMPTS) { System.out.println(\"Giving up.\"); break; }",
+            "            long wait = 100L * (long) Math.pow(2, attempt - 1); // 100, 200, 400ms",
+            "            System.out.println(\"  Retrying in \" + wait + \"ms\");",
+            "        }",
+            "",
+            "        // ✅ Pattern 3: Interactive command loop (simulated)",
+            "        System.out.println(\"\\n--- Command Loop ---\");",
+            "        String[] commands = {\"help\", \"status\", \"exit\"};",
+            "        int cmdIdx = 0;",
+            "        while (true) {",
+            "            String cmd = commands[cmdIdx++].trim().toLowerCase();",
+            "            System.out.print(\"> \" + cmd + \" → \");",
+            "            switch (cmd) {",
+            "                case \"help\"   -> System.out.println(\"Commands: help, status, exit\");",
+            "                case \"status\" -> System.out.println(\"System OK\");",
+            "                case \"exit\"   -> { System.out.println(\"Goodbye!\"); break; }",
+            "                default       -> System.out.println(\"Unknown command\");",
+            "            }",
+            "            // Need labeled break or flag to exit from switch inside while(true)",
+            "            if (cmd.equals(\"exit\")) break;  // Flag approach to exit loop",
+            "        }",
+            "",
+            "        // ✅ Pattern 4: Game loop — play until player quits",
+            "        System.out.println(\"\\n--- Game Loop ---\");",
+            "        String[] playerChoices = {\"play\", \"play\", \"quit\"};",
+            "        int choiceIdx = 0;",
+            "        int score = 0;",
+            "        for (;;) {",
+            "            String choice = playerChoices[choiceIdx++];",
+            "            if (choice.equals(\"quit\")) {",
+            "                System.out.println(\"Final score: \" + score + \". Goodbye!\");",
+            "                break;",
+            "            }",
+            "            score += (int)(Math.random() * 10) + 1;",
+            "            System.out.println(\"Round played. Score: \" + score);",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Bugs That Fool Everyone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the most common break and continue mistakes in Java — from infinite loops caused by misplaced continues, to misunderstanding what break exits in switch-inside-loop scenarios, to forgetting that unlabeled break only exits one level."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "BreakContinueMistakes.java",
+          "lines": [
+            "// ❌ MISTAKE 1: continue in while without updating first — infinite loop",
+            "int i = 0;",
+            "// while (i < 10) {",
+            "//     if (i % 2 == 0) continue;  // ❌ i never incremented for evens — infinite!",
+            "//     System.out.println(i);",
+            "//     i++;",
+            "// }",
+            "// ✅ Fix: update BEFORE continue",
+            "while (i < 10) {",
+            "    i++;              // ✅ Always update first",
+            "    if (i % 2 == 0) continue;",
+            "    System.out.print(i + \" \"); // 1 3 5 7 9",
+            "}",
+            "System.out.println();",
+            "",
+            "// ❌ MISTAKE 2: break in switch exits switch, NOT the enclosing loop",
+            "int[] data = {1, 2, 3, 0, 4, 5};",
+            "int total = 0;",
+            "for (int v : data) {",
+            "    switch (v) {",
+            "        case 0:",
+            "            System.out.println(\"Zero found!\");",
+            "            break;  // ❌ Exits switch only — loop continues with 4, 5!",
+            "    }",
+            "    total += v;",
+            "}",
+            "System.out.println(\"Buggy total: \" + total); // 15 — includes values after 0",
+            "// ✅ Fix: use a boolean flag or labeled break to exit the loop",
+            "total = 0;",
+            "boolean stop = false;",
+            "for (int v : data) {",
+            "    if (v == 0) { stop = true; break; } // ✅ breaks the loop, not a switch",
+            "    total += v;",
+            "}",
+            "System.out.println(\"Correct total: \" + total); // 6",
+            "",
+            "// ❌ MISTAKE 3: break/continue outside loop — compile error",
+            "// if (true) { break; }     // ❌ COMPILE ERROR: break outside switch or loop",
+            "// if (true) { continue; }  // ❌ COMPILE ERROR: continue outside of loop",
+            "// ✅ Fix: break and continue must be inside a loop (or switch for break)",
+            "",
+            "// ❌ MISTAKE 4: thinking plain break exits outer loop",
+            "System.out.println(\"\\nPlain break exits inner only:\");",
+            "for (int r = 0; r < 3; r++) {",
+            "    for (int c = 0; c < 3; c++) {",
+            "        if (c == 1) break;  // ❌ Exits INNER loop — outer still runs 3 times",
+            "        System.out.print(\"[\" + r + \"][\" + c + \"] \");",
+            "    }",
+            "}",
+            "System.out.println();",
+            "// Output: [0][0] [1][0] [2][0]  — outer runs all 3 iterations!",
+            "// ✅ Fix: use labeled break if you want to exit outer",
+            "",
+            "// ❌ MISTAKE 5: missing break in switch — fall-through bug",
+            "int grade = 85;",
+            "String level;",
+            "switch (grade / 10) {",
+            "    case 10:",
+            "    case 9:  level = \"A\"; break;",
+            "    case 8:  level = \"B\";       // ❌ Missing break — falls to case 7!",
+            "    case 7:  level = \"C\"; break;",
+            "    default: level = \"F\"; break;",
+            "}",
+            "System.out.println(\"Grade 85 level: \" + level); // C — wrong! Should be B",
+            "// ✅ Fix: add break after case 8",
+            "",
+            "// ❌ MISTAKE 6: continue in do-while without update — infinite loop",
+            "int j = 0;",
+            "// do {",
+            "//     if (j == 5) continue;  // ❌ j never updated for j==5 — infinite!",
+            "//     j++;",
+            "// } while (j < 10);",
+            "// ✅ Fix:",
+            "do {",
+            "    j++;              // ✅ Update first",
+            "    if (j == 5) continue;",
+            "    System.out.print(j + \" \");",
+            "} while (j < 10);",
+            "System.out.println(); // 1 2 3 4 6 7 8 9 10"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These anti-patterns represent common misuses of break and continue in professional Java code. Each one either causes bugs, reduces readability, or makes code harder to maintain and test."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Using Break/Continue as Substitute for Good Loop Design",
+              "text": "Reaching for break or continue to compensate for a poorly designed loop condition is an anti-pattern. If you find yourself writing multiple break statements in a single loop, ask: can this loop condition be rewritten to handle these cases naturally? For example, instead of: for(int i=0;;i++){ if(i>=10) break; } — just write: for(int i=0; i<10; i++). Reserve break for genuinely exceptional exits (target found, error encountered, shutdown signal) — not as a substitute for a proper loop bound."
+            },
+            {
+              "icon": "🚫",
+              "title": "Deeply Nested Labeled Breaks/Continues",
+              "text": "Using labeled break to exit three or more levels of nested loops is a strong signal to refactor. Multiple levels of labeled breaks make code look like goto — hard to follow, hard to test, and hard to maintain. The clean solution: extract the nested loops into a separate method and use return instead of labeled break. return exits the method (and therefore all nested loops) cleanly, is universally understood, and can carry a return value. Labeled breaks beyond two levels almost always indicate that the method should be decomposed."
+            },
+            {
+              "icon": "🚫",
+              "title": "Using Continue for Main Logic Instead of Guard Clauses",
+              "text": "continue should eliminate iterations that should not be processed — it is a negative filter (skip this). Do not use it to express the main positive logic of the loop. Bad pattern: for(item : list){ if(!valid) continue; if(isSpecial) continue; result = process(item); continue; } — the continue at the end for the successful case is confusing. Main-path logic should flow naturally to the end of the loop body; continue should only guard against invalid/skip cases at the top."
+            },
+            {
+              "icon": "🚫",
+              "title": "Unreachable Code After Break/Continue",
+              "text": "Placing statements after a break or continue in the same block creates unreachable code — it never executes and modern IDEs and compilers warn about it. Example: if(found){ break; doCleanup(); } — doCleanup() is unreachable because break already transferred control. This is usually a logic error: the developer intended doCleanup() to run before breaking. Fix: move any necessary cleanup before the break statement. Unreachable code is a sign of confused control flow and should always be resolved — never suppressed."
+            },
+            {
+              "icon": "🚫",
+              "title": "Omitting Break in Switch Cases (Accidental Fall-Through)",
+              "text": "Forgetting break in traditional switch cases is one of the most common Java bugs. Every case should end with break unless intentional fall-through is explicitly documented with a comment. Modern IDEs (IntelliJ, Eclipse) will warn about missing break statements. Static analysis tools (SonarQube, SpotBugs) flag them as bugs. If you are on Java 14+, switch to switch expressions with arrow syntax — they do not fall through and do not require break. For legacy code, use @SuppressWarnings carefully and always add a // fall-through intentional comment."
+            },
+            {
+              "icon": "🚫",
+              "title": "Using Continue to Invert Logic (Double Negative)",
+              "text": "Writing continue conditions that are hard to reason about — especially double negatives — reduces readability. Bad: if(!(!isValid && !isSkipped)) continue; — nobody can parse this quickly. Better: simplify the condition: if(isValid && !isSkipped){ /* process */ } and skip the continue entirely. The rule: if the condition for continue requires more than one mental inversion to understand, rewrite it as a positive condition for the main logic instead. Clear code beats clever code — always."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Break & Continue in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples show idiomatic, production-grade Java break and continue usage — patterns seen in real Spring Boot services, data validation pipelines, and enterprise Java codebases."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "FileProcessor.java — CSV Processing with Break & Continue",
+          "lines": [
+            "package com.techsustainify.processor;",
+            "",
+            "import java.util.*;",
+            "",
+            "public class FileProcessor {",
+            "",
+            "    private static final int MAX_ERRORS = 5;",
+            "    private static final int BATCH_SIZE = 3;",
+            "",
+            "    record ProcessResult(int processed, int skipped, int errors) {}",
+            "",
+            "    // ✅ Process CSV rows — continue on soft errors, break on hard limit",
+            "    public ProcessResult processRows(List<String[]> rows) {",
+            "        int processed = 0, skipped = 0, errors = 0;",
+            "",
+            "        for (int i = 0; i < rows.size(); i++) {",
+            "            String[] row = rows.get(i);",
+            "            int rowNum = i + 1;",
+            "",
+            "            // Guard clause — skip malformed rows (continue)",
+            "            if (row == null || row.length == 0) {",
+            "                System.out.println(\"Row \" + rowNum + \": null/empty — skipped\");",
+            "                skipped++;",
+            "                continue;",
+            "            }",
+            "",
+            "            // Guard clause — skip header row (continue)",
+            "            if (rowNum == 1 && row[0].equalsIgnoreCase(\"name\")) {",
+            "                System.out.println(\"Row \" + rowNum + \": header — skipped\");",
+            "                skipped++;",
+            "                continue;",
+            "            }",
+            "",
+            "            // Guard clause — skip rows with wrong column count (continue)",
+            "            if (row.length != 3) {",
+            "                System.out.println(\"Row \" + rowNum + \": bad column count \" + row.length + \" — skipped\");",
+            "                skipped++;",
+            "                continue;",
+            "            }",
+            "",
+            "            // Try to process — count errors",
+            "            try {",
+            "                processRow(row, rowNum);",
+            "                processed++;",
+            "            } catch (Exception e) {",
+            "                errors++;",
+            "                System.out.println(\"Row \" + rowNum + \": ERROR — \" + e.getMessage());",
+            "                // Hard limit — break on too many errors",
+            "                if (errors >= MAX_ERRORS) {",
+            "                    System.out.println(\"❌ Max errors reached. Stopping.\");",
+            "                    break;  // Stop processing entirely",
+            "                }",
+            "                continue;  // Soft error — skip this row, continue with next",
+            "            }",
+            "        }",
+            "",
+            "        System.out.printf(\"%nSummary: processed=%d, skipped=%d, errors=%d%n\",",
+            "                          processed, skipped, errors);",
+            "        return new ProcessResult(processed, skipped, errors);",
+            "    }",
+            "",
+            "    private void processRow(String[] row, int rowNum) {",
+            "        String name = row[0].strip();",
+            "        if (name.isBlank()) throw new IllegalArgumentException(\"blank name\");",
+            "        int age = Integer.parseInt(row[1].strip()); // May throw NumberFormatException",
+            "        if (age < 0 || age > 120) throw new IllegalArgumentException(\"age out of range: \" + age);",
+            "        System.out.printf(\"  ✅ Row %d: name=%s, age=%d, dept=%s%n\", rowNum, name, age, row[2].strip());",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        List<String[]> rows = List.of(",
+            "            new String[]{\"name\", \"age\", \"dept\"},   // Header — skipped",
+            "            new String[]{\"Alice\", \"30\", \"HR\"},",
+            "            new String[]{null},                        // Null row — skipped",
+            "            new String[]{\"Bob\", \"abc\", \"IT\"},       // Error — bad age",
+            "            new String[]{\"\", \"25\", \"Ops\"},          // Error — blank name",
+            "            new String[]{\"Carol\", \"28\", \"Finance\"},",
+            "            new String[]{\"Diana\", \"35\"}              // Wrong column count — skipped",
+            "        );",
+            "        new FileProcessor().processRows(rows);",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SearchService.java — Multi-Criteria Search with Labeled Break",
+          "lines": [
+            "package com.techsustainify.search;",
+            "",
+            "import java.util.*;",
+            "",
+            "public class SearchService {",
+            "",
+            "    record Product(String name, String category, double price, boolean inStock) {}",
+            "",
+            "    // ✅ Find first product matching ALL criteria using labeled break",
+            "    public Optional<Product> findFirst(",
+            "            List<List<Product>> catalogPages,",
+            "            String category,",
+            "            double maxPrice,",
+            "            boolean mustBeInStock) {",
+            "",
+            "        Product found = null;",
+            "",
+            "        catalogSearch:",
+            "        for (List<Product> page : catalogPages) {",
+            "            for (Product product : page) {",
+            "",
+            "                // continue — skip products not matching category",
+            "                if (!product.category().equalsIgnoreCase(category)) continue;",
+            "",
+            "                // continue — skip products over budget",
+            "                if (product.price() > maxPrice) continue;",
+            "",
+            "                // continue — skip out-of-stock if required",
+            "                if (mustBeInStock && !product.inStock()) continue;",
+            "",
+            "                // All criteria met — capture and break out of both loops",
+            "                found = product;",
+            "                break catalogSearch;  // Labeled break — exit page loop too",
+            "            }",
+            "        }",
+            "",
+            "        return Optional.ofNullable(found);",
+            "    }",
+            "",
+            "    // ✅ Collect top N products with continue for filtering",
+            "    public List<Product> getTopN(",
+            "            List<Product> products, String category, int n) {",
+            "        List<Product> result = new ArrayList<>();",
+            "        for (Product p : products) {",
+            "            if (result.size() >= n) break;           // Got enough — stop",
+            "            if (!p.inStock()) continue;              // Skip out-of-stock",
+            "            if (!p.category().equals(category)) continue; // Skip wrong category",
+            "            result.add(p);",
+            "        }",
+            "        return result;",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        List<Product> page1 = List.of(",
+            "            new Product(\"Pen\",     \"Stationery\", 10.0, true),",
+            "            new Product(\"Laptop\",  \"Electronics\", 999.0, true),",
+            "            new Product(\"Notebook\",\"Stationery\", 25.0, false)",
+            "        );",
+            "        List<Product> page2 = List.of(",
+            "            new Product(\"Marker\",  \"Stationery\", 15.0, true),",
+            "            new Product(\"Phone\",   \"Electronics\", 799.0, true),",
+            "            new Product(\"Stapler\", \"Stationery\", 40.0, true)",
+            "        );",
+            "        SearchService svc = new SearchService();",
+            "        Optional<Product> result = svc.findFirst(",
+            "            List.of(page1, page2), \"Stationery\", 30.0, true);",
+            "        result.ifPresentOrElse(",
+            "            p -> System.out.println(\"Found: \" + p.name() + \" @ \" + p.price()),",
+            "            () -> System.out.println(\"No match found\")",
+            "        );",
+            "        // Found: Pen @ 10.0",
+            "",
+            "        List<Product> allProducts = new ArrayList<>(page1);",
+            "        allProducts.addAll(page2);",
+            "        List<Product> top2 = svc.getTopN(allProducts, \"Stationery\", 2);",
+            "        System.out.println(\"Top 2 in-stock Stationery:\");",
+            "        top2.forEach(p -> System.out.println(\"  \" + p.name()));",
+            "        // Pen, Marker",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "break-continue-flowchart",
+      "title": "Break & Continue Flow Diagrams — Visualizing Execution",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These flowcharts show exactly where execution jumps when <code>break</code> and <code>continue</code> fire in a <code>for</code> loop — contrasting the two statements and highlighting the key difference in update expression execution."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "▶ Start",                      "sublabel": "Initialization — int i = 0",              "type": "start"    },
+            { "id": "2", "label": "🔍 Check Condition",           "sublabel": "i < n — entry point each iteration",      "type": "decision" },
+            { "id": "3", "label": "⚙️ Execute Body",              "sublabel": "Loop body statements",                    "type": "process"  },
+            { "id": "4", "label": "🛑 break hit?",                "sublabel": "Immediate exit — skip update",            "type": "decision" },
+            { "id": "5", "label": "⏭️ continue hit?",             "sublabel": "Skip body remainder",                     "type": "decision" },
+            { "id": "6", "label": "🔄 Update (i++)",              "sublabel": "Always runs after continue in for loop",   "type": "process"  },
+            { "id": "7", "label": "✅ Exit Loop",                 "sublabel": "Next statement after loop",               "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1", "to": "2",  "label": "Init once"                              },
+            { "from": "2", "to": "7",  "label": "FALSE — exit"                           },
+            { "from": "2", "to": "3",  "label": "TRUE — run body"                        },
+            { "from": "3", "to": "4",  "label": "Check break"                            },
+            { "from": "4", "to": "7",  "label": "YES — skip update, exit immediately"    },
+            { "from": "4", "to": "5",  "label": "NO — check continue"                   },
+            { "from": "5", "to": "6",  "label": "YES — skip body, go to update"          },
+            { "from": "5", "to": "6",  "label": "NO — finish body, go to update"         },
+            { "from": "6", "to": "2",  "label": "Re-check condition"                     }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Break & Continue Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Break and continue questions test your understanding of loop control flow, the difference between exiting and skipping, labeled statements, and the subtle interaction with the update expression. These appear frequently in Java interviews at all levels."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is the difference between break and continue in Java?",
+              "a": "break EXITS the loop entirely — execution jumps to the first statement after the loop's closing brace. The loop terminates, no further iterations occur. continue SKIPS the current iteration — execution jumps to the next iteration (update + condition for for loops; just condition for while/do-while). The loop does NOT terminate; only the current pass through the body is cut short. Memory aid: break = stop the race; continue = skip this lap, race continues. break also works in switch statements (prevents fall-through); continue does not apply to switch — only to loops.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the output of this code?\nfor (int i = 0; i < 5; i++) {\n    if (i == 3) break;\n    System.out.print(i + \" \");\n}",
+              "a": "Output: 0 1 2. Trace: i=0 — 0!=3, print 0. i=1 — 1!=3, print 1. i=2 — 2!=3, print 2. i=3 — 3==3, break fires — i++ is NOT executed, condition NOT checked, loop exits immediately. Execution continues after the for loop. Key: when break fires, the update expression (i++) is also skipped — i remains 3 at the moment break executes. If you needed to know the value of i after the loop, it would be 3 (not 4 as it would be if the loop ran to completion and exited normally through the condition).",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is the output?\nfor (int i = 0; i < 5; i++) {\n    if (i == 3) continue;\n    System.out.print(i + \" \");\n}",
+              "a": "Output: 0 1 2 4. Trace: i=0 — print 0. i=1 — print 1. i=2 — print 2. i=3 — continue fires — print skipped, but i++ in header STILL runs (i becomes 4). i=4 — print 4. i=5 — 5<5 false, loop exits normally. Key difference from break: continue does NOT skip the update expression (i++) in a for loop. The update is in the header, not the body, so continue cannot affect it. This is why 3 is cleanly skipped without any infinite loop — i still advances to 4.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. Why can using continue in a while loop cause an infinite loop? Show an example.",
+              "a": "In a while loop, the update statement is inside the body. If continue fires BEFORE the update, the update is permanently skipped for that iteration — the loop variable never changes and the condition stays true forever. Bug example: int i = 0; while(i < 10) { if(i == 5) continue; i++; } — when i==5, continue fires, i++ is skipped, i stays 5, condition 5<10 is still true, continue fires again — infinite loop. Fix: int i = 0; while(i < 10) { i++; if(i == 5) continue; } — update runs first, then continue skips the rest. In a for loop this is never an issue because i++ is in the header and always runs regardless of continue.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q5. What is labeled break in Java? When would you use it?",
+              "a": "A labeled break exits a specifically named outer loop from inside a nested inner loop. Syntax: outerLoop: for(...) { for(...) { if(condition) break outerLoop; } } — when break outerLoop executes, both the inner and outer loops terminate immediately. Without a label, break only exits the innermost loop. Use labeled break when: (1) A condition found in an inner loop should terminate the entire multi-level loop — for example, finding a value in a 2D matrix and wanting to stop all searching. (2) The alternative (boolean flag) would make the code significantly harder to read. Prefer extracting to a method + return when loops are deeply nested (3+ levels).",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. Does break in a switch statement exit the enclosing loop?",
+              "a": "NO — break in a switch statement exits ONLY the switch block, not any enclosing loop. If a switch is inside a for loop, break inside a case exits the switch and the for loop's next iteration continues normally. To exit the loop from inside a switch case, you need: (1) A labeled break — put a label on the for loop and use break loopLabel; inside the switch case. (2) A boolean flag — set stopLoop = true; inside the case, then check after the switch: if(stopLoop) break; (3) Return — if the loop is inside a method, use return instead. This is a very common source of bugs — developers expect break to exit the loop and are surprised when it only exits the switch.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q7. What is the output of this nested loop with break?\nfor (int i = 0; i < 3; i++) {\n    for (int j = 0; j < 3; j++) {\n        if (j == 1) break;\n        System.out.print(i + \"\" + j + \" \");\n    }\n}",
+              "a": "Output: 00 10 20. Trace: i=0: j=0 — 0!=1, print 00. j=1 — break fires, exits INNER loop. Outer continues. i=1: j=0 — print 10. j=1 — break inner. i=2: j=0 — print 20. j=1 — break inner. Key: break only exits the innermost loop. The outer loop runs all 3 iterations (i=0,1,2). Only the inner loop exits early at each j=1. Only j=0 is ever printed for each i — j=1 and j=2 are never reached. To exit both loops, you would need labeled break.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q8. What is the difference between labeled break and labeled continue?",
+              "a": "Both use a label to target a named outer loop. The difference: labeled break (break label;) TERMINATES the named outer loop — execution continues with the first statement after that outer loop's closing brace. Both the inner and outer loops stop. labeled continue (continue label;) SKIPS to the next iteration of the named outer loop — the inner loop exits for this outer iteration, but the outer loop continues with its next iteration. Example: rowLoop: for(rows) { for(cols) { if(error) continue rowLoop; } /* clean-up */ } — continue rowLoop skips the clean-up and moves to the next row. break rowLoop would exit ALL row processing.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q9. What is the output?\nint count = 0;\nfor (int i = 0; i < 5; i++) {\n    for (int j = 0; j < 5; j++) {\n        if (i + j == 4) break;\n        count++;\n    }\n}\nSystem.out.println(count);",
+              "a": "Output: 16. For each i, the inner loop runs until i+j==4, then breaks. Count of inner iterations per outer: i=0: j=0,1,2,3 (4 iters, breaks at j=4). i=1: j=0,1,2 (3 iters, breaks at j=3). i=2: j=0,1 (2 iters, breaks at j=2). i=3: j=0 (1 iter, breaks at j=1). i=4: j=0 would make 4+0=4, breaks immediately (0 iters). Wait — at i=4, j=0 makes i+j=4 immediately, so break fires before count++. Let me retrace: i=4: j=0 — 4+0=4 — break. 0 iterations. Total: 4+3+2+1+0 = 10. But the check is IF i+j==4, THEN break — count++ comes before break check. Retrace: i=0, j runs 0..4: j=0 count=1, j=1 count=2, j=2 count=3, j=3 count=4, j=4 → i+j=4 → break (count not incremented at j=4). i=1: j=0→2, j=1→3, j=2→4, j=3 → i+j=4 → break. 3 iters. i=2: j=0,1,2 → i+j=4 → break. 2 iters. i=3: j=0,1 → break. 1 iter. i=4: j=0 → break. 0 iters. Total: 4+3+2+1+0=10. Output: 10.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q10. Can you use break or continue outside a loop? What happens?",
+              "a": "No — using break or continue outside a loop is a compile-time error in Java. break: can only be used inside a loop (for, while, do-while) or a switch statement. Using break inside a plain if-else that is not wrapped in a loop or switch causes: error: break outside switch or loop. continue: can only be used inside a loop (for, while, do-while). Using continue in a switch statement or a plain if-else causes: error: continue outside of loop. This is different from C/C++ where break in an if-else is sometimes encountered (though still a bad practice). Java enforces this at compile time — you cannot misuse these statements without getting a compile error.",
+              "tag": "Must Know"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Break & Continue Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Challenge yourself with these practice questions. Attempt each independently before reading the answer — writing and tracing code by hand significantly improves retention and interview readiness."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output?\nint sum = 0;\nfor (int i = 1; i <= 10; i++) {\n    if (i % 2 == 0) continue;\n    if (sum > 15) break;\n    sum += i;\n}\nSystem.out.println(sum);",
+              "a": "Output: 16. Trace: i=1 — odd, sum=0+1=1. Not >15. i=2 — even, continue. i=3 — odd, sum=1+3=4. Not >15. i=4 — even, continue. i=5 — odd, sum=4+5=9. Not >15. i=6 — even, continue. i=7 — odd, sum=9+7=16. Not >15 (exactly 15 is not > 15). i=8 — even, continue. i=9 — odd, check: sum=16 > 15? YES — break. sum stays 16. The check 'if(sum > 15) break' uses the PREVIOUS sum (16 from adding 7), not after adding 9. So break fires at i=9 before sum += 9. Final sum: 16.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "2. What is the output?\nouter:\nfor (int i = 0; i < 3; i++) {\n    for (int j = 0; j < 3; j++) {\n        if (i == 1 && j == 1) continue outer;\n        System.out.print(i + \"\" + j + \" \");\n    }\n}\nSystem.out.println();",
+              "a": "Output: 00 01 02 10 20 21 22. Trace: i=0: j=0→00, j=1→01, j=2→02 (full inner). i=1: j=0→10, j=1 → i==1&&j==1 → continue outer (skips rest of i=1 inner AND remaining outer body). Outer moves to i=2. i=2: j=0→20, j=1→21, j=2→22 (full inner). When continue outer fires at i=1,j=1, both j=2 and the rest of the outer iteration are skipped. The outer loop then runs i=2 normally.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "3. Write a program using break to find the first number between 100 and 200 that is divisible by both 7 and 11.",
+              "a": "public class FindDivisible {\n    public static void main(String[] args) {\n        for (int n = 100; n <= 200; n++) {\n            if (n % 7 == 0 && n % 11 == 0) {\n                System.out.println(\"First number divisible by 7 and 11: \" + n);\n                break;  // Stop at first match\n            }\n        }\n    }\n}\n// LCM(7,11) = 77. Multiples of 77: 77, 154, 231...\n// Output: First number divisible by 7 and 11: 154\n// break ensures we stop after finding the FIRST match — without break, all matches would print.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. Identify the bug and fix it:\nint i = 1;\nwhile (i <= 10) {\n    if (i % 2 == 0) continue;\n    System.out.print(i + \" \");\n    i++;\n}",
+              "a": "Bug: Infinite loop. When i=1 (odd), print 1, i++ makes i=2. When i=2 (even), continue fires — i++ is SKIPPED — i stays 2 forever. The loop runs infinitely printing nothing (continue skips print too) but never incrementing i past 2. Fix — move i++ BEFORE continue: int i = 0; while(i < 10){ i++; if(i%2==0) continue; System.out.print(i+' '); } // Output: 1 3 5 7 9. Alternatively, restructure: while(i<=10){ if(i%2!=0) System.out.print(i+' '); i++; } — no continue needed at all, which is the cleanest solution.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. What is the output?\nint x = 0;\nloop1:\nfor (int i = 0; i < 3; i++) {\n    loop2:\n    for (int j = 0; j < 3; j++) {\n        if (j == 2) continue loop1;\n        if (i == 2) break loop1;\n        x++;\n    }\n}\nSystem.out.println(x);",
+              "a": "Output: 4. Trace step by step: i=0,j=0: j!=2, i!=2, x=1. i=0,j=1: j!=2, i!=2, x=2. i=0,j=2: j==2 → continue loop1 — jump to i=1. i=1,j=0: j!=2, i!=2, x=3. i=1,j=1: j!=2, i!=2, x=4. i=1,j=2: j==2 → continue loop1 — jump to i=2. i=2,j=0: j!=2, i==2 → break loop1 — EXIT both loops. Final x=4. Key: at i=2, j reaches 0, then break loop1 fires before j can reach 2.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "6. Write a program that uses continue to print all numbers from 1 to 50 that are NOT divisible by 2, 3, or 5.",
+              "a": "System.out.print(\"Not divisible by 2, 3, or 5: \");\nfor (int n = 1; n <= 50; n++) {\n    if (n % 2 == 0) continue;  // Skip even\n    if (n % 3 == 0) continue;  // Skip multiples of 3\n    if (n % 5 == 0) continue;  // Skip multiples of 5\n    System.out.print(n + \" \");\n}\nSystem.out.println();\n// Output: 1 7 11 13 17 19 23 29 31 37 41 43 47\n// These are numbers coprime to 2, 3, and 5 in range 1-50.\n// Guard clause style — each continue eliminates one category clearly.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "7. What is wrong with using break inside a switch that is inside a for loop to exit the loop? Show the bug and fix it.",
+              "a": "Bug: break inside switch exits ONLY the switch — NOT the for loop. Example:\nfor(int i=0; i<5; i++){\n    switch(i){\n        case 3: System.out.println(\"Stop!\"); break; // exits switch only!\n    }\n    System.out.println(\"i=\" + i); // Still prints for i=3,4 — loop didn't stop!\n}\n// Output: i=0,1,2 then 'Stop!' then i=3,4 — wrong!\n\nFix 1 — Labeled break:\nloop:\nfor(int i=0; i<5; i++){\n    switch(i){\n        case 3: System.out.println(\"Stop!\"); break loop; // exits the for loop\n    }\n    System.out.println(\"i=\" + i);\n}\n// Output: i=0,1,2 then Stop! — correct\n\nFix 2 — Boolean flag:\nboolean stop = false;\nfor(int i=0; i<5 && !stop; i++){\n    switch(i){ case 3: stop=true; }\n    if(!stop) System.out.println(\"i=\" + i);\n}",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "8. How many times is 'Hello' printed?\nint count = 0;\nfor (int i = 0; i < 5; i++) {\n    for (int j = 5; j > 0; j--) {\n        if (i * j > 6) break;\n        count++;\n        System.out.println(\"Hello\");\n    }\n}",
+              "a": "Hello is printed 8 times. For each i, the inner loop runs while i*j <= 6 (breaks when i*j > 6). i=0: 0*j=0 always <=6 — inner runs all 5 iterations (j=5,4,3,2,1). count=5. i=1: j=5→1*5=5<=6 ✓. j=4→4<=6 ✓. j=3→3<=6 ✓. j=2→2<=6 ✓. j=1→1<=6 ✓. Wait, none exceed 6. All 5 run? Let me recheck: i=1: j=5→5<=6 yes. j=4→4<=6 yes. j=3→3<=6 yes. j=2→2<=6 yes. j=1→1<=6 yes. So count+5=10. Hmm, but 1*7>6 would need j=7. Let me verify: i=1, max j=5, 1*5=5<=6 — all pass. i=2: j=5→10>6 break immediately. 0 iters. i=3: j=5→15>6 break. 0 iters. i=4: j=5→20>6 break. 0 iters. Total: 5+5+0+0+0=10. Output: Hello printed 10 times.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Break & Continue: Precise Loop Control in Java",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>break</code> and <code>continue</code> are Java's precise tools for loop control — not workarounds, but intentional, well-defined statements that make complex loop logic clean and expressive. <code>break</code> says: <em>'I am done with this loop entirely.'</em> <code>continue</code> says: <em>'I am done with this particular iteration — move on to the next.'</em> Each has a clear purpose, and using them correctly is a mark of clean Java code."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The most important things to remember: <strong>break skips the update expression in a for loop</strong> and exits immediately. <strong>continue in a for loop safely runs the update</strong> (because it's in the header). <strong>continue in a while/do-while loop is dangerous</strong> if the update comes after it — always update before continue in while loops. <strong>break in switch exits only the switch</strong> — not any enclosing loop. And <strong>labeled break/continue</strong> are powerful but should be used sparingly — prefer method extraction for deeply nested loops."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept", "Key Point", "When to Use"],
+          "rows": [
+            ["break",                    "Exits loop/switch immediately — skips update in for",          "Target found, error, shutdown, max attempts"],
+            ["continue",                 "Skips current iteration — runs update in for loop",            "Skip invalid data, filter values, guard clauses"],
+            ["continue in while",        "Update MUST come before continue or infinite loop",            "Counter-based while loops with filtering"],
+            ["break in switch",          "Exits switch only — NOT enclosing loop",                      "Mandatory to prevent fall-through in traditional switch"],
+            ["Labeled break",            "break label; exits named outer loop",                         "2D matrix search, batch validation, multi-level exit"],
+            ["Labeled continue",         "continue label; skips named outer iteration",                  "Skip entire row/group when inner condition fails"],
+            ["for(;;) + break",          "Intentional infinite loop with controlled exit",              "Event loops, game loops, retry patterns"],
+            ["Guard clause + continue",  "if(invalid) continue; at top — main logic flows down",        "Cleaner than nested if-else for validation"],
+            ["Break vs boolean flag",    "Labeled break is cleaner; flag is more compatible",           "Prefer labeled break for nested loop exit"],
+            ["Java 14+ switch",          "Arrow syntax — no fall-through, no break needed",             "Always prefer in Java 14+ over traditional switch"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Arrays</strong> — where loops, break, and continue come together as the core tools for array traversal, searching, sorting, and manipulation. Every pattern you've mastered here applies directly to working with arrays in production Java code. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Break and Continue",
+    "items": [
+      {
+        "q": "What is break statement in Java?",
+        "a": "The break statement in Java immediately exits the innermost enclosing loop (for, while, do-while) or switch statement. When break executes, it jumps to the first statement after the closing brace of the loop or switch — skipping all remaining body statements, the update expression (in for loops), and the condition check. It is used for early exit when a target is found, stopping on error conditions, exiting infinite loops, and limiting retry attempts. Labeled break (break label;) can exit a named outer loop from inside a nested inner loop."
+      },
+      {
+        "q": "What is continue statement in Java?",
+        "a": "The continue statement in Java skips the remaining statements in the current loop iteration and jumps to the next iteration. The loop does not terminate — only the current pass is cut short. In a for loop, continue jumps to the update expression (i++), then the condition. In a while or do-while, continue jumps directly to the condition check — so the update must come BEFORE continue to avoid an infinite loop. Use continue for skipping invalid or null values, filtering elements, and guard-clause style code at the top of a loop body."
+      },
+      {
+        "q": "What is the difference between break and continue?",
+        "a": "break EXITS the loop entirely — no more iterations happen. continue SKIPS the current iteration only — the loop continues with the next iteration. In a for loop: break skips the update expression (i++); continue runs the update expression then re-checks the condition. break works in both loops and switch statements; continue only works in loops. Both have labeled forms for controlling outer loops in nested loop structures. Memory aid: break = stop the race; continue = skip this lap, race on."
+      },
+      {
+        "q": "Does break in switch exit the enclosing loop?",
+        "a": "No — break in a switch statement exits ONLY the switch, not any enclosing loop. If a switch is inside a for loop, break inside a switch case exits the switch and the for loop's next iteration continues normally. To exit the loop from inside a switch case, use a labeled break (place a label on the for loop and use break loopLabel inside the case) or a boolean flag (set a flag inside the case and check it after the switch to break the loop). This is a very common source of bugs."
+      },
+      {
+        "q": "What is labeled break in Java?",
+        "a": "A labeled break exits a specifically named outer loop from inside a nested inner loop. A label is an identifier followed by a colon placed immediately before the loop: searchLoop: for(...) { for(...) { break searchLoop; } }. When break searchLoop executes, both the inner and outer loops terminate immediately — execution resumes after the outer loop's closing brace. Without a label, break only exits the innermost loop. Labeled break is used when a condition in an inner loop should terminate multiple levels of loop nesting — such as finding a value in a 2D array and stopping all further searching."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java For Loop", "path": "/java/java-for-loop" },
+    "next": { "label": "Java Access Modifiers →",        "path": "/java/java-access-modifiers" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "break action",           "dd": "Exits loop/switch immediately — skips update in for" },
+      { "dt": "continue action",        "dd": "Skips current iteration — moves to next" },
+      { "dt": "continue in for loop",   "dd": "Update (i++) always runs — safe by design" },
+      { "dt": "continue in while",      "dd": "Update must come BEFORE continue — or infinite loop!" },
+      { "dt": "break in switch",        "dd": "Exits switch only — NOT the enclosing loop" },
+      { "dt": "Labeled break",          "dd": "break label; — exits named outer loop" },
+      { "dt": "Labeled continue",       "dd": "continue label; — skips to next outer iteration" },
+      { "dt": "break outside loop",     "dd": "Compile error — only valid inside loop or switch" },
+      { "dt": "continue outside loop",  "dd": "Compile error — only valid inside a loop" }
+    ],
+    "relatedArticles": [
+      { "label": "Java For Loop",                "path": "/java/java-for-loop" },
+      { "label": "Java While Loop",              "path": "/java/java-while-loop" },
+      { "label": "Java Do While Loop",           "path": "/java/java-do-while-loop" },
+      { "label": "Java Arrays",                  "path": "/java/java-arrays" },
+      { "label": "Java If-Else",                 "path": "/java/java-if-else" },
+      { "label": "Java Switch Statement",        "path": "/java/java-switch" },
+      { "label": "Java Operators",               "path": "/java/java-operators" },
+      { "label": "Java Variables & Data Types",  "path": "/java/java-variables" }
+    ],
+    "tags": [
+      "Java Break Statement", "Java Continue Statement", "Java Loop Control", "Java Labeled Break",
+      "Java Labeled Continue", "Java Break in Switch", "Java Nested Loop Control", "Java Break Continue Examples",
+      "Java Loop Patterns", "Java Loop Best Practices", "Java Break Continue Interview Questions",
+      "break vs continue", "Java Fall Through Switch", "Java Infinite Loop Break",
+      "Java Core", "Java Beginner", "Java 21", "Java Tutorial 2026"
+    ]
+  }
+}

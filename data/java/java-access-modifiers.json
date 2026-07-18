@@ -1,0 +1,1665 @@
+{
+  "meta": {
+    "title": "Java Access Modifiers — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Access Modifiers — public, private, protected, and default (package-private). Covers class-level vs member-level access, inheritance rules, encapsulation, real-world examples, common mistakes, and interview questions. Updated March 2026.",
+    "keywords": "java access modifiers, java public private protected default, java encapsulation, java access control, java visibility, java private modifier, java protected modifier, java public modifier, java package private, java access specifiers, java modifier rules, java inheritance access, java member access, java class access, java interface access modifiers, java access modifiers interview questions",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-access-modifiers",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Access Modifiers — public, private, protected, default | Tech Sustainify",
+      "description": "Everything about Java Access Modifiers — public, private, protected, and default. Class-level vs member-level access, encapsulation, inheritance rules, real-world examples, pitfalls, and interview questions.",
+      "url": "https://www.techsustainify.com/java/java-access-modifiers",
+      "image": "https://www.techsustainify.com/images/java-access-modifiers-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Access Modifiers Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-02-10T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Access Modifiers",
+          "Java public private protected",
+          "Java Encapsulation",
+          "Java OOP",
+          "Java Visibility",
+          "Java Class Members",
+          "Java Inheritance",
+          "Java Package",
+          "Java Best Practices",
+          "Java 21"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Access Modifiers — public, private, protected, default 2026",
+      "description": "Complete guide to Java Access Modifiers — visibility rules, encapsulation, inheritance, real-world examples, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-access-modifiers-og.png",
+      "imageAlt": "Java Access Modifiers Guide 2026 - Tech Sustainify",
+      "readingTime": "24 minutes",
+      "level": "Beginner",
+      "label1": "Reading Time",
+      "data1": "24 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Access Modifiers — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering all Java Access Modifiers — public, private, protected, and default (package-private). Includes class-level vs member-level access, encapsulation, inheritance rules, real-world examples, anti-patterns, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-02-10",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner",
+        "wordCount": 6500,
+        "timeRequired": "PT24M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Access Modifiers" },
+          { "@type": "Thing", "name": "Java Encapsulation" },
+          { "@type": "Thing", "name": "Java OOP" },
+          { "@type": "Thing", "name": "Java Visibility Rules" }
+        ],
+        "keywords": "java access modifiers, public private protected default, encapsulation, java visibility, java member access, java class access, inheritance access rules"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Access Modifiers" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are access modifiers in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Access modifiers in Java are keywords that control the visibility and accessibility of classes, methods, variables, and constructors. Java provides four access modifiers: public (accessible from everywhere), protected (accessible within the same package and subclasses), default/package-private (accessible only within the same package — no keyword used), and private (accessible only within the same class). They are the foundation of encapsulation — one of the four pillars of object-oriented programming."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between private, protected, and public in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "private: accessible only within the declaring class — tightest restriction. protected: accessible within the same package AND in subclasses (even in different packages) — enables controlled inheritance. public: accessible from anywhere — widest visibility. default (no keyword): accessible only within the same package. The rule of thumb: use the most restrictive modifier that still allows your code to function. Prefer private for fields, public for API methods, and protected only when subclassing requires it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a class be private in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A top-level class (declared directly in a .java file) can only be public or default (package-private). It CANNOT be private or protected — this causes a compile-time error. However, inner classes (nested classes declared inside another class) CAN be private, protected, public, or default. A private inner class is accessible only within the enclosing class. This is commonly used for helper classes or implementation details hidden from external code."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is default access modifier in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The default access modifier (also called package-private) is applied when NO modifier keyword is specified. A member with default access is accessible to all classes within the same package but is invisible to classes in other packages — even subclasses in a different package cannot access it. It is the middle ground between private (class-only) and protected (package + subclasses). It is commonly used for classes and methods that are internal implementation details of a package and not meant to be part of the public API."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can we override a private method in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Private methods cannot be overridden in Java. Since private methods are not visible to subclasses, they cannot participate in Java's dynamic dispatch (runtime polymorphism). If a subclass defines a method with the same signature as a parent's private method, it is simply a NEW method in the subclass — not an override. The @Override annotation on such a method causes a compile-time error, confirming that no actual overriding occurred. This is method hiding, not overriding."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-02-10",
+      "dateModified": "2026-03-20",
+      "readingTime": "24 minutes",
+      "wordCount": 6500,
+      "difficulty": "Beginner",
+      "chapter": 18,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-are-access-modifiers",    "title": "What are Access Modifiers?" },
+        { "id": "public-modifier",              "title": "public Modifier" },
+        { "id": "private-modifier",             "title": "private Modifier" },
+        { "id": "protected-modifier",           "title": "protected Modifier" },
+        { "id": "default-modifier",             "title": "default (Package-Private) Modifier" },
+        { "id": "access-modifier-table",        "title": "Access Modifier Comparison Table" },
+        { "id": "class-level-vs-member-level",  "title": "Class-Level vs Member-Level Access" },
+        { "id": "access-with-inheritance",      "title": "Access Modifiers with Inheritance" },
+        { "id": "encapsulation",                "title": "Encapsulation — The Core Purpose" },
+        { "id": "access-modifiers-interface",   "title": "Access Modifiers in Interfaces" },
+        { "id": "common-mistakes",              "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",               "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",          "title": "Real-World Production Code Examples" },
+        { "id": "access-modifier-flowchart",    "title": "Visibility Flowchart" },
+        { "id": "interview-questions",          "title": "Interview Questions" },
+        { "id": "practice-questions",           "title": "Practice Questions" },
+        { "id": "conclusion-heading",           "title": "Conclusion" },
+        { "id": "faq-heading",                  "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-access-modifiers" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-access-modifiers" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-access-modifiers" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-classes-objects",
+      "next": "https://www.techsustainify.com/java/java-encapsulation"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-oop",
+      "contentTopic": "java-access-modifiers",
+      "chapterNumber": 18,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Access Modifiers" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Access Modifiers — public, private, protected & default",
+    "subtitle": "Everything you need to know about Java Access Modifiers — visibility rules, encapsulation, class-level vs member-level access, inheritance behaviour, interface rules, anti-patterns, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "24 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "18 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-are-access-modifiers",
+      "title": "What are Access Modifiers in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Access modifiers</strong> (also called <em>access specifiers</em>) in Java are keywords that define the <strong>visibility and accessibility</strong> of classes, methods, constructors, and fields. They are the primary mechanism Java provides to implement <strong>encapsulation</strong> — the OOP principle of hiding internal implementation details and exposing only what is necessary."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java provides <strong>four access modifiers</strong>: <code>public</code>, <code>private</code>, <code>protected</code>, and <strong>default</strong> (package-private — applied when no modifier keyword is written). Each defines a different level of visibility, ranging from completely open (<code>public</code>) to completely restricted (<code>private</code>)."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In real-world applications, access control is everywhere: a <code>BankAccount</code> class keeps its <code>balance</code> field <code>private</code> so only its own methods can modify it. A <code>paymentGateway</code> method is <code>public</code> so external systems can call it. An internal helper method like <code>validateCVV()</code> is <code>private</code> so no outside class can bypass security. This careful control is what separates robust production code from fragile code that anyone can break."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java Access Modifiers at a Glance",
+          "text": "Java has 4 access levels: (1) public — visible everywhere: same class, same package, subclass, other package. (2) protected — visible in same class, same package, and subclasses (even in different packages). (3) default (no keyword) — visible only in same class and same package; NOT visible in other packages, even subclasses. (4) private — visible only in the same class; not even subclasses can access it. Rule of thumb: always use the MOST RESTRICTIVE modifier that still allows your code to function."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "public-modifier",
+      "title": "public Modifier — Maximum Visibility",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>public</code> modifier grants <strong>unrestricted access from anywhere</strong> in the program — the same class, the same package, subclasses in different packages, and completely unrelated classes in other packages. It is the most permissive modifier. <code>public</code> is used for class definitions that form the <strong>API</strong> — the intentional public contract that other code is meant to use."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📌",
+              "title": "Where public Can Be Applied",
+              "text": "• Top-level classes (the class itself)\n• Methods (instance and static)\n• Fields/variables (though usually combined with final for constants)\n• Constructors\n• Interfaces and their members\n• Enum declarations\n• Nested/inner classes"
+            },
+            {
+              "icon": "📋",
+              "title": "Visibility Scope",
+              "text": "Accessible from:\n✅ Same class\n✅ Same package\n✅ Subclass in same package\n✅ Subclass in different package\n✅ Non-subclass in different package\n→ No restrictions — visible from everywhere in the program."
+            },
+            {
+              "icon": "⚠️",
+              "title": "One public Class Per File Rule",
+              "text": "A .java file can contain ONLY ONE public top-level class, and the filename MUST match that class name exactly (case-sensitive). Example: PublicDemo.java must contain 'public class PublicDemo'. Violating this is a compile-time error. A file can have multiple non-public (default) classes, but only one public class."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "PublicModifierDemo.java",
+          "lines": [
+            "// File: PublicModifierDemo.java",
+            "// public class — accessible from anywhere",
+            "public class PublicModifierDemo {",
+            "",
+            "    // public field — accessible from anywhere (avoid for mutable state)",
+            "    public static final double TAX_RATE = 0.18; // ✅ OK — constant",
+            "",
+            "    // public mutable field — BAD PRACTICE (exposed to modification)",
+            "    public String name; // ❌ Avoid — use private + getter/setter",
+            "",
+            "    // public constructor — anyone can instantiate",
+            "    public PublicModifierDemo(String name) {",
+            "        this.name = name;",
+            "    }",
+            "",
+            "    // public method — part of the API contract",
+            "    public double calculateTax(double amount) {",
+            "        return amount * TAX_RATE;",
+            "    }",
+            "",
+            "    // public static utility method",
+            "    public static String formatCurrency(double amount) {",
+            "        return String.format(\"₹%.2f\", amount);",
+            "    }",
+            "}",
+            "",
+            "// File: AnotherPackage/OtherClass.java (different package)",
+            "import com.techsustainify.PublicModifierDemo;",
+            "",
+            "public class OtherClass {",
+            "    public void demo() {",
+            "        // ✅ Can access public class from different package",
+            "        PublicModifierDemo obj = new PublicModifierDemo(\"Test\");",
+            "",
+            "        // ✅ Can access public method",
+            "        double tax = obj.calculateTax(1000);",
+            "",
+            "        // ✅ Can access public static method",
+            "        String formatted = PublicModifierDemo.formatCurrency(1180);",
+            "",
+            "        // ✅ Can access public constant",
+            "        double rate = PublicModifierDemo.TAX_RATE;",
+            "",
+            "        System.out.println(formatted + \" (Tax: \" + tax + \")\");",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ public Fields Are Almost Always a Mistake",
+          "text": "Making instance fields public exposes your class's internal state to direct modification by ANY code. Once public, you cannot add validation, logging, or change internal representation without breaking all callers. Always make fields private and expose them through controlled public getters/setters. The only accepted exception: public static final constants (e.g., Math.PI, Integer.MAX_VALUE)."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "private-modifier",
+      "title": "private Modifier — Maximum Restriction",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>private</code> modifier is the <strong>most restrictive</strong> access level. A <code>private</code> member is accessible <em>only</em> within the class where it is declared — not from subclasses, not from other classes in the same package, not from anywhere else. <code>private</code> is the correct default for all class fields and implementation-detail methods, forming the foundation of encapsulation."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📌",
+              "title": "Where private Can Be Applied",
+              "text": "• Fields/variables (most common use)\n• Methods (helper/utility methods)\n• Constructors (Singleton pattern, factory pattern)\n• Nested/inner classes\n• ❌ Cannot be applied to top-level classes"
+            },
+            {
+              "icon": "📋",
+              "title": "Visibility Scope",
+              "text": "Accessible from:\n✅ Same class only\n❌ Same package (other classes)\n❌ Subclass in same package\n❌ Subclass in different package\n❌ Other packages\n→ Total isolation within the declaring class."
+            },
+            {
+              "icon": "🔒",
+              "title": "Why private is the Right Default",
+              "text": "Start everything as private. Only promote visibility (to protected or public) when external access is genuinely required. This is the 'Principle of Least Privilege' — give the minimum access needed. It enables: safe refactoring (internals can change freely), validation before state changes (via setters), immutability (no setter = immutable field), and better encapsulation."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "BankAccount.java — private in Action",
+          "lines": [
+            "public class BankAccount {",
+            "",
+            "    // ✅ private fields — no outside code can directly modify balance",
+            "    private String accountNumber;",
+            "    private String ownerName;",
+            "    private double balance;",
+            "    private boolean frozen;",
+            "",
+            "    // ✅ public constructor — outsiders can create accounts",
+            "    public BankAccount(String accountNumber, String ownerName, double initialDeposit) {",
+            "        this.accountNumber = accountNumber;",
+            "        this.ownerName     = ownerName;",
+            "        // Validation in constructor — impossible with public fields",
+            "        if (initialDeposit < 0) {",
+            "            throw new IllegalArgumentException(\"Initial deposit cannot be negative\");",
+            "        }",
+            "        this.balance = initialDeposit;",
+            "        this.frozen  = false;",
+            "    }",
+            "",
+            "    // ✅ public API methods — controlled access to private state",
+            "    public void deposit(double amount) {",
+            "        validateNotFrozen();",
+            "        if (amount <= 0) throw new IllegalArgumentException(\"Deposit must be positive\");",
+            "        balance += amount;",
+            "        logTransaction(\"DEPOSIT\", amount);",
+            "    }",
+            "",
+            "    public void withdraw(double amount) {",
+            "        validateNotFrozen();",
+            "        if (amount <= 0) throw new IllegalArgumentException(\"Amount must be positive\");",
+            "        if (amount > balance) throw new IllegalStateException(\"Insufficient funds\");",
+            "        balance -= amount;",
+            "        logTransaction(\"WITHDRAWAL\", amount);",
+            "    }",
+            "",
+            "    public double getBalance() {",
+            "        return balance; // Read-only access — no setter for balance",
+            "    }",
+            "",
+            "    public String getAccountNumber() { return accountNumber; }",
+            "    public String getOwnerName()     { return ownerName; }",
+            "",
+            "    // ✅ private helper methods — implementation details hidden",
+            "    private void validateNotFrozen() {",
+            "        if (frozen) throw new IllegalStateException(\"Account is frozen\");",
+            "    }",
+            "",
+            "    private void logTransaction(String type, double amount) {",
+            "        System.out.printf(\"[LOG] %s: ₹%.2f | Balance: ₹%.2f%n\", type, amount, balance);",
+            "    }",
+            "}",
+            "",
+            "// Usage:",
+            "// BankAccount acc = new BankAccount(\"ACC001\", \"Ravi\", 5000);",
+            "// acc.deposit(2000);   // ✅ Works",
+            "// acc.balance = 99999; // ❌ Compile error — private field",
+            "// acc.logTransaction(); // ❌ Compile error — private method"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 private Constructor — Singleton & Utility Class Pattern",
+          "text": "Making a constructor private prevents external instantiation. This is deliberately used in two patterns: (1) Singleton: 'private static final BankConfig INSTANCE = new BankConfig();' with 'public static BankConfig getInstance() { return INSTANCE; }' — only one object ever exists. (2) Utility class: 'private MathUtils() {}' on a class with only static methods — prevents pointless instantiation of a class that has no instance state (like java.lang.Math)."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "protected-modifier",
+      "title": "protected Modifier — Inheritance-Aware Access",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>protected</code> modifier grants access to the <strong>same class, same package, AND all subclasses</strong> — even subclasses in different packages. It sits between <code>default</code> (package-only) and <code>public</code> (everywhere). <code>protected</code> is designed specifically for <strong>inheritance scenarios</strong> — when a parent class wants to share implementation details with its children without exposing them to the entire world."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📌",
+              "title": "Where protected Can Be Applied",
+              "text": "• Methods (intended for subclass use or override)\n• Fields (shared internal state with subclasses)\n• Constructors (force subclassing — e.g., abstract base class)\n• Nested/inner classes\n• ❌ Cannot be applied to top-level classes"
+            },
+            {
+              "icon": "📋",
+              "title": "Visibility Scope",
+              "text": "Accessible from:\n✅ Same class\n✅ Same package (all classes)\n✅ Subclass in same package\n✅ Subclass in different package\n❌ Non-subclass in different package\n→ Key: package OR subclass, but NOT arbitrary outside classes."
+            },
+            {
+              "icon": "🔗",
+              "title": "protected vs default — Key Difference",
+              "text": "Both allow same-package access. The difference: protected ALSO allows subclass access across packages. default does NOT. If you have a class in package 'com.app.base' with a default method, and a subclass in 'com.app.ui', the subclass CANNOT access that method. Make it protected to enable cross-package inheritance while still blocking arbitrary external code."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ProtectedModifierDemo.java",
+          "lines": [
+            "// Package: com.techsustainify.shapes",
+            "public abstract class Shape {",
+            "",
+            "    // protected field — subclasses can access and set this",
+            "    protected String color;",
+            "    protected double borderWidth;",
+            "",
+            "    // protected constructor — forces use of subclasses",
+            "    protected Shape(String color, double borderWidth) {",
+            "        this.color       = color;",
+            "        this.borderWidth = borderWidth;",
+            "    }",
+            "",
+            "    // public abstract method — subclasses MUST implement",
+            "    public abstract double calculateArea();",
+            "",
+            "    // protected method — shared logic for subclasses, hidden from outside",
+            "    protected String getBaseDescription() {",
+            "        return String.format(\"Color: %s, Border: %.1fpx\", color, borderWidth);",
+            "    }",
+            "",
+            "    // protected utility for rendering — subclasses may override or call",
+            "    protected void drawBorder() {",
+            "        System.out.println(\"Drawing border: width = \" + borderWidth);",
+            "    }",
+            "}",
+            "",
+            "// Package: com.techsustainify.ui  (DIFFERENT package)",
+            "import com.techsustainify.shapes.Shape;",
+            "",
+            "public class Circle extends Shape {",
+            "",
+            "    private double radius;",
+            "",
+            "    public Circle(double radius, String color) {",
+            "        super(color, 1.0); // ✅ Can call protected parent constructor",
+            "        this.radius = radius;",
+            "    }",
+            "",
+            "    @Override",
+            "    public double calculateArea() {",
+            "        return Math.PI * radius * radius;",
+            "    }",
+            "",
+            "    public String describe() {",
+            "        // ✅ Can access protected parent method from subclass (different package)",
+            "        return \"Circle [r=\" + radius + \"] | \" + getBaseDescription();",
+            "    }",
+            "",
+            "    public void render() {",
+            "        drawBorder(); // ✅ Can call protected parent method",
+            "        // ✅ Can access protected field directly",
+            "        System.out.println(\"Filling circle with color: \" + color);",
+            "    }",
+            "}",
+            "",
+            "// In a completely unrelated class (different package, NOT a subclass):",
+            "// Shape s = ...;",
+            "// s.drawBorder();       // ❌ Compile error — protected, not a subclass",
+            "// s.getBaseDescription(); // ❌ Compile error — protected"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Tricky: protected Access Through Inheritance Is Limited",
+          "text": "A subclass can access a parent's protected member through its OWN reference or 'super', but NOT through a reference of the parent type from a different package. Example: in class Child extends Parent (different package), 'this.protectedField' is ✅ OK. But 'Parent p = new Parent(); p.protectedField' is ❌ COMPILE ERROR — even inside the Child class. This is one of the most commonly misunderstood rules of Java access control."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "default-modifier",
+      "title": "default (Package-Private) Modifier — Package-Level Access",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <strong>default access modifier</strong> — also called <em>package-private</em> — is applied when <strong>no access modifier keyword is written</strong>. A member with default access is visible to all classes within the <strong>same package</strong> but is completely hidden from classes in other packages, including subclasses in different packages. It is the \"internal to this package\" visibility level."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📌",
+              "title": "How to Apply Default Access",
+              "text": "Simply write NOTHING — no keyword at all:\n• class DatabaseHelper { }  // default class\n• void executeQuery() { }   // default method\n• int rowCount;              // default field\nDo NOT write 'default' as a keyword for access — 'default' is only a keyword in switch and interface default methods, not as an access modifier."
+            },
+            {
+              "icon": "📋",
+              "title": "Visibility Scope",
+              "text": "Accessible from:\n✅ Same class\n✅ Same package (all classes)\n❌ Subclass in different package\n❌ Non-subclass in different package\n→ Package boundary is the visibility limit."
+            },
+            {
+              "icon": "📦",
+              "title": "When to Use Default Access",
+              "text": "Use default access for: (1) Implementation classes not meant to be in the public API — e.g., a Helper or Impl class. (2) Package-internal utilities shared among classes in the same module/package. (3) Classes intentionally restricted to a bounded context (Domain-Driven Design bounded contexts). Well-designed Java packages often have 1-2 public API classes and several default (internal) classes."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "DefaultAccessDemo.java",
+          "lines": [
+            "// Package: com.techsustainify.payment",
+            "",
+            "// ✅ Default (package-private) class — internal implementation",
+            "// Not accessible from other packages — intentional",
+            "class PaymentValidator {",
+            "",
+            "    // Default method — only classes in same package can call this",
+            "    boolean isValidAmount(double amount) {",
+            "        return amount > 0 && amount <= 1_000_000;",
+            "    }",
+            "",
+            "    // Default method — internal package utility",
+            "    boolean isValidCurrency(String currency) {",
+            "        return currency != null && (currency.equals(\"INR\") || currency.equals(\"USD\"));",
+            "    }",
+            "}",
+            "",
+            "// Package: com.techsustainify.payment (SAME package)",
+            "// ✅ PaymentProcessor can use PaymentValidator freely",
+            "public class PaymentProcessor {",
+            "",
+            "    private PaymentValidator validator = new PaymentValidator(); // ✅ Same package",
+            "",
+            "    public boolean processPayment(double amount, String currency) {",
+            "        if (!validator.isValidAmount(amount)) {    // ✅ Accessible — same package",
+            "            System.out.println(\"Invalid amount\");",
+            "            return false;",
+            "        }",
+            "        if (!validator.isValidCurrency(currency)) { // ✅ Accessible — same package",
+            "            System.out.println(\"Unsupported currency\");",
+            "            return false;",
+            "        }",
+            "        System.out.println(\"Processing \" + currency + \" \" + amount);",
+            "        return true;",
+            "    }",
+            "}",
+            "",
+            "// Package: com.techsustainify.ui (DIFFERENT package)",
+            "import com.techsustainify.payment.PaymentProcessor;",
+            "// import com.techsustainify.payment.PaymentValidator; // ❌ Cannot import — default class",
+            "",
+            "public class CheckoutUI {",
+            "    public void checkout() {",
+            "        PaymentProcessor proc = new PaymentProcessor(); // ✅ public class",
+            "        proc.processPayment(1500.0, \"INR\");             // ✅ public method",
+            "",
+            "        // PaymentValidator v = new PaymentValidator();   // ❌ Compile error",
+            "        // v.isValidAmount(500);                          // ❌ Compile error",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "access-modifier-table",
+      "title": "Access Modifier Comparison Table — At a Glance",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This table summarises the complete visibility matrix for all four Java access modifiers across every possible access location."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Access Location", "private", "default", "protected", "public"],
+          "rows": [
+            ["Same class",                          "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
+            ["Same package — subclass",             "❌ No",  "✅ Yes", "✅ Yes", "✅ Yes"],
+            ["Same package — non-subclass",         "❌ No",  "✅ Yes", "✅ Yes", "✅ Yes"],
+            ["Different package — subclass",        "❌ No",  "❌ No",  "✅ Yes", "✅ Yes"],
+            ["Different package — non-subclass",    "❌ No",  "❌ No",  "❌ No",  "✅ Yes"],
+            ["Applicable to top-level class?",      "❌ No",  "✅ Yes", "❌ No",  "✅ Yes"],
+            ["Applicable to class members?",        "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
+            ["Applicable to constructors?",         "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
+            ["Supports encapsulation?",             "✅ Best","✅ Good","⚠️ Limited","❌ No"],
+            ["Overridable in subclass?",            "❌ No",  "⚠️ Same pkg", "✅ Yes", "✅ Yes"]
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Memory Trick — Widening Visibility Order",
+          "text": "Remember the order from most restrictive to least restrictive: private → default → protected → public. Think of it as expanding circles: private = within the class wall. default = within the package fence. protected = package fence + inheritance bridge. public = no walls at all. Each level includes all access of the level before it, plus adds more."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "class-level-vs-member-level",
+      "title": "Class-Level vs Member-Level Access — Two Distinct Contexts",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Access modifiers work at <strong>two distinct levels</strong> in Java: the <em>class level</em> (controlling access to the class itself) and the <em>member level</em> (controlling access to fields, methods, and constructors inside the class). The rules are different at each level, and confusing them is a common source of errors."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🏛️",
+              "title": "Class-Level Access (Top-Level Classes)",
+              "text": "Top-level classes can only be public or default (package-private). They CANNOT be private or protected — this is a compile-time error. A public class is accessible from any package. A default class is only accessible from within its own package. One .java file = maximum one public class (must match filename)."
+            },
+            {
+              "icon": "🔧",
+              "title": "Member-Level Access (Fields, Methods, Constructors)",
+              "text": "Members of a class can use all four modifiers: private, default, protected, and public. Member-level access is determined first by the class-level access. Even if a method is public, if the class itself is default (package-private), outside packages cannot reach that method — the class is not even visible to them."
+            },
+            {
+              "icon": "🏠",
+              "title": "Nested Class Access",
+              "text": "Inner classes (nested inside another class) can use all four modifiers. A private inner class is accessible only within the enclosing class. A public inner class is accessible anywhere (though the outer class must also be reachable). Static nested classes follow the same rules as regular classes."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ClassVsMemberAccess.java",
+          "lines": [
+            "// ✅ public top-level class — accessible from other packages",
+            "public class Order {",
+            "",
+            "    // Member-level modifiers — all four are valid here",
+            "    private   int orderId;          // Only Order class",
+            "    double    totalAmount;          // Default — same package only",
+            "    protected String customerName;  // Package + subclasses",
+            "    public    String orderStatus;   // Everywhere (but bad practice for mutable field)",
+            "",
+            "    // private constructor — prevents direct instantiation (factory pattern)",
+            "    private Order(int orderId) {",
+            "        this.orderId = orderId;",
+            "        this.orderStatus = \"PENDING\";",
+            "    }",
+            "",
+            "    // public factory method — the intended way to create orders",
+            "    public static Order create(int orderId) {",
+            "        if (orderId <= 0) throw new IllegalArgumentException(\"Invalid order ID\");",
+            "        return new Order(orderId);",
+            "    }",
+            "",
+            "    // ✅ private nested class — only Order can use this",
+            "    private class OrderItem {",
+            "        String productName;",
+            "        int quantity;",
+            "        double price;",
+            "    }",
+            "",
+            "    // ✅ default nested class — accessible in same package",
+            "    class OrderAuditLog {",
+            "        void log(String event) {",
+            "            System.out.println(\"Order #\" + orderId + \": \" + event);",
+            "        }",
+            "    }",
+            "}",
+            "",
+            "// ❌ private class MyClass { }   // Compile error — top-level class cannot be private",
+            "// ❌ protected class MyClass { } // Compile error — top-level class cannot be protected"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "access-with-inheritance",
+      "title": "Access Modifiers with Inheritance — Overriding Rules",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Access modifiers interact with <strong>inheritance</strong> in specific, important ways. When a subclass overrides a parent method, Java enforces a critical rule: <strong>the overriding method cannot reduce visibility</strong> — it can only maintain or widen the access level. This ensures that code relying on the parent's interface continues to work with any subclass (Liskov Substitution Principle)."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "✅",
+              "title": "Widening Access — Allowed",
+              "text": "An overriding method CAN increase visibility:\n• protected → public ✅\n• default → protected ✅\n• default → public ✅\n• private → (cannot override, so not applicable)\nWidening is always safe — if callers could call the parent version, they can certainly call a more accessible version."
+            },
+            {
+              "icon": "❌",
+              "title": "Narrowing Access — Compile Error",
+              "text": "An overriding method CANNOT reduce visibility:\n• public → protected ❌ Compile error\n• public → default ❌ Compile error\n• public → private ❌ Compile error\n• protected → default ❌ Compile error\nNarrowing would break code that expects the parent's public interface to work on any subclass."
+            },
+            {
+              "icon": "🚫",
+              "title": "private Methods — Cannot Be Overridden",
+              "text": "Private methods are not visible to subclasses, so they CANNOT be overridden. If a subclass declares a method with the same name and signature as a parent's private method, it is a completely NEW method — not an override. Using @Override annotation on it causes a compile error. This is called method hiding (for static methods) or simply a new unrelated method (for instance methods)."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "AccessWithInheritance.java",
+          "lines": [
+            "// Package: com.techsustainify.vehicle",
+            "public class Vehicle {",
+            "",
+            "    private String vin;          // Not inherited — completely private",
+            "    protected String fuelType;   // Accessible in subclasses",
+            "    public String brand;         // Accessible everywhere",
+            "",
+            "    protected void startEngine() {",
+            "        System.out.println(\"Vehicle engine started\");",
+            "    }",
+            "",
+            "    public String getInfo() {",
+            "        return \"Brand: \" + brand + \" | Fuel: \" + fuelType;",
+            "    }",
+            "",
+            "    private void performInternalDiagnostic() {",
+            "        System.out.println(\"Internal diagnostic — private\");",
+            "    }",
+            "}",
+            "",
+            "public class ElectricCar extends Vehicle {",
+            "",
+            "    private int batteryCapacity;",
+            "",
+            "    public ElectricCar(String brand, int batteryCapacity) {",
+            "        this.brand           = brand;       // ✅ Inherited public field",
+            "        this.fuelType        = \"Electric\";  // ✅ Inherited protected field",
+            "        this.batteryCapacity = batteryCapacity;",
+            "    }",
+            "",
+            "    // ✅ WIDENING access: protected → public (allowed)",
+            "    @Override",
+            "    public void startEngine() {",
+            "        System.out.println(\"Electric motor activated silently\");",
+            "    }",
+            "",
+            "    // ✅ MAINTAINING access: public → public (same level, always allowed)",
+            "    @Override",
+            "    public String getInfo() {",
+            "        return super.getInfo() + \" | Battery: \" + batteryCapacity + \"kWh\";",
+            "    }",
+            "",
+            "    // ❌ Would be NARROWING — compile error:",
+            "    // @Override",
+            "    // protected String getInfo() { } // ERROR — cannot reduce from public to protected",
+            "",
+            "    // This is a NEW method, NOT an override of private performInternalDiagnostic()",
+            "    public void performInternalDiagnostic() {",
+            "        System.out.println(\"EV diagnostic — battery, motor, regenerative braking\");",
+            "        // Cannot call: super.performInternalDiagnostic(); // ❌ private — not visible",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "encapsulation",
+      "title": "Encapsulation — The Core Purpose of Access Modifiers",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Encapsulation</strong> is one of the four pillars of object-oriented programming (alongside Inheritance, Polymorphism, and Abstraction). It means <strong>bundling data (fields) and the methods that operate on that data into a single unit (class)</strong>, while <strong>restricting direct access to the data</strong>. Access modifiers are the mechanism that makes encapsulation possible in Java."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🔒",
+              "title": "Data Hiding",
+              "text": "Make all fields private. External code cannot directly read or modify internal state. Every access goes through controlled methods. Benefit: the class can enforce invariants — guarantees about its own state that should always hold (e.g., age can never be negative, balance can never go below minimumBalance)."
+            },
+            {
+              "icon": "🚪",
+              "title": "Controlled Access via Getters/Setters",
+              "text": "Provide public getters (read access) and optionally public setters (write access) for fields that need external visibility. Setters can validate input before modifying state. Read-only fields have a getter but no setter. Write-only fields (rare) have a setter but no getter. This gives you full control over every read and write."
+            },
+            {
+              "icon": "🔄",
+              "title": "Freedom to Change Internals",
+              "text": "Once fields are private, you can change their internal representation at any time without breaking callers. Example: storing a phone number as String internally but exposing it as a formatted PhoneNumber object through the getter. Or switching from ArrayList to LinkedList for an internal collection. Callers never know — they only use the public API."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EncapsulatedEmployee.java",
+          "lines": [
+            "public class Employee {",
+            "",
+            "    // ✅ ALL fields private — enforces controlled access",
+            "    private final int    employeeId;   // Immutable — no setter",
+            "    private       String name;",
+            "    private       String department;",
+            "    private       double salary;",
+            "    private       int    age;",
+            "",
+            "    public Employee(int employeeId, String name, String department,",
+            "                    double salary, int age) {",
+            "        if (employeeId <= 0)   throw new IllegalArgumentException(\"Invalid ID\");",
+            "        if (salary < 0)        throw new IllegalArgumentException(\"Salary cannot be negative\");",
+            "        if (age < 18 || age > 65) throw new IllegalArgumentException(\"Age out of range\");",
+            "        if (name == null || name.isBlank()) throw new IllegalArgumentException(\"Name required\");",
+            "",
+            "        this.employeeId = employeeId;",
+            "        this.name       = name;",
+            "        this.department = department;",
+            "        this.salary     = salary;",
+            "        this.age        = age;",
+            "    }",
+            "",
+            "    // Read-only getter (no setter — ID is final/immutable)",
+            "    public int getEmployeeId() { return employeeId; }",
+            "",
+            "    // Standard getter and setter with validation",
+            "    public String getName() { return name; }",
+            "    public void setName(String name) {",
+            "        if (name == null || name.isBlank()) throw new IllegalArgumentException(\"Name required\");",
+            "        this.name = name;",
+            "    }",
+            "",
+            "    public double getSalary() { return salary; }",
+            "    public void setSalary(double salary) {",
+            "        if (salary < 0) throw new IllegalArgumentException(\"Salary cannot be negative\");",
+            "        this.salary = salary;",
+            "    }",
+            "",
+            "    public int getAge() { return age; }",
+            "    public void setAge(int age) {",
+            "        if (age < 18 || age > 65) throw new IllegalArgumentException(\"Age out of range\");",
+            "        this.age = age;",
+            "    }",
+            "",
+            "    // Business method — uses private state without exposing it",
+            "    public double calculateBonus() {",
+            "        if (salary > 100000) return salary * 0.20;",
+            "        if (salary > 50000)  return salary * 0.15;",
+            "        return salary * 0.10;",
+            "    }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return String.format(\"Employee[id=%d, name=%s, dept=%s, salary=%.2f]\",",
+            "                            employeeId, name, department, salary);",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "access-modifiers-interface",
+      "title": "Access Modifiers in Interfaces — Special Rules",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Interfaces in Java have <strong>special access modifier rules</strong> that differ from classes. Understanding these is essential for writing correct Java interfaces, especially since Java 8, 9, and later versions added <code>default</code>, <code>static</code>, and <code>private</code> methods to interfaces."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📜",
+              "title": "Interface Methods",
+              "text": "• Abstract methods: implicitly public — no other modifier allowed (private/protected/default cause compile error in abstract context).\n• default methods (Java 8+): must be public (explicitly or implicitly).\n• static methods (Java 8+): must be public (default) or private (Java 9+).\n• private methods (Java 9+): allowed — used as internal helpers for default/static methods. NOT inherited by implementing classes."
+            },
+            {
+              "icon": "📦",
+              "title": "Interface Fields",
+              "text": "All fields in an interface are implicitly: public, static, and final — i.e., they are constants. You cannot make interface fields private or protected. Writing 'int MAX = 100;' in an interface is automatically 'public static final int MAX = 100;'. Attempting to assign them in implementing classes is a compile error."
+            },
+            {
+              "icon": "🏛️",
+              "title": "Interface Itself",
+              "text": "A top-level interface can only be public or default (package-private) — same as classes. A public interface is accessible everywhere. A default interface is package-private. Nested interfaces inside a class can be public, protected, default, or private. When implementing an interface method, the implementing class method MUST be public — it cannot reduce visibility."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InterfaceAccessModifiers.java",
+          "lines": [
+            "// Public interface — accessible everywhere",
+            "public interface PaymentGateway {",
+            "",
+            "    // Implicitly: public static final",
+            "    int MAX_RETRY_COUNT = 3;             // ✅ Constant",
+            "    double TRANSACTION_FEE_PERCENT = 2.5; // ✅ Constant",
+            "",
+            "    // Implicitly: public abstract — no modifier needed",
+            "    boolean processPayment(double amount, String currency);",
+            "    void refund(String transactionId);",
+            "",
+            "    // ✅ default method (Java 8+) — implicitly public",
+            "    default String formatAmount(double amount, String currency) {",
+            "        return String.format(\"%s %.2f\", currency, amount);",
+            "    }",
+            "",
+            "    // ✅ static method (Java 8+) — implicitly public",
+            "    static boolean isSupportedCurrency(String currency) {",
+            "        return currency != null &&",
+            "               (currency.equals(\"INR\") || currency.equals(\"USD\") || currency.equals(\"EUR\"));",
+            "    }",
+            "",
+            "    // ✅ private method (Java 9+) — helper for default methods",
+            "    private void logAttempt(String operation) {",
+            "        System.out.println(\"[Gateway] Attempting: \" + operation);",
+            "    }",
+            "",
+            "    // ✅ private static method (Java 9+)",
+            "    private static String buildRequestId() {",
+            "        return \"REQ-\" + System.currentTimeMillis();",
+            "    }",
+            "}",
+            "",
+            "// Implementing class MUST use public for all interface methods",
+            "public class UPIGateway implements PaymentGateway {",
+            "",
+            "    @Override",
+            "    public boolean processPayment(double amount, String currency) { // ✅ Must be public",
+            "        System.out.println(\"UPI payment: \" + formatAmount(amount, currency));",
+            "        return true;",
+            "    }",
+            "",
+            "    @Override",
+            "    public void refund(String transactionId) {",
+            "        System.out.println(\"UPI refund for: \" + transactionId);",
+            "    }",
+            "",
+            "    // ❌ Cannot do this — would narrow interface's public to protected",
+            "    // @Override",
+            "    // protected boolean processPayment(...) { } // Compile error",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Errors That Fool Everyone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These mistakes appear consistently in Java beginner and intermediate code. Each one either causes a compile-time error or — worse — silently violates the encapsulation principle, creating fragile code that breaks during maintenance."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "AccessModifierMistakes.java",
+          "lines": [
+            "// ❌ MISTAKE 1: public mutable fields — breaks encapsulation",
+            "public class Product {",
+            "    public double price;  // ❌ Anyone can set: product.price = -999;",
+            "    public int stock;     // ❌ No validation possible",
+            "}",
+            "// ✅ Fix: private fields with validated setters",
+            "public class Product {",
+            "    private double price;",
+            "    private int stock;",
+            "    public void setPrice(double price) {",
+            "        if (price < 0) throw new IllegalArgumentException(\"Price cannot be negative\");",
+            "        this.price = price;",
+            "    }",
+            "    public double getPrice() { return price; }",
+            "}",
+            "",
+            "// ❌ MISTAKE 2: Making a class private at top level",
+            "// private class Config { }  // Compile error — top-level class cannot be private",
+            "",
+            "// ❌ MISTAKE 3: Narrowing access in subclass override",
+            "class Animal {",
+            "    public void speak() { System.out.println(\"...\"); }",
+            "}",
+            "class Dog extends Animal {",
+            "    // @Override",
+            "    // protected void speak() { }  // ❌ Compile error — narrows public to protected",
+            "    @Override",
+            "    public void speak() { System.out.println(\"Woof!\"); } // ✅ Same or wider",
+            "}",
+            "",
+            "// ❌ MISTAKE 4: Expecting protected to mean 'subclass only'",
+            "// (In same package, ALL classes — not just subclasses — can access protected members)",
+            "package com.example;",
+            "class Parent {",
+            "    protected int secret = 42;",
+            "}",
+            "class UnrelatedSamePkg {  // NOT a subclass",
+            "    void demo() {",
+            "        Parent p = new Parent();",
+            "        System.out.println(p.secret); // ✅ Works! Same package, not just subclasses",
+            "    }",
+            "}",
+            "",
+            "// ❌ MISTAKE 5: Overriding private method (it is not an override)",
+            "class Base {",
+            "    private void helper() { System.out.println(\"Base helper\"); }",
+            "    public void run() { helper(); } // Calls Base's private helper",
+            "}",
+            "class Derived extends Base {",
+            "    // This is a NEW method — NOT an override",
+            "    private void helper() { System.out.println(\"Derived helper\"); }",
+            "    // run() in Base still calls Base's private helper — polymorphism does NOT apply",
+            "}",
+            "// new Derived().run() → prints 'Base helper', NOT 'Derived helper'",
+            "",
+            "// ❌ MISTAKE 6: Forgetting that interface methods implementing must be public",
+            "interface Flyable {",
+            "    void fly();",
+            "}",
+            "class Bird implements Flyable {",
+            "    // void fly() { }          // ❌ Reduces public to default — compile error",
+            "    public void fly() { }      // ✅ Must explicitly be public"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These access modifier anti-patterns are among the top reasons for <strong>failed code reviews</strong> in professional Java teams. Each one violates fundamental OOP principles and creates long-term maintenance problems."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "God Class with All-Public Fields",
+              "text": "A class where all fields are public is not encapsulation — it is a glorified struct. Any class can modify its state directly, making it impossible to enforce invariants, add validation, or refactor internals. Every field should start private. Only promote visibility when genuinely needed, and almost never to public for mutable fields."
+            },
+            {
+              "icon": "🚫",
+              "title": "Anemic Domain Model",
+              "text": "A class with all-private fields but only getters and setters, with no business logic — just data containers. This is anti-OOP. Business logic that works with the data belongs IN the class, not scattered in service classes. An Employee should have calculateBonus(), not just getSalary()/setSalary(). Tell, don't ask."
+            },
+            {
+              "icon": "🚫",
+              "title": "Using protected Instead of private by Default",
+              "text": "Making all fields protected 'in case subclasses need them' is lazy access control. protected exposes internals to the entire package AND all future subclasses. This tightly couples parent and child classes, making the parent hard to refactor. Keep fields private; provide protected methods if subclasses need specific behaviour — not raw field access."
+            },
+            {
+              "icon": "🚫",
+              "title": "Unnecessary Public API — Leaking Internals",
+              "text": "Making internal helper methods public because 'it might be useful later' pollutes the public API. Once public, removing or renaming a method is a breaking change. Every public method is a contract you must maintain forever. Use private or package-private for implementation details. Add to public API only with deliberate intent."
+            },
+            {
+              "icon": "🚫",
+              "title": "Breaking Encapsulation via Returning Mutable References",
+              "text": "Returning a reference to a private mutable collection or array defeats encapsulation even with a private field: 'public List<Order> getOrders() { return orders; }' — the caller now holds a direct reference to the internal list and can modify it. Return a defensive copy: 'return Collections.unmodifiableList(orders)' or 'return new ArrayList<>(orders)'."
+            },
+            {
+              "icon": "🚫",
+              "title": "Reflection to Access Private Members",
+              "text": "Using Java Reflection to access private fields (field.setAccessible(true)) in production code is an extreme violation of encapsulation — it bypasses all access control. It makes code brittle (breaks when field names change), causes security issues in modular Java (Java 9+ module system blocks this), and signals a design flaw. If external code needs access, provide a proper API."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "AccessAntiPatterns.java",
+          "lines": [
+            "// ❌ ANTI-PATTERN: Returning mutable internal collection",
+            "public class ShoppingCart {",
+            "    private List<Item> items = new ArrayList<>();",
+            "",
+            "    public List<Item> getItems() {",
+            "        return items;  // ❌ Caller gets direct reference — can modify!",
+            "    }",
+            "}",
+            "// Usage of broken API:",
+            "// cart.getItems().clear(); // ❌ Clears internal list — bypasses all control!",
+            "",
+            "// ✅ FIX: Return defensive copy or unmodifiable view",
+            "public class ShoppingCart {",
+            "    private List<Item> items = new ArrayList<>();",
+            "",
+            "    // Option 1: Unmodifiable view — throws on mutation attempt",
+            "    public List<Item> getItems() {",
+            "        return Collections.unmodifiableList(items);",
+            "    }",
+            "",
+            "    // Option 2: Defensive copy — independent copy, mutations don't affect internal state",
+            "    public List<Item> getItemsCopy() {",
+            "        return new ArrayList<>(items);",
+            "    }",
+            "",
+            "    // ✅ BEST: Provide specific methods instead of exposing the collection",
+            "    public void addItem(Item item) {",
+            "        if (item == null) throw new IllegalArgumentException(\"Item cannot be null\");",
+            "        items.add(item);",
+            "    }",
+            "",
+            "    public int getItemCount() { return items.size(); }",
+            "    public boolean hasItem(String productId) {",
+            "        return items.stream().anyMatch(i -> i.getProductId().equals(productId));",
+            "    }",
+            "}",
+            "",
+            "// ❌ ANTI-PATTERN: Reflection to bypass private",
+            "// Field field = SomeClass.class.getDeclaredField(\"privateField\");",
+            "// field.setAccessible(true); // ❌ Breaks encapsulation, brittle, security risk",
+            "// field.set(obj, newValue);",
+            "// → If you need this in production code, the design has a problem — fix the API."
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Access Modifiers in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples show access modifier usage patterns found in real enterprise Java codebases — Spring Boot application layers with deliberate, idiomatic access control at each level."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "UserAccount.java — Domain Model with Encapsulation",
+          "lines": [
+            "package com.techsustainify.domain;",
+            "",
+            "import java.time.LocalDateTime;",
+            "import java.util.ArrayList;",
+            "import java.util.Collections;",
+            "import java.util.List;",
+            "",
+            "public class UserAccount {",
+            "",
+            "    // private — core identity fields, immutable after creation",
+            "    private final String userId;",
+            "    private final String email;",
+            "    private final LocalDateTime createdAt;",
+            "",
+            "    // private — mutable but controlled state",
+            "    private String displayName;",
+            "    private boolean active;",
+            "    private boolean emailVerified;",
+            "    private int loginAttempts;",
+            "    private LocalDateTime lastLoginAt;",
+            "",
+            "    // private — internal collection never exposed directly",
+            "    private final List<String> roles = new ArrayList<>();",
+            "",
+            "    // package-private constructor — only factory/builder in same package creates instances",
+            "    UserAccount(String userId, String email, String displayName) {",
+            "        this.userId      = userId;",
+            "        this.email       = email;",
+            "        this.displayName = displayName;",
+            "        this.createdAt   = LocalDateTime.now();",
+            "        this.active      = true;",
+            "        this.emailVerified = false;",
+            "        this.loginAttempts = 0;",
+            "    }",
+            "",
+            "    // public read-only accessors for immutable fields",
+            "    public String getUserId()          { return userId; }",
+            "    public String getEmail()           { return email; }",
+            "    public LocalDateTime getCreatedAt(){ return createdAt; }",
+            "",
+            "    // public controlled mutators with business logic",
+            "    public String getDisplayName() { return displayName; }",
+            "    public void setDisplayName(String displayName) {",
+            "        if (displayName == null || displayName.isBlank())",
+            "            throw new IllegalArgumentException(\"Display name cannot be blank\");",
+            "        if (displayName.length() > 50)",
+            "            throw new IllegalArgumentException(\"Display name too long\");",
+            "        this.displayName = displayName;",
+            "    }",
+            "",
+            "    // Business state — read publicly, changed only through business methods",
+            "    public boolean isActive()        { return active; }",
+            "    public boolean isEmailVerified() { return emailVerified; }",
+            "",
+            "    // Business methods — encapsulate state transitions with rules",
+            "    public void verifyEmail() {",
+            "        this.emailVerified = true;",
+            "    }",
+            "",
+            "    public void deactivate() {",
+            "        this.active = false;",
+            "    }",
+            "",
+            "    public void recordSuccessfulLogin() {",
+            "        this.loginAttempts = 0;",
+            "        this.lastLoginAt = LocalDateTime.now();",
+            "    }",
+            "",
+            "    public boolean recordFailedLogin() {",
+            "        this.loginAttempts++;",
+            "        if (this.loginAttempts >= 5) {",
+            "            this.active = false;",
+            "            return false; // Account locked",
+            "        }",
+            "        return true;",
+            "    }",
+            "",
+            "    public void addRole(String role) {",
+            "        if (!roles.contains(role)) roles.add(role);",
+            "    }",
+            "",
+            "    // ✅ Unmodifiable view — callers read roles, cannot modify internal list",
+            "    public List<String> getRoles() {",
+            "        return Collections.unmodifiableList(roles);",
+            "    }",
+            "",
+            "    public boolean hasRole(String role) {",
+            "        return roles.contains(role);",
+            "    }",
+            "",
+            "    // private helper — implementation detail",
+            "    private boolean isLoginLocked() {",
+            "        return loginAttempts >= 5;",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "AbstractRepository.java — protected Template Method Pattern",
+          "lines": [
+            "package com.techsustainify.data;",
+            "",
+            "import java.util.List;",
+            "import java.util.Optional;",
+            "",
+            "// Abstract base — default (package-private) access — internal framework class",
+            "abstract class AbstractRepository<T, ID> {",
+            "",
+            "    // protected — subclasses must access this to perform DB operations",
+            "    protected final DatabaseConnection connection;",
+            "",
+            "    protected AbstractRepository(DatabaseConnection connection) {",
+            "        this.connection = connection;",
+            "    }",
+            "",
+            "    // public API — these are the operations callers use",
+            "    public abstract Optional<T> findById(ID id);",
+            "    public abstract List<T> findAll();",
+            "    public abstract T save(T entity);",
+            "    public abstract void deleteById(ID id);",
+            "",
+            "    // protected template methods — shared infrastructure, overridable behaviour",
+            "    protected void beforeSave(T entity) {",
+            "        // Default: no-op. Subclasses can override to add audit timestamps.",
+            "    }",
+            "",
+            "    protected void afterSave(T entity) {",
+            "        // Default: no-op. Subclasses can override to publish domain events.",
+            "    }",
+            "",
+            "    // private — internal framework utility, hidden even from subclasses",
+            "    private void checkConnectionHealth() {",
+            "        if (!connection.isHealthy()) {",
+            "            throw new DatabaseException(\"Connection unhealthy\");",
+            "        }",
+            "    }",
+            "}",
+            "",
+            "// public concrete class — this is what application code sees",
+            "public class UserRepository extends AbstractRepository<UserAccount, String> {",
+            "",
+            "    public UserRepository(DatabaseConnection connection) {",
+            "        super(connection); // ✅ Calls protected parent constructor",
+            "    }",
+            "",
+            "    @Override",
+            "    public Optional<UserAccount> findById(String userId) {",
+            "        // ✅ Uses protected connection field from parent",
+            "        return connection.query(\"SELECT * FROM users WHERE id = ?\", userId);",
+            "    }",
+            "",
+            "    @Override",
+            "    protected void beforeSave(UserAccount user) {",
+            "        // ✅ Overrides protected template — adds audit timestamp",
+            "        user.setLastModified(LocalDateTime.now());",
+            "    }",
+            "",
+            "    @Override",
+            "    public List<UserAccount> findAll()              { /* implementation */ return null; }",
+            "    @Override",
+            "    public UserAccount save(UserAccount entity)     { /* implementation */ return null; }",
+            "    @Override",
+            "    public void deleteById(String id)               { /* implementation */ }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "access-modifier-flowchart",
+      "title": "Access Modifier Decision Flowchart — Which One to Use?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Use this decision flowchart when choosing the right access modifier for any class member."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "▶ Choosing access modifier",         "sublabel": "for a field, method, or constructor",    "type": "start" },
+            { "id": "2", "label": "🔍 Needed ONLY inside this class?",  "sublabel": "no external access ever required",        "type": "decision" },
+            { "id": "3", "label": "✅ Use private",                      "sublabel": "most restrictive — correct default",      "type": "process" },
+            { "id": "4", "label": "🔍 Needed in same package only?",    "sublabel": "not needed by other packages",            "type": "decision" },
+            { "id": "5", "label": "✅ Use default (no keyword)",          "sublabel": "package-private — internal to package",   "type": "process" },
+            { "id": "6", "label": "🔍 Needed in subclasses too?",       "sublabel": "cross-package inheritance required",      "type": "decision" },
+            { "id": "7", "label": "✅ Use protected",                    "sublabel": "package + subclass access",              "type": "process" },
+            { "id": "8", "label": "✅ Use public",                       "sublabel": "part of public API — visible everywhere", "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "Start" },
+            { "from": "2", "to": "3", "label": "YES" },
+            { "from": "2", "to": "4", "label": "NO" },
+            { "from": "4", "to": "5", "label": "YES" },
+            { "from": "4", "to": "6", "label": "NO" },
+            { "from": "6", "to": "7", "label": "YES" },
+            { "from": "6", "to": "8", "label": "NO — needed everywhere" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Access Modifier Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are consistently asked in Java fresher and experienced developer interviews, campus placements, and OCPJP/OCA certification exams."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What are the four access modifiers in Java and what is their order of visibility?",
+              "a": "Java has four access modifiers in order from most restrictive to least restrictive: (1) private — accessible only within the declaring class. (2) default (no keyword) — accessible within the same package. (3) protected — accessible within the same package AND in subclasses across packages. (4) public — accessible from everywhere. Memory aid: private < default < protected < public. Each level is a superset of the previous: public includes everything protected does, which includes everything default does.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. Can we declare a top-level class as private or protected in Java?",
+              "a": "No. Top-level classes (declared directly in a .java file, not inside another class) can ONLY be public or default (package-private). Declaring a top-level class as private or protected is a compile-time error. The reason: private would mean only the same class can access it — which is meaningless for a top-level class. protected would mean package + subclasses — but subclassing requires the class to be visible first, creating a circular dependency. Inner classes (nested inside another class), however, CAN use all four modifiers.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is the difference between protected and default (package-private) access?",
+              "a": "Both allow access from the same package. The critical difference: protected ALSO allows access from subclasses in DIFFERENT packages, while default does NOT. Example: class Parent with a default method in 'com.app.base'. A subclass in 'com.app.ui' CANNOT access that method. Make it protected and the subclass CAN access it. So: default = package boundary only. protected = package boundary + inheritance bridge across packages. Use protected deliberately for template methods, shared internal state, or constructors of abstract base classes.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. Can a subclass reduce the visibility of an overridden method?",
+              "a": "No — this is a compile-time error. Java's override rules require that the overriding method's access level be the SAME or WIDER than the parent's. This enforces the Liskov Substitution Principle: if code works with a Parent reference, it must work equally well with any subclass reference. Narrowing visibility would break this guarantee. Allowed widening: protected → public ✅. Same level: public → public ✅. Narrowing: public → protected ❌ (compile error). The only exception: private methods cannot be overridden at all — they are not inherited.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. Can we override a private method in Java?",
+              "a": "No. Private methods are not visible to subclasses — they are completely hidden within the declaring class. Therefore they cannot participate in Java's method overriding (dynamic dispatch). If a subclass declares a method with the same name and signature as a parent's private method, Java treats it as a BRAND NEW method in the subclass — not an override. Adding @Override annotation to such a method causes a compile error confirming no override occurred. This is an important distinction: private methods are fully excluded from the inheritance mechanism.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. What is the default access modifier in Java? How is it different from 'default' in switch or interface?",
+              "a": "The default access modifier is package-private visibility — applied when NO modifier keyword is written. It has no keyword — writing 'default' as an access modifier is a compile error. Confusingly, Java uses the word 'default' in two other contexts: (1) switch statement default case: 'default: ...' — completely unrelated. (2) Interface default methods (Java 8+): 'default void method() {}' — provides a default implementation, must be public. These three uses of 'default' are entirely different language features that happen to share a keyword. For access control, silence = package-private.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q7. What access modifiers are allowed for interface methods in Java?",
+              "a": "Interface method access depends on the method type: Abstract methods (traditional): implicitly public — no explicit modifier allowed. Writing protected/private/default causes a compile error. Default methods (Java 8+): implicitly public — must be public. Static methods (Java 8+): implicitly public, but can be private (Java 9+). Private methods (Java 9+): must be explicitly private — used as internal helpers for default/static methods. NOT inherited by implementing classes. When a class implements an interface method, that implementation MUST be public — it cannot reduce the interface's implicit public contract.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q8. What happens when a package-private class has a public method?",
+              "a": "The public method is only reachable by code that can first reach the class. If the class itself is package-private (default), then code in other packages cannot see the class at all — so even though the method is technically public, outside-package code cannot call it. The class acts as a visibility ceiling. This is intentional design: you can have a package-internal class with public methods (so same-package code calls them cleanly) while preventing those methods from being part of the external API.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q9. What is encapsulation and how do access modifiers support it?",
+              "a": "Encapsulation is the OOP principle of bundling data (fields) and the methods that operate on that data into a class, while restricting direct external access to the internal data. Access modifiers enforce encapsulation: private fields ensure external code cannot directly read or modify internal state. Public methods provide a controlled interface — with validation, logging, and business logic — for all access. This gives three key benefits: (1) Invariant enforcement — invalid states are impossible because all modifications go through controlled setters. (2) Refactoring freedom — internal representation can change without breaking callers. (3) API stability — public interface is stable while implementation evolves.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q10. In a protected field in a parent class, can a subclass in a different package access it using a parent reference?",
+              "a": "No — this is one of the most commonly misunderstood Java rules. A subclass in a different package can access a protected member through its OWN reference (this.protectedField or just protectedField) or through super. But it CANNOT access the protected member through a variable of the parent type. Example: inside class Child extends Parent (different package), 'this.protectedField' is ✅ valid, but 'Parent p = new Parent(); p.protectedField' is ❌ a compile error — even inside Child. This prevents unrelated objects of the parent type from being accessible through a subclass's inheritance privilege.",
+              "tag": "Tricky"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Access Modifier Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Attempt each question independently before reading the answer — active recall significantly improves retention."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. Identify the access modifier issue:\npublic class Circle {\n    public double radius;\n    public double area;\n    public Circle(double radius) {\n        this.radius = radius;\n        this.area = Math.PI * radius * radius;\n    }\n}",
+              "a": "Two issues: (1) 'radius' is public and mutable — anyone can set 'circle.radius = -5' or 'circle.radius = 100' without recalculating area, leaving the object in an inconsistent state. (2) 'area' should be computed, not stored as a public field — it must stay in sync with radius, which is impossible when both are public. Fix: make both fields private, provide 'getRadius()' and a 'setRadius(double r)' that also recalculates area, or better — make radius final (set once via constructor) and calculate area on demand via 'getArea() { return Math.PI * radius * radius; }'. Immutable radius = no sync problem.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Will this compile? If not, why?\nprivate class Config {\n    private String dbUrl;\n    private int port;\n}",
+              "a": "Compile error IF Config is a top-level class (declared directly in a .java file). Top-level classes can only be public or default — not private. The error is: 'modifier private not allowed here'. Fix: either remove 'private' to make it package-private (default), or make it 'public'. If Config is an INNER class (declared inside another class), then 'private class Config' is perfectly valid — private inner classes are fully supported and commonly used to hide helper classes.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. What is the output?\npackage com.a;\npublic class Parent {\n    protected int value = 10;\n}\n\npackage com.b;\nimport com.a.Parent;\npublic class Child extends Parent {\n    public void show() {\n        System.out.println(value);       // Line A\n        Parent p = new Parent();\n        System.out.println(p.value);    // Line B\n    }\n}",
+              "a": "Line A compiles and prints 10. Line B causes a COMPILE ERROR. This is the protected cross-package access rule: A subclass (Child) in a different package (com.b) CAN access a parent's protected member through its OWN reference (Line A — 'value' implicitly means 'this.value'). However, it CANNOT access the protected member through a Parent-type reference (Line B — 'p.value') from a different package. The inheritance privilege only applies to the subclass's own inherited copy, not to arbitrary parent-type objects.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. Fix the encapsulation violation:\npublic class Team {\n    public List<String> members = new ArrayList<>();\n    public String teamName;\n}",
+              "a": "Fixed version: public class Team { private String teamName; private List<String> members = new ArrayList<>(); public Team(String teamName) { if (teamName == null || teamName.isBlank()) throw new IllegalArgumentException(); this.teamName = teamName; } public String getTeamName() { return teamName; } public void addMember(String member) { if (member != null && !member.isBlank()) members.add(member); } public void removeMember(String member) { members.remove(member); } public List<String> getMembers() { return Collections.unmodifiableList(members); } public int getMemberCount() { return members.size(); } } — Fields are private, collection exposed as unmodifiable, business methods control all mutations.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Is the following override valid? Why or why not?\nclass Vehicle {\n    public void start() { System.out.println(\"Starting\"); }\n    protected void stop() { System.out.println(\"Stopping\"); }\n}\nclass Truck extends Vehicle {\n    @Override\n    protected void start() { System.out.println(\"Truck starting\"); }\n    @Override\n    public void stop() { System.out.println(\"Truck stopping\"); }\n}",
+              "a": "start() override: COMPILE ERROR. Truck tries to reduce 'start()' from public (Vehicle) to protected (Truck). This narrows access — illegal in Java. Override rule: visibility can only stay the same or increase. Fix: 'public void start()' in Truck. stop() override: VALID. Truck widens 'stop()' from protected (Vehicle) to public (Truck). Widening is always allowed. This is correct overriding. Summary: protected → public ✅ (widening), public → protected ❌ (narrowing — compile error).",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. What is the output and why?\nclass Animal {\n    private void sound() { System.out.println(\"Animal sound\"); }\n    public void makeSound() { sound(); }\n}\nclass Dog extends Animal {\n    public void sound() { System.out.println(\"Woof\"); }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Animal a = new Dog();\n        a.makeSound();\n    }\n}",
+              "a": "Output: 'Animal sound'. This demonstrates that private methods are NOT polymorphic. Dog.sound() is NOT an override of Animal.sound() — it is a completely new, unrelated method. Animal.makeSound() calls 'sound()' which resolves to Animal's own private sound() at compile time (static binding). Even though 'a' holds a Dog object at runtime, the private method call in Animal.makeSound() is bound to Animal.sound() — Dog's sound() is invisible to Animal. This is a classic interview trap. If sound() were public/protected in Animal, Dog.sound() would be a proper override and 'Woof' would print.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. Design a class using all four access modifiers appropriately for a Library system book checkout.",
+              "a": "public class LibraryBook { private final String isbn; private final String title; private boolean checkedOut; private String borrowerName; private int checkoutCount; protected static final int MAX_RENEWAL_DAYS = 14; public LibraryBook(String isbn, String title) { this.isbn = isbn; this.title = title; this.checkedOut = false; this.checkoutCount = 0; } public String getIsbn() { return isbn; } public String getTitle() { return title; } public boolean isAvailable() { return !checkedOut; } public void checkOut(String borrower) { if (checkedOut) throw new IllegalStateException(\"Already checked out\"); this.checkedOut = true; this.borrowerName = borrower; this.checkoutCount++; } public void returnBook() { if (!checkedOut) throw new IllegalStateException(\"Not checked out\"); this.checkedOut = false; this.borrowerName = null; } int getCheckoutCount() { return checkoutCount; } // default — package-level reporting private boolean isPopular() { return checkoutCount > 50; } } — private: isbn, title, checkedOut, isPopular(). default: getCheckoutCount() for package reporting. protected: MAX_RENEWAL_DAYS for subclass LibraryEBook. public: checkout API.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. What is wrong with this interface implementation?\ninterface Printable {\n    void print();\n}\nclass Document implements Printable {\n    void print() {\n        System.out.println(\"Printing document\");\n    }\n}",
+              "a": "Compile error: Document.print() reduces the interface method's implicit public access to default (package-private). Interface abstract methods are implicitly public. When a class implements an interface method, it must use the same or wider access — which means it MUST be public. The error is: 'print() in Document cannot implement print() in Printable; attempting to assign weaker access privileges; was public'. Fix: 'public void print() { System.out.println(\"Printing document\"); }'. This is a very common mistake for developers coming from languages with different interface rules.",
+              "difficulty": "Easy"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Access Modifiers: The Gatekeepers of Java OOP",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Access modifiers are not just a syntactic detail — they are the <strong>architectural foundation</strong> of well-designed Java code. They enforce encapsulation, define public contracts, protect internal invariants, and make codebases maintainable as they grow. Every field, method, and class you write deserves a deliberate access modifier choice — not a default assumption."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The golden rule professionals follow: <strong>start with the most restrictive modifier and only promote when genuinely necessary</strong>. Begin every field as <code>private</code>. Begin every helper method as <code>private</code>. Promote to <code>default</code> when package-level sharing is needed. Promote to <code>protected</code> only for deliberate inheritance contracts. Promote to <code>public</code> only for the intentional external API. This discipline — called the <em>Principle of Least Privilege</em> — is what separates maintainable enterprise Java from fragile, tightly-coupled code."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Modifier",    "Keyword",      "Scope",                                "Primary Use Case"],
+          "rows": [
+            ["private",     "private",      "Same class only",                               "Fields, internal helpers, Singleton constructors"],
+            ["default",     "(none)",       "Same package",                                  "Package-internal classes, utilities, impl classes"],
+            ["protected",   "protected",    "Same package + subclasses (cross-package)",     "Template methods, shared state for inheritance"],
+            ["public",      "public",       "Everywhere",                                    "Public API: service methods, constructors, constants"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Encapsulation</strong> — where you will see how private fields combined with public getters and setters create truly robust, maintainable domain objects, and how encapsulation ties together with immutability and the Builder pattern in modern Java applications. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Access Modifiers",
+    "items": [
+      {
+        "q": "What are access modifiers in Java?",
+        "a": "Access modifiers in Java are keywords that control the visibility and accessibility of classes, methods, constructors, and fields. Java provides four access levels: public (accessible from anywhere), protected (same package and subclasses), default/package-private (same package only — no keyword), and private (same class only). They are the primary mechanism for implementing encapsulation — restricting internal details and exposing only what is necessary."
+      },
+      {
+        "q": "What is the difference between private, protected, and public in Java?",
+        "a": "private: most restrictive — accessible only within the declaring class. protected: accessible within the same package AND in subclasses across packages. public: least restrictive — accessible from anywhere in the program. The rule: always use the most restrictive modifier that still allows your code to function. Start with private for fields and helpers, use public only for the intentional external API."
+      },
+      {
+        "q": "Can a class be private in Java?",
+        "a": "A top-level class can only be public or default (package-private). Top-level private or protected classes cause a compile-time error. However, inner classes (declared inside another class) CAN be private, protected, public, or default. A private inner class is commonly used for helper classes or implementation details that should be hidden even from other classes in the same package."
+      },
+      {
+        "q": "What is default access modifier in Java?",
+        "a": "The default access modifier (package-private) is applied when no modifier keyword is written. A member with default access is visible to all classes within the same package but completely hidden from classes in other packages — including subclasses in different packages. It has no keyword — writing 'default' as an access modifier is a compile error. It is suitable for package-internal implementation classes and utilities not meant to be part of the public API."
+      },
+      {
+        "q": "Can we override a private method in Java?",
+        "a": "No. Private methods are not visible to subclasses, so they cannot be overridden. If a subclass declares a method with the same signature as a parent's private method, it creates an entirely new unrelated method in the subclass — not an override. Using @Override on such a method causes a compile error. Private methods are also not polymorphic — calls to private methods are resolved at compile time (static binding), not at runtime."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Break/Continue", "path": "/java/java-break-continue" },
+    "next": { "label": "Java Methods →",      "path": "/java/java-methods" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Total Modifiers",      "dd": "4 — public, private, protected, default" },
+      { "dt": "Most Restrictive",     "dd": "private — same class only" },
+      { "dt": "Least Restrictive",    "dd": "public — accessible everywhere" },
+      { "dt": "Top-level class",      "dd": "Only public or default allowed" },
+      { "dt": "Override rule",        "dd": "Cannot narrow visibility in override" },
+      { "dt": "Interface methods",    "dd": "Implicitly public (abstract); private allowed Java 9+" }
+    ],
+    "relatedArticles": [
+      { "label": "Java Classes & Objects",   "path": "/java/java-classes-objects" },
+      { "label": "Java Encapsulation",       "path": "/java/java-encapsulation" },
+      { "label": "Java Inheritance",         "path": "/java/java-inheritance" },
+      { "label": "Java Abstraction",         "path": "/java/java-abstraction" },
+      { "label": "Java Interfaces",          "path": "/java/java-interface" },
+      { "label": "Java Constructors",        "path": "/java/java-constructor" },
+      { "label": "Java Static Keyword",      "path": "/java/java-static" },
+      { "label": "Java this Keyword",        "path": "/java/java-this-keyword" }
+    ],
+    "tags": ["Access Modifiers", "public private protected", "Encapsulation", "Java OOP", "Visibility", "Package-Private", "Default Access", "Inheritance Rules", "Override Rules", "Java Interface", "private Constructor", "Singleton Pattern", "Clean Code", "Java Best Practices", "Java 9 private interface methods"]
+  }
+}

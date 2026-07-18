@@ -1,0 +1,620 @@
+{
+  "meta": {
+    "title": "What is Django? | Django Tutorial for Beginners 2026 | Tech Sustainify",
+    "description": "Learn Django framework with this complete beginner-friendly guide 2026. Covers Django history, MVT architecture, Django ORM, Django project structure, routing, models, templates, views, admin panel, authentication, REST APIs, and why Django is one of the best Python web frameworks.",
+    "keywords": "what is django, django tutorial, django framework, django tutorial for beginners, django 2026, learn django online, django orm, django models, django templates, django views, django routing, django admin panel, django authentication, django rest framework, python django",
+    "author": "Tech Sustainify",
+    "canonical": "https://www.techsustainify.com/djangohome",
+    "ogTitle": "What is Django? Complete Django Tutorial for Beginners 2026 | Tech Sustainify",
+    "ogDescription": "Learn Django web framework step-by-step. Understand MVT architecture, ORM, templates, views, routing, authentication, APIs, and real-world Django development.",
+    "ogUrl": "https://www.techsustainify.com/djangohome",
+    "ogImage": "https://www.techsustainify.com/images/django-tutorial-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "18 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-01-01",
+    "schemaDateModified": "2026-05-27",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 5100
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "Django Tutorial", "path": "/djangohome" },
+    { "position": 3, "name": "What is Django?" }
+  ],
+
+  "articleHeader": {
+    "badge": "🎸 Django",
+    "title": "What is Django Framework?",
+    "subtitle": "A complete beginner-friendly guide to Django — covering history, MVT architecture, ORM, templates, routing, admin panel, authentication, REST APIs, and why Django is one of the most powerful Python web frameworks in 2026."
+  },
+
+  "infoCards": [
+    {
+      "icon": "📅",
+      "label": "Last Updated",
+      "isTime": true,
+      "dateTime": "2026-05-27",
+      "value": "May 2026"
+    },
+    {
+      "icon": "⏱️",
+      "label": "Read Time",
+      "value": "18 min"
+    },
+    {
+      "icon": "🎯",
+      "label": "Level",
+      "value": "Beginner"
+    }
+  ],
+
+  "sections": [
+    {
+      "sectionId": "what-is-django",
+      "title": "What is Django?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Django is a high-level Python web framework</strong> used for building secure, scalable, and maintainable web applications quickly. It was created to help developers build web applications faster with less code."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Django follows the principle of <strong>\"Don't Repeat Yourself (DRY)\"</strong>. It provides built-in features like authentication, database ORM, routing, forms, security protection, and an admin panel — reducing the need to write repetitive code."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Django is built on Python, which means developers can use the full power of Python libraries along with Django's web development tools. It is widely used for backend development, APIs, dashboards, CMS systems, and enterprise-level applications."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Popular companies and platforms like <strong>Instagram</strong>, <strong>Pinterest</strong>, <strong>Mozilla</strong>, <strong>Disqus</strong>, and <strong>NASA</strong> have used Django in their tech stacks."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "history-django",
+      "title": "History of Django Framework",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Django was created in <strong>2003</strong> by <strong>Adrian Holovaty</strong> and <strong>Simon Willison</strong> while working at the Lawrence Journal-World newspaper. They needed a framework that could quickly build news publishing applications."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            {
+              "strong": "2005",
+              "text": " — Django was officially released as an open-source framework."
+            },
+            {
+              "strong": "2008",
+              "text": " — Django Software Foundation (DSF) was formed to maintain the framework."
+            },
+            {
+              "strong": "2013",
+              "text": " — Django became one of the most popular Python frameworks globally."
+            },
+            {
+              "strong": "2020-2026",
+              "text": " — Django introduced async support, performance improvements, better security, and compatibility with modern frontend frameworks."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "features-django",
+      "title": "Key Features of Django",
+      "blocks": [
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "⚡",
+              "title": "Fast Development",
+              "text": "Django helps developers build web applications quickly using built-in tools and reusable components."
+            },
+            {
+              "icon": "🔒",
+              "title": "Secure",
+              "text": "Django protects applications against SQL injection, CSRF, XSS, clickjacking, and other common web vulnerabilities."
+            },
+            {
+              "icon": "🗄️",
+              "title": "Powerful ORM",
+              "text": "Django ORM allows developers to interact with databases using Python code instead of raw SQL queries."
+            },
+            {
+              "icon": "🛠️",
+              "title": "Built-in Admin Panel",
+              "text": "Django automatically creates an admin dashboard for managing database records."
+            },
+            {
+              "icon": "📦",
+              "title": "Reusable Apps",
+              "text": "Django apps are modular and reusable across multiple projects."
+            },
+            {
+              "icon": "🌐",
+              "title": "Scalable",
+              "text": "Django supports high-traffic and enterprise-level applications."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "mvt-architecture",
+      "title": "Django MVT Architecture",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Django follows the MVT (Model-View-Template) architecture pattern."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Component", "Purpose"],
+          "rows": [
+            ["Model", "Handles database and business logic"],
+            ["View", "Processes user requests and returns response"],
+            ["Template", "Controls frontend presentation layer"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "how-django-works",
+      "title": "How Django Works",
+      "blocks": [
+        {
+          "type": "flowchart",
+          "nodes": [
+            {
+              "id": "1",
+              "label": "🌐 User Request",
+              "sublabel": "Browser Request",
+              "type": "start"
+            },
+            {
+              "id": "2",
+              "label": "🛣️ URL Dispatcher",
+              "sublabel": "urls.py",
+              "type": "process"
+            },
+            {
+              "id": "3",
+              "label": "🎯 View Function",
+              "sublabel": "views.py",
+              "type": "process"
+            },
+            {
+              "id": "4",
+              "label": "🗄️ Model",
+              "sublabel": "Database Operations",
+              "type": "process"
+            },
+            {
+              "id": "5",
+              "label": "📄 Template",
+              "sublabel": "HTML Rendering",
+              "type": "process"
+            },
+            {
+              "id": "6",
+              "label": "✅ Response",
+              "sublabel": "Rendered Webpage",
+              "type": "end"
+            }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "request" },
+            { "from": "2", "to": "3", "label": "route" },
+            { "from": "3", "to": "4", "label": "query" },
+            { "from": "4", "to": "5", "label": "data" },
+            { "from": "5", "to": "6", "label": "render" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "django-project-structure",
+      "title": "Django Project Structure",
+      "blocks": [
+        {
+          "type": "codeBox",
+          "lang": "📁 Django",
+          "label": "project structure",
+          "lines": [
+            "myproject/",
+            "│",
+            "├── manage.py",
+            "├── myproject/",
+            "│   ├── settings.py",
+            "│   ├── urls.py",
+            "│   ├── wsgi.py",
+            "│   └── asgi.py",
+            "│",
+            "├── app/",
+            "│   ├── models.py",
+            "│   ├── views.py",
+            "│   ├── urls.py",
+            "│   ├── admin.py",
+            "│   └── templates/"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "first-django-project",
+      "title": "Create Your First Django Project",
+      "blocks": [
+        {
+          "type": "codeBox",
+          "lang": "💻 Terminal",
+          "label": "commands",
+          "lines": [
+            "pip install django",
+            "",
+            "django-admin startproject myproject",
+            "",
+            "cd myproject",
+            "",
+            "python manage.py runserver"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Starting development server at http://127.0.0.1:8000/"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "django-model-example",
+      "title": "Django Model Example",
+      "blocks": [
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "models.py",
+          "lines": [
+            "from django.db import models",
+            "",
+            "class Student(models.Model):",
+            "    name = models.CharField(max_length=100)",
+            "    age = models.IntegerField()",
+            "",
+            "    def __str__(self):",
+            "        return self.name"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "django-view-example",
+      "title": "Django View Example",
+      "blocks": [
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "views.py",
+          "lines": [
+            "from django.http import HttpResponse",
+            "",
+            "def home(request):",
+            "    return HttpResponse('Welcome to Django')"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "django-template-example",
+      "title": "Django Template Example",
+      "blocks": [
+        {
+          "type": "codeBox",
+          "lang": "🌐 HTML",
+          "label": "home.html",
+          "lines": [
+            "<h1>{{ title }}</h1>",
+            "<p>Welcome to Django Template Engine</p>"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Django",
+      "blocks": [
+        {
+          "type": "prosConsTable",
+          "pros": [
+            {
+              "title": "Rapid Development",
+              "text": "Built-in tools speed up development."
+            },
+            {
+              "title": "Secure Framework",
+              "text": "Provides strong security features by default."
+            },
+            {
+              "title": "Powerful ORM",
+              "text": "Database operations become easier with ORM."
+            },
+            {
+              "title": "Scalable",
+              "text": "Suitable for enterprise applications."
+            }
+          ],
+          "cons": [
+            {
+              "title": "Monolithic Framework",
+              "text": "Django can feel heavy for small applications."
+            },
+            {
+              "title": "Learning Curve",
+              "text": "Beginners may initially struggle with project structure."
+            },
+            {
+              "title": "Less Flexible",
+              "text": "Django has predefined ways of doing things."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "django-vs-flask",
+      "title": "Django vs Flask",
+      "blocks": [
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Django", "Flask"],
+          "rows": [
+            ["Type", "Full Stack Framework", "Micro Framework"],
+            ["ORM", "Built-in ORM", "External ORM Required"],
+            ["Admin Panel", "Built-in", "Not Available"],
+            ["Performance", "Slightly Heavy", "Lightweight"],
+            ["Best For", "Large Applications", "Small APIs & Apps"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "where-django-used",
+      "title": "Where is Django Used?",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            {
+              "strong": "🌐 Web Applications",
+              "text": " — Django is widely used for backend web development."
+            },
+            {
+              "strong": "🛒 E-Commerce",
+              "text": " — Many scalable e-commerce platforms use Django."
+            },
+            {
+              "strong": "📊 Dashboards",
+              "text": " — Django powers admin dashboards and analytics systems."
+            },
+            {
+              "strong": "🔗 REST APIs",
+              "text": " — Django REST Framework is popular for API development."
+            },
+            {
+              "strong": "☁️ Enterprise Systems",
+              "text": " — Enterprises use Django for secure backend systems."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-django",
+      "title": "Why Learn Django in 2026?",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            {
+              "strong": "🚀 High Demand",
+              "text": " — Django developers are highly demanded in backend development."
+            },
+            {
+              "strong": "🐍 Python Ecosystem",
+              "text": " — Django works perfectly with AI, ML, and Python tools."
+            },
+            {
+              "strong": "💼 Career Opportunities",
+              "text": " — Django skills open opportunities in startups and enterprises."
+            },
+            {
+              "strong": "⚡ Fast Development",
+              "text": " — Build production-ready apps quickly."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Django Interview Questions",
+      "blocks": [
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is Django?",
+              "a": "Django is a high-level Python web framework used to build secure and scalable web applications quickly.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is MVT architecture in Django?",
+              "a": "MVT stands for Model, View, and Template. It separates database logic, business logic, and presentation layer.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q3. What is Django ORM?",
+              "a": "Django ORM allows developers to interact with databases using Python classes instead of SQL queries.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What is manage.py?",
+              "a": "manage.py is a command-line utility used to manage Django projects.",
+              "tag": "Frequently Asked"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion",
+      "title": "Conclusion",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Django is one of the best backend frameworks in the Python ecosystem.</strong> It provides security, scalability, ORM, admin panel, authentication, and rapid development tools out of the box."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If you want to become a backend developer, API developer, or full-stack Python developer, learning Django in 2026 is an excellent choice."
+        }
+      ]
+    }
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "Is Django easy to learn?",
+        "a": "Yes, Django is beginner-friendly if you already know basic Python."
+      },
+      {
+        "q": "Is Django frontend or backend?",
+        "a": "Django is primarily a backend web framework."
+      },
+      {
+        "q": "Can Django build APIs?",
+        "a": "Yes, Django REST Framework is widely used for API development."
+      },
+      {
+        "q": "Which database does Django support?",
+        "a": "Django supports SQLite, PostgreSQL, MySQL, Oracle, and more."
+      },
+      {
+        "q": "Is Django good for large applications?",
+        "a": "Yes, Django is highly scalable and used in enterprise-level applications."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": {
+      "label": "← Previous",
+      "path": "/django/django-home"
+    },
+    "next": {
+      "label": "Next: Django Installation →",
+      "path": "/django/django-installation"
+    }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      {
+        "dt": "Created by",
+        "dd": "Adrian Holovaty & Simon Willison"
+      },
+      {
+        "dt": "Released",
+        "dd": "2005"
+      },
+      {
+        "dt": "Language",
+        "dd": "Python"
+      },
+      {
+        "dt": "Architecture",
+        "dd": "MVT"
+      },
+      {
+        "dt": "Type",
+        "dd": "Backend Framework"
+      },
+      {
+        "dt": "Latest",
+        "dd": "Django 5.x"
+      }
+    ],
+
+    "relatedArticles": [
+      {
+        "label": "Django Installation",
+        "path": "/django/django-installation"
+      },
+      {
+        "label": "Django Models",
+        "path": "/django/django-models"
+      },
+      {
+        "label": "Django Views",
+        "path": "/django/django-views"
+      },
+      {
+        "label": "Django Templates",
+        "path": "/django/django-templates"
+      },
+      {
+        "label": "Django Forms",
+        "path": "/django/django-forms"
+      },
+      {
+        "label": "Django ORM",
+        "path": "/django/django-orm"
+      }
+    ],
+
+    "tags": [
+      "Django",
+      "Python",
+      "ORM",
+      "MVT",
+      "Templates",
+      "Views",
+      "Models",
+      "Authentication",
+      "REST API",
+      "Backend",
+      "Admin Panel"
+    ]
+  }
+}

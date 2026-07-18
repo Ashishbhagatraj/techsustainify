@@ -1,0 +1,1177 @@
+{
+  "meta": {
+    "title": "Java Arrays — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Arrays with declaration, initialization, traversal, multidimensional arrays, Arrays class methods, ArrayList comparison, best practices, common mistakes, and real-world examples. Covers all array patterns in Java. Updated March 2026.",
+    "keywords": "java arrays, java array declaration, java array initialization, java array traversal, java multidimensional array, java 2d array, java arrays class, java array vs arraylist, java array examples, java array syntax, java array for loop, java enhanced for loop array, java array sort, java array search, java array best practices, java array interview questions",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-arrays",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Arrays — Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java Arrays — declaration, initialization, traversal, multidimensional arrays, Arrays class methods, ArrayList comparison, real-world examples, pitfalls, and interview questions.",
+      "url": "https://www.techsustainify.com/java/java-arrays",
+      "image": "https://www.techsustainify.com/images/java-arrays-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Arrays Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-03-01T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Arrays",
+          "Java Data Structures",
+          "Multidimensional Arrays",
+          "Array Traversal",
+          "Arrays Class",
+          "Array vs ArrayList",
+          "Java Basics",
+          "Java Collections",
+          "Java 21"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Arrays — Syntax, Examples & Best Practices 2026",
+      "description": "Complete guide to Java Arrays — declaration, initialization, traversal, 2D arrays, Arrays class, ArrayList comparison, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-arrays-og.png",
+      "imageAlt": "Java Arrays Guide 2026 - Tech Sustainify",
+      "readingTime": "24 minutes",
+      "level": "Beginner",
+      "label1": "Reading Time",
+      "data1": "24 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Arrays — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering all Java Array patterns — declaration, initialization, traversal loops, multidimensional arrays, Arrays class methods, ArrayList comparison, real-world examples, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-03-01",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner",
+        "wordCount": 6500,
+        "timeRequired": "PT24M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Arrays" },
+          { "@type": "Thing", "name": "Java Data Structures" },
+          { "@type": "Thing", "name": "Multidimensional Arrays" },
+          { "@type": "Thing", "name": "Java Collections Framework" }
+        ],
+        "keywords": "java arrays, array declaration, array initialization, array traversal, multidimensional array, arrays class, array vs arraylist"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Arrays" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an array in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An array in Java is a fixed-size, ordered collection of elements of the same data type stored in contiguous memory locations. Each element is accessed by its zero-based integer index. Arrays can hold both primitive types (int, double, char, boolean) and object references (String, Integer, custom objects). Once created, the size of an array cannot change — for dynamic sizing, use ArrayList. Syntax: int[] numbers = new int[5]; creates an integer array of 5 elements (indices 0 to 4)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between Array and ArrayList in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Arrays are fixed-size and can hold primitives or objects; ArrayLists are dynamic (resize automatically) and can only hold objects (autoboxing for primitives). Arrays use [] syntax for access; ArrayList uses .get() and .add() methods. Arrays are faster for direct index access; ArrayList is more flexible for frequent insertions/deletions. Use arrays when size is known and fixed, and performance is critical. Use ArrayList when size is unknown or changes frequently, and you need built-in methods like contains(), remove(), sort()."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the default value of array elements in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Java initializes array elements to default values automatically: int/byte/short/long → 0, float/double → 0.0, char → '\\u0000' (null character), boolean → false, Object references (String, Integer, etc.) → null. This applies when you create an array with 'new int[5]' without explicit initialization. This is guaranteed by the JVM — unlike C/C++ where uninitialized arrays contain garbage values."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is ArrayIndexOutOfBoundsException in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ArrayIndexOutOfBoundsException is a runtime exception thrown when you try to access an array element at an invalid index — either negative or >= array.length. For an array of size 5 (indices 0-4), accessing arr[5] or arr[-1] throws this exception. Prevention: always use index < arr.length in conditions, use enhanced for-each loop (which handles bounds automatically), or use Arrays.copyOf() instead of manual index arithmetic."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you sort an array in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use Arrays.sort(array) from java.util.Arrays for ascending order — it uses Dual-Pivot Quicksort for primitives (O(n log n)) and TimSort for objects. For descending order with objects: Arrays.sort(arr, Collections.reverseOrder()). For partial sort: Arrays.sort(arr, fromIndex, toIndex). For parallel sorting of large arrays: Arrays.parallelSort(arr) — uses Fork/Join framework for better performance on multi-core CPUs. Always import java.util.Arrays before using."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-03-01",
+      "dateModified": "2026-03-20",
+      "readingTime": "24 minutes",
+      "wordCount": 6500,
+      "difficulty": "Beginner",
+      "chapter": 16,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-array",             "title": "What is an Array in Java?" },
+        { "id": "array-declaration",         "title": "Array Declaration & Initialization" },
+        { "id": "array-traversal",           "title": "Array Traversal (Loops)" },
+        { "id": "multidimensional-arrays",   "title": "Multidimensional Arrays" },
+        { "id": "array-vs-arraylist",        "title": "Array vs ArrayList" },
+        { "id": "common-mistakes",           "title": "Common Mistakes & Pitfalls" },
+        { "id": "real-world-examples",       "title": "Real-World Production Code Examples" },
+        { "id": "interview-questions",       "title": "Interview Questions" },
+        { "id": "practice-questions",        "title": "Practice Questions" },
+        { "id": "conclusion-heading",        "title": "Conclusion" },
+        { "id": "faq-heading",               "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-arrays" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-arrays" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-arrays" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-switch",
+      "next": "https://www.techsustainify.com/java/java-strings"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-data-structures",
+      "contentTopic": "java-arrays",
+      "chapterNumber": 16,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Arrays" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Arrays — Declaration, Initialization, Traversal & Best Practices",
+    "subtitle": "Everything you need to know about Java Arrays — declaration, initialization, traversal loops, multidimensional arrays, Arrays class methods, ArrayList comparison, anti-patterns, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "24 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "16 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-array",
+      "title": "What is an Array in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "An <strong>array</strong> in Java is a <strong>fixed-size, ordered container</strong> that holds multiple values of the <strong>same data type</strong> under a single variable name. Instead of declaring separate variables for each value (<code>int score1, score2, score3</code>), you declare one array and access each value by its <strong>index</strong> — a zero-based integer position."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Arrays are stored in <strong>contiguous memory locations</strong> — all elements sit side by side in memory, making index-based access extremely fast (O(1) time complexity). This makes arrays the go-to choice when you know the number of elements in advance and need high-performance random access."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In Java, arrays are <strong>objects</strong> — even arrays of primitives. They are created on the <strong>heap</strong> using the <code>new</code> keyword (or array literal syntax), and every array object has a built-in <code>length</code> field (not a method) that returns the number of elements."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java Arrays at a Glance",
+          "text": "Key facts: (1) Fixed size — size is set at creation and cannot change. (2) Zero-indexed — first element is at index 0, last at index length-1. (3) Same type — all elements must be the same data type. (4) Objects — even int[] is an object on the heap. (5) Default values — elements are automatically initialized (0 for int, null for objects, false for boolean). (6) .length field (not method) — gives the number of elements."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "array-declaration",
+      "title": "Array Declaration & Initialization",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java provides multiple ways to declare and initialize arrays. Understanding each form — and when to use it — is fundamental to writing clean, efficient Java code. The key distinction is between <strong>declaration</strong> (telling the compiler a variable will hold an array), <strong>creation</strong> (allocating memory with <code>new</code>), and <strong>initialization</strong> (assigning values to elements)."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📌",
+              "title": "Declaration Syntax",
+              "text": "Preferred: int[] numbers;  — brackets after type (Java style)\nAlso valid: int numbers[];  — brackets after name (C-style, avoid)\nFor objects: String[] names;\nFor 2D: int[][] matrix;\nDeclaration alone allocates NO memory — the variable is null until assigned."
+            },
+            {
+              "icon": "🏗️",
+              "title": "Creation with new",
+              "text": "int[] numbers = new int[5];  — creates array of 5 ints (all 0)\nString[] names = new String[3];  — creates array of 3 Strings (all null)\nSize must be a non-negative integer or int expression.\nnew int[0] is valid — an empty array, not null.\nnew int[-1] throws NegativeArraySizeException at runtime."
+            },
+            {
+              "icon": "✏️",
+              "title": "Array Literal (Inline Init)",
+              "text": "int[] primes = {2, 3, 5, 7, 11};  — size inferred from values\nString[] days = {\"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\"};\nThis syntax is ONLY valid at the point of declaration.\nCannot use: numbers = {1,2,3}; — must be: numbers = new int[]{1,2,3};"
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ArrayDeclaration.java",
+          "lines": [
+            "public class ArrayDeclaration {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── 1. Declare then create ──────────────────────────────────",
+            "        int[] scores;           // Declaration — null, no memory yet",
+            "        scores = new int[5];    // Creation — allocates 5 ints (all 0)",
+            "        scores[0] = 95;         // Assign element at index 0",
+            "        scores[1] = 87;",
+            "        scores[2] = 76;",
+            "        scores[3] = 91;",
+            "        scores[4] = 83;",
+            "        System.out.println(scores[2]);      // Output: 76",
+            "        System.out.println(scores.length);  // Output: 5",
+            "",
+            "        // ── 2. Declare and create in one line ───────────────────────",
+            "        double[] temperatures = new double[7];  // All 0.0 by default",
+            "        temperatures[0] = 36.6;",
+            "        temperatures[1] = 37.2;",
+            "        // remaining temperatures[2..6] stay 0.0",
+            "",
+            "        // ── 3. Array literal — declare + create + initialize ─────────",
+            "        int[] primes = {2, 3, 5, 7, 11, 13};",
+            "        System.out.println(primes[0]);  // Output: 2",
+            "        System.out.println(primes[5]);  // Output: 13",
+            "",
+            "        // ── 4. String array ──────────────────────────────────────────",
+            "        String[] planets = {\"Mercury\", \"Venus\", \"Earth\", \"Mars\", \"Jupiter\"};",
+            "        System.out.println(planets[2]);  // Output: Earth",
+            "",
+            "        // ── 5. Anonymous array (new keyword required outside declaration)",
+            "        int[] fibonacci;",
+            "        fibonacci = new int[]{1, 1, 2, 3, 5, 8, 13};  // ✅ Anonymous array",
+            "        // fibonacci = {1, 1, 2, 3, 5, 8, 13};         // ❌ Compile error",
+            "",
+            "        // ── 6. Boolean array — default false ─────────────────────────",
+            "        boolean[] flags = new boolean[4];",
+            "        System.out.println(flags[0]);  // Output: false (default)",
+            "",
+            "        // ── 7. Char array ─────────────────────────────────────────────",
+            "        char[] vowels = {'a', 'e', 'i', 'o', 'u'};",
+            "        System.out.println(vowels[2]);  // Output: i",
+            "",
+            "        // ── 8. Default values demonstration ──────────────────────────",
+            "        int[]     intArr    = new int[3];     // [0, 0, 0]",
+            "        double[]  dblArr    = new double[3];  // [0.0, 0.0, 0.0]",
+            "        boolean[] boolArr   = new boolean[3]; // [false, false, false]",
+            "        String[]  strArr    = new String[3];  // [null, null, null]",
+            "        System.out.println(intArr[0]);   // Output: 0",
+            "        System.out.println(strArr[0]);   // Output: null",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Array Size is Final — Plan Ahead",
+          "text": "Once created with new int[5], the array's size is permanent — you cannot add or remove elements. If you need a resizable collection, use ArrayList<Integer> instead. A common mistake is creating an array too small and hitting ArrayIndexOutOfBoundsException when trying to add more elements. Always confirm the required size before using an array."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "array-traversal",
+      "title": "Array Traversal — Looping Through Arrays",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Traversal means visiting every element of an array, typically to read, modify, or aggregate values. Java provides <strong>four ways</strong> to traverse an array: the classic <code>for</code> loop, the enhanced <code>for-each</code> loop, the <code>while</code> loop, and <code>Arrays.stream()</code> for functional-style processing. Each has specific strengths and ideal use cases."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🔢",
+              "title": "Classic for Loop",
+              "text": "Best when you need the index — to modify elements, access adjacent elements, iterate in reverse, or skip elements. Syntax: for (int i = 0; i < arr.length; i++). Always use i < arr.length (not <=) to avoid ArrayIndexOutOfBoundsException. Supports forward and backward traversal."
+            },
+            {
+              "icon": "🔁",
+              "title": "Enhanced for-each Loop",
+              "text": "Best for reading all elements when you don't need the index. Syntax: for (int num : numbers). Cleaner and less error-prone than index-based loop — no off-by-one errors possible. CANNOT modify the original array (changes to loop variable don't reflect in array). CANNOT iterate in reverse."
+            },
+            {
+              "icon": "⏩",
+              "title": "while Loop",
+              "text": "Useful when the stopping condition is dynamic or unknown ahead of time — e.g., search until found. Less common for full traversal than for loop. Same risk of ArrayIndexOutOfBoundsException if index isn't carefully managed. Preferred when you may exit early based on a condition unrelated to index."
+            },
+            {
+              "icon": "🌊",
+              "title": "Arrays.stream() — Java 8+",
+              "text": "Functional-style traversal. Supports map, filter, reduce operations without explicit loops. Arrays.stream(arr).forEach(System.out::println). Arrays.stream(arr).sum(), .average(), .min(), .max() for aggregation. More expressive for transformations, but slightly higher overhead than raw loops."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ArrayTraversal.java",
+          "lines": [
+            "import java.util.Arrays;",
+            "",
+            "public class ArrayTraversal {",
+            "    public static void main(String[] args) {",
+            "",
+            "        int[] marks = {88, 95, 72, 61, 90, 55, 83};",
+            "",
+            "        // ── 1. Classic for loop — forward ────────────────────────────",
+            "        System.out.println(\"--- Classic for loop ---\");",
+            "        for (int i = 0; i < marks.length; i++) {",
+            "            System.out.println(\"marks[\" + i + \"] = \" + marks[i]);",
+            "        }",
+            "",
+            "        // ── 2. Classic for loop — reverse ────────────────────────────",
+            "        System.out.println(\"--- Reverse traversal ---\");",
+            "        for (int i = marks.length - 1; i >= 0; i--) {",
+            "            System.out.print(marks[i] + \" \");",
+            "        }",
+            "        System.out.println();  // Output: 83 55 90 61 72 95 88",
+            "",
+            "        // ── 3. for loop — modify elements (double each mark) ─────────",
+            "        int[] doubled = new int[marks.length];",
+            "        for (int i = 0; i < marks.length; i++) {",
+            "            doubled[i] = marks[i] * 2;",
+            "        }",
+            "        System.out.println(Arrays.toString(doubled));",
+            "        // Output: [176, 190, 144, 122, 180, 110, 166]",
+            "",
+            "        // ── 4. Enhanced for-each — read only ─────────────────────────",
+            "        System.out.println(\"--- Enhanced for-each ---\");",
+            "        int total = 0;",
+            "        for (int mark : marks) {",
+            "            total += mark;",
+            "            System.out.print(mark + \" \");",
+            "        }",
+            "        System.out.println();",
+            "        System.out.println(\"Total: \" + total);  // Output: Total: 544",
+            "",
+            "        // ── 5. for-each CANNOT modify original array ─────────────────",
+            "        for (int mark : marks) {",
+            "            mark = mark + 10;  // ❌ Changes local copy only — marks[] unchanged",
+            "        }",
+            "        System.out.println(Arrays.toString(marks));  // Still original values",
+            "",
+            "        // ── 6. while loop — search until found ───────────────────────",
+            "        System.out.println(\"--- While loop search ---\");",
+            "        int target = 90;",
+            "        int index = 0;",
+            "        while (index < marks.length && marks[index] != target) {",
+            "            index++;",
+            "        }",
+            "        if (index < marks.length) {",
+            "            System.out.println(target + \" found at index \" + index);",
+            "        } else {",
+            "            System.out.println(target + \" not found\");",
+            "        }",
+            "        // Output: 90 found at index 4",
+            "",
+            "        // ── 7. Arrays.stream() — Java 8+ ─────────────────────────────",
+            "        System.out.println(\"--- Streams ---\");",
+            "        int sum     = Arrays.stream(marks).sum();",
+            "        double avg  = Arrays.stream(marks).average().orElse(0);",
+            "        int max     = Arrays.stream(marks).max().getAsInt();",
+            "        int min     = Arrays.stream(marks).min().getAsInt();",
+            "        System.out.println(\"Sum: \" + sum);     // Output: Sum: 544",
+            "        System.out.println(\"Avg: \" + avg);     // Output: Avg: 77.71...",
+            "        System.out.println(\"Max: \" + max);     // Output: Max: 95",
+            "        System.out.println(\"Min: \" + min);     // Output: Min: 55",
+            "",
+            "        // ── 8. String array traversal ────────────────────────────────",
+            "        String[] fruits = {\"Apple\", \"Banana\", \"Cherry\", \"Date\", \"Elderberry\"};",
+            "        System.out.println(\"--- String array ---\");",
+            "        for (int i = 0; i < fruits.length; i++) {",
+            "            System.out.println((i + 1) + \". \" + fruits[i]);",
+            "        }",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Loop Type", "Index Access", "Modify Array", "Reverse", "Best For"],
+          "rows": [
+            ["Classic for",       "✅ Yes",  "✅ Yes",  "✅ Yes",  "Index needed, modify, reverse, skip"],
+            ["Enhanced for-each", "❌ No",   "❌ No",   "❌ No",   "Clean read-only traversal of all elements"],
+            ["while",             "✅ Yes",  "✅ Yes",  "✅ Yes",  "Dynamic stop condition, early exit search"],
+            ["Arrays.stream()",   "⚠️ Via map", "⚠️ Returns new", "⚠️ Via limit", "Aggregation, filter, functional transforms"]
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Arrays.toString() for Printing",
+          "text": "Never use System.out.println(array) directly — it prints the memory reference like '[I@6d06d69c', not the values. Use Arrays.toString(array) for 1D arrays and Arrays.deepToString(array) for multidimensional arrays. Always import java.util.Arrays. Example: System.out.println(Arrays.toString(marks)); → [88, 95, 72, 61, 90, 55, 83]"
+        }
+      ]
+    },
+
+    {
+      "sectionId": "multidimensional-arrays",
+      "title": "Multidimensional Arrays — 2D and Beyond",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>multidimensional array</strong> in Java is an <strong>array of arrays</strong>. The most common form is the <strong>2D array</strong> (matrix), used to represent grids, tables, game boards, and mathematical matrices. Java also supports 3D and higher-dimensional arrays, though they are rare in practice."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Unlike languages like C where 2D arrays are stored in a true contiguous grid, Java's multidimensional arrays are <strong>arrays of array references</strong>. This means each row can have a different length — creating <strong>jagged arrays</strong> (ragged arrays). This is a unique and powerful feature of Java."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📐",
+              "title": "2D Array — Regular Matrix",
+              "text": "int[][] matrix = new int[3][4]; — 3 rows, 4 columns, all 0.\nAccess: matrix[row][col] — matrix[0][0] is top-left.\nTraversal: nested for loops — outer for rows, inner for columns.\nint[][] grid = {{1,2,3},{4,5,6},{7,8,9}}; — inline initialization."
+            },
+            {
+              "icon": "🔺",
+              "title": "Jagged Array",
+              "text": "int[][] jagged = new int[3][]; — 3 rows, columns undefined.\njagged[0] = new int[2]; — row 0 has 2 columns.\njagged[1] = new int[4]; — row 1 has 4 columns.\njagged[2] = new int[3]; — row 2 has 3 columns.\nEach row can have a different length — memory efficient for triangular data."
+            },
+            {
+              "icon": "🧊",
+              "title": "3D Array",
+              "text": "int[][][] cube = new int[3][4][5]; — 3 layers, 4 rows, 5 columns.\nAccess: cube[layer][row][col].\nUsed for: 3D grids, video frames (width × height × channels), scientific data.\nTraversal: triple nested for loops."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "MultidimensionalArrays.java",
+          "lines": [
+            "import java.util.Arrays;",
+            "",
+            "public class MultidimensionalArrays {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── 1. 2D Array — Declaration and Initialization ─────────────",
+            "        int[][] matrix = {",
+            "            {1, 2, 3},",
+            "            {4, 5, 6},",
+            "            {7, 8, 9}",
+            "        };",
+            "",
+            "        System.out.println(\"Rows:    \" + matrix.length);     // Output: 3",
+            "        System.out.println(\"Columns: \" + matrix[0].length);  // Output: 3",
+            "        System.out.println(\"Center:  \" + matrix[1][1]);      // Output: 5",
+            "",
+            "        // ── 2. Nested for loop traversal ─────────────────────────────",
+            "        System.out.println(\"--- Matrix ---\");",
+            "        for (int row = 0; row < matrix.length; row++) {",
+            "            for (int col = 0; col < matrix[row].length; col++) {",
+            "                System.out.print(matrix[row][col] + \"\\t\");",
+            "            }",
+            "            System.out.println();",
+            "        }",
+            "        // Output:",
+            "        // 1    2    3",
+            "        // 4    5    6",
+            "        // 7    8    9",
+            "",
+            "        // ── 3. Enhanced for-each with 2D array ───────────────────────",
+            "        System.out.println(\"--- for-each on 2D ---\");",
+            "        for (int[] row : matrix) {",
+            "            for (int val : row) {",
+            "                System.out.print(val + \" \");",
+            "            }",
+            "            System.out.println();",
+            "        }",
+            "",
+            "        // ── 4. Arrays.deepToString() for printing ────────────────────",
+            "        System.out.println(Arrays.deepToString(matrix));",
+            "        // Output: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+            "",
+            "        // ── 5. 2D array — new keyword ────────────────────────────────",
+            "        int[][] scores = new int[3][4];  // 3 students, 4 subjects",
+            "        scores[0][0] = 85;   scores[0][1] = 90;   scores[0][2] = 78;   scores[0][3] = 92;",
+            "        scores[1][0] = 70;   scores[1][1] = 65;   scores[1][2] = 88;   scores[1][3] = 74;",
+            "        scores[2][0] = 95;   scores[2][1] = 91;   scores[2][2] = 83;   scores[2][3] = 97;",
+            "",
+            "        // Calculate average per student",
+            "        for (int i = 0; i < scores.length; i++) {",
+            "            int sum = 0;",
+            "            for (int j = 0; j < scores[i].length; j++) {",
+            "                sum += scores[i][j];",
+            "            }",
+            "            System.out.println(\"Student \" + (i+1) + \" avg: \" + (sum / scores[i].length));",
+            "        }",
+            "        // Output: Student 1 avg: 86, Student 2 avg: 74, Student 3 avg: 91",
+            "",
+            "        // ── 6. Jagged Array ──────────────────────────────────────────",
+            "        System.out.println(\"--- Jagged Array ---\");",
+            "        int[][] jagged = new int[4][];",
+            "        jagged[0] = new int[]{1};",
+            "        jagged[1] = new int[]{1, 2};",
+            "        jagged[2] = new int[]{1, 2, 3};",
+            "        jagged[3] = new int[]{1, 2, 3, 4};",
+            "",
+            "        for (int[] row : jagged) {",
+            "            System.out.println(Arrays.toString(row));",
+            "        }",
+            "        // Output:",
+            "        // [1]",
+            "        // [1, 2]",
+            "        // [1, 2, 3]",
+            "        // [1, 2, 3, 4]",
+            "",
+            "        // ── 7. 3D Array ───────────────────────────────────────────────",
+            "        int[][][] cube = new int[2][3][3];  // 2 layers, 3x3 each",
+            "        cube[0][0][0] = 1;",
+            "        cube[1][2][2] = 9;",
+            "        System.out.println(cube[0][0][0]);  // Output: 1",
+            "        System.out.println(cube[1][2][2]);  // Output: 9",
+            "        System.out.println(Arrays.deepToString(cube));",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Real-World Uses of 2D Arrays",
+          "text": "2D arrays model many real-world structures: (1) Spreadsheet data — rows are records, columns are fields. (2) Game boards — chess (8×8), tic-tac-toe (3×3), minesweeper. (3) Image pixels — matrix[row][col] = pixel color value. (4) Adjacency matrix — graph representation. (5) Seating chart — rows and seats. (6) Student mark sheets — students × subjects."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "array-vs-arraylist",
+      "title": "Array vs ArrayList — When to Use Which",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Both <strong>arrays</strong> and <strong>ArrayList</strong> store ordered sequences of elements, but they serve different purposes. The most fundamental difference is that arrays are <strong>fixed-size</strong> while ArrayList <strong>grows automatically</strong>. Choosing the right one depends on whether you know the size upfront, whether you need primitives, and how frequently the collection changes."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Array", "ArrayList"],
+          "rows": [
+            ["Size",                "Fixed — set at creation, cannot change",         "Dynamic — grows/shrinks automatically"],
+            ["Primitives",          "✅ Yes — int[], double[], char[]",                "❌ No — must use Integer, Double, Character (autoboxing)"],
+            ["Syntax",              "int[] arr = new int[5]; arr[0] = 1;",            "ArrayList<Integer> list = new ArrayList<>(); list.add(1);"],
+            ["Access",              "arr[index] — O(1) direct index",                 "list.get(index) — O(1) direct index"],
+            ["Add element",         "❌ Not possible — array is fixed",               "list.add(value) — O(1) amortized"],
+            ["Remove element",      "❌ Not possible — must recreate array",           "list.remove(index) — O(n) shifts elements"],
+            ["Search",              "Manual loop or Arrays.binarySearch()",           "list.contains(), list.indexOf()"],
+            ["Sort",                "Arrays.sort(arr)",                               "Collections.sort(list)"],
+            ["Convert to List",     "Arrays.asList(arr)",                             "Already a List"],
+            ["Memory",              "More efficient — no overhead",                   "~40 bytes object overhead + resize factor"],
+            ["Type safety",         "✅ Compile-time checked",                        "✅ Compile-time checked with generics"],
+            ["Multi-dimensional",   "✅ int[][]",                                     "ArrayList<ArrayList<Integer>>"],
+            ["Performance",         "Faster for fixed, known-size data",              "Slight overhead for boxing/unboxing primitives"],
+            ["Use case",            "Known size, primitives, performance-critical",   "Unknown/changing size, needs List API methods"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ArrayVsArrayList.java",
+          "lines": [
+            "import java.util.ArrayList;",
+            "import java.util.Arrays;",
+            "import java.util.Collections;",
+            "import java.util.List;",
+            "",
+            "public class ArrayVsArrayList {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ── Array — fixed size, primitives ───────────────────────────",
+            "        int[] primes = {2, 3, 5, 7, 11};",
+            "        System.out.println(primes[2]);       // Output: 5",
+            "        System.out.println(primes.length);   // Output: 5",
+            "        // primes[5] = 13;   // ❌ ArrayIndexOutOfBoundsException",
+            "",
+            "        // ── ArrayList — dynamic, objects ──────────────────────────────",
+            "        ArrayList<Integer> dynamicList = new ArrayList<>();",
+            "        dynamicList.add(2);",
+            "        dynamicList.add(3);",
+            "        dynamicList.add(5);",
+            "        dynamicList.add(7);",
+            "        dynamicList.add(11);",
+            "        dynamicList.add(13);  // ✅ Grows automatically",
+            "        System.out.println(dynamicList.get(2));  // Output: 5",
+            "        System.out.println(dynamicList.size());  // Output: 6",
+            "",
+            "        // ── ArrayList operations not possible with array ──────────────",
+            "        dynamicList.remove(Integer.valueOf(3));   // Remove value 3",
+            "        System.out.println(dynamicList);          // Output: [2, 5, 7, 11, 13]",
+            "",
+            "        dynamicList.add(2, 4);  // Insert 4 at index 2",
+            "        System.out.println(dynamicList);  // Output: [2, 5, 4, 7, 11, 13]",
+            "",
+            "        System.out.println(dynamicList.contains(11));  // Output: true",
+            "        System.out.println(dynamicList.indexOf(7));     // Output: 3",
+            "",
+            "        Collections.sort(dynamicList);",
+            "        System.out.println(dynamicList);  // Output: [2, 4, 5, 7, 11, 13]",
+            "",
+            "        // ── Convert between Array and ArrayList ───────────────────────",
+            "        // Array → ArrayList",
+            "        String[] fruitsArray = {\"Apple\", \"Banana\", \"Cherry\"};",
+            "        List<String> fruitsList = new ArrayList<>(Arrays.asList(fruitsArray));",
+            "        fruitsList.add(\"Date\");",
+            "        System.out.println(fruitsList);  // Output: [Apple, Banana, Cherry, Date]",
+            "",
+            "        // ArrayList → Array",
+            "        String[] backToArray = fruitsList.toArray(new String[0]);",
+            "        System.out.println(Arrays.toString(backToArray));",
+            "        // Output: [Apple, Banana, Cherry, Date]",
+            "",
+            "        // ── When to choose Array ─────────────────────────────────────",
+            "        // ✅ Use array: pixel buffer, fixed-size lookup table",
+            "        int[] pixelBuffer = new int[1920 * 1080];  // Fixed HD resolution",
+            "",
+            "        // ✅ Use ArrayList: shopping cart items (variable quantity)",
+            "        ArrayList<String> cart = new ArrayList<>();",
+            "        cart.add(\"Laptop\");",
+            "        cart.add(\"Mouse\");",
+            "        cart.remove(\"Mouse\");  // Easy removal",
+            "        System.out.println(\"Cart: \" + cart);  // Output: Cart: [Laptop]",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Rule of Thumb",
+          "text": "Use Array when: (1) You know the exact size upfront and it won't change. (2) You need primitive types (int, double) for performance. (3) You're working with low-level data (buffers, image pixels, fixed lookup tables). Use ArrayList when: (1) Size changes at runtime (user adds/removes items). (2) You need methods like contains(), remove(), addAll(). (3) You're passing to APIs that accept List<T>. In modern Java, ArrayList is the default choice for most everyday programming."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Bugs That Fool Everyone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Array bugs are among the most common in Java — from off-by-one errors to null references to accidentally comparing array contents with <code>==</code>. Study these patterns carefully; recognizing them quickly is a key professional skill."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ArrayMistakes.java",
+          "lines": [
+            "import java.util.Arrays;",
+            "",
+            "public class ArrayMistakes {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ❌ MISTAKE 1: ArrayIndexOutOfBoundsException",
+            "        int[] arr = {10, 20, 30, 40, 50};  // indices 0-4",
+            "        // System.out.println(arr[5]);  // ❌ EXCEPTION — valid: 0 to 4 only",
+            "        // ✅ Always use: i < arr.length (not <=)",
+            "        for (int i = 0; i < arr.length; i++) {",
+            "            System.out.print(arr[i] + \" \");",
+            "        }",
+            "",
+            "        // ❌ MISTAKE 2: Comparing arrays with == (reference, not content)",
+            "        int[] a = {1, 2, 3};",
+            "        int[] b = {1, 2, 3};",
+            "        System.out.println(a == b);              // ❌ false — different objects",
+            "        System.out.println(Arrays.equals(a, b)); // ✅ true — compares content",
+            "",
+            "        // ❌ MISTAKE 3: Printing array directly",
+            "        System.out.println(a);                   // ❌ [I@6d06d69c (memory ref)",
+            "        System.out.println(Arrays.toString(a));  // ✅ [1, 2, 3]",
+            "",
+            "        // ❌ MISTAKE 4: NullPointerException — array declared but not created",
+            "        int[] numbers;",
+            "        // System.out.println(numbers[0]);  // ❌ Compile Error — uninitialized",
+            "        int[] safe = null;",
+            "        // System.out.println(safe[0]);     // ❌ NullPointerException at runtime",
+            "        // ✅ Always initialize before use",
+            "        safe = new int[]{1, 2, 3};",
+            "        System.out.println(safe[0]);  // ✅ Output: 1",
+            "",
+            "        // ❌ MISTAKE 5: Modifying array in for-each loop",
+            "        int[] values = {1, 2, 3, 4, 5};",
+            "        for (int v : values) {",
+            "            v = v * 10;  // ❌ Only modifies local 'v', NOT values[]",
+            "        }",
+            "        System.out.println(Arrays.toString(values));  // Still [1, 2, 3, 4, 5]",
+            "        // ✅ Use indexed for loop to modify",
+            "        for (int i = 0; i < values.length; i++) {",
+            "            values[i] = values[i] * 10;  // ✅ Actually modifies the array",
+            "        }",
+            "        System.out.println(Arrays.toString(values));  // [10, 20, 30, 40, 50]",
+            "",
+            "        // ❌ MISTAKE 6: Array assignment is reference copy, not value copy",
+            "        int[] original = {1, 2, 3};",
+            "        int[] copy = original;       // ❌ Both point to SAME array",
+            "        copy[0] = 99;",
+            "        System.out.println(original[0]);  // Output: 99 — original changed!",
+            "        // ✅ Use Arrays.copyOf() for a true independent copy",
+            "        int[] trueCopy = Arrays.copyOf(original, original.length);",
+            "        trueCopy[0] = 0;",
+            "        System.out.println(original[0]);  // Output: 99 — original unchanged",
+            "",
+            "        // ❌ MISTAKE 7: Off-by-one in last index",
+            "        int[] data = {5, 10, 15, 20};",
+            "        int last = data[data.length - 1];  // ✅ Correct: index 3",
+            "        // int last = data[data.length];   // ❌ ArrayIndexOutOfBoundsException",
+            "        System.out.println(\"Last: \" + last);  // Output: Last: 20",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Arrays in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples show how arrays are used in real enterprise Java codebases — from data processing pipelines to matrix operations to lookup tables."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "StudentGradeProcessor.java",
+          "lines": [
+            "import java.util.Arrays;",
+            "",
+            "public class StudentGradeProcessor {",
+            "",
+            "    /**",
+            "     * Processes a batch of student marks.",
+            "     * Demonstrates: traversal, aggregation, sort, search, copy.",
+            "     */",
+            "    public static void processMarks(int[] marks) {",
+            "",
+            "        if (marks == null || marks.length == 0) {",
+            "            System.out.println(\"No marks to process.\");",
+            "            return;",
+            "        }",
+            "",
+            "        // ── Statistics ────────────────────────────────────────────────",
+            "        int total = 0;",
+            "        int highest = marks[0];",
+            "        int lowest  = marks[0];",
+            "        int passCount = 0;",
+            "",
+            "        for (int mark : marks) {",
+            "            total += mark;",
+            "            if (mark > highest) highest = mark;",
+            "            if (mark < lowest)  lowest  = mark;",
+            "            if (mark >= 40)     passCount++;",
+            "        }",
+            "",
+            "        double average = (double) total / marks.length;",
+            "",
+            "        System.out.println(\"Total Students : \" + marks.length);",
+            "        System.out.println(\"Highest Mark   : \" + highest);",
+            "        System.out.println(\"Lowest Mark    : \" + lowest);",
+            "        System.out.printf( \"Average        : %.2f%n\", average);",
+            "        System.out.println(\"Pass Count     : \" + passCount);",
+            "        System.out.println(\"Fail Count     : \" + (marks.length - passCount));",
+            "",
+            "        // ── Sort and display ranked results ───────────────────────────",
+            "        int[] sorted = Arrays.copyOf(marks, marks.length);  // Don't mutate original",
+            "        Arrays.sort(sorted);",
+            "        System.out.println(\"Sorted (asc)   : \" + Arrays.toString(sorted));",
+            "",
+            "        // Reverse for descending rank",
+            "        for (int i = 0; i < sorted.length / 2; i++) {",
+            "            int temp = sorted[i];",
+            "            sorted[i] = sorted[sorted.length - 1 - i];",
+            "            sorted[sorted.length - 1 - i] = temp;",
+            "        }",
+            "        System.out.println(\"Sorted (desc)  : \" + Arrays.toString(sorted));",
+            "        System.out.println(\"Top 3 Marks    : \" +",
+            "            Arrays.toString(Arrays.copyOfRange(sorted, 0, Math.min(3, sorted.length))));",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        int[] classMarks = {85, 92, 47, 63, 38, 76, 91, 55, 70, 88};",
+            "        processMarks(classMarks);",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "MatrixOperations.java",
+          "lines": [
+            "import java.util.Arrays;",
+            "",
+            "public class MatrixOperations {",
+            "",
+            "    /** Matrix multiplication — core of ML, graphics, simulations */",
+            "    public static int[][] multiply(int[][] A, int[][] B) {",
+            "        int rowsA = A.length;",
+            "        int colsA = A[0].length;",
+            "        int colsB = B[0].length;",
+            "        int[][] result = new int[rowsA][colsB];",
+            "",
+            "        for (int i = 0; i < rowsA; i++) {",
+            "            for (int j = 0; j < colsB; j++) {",
+            "                for (int k = 0; k < colsA; k++) {",
+            "                    result[i][j] += A[i][k] * B[k][j];",
+            "                }",
+            "            }",
+            "        }",
+            "        return result;",
+            "    }",
+            "",
+            "    /** Transpose a matrix — rows become columns */",
+            "    public static int[][] transpose(int[][] matrix) {",
+            "        int rows = matrix.length;",
+            "        int cols = matrix[0].length;",
+            "        int[][] transposed = new int[cols][rows];",
+            "",
+            "        for (int i = 0; i < rows; i++) {",
+            "            for (int j = 0; j < cols; j++) {",
+            "                transposed[j][i] = matrix[i][j];",
+            "            }",
+            "        }",
+            "        return transposed;",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        int[][] A = {{1, 2}, {3, 4}};",
+            "        int[][] B = {{5, 6}, {7, 8}};",
+            "",
+            "        int[][] product = multiply(A, B);",
+            "        System.out.println(\"A × B = \" + Arrays.deepToString(product));",
+            "        // Output: A × B = [[19, 22], [43, 50]]",
+            "",
+            "        int[][] transposed = transpose(A);",
+            "        System.out.println(\"Aᵀ = \" + Arrays.deepToString(transposed));",
+            "        // Output: Aᵀ = [[1, 3], [2, 4]]",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Arrays Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are consistently asked in Java fresher interviews, campus placements, and OCPJP/OCA certification exams."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is an array in Java? How is it different from C/C++ arrays?",
+              "a": "A Java array is a fixed-size, ordered collection of same-type elements stored in contiguous memory, accessed by zero-based index. Key differences from C/C++: (1) Java arrays are objects — even int[] is created on the heap with new. (2) Java automatically initializes elements (0, false, null) — C/C++ leave garbage values. (3) Java checks bounds at runtime — accessing invalid index throws ArrayIndexOutOfBoundsException; C/C++ allow buffer overflows silently. (4) Java arrays have a built-in .length field. (5) Java has no true pointer arithmetic on arrays.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the default value of array elements in Java?",
+              "a": "Java guarantees automatic initialization: int/byte/short/long → 0, float/double → 0.0, char → '\\u0000' (null character, not '0'), boolean → false, all object references (String, Integer, custom) → null. This applies to any array created with new, whether declared as a field or local variable. This is a JVM guarantee — not implementation-dependent. Directly accessing a null object reference from an array will throw NullPointerException.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is ArrayIndexOutOfBoundsException and how do you prevent it?",
+              "a": "It's a RuntimeException thrown when accessing array[index] where index < 0 or index >= array.length. For int[] arr = new int[5], valid indices are 0-4; arr[5] throws this exception. Prevention: (1) Always use i < arr.length in for-loop condition (never <=). (2) Use enhanced for-each when you don't need index — it's bounds-safe. (3) Check index before access: if (index >= 0 && index < arr.length). (4) Use arr[arr.length - 1] for last element (not arr[arr.length]). (5) Validate array length before accessing fixed indices.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. How do you copy an array in Java? What is shallow vs deep copy?",
+              "a": "Four ways to copy: (1) Arrays.copyOf(original, newLength) — creates new array, truncates or pads with defaults. (2) Arrays.copyOfRange(original, from, to) — copies a subrange. (3) System.arraycopy(src, srcPos, dest, destPos, length) — fastest, low-level. (4) arr.clone() — shallow copy. For primitive arrays, all four methods create a true independent copy (deep copy) since primitives are values. For object arrays (String[], Integer[]), all four create a SHALLOW copy — the new array holds the same object references. To truly deep copy an object array, you must copy each element individually.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. What is the difference between Array and ArrayList in Java?",
+              "a": "Array: fixed size (set at creation), supports primitives (int[], double[]), faster for known-size data, access via arr[index], no built-in add/remove. ArrayList: dynamic size (auto-grows), supports objects only (Integer, not int), access via list.get(index), rich API (add, remove, contains, sort). Use array for: known size, primitives, performance-critical buffers. Use ArrayList for: unknown/changing size, when you need List<T> interface, frequent add/remove operations. ArrayList internally uses an array and resizes by 50% when full.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q6. How does Arrays.sort() work in Java? What algorithm does it use?",
+              "a": "Arrays.sort() uses different algorithms based on type: For primitive arrays (int[], double[], etc.): Dual-Pivot Quicksort (introduced in Java 7) — average O(n log n), better constant factors than classic quicksort. For object arrays (String[], Integer[]): TimSort — a hybrid of Merge Sort and Insertion Sort, O(n log n) worst case, stable sort (preserves order of equal elements). For parallel processing of large arrays: Arrays.parallelSort() uses Fork/Join framework for multi-core speedup. Always import java.util.Arrays.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. How do you find duplicates in an array in Java?",
+              "a": "Multiple approaches: (1) Nested loops — O(n²): for each element, check all subsequent elements. Simple but slow. (2) Sorting first — O(n log n): Arrays.sort(arr), then compare adjacent elements arr[i] == arr[i+1]. (3) HashSet — O(n): add each element to a Set; if add() returns false, it's a duplicate. Most efficient for unsorted data. (4) HashMap — O(n): map element → frequency, then find entries with count > 1. Example with HashSet: Set<Integer> seen = new HashSet<>(); for (int n : arr) { if (!seen.add(n)) System.out.println(n + \" is duplicate\"); }",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. What is a jagged array in Java?",
+              "a": "A jagged array (ragged array) is a multidimensional array where different rows have different column counts. In Java: int[][] jagged = new int[3][]; jagged[0] = new int[2]; jagged[1] = new int[4]; jagged[2] = new int[1]; — row 0 has 2 elements, row 1 has 4, row 2 has 1. This works because Java's 2D arrays are actually arrays of array references, not a true rectangular grid. Use jagged arrays for: Pascal's triangle, triangular matrices, irregular grid data. Always use jagged[i].length (not a fixed column count) when traversing to avoid ArrayIndexOutOfBoundsException.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q9. Can you change the size of an array after creation in Java?",
+              "a": "No — the size of a Java array is fixed permanently at creation. Once you write new int[5], the array will always have exactly 5 elements. You cannot add or remove elements. If you need to resize, you must: (1) Create a new larger/smaller array, (2) Copy elements using Arrays.copyOf() or System.arraycopy(), (3) Reassign the reference. This is exactly what ArrayList does internally when it resizes — it creates a new array 1.5x larger and copies elements. For most use cases where resizing is needed, use ArrayList instead of manual array resizing.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q10. What is the output of: int[] a = {1,2,3}; int[] b = a; b[0] = 99; System.out.println(a[0]);",
+              "a": "Output: 99. This is the reference copy trap. int[] b = a does NOT create a new array — it makes b point to the SAME array object as a. Both variables reference the same memory. So b[0] = 99 modifies the shared array, and a[0] also becomes 99. To get an independent copy: int[] b = Arrays.copyOf(a, a.length); — now b is a new array, changes to b don't affect a. This behaviour applies to ALL object assignments in Java — it's a reference copy, not a value copy.",
+              "tag": "Tricky"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Array Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Attempt each problem independently before reading the answer — active recall is 2–3x more effective than passive reading."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output?\nint[] arr = new int[4];\nSystem.out.println(arr[0]);\nSystem.out.println(arr[3]);\nSystem.out.println(arr.length);",
+              "a": "Output: 0, 0, 4. Java automatically initializes int array elements to 0. arr[0] = 0 (default), arr[3] = 0 (default), arr.length = 4 (size of the array). Note: .length is a field, not a method — no parentheses needed.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Find the bug:\nint[] numbers = {10, 20, 30, 40, 50};\nfor (int i = 0; i <= numbers.length; i++) {\n    System.out.println(numbers[i]);\n}",
+              "a": "Bug: Loop condition is i <= numbers.length which allows i = 5 (when length = 5). Valid indices are 0-4. When i = 5, numbers[5] throws ArrayIndexOutOfBoundsException. Fix: Change <= to <: for (int i = 0; i < numbers.length; i++). This is the classic off-by-one error — always use strict less-than (<) when iterating arrays.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Write code to find the maximum element in an array without using Arrays class.",
+              "a": "int[] arr = {34, 7, 89, 12, 56, 3};\nint max = arr[0]; // Start with first element, not 0\nfor (int i = 1; i < arr.length; i++) {\n    if (arr[i] > max) {\n        max = arr[i];\n    }\n}\nSystem.out.println(\"Max: \" + max); // Output: 89\nKey point: Initialize max with arr[0] (not 0 or Integer.MIN_VALUE) for correctness with negative arrays. Start loop at i = 1 since we already checked index 0.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. What is the output?\nint[] a = {1, 2, 3};\nint[] b = a;\nb[1] = 99;\nSystem.out.println(a[1]);\nSystem.out.println(Arrays.equals(a, b));",
+              "a": "Output: 99, true. int[] b = a is a reference copy — both variables point to the SAME array. Changing b[1] = 99 modifies the shared array, so a[1] also becomes 99. Arrays.equals(a, b) compares content element by element — since both refer to the same array, all elements match, so it returns true. To make b independent: int[] b = Arrays.copyOf(a, a.length);",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Write code to reverse an array in-place (without creating a new array).",
+              "a": "int[] arr = {1, 2, 3, 4, 5};\nint left = 0, right = arr.length - 1;\nwhile (left < right) {\n    int temp = arr[left];\n    arr[left] = arr[right];\n    arr[right] = temp;\n    left++;\n    right--;\n}\nSystem.out.println(Arrays.toString(arr)); // Output: [5, 4, 3, 2, 1]\nAlgorithm: Two-pointer swap from both ends moving inward. Works for both even and odd length arrays. O(n/2) swaps = O(n) time, O(1) space — no new array created.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. What is the output of this 2D array code?\nint[][] grid = new int[3][3];\nfor (int i = 0; i < 3; i++) {\n    grid[i][i] = 1;\n}\nSystem.out.println(Arrays.deepToString(grid));",
+              "a": "Output: [[1, 0, 0], [0, 1, 0], [0, 0, 1]]. This creates an identity matrix — 1s on the main diagonal (where row index == column index), 0s everywhere else. The loop sets grid[0][0]=1, grid[1][1]=1, grid[2][2]=1. All other elements remain at their default value of 0. Arrays.deepToString() prints nested arrays correctly.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. Write code to check if two arrays are equal WITHOUT using Arrays.equals().",
+              "a": "public static boolean areEqual(int[] a, int[] b) {\n    if (a == null && b == null) return true;\n    if (a == null || b == null) return false;\n    if (a.length != b.length) return false;\n    for (int i = 0; i < a.length; i++) {\n        if (a[i] != b[i]) return false;\n    }\n    return true;\n}\nSteps: (1) Handle null cases. (2) Check length equality first — fast short-circuit. (3) Compare element by element. Return false at first mismatch. If loop completes, arrays are equal. This is effectively what Arrays.equals() does internally.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "8. Given int[] arr = {3, 1, 4, 1, 5, 9, 2, 6}, write code to find the second largest element.",
+              "a": "int[] arr = {3, 1, 4, 1, 5, 9, 2, 6};\nint first = Integer.MIN_VALUE;\nint second = Integer.MIN_VALUE;\nfor (int num : arr) {\n    if (num > first) {\n        second = first;\n        first = num;\n    } else if (num > second && num != first) {\n        second = num;\n    }\n}\nSystem.out.println(\"Second largest: \" + second); // Output: 6\nSingle-pass O(n) solution. Uses Integer.MIN_VALUE as sentinels. The num != first condition handles duplicates — if first=9 and num=9, we don't update second. For arr={9,9,9}, second stays MIN_VALUE indicating no distinct second largest.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Arrays: The Foundation of Java Data Structures",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Arrays are the <strong>most fundamental data structure</strong> in Java — and in all of programming. Every higher-level collection (ArrayList, HashMap, Stack, Queue) is built on top of arrays internally. Understanding arrays deeply means understanding how memory is laid out, how indexing works, and how to think about data as an ordered sequence."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The difference between a beginner and a professional Java developer often shows in array handling: beginners use <code>==</code> for comparison, print arrays directly, forget to guard against null, and don't distinguish reference copy from value copy. Professionals use <code>Arrays.equals()</code>, <code>Arrays.toString()</code>, <code>Arrays.copyOf()</code>, and always validate bounds and null before access."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept",                     "Key Points",                                                      "Example"],
+          "rows": [
+            ["Declaration",                           "Brackets after type, not name",                                   "int[] arr = new int[5];"],
+            ["Literal Init",                          "Inline with {} — only at declaration",                           "int[] arr = {1,2,3};"],
+            ["Index",                                 "Zero-based — 0 to length-1",                                     "arr[0] to arr[arr.length-1]"],
+            ["Classic for loop",                      "Use when index is needed or modifying",                          "for (int i = 0; i < arr.length; i++)"],
+            ["Enhanced for-each",                     "Read-only traversal — cleaner, bounds-safe",                     "for (int n : arr)"],
+            ["2D Array",                              "Array of arrays — matrix[row][col]",                             "int[][] m = new int[3][4];"],
+            ["Jagged Array",                          "Rows with different column counts",                              "jagged[0] = new int[2]; jagged[1] = new int[5];"],
+            ["Array copy",                            "Arrays.copyOf() for independent copy",                           "int[] b = Arrays.copyOf(a, a.length);"],
+            ["Compare content",                       "Arrays.equals() not ==",                                         "Arrays.equals(a, b)"],
+            ["Print",                                 "Arrays.toString() for 1D, deepToString() for nD",               "Arrays.toString(arr)"],
+            ["Array vs ArrayList",                    "Fixed+primitives vs Dynamic+objects",                            "Use ArrayList when size changes"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Strings</strong> — where you'll see how Java's most-used class is built on a <code>char[]</code> array internally, and how string immutability, the String pool, and StringBuilder work. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Arrays",
+    "items": [
+      {
+        "q": "What is an array in Java?",
+        "a": "An array in Java is a fixed-size, ordered collection of elements of the same data type stored in contiguous memory locations. Each element is accessed by its zero-based integer index. Arrays can hold both primitive types (int, double, char, boolean) and object references (String, Integer, custom objects). Once created, the size of an array cannot change — for dynamic sizing, use ArrayList."
+      },
+      {
+        "q": "What is the difference between Array and ArrayList in Java?",
+        "a": "Arrays are fixed-size and can hold primitives or objects; ArrayLists are dynamic (resize automatically) and can only hold objects. Arrays use [] syntax for access; ArrayList uses .get() and .add() methods. Arrays are faster for direct index access with primitives; ArrayList is more flexible for frequent insertions/deletions. Use arrays when size is known and fixed. Use ArrayList when size is unknown or changes frequently."
+      },
+      {
+        "q": "What is the default value of array elements in Java?",
+        "a": "Java initializes array elements automatically: int/byte/short/long → 0, float/double → 0.0, char → '\\u0000', boolean → false, all object references → null. This applies when you create an array with new without explicit initialization. This is guaranteed by the JVM — unlike C/C++ where uninitialized arrays contain garbage values."
+      },
+      {
+        "q": "What is ArrayIndexOutOfBoundsException in Java?",
+        "a": "It is a runtime exception thrown when accessing an array element at an invalid index — either negative or >= array.length. For an array of size 5 (indices 0-4), accessing arr[5] or arr[-1] throws this exception. Always use i < arr.length (not <=) in for-loop conditions, and arr[arr.length - 1] to access the last element safely."
+      },
+      {
+        "q": "How do you sort an array in Java?",
+        "a": "Use Arrays.sort(array) from java.util.Arrays for ascending order — it uses Dual-Pivot Quicksort for primitives and TimSort for objects (both O(n log n)). For descending order with objects: Arrays.sort(arr, Collections.reverseOrder()). For partial sort: Arrays.sort(arr, fromIndex, toIndex). For large arrays on multi-core CPUs: Arrays.parallelSort(arr) uses Fork/Join for better performance. Always import java.util.Arrays."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Boolean",    "path": "/java/java-boolean" },
+    "next": { "label": "Java Strings →",   "path": "/java/java-strings" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Size",               "dd": "Fixed — cannot change after creation" },
+      { "dt": "Index",              "dd": "Zero-based — 0 to length-1" },
+      { "dt": "Default values",     "dd": "0 / 0.0 / false / null (auto-initialized)" },
+      { "dt": "Length",             "dd": ".length field (not method)" },
+      { "dt": "Primitives?",        "dd": "✅ Yes — int[], double[], char[], boolean[]" },
+      { "dt": "Multidimensional",   "dd": "int[][] — array of arrays (jagged possible)" }
+    ],
+    "relatedArticles": [
+      { "label": "Java for Loop",         "path": "/java/java-for-loop" },
+      { "label": "Java while Loop",       "path": "/java/java-while-loop" },
+      { "label": "Java Strings",          "path": "/java/java-strings" },
+      { "label": "Java ArrayList",        "path": "/java/java-arraylist" },
+      { "label": "Java switch Statement", "path": "/java/java-switch" },
+      { "label": "Java Data Types",       "path": "/java/java-datatype" },
+      { "label": "Java if-else",          "path": "/java/java-if-else" },
+      { "label": "Java Variables",        "path": "/java/java-variables" }
+    ],
+    "tags": ["Arrays", "Array Declaration", "Array Initialization", "Array Traversal", "Multidimensional Arrays", "2D Arrays", "Jagged Arrays", "Array vs ArrayList", "Arrays Class", "ArrayIndexOutOfBoundsException", "for-each Loop", "Arrays.sort", "Arrays.copyOf", "Java Best Practices", "Java Collections"]
+  }
+}

@@ -1,0 +1,1350 @@
+{
+  "meta": {
+    "title": "Java User Input — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java User Input with Scanner, BufferedReader, Console, command-line arguments, input validation, exception handling, and real-world examples. Covers all user input patterns in Java. Updated March 2026.",
+    "keywords": "java user input, java scanner, java bufferedreader, java console input, java readline, java nextint, java nextline, java input validation, java scanner class, java user input examples, java user input best practices, java user input interview questions, java 21 user input, java stdin, java keyboard input",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-user-input",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java User Input — Syntax, Types, Examples & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java User Input — Scanner, BufferedReader, Console, command-line args, input validation, exception handling, and real-world production examples.",
+      "url": "https://www.techsustainify.com/java/java-user-input",
+      "image": "https://www.techsustainify.com/images/java-user-input-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java User Input Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-03-01T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java User Input",
+          "Scanner Class",
+          "BufferedReader",
+          "Console Class",
+          "Input Validation",
+          "Exception Handling",
+          "Java OOP",
+          "Command Line Arguments",
+          "Java IO",
+          "Java 21"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java User Input — Syntax, Types, Examples & Best Practices 2026",
+      "description": "Complete guide to Java User Input — Scanner, BufferedReader, Console, command-line args, input validation, exception handling & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-user-input-og.png",
+      "imageAlt": "Java User Input Guide 2026 - Tech Sustainify",
+      "readingTime": "22 minutes",
+      "level": "Beginner",
+      "label1": "Reading Time",
+      "data1": "22 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java User Input — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering all Java user input methods — Scanner, BufferedReader, Console, command-line arguments, input validation, exception handling, and real-world production examples.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-03-01",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner",
+        "wordCount": 6800,
+        "timeRequired": "PT22M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java User Input" },
+          { "@type": "Thing", "name": "Scanner Class" },
+          { "@type": "Thing", "name": "BufferedReader" },
+          { "@type": "Thing", "name": "Input Validation" }
+        ],
+        "keywords": "java user input, scanner class, bufferedreader, console input, command line arguments, input validation, exception handling, java io"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java User Input" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is user input in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "User input in Java refers to data provided by the user during program execution, typically through the keyboard (standard input / System.in). Java provides multiple ways to read user input: (1) Scanner class — the most common and beginner-friendly approach, supports reading int, double, String, and other types. (2) BufferedReader with InputStreamReader — faster for large input, commonly used in competitive programming. (3) Console class — secure input, especially for passwords (masks characters). (4) Command-line arguments — data passed directly when running the program via args[] in main(). Each method suits different scenarios based on performance, security, and simplicity needs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the Scanner class in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Scanner class (java.util.Scanner) is the most widely used class for reading user input in Java. It can read input from various sources: System.in (keyboard), files, and strings. Key methods include: nextInt() — reads an integer, nextDouble() — reads a double, next() — reads a single word (stops at whitespace), nextLine() — reads an entire line including spaces, nextBoolean() — reads true/false. Scanner must be closed after use to release resources. A common pitfall is mixing nextInt()/nextDouble() with nextLine() — the former leaves a newline in the buffer, causing nextLine() to read an empty string. Fix: call an extra nextLine() to consume the leftover newline."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between next() and nextLine() in Java Scanner?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "next() reads a single token (word) — it stops at whitespace (space, tab, newline). It does NOT consume the newline character. nextLine() reads an entire line of text including spaces — it stops at and consumes the newline character. Example: if input is 'Hello World', next() returns 'Hello' (stops at space); nextLine() returns 'Hello World'. The classic bug: calling nextInt() followed by nextLine() — nextInt() reads the number but leaves '\\n' in the buffer; the subsequent nextLine() reads that leftover '\\n' and returns an empty string. Fix: add an extra sc.nextLine() after nextInt() to consume the leftover newline before reading a string."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which is faster — Scanner or BufferedReader in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BufferedReader is significantly faster than Scanner for large input. Scanner uses regex-based parsing and is synchronized, making it slower. BufferedReader reads raw text in large chunks with an internal buffer (default 8192 chars) and does minimal processing — making it ideal for competitive programming or reading large files. For typical console-based user input in small programs, Scanner is preferred for its simplicity (built-in type parsing methods like nextInt(), nextDouble()). For competitive programming or reading millions of lines, BufferedReader + Integer.parseInt() is the standard approach."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you validate user input in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Input validation in Java is done by: (1) Using Scanner.hasNextInt() / hasNextDouble() before reading — checks if the next token matches the expected type without consuming it. (2) Try-catch with InputMismatchException — wrap Scanner reads in try-catch and prompt the user to re-enter on error. (3) Reading as String with nextLine() and manually parsing/validating — most flexible approach. (4) Using regex: input.matches('[0-9]+') for pattern validation. (5) Loop until valid: use a while(true) loop that breaks only on valid input, prompting the user repeatedly on invalid entries. Always close Scanner in a finally block or use try-with-resources to avoid resource leaks."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-03-01",
+      "dateModified": "2026-03-20",
+      "readingTime": "22 minutes",
+      "wordCount": 6800,
+      "difficulty": "Beginner",
+      "chapter": 8,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-user-input",          "title": "What is User Input in Java?" },
+        { "id": "ways-to-read-input",          "title": "Ways to Read User Input in Java" },
+        { "id": "scanner-class",               "title": "Scanner Class — Complete Guide" },
+        { "id": "scanner-methods",             "title": "Scanner Methods — next() vs nextLine()" },
+        { "id": "bufferedreader",              "title": "BufferedReader for User Input" },
+        { "id": "console-class",               "title": "Console Class — Password Input" },
+        { "id": "command-line-args",           "title": "Command-Line Arguments" },
+        { "id": "input-validation",            "title": "Input Validation & Exception Handling" },
+        { "id": "scanner-vs-bufferedreader",   "title": "Scanner vs BufferedReader — Comparison" },
+        { "id": "common-mistakes",             "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",               "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",         "title": "Real-World Production Code Examples" },
+        { "id": "user-input-flowchart",        "title": "User Input Flowchart" },
+        { "id": "interview-questions",         "title": "Interview Questions" },
+        { "id": "practice-questions",          "title": "Practice Questions" },
+        { "id": "conclusion-heading",          "title": "Conclusion" },
+        { "id": "faq-heading",                 "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-user-input" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-user-input" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-user-input" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-operators",
+      "next": "https://www.techsustainify.com/java/java-if-else"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-basics",
+      "contentTopic": "java-user-input",
+      "chapterNumber": 8,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java User Input" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java User Input — Scanner, BufferedReader, Validation & Best Practices",
+    "subtitle": "Everything you need to know about Java User Input — Scanner class, BufferedReader, Console, command-line arguments, next() vs nextLine() pitfall, input validation, exception handling, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "22 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "8 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-user-input",
+      "title": "What is User Input in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>User Input</strong> refers to data that a user provides to a running program — typically by typing on the keyboard. In Java, the standard input stream is <code>System.in</code>, analogous to <code>System.out</code> for output. Reading from <code>System.in</code> directly gives raw bytes, so Java provides wrapper classes — most notably <strong>Scanner</strong> and <strong>BufferedReader</strong> — that make parsing typed input (integers, doubles, strings) straightforward and safe."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In real-world applications, user input drives everything: a banking app reading an account number, a login form collecting a password, a CLI tool accepting a file path, or a game asking for a player's name. Java provides multiple input mechanisms — each suited for different scenarios in terms of simplicity, performance, and security."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Understanding <strong>which input method to use</strong> and <strong>how to validate input</strong> properly is a foundational skill. Unvalidated or incorrectly read input is one of the most common sources of bugs and security vulnerabilities in Java programs."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java User Input at a Glance",
+          "text": "Java offers 4 primary ways to read user input: (1) Scanner (java.util.Scanner) — simplest, most common; parses int, double, String directly from System.in. (2) BufferedReader (java.io.BufferedReader) — faster for large/bulk input; reads line by line as String, manual parsing required. (3) Console (java.io.Console) — reads from terminal; supports secure password input (no echo). (4) Command-Line Arguments — data passed via args[] in main(); no runtime prompting needed."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "ways-to-read-input",
+      "title": "Ways to Read User Input in Java",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java provides several mechanisms for reading user input, each with distinct trade-offs in terms of ease of use, performance, and applicability. Choosing the right one depends on your context — a simple beginner program, competitive programming, a CLI tool, or a production application."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🔧",
+              "title": "Scanner Class (java.util.Scanner)",
+              "text": "Most beginner-friendly approach. Wraps System.in and provides methods to read specific types: nextInt(), nextDouble(), next(), nextLine(). Supports reading from files and strings too. Slightly slower due to regex-based tokenization. Best for: small programs, learning, console applications with modest input."
+            },
+            {
+              "icon": "⚡",
+              "title": "BufferedReader (java.io.BufferedReader)",
+              "text": "Faster than Scanner — reads input in large buffered chunks. Reads only Strings (readLine()); manual parsing with Integer.parseInt() etc. required. No built-in type-safe methods. Best for: competitive programming, reading large volumes of input, performance-critical applications."
+            },
+            {
+              "icon": "🔒",
+              "title": "Console Class (java.io.Console)",
+              "text": "Provides readLine() and readPassword() methods. readPassword() masks typed characters — ideal for secure password input. Returns null if no console is attached (e.g. in IDEs). Best for: CLI tools requiring secure credential input."
+            },
+            {
+              "icon": "🖥️",
+              "title": "Command-Line Arguments (args[])",
+              "text": "Data passed at program launch: java MyApp arg1 arg2. Accessed via String[] args in main(). No runtime prompting — input is baked into the launch command. Best for: scripts, build tools, automation tasks, and programs that must run non-interactively."
+            }
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Scanner", "BufferedReader", "Console", "CLI Args"],
+          "rows": [
+            ["Package",             "java.util",        "java.io",          "java.io",          "Built-in (main)"],
+            ["Ease of Use",         "⭐⭐⭐⭐⭐ Very Easy",  "⭐⭐⭐ Moderate",    "⭐⭐⭐⭐ Easy",       "⭐⭐⭐⭐ Easy"],
+            ["Performance",         "Moderate",         "Fast",             "Moderate",         "N/A"],
+            ["Type Parsing",        "Built-in",         "Manual",           "String only",      "String only"],
+            ["Password Input",      "❌ No",            "❌ No",            "✅ Yes",           "⚠️ Visible"],
+            ["Reads from File",     "✅ Yes",           "✅ Yes",           "❌ No",            "❌ No"],
+            ["Throws Exception",    "Unchecked",        "IOException",      "None",             "None"],
+            ["Best Use Case",       "Learning / apps",  "Competitive prog", "Secure CLI",       "Non-interactive"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "scanner-class",
+      "title": "Scanner Class — Complete Guide",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <strong>Scanner class</strong> (<code>java.util.Scanner</code>), introduced in Java 5, is the standard way to read user input in most Java programs. It tokenizes input using a delimiter (default: whitespace) and provides convenient methods to read each token as a specific type. Scanner can wrap <code>System.in</code> for keyboard input, a <code>File</code> for file reading, or a <code>String</code> for string parsing."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📌",
+              "title": "Commonly Used Scanner Methods",
+              "text": "nextInt() — reads next token as int.\nnextLong() — reads next token as long.\nnextDouble() — reads next token as double.\nnextFloat() — reads next token as float.\nnextBoolean() — reads next token as boolean.\nnext() — reads next token as String (stops at whitespace).\nnextLine() — reads entire next line as String (includes spaces).\nhasNext() — returns true if another token exists.\nhasNextInt() — returns true if next token is a valid int.\nclose() — releases the underlying stream resource."
+            },
+            {
+              "icon": "⚠️",
+              "title": "The nextInt() + nextLine() Pitfall",
+              "text": "nextInt(), nextDouble(), etc. read the token but DO NOT consume the trailing newline '\\n'. When nextLine() is called immediately after, it reads that leftover '\\n' and returns an empty string — not the user's next input. Fix: call an extra sc.nextLine() after any nextInt()/nextDouble() to consume the leftover newline before reading a String with nextLine()."
+            },
+            {
+              "icon": "🔑",
+              "title": "Always Close Scanner",
+              "text": "Scanner wraps a stream resource. Always close it with sc.close() or use try-with-resources: try (Scanner sc = new Scanner(System.in)) { ... }. Note: closing a Scanner wrapping System.in also closes System.in — after that, System.in cannot be reopened in the same JVM. For long-running apps with multiple input phases, keep one Scanner open throughout the application lifecycle."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ScannerBasics.java",
+          "lines": [
+            "import java.util.Scanner;",
+            "",
+            "public class ScannerBasics {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Create Scanner wrapping System.in (keyboard)",
+            "        Scanner sc = new Scanner(System.in);",
+            "",
+            "        // ✅ Reading an integer",
+            "        System.out.print(\"Enter your age: \");",
+            "        int age = sc.nextInt();",
+            "        System.out.println(\"Age: \" + age);",
+            "",
+            "        // ✅ Reading a double",
+            "        System.out.print(\"Enter your salary: \");",
+            "        double salary = sc.nextDouble();",
+            "        System.out.println(\"Salary: \" + salary);",
+            "",
+            "        // ✅ FIX for nextInt + nextLine pitfall",
+            "        sc.nextLine(); // Consume leftover newline after nextDouble()",
+            "",
+            "        // ✅ Reading a full line (with spaces)",
+            "        System.out.print(\"Enter your full name: \");",
+            "        String name = sc.nextLine();",
+            "        System.out.println(\"Name: \" + name);",
+            "",
+            "        // ✅ Reading a single word (no spaces)",
+            "        System.out.print(\"Enter your city: \");",
+            "        String city = sc.next();",
+            "        System.out.println(\"City: \" + city);",
+            "",
+            "        // ✅ Reading a boolean",
+            "        System.out.print(\"Are you employed? (true/false): \");",
+            "        boolean employed = sc.nextBoolean();",
+            "        System.out.println(\"Employed: \" + employed);",
+            "",
+            "        // ✅ Always close Scanner when done",
+            "        sc.close();",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ nextInt() + nextLine() Bug — Most Common Scanner Mistake",
+          "text": "This is the #1 beginner bug with Scanner. After calling nextInt() (or nextDouble(), nextLong() etc.), always add an extra sc.nextLine() before the next nextLine() call. Alternatively, read everything as String using nextLine() and convert manually: int age = Integer.parseInt(sc.nextLine().trim()); — this approach completely avoids the newline buffer issue and is more robust for real-world input."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "scanner-methods",
+      "title": "Scanner Methods — next() vs nextLine() Deep Dive",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Understanding the difference between <code>next()</code> and <code>nextLine()</code> is critical for correct Scanner usage. They behave differently in how they tokenize and consume input, and mixing them without understanding the newline buffer leads to the most common Scanner bug in Java."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "NextVsNextLine.java",
+          "lines": [
+            "import java.util.Scanner;",
+            "",
+            "public class NextVsNextLine {",
+            "    public static void main(String[] args) {",
+            "        Scanner sc = new Scanner(System.in);",
+            "",
+            "        // ── next() ──────────────────────────────────────────────",
+            "        // Reads ONE token — stops at any whitespace (space/tab/newline)",
+            "        // Does NOT consume the delimiter (newline stays in buffer)",
+            "        System.out.print(\"Enter two words: \");",
+            "        String word1 = sc.next(); // Reads first word only",
+            "        String word2 = sc.next(); // Reads second word",
+            "        System.out.println(\"Word1: \" + word1 + \", Word2: \" + word2);",
+            "        // Input: 'Hello World'  →  word1='Hello', word2='World'",
+            "",
+            "        // ── nextLine() ──────────────────────────────────────────",
+            "        // Reads entire line UP TO and INCLUDING '\\n'",
+            "        // Consumes and discards the newline character",
+            "        sc.nextLine(); // Consume leftover newline from above",
+            "        System.out.print(\"Enter a full sentence: \");",
+            "        String sentence = sc.nextLine();",
+            "        System.out.println(\"Sentence: \" + sentence);",
+            "        // Input: 'Java is great'  →  sentence='Java is great'",
+            "",
+            "        // ── The Classic Bug ──────────────────────────────────────",
+            "        System.out.print(\"Enter a number: \");",
+            "        int num = sc.nextInt();   // Reads '42', leaves '\\n' in buffer",
+            "",
+            "        // ❌ BUG: This nextLine() reads the leftover '\\n', returns \"\"",
+            "        // String buggyLine = sc.nextLine();  // Gets empty string!",
+            "",
+            "        // ✅ FIX 1: Add dummy nextLine() to consume the '\\n'",
+            "        sc.nextLine(); // Consume leftover newline",
+            "        System.out.print(\"Enter your name: \");",
+            "        String fixedName = sc.nextLine(); // Now reads correctly",
+            "        System.out.println(\"Num: \" + num + \", Name: \" + fixedName);",
+            "",
+            "        // ✅ FIX 2 (Better): Read everything as nextLine(), parse manually",
+            "        System.out.print(\"Enter a number: \");",
+            "        int num2 = Integer.parseInt(sc.nextLine().trim());",
+            "        System.out.print(\"Enter your name: \");",
+            "        String name2 = sc.nextLine();",
+            "        System.out.println(\"Num: \" + num2 + \", Name: \" + name2);",
+            "",
+            "        sc.close();",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bufferedreader",
+      "title": "BufferedReader for User Input",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>BufferedReader</strong> (<code>java.io.BufferedReader</code>) is a faster alternative to Scanner for reading input. It reads text from a character-input stream, buffering characters to provide efficient reading of characters, arrays, and lines. It does not have built-in type parsing — everything is read as a <code>String</code> and must be manually converted."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "BufferedReaderInput.java",
+          "lines": [
+            "import java.io.BufferedReader;",
+            "import java.io.InputStreamReader;",
+            "import java.io.IOException;",
+            "",
+            "public class BufferedReaderInput {",
+            "    public static void main(String[] args) throws IOException {",
+            "",
+            "        // ✅ Wrap System.in with InputStreamReader, then BufferedReader",
+            "        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));",
+            "",
+            "        // ✅ Read a String",
+            "        System.out.print(\"Enter your name: \");",
+            "        String name = br.readLine();",
+            "        System.out.println(\"Name: \" + name);",
+            "",
+            "        // ✅ Read an integer — manual parsing required",
+            "        System.out.print(\"Enter your age: \");",
+            "        int age = Integer.parseInt(br.readLine().trim());",
+            "        System.out.println(\"Age: \" + age);",
+            "",
+            "        // ✅ Read a double",
+            "        System.out.print(\"Enter your GPA: \");",
+            "        double gpa = Double.parseDouble(br.readLine().trim());",
+            "        System.out.println(\"GPA: \" + gpa);",
+            "",
+            "        // ✅ Read multiple values from one line (space-separated)",
+            "        // Input: '10 20 30'",
+            "        System.out.print(\"Enter three numbers (space-separated): \");",
+            "        String[] parts = br.readLine().trim().split(\"\\\\s+\");",
+            "        int a = Integer.parseInt(parts[0]);",
+            "        int b = Integer.parseInt(parts[1]);",
+            "        int c = Integer.parseInt(parts[2]);",
+            "        System.out.println(\"Sum: \" + (a + b + c));",
+            "",
+            "        // ✅ try-with-resources (auto-closes BufferedReader)",
+            "        // try (BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in))) {",
+            "        //     String line = br2.readLine();",
+            "        // }",
+            "",
+            "        br.close();",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "💡 BufferedReader in Competitive Programming",
+          "text": "In competitive programming, BufferedReader + PrintWriter is the standard combination for fast I/O in Java. The pattern is: BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out))); — read with br.readLine(), output with pw.println(), flush with pw.flush() at the end. This combination handles millions of lines efficiently within time limits where Scanner would TLE (Time Limit Exceeded)."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "console-class",
+      "title": "Console Class — Secure Password Input",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <strong>Console class</strong> (<code>java.io.Console</code>), available since Java 6, provides methods to read from the console with special support for <strong>secure password input</strong>. The <code>readPassword()</code> method reads input without echoing characters to the screen — making it suitable for CLI tools that handle credentials."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ConsoleInput.java",
+          "lines": [
+            "import java.io.Console;",
+            "",
+            "public class ConsoleInput {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Get the Console instance",
+            "        // Returns null if no console is attached (e.g. when run inside an IDE)",
+            "        Console console = System.console();",
+            "",
+            "        if (console == null) {",
+            "            System.err.println(\"No console available. Run from terminal.\");",
+            "            return;",
+            "        }",
+            "",
+            "        // ✅ Read a regular line",
+            "        String username = console.readLine(\"Enter username: \");",
+            "        System.out.println(\"Username: \" + username);",
+            "",
+            "        // ✅ Read password — characters are NOT echoed to screen",
+            "        char[] passwordChars = console.readPassword(\"Enter password: \");",
+            "        String password = new String(passwordChars);",
+            "        System.out.println(\"Password length: \" + password.length());",
+            "",
+            "        // ✅ Security best practice: wipe password from memory after use",
+            "        java.util.Arrays.fill(passwordChars, '\\0');",
+            "",
+            "        // Simple authentication simulation",
+            "        if (username.equals(\"admin\") && password.equals(\"secret123\")) {",
+            "            System.out.println(\"Login successful!\");",
+            "        } else {",
+            "            System.out.println(\"Invalid credentials.\");",
+            "        }",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Console Returns null in IDEs",
+          "text": "System.console() returns null when the program is NOT run from a real terminal — this includes Eclipse, IntelliJ IDEA, VS Code integrated terminals, and Maven/Gradle runs. Always null-check before using Console. For password input in GUI or web applications, use JPasswordField (Swing) or HTTPS form fields (web) instead. Console is specifically for command-line tools run in a real shell."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "command-line-args",
+      "title": "Command-Line Arguments",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Command-line arguments</strong> allow passing data to a Java program at launch time without runtime prompting. They are received as the <code>String[] args</code> parameter of the <code>main()</code> method. Each space-separated token on the command line becomes one element in the <code>args</code> array. Arguments are always Strings — type conversion must be done manually."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "CommandLineArgs.java",
+          "lines": [
+            "public class CommandLineArgs {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Check if arguments were provided",
+            "        if (args.length == 0) {",
+            "            System.out.println(\"Usage: java CommandLineArgs <name> <age>\");",
+            "            return;",
+            "        }",
+            "",
+            "        // ✅ Access arguments by index (always String)",
+            "        String name = args[0];",
+            "        System.out.println(\"Name: \" + name);",
+            "",
+            "        // ✅ Parse to required types",
+            "        if (args.length >= 2) {",
+            "            try {",
+            "                int age = Integer.parseInt(args[1]);",
+            "                System.out.println(\"Age: \" + age);",
+            "            } catch (NumberFormatException e) {",
+            "                System.err.println(\"Age must be a valid integer: \" + args[1]);",
+            "            }",
+            "        }",
+            "",
+            "        // ✅ Iterating all arguments",
+            "        System.out.println(\"All arguments:\");",
+            "        for (int i = 0; i < args.length; i++) {",
+            "            System.out.println(\"  args[\" + i + \"] = \" + args[i]);",
+            "        }",
+            "    }",
+            "}",
+            "",
+            "// Run as: java CommandLineArgs Alice 25",
+            "// Output:",
+            "// Name: Alice",
+            "// Age: 25",
+            "// All arguments:",
+            "//   args[0] = Alice",
+            "//   args[1] = 25"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Command-Line Args in IDEs",
+          "text": "In IntelliJ IDEA: Run → Edit Configurations → Program Arguments field. In Eclipse: Run → Run Configurations → Arguments tab → Program arguments. In VS Code: .vscode/launch.json → 'args' array. In Maven: mvn exec:java -Dexec.mainClass='MyClass' -Dexec.args='arg1 arg2'. For production CLI tools, consider Apache Commons CLI or Picocli libraries — they provide named flags (--name Alice), help text generation, and type conversion automatically."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "input-validation",
+      "title": "Input Validation & Exception Handling",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Input validation</strong> is the practice of verifying that user-provided data is correct, expected, and safe before processing it. Without validation, programs crash on wrong input or produce incorrect results. Java provides several tools for input validation: <code>hasNextInt()</code>/<code>hasNextDouble()</code> on Scanner, try-catch for parsing exceptions, regex matching, and range checks."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InputValidation.java",
+          "lines": [
+            "import java.util.Scanner;",
+            "import java.util.InputMismatchException;",
+            "",
+            "public class InputValidation {",
+            "    public static void main(String[] args) {",
+            "        Scanner sc = new Scanner(System.in);",
+            "",
+            "        // ✅ Method 1: hasNextInt() — check before reading",
+            "        System.out.print(\"Enter an integer: \");",
+            "        while (!sc.hasNextInt()) {",
+            "            System.out.print(\"Invalid! Enter an integer: \");",
+            "            sc.next(); // Discard the invalid token",
+            "        }",
+            "        int num = sc.nextInt();",
+            "        System.out.println(\"Valid integer: \" + num);",
+            "        sc.nextLine(); // consume newline",
+            "",
+            "        // ✅ Method 2: try-catch with InputMismatchException",
+            "        int value = 0;",
+            "        boolean valid = false;",
+            "        while (!valid) {",
+            "            try {",
+            "                System.out.print(\"Enter a positive number: \");",
+            "                value = sc.nextInt();",
+            "                if (value <= 0) throw new IllegalArgumentException(\"Must be positive\");",
+            "                valid = true;",
+            "            } catch (InputMismatchException e) {",
+            "                System.out.println(\"Not a number. Try again.\");",
+            "                sc.nextLine(); // Clear bad input from buffer",
+            "            } catch (IllegalArgumentException e) {",
+            "                System.out.println(e.getMessage() + \". Try again.\");",
+            "                sc.nextLine();",
+            "            }",
+            "        }",
+            "        System.out.println(\"Positive number: \" + value);",
+            "",
+            "        // ✅ Method 3: Read as String, parse manually — most robust",
+            "        int age = 0;",
+            "        while (true) {",
+            "            System.out.print(\"Enter your age (1-120): \");",
+            "            String input = sc.nextLine().trim();",
+            "            try {",
+            "                age = Integer.parseInt(input);",
+            "                if (age >= 1 && age <= 120) break;",
+            "                System.out.println(\"Age must be between 1 and 120.\");",
+            "            } catch (NumberFormatException e) {",
+            "                System.out.println(\"'\" + input + \"' is not a valid number.\");",
+            "            }",
+            "        }",
+            "        System.out.println(\"Age: \" + age);",
+            "",
+            "        // ✅ Method 4: Regex validation",
+            "        String email = \"\";",
+            "        while (true) {",
+            "            System.out.print(\"Enter your email: \");",
+            "            email = sc.nextLine().trim();",
+            "            if (email.matches(\"^[\\\\w.-]+@[\\\\w.-]+\\\\.[a-zA-Z]{2,}$\")) break;",
+            "            System.out.println(\"Invalid email format. Try again.\");",
+            "        }",
+            "        System.out.println(\"Email: \" + email);",
+            "",
+            "        sc.close();",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Best Practice: Read as String, Parse Manually",
+          "text": "The most robust input validation strategy is to read all input as String using sc.nextLine() and then parse/validate manually. This completely avoids the nextInt()/nextLine() buffer issue, gives you full control over error messages, and allows you to validate the raw string before conversion. Pattern: String raw = sc.nextLine().trim(); then Integer.parseInt(raw) inside a try-catch. This is how production-grade CLI tools handle input."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "scanner-vs-bufferedreader",
+      "title": "Scanner vs BufferedReader — Complete Comparison",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Both Scanner and BufferedReader read from <code>System.in</code>, but they serve different purposes. Understanding their differences helps you choose the right tool for each context — from beginner exercises to competitive programming to production applications."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Scanner", "BufferedReader"],
+          "rows": [
+            ["Package",               "java.util.Scanner",                     "java.io.BufferedReader"],
+            ["Ease of Use",           "Easy — type-specific methods",          "Moderate — everything is String"],
+            ["Performance",           "Slower (regex tokenizer)",              "Faster (buffered, minimal processing)"],
+            ["Type Parsing",          "Built-in: nextInt(), nextDouble()",     "Manual: Integer.parseInt(br.readLine())"],
+            ["Reads Line",            "nextLine()",                            "readLine()"],
+            ["Exception",             "Unchecked (InputMismatchException)",    "Checked (IOException) — must handle"],
+            ["Buffer Size",           "No buffering",                          "8192 chars default (configurable)"],
+            ["Thread Safe",           "Not synchronized",                      "Not synchronized"],
+            ["Use in Competitive",    "OK for small input",                    "Preferred for large input"],
+            ["Use in Production",     "Simple CLI tools",                      "Large file/input processing"],
+            ["Reads from File",       "✅ Yes",                               "✅ Yes"],
+            ["Delimiter Support",     "✅ Custom delimiter",                  "❌ Line-by-line only"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Bugs That Fool Everyone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the most common user-input bugs found in Java beginner and intermediate code. Each one is subtle, easy to make, and can cause silent incorrect behavior or runtime exceptions."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InputMistakes.java",
+          "lines": [
+            "import java.util.Scanner;",
+            "",
+            "// ❌ MISTAKE 1: nextInt() + nextLine() — classic buffer bug",
+            "Scanner sc = new Scanner(System.in);",
+            "System.out.print(\"Enter age: \");",
+            "int age = sc.nextInt();          // Reads int, leaves '\\n' in buffer",
+            "System.out.print(\"Enter name: \");",
+            "String name = sc.nextLine();     // ❌ Reads leftover '\\n' — returns \"\"!",
+            "System.out.println(name);        // Prints empty string",
+            "// ✅ Fix: sc.nextLine() after nextInt() to consume leftover '\\n'",
+            "",
+            "// ❌ MISTAKE 2: Not checking args.length before accessing args[]",
+            "public static void main(String[] args) {",
+            "    String input = args[0];  // ❌ ArrayIndexOutOfBoundsException if no args passed",
+            "}",
+            "// ✅ Fix: if (args.length > 0) { String input = args[0]; }",
+            "",
+            "// ❌ MISTAKE 3: Not closing Scanner — resource leak",
+            "Scanner sc2 = new Scanner(System.in);",
+            "int x = sc2.nextInt();",
+            "// ❌ Forgot sc2.close() — resource leak in long-running apps",
+            "// ✅ Fix: use try-with-resources",
+            "try (Scanner sc3 = new Scanner(System.in)) {",
+            "    int y = sc3.nextInt();",
+            "} // Auto-closed",
+            "",
+            "// ❌ MISTAKE 4: Using System.console() in IDE without null check",
+            "char[] pwd = System.console().readPassword(\"Password: \"); // ❌ NullPointerException in IDE",
+            "// ✅ Fix:",
+            "java.io.Console con = System.console();",
+            "if (con != null) {",
+            "    char[] p = con.readPassword(\"Password: \");",
+            "} else {",
+            "    System.err.println(\"Run from terminal for secure input\");",
+            "}",
+            "",
+            "// ❌ MISTAKE 5: Not handling NumberFormatException when parsing CLI args",
+            "int port = Integer.parseInt(args[0]);  // ❌ Crashes if args[0] is not a number",
+            "// ✅ Fix:",
+            "try {",
+            "    int safePort = Integer.parseInt(args[0]);",
+            "} catch (NumberFormatException e) {",
+            "    System.err.println(\"Invalid port: \" + args[0]);",
+            "    System.exit(1);",
+            "}",
+            "",
+            "// ❌ MISTAKE 6: Creating multiple Scanners on System.in",
+            "Scanner s1 = new Scanner(System.in);",
+            "Scanner s2 = new Scanner(System.in);  // ❌ Both share the same stream — unpredictable reads",
+            "// ✅ Fix: create ONE Scanner per stream and reuse it throughout the program"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These anti-patterns represent common misuses of user input handling in professional Java code. Each one either causes bugs, security issues, or makes the code unmaintainable."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "No Input Validation — Trusting User Input Blindly",
+              "text": "Directly using user input without validation — Integer.parseInt(sc.nextLine()) without try-catch, or args[0] without length check — causes crashes on any unexpected input. Production code must validate all external input. Never assume the user will provide correct data. Every user-facing input path needs: type validation, range/format validation, and graceful error messages with retry prompts."
+            },
+            {
+              "icon": "🚫",
+              "title": "Multiple Scanner Instances on System.in",
+              "text": "Creating more than one Scanner wrapping System.in in the same program is a serious bug. Both share the same underlying stream — reads from one consume data that the other expects. Create exactly ONE Scanner for System.in at the application level (e.g. as a class field or passed as a parameter) and reuse it everywhere. Closing one Scanner also closes System.in, making subsequent reads impossible."
+            },
+            {
+              "icon": "🚫",
+              "title": "Storing Passwords as String",
+              "text": "Storing passwords as String is a security anti-pattern. Strings are immutable and interned — they remain in the JVM string pool until garbage collected, potentially exposing passwords in memory dumps. Use char[] for passwords (as Console.readPassword() returns). After use, overwrite with Arrays.fill(passwordChars, '\\0'). This ensures the password is wiped from memory immediately after use — Strings cannot be zeroed out."
+            },
+            {
+              "icon": "🚫",
+              "title": "Hardcoding Input in Loops Without Exit Condition",
+              "text": "Writing while(true) validation loops without a proper break condition or maximum retry limit is dangerous in production. If used in a server context, a malicious or buggy client can loop forever, consuming thread resources. Always add a maximum retry limit: int attempts = 0; while (attempts++ < 3) { ... }. In production CLI tools, fail fast after N invalid attempts rather than looping indefinitely."
+            },
+            {
+              "icon": "🚫",
+              "title": "Using Scanner for High-Volume Input",
+              "text": "Using Scanner to read millions of lines (e.g. processing a large data file interactively or in a batch job) is a performance anti-pattern. Scanner's regex-based tokenization is significantly slower than BufferedReader for high-volume reads. For any file or stream with more than a few thousand lines, switch to BufferedReader or NIO (java.nio.file.Files.readAllLines() / Files.lines()). The performance difference can be 5-10x on large inputs."
+            },
+            {
+              "icon": "🚫",
+              "title": "Ignoring IOExceptions from BufferedReader",
+              "text": "BufferedReader.readLine() throws checked IOException which must be handled. Suppressing it with an empty catch block (catch(IOException e) {}) silently swallows read errors — the program continues with null or corrupted data without the developer knowing. Always either handle IOException meaningfully (log it, show an error message, retry) or declare it with throws in the method signature when appropriate."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — User Input in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples model user input patterns used in real enterprise and CLI Java applications — including a robust validated input utility class and a command-line application with argument parsing."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InputUtils.java — Reusable Validated Input Utility",
+          "lines": [
+            "package com.techsustainify.util;",
+            "",
+            "import java.util.Scanner;",
+            "import java.util.function.Predicate;",
+            "",
+            "/**",
+            " * Reusable utility for validated console input.",
+            " * Single Scanner instance — no resource conflicts.",
+            " */",
+            "public class InputUtils {",
+            "",
+            "    private static final Scanner SCANNER = new Scanner(System.in);",
+            "",
+            "    /** Read a non-empty string with a custom prompt. */",
+            "    public static String readString(String prompt) {",
+            "        String input;",
+            "        do {",
+            "            System.out.print(prompt);",
+            "            input = SCANNER.nextLine().trim();",
+            "            if (input.isEmpty()) System.out.println(\"Input cannot be empty.\");",
+            "        } while (input.isEmpty());",
+            "        return input;",
+            "    }",
+            "",
+            "    /** Read an integer within [min, max] inclusive. */",
+            "    public static int readInt(String prompt, int min, int max) {",
+            "        while (true) {",
+            "            System.out.print(prompt);",
+            "            try {",
+            "                int val = Integer.parseInt(SCANNER.nextLine().trim());",
+            "                if (val >= min && val <= max) return val;",
+            "                System.out.printf(\"Enter a number between %d and %d.%n\", min, max);",
+            "            } catch (NumberFormatException e) {",
+            "                System.out.println(\"Invalid number. Try again.\");",
+            "            }",
+            "        }",
+            "    }",
+            "",
+            "    /** Read a double within [min, max] inclusive. */",
+            "    public static double readDouble(String prompt, double min, double max) {",
+            "        while (true) {",
+            "            System.out.print(prompt);",
+            "            try {",
+            "                double val = Double.parseDouble(SCANNER.nextLine().trim());",
+            "                if (val >= min && val <= max) return val;",
+            "                System.out.printf(\"Enter a value between %.2f and %.2f.%n\", min, max);",
+            "            } catch (NumberFormatException e) {",
+            "                System.out.println(\"Invalid decimal. Try again.\");",
+            "            }",
+            "        }",
+            "    }",
+            "",
+            "    /** Read a string matching a custom predicate with error message. */",
+            "    public static String readValidated(String prompt, Predicate<String> validator, String errorMsg) {",
+            "        while (true) {",
+            "            System.out.print(prompt);",
+            "            String input = SCANNER.nextLine().trim();",
+            "            if (validator.test(input)) return input;",
+            "            System.out.println(errorMsg);",
+            "        }",
+            "    }",
+            "",
+            "    /** Read a yes/no boolean. */",
+            "    public static boolean readYesNo(String prompt) {",
+            "        while (true) {",
+            "            System.out.print(prompt + \" (y/n): \");",
+            "            String input = SCANNER.nextLine().trim().toLowerCase();",
+            "            if (input.equals(\"y\") || input.equals(\"yes\")) return true;",
+            "            if (input.equals(\"n\") || input.equals(\"no\"))  return false;",
+            "            System.out.println(\"Please enter 'y' or 'n'.\");",
+            "        }",
+            "    }",
+            "",
+            "    /** Usage example */",
+            "    public static void main(String[] args) {",
+            "        String name  = readString(\"Enter your name: \");",
+            "        int age      = readInt(\"Enter your age: \", 1, 120);",
+            "        double salary = readDouble(\"Enter salary: \", 0, 10_000_000);",
+            "        String email = readValidated(",
+            "            \"Enter email: \",",
+            "            s -> s.matches(\"^[\\\\w.-]+@[\\\\w.-]+\\\\.[a-zA-Z]{2,}$\"),",
+            "            \"Invalid email format.\"",
+            "        );",
+            "        boolean confirmed = readYesNo(\"Confirm registration?\");",
+            "",
+            "        if (confirmed) {",
+            "            System.out.printf(\"Registered: %s, age %d, salary %.2f, email %s%n\",",
+            "                              name, age, salary, email);",
+            "        } else {",
+            "            System.out.println(\"Registration cancelled.\");",
+            "        }",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "CliApp.java — Command-Line Application with Argument Parsing",
+          "lines": [
+            "package com.techsustainify.cli;",
+            "",
+            "import java.util.HashMap;",
+            "import java.util.Map;",
+            "",
+            "/**",
+            " * Simple CLI argument parser.",
+            " * Supports named flags: --host localhost --port 8080 --debug",
+            " * Usage: java CliApp --host localhost --port 8080 --debug",
+            " */",
+            "public class CliApp {",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Parse named arguments into a map",
+            "        Map<String, String> params = parseArgs(args);",
+            "",
+            "        // ✅ Extract with defaults",
+            "        String host  = params.getOrDefault(\"host\", \"localhost\");",
+            "        int    port  = parseIntArg(params, \"port\", 8080, 1, 65535);",
+            "        boolean debug = params.containsKey(\"debug\");",
+            "",
+            "        System.out.println(\"Starting server...\");",
+            "        System.out.println(\"  Host:  \" + host);",
+            "        System.out.println(\"  Port:  \" + port);",
+            "        System.out.println(\"  Debug: \" + debug);",
+            "    }",
+            "",
+            "    private static Map<String, String> parseArgs(String[] args) {",
+            "        Map<String, String> map = new HashMap<>();",
+            "        for (int i = 0; i < args.length; i++) {",
+            "            if (args[i].startsWith(\"--\")) {",
+            "                String key = args[i].substring(2);",
+            "                // Boolean flag (no value) or key-value pair",
+            "                if (i + 1 < args.length && !args[i + 1].startsWith(\"--\")) {",
+            "                    map.put(key, args[++i]);",
+            "                } else {",
+            "                    map.put(key, \"true\");",
+            "                }",
+            "            }",
+            "        }",
+            "        return map;",
+            "    }",
+            "",
+            "    private static int parseIntArg(Map<String,String> params, String key,",
+            "                                   int defaultVal, int min, int max) {",
+            "        if (!params.containsKey(key)) return defaultVal;",
+            "        try {",
+            "            int val = Integer.parseInt(params.get(key));",
+            "            if (val < min || val > max) {",
+            "                System.err.printf(\"--%-8s must be %d–%d, using default %d%n\",",
+            "                                  key, min, max, defaultVal);",
+            "                return defaultVal;",
+            "            }",
+            "            return val;",
+            "        } catch (NumberFormatException e) {",
+            "            System.err.printf(\"--%-8s '%s' is not a valid integer, using default %d%n\",",
+            "                              key, params.get(key), defaultVal);",
+            "            return defaultVal;",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "user-input-flowchart",
+      "title": "User Input Flowchart — Choosing the Right Input Method",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This flowchart helps you decide which Java input method to use based on your program's requirements."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "▶ Need User Input",                  "sublabel": "What type of input?",                             "type": "start"    },
+            { "id": "2", "label": "🔍 Is input at runtime or at launch?","sublabel": "Interactive vs non-interactive",                  "type": "decision" },
+            { "id": "3", "label": "🖥️ Command-Line Arguments",          "sublabel": "Use String[] args in main()",                     "type": "process"  },
+            { "id": "4", "label": "🔍 Is it a password / secret?",       "sublabel": "Needs masked input?",                            "type": "decision" },
+            { "id": "5", "label": "🔒 Console.readPassword()",           "sublabel": "Secure — no echo to screen",                     "type": "process"  },
+            { "id": "6", "label": "🔍 Is input large / performance key?","sublabel": "Millions of lines or competitive prog?",          "type": "decision" },
+            { "id": "7", "label": "⚡ BufferedReader",                   "sublabel": "Fast buffered reads, manual type parsing",        "type": "process"  },
+            { "id": "8", "label": "🔧 Scanner",                         "sublabel": "Easy type-safe methods, great for most programs", "type": "process"  },
+            { "id": "9", "label": "✅ Read & Validate Input",            "sublabel": "Always validate before using",                   "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1", "to": "2",  "label": "Start"                  },
+            { "from": "2", "to": "3",  "label": "At launch (args)"       },
+            { "from": "2", "to": "4",  "label": "At runtime (interactive)"},
+            { "from": "3", "to": "9",  "label": "Parse args[]"           },
+            { "from": "4", "to": "5",  "label": "YES — password"         },
+            { "from": "4", "to": "6",  "label": "NO — regular text"      },
+            { "from": "5", "to": "9",  "label": "Read securely"          },
+            { "from": "6", "to": "7",  "label": "YES — large input"      },
+            { "from": "6", "to": "8",  "label": "NO — typical input"     },
+            { "from": "7", "to": "9",  "label": "BufferedReader done"    },
+            { "from": "8", "to": "9",  "label": "Scanner done"           }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java User Input Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are commonly asked in Java developer interviews — from campus placements to experienced developer rounds. Understanding user input handling thoroughly demonstrates practical Java knowledge."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What are the ways to read user input in Java?",
+              "a": "Java provides four primary ways: (1) Scanner (java.util.Scanner) — wraps System.in, provides type-specific methods (nextInt(), nextLine(), etc.). Most beginner-friendly. (2) BufferedReader (java.io.BufferedReader with InputStreamReader) — faster, reads lines as String, manual parsing required. Preferred in competitive programming. (3) Console (java.io.Console) — System.console(); supports readPassword() for masked input. Returns null in IDEs. (4) Command-Line Arguments — String[] args in main(). Data passed at launch, not during execution. Choice depends on: simplicity (Scanner), performance (BufferedReader), security (Console), or non-interactive (args).",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between next() and nextLine() in Scanner?",
+              "a": "next() reads one token (word) — stops at any whitespace (space, tab, or newline) and does NOT consume the delimiter. nextLine() reads an entire line — stops at '\\n' and DOES consume the newline character. The critical implication: calling nextLine() immediately after nextInt() (or any other next*() method) reads the leftover '\\n' from the buffer and returns an empty string. Fix: add sc.nextLine() after nextInt() to consume the newline before calling nextLine() for actual input. Better fix: use sc.nextLine() for everything and parse manually.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. Why is Scanner slower than BufferedReader?",
+              "a": "Scanner is slower because: (1) It uses regex-based tokenization internally — every nextInt(), next() etc. involves pattern matching. (2) It is not buffered — reads data from the stream token by token. (3) It is synchronized internally (thread-safe), adding overhead. BufferedReader reads large chunks of text into an 8192-character buffer at once, then serves reads from memory — minimizing expensive I/O operations. It has no regex overhead since it only reads raw strings. For competitive programming, the performance difference between Scanner and BufferedReader can mean the difference between AC (Accepted) and TLE (Time Limit Exceeded) on large inputs.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q4. What happens when you call System.console() in an IDE?",
+              "a": "System.console() returns null when the program is not attached to a real terminal (tty). This includes: running from IDE run buttons (IntelliJ, Eclipse, VS Code), running via Maven/Gradle plugins, running in Docker without tty allocation, or piping stdin/stdout. Calling methods on the null Console reference causes NullPointerException. Always null-check: Console con = System.console(); if (con == null) { use Scanner fallback }. For password input in environments where console might be null, fall back to Scanner (no masking) with a clear warning to the user.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q5. How do you read multiple values from a single line of input?",
+              "a": "With Scanner: sc.nextInt() or sc.next() reads space-separated tokens one by one from the same line — Scanner automatically advances through tokens. With BufferedReader: read the whole line with br.readLine(), then split: String[] parts = line.trim().split('\\\\s+'); then parse each part. Example: for '10 20 30', parts[0]='10', parts[1]='20', parts[2]='30'. The split('\\\\s+') handles multiple spaces between values. Always trim() before splitting to avoid empty tokens from leading/trailing whitespace.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. What is the best way to validate user input in Java?",
+              "a": "The most robust approach is: (1) Read all input as String using sc.nextLine(). (2) Trim whitespace: input.trim(). (3) Validate format/type using try-catch on Integer.parseInt(), Double.parseDouble(), or regex matches(). (4) Validate range/business rules after parsing. (5) Prompt re-entry in a loop on invalid input with a clear error message. This approach avoids Scanner buffer issues, gives full control over error messages, and works consistently for all input types. For production CLI tools, a validated input utility class (like InputUtils) with type-specific methods encapsulates this pattern cleanly.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q7. Why should passwords be stored as char[] instead of String in Java?",
+              "a": "Strings in Java are immutable and interned — once created, a String object containing a password cannot be zeroed out and may remain in the JVM's string pool until garbage collected. Memory dumps or heap analysis tools can expose it. char[] arrays can be explicitly overwritten with Arrays.fill(chars, '\\0') immediately after use, wiping the password from memory. Console.readPassword() deliberately returns char[] for this reason. This is a security best practice (OWASP, Java Secure Coding Guidelines). In JVM-based security-sensitive applications, always use char[] for credential handling and wipe after use.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q8. What is InputMismatchException and when does it occur?",
+              "a": "InputMismatchException (java.util.InputMismatchException) is thrown by Scanner when the next token does not match the expected type. Example: nextInt() when the user types 'hello' — Scanner cannot parse it as an int and throws InputMismatchException. It is an unchecked exception (extends RuntimeException). Important behavior: when InputMismatchException is thrown, the invalid token is NOT consumed from the buffer — it remains. So in a catch block, you must call sc.next() or sc.nextLine() to discard the bad token before the next read attempt, otherwise the same bad token will be read again infinitely.",
+              "tag": "Tricky"
+            },
+            {
+              "q": "Q9. How do you read input in competitive programming in Java?",
+              "a": "Standard competitive programming input pattern in Java: BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); StringTokenizer st; — then for each line: String line = br.readLine(); st = new StringTokenizer(line); int a = Integer.parseInt(st.nextToken()); int b = Integer.parseInt(st.nextToken());. For output: PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out))); pw.println(answer); pw.flush();. This combination is 5-10x faster than Scanner + System.out.println() for large inputs. StreamTokenizer is another faster alternative: StreamTokenizer in = new StreamTokenizer(br); in.nextToken(); int val = (int) in.nval;.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q10. What happens if you create two Scanner objects on System.in?",
+              "a": "Creating two Scanner instances on System.in is a serious bug. Both wrap the same underlying InputStream (System.in). When Scanner1 reads a token, it consumes bytes from System.in that Scanner2 can no longer read — and vice versa. Reads become unpredictable: tokens may go to the 'wrong' Scanner depending on which one reads first. Additionally, closing Scanner1 also closes System.in, rendering Scanner2 unusable. The correct pattern: create exactly ONE Scanner for System.in per JVM instance, assign it to a static field or pass it as a parameter to methods that need it.",
+              "tag": "Tricky"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Java User Input Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Challenge yourself with these practice questions. Attempt each independently before reading the answer — active recall is proven to be 2–3x more effective than passive reading."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output of this code if the user enters '25' and 'Alice'?\nScanner sc = new Scanner(System.in);\nint age = sc.nextInt();\nString name = sc.nextLine();\nSystem.out.println(\"Age: \" + age);\nSystem.out.println(\"Name: '\" + name + \"'\");",
+              "a": "Output: Age: 25 | Name: '' (empty string). Explanation: nextInt() reads '25' but leaves '\\n' (from pressing Enter) in the input buffer. The subsequent nextLine() reads that leftover '\\n' and immediately returns an empty string — it never waits for the user to type 'Alice'. Fix: add sc.nextLine() between nextInt() and the next nextLine() to consume the leftover newline. Better fix: use Integer.parseInt(sc.nextLine().trim()) instead of nextInt().",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Write code to read integers from the user until they enter -1, and print their sum.",
+              "a": "Scanner sc = new Scanner(System.in);\nint sum = 0;\nSystem.out.println('Enter numbers (-1 to stop):');\nwhile (sc.hasNextInt()) {\n    int n = sc.nextInt();\n    if (n == -1) break;\n    sum += n;\n}\nSystem.out.println('Sum: ' + sum);\nsc.close();\n\nKey points: (1) hasNextInt() safely checks before reading — avoids InputMismatchException if non-integer is entered. (2) break on -1 sentinel. (3) Scanner closed after use. Alternatively, read as String and parse, catching NumberFormatException for more robust non-integer handling.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. What does this code print if run from a terminal? What if run from an IDE?\nConsole con = System.console();\nif (con != null) {\n    System.out.println('Console available');\n} else {\n    System.out.println('No console');\n}",
+              "a": "Terminal: prints 'Console available' — System.console() returns a valid Console object when the JVM is attached to a real tty (terminal). IDE (IntelliJ, Eclipse, VS Code run button): prints 'No console' — IDEs redirect System.in/out to internal pipes, not a real terminal, so System.console() returns null. This is why Console-based code must always null-check and provide a fallback (usually Scanner on System.in) for IDE/non-terminal environments.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. Fix this code that reads N integers from the command line and prints their average:\npublic static void main(String[] args) {\n    int sum = 0;\n    for (String arg : args) {\n        sum += Integer.parseInt(arg);\n    }\n    System.out.println('Average: ' + sum / args.length);\n}",
+              "a": "Three issues: (1) No check for empty args — ArithmeticException (divide by zero) if no args provided. (2) Integer.parseInt() not wrapped in try-catch — crashes on non-numeric args. (3) sum / args.length is integer division — loses decimal precision. Fixed code: if (args.length == 0) { System.out.println('No arguments'); return; } int sum = 0; for (String arg : args) { try { sum += Integer.parseInt(arg); } catch (NumberFormatException e) { System.err.println('Skipping invalid: ' + arg); } } double avg = (double) sum / args.length; System.out.printf('Average: %.2f%n', avg);",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Rewrite this using try-with-resources and read-as-String best practice:\nScanner sc = new Scanner(System.in);\nSystem.out.print('Enter age: ');\nint age = sc.nextInt();\nSystem.out.println('Age: ' + age);",
+              "a": "try (Scanner sc = new Scanner(System.in)) {\n    System.out.print('Enter age: ');\n    while (true) {\n        String input = sc.nextLine().trim();\n        try {\n            int age = Integer.parseInt(input);\n            if (age >= 1 && age <= 150) {\n                System.out.println('Age: ' + age);\n                break;\n            }\n            System.out.print('Age must be 1-150. Try again: ');\n        } catch (NumberFormatException e) {\n            System.out.print('Invalid number. Try again: ');\n        }\n    }\n}\n\nImprovements: (1) try-with-resources auto-closes Scanner. (2) Read as nextLine() + parseInt() — avoids buffer bug. (3) Validation loop with range check. (4) Graceful error messages.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. Write a method that reads a non-empty email from the user using Scanner, validates format with regex, and returns it.",
+              "a": "public static String readEmail(Scanner sc) {\n    String emailRegex = '^[\\\\w.+-]+@[\\\\w-]+\\\\.[a-zA-Z]{2,}$';\n    while (true) {\n        System.out.print('Enter email: ');\n        String input = sc.nextLine().trim();\n        if (input.isEmpty()) {\n            System.out.println('Email cannot be empty.');\n        } else if (!input.matches(emailRegex)) {\n            System.out.println('Invalid email format. Example: user@domain.com');\n        } else {\n            return input;\n        }\n    }\n}\n\nKey points: (1) Read as nextLine() — handles full email with dots/plus. (2) trim() removes leading/trailing spaces. (3) Empty check before regex. (4) Clear error with example. (5) Loop until valid — method only returns on success. This pattern is reusable for any validated string input.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What is the output? Why?\nBufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n// User enters: '  42  '\nString line = br.readLine();\nint num = Integer.parseInt(line);\nSystem.out.println(num);",
+              "a": "This throws NumberFormatException. readLine() returns '  42  ' (with leading/trailing spaces). Integer.parseInt() does NOT tolerate whitespace — it requires a pure numeric string. Fix: int num = Integer.parseInt(line.trim()); — trim() removes the whitespace before parsing. This is why trim() is essential when parsing user input: users often accidentally add spaces, and parsers are strict. Always chain .trim() after any user input before parsing: Integer.parseInt(br.readLine().trim()).",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "8. Design a reusable readInt(String prompt, int min, int max) method that keeps prompting until valid input is received, handles non-numeric input gracefully, and uses a single Scanner.",
+              "a": "private static final Scanner SC = new Scanner(System.in);\n\npublic static int readInt(String prompt, int min, int max) {\n    while (true) {\n        System.out.print(prompt);\n        String raw = SC.nextLine().trim();\n        if (raw.isEmpty()) {\n            System.out.println('Input cannot be empty.');\n            continue;\n        }\n        try {\n            int val = Integer.parseInt(raw);\n            if (val < min || val > max) {\n                System.out.printf('Enter a value between %d and %d.%n', min, max);\n            } else {\n                return val;\n            }\n        } catch (NumberFormatException e) {\n            System.out.println('\\'' + raw + '\\' is not a valid integer.');\n        }\n    }\n}\n\nDesign decisions: (1) Static Scanner — one instance, no conflicts. (2) nextLine() + parseInt() — no buffer bug. (3) trim() + empty check. (4) Range validation after type validation. (5) Clear, specific error messages. (6) Only returns on valid input — caller always gets a valid int.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — User Input: The Gateway Between User and Program",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "User input is the <strong>gateway between the user and your Java program</strong>. Reading it correctly, validating it thoroughly, and handling errors gracefully is what separates a polished, professional application from one that crashes on the first unexpected keystroke."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The difference between beginner and production-quality input handling is clear: beginners use <code>nextInt()</code> directly and wonder why their program skips input. Professionals read everything as <code>nextLine()</code>, parse manually, validate in loops, and centralize input logic in reusable utilities. Choose <strong>Scanner</strong> for simplicity, <strong>BufferedReader</strong> for performance, <strong>Console</strong> for security, and <strong>command-line args</strong> for non-interactive tools — and always validate before you use."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept",                    "Class / Method",              "Key Rule"],
+          "rows": [
+            ["Keyboard Input",             "Scanner / BufferedReader",     "Wrap System.in"],
+            ["Read Integer",               "sc.nextInt() / parseInt()",    "Validate before use"],
+            ["Read Full Line",             "sc.nextLine() / br.readLine()","trim() before parsing"],
+            ["Buffer Bug Fix",             "Extra sc.nextLine()",          "After nextInt()/nextDouble()"],
+            ["Password Input",             "Console.readPassword()",       "Returns char[], not String"],
+            ["CLI Arguments",              "String[] args",                "Check args.length first"],
+            ["Large Input (Fast)",         "BufferedReader",               "readline() + parseInt()"],
+            ["Input Validation",           "try-catch + loop",             "Read as String, parse manually"],
+            ["Resource Management",        "try-with-resources",           "Auto-closes Scanner/Reader"],
+            ["Single Scanner Rule",        "static final Scanner",         "One instance per stream"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java If-Else</strong> — where you'll use validated user input to make decisions, build menus, and control program flow with conditional statements. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java User Input",
+    "items": [
+      {
+        "q": "What is user input in Java?",
+        "a": "User input in Java refers to data provided by the user during program execution via the keyboard (System.in). Java provides multiple ways to read it: Scanner (simplest, type-safe methods), BufferedReader (faster, reads Strings), Console (secure password input), and command-line arguments (args[]). Scanner is the most common choice for learning and small programs; BufferedReader is preferred for performance-sensitive applications."
+      },
+      {
+        "q": "What is the Scanner class in Java?",
+        "a": "Scanner (java.util.Scanner) is the most widely used class for reading user input. It wraps System.in and provides methods to read specific types: nextInt(), nextDouble(), next() (single word), nextLine() (full line), nextBoolean(). Always close Scanner after use with sc.close() or try-with-resources. The most common pitfall: mixing nextInt()/nextDouble() with nextLine() — add an extra sc.nextLine() after numeric reads to consume the leftover newline."
+      },
+      {
+        "q": "What is the difference between next() and nextLine() in Java Scanner?",
+        "a": "next() reads one token (word) — stops at whitespace, does NOT consume the delimiter. nextLine() reads the entire line — stops at and consumes the newline '\\n'. Mixing them causes the classic buffer bug: nextInt() leaves '\\n' in buffer; subsequent nextLine() reads it as empty string. Fix: call sc.nextLine() after nextInt() to consume the newline, or read everything with nextLine() and parse manually."
+      },
+      {
+        "q": "Which is faster — Scanner or BufferedReader in Java?",
+        "a": "BufferedReader is significantly faster — it reads large chunks into an 8192-char buffer with minimal processing. Scanner uses regex tokenization and is slower. For competitive programming or large file reading, always use BufferedReader + Integer.parseInt(). For typical console applications with small input, Scanner is fine and more convenient due to built-in type parsing."
+      },
+      {
+        "q": "How do you validate user input in Java?",
+        "a": "Best approach: read all input as String with sc.nextLine().trim(), then validate manually. Use Integer.parseInt() / Double.parseDouble() inside try-catch for type validation. Add range checks after parsing. Use regex matches() for format validation (email, phone etc.). Wrap in a while(true) loop that breaks only on valid input, prompting the user on errors. This approach avoids buffer bugs and gives full control over error messages."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Strings",   "path": "/java/java-strings" },
+    "next": { "label": "Java Null-Pointers →",      "path": "/java/java-null-pointers" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Primary Input Class",    "dd": "Scanner (java.util.Scanner)" },
+      { "dt": "Fast Input Class",       "dd": "BufferedReader (java.io)" },
+      { "dt": "Secure Input",           "dd": "Console.readPassword()" },
+      { "dt": "Non-interactive Input",  "dd": "String[] args in main()" },
+      { "dt": "next() vs nextLine()",   "dd": "next() = token; nextLine() = full line" },
+      { "dt": "Buffer Bug Fix",         "dd": "sc.nextLine() after nextInt()" },
+      { "dt": "Best Practice",          "dd": "Read as nextLine(), parse manually" },
+      { "dt": "Password Storage",       "dd": "char[] not String — wipe after use" }
+    ],
+    "relatedArticles": [
+      { "label": "Java If-Else",              "path": "/java/java-if-else" },
+      { "label": "Java Operators",            "path": "/java/java-operators" },
+      { "label": "Java Variables",            "path": "/java/java-variables" },
+      { "label": "Java Data Types",           "path": "/java/java-data-types" },
+      { "label": "Java Exception Handling",   "path": "/java/java-exception-handling" },
+      { "label": "Java File Handling",        "path": "/java/java-file-handling" },
+      { "label": "Java Classes & Objects",    "path": "/java/java-classes-objects" },
+      { "label": "Java Keywords",             "path": "/java/java-keyword" }
+    ],
+    "tags": [
+      "User Input", "Scanner", "BufferedReader", "Console", "Command Line Arguments",
+      "nextInt", "nextLine", "next", "Input Validation", "InputMismatchException",
+      "NumberFormatException", "IOException", "System.in", "readLine", "readPassword",
+      "try-with-resources", "Competitive Programming", "Java IO", "Java Best Practices", "Java 21"
+    ]
+  }
+}

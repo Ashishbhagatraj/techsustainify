@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { label: "Home",        path: "/" },
   { label: "C",           path: "/c/c-home" },
-  { label: "C++",         path: "/cplus/cplus-home" },
+  { label: "C++",         path: "/cpp/cpp-home" },
   { label: "JAVA",        path: "/java/java-home" },
   { label: "PYTHON",      path: "/python/python-home" },
   { label: "SQL",         path: "/sql/sql-home" },

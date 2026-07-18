@@ -1,0 +1,605 @@
+{
+  "meta": {
+    "title": "What is SQL? | SQL Tutorial for Beginners 2026 | Tech Sustainify",
+    "description": "Learn what is SQL with this complete beginner-friendly guide 2026. Covers SQL history, DBMS, RDBMS, tables, queries, SELECT, INSERT, UPDATE, DELETE, JOINs, normalization, MySQL, PostgreSQL, and real-world database applications.",
+    "keywords": "what is sql, sql tutorial for beginners, sql tutorial 2026, sql database, mysql tutorial, postgresql tutorial, sql queries, select statement, insert update delete, sql joins, database tutorial",
+    "author": "Tech Sustainify",
+    "canonical": "https://www.techsustainify.com/sql/sql-home",
+    "ogTitle": "What is SQL? Complete SQL Tutorial for Beginners 2026 | Tech Sustainify",
+    "ogDescription": "Complete beginner-friendly guide to SQL databases. Learn SQL syntax, SELECT queries, INSERT, UPDATE, DELETE, JOINs, MySQL, PostgreSQL, normalization, indexing, and real-world applications.",
+    "ogUrl": "https://www.techsustainify.com/sql/sql-home",
+    "ogImage": "https://www.techsustainify.com/images/sql-tutorial-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "15 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-01-01",
+    "schemaDateModified": "2026-03-16",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 4800
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "SQL Tutorial", "path": "/sql/sql-home" },
+    { "position": 3, "name": "What is SQL?" }
+  ],
+
+  "articleHeader": {
+    "badge": "🗄️ SQL",
+    "title": "What is SQL?",
+    "subtitle": "A complete beginner-friendly guide to SQL — covering databases, DBMS, RDBMS, SQL syntax, SELECT queries, JOINs, normalization, indexing, and why SQL powers modern applications in 2026."
+  },
+
+  "infoCards": [
+    {
+      "icon": "📅",
+      "label": "Last Updated",
+      "isTime": true,
+      "dateTime": "2026-03-16",
+      "value": "March 2026"
+    },
+    {
+      "icon": "⏱️",
+      "label": "Read Time",
+      "value": "15 min"
+    },
+    {
+      "icon": "🎯",
+      "label": "Level",
+      "value": "Beginner"
+    }
+  ],
+
+  "sections": [
+    {
+      "sectionId": "what-is-sql",
+      "title": "What is SQL?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>SQL (Structured Query Language)</strong> is the standard language used to communicate with relational databases. SQL allows developers to <strong>store</strong>, <strong>retrieve</strong>, <strong>update</strong>, and <strong>delete</strong> data efficiently from database systems like <strong>MySQL</strong>, <strong>PostgreSQL</strong>, <strong>SQLite</strong>, <strong>Oracle</strong>, and <strong>Microsoft SQL Server</strong>."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "SQL is one of the most important technologies in software development because almost every modern application uses databases. Websites, banking systems, e-commerce platforms, hospital management systems, social media apps, and analytics platforms all rely on SQL databases to manage data securely and efficiently."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "SQL is a <strong>declarative language</strong>, meaning you describe <em>what</em> data you want rather than how the database should retrieve it internally. Database engines optimise the query execution automatically using indexes, query planners, and caching systems."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "history-of-sql",
+      "title": "History of SQL",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            {
+              "strong": "1970",
+              "text": " — Edgar F. Codd introduced the relational database model at IBM."
+            },
+            {
+              "strong": "1974",
+              "text": " — IBM developed SEQUEL (Structured English Query Language), the foundation of SQL."
+            },
+            {
+              "strong": "1986",
+              "text": " — SQL became an ANSI standard."
+            },
+            {
+              "strong": "1987",
+              "text": " — ISO officially standardized SQL."
+            },
+            {
+              "strong": "1995-2005",
+              "text": " — MySQL, PostgreSQL, Oracle, and SQL Server became dominant database systems."
+            },
+            {
+              "strong": "2026",
+              "text": " — SQL remains the global standard for relational database management."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "features-of-sql",
+      "title": "Key Features of SQL",
+      "blocks": [
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "⚡",
+              "title": "Fast Data Retrieval",
+              "text": "SQL databases are highly optimized for querying large amounts of data efficiently."
+            },
+            {
+              "icon": "🗄️",
+              "title": "Relational Database Support",
+              "text": "SQL works with tables, rows, columns, and relationships between datasets."
+            },
+            {
+              "icon": "🔒",
+              "title": "Data Security",
+              "text": "SQL databases provide authentication, authorization, roles, and permissions."
+            },
+            {
+              "icon": "📈",
+              "title": "Scalability",
+              "text": "SQL databases can scale from small applications to enterprise systems."
+            },
+            {
+              "icon": "🔗",
+              "title": "JOIN Operations",
+              "text": "SQL can combine data from multiple tables using JOIN queries."
+            },
+            {
+              "icon": "📦",
+              "title": "Transactions (ACID)",
+              "text": "SQL databases support reliable transactions with ACID guarantees."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "sql-flow",
+      "title": "How SQL Works",
+      "blocks": [
+        {
+          "type": "flowchart",
+          "nodes": [
+            {
+              "id": "1",
+              "label": "👨‍💻 User Writes SQL Query",
+              "type": "start"
+            },
+            {
+              "id": "2",
+              "label": "🧠 SQL Parser",
+              "type": "process"
+            },
+            {
+              "id": "3",
+              "label": "⚙️ Query Optimizer",
+              "type": "process"
+            },
+            {
+              "id": "4",
+              "label": "🗄️ Database Engine",
+              "type": "process"
+            },
+            {
+              "id": "5",
+              "label": "📊 Result Returned",
+              "type": "end"
+            }
+          ],
+          "edges": [
+            {
+              "from": "1",
+              "to": "2"
+            },
+            {
+              "from": "2",
+              "to": "3"
+            },
+            {
+              "from": "3",
+              "to": "4"
+            },
+            {
+              "from": "4",
+              "to": "5"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "sql-syntax",
+      "title": "Basic SQL Syntax",
+      "blocks": [
+        {
+          "type": "codeBox",
+          "lang": "🗄️ SQL",
+          "label": "basic_queries.sql",
+          "lines": [
+            "-- Create table",
+            "CREATE TABLE students (",
+            "    id INT PRIMARY KEY,",
+            "    name VARCHAR(100),",
+            "    age INT",
+            ");",
+            "",
+            "-- Insert data",
+            "INSERT INTO students VALUES (1, 'Ashish', 20);",
+            "",
+            "-- Retrieve data",
+            "SELECT * FROM students;",
+            "",
+            "-- Update data",
+            "UPDATE students SET age = 21 WHERE id = 1;",
+            "",
+            "-- Delete data",
+            "DELETE FROM students WHERE id = 1;"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "sql-commands",
+      "title": "Types of SQL Commands",
+      "blocks": [
+        {
+          "type": "comparisonTable",
+          "headers": ["Category", "Purpose", "Examples"],
+          "rows": [
+            [
+              "DDL",
+              "Database structure management",
+              "CREATE, ALTER, DROP"
+            ],
+            [
+              "DML",
+              "Data manipulation",
+              "INSERT, UPDATE, DELETE"
+            ],
+            [
+              "DQL",
+              "Data querying",
+              "SELECT"
+            ],
+            [
+              "DCL",
+              "Access control",
+              "GRANT, REVOKE"
+            ],
+            [
+              "TCL",
+              "Transaction management",
+              "COMMIT, ROLLBACK"
+            ]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "sql-vs-nosql",
+      "title": "SQL vs NoSQL",
+      "blocks": [
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "SQL", "NoSQL"],
+          "rows": [
+            [
+              "Data Structure",
+              "Tables & Rows",
+              "Documents / Key-Value / Graph"
+            ],
+            [
+              "Schema",
+              "Fixed Schema",
+              "Flexible Schema"
+            ],
+            [
+              "Relationships",
+              "Strong Relations",
+              "Weak or No Relations"
+            ],
+            [
+              "Examples",
+              "MySQL, PostgreSQL",
+              "MongoDB, Redis"
+            ],
+            [
+              "Best For",
+              "Structured Data",
+              "Unstructured Data"
+            ]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "joins",
+      "title": "SQL JOINs Explained",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "JOIN operations combine rows from multiple tables based on related columns."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["JOIN Type", "Purpose"],
+          "rows": [
+            [
+              "INNER JOIN",
+              "Returns matching records from both tables"
+            ],
+            [
+              "LEFT JOIN",
+              "Returns all left table rows and matching right rows"
+            ],
+            [
+              "RIGHT JOIN",
+              "Returns all right table rows and matching left rows"
+            ],
+            [
+              "FULL JOIN",
+              "Returns all matching and non-matching rows"
+            ]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "first-query",
+      "title": "Your First SQL Query",
+      "blocks": [
+        {
+          "type": "codeBox",
+          "lang": "🗄️ SQL",
+          "label": "select_query.sql",
+          "lines": [
+            "SELECT name, age",
+            "FROM students",
+            "WHERE age >= 18",
+            "ORDER BY age DESC;"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "name     age",
+            "---------------",
+            "Ashish   21",
+            "Rahul    20"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-use",
+      "title": "Where SQL is Used",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            {
+              "strong": "🌐 Websites",
+              "text": " — User accounts, login systems, and product databases."
+            },
+            {
+              "strong": "🏦 Banking Systems",
+              "text": " — Transaction management and account storage."
+            },
+            {
+              "strong": "🛒 E-Commerce",
+              "text": " — Orders, inventory, customer records."
+            },
+            {
+              "strong": "📱 Mobile Apps",
+              "text": " — Backend databases and analytics."
+            },
+            {
+              "strong": "📊 Data Analytics",
+              "text": " — Reporting, dashboards, and business intelligence."
+            },
+            {
+              "strong": "🏥 Hospitals",
+              "text": " — Patient records and appointment systems."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "popular-databases",
+      "title": "Popular SQL Databases",
+      "blocks": [
+        {
+          "type": "comparisonTable",
+          "headers": ["Database", "Company", "Best For"],
+          "rows": [
+            [
+              "MySQL",
+              "Oracle",
+              "Web Applications"
+            ],
+            [
+              "PostgreSQL",
+              "Open Source",
+              "Advanced SQL Features"
+            ],
+            [
+              "SQLite",
+              "Open Source",
+              "Mobile & Embedded Apps"
+            ],
+            [
+              "SQL Server",
+              "Microsoft",
+              "Enterprise Systems"
+            ],
+            [
+              "Oracle Database",
+              "Oracle",
+              "Large Enterprise Applications"
+            ]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-sql",
+      "title": "Why Learn SQL in 2026?",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            {
+              "strong": "💼 High Demand",
+              "text": " — SQL is required in backend, data science, analytics, and software engineering jobs."
+            },
+            {
+              "strong": "📊 Essential for Data Analysis",
+              "text": " — SQL is the foundation of data analytics and business intelligence."
+            },
+            {
+              "strong": "🌐 Used Everywhere",
+              "text": " — Almost every modern application stores data in databases."
+            },
+            {
+              "strong": "🚀 Easy to Start",
+              "text": " — SQL syntax is simpler than many programming languages."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion",
+      "title": "Conclusion",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>SQL is one of the most important technologies in modern computing.</strong> Whether you want to become a backend developer, data analyst, software engineer, or database administrator, SQL is an essential skill."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "From small websites to billion-user applications, SQL databases power the world's data infrastructure. Learning SQL gives you the ability to manage, analyze, and control data effectively."
+        }
+      ]
+    }
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "What does SQL stand for?",
+        "a": "SQL stands for Structured Query Language."
+      },
+      {
+        "q": "Is SQL a programming language?",
+        "a": "SQL is a database query language used to manage and retrieve data."
+      },
+      {
+        "q": "Which SQL database is best for beginners?",
+        "a": "MySQL and SQLite are excellent choices for beginners."
+      },
+      {
+        "q": "Is SQL hard to learn?",
+        "a": "No. SQL is considered one of the easiest technical skills to start learning."
+      },
+      {
+        "q": "Can I get a job by learning SQL?",
+        "a": "Yes. SQL is required in many software, analytics, and database-related jobs."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": {
+      "label": "← Previous",
+      "path": "/sql/sql-home"
+    },
+    "next": {
+      "label": "Next: SQL Introduction →",
+      "path": "/sql/sql-intro"
+    }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      {
+        "dt": "Developed By",
+        "dd": "IBM"
+      },
+      {
+        "dt": "Standardized",
+        "dd": "ANSI & ISO"
+      },
+      {
+        "dt": "Type",
+        "dd": "Database Query Language"
+      },
+      {
+        "dt": "Primary Use",
+        "dd": "Relational Databases"
+      },
+      {
+        "dt": "Latest Standard",
+        "dd": "SQL:2023"
+      }
+    ],
+
+    "relatedArticles": [
+      {
+        "label": "SQL Introduction",
+        "path": "/sql/sql-intro"
+      },
+      {
+        "label": "SQL SELECT",
+        "path": "/sql/sql-select"
+      },
+      {
+        "label": "SQL WHERE Clause",
+        "path": "/sql/sql-where"
+      },
+      {
+        "label": "SQL INSERT",
+        "path": "/sql/sql-insert"
+      },
+      {
+        "label": "SQL UPDATE",
+        "path": "/sql/sql-update"
+      },
+      {
+        "label": "SQL DELETE",
+        "path": "/sql/sql-delete"
+      },
+      {
+        "label": "SQL JOIN",
+        "path": "/sql/sql-join"
+      }
+    ],
+
+    "tags": [
+      "SQL",
+      "MySQL",
+      "PostgreSQL",
+      "Database",
+      "RDBMS",
+      "SELECT",
+      "INSERT",
+      "UPDATE",
+      "DELETE",
+      "JOIN",
+      "Normalization",
+      "Indexes"
+    ]
+  }
+}

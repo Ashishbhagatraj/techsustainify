@@ -1,0 +1,1894 @@
+{
+  "meta": {
+    "title": "Java Constructor — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java constructors with syntax, types, constructor overloading, this() and super() calls, copy constructor, constructor chaining, default vs parameterized, best practices, common mistakes, and real-world examples. Covers all constructor patterns in Java OOP. Updated March 2026.",
+    "keywords": "java constructor, java constructor example, java default constructor, java parameterized constructor, java constructor overloading, java copy constructor, java constructor chaining, java this() constructor, java super() constructor, java no-arg constructor, java constructor vs method, java constructor best practices, java constructor interview questions, java constructor inheritance, java private constructor",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-constructors",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Constructor — Syntax, Types, Examples & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java constructors — default, parameterized, copy constructors, constructor overloading, this(), super(), chaining, private constructors, real-world examples, pitfalls, and interview questions.",
+      "url": "https://www.techsustainify.com/java/java-constructors",
+      "image": "https://www.techsustainify.com/images/java-constructors-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Constructor Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-03-05T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Constructor",
+          "Java Default Constructor",
+          "Java Parameterized Constructor",
+          "Java Constructor Overloading",
+          "Java Copy Constructor",
+          "Java Constructor Chaining",
+          "Java this() super()",
+          "Java OOP",
+          "Java Object Initialization",
+          "Java 21"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Constructor — Syntax, Types, Examples & Best Practices 2026",
+      "description": "Complete guide to Java constructors — default, parameterized, copy, overloading, this(), super(), chaining, private constructors, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-constructors-og.png",
+      "imageAlt": "Java Constructor Guide 2026 - Tech Sustainify",
+      "readingTime": "22 minutes",
+      "level": "Beginner",
+      "label1": "Reading Time",
+      "data1": "22 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Constructor — Complete Guide with Syntax, Types, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering all Java constructor concepts — default constructor, parameterized constructor, copy constructor, constructor overloading, this() and super() calls, constructor chaining, private constructor, real-world examples, pitfalls, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-03-05",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner",
+        "wordCount": 6200,
+        "timeRequired": "PT22M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Constructor" },
+          { "@type": "Thing", "name": "Java Object Initialization" },
+          { "@type": "Thing", "name": "Java Constructor Chaining" },
+          { "@type": "Thing", "name": "Java OOP" }
+        ],
+        "keywords": "java constructor, default constructor, parameterized constructor, copy constructor, constructor overloading, constructor chaining, this() super(), private constructor"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Constructor" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a constructor in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A constructor in Java is a special block of code that is automatically invoked when an object is created using the 'new' keyword. Its primary purpose is to initialize the newly created object — setting field values, allocating resources, and establishing a valid initial state. A constructor has the same name as the class and has no return type (not even void). If you do not define any constructor, Java automatically provides a default no-arg constructor. Constructors can be overloaded — the same class can have multiple constructors with different parameter lists."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between a default constructor and a no-arg constructor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A default constructor is the no-arg constructor automatically provided by the Java compiler when a class has NO explicitly defined constructors. It has no parameters and an empty body (just calls super()). A no-arg constructor is any constructor explicitly defined by the programmer with no parameters — it may have a non-empty body. If you define ANY constructor (even a parameterized one), the compiler no longer provides the default constructor. So if you want both a no-arg and a parameterized constructor, you must define both explicitly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is constructor chaining in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Constructor chaining is the practice of one constructor calling another constructor, forming a delegation chain. Within the same class, this() is used to call another constructor of the same class. To call a parent class constructor, super() is used. this() or super() must always be the very first statement in a constructor body — you cannot have both in the same constructor. Chaining eliminates duplicate initialization code by centralizing logic in one 'master' constructor that all others delegate to."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a constructor be private in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. A private constructor prevents external code from creating instances of the class using 'new'. This is used in: (1) Singleton Pattern — ensures only one instance exists; the class creates and manages its own single instance. (2) Utility/helper classes — classes with only static methods (like Math, Collections) should not be instantiated; a private constructor enforces this. (3) Factory Method Pattern — object creation is controlled through static factory methods rather than direct construction. A class with a private constructor can still be instantiated from within the same class."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between a constructor and a method in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Constructor: same name as class, no return type (not even void), called automatically when 'new' is used, cannot be called explicitly like a method (except via this()/super()), not inherited. Method: any name different from class, must have a return type (or void), called explicitly, inherited by subclasses, can be abstract, static, or final. Both can be overloaded. The key distinction: constructors initialize objects; methods define their behavior."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-03-05",
+      "dateModified": "2026-03-20",
+      "readingTime": "22 minutes",
+      "wordCount": 6200,
+      "difficulty": "Beginner",
+      "chapter": 14,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-constructor",          "title": "What is a Constructor?" },
+        { "id": "constructor-rules",             "title": "Rules of Constructors" },
+        { "id": "default-constructor",           "title": "Default Constructor" },
+        { "id": "no-arg-constructor",            "title": "No-Arg Constructor" },
+        { "id": "parameterized-constructor",     "title": "Parameterized Constructor" },
+        { "id": "copy-constructor",              "title": "Copy Constructor" },
+        { "id": "constructor-overloading",       "title": "Constructor Overloading" },
+        { "id": "this-constructor",              "title": "this() — Same-Class Constructor Call" },
+        { "id": "super-constructor",             "title": "super() — Parent Class Constructor Call" },
+        { "id": "constructor-chaining",          "title": "Constructor Chaining" },
+        { "id": "private-constructor",           "title": "Private Constructor" },
+        { "id": "constructor-vs-method",         "title": "Constructor vs Method" },
+        { "id": "constructor-inheritance",       "title": "Constructors & Inheritance" },
+        { "id": "common-mistakes",               "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",                 "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",           "title": "Real-World Production Code Examples" },
+        { "id": "constructor-flowchart",         "title": "Constructor Chaining Flowchart" },
+        { "id": "interview-questions",           "title": "Interview Questions" },
+        { "id": "practice-questions",            "title": "Practice Questions" },
+        { "id": "conclusion-heading",            "title": "Conclusion" },
+        { "id": "faq-heading",                   "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-constructors" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-constructors" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-constructors" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-classes",
+      "next": "https://www.techsustainify.com/java/java-method-parameters"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-oops",
+      "contentTopic": "java-constructors",
+      "chapterNumber": 14,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Constructor" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Constructor — Syntax, Types, Examples & Best Practices",
+    "subtitle": "Everything you need to know about Java constructors — default, no-arg, parameterized, copy constructors, constructor overloading, this() and super() calls, constructor chaining, private constructor, constructors in inheritance, anti-patterns, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "22 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "14 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-constructor",
+      "title": "What is a Constructor in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>constructor</strong> in Java is a special block of code that is <strong>automatically invoked</strong> when an object is created using the <code>new</code> keyword. Its primary purpose is to <strong>initialize the newly created object</strong> — assigning values to fields, validating inputs, allocating resources, and ensuring the object starts in a valid, consistent state. Without constructors, every newly created object would have only default field values (<code>0</code>, <code>false</code>, <code>null</code>) and no setup logic."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In real applications, constructors are everywhere: <em>when a User object is created, its name, email, and role must be set; when a BankAccount is opened, the account number and initial balance must be established; when a database connection is initialized, the URL and credentials must be configured</em>. All of this setup happens in constructors — the entry point of every object's life."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java Constructor at a Glance",
+          "text": "Key facts: (1) Same name as the class — always. (2) No return type — not even void. (3) Called automatically by the 'new' keyword. (4) Can be overloaded — multiple constructors with different parameters. (5) If you define no constructor, Java provides a default no-arg constructor automatically. (6) The first statement must be this() or super() if you use constructor chaining. (7) Constructors are NOT inherited — but parent constructors are always called (implicitly or explicitly) via super()."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📌",
+              "title": "Syntax",
+              "text": "accessModifier ClassName(parameters) {\n    // initialization code\n}\nExample:\npublic Student(String name, int age) {\n    this.name = name;\n    this.age  = age;\n}"
+            },
+            {
+              "icon": "📋",
+              "title": "Constructor Properties",
+              "text": "1. Name MUST match class name exactly (case-sensitive).\n2. No return type — not void, not int, nothing.\n3. Can have access modifiers: public, protected, private, package-private.\n4. Can throw exceptions (checked or unchecked).\n5. Can call other constructors via this() or super() as the FIRST statement."
+            },
+            {
+              "icon": "🔁",
+              "title": "Types of Constructors",
+              "text": "1. Default constructor — auto-generated by compiler when none is defined.\n2. No-arg constructor — explicitly written with no parameters.\n3. Parameterized constructor — takes one or more parameters.\n4. Copy constructor — takes an object of the same class and copies its state.\nAll of these can be combined via constructor overloading."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ConstructorBasics.java",
+          "lines": [
+            "public class Student {",
+            "",
+            "    // Fields",
+            "    String name;",
+            "    int    age;",
+            "    String course;",
+            "",
+            "    // ✅ Parameterized constructor",
+            "    public Student(String name, int age, String course) {",
+            "        this.name   = name;",
+            "        this.age    = age;",
+            "        this.course = course;",
+            "    }",
+            "",
+            "    public void display() {",
+            "        System.out.println(name + \" | Age: \" + age + \" | Course: \" + course);",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // Constructor is called automatically when 'new' is used",
+            "        Student s1 = new Student(\"Priya\", 20, \"B.Tech CSE\");",
+            "        Student s2 = new Student(\"Rahul\", 22, \"MBA\");",
+            "",
+            "        s1.display(); // Priya | Age: 20 | Course: B.Tech CSE",
+            "        s2.display(); // Rahul | Age: 22 | Course: MBA",
+            "",
+            "        // ❌ No return type — this would be a method, not a constructor:",
+            "        // public void Student() { } // This is a method named Student, NOT a constructor",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "constructor-rules",
+      "title": "Rules of Constructors — What the Compiler Enforces",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The Java compiler enforces precise rules for constructors. Violating any of these causes a <strong>compile-time error</strong>. Understanding them prevents confusion between constructors and methods, and avoids common initialization bugs."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "1️⃣",
+              "title": "Rule 1 — Name Must Match Class Name",
+              "text": "A constructor's name must be EXACTLY the same as the class name, including case. 'public student()' in class 'Student' is NOT a constructor — it is treated as a method with a missing return type and causes a compile error. Case matters: 'Student' ≠ 'student'."
+            },
+            {
+              "icon": "2️⃣",
+              "title": "Rule 2 — No Return Type",
+              "text": "Constructors have NO return type — not void, not int, not String, nothing. If you add a return type (even void), it becomes a regular method named after the class — NOT a constructor. The compiler will not treat it as a constructor and the class will get an auto-generated default constructor instead."
+            },
+            {
+              "icon": "3️⃣",
+              "title": "Rule 3 — Cannot Be static, final, or abstract",
+              "text": "Constructors cannot be declared static (constructors belong to object creation, not the class itself), final (constructors are not inherited so final has no meaning), or abstract (abstract implies no body, but constructors must have a body). These modifiers cause compile errors on constructors."
+            },
+            {
+              "icon": "4️⃣",
+              "title": "Rule 4 — this() or super() Must Be First",
+              "text": "If a constructor calls this() (another constructor in same class) or super() (parent class constructor), that call MUST be the very first statement. You cannot place any other code before it. Also, this() and super() cannot both appear in the same constructor — only one is allowed."
+            },
+            {
+              "icon": "5️⃣",
+              "title": "Rule 5 — Constructors Are NOT Inherited",
+              "text": "Constructors are NOT inherited by subclasses. A subclass does not get the parent's constructors automatically. However, the parent's constructor IS always called — either explicitly via super(args) or implicitly via a no-arg super() inserted by the compiler. If the parent has no no-arg constructor, the subclass MUST call super(args) explicitly."
+            },
+            {
+              "icon": "6️⃣",
+              "title": "Rule 6 — Default Constructor Auto-Generated",
+              "text": "If a class defines NO constructors at all, the compiler automatically provides a default no-arg constructor: ClassName() { super(); }. If you define ANY constructor (even just one parameterized constructor), the compiler stops providing the default. You must define the no-arg constructor explicitly if you need it."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "default-constructor",
+      "title": "Default Constructor — Java's Automatic Gift",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <strong>default constructor</strong> is a <strong>no-arg constructor automatically generated by the Java compiler</strong> when a class declares no constructors at all. It has no parameters, an empty body (aside from an implicit <code>super()</code> call to the parent class), and is given <code>public</code> access if the class is public. It exists purely to allow objects to be created without any arguments. The moment you define even one constructor yourself, the compiler stops generating the default constructor."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "DefaultConstructor.java",
+          "lines": [
+            "// ✅ Class with NO explicit constructor",
+            "// Compiler auto-generates: public Box() { super(); }",
+            "public class Box {",
+            "    double length;",
+            "    double width;",
+            "    double height;",
+            "    // No constructor defined — compiler provides default",
+            "}",
+            "",
+            "// ✅ Class with ONE parameterized constructor",
+            "// Compiler does NOT generate a default constructor here",
+            "public class Circle {",
+            "    double radius;",
+            "    public Circle(double radius) {",
+            "        this.radius = radius;",
+            "    }",
+            "}",
+            "",
+            "class DefaultConstructorDemo {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Box has default constructor — works fine",
+            "        Box b = new Box();",
+            "        System.out.println(b.length);  // 0.0 (default value for double)",
+            "        System.out.println(b.width);   // 0.0",
+            "        b.length = 10.0;",
+            "        b.width  = 5.0;",
+            "        b.height = 3.0;",
+            "        System.out.println(\"Volume: \" + (b.length * b.width * b.height)); // 150.0",
+            "",
+            "        // ✅ Circle with parameterized constructor",
+            "        Circle c = new Circle(7.0);",
+            "        System.out.println(\"Area: \" + Math.PI * c.radius * c.radius); // 153.93...",
+            "",
+            "        // ❌ Circle with no args — COMPILE ERROR",
+            "        // Circle c2 = new Circle(); // ERROR: no suitable constructor found",
+            "        // Because Circle defines a parameterized constructor,",
+            "        // the compiler no longer provides a default no-arg constructor",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ The Default Constructor Disappears When You Add Any Constructor",
+          "text": "This is the most common beginner trap. Class A has no constructor — default is provided — new A() works. You add a parameterized constructor A(String name) to class A — default is gone — new A() now fails with a compile error. Fix: explicitly add a no-arg constructor: public A() { } alongside your parameterized one. Always remember: the default constructor is ONLY provided when NO constructor is defined at all."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "no-arg-constructor",
+      "title": "No-Arg Constructor — Explicit Zero-Parameter Constructor",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>no-arg constructor</strong> is a constructor with <strong>no parameters</strong> that is <strong>explicitly written by the programmer</strong>. Unlike the compiler-generated default constructor (which has an empty body), a no-arg constructor can contain initialization logic — setting default values, logging, or validating the environment. Many Java frameworks (Hibernate, Spring, Jackson) <strong>require a no-arg constructor</strong> to create objects via reflection."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "NoArgConstructor.java",
+          "lines": [
+            "public class DatabaseConfig {",
+            "",
+            "    private String host;",
+            "    private int    port;",
+            "    private String dbName;",
+            "    private int    connectionTimeout;",
+            "",
+            "    // ✅ Explicit no-arg constructor — sets sensible defaults",
+            "    public DatabaseConfig() {",
+            "        this.host              = \"localhost\";",
+            "        this.port              = 5432;",
+            "        this.dbName            = \"default_db\";",
+            "        this.connectionTimeout = 30;",
+            "        System.out.println(\"DatabaseConfig created with defaults\");",
+            "    }",
+            "",
+            "    // ✅ Parameterized constructor — full custom config",
+            "    public DatabaseConfig(String host, int port, String dbName, int timeout) {",
+            "        this.host              = host;",
+            "        this.port              = port;",
+            "        this.dbName            = dbName;",
+            "        this.connectionTimeout = timeout;",
+            "    }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return host + \":\" + port + \"/\" + dbName + \" (timeout=\" + connectionTimeout + \"s)\";",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // Uses no-arg constructor — default config",
+            "        DatabaseConfig dev = new DatabaseConfig();",
+            "        System.out.println(dev); // localhost:5432/default_db (timeout=30s)",
+            "",
+            "        // Uses parameterized constructor — production config",
+            "        DatabaseConfig prod = new DatabaseConfig(\"prod.db.company.com\", 5432,",
+            "                                                  \"prod_db\", 60);",
+            "        System.out.println(prod); // prod.db.company.com:5432/prod_db (timeout=60s)",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 No-Arg Constructor Is Required by Many Frameworks",
+          "text": "Hibernate (JPA), Spring Framework, Jackson (JSON deserialization), and JAXB all use reflection to create objects. They call the no-arg constructor internally — without it, your entity or model class will throw an InstantiationException at runtime. Best practice: always define an explicit no-arg constructor in classes that are managed by frameworks, even if all fields are set via parameterized constructors or setters."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "parameterized-constructor",
+      "title": "Parameterized Constructor — Initializing with Custom Values",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>parameterized constructor</strong> is a constructor that accepts <strong>one or more parameters</strong> to initialize an object with specific values at creation time. This is the most commonly used constructor type in production Java code. It enforces that an object is always created with meaningful data — preventing partially initialized, invalid objects from ever existing."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ParameterizedConstructor.java",
+          "lines": [
+            "public class Employee {",
+            "",
+            "    private final String employeeId;   // final — set once in constructor",
+            "    private       String name;",
+            "    private       String department;",
+            "    private       double salary;",
+            "",
+            "    // ✅ Parameterized constructor with validation",
+            "    public Employee(String employeeId, String name, String department, double salary) {",
+            "        // Guard clauses — validate before assigning",
+            "        if (employeeId == null || employeeId.isBlank())",
+            "            throw new IllegalArgumentException(\"Employee ID cannot be blank\");",
+            "        if (name == null || name.isBlank())",
+            "            throw new IllegalArgumentException(\"Employee name cannot be blank\");",
+            "        if (salary < 0)",
+            "            throw new IllegalArgumentException(\"Salary cannot be negative\");",
+            "",
+            "        this.employeeId = employeeId;",
+            "        this.name       = name;",
+            "        this.department = department;",
+            "        this.salary     = salary;",
+            "    }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return \"[\" + employeeId + \"] \" + name + \" | \" + department",
+            "               + \" | ₹\" + String.format(\"%.2f\", salary);",
+            "    }",
+            "",
+            "    // Getters",
+            "    public String getEmployeeId() { return employeeId; }",
+            "    public String getName()        { return name; }",
+            "    public double getSalary()      { return salary; }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        Employee e1 = new Employee(\"EMP-001\", \"Ananya Sharma\", \"Engineering\", 85000);",
+            "        Employee e2 = new Employee(\"EMP-002\", \"Vikram Nair\",   \"Finance\",     72000);",
+            "",
+            "        System.out.println(e1); // [EMP-001] Ananya Sharma | Engineering | ₹85000.00",
+            "        System.out.println(e2); // [EMP-002] Vikram Nair   | Finance     | ₹72000.00",
+            "",
+            "        // ❌ Invalid creation — constructor throws exception",
+            "        try {",
+            "            Employee bad = new Employee(\"\", \"Test\", \"IT\", -100);",
+            "        } catch (IllegalArgumentException e) {",
+            "            System.out.println(\"Error: \" + e.getMessage());",
+            "            // Error: Employee ID cannot be blank",
+            "        }",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Validate in Constructors — Fail Fast",
+          "text": "A parameterized constructor is the ideal place to validate inputs. By throwing an exception in the constructor for invalid data, you make it IMPOSSIBLE to create an object in an invalid state. This is the 'fail fast' principle — catch errors at object creation time rather than letting invalid objects propagate through the system and cause mysterious failures later. Use Objects.requireNonNull() and explicit guard clauses in constructors of domain objects."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "copy-constructor",
+      "title": "Copy Constructor — Creating an Object from Another Object",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>copy constructor</strong> is a constructor that takes an <strong>object of the same class as its parameter</strong> and creates a new object with the same field values — a copy. Java does not have a built-in copy constructor (unlike C++), but you can write one explicitly. It is essential for creating <strong>deep copies</strong> of objects containing mutable fields, preventing unintended sharing of state between the original and the copy."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "CopyConstructor.java",
+          "lines": [
+            "import java.util.ArrayList;",
+            "import java.util.List;",
+            "",
+            "public class ShoppingCart {",
+            "",
+            "    private String   customerId;",
+            "    private List<String> items;   // Mutable — needs deep copy",
+            "    private double   totalAmount;",
+            "",
+            "    // Regular constructor",
+            "    public ShoppingCart(String customerId) {",
+            "        this.customerId   = customerId;",
+            "        this.items        = new ArrayList<>();",
+            "        this.totalAmount  = 0.0;",
+            "    }",
+            "",
+            "    // ✅ Copy constructor — creates a DEEP copy",
+            "    public ShoppingCart(ShoppingCart other) {",
+            "        this.customerId  = other.customerId;             // String — immutable, safe to share",
+            "        this.items       = new ArrayList<>(other.items); // ✅ New list — deep copy",
+            "        this.totalAmount = other.totalAmount;            // primitive — copied by value",
+            "    }",
+            "",
+            "    public void addItem(String item, double price) {",
+            "        items.add(item);",
+            "        totalAmount += price;",
+            "    }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return \"Cart[\" + customerId + \"] Items: \" + items + \" | Total: ₹\" + totalAmount;",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        ShoppingCart original = new ShoppingCart(\"CUST-101\");",
+            "        original.addItem(\"Laptop\", 75000);",
+            "        original.addItem(\"Mouse\",  1500);",
+            "        System.out.println(\"Original: \" + original);",
+            "        // Original: Cart[CUST-101] Items: [Laptop, Mouse] | Total: ₹76500.0",
+            "",
+            "        // ✅ Copy constructor — creates independent copy",
+            "        ShoppingCart copy = new ShoppingCart(original);",
+            "        copy.addItem(\"Keyboard\", 3000); // Modifying copy",
+            "",
+            "        System.out.println(\"Original: \" + original);",
+            "        // Original: Cart[CUST-101] Items: [Laptop, Mouse] | Total: ₹76500.0 ← UNCHANGED",
+            "        System.out.println(\"Copy:     \" + copy);",
+            "        // Copy:     Cart[CUST-101] Items: [Laptop, Mouse, Keyboard] | Total: ₹79500.0",
+            "",
+            "        // ❌ SHALLOW COPY PROBLEM — without copy constructor:",
+            "        ShoppingCart ref = original; // Same object — NOT a copy",
+            "        ref.addItem(\"Monitor\", 20000);",
+            "        System.out.println(\"Original after ref change: \" + original);",
+            "        // Original: Cart[CUST-101] Items: [Laptop, Mouse, Monitor] — CHANGED!",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Shallow Copy vs Deep Copy",
+          "text": "A shallow copy duplicates the object's references — both original and copy point to the same mutable objects (like Lists, arrays, other objects). Modifying those objects through one reference affects both. A deep copy creates new instances of all mutable fields — the copy is fully independent. Copy constructors should always perform DEEP copies for mutable fields. For primitive types and immutable types (String, Integer), shallow is fine — they cannot be mutated."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "constructor-overloading",
+      "title": "Constructor Overloading — Multiple Ways to Create an Object",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Constructor overloading</strong> is defining multiple constructors in the same class with different parameter lists. It follows the exact same rules as method overloading — the constructors must differ in the <strong>number, type, or order of parameters</strong>. This allows objects to be created in multiple ways — with all data, with partial data (using defaults for the rest), or from different sources — without forcing callers to provide information they don't have."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ConstructorOverloading.java",
+          "lines": [
+            "public class Product {",
+            "",
+            "    private final String productId;",
+            "    private       String name;",
+            "    private       double price;",
+            "    private       String category;",
+            "    private       int    stockQuantity;",
+            "    private       boolean isActive;",
+            "",
+            "    // Constructor 1: Minimum required info",
+            "    public Product(String productId, String name, double price) {",
+            "        this(productId, name, price, \"General\"); // Delegates to Constructor 2",
+            "    }",
+            "",
+            "    // Constructor 2: With category",
+            "    public Product(String productId, String name, double price, String category) {",
+            "        this(productId, name, price, category, 0); // Delegates to Constructor 3",
+            "    }",
+            "",
+            "    // Constructor 3: With stock",
+            "    public Product(String productId, String name, double price,",
+            "                   String category, int stockQuantity) {",
+            "        this(productId, name, price, category, stockQuantity, true); // Delegates to full",
+            "    }",
+            "",
+            "    // Constructor 4: FULL constructor — all others delegate here",
+            "    public Product(String productId, String name, double price,",
+            "                   String category, int stockQuantity, boolean isActive) {",
+            "        if (productId == null || productId.isBlank())",
+            "            throw new IllegalArgumentException(\"Product ID required\");",
+            "        if (price < 0)",
+            "            throw new IllegalArgumentException(\"Price cannot be negative\");",
+            "",
+            "        this.productId     = productId;",
+            "        this.name          = name;",
+            "        this.price         = price;",
+            "        this.category      = category;",
+            "        this.stockQuantity = stockQuantity;",
+            "        this.isActive      = isActive;",
+            "    }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return \"[\" + productId + \"] \" + name + \" | ₹\" + price",
+            "               + \" | \" + category + \" | Stock: \" + stockQuantity",
+            "               + \" | Active: \" + isActive;",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        // Uses Constructor 1 — minimal info, rest defaults",
+            "        Product p1 = new Product(\"PRD-001\", \"Notebook\", 50.0);",
+            "        System.out.println(p1);",
+            "        // [PRD-001] Notebook | ₹50.0 | General | Stock: 0 | Active: true",
+            "",
+            "        // Uses Constructor 2 — with category",
+            "        Product p2 = new Product(\"PRD-002\", \"Laptop\", 75000.0, \"Electronics\");",
+            "        System.out.println(p2);",
+            "        // [PRD-002] Laptop | ₹75000.0 | Electronics | Stock: 0 | Active: true",
+            "",
+            "        // Uses Constructor 4 — full details",
+            "        Product p3 = new Product(\"PRD-003\", \"Phone\", 25000.0, \"Electronics\", 50, true);",
+            "        System.out.println(p3);",
+            "        // [PRD-003] Phone | ₹25000.0 | Electronics | Stock: 50 | Active: true",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "this-constructor",
+      "title": "this() — Calling Another Constructor in the Same Class",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>this()</code> is a special constructor call that invokes <strong>another constructor in the same class</strong>. It is the mechanism behind the constructor delegation pattern — shorter constructors call longer ones with default arguments, keeping all initialization logic in one place. <code>this()</code> must be the <strong>very first statement</strong> in the constructor body. No code can precede it."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ThisConstructorCall.java",
+          "lines": [
+            "public class Rectangle {",
+            "",
+            "    private double length;",
+            "    private double width;",
+            "    private String color;",
+            "    private boolean filled;",
+            "",
+            "    // Constructor 1: Square (length = width)",
+            "    public Rectangle(double side) {",
+            "        this(side, side);  // Calls Constructor 2",
+            "    }",
+            "",
+            "    // Constructor 2: Rectangle with default color",
+            "    public Rectangle(double length, double width) {",
+            "        this(length, width, \"White\"); // Calls Constructor 3",
+            "    }",
+            "",
+            "    // Constructor 3: Rectangle with color but not filled",
+            "    public Rectangle(double length, double width, String color) {",
+            "        this(length, width, color, false); // Calls Constructor 4",
+            "    }",
+            "",
+            "    // Constructor 4: FULL — all others ultimately call this",
+            "    public Rectangle(double length, double width, String color, boolean filled) {",
+            "        this.length = length;",
+            "        this.width  = width;",
+            "        this.color  = color;",
+            "        this.filled = filled;",
+            "        System.out.println(\"Rectangle created: \" + this);",
+            "    }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return length + \"x\" + width + \" | \" + color + \" | filled=\" + filled;",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        Rectangle square = new Rectangle(5.0);",
+            "        // Rectangle created: 5.0x5.0 | White | filled=false",
+            "",
+            "        Rectangle rect = new Rectangle(8.0, 3.0);",
+            "        // Rectangle created: 8.0x3.0 | White | filled=false",
+            "",
+            "        Rectangle colored = new Rectangle(6.0, 4.0, \"Blue\");",
+            "        // Rectangle created: 6.0x4.0 | Blue | filled=false",
+            "",
+            "        Rectangle full = new Rectangle(10.0, 5.0, \"Red\", true);",
+            "        // Rectangle created: 10.0x5.0 | Red | filled=true",
+            "",
+            "        // ❌ this() must be the FIRST statement",
+            "        // public Rectangle(double x) {",
+            "        //     System.out.println(\"Before\"); // Any code here",
+            "        //     this(x, x); // COMPILE ERROR — this() must be first",
+            "        // }",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Avoid Circular this() Calls — Infinite Recursion",
+          "text": "If Constructor A calls this() pointing to Constructor B, and Constructor B calls this() pointing back to Constructor A, the compiler detects a recursive constructor invocation and reports a compile error. The delegation chain must always terminate at a constructor that does NOT call this(). The 'master' constructor — the one all others ultimately delegate to — should contain the actual initialization code."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "super-constructor",
+      "title": "super() — Calling the Parent Class Constructor",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>super()</code> is used to <strong>explicitly call a constructor of the parent class</strong> from a subclass constructor. It must be the <strong>first statement</strong> in the subclass constructor. If a subclass constructor does not explicitly call <code>super()</code>, Java <strong>automatically inserts a no-arg <code>super()</code></strong> call. If the parent class has no no-arg constructor, the compiler reports an error — you must call <code>super(args)</code> explicitly."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SuperConstructorCall.java",
+          "lines": [
+            "// Parent class",
+            "class Vehicle {",
+            "    protected String brand;",
+            "    protected String model;",
+            "    protected int    year;",
+            "",
+            "    public Vehicle(String brand, String model, int year) {",
+            "        this.brand = brand;",
+            "        this.model = model;",
+            "        this.year  = year;",
+            "        System.out.println(\"Vehicle constructor: \" + brand + \" \" + model);",
+            "    }",
+            "}",
+            "",
+            "// Child class",
+            "class Car extends Vehicle {",
+            "    private int   numberOfDoors;",
+            "    private String fuelType;",
+            "",
+            "    public Car(String brand, String model, int year, int doors, String fuel) {",
+            "        super(brand, model, year); // ✅ Must be first — calls Vehicle constructor",
+            "        this.numberOfDoors = doors;",
+            "        this.fuelType      = fuel;",
+            "        System.out.println(\"Car constructor: \" + doors + \" doors, \" + fuel);",
+            "    }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return year + \" \" + brand + \" \" + model",
+            "               + \" | \" + numberOfDoors + \"-door | \" + fuelType;",
+            "    }",
+            "}",
+            "",
+            "// Grandchild class",
+            "class ElectricCar extends Car {",
+            "    private int batteryCapacityKwh;",
+            "",
+            "    public ElectricCar(String brand, String model, int year, int battery) {",
+            "        super(brand, model, year, 4, \"Electric\"); // Calls Car constructor",
+            "        this.batteryCapacityKwh = battery;",
+            "        System.out.println(\"ElectricCar constructor: \" + battery + \" kWh battery\");",
+            "    }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return super.toString() + \" | Battery: \" + batteryCapacityKwh + \" kWh\";",
+            "    }",
+            "}",
+            "",
+            "class SuperConstructorDemo {",
+            "    public static void main(String[] args) {",
+            "        System.out.println(\"--- Creating ElectricCar ---\");",
+            "        ElectricCar tesla = new ElectricCar(\"Tesla\", \"Model 3\", 2024, 75);",
+            "        System.out.println(tesla);",
+            "        // Output:",
+            "        // --- Creating ElectricCar ---",
+            "        // Vehicle constructor: Tesla Model 3",
+            "        // Car constructor: 4 doors, Electric",
+            "        // ElectricCar constructor: 75 kWh battery",
+            "        // 2024 Tesla Model 3 | 4-door | Electric | Battery: 75 kWh",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 Constructor Execution Order — Always Top-Down",
+          "text": "When a subclass object is created, constructors execute from the TOP of the hierarchy DOWN to the most specific class. Object() runs first, then the highest abstract/parent class constructor, then intermediate classes, then the concrete class. This ensures parent fields are initialized before child fields try to use them. The output in the example shows: Vehicle → Car → ElectricCar — always top to bottom."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "constructor-chaining",
+      "title": "Constructor Chaining — this() and super() Together",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Constructor chaining</strong> is the technique of having constructors call other constructors — either in the same class via <code>this()</code> or in the parent class via <code>super()</code>. It eliminates code duplication, centralizes validation logic, and ensures every object passes through a single 'master' initialization path regardless of which constructor the caller uses."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ConstructorChaining.java",
+          "lines": [
+            "// Parent class with overloaded constructors using this()",
+            "class Person {",
+            "    protected String name;",
+            "    protected int    age;",
+            "    protected String email;",
+            "",
+            "    // Minimal",
+            "    public Person(String name) {",
+            "        this(name, 0); // → Person(name, age)",
+            "    }",
+            "",
+            "    // Name + age",
+            "    public Person(String name, int age) {",
+            "        this(name, age, \"not-provided@example.com\"); // → Person(name, age, email)",
+            "    }",
+            "",
+            "    // Full — all this() chains end here",
+            "    public Person(String name, int age, String email) {",
+            "        this.name  = name;",
+            "        this.age   = age;",
+            "        this.email = email;",
+            "    }",
+            "}",
+            "",
+            "// Subclass — uses super() to chain to Person's constructors",
+            "class Manager extends Person {",
+            "    private String department;",
+            "    private int    teamSize;",
+            "",
+            "    // Chains to Person(name, age, email) via super()",
+            "    // then sets its own fields",
+            "    public Manager(String name, int age, String email,",
+            "                   String department, int teamSize) {",
+            "        super(name, age, email); // 1. Initialize Person fields",
+            "        this.department = department; // 2. Initialize Manager fields",
+            "        this.teamSize   = teamSize;",
+            "    }",
+            "",
+            "    // Shorter overload — delegates within Manager via this()",
+            "    public Manager(String name, String department) {",
+            "        this(name, 30, \"manager@company.com\", department, 5);",
+            "        // this() → Manager full constructor → super() → Person full constructor",
+            "    }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return name + \" (\" + age + \") | \" + department + \" | Team: \" + teamSize;",
+            "    }",
+            "}",
+            "",
+            "class ChainingDemo {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // Short form — chaining handles the rest",
+            "        Manager m1 = new Manager(\"Sunita\", \"Engineering\");",
+            "        System.out.println(m1); // Sunita (30) | Engineering | Team: 5",
+            "",
+            "        // Full form",
+            "        Manager m2 = new Manager(\"Arjun\", 38, \"arjun@co.com\", \"Finance\", 12);",
+            "        System.out.println(m2); // Arjun (38) | Finance | Team: 12",
+            "",
+            "        // Person directly",
+            "        Person p = new Person(\"Ravi\");",
+            "        System.out.println(p.name + \" | \" + p.email);",
+            "        // Ravi | not-provided@example.com",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "private-constructor",
+      "title": "Private Constructor — Controlling Object Creation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>private constructor</strong> prevents any code outside the class from creating instances using <code>new</code>. This is a powerful design tool used in three primary patterns: the <strong>Singleton Pattern</strong> (ensure only one instance), <strong>Utility Classes</strong> (no instantiation needed — all static methods), and the <strong>Factory Method Pattern</strong> (controlled object creation through named factory methods)."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "PrivateConstructor.java",
+          "lines": [
+            "// ✅ PATTERN 1: Singleton — only ONE instance ever",
+            "public class ApplicationConfig {",
+            "",
+            "    private static ApplicationConfig instance; // Single instance",
+            "",
+            "    private String dbUrl;",
+            "    private String appName;",
+            "",
+            "    // ✅ Private constructor — no one can call new ApplicationConfig()",
+            "    private ApplicationConfig() {",
+            "        this.dbUrl   = \"jdbc:postgresql://localhost:5432/mydb\";",
+            "        this.appName = \"TechSustainify App\";",
+            "        System.out.println(\"ApplicationConfig initialized\");",
+            "    }",
+            "",
+            "    // ✅ Public static method — the only way to get the instance",
+            "    public static ApplicationConfig getInstance() {",
+            "        if (instance == null) {",
+            "            instance = new ApplicationConfig(); // Only created once",
+            "        }",
+            "        return instance;",
+            "    }",
+            "",
+            "    public String getDbUrl()   { return dbUrl; }",
+            "    public String getAppName() { return appName; }",
+            "}",
+            "",
+            "",
+            "// ✅ PATTERN 2: Utility class — all static, no instantiation",
+            "public final class MathUtils {",
+            "",
+            "    // ✅ Private constructor — prevents accidental instantiation",
+            "    private MathUtils() {",
+            "        throw new UnsupportedOperationException(\"MathUtils is a utility class\");",
+            "    }",
+            "",
+            "    public static int    factorial(int n)     { return n <= 1 ? 1 : n * factorial(n-1); }",
+            "    public static boolean isPrime(int n)      { if (n < 2) return false; for (int i=2; i*i<=n; i++) if(n%i==0) return false; return true; }",
+            "    public static double circleArea(double r) { return Math.PI * r * r; }",
+            "}",
+            "",
+            "",
+            "// ✅ PATTERN 3: Factory Method — named constructors for clarity",
+            "public class Temperature {",
+            "",
+            "    private final double celsius;",
+            "",
+            "    private Temperature(double celsius) {",
+            "        this.celsius = celsius;",
+            "    }",
+            "",
+            "    // Factory methods — clearly named, more readable than constructors",
+            "    public static Temperature fromCelsius(double c)    { return new Temperature(c); }",
+            "    public static Temperature fromFahrenheit(double f) { return new Temperature((f - 32) * 5 / 9); }",
+            "    public static Temperature fromKelvin(double k)     { return new Temperature(k - 273.15); }",
+            "",
+            "    public double toCelsius()    { return celsius; }",
+            "    public double toFahrenheit() { return celsius * 9 / 5 + 32; }",
+            "    public double toKelvin()     { return celsius + 273.15; }",
+            "",
+            "    @Override",
+            "    public String toString() { return String.format(\"%.2f°C\", celsius); }",
+            "}",
+            "",
+            "class PrivateConstructorDemo {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // Singleton",
+            "        ApplicationConfig cfg1 = ApplicationConfig.getInstance();",
+            "        ApplicationConfig cfg2 = ApplicationConfig.getInstance();",
+            "        System.out.println(cfg1 == cfg2); // true — same object",
+            "",
+            "        // Utility",
+            "        System.out.println(MathUtils.factorial(5)); // 120",
+            "        System.out.println(MathUtils.isPrime(17));  // true",
+            "        // new MathUtils(); // Would throw UnsupportedOperationException",
+            "",
+            "        // Factory methods",
+            "        Temperature t1 = Temperature.fromFahrenheit(98.6);",
+            "        Temperature t2 = Temperature.fromKelvin(373.15);",
+            "        System.out.println(t1); // 37.00°C",
+            "        System.out.println(t2); // 100.00°C",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "constructor-vs-method",
+      "title": "Constructor vs Method — Key Differences",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Constructors and methods look similar syntactically but serve entirely different purposes. Understanding the precise differences is a frequent interview topic and prevents subtle coding mistakes."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Criteria", "Constructor", "Method"],
+          "rows": [
+            ["Name",                  "MUST match class name exactly",                      "Any valid identifier (not matching class name)"],
+            ["Return type",           "None — not even void",                               "Must have a return type (or void)"],
+            ["Invocation",            "Called automatically by 'new' keyword",              "Called explicitly by the programmer"],
+            ["Purpose",               "Initialize a newly created object",                   "Define behavior — operations on an object"],
+            ["Inheritance",           "NOT inherited by subclasses",                         "Inherited by subclasses (unless private/final)"],
+            ["Overriding",            "Cannot be overridden (not inherited)",                "Can be overridden in subclasses"],
+            ["Overloading",           "✅ Yes — constructor overloading is common",         "✅ Yes — method overloading is common"],
+            ["static/abstract/final", "❌ Cannot be static, abstract, or final",            "✅ Can be static, abstract, or final"],
+            ["this()/super()",        "✅ Can call this() or super() as first statement",   "❌ Cannot use this()/super() as constructor calls"],
+            ["@Override",             "Not applicable",                                      "Applicable for overriding parent methods"],
+            ["Execution",             "Once — at object creation time",                      "Any number of times during object's lifetime"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ConstructorVsMethod.java",
+          "lines": [
+            "public class Lamp {",
+            "",
+            "    private String color;",
+            "    private boolean isOn;",
+            "",
+            "    // ✅ CONSTRUCTOR — no return type, same name as class",
+            "    public Lamp(String color) {",
+            "        this.color = color;",
+            "        this.isOn  = false;",
+            "        System.out.println(\"Lamp created: \" + color);",
+            "    }",
+            "",
+            "    // ✅ METHOD — has return type (void), called explicitly",
+            "    public void turnOn() {",
+            "        isOn = true;",
+            "        System.out.println(color + \" lamp is ON\");",
+            "    }",
+            "",
+            "    // ⚠️ TRICKY: This looks like a constructor but has 'void' return type",
+            "    // It is a METHOD named Lamp — NOT a constructor",
+            "    // The class will use the auto-generated default constructor",
+            "    public void Lamp() {",
+            "        System.out.println(\"I am a method, not a constructor!\");",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "        Lamp l = new Lamp(\"Red\");   // Constructor called",
+            "        l.turnOn();                   // Method called",
+            "        l.Lamp();                     // Method named Lamp — NOT constructor",
+            "        // Output:",
+            "        // Lamp created: Red",
+            "        // Red lamp is ON",
+            "        // I am a method, not a constructor!",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "constructor-inheritance",
+      "title": "Constructors & Inheritance — How super() Binds the Hierarchy",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Constructors are <strong>not inherited</strong> in Java — a subclass does not get the parent's constructors. However, <strong>every subclass constructor must call a parent constructor</strong> — either explicitly using <code>super(args)</code> or implicitly (Java inserts <code>super()</code> automatically). This ensures the parent's fields are always initialized properly before the child adds its own state. The chain always starts from <code>Object</code> at the top."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ConstructorInheritance.java",
+          "lines": [
+            "class LivingBeing {",
+            "    protected boolean isAlive;",
+            "",
+            "    public LivingBeing() {",
+            "        this.isAlive = true;",
+            "        System.out.println(\"1. LivingBeing() — isAlive=\" + isAlive);",
+            "    }",
+            "}",
+            "",
+            "class Animal extends LivingBeing {",
+            "    protected String species;",
+            "",
+            "    public Animal(String species) {",
+            "        // super() is called implicitly — LivingBeing() runs first",
+            "        this.species = species;",
+            "        System.out.println(\"2. Animal(\" + species + \")\");",
+            "    }",
+            "}",
+            "",
+            "class Dog extends Animal {",
+            "    private String breed;",
+            "",
+            "    public Dog(String breed) {",
+            "        super(\"Canine\"); // Explicit super — calls Animal(\"Canine\")",
+            "        this.breed = breed;",
+            "        System.out.println(\"3. Dog(\" + breed + \")\");",
+            "    }",
+            "}",
+            "",
+            "class GuideDog extends Dog {",
+            "    private String ownerName;",
+            "",
+            "    public GuideDog(String breed, String owner) {",
+            "        super(breed); // Calls Dog(breed)",
+            "        this.ownerName = owner;",
+            "        System.out.println(\"4. GuideDog — owner: \" + owner);",
+            "    }",
+            "}",
+            "",
+            "class InheritanceDemo {",
+            "    public static void main(String[] args) {",
+            "        System.out.println(\"Creating GuideDog...\");",
+            "        GuideDog gd = new GuideDog(\"Labrador\", \"Suresh\");",
+            "        System.out.println(\"isAlive: \" + gd.isAlive + \" | species: \" + gd.species);",
+            "        // Output:",
+            "        // Creating GuideDog...",
+            "        // 1. LivingBeing() — isAlive=true",
+            "        // 2. Animal(Canine)",
+            "        // 3. Dog(Labrador)",
+            "        // 4. GuideDog — owner: Suresh",
+            "        // isAlive: true | species: Canine",
+            "",
+            "        // ⚠️ What if parent has no no-arg constructor?",
+            "        // class Parent { public Parent(String x) {} }",
+            "        // class Child extends Parent {",
+            "        //     public Child() { }  // COMPILE ERROR — implicit super() has no match",
+            "        // }",
+            "        // Fix: public Child() { super(\"default\"); }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Bugs That Fool Everyone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These mistakes appear consistently in beginner Java code involving constructors. Most cause compile errors immediately, but some create subtle runtime bugs that are hard to diagnose."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ConstructorMistakes.java",
+          "lines": [
+            "// ❌ MISTAKE 1: Adding a return type to a constructor — makes it a method",
+            "class Gadget {",
+            "    String name;",
+            "    public void Gadget(String name) { // ❌ This is a METHOD, not a constructor!",
+            "        this.name = name;",
+            "    }",
+            "}",
+            "// Gadget g = new Gadget(\"Phone\"); // COMPILE ERROR — no matching constructor",
+            "// ✅ Fix: remove 'void'",
+            "// public Gadget(String name) { this.name = name; }",
+            "",
+            "// ❌ MISTAKE 2: Expecting default constructor after defining a parameterized one",
+            "class Config {",
+            "    String env;",
+            "    public Config(String env) { this.env = env; }",
+            "}",
+            "// Config c = new Config(); // COMPILE ERROR — no default constructor",
+            "// ✅ Fix: add explicit no-arg constructor",
+            "// public Config() { this(\"development\"); }",
+            "",
+            "// ❌ MISTAKE 3: this() not the first statement",
+            "class Point {",
+            "    int x, y;",
+            "    public Point(int x) {",
+            "        System.out.println(\"Creating point\"); // Any code here",
+            "        // this(x, 0); // COMPILE ERROR — call to this must be first statement",
+            "    }",
+            "    public Point(int x, int y) { this.x = x; this.y = y; }",
+            "}",
+            "",
+            "// ❌ MISTAKE 4: Forgetting 'this.' in constructor — field shadowed by parameter",
+            "class Book {",
+            "    String title;",
+            "    int    pages;",
+            "    public Book(String title, int pages) {",
+            "        title = title; // ❌ Assigns parameter to itself — field unchanged!",
+            "        pages = pages; // ❌ Same problem",
+            "    }",
+            "}",
+            "// ✅ Fix: this.title = title; this.pages = pages;",
+            "",
+            "// ❌ MISTAKE 5: Calling overridable method in constructor",
+            "abstract class Widget {",
+            "    String label;",
+            "    public Widget() {",
+            "        initialize(); // ❌ Dangerous — calls overridden version in subclass",
+            "    }",
+            "    public void initialize() { label = \"Widget\"; }",
+            "}",
+            "class Button extends Widget {",
+            "    String icon = \"🔘\"; // Set AFTER super() returns",
+            "    @Override",
+            "    public void initialize() {",
+            "        label = \"Button: \" + icon; // icon is null here — not yet initialized!",
+            "    }",
+            "}",
+            "// new Button() → label = \"Button: null\" — subtle bug!",
+            "",
+            "// ❌ MISTAKE 6: Recursive constructor chain — compile error",
+            "class Circular {",
+            "    public Circular()        { this(\"default\"); } // Calls Circular(String)",
+            "    public Circular(String s){ this(); }           // Calls Circular() — CIRCULAR!",
+            "    // COMPILE ERROR: recursive constructor invocation",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These constructor anti-patterns are common reasons for failed code reviews and brittle object initialization in professional Java teams."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Constructor with Too Many Parameters",
+              "text": "A constructor with 7, 8, or more parameters — especially of the same type — is fragile and unreadable. It is trivial to swap argument positions silently. Use the Builder pattern for complex objects: new User.Builder().name(\"Alice\").email(\"a@b.com\").role(\"ADMIN\").build(). Java 16+ records are ideal for simple value objects with many fields."
+            },
+            {
+              "icon": "🚫",
+              "title": "Doing Heavy Work in Constructors",
+              "text": "Constructors should initialize fields and validate inputs — nothing more. Performing database queries, file I/O, network calls, or complex computations in a constructor makes testing difficult (you cannot instantiate the class without all dependencies available), slows object creation, and makes failures hard to attribute. Use factory methods or post-construction initialization (init() method or Spring's @PostConstruct) for heavy work."
+            },
+            {
+              "icon": "🚫",
+              "title": "Calling Overridable Methods from Constructors",
+              "text": "Calling a non-final method from a constructor is dangerous when subclasses exist. The overriding method in the subclass runs before the subclass fields are initialized (super() runs first), so the subclass method sees uninitialized (null/0) field values. Mark such methods final, or better — move the call out of the constructor entirely."
+            },
+            {
+              "icon": "🚫",
+              "title": "Duplicate Logic Across Overloaded Constructors",
+              "text": "Having multiple overloaded constructors that each independently set fields — instead of delegating with this() — leads to duplication. When initialization logic changes (e.g., adding a new validation), you must update every constructor. Use the delegation pattern: all constructors chain to one 'master' constructor via this() that contains the actual initialization code."
+            },
+            {
+              "icon": "🚫",
+              "title": "Public Constructor on Singleton or Utility Class",
+              "text": "A Singleton class with a public constructor undermines the pattern — anyone can call new Singleton() and bypass the single-instance enforcement. Always make Singleton constructors private. Similarly, utility classes (all-static) should have a private constructor that throws UnsupportedOperationException, explicitly preventing instantiation and documenting the intent."
+            },
+            {
+              "icon": "🚫",
+              "title": "Not Validating in Constructors of Domain Objects",
+              "text": "Creating a domain object (Order, User, BankAccount) without validating constructor arguments allows invalid objects into the system. An Order with a negative amount, a User with a null email, or a BankAccount with an empty account number should be impossible to create. Validate in the constructor using guard clauses and throw IllegalArgumentException for invalid inputs."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ConstructorAntiPatterns.java",
+          "lines": [
+            "// ❌ ANTI-PATTERN 1: Too many parameters — easy to mix up",
+            "class UserBad {",
+            "    public UserBad(String first, String last, String email,",
+            "                   String phone, int age, String city,",
+            "                   String role, boolean active) {",
+            "        // new UserBad(\"Alice\",\"Smith\",\"alice@x.com\",\"+91...\",25,\"Delhi\",\"ADMIN\",true)",
+            "        // — what if you swap first and last? Compiles silently, wrong data!",
+            "    }",
+            "}",
+            "// ✅ BETTER: Builder pattern",
+            "class User {",
+            "    private final String firstName, lastName, email, phone, city, role;",
+            "    private final int age;",
+            "    private final boolean active;",
+            "",
+            "    private User(Builder b) {",
+            "        this.firstName = b.firstName; this.lastName = b.lastName;",
+            "        this.email = b.email;         this.phone = b.phone;",
+            "        this.age = b.age;              this.city = b.city;",
+            "        this.role = b.role;            this.active = b.active;",
+            "    }",
+            "",
+            "    public static class Builder {",
+            "        private String firstName, lastName, email, phone, city, role;",
+            "        private int age; private boolean active = true;",
+            "        public Builder firstName(String v) { this.firstName = v; return this; }",
+            "        public Builder lastName(String v)  { this.lastName  = v; return this; }",
+            "        public Builder email(String v)     { this.email     = v; return this; }",
+            "        public Builder role(String v)      { this.role      = v; return this; }",
+            "        public Builder age(int v)          { this.age       = v; return this; }",
+            "        public User build() { return new User(this); }",
+            "    }",
+            "}",
+            "// ✅ Usage — readable, safe, order-independent:",
+            "// User u = new User.Builder().firstName(\"Alice\").lastName(\"Smith\")",
+            "//                           .email(\"a@x.com\").role(\"ADMIN\").age(25).build();"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Constructors in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples model idiomatic Java constructor usage patterns in real enterprise Spring Boot-style codebases — clean initialization at every layer."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "OrderDomain.java — Production-Grade Constructor Patterns",
+          "lines": [
+            "package com.techsustainify.order.domain;",
+            "",
+            "import java.time.LocalDateTime;",
+            "import java.util.ArrayList;",
+            "import java.util.Collections;",
+            "import java.util.List;",
+            "import java.util.Objects;",
+            "import java.util.UUID;",
+            "",
+            "/**",
+            " * Domain entity with validation in constructor.",
+            " * Immutable fields via final + defensive copying of mutable collections.",
+            " */",
+            "public class Order {",
+            "",
+            "    private final String        orderId;",
+            "    private final String        customerId;",
+            "    private final LocalDateTime createdAt;",
+            "    private final List<OrderItem> items;",
+            "    private       OrderStatus   status;",
+            "    private       double        totalAmount;",
+            "",
+            "    // ✅ Primary constructor — validates all inputs",
+            "    public Order(String customerId, List<OrderItem> items) {",
+            "        // Validation — fail fast",
+            "        Objects.requireNonNull(customerId, \"Customer ID must not be null\");",
+            "        Objects.requireNonNull(items,      \"Order items must not be null\");",
+            "        if (items.isEmpty())",
+            "            throw new IllegalArgumentException(\"Order must have at least one item\");",
+            "",
+            "        this.orderId    = \"ORD-\" + UUID.randomUUID().toString().substring(0, 8).toUpperCase();",
+            "        this.customerId = customerId;",
+            "        this.createdAt  = LocalDateTime.now();",
+            "        this.items      = Collections.unmodifiableList(new ArrayList<>(items)); // Defensive copy",
+            "        this.status     = OrderStatus.PENDING;",
+            "        this.totalAmount = items.stream().mapToDouble(OrderItem::getSubtotal).sum();",
+            "    }",
+            "",
+            "    // Copy constructor — for creating a modified version of an existing order",
+            "    public Order(Order source, OrderStatus newStatus) {",
+            "        this.orderId     = source.orderId;",
+            "        this.customerId  = source.customerId;",
+            "        this.createdAt   = source.createdAt;",
+            "        this.items       = source.items; // Unmodifiable — safe to share",
+            "        this.status      = newStatus;",
+            "        this.totalAmount = source.totalAmount;",
+            "    }",
+            "",
+            "    public String        getOrderId()     { return orderId; }",
+            "    public String        getCustomerId()  { return customerId; }",
+            "    public OrderStatus   getStatus()      { return status; }",
+            "    public double        getTotalAmount() { return totalAmount; }",
+            "    public List<OrderItem> getItems()     { return items; }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return orderId + \" | \" + customerId + \" | \" + status",
+            "               + \" | ₹\" + String.format(\"%.2f\", totalAmount)",
+            "               + \" | Items: \" + items.size();",
+            "    }",
+            "}",
+            "",
+            "// ✅ Value object — minimal, immutable, validated",
+            "class OrderItem {",
+            "    private final String productId;",
+            "    private final String productName;",
+            "    private final int    quantity;",
+            "    private final double unitPrice;",
+            "",
+            "    public OrderItem(String productId, String productName, int qty, double unitPrice) {",
+            "        if (qty <= 0)        throw new IllegalArgumentException(\"Quantity must be > 0\");",
+            "        if (unitPrice <= 0)  throw new IllegalArgumentException(\"Unit price must be > 0\");",
+            "",
+            "        this.productId   = Objects.requireNonNull(productId,   \"Product ID required\");",
+            "        this.productName = Objects.requireNonNull(productName, \"Product name required\");",
+            "        this.quantity    = qty;",
+            "        this.unitPrice   = unitPrice;",
+            "    }",
+            "",
+            "    public double getSubtotal() { return quantity * unitPrice; }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return productName + \" x\" + quantity + \" @ ₹\" + unitPrice;",
+            "    }",
+            "}",
+            "",
+            "enum OrderStatus { PENDING, CONFIRMED, SHIPPED, DELIVERED, CANCELLED }",
+            "",
+            "class OrderDemo {",
+            "    public static void main(String[] args) {",
+            "        List<OrderItem> items = List.of(",
+            "            new OrderItem(\"P001\", \"Laptop\", 1, 75000.0),",
+            "            new OrderItem(\"P002\", \"Mouse\",  2, 750.0)",
+            "        );",
+            "        Order order = new Order(\"CUST-42\", items);",
+            "        System.out.println(order);",
+            "        // ORD-XXXXXXXX | CUST-42 | PENDING | ₹76500.00 | Items: 2",
+            "",
+            "        // Status update via copy constructor",
+            "        Order confirmed = new Order(order, OrderStatus.CONFIRMED);",
+            "        System.out.println(confirmed);",
+            "        // Same order ID, same amount, status=CONFIRMED",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "JDBCConnectionPool.java — Singleton with Private Constructor",
+          "lines": [
+            "package com.techsustainify.db;",
+            "",
+            "/**",
+            " * Thread-safe Singleton connection pool.",
+            " * Private constructor + static factory method pattern.",
+            " */",
+            "public class ConnectionPool {",
+            "",
+            "    private static volatile ConnectionPool instance; // volatile for thread visibility",
+            "",
+            "    private final String url;",
+            "    private final String username;",
+            "    private final int    maxConnections;",
+            "    private       int    activeConnections;",
+            "",
+            "    // ✅ Private constructor — only called once from getInstance()",
+            "    private ConnectionPool(String url, String username, int maxConnections) {",
+            "        Objects.requireNonNull(url,      \"DB URL required\");",
+            "        Objects.requireNonNull(username, \"DB username required\");",
+            "        if (maxConnections <= 0)",
+            "            throw new IllegalArgumentException(\"Max connections must be > 0\");",
+            "",
+            "        this.url              = url;",
+            "        this.username         = username;",
+            "        this.maxConnections   = maxConnections;",
+            "        this.activeConnections = 0;",
+            "        System.out.println(\"Connection pool initialized: \" + url",
+            "                           + \" (max=\" + maxConnections + \")\");",
+            "    }",
+            "",
+            "    // ✅ Thread-safe double-checked locking Singleton",
+            "    public static ConnectionPool getInstance(String url, String user, int max) {",
+            "        if (instance == null) {",
+            "            synchronized (ConnectionPool.class) {",
+            "                if (instance == null) {",
+            "                    instance = new ConnectionPool(url, user, max);",
+            "                }",
+            "            }",
+            "        }",
+            "        return instance;",
+            "    }",
+            "",
+            "    public synchronized String getConnection() {",
+            "        if (activeConnections >= maxConnections) {",
+            "            throw new RuntimeException(\"Connection pool exhausted\");",
+            "        }",
+            "        activeConnections++;",
+            "        return \"Connection-\" + activeConnections + \" to \" + url;",
+            "    }",
+            "",
+            "    public synchronized void releaseConnection() {",
+            "        if (activeConnections > 0) activeConnections--;",
+            "    }",
+            "",
+            "    public int getActiveConnections() { return activeConnections; }",
+            "",
+            "    public static void main(String[] args) {",
+            "        ConnectionPool pool1 = ConnectionPool.getInstance(",
+            "            \"jdbc:postgresql://localhost:5432/mydb\", \"admin\", 10);",
+            "        ConnectionPool pool2 = ConnectionPool.getInstance(",
+            "            \"jdbc:mysql://other:3306/db\", \"root\", 5); // Same instance returned",
+            "",
+            "        System.out.println(pool1 == pool2); // true — Singleton",
+            "",
+            "        String conn = pool1.getConnection();",
+            "        System.out.println(\"Got: \" + conn);",
+            "        System.out.println(\"Active: \" + pool1.getActiveConnections()); // 1",
+            "        pool1.releaseConnection();",
+            "        System.out.println(\"Active: \" + pool1.getActiveConnections()); // 0",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "constructor-flowchart",
+      "title": "Constructor Chaining Flowchart — Execution Order",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This flowchart shows the constructor execution order when a concrete subclass is instantiated in a multi-level inheritance hierarchy, and how this() and super() calls chain together."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1",  "label": "▶ new ConcreteClass(args)",       "sublabel": "Object creation triggered",                      "type": "start"    },
+            { "id": "2",  "label": "⚙️ ConcreteClass constructor",    "sublabel": "Calls this() or super() first",                  "type": "process"  },
+            { "id": "3",  "label": "🔍 this() call present?",         "sublabel": "Delegates to another constructor in same class",  "type": "decision" },
+            { "id": "4",  "label": "⚙️ Target constructor in class",  "sublabel": "May also call super()",                          "type": "process"  },
+            { "id": "5",  "label": "⚙️ super() — Parent constructor", "sublabel": "Explicit or implicit call",                      "type": "process"  },
+            { "id": "6",  "label": "🔍 More parents in hierarchy?",   "sublabel": "Walk up until Object is reached",                "type": "decision" },
+            { "id": "7",  "label": "⚙️ Object() constructor",         "sublabel": "Root of all Java hierarchies",                   "type": "process"  },
+            { "id": "8",  "label": "⬇️ Return down the chain",        "sublabel": "Execute body of each constructor top-to-bottom", "type": "process"  },
+            { "id": "9",  "label": "✅ Object fully initialized",      "sublabel": "All fields set; object ready to use",            "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1", "to": "2",  "label": "JVM invokes"             },
+            { "from": "2", "to": "3",  "label": "Check first statement"   },
+            { "from": "3", "to": "4",  "label": "YES — this() call"       },
+            { "from": "3", "to": "5",  "label": "NO — super() / implicit" },
+            { "from": "4", "to": "5",  "label": "Reaches super()"         },
+            { "from": "5", "to": "6",  "label": "Go up hierarchy"         },
+            { "from": "6", "to": "5",  "label": "YES — another parent"    },
+            { "from": "6", "to": "7",  "label": "NO — reached Object"     },
+            { "from": "7", "to": "8",  "label": "Object() completes"      },
+            { "from": "8", "to": "9",  "label": "All constructors done"   }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Constructor Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are consistently asked in Java fresher and experienced developer interviews, OCPJP certification exams, and campus placement tests."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is a constructor in Java? How is it different from a method?",
+              "a": "A constructor is a special block of code with the same name as the class and no return type, automatically called when 'new' is used to create an object. Its purpose is to initialize the object. Differences from a method: (1) Name must match class name (methods can be any name). (2) No return type — not even void (methods must declare one). (3) Called automatically by 'new' (methods called explicitly). (4) Not inherited (methods are). (5) Cannot be static, abstract, or final (methods can be). (6) Can use this() and super() as the first statement to call other constructors.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the default constructor in Java? When is it provided?",
+              "a": "The default constructor is a no-arg constructor automatically generated by the Java compiler when a class defines NO constructors at all. It has no parameters, contains only an implicit super() call, and has the same access level as the class. It is provided ONLY when the class has zero constructor definitions. The moment you define even one constructor (parameterized or otherwise), the compiler stops generating the default constructor. If you then need a no-arg constructor, you must define it explicitly.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. Can a constructor be private? Why would you make it private?",
+              "a": "Yes. A private constructor prevents external code from creating instances with 'new'. Use cases: (1) Singleton Pattern — private constructor + static getInstance() ensures only one object ever exists. (2) Utility classes — classes with only static methods (like java.lang.Math) should not be instantiated; a private constructor that throws UnsupportedOperationException enforces this. (3) Factory Method Pattern — object creation is controlled through named static factory methods (Temperature.fromCelsius(), Temperature.fromFahrenheit()) which are more readable than raw constructors.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What is constructor chaining? How do this() and super() support it?",
+              "a": "Constructor chaining is having one constructor call another to avoid duplicate initialization code. this() calls another constructor in the SAME class — used when multiple overloaded constructors all share the same initialization logic. super() calls a constructor in the PARENT class — ensuring parent fields are initialized before child ones. Both must be the VERY FIRST statement in a constructor body. You cannot use both this() and super() in the same constructor. The chain must not be circular (recursive chaining is a compile error). The pattern: all overloaded constructors delegate via this() to one 'master' constructor, which calls super() for parent initialization.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. What happens if you do not write any constructor in a class?",
+              "a": "Java automatically provides a default no-arg constructor: ClassName() { super(); }. This constructor has no parameters, calls the parent class's no-arg constructor (super()), and does nothing else. The generated constructor has the same access level as the class (public if class is public). This allows objects to be created with new ClassName() even without any explicit constructor. However, all fields will have their default values (0, false, null) since the compiler-generated constructor performs no field initialization.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q6. Can a constructor call another constructor? What are the rules?",
+              "a": "Yes — this() calls another constructor in the same class; super() calls a parent constructor. Rules: (1) Must be the VERY FIRST statement — nothing can precede it. (2) Only ONE constructor call allowed — you cannot call both this() and super(). (3) Circular chaining is a compile error — A calling B calling A is detected and rejected. (4) If neither this() nor super() is written, Java inserts an implicit no-arg super() automatically. (5) If the parent has only parameterized constructors (no no-arg), an explicit super(args) is required — failing to include it is a compile error.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. Are constructors inherited in Java?",
+              "a": "No. Constructors are NOT inherited. A subclass cannot directly call a parent's constructor as if it were its own. However, a parent constructor IS always invoked — either explicitly via super(args) or implicitly via the compiler-inserted no-arg super() call. This is not inheritance — it is a mandatory initialization call. The distinction matters: if a parent defines only parameterized constructors, the subclass MUST explicitly call super(args) — there is no automatic constructor to fall back on.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. What is a copy constructor in Java? How does it differ from clone()?",
+              "a": "A copy constructor takes an object of the same class and creates a new independent copy: public Person(Person other) { this.name = other.name; this.age = other.age; }. Unlike Java's built-in clone() method (which requires implementing Cloneable, throws CloneNotSupportedException, and performs shallow copy by default), a copy constructor is: (1) Explicit and readable. (2) Under full developer control — you decide which fields to copy and how deeply. (3) Can perform deep copy of mutable fields. (4) Does not require implementing any interface. For mutable objects containing collections or other objects, a copy constructor should create new instances of those contained objects (deep copy) to avoid shared mutable state.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q9. What is the output order when a subclass object is created in a hierarchy?",
+              "a": "Constructors execute from TOP (most ancestral) to BOTTOM (most specific). Order: Object() → GrandParent() → Parent() → Child(). This is because each constructor's first action is to call super() (explicit or implicit), which triggers the parent constructor before any local initialization runs. This guarantees that when Child's constructor body executes its own field assignments, all parent-class fields have already been initialized. The chain unwinds after Object() completes, executing each constructor body on the way back down to Child.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q10. Why should you avoid calling overridable methods from constructors?",
+              "a": "When a superclass constructor calls an overridable (non-final, non-private) method, and the subclass overrides that method, the overridden version runs BEFORE the subclass's own constructor body executes. At that moment, the subclass's fields are still at their default values (null, 0, false) — the field initializers haven't run yet because super() had to complete first. This leads to NullPointerExceptions or incorrect behavior inside the overridden method. Fix: make methods called from constructors either private or final — or better, don't call any instance methods from constructors at all for initialization logic.",
+              "tag": "Advanced"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Constructor Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Challenge yourself with these practice questions. Attempt each independently before reading the answer — active recall is proven to be 2–3x more effective than passive reading."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output?\nclass A {\n    A() { System.out.println(\"A no-arg\"); }\n    A(int x) { System.out.println(\"A int: \" + x); }\n}\nclass B extends A {\n    B() { System.out.println(\"B no-arg\"); }\n    B(int x) { super(x); System.out.println(\"B int: \" + x); }\n}\npublic class Test {\n    public static void main(String[] args) {\n        new B();\n        System.out.println(\"---\");\n        new B(5);\n    }\n}",
+              "a": "Output:\nA no-arg\nB no-arg\n---\nA int: 5\nB int: 5\nReason: new B() — B() doesn't call super() explicitly, so Java inserts implicit super() → A no-arg runs, then B no-arg. new B(5) — B(int) calls super(5) explicitly → A int:5 runs, then B int:5. Constructor chain always runs parent before child.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Will this compile? What is the issue if any?\nclass Config {\n    String env;\n    int    port;\n    public Config(String env) { this.env = env; }\n}\nclass AppConfig extends Config {\n    String appName;\n    public AppConfig(String appName) {\n        this.appName = appName;\n    }\n}",
+              "a": "NO — compile error: 'there is no default constructor available in Config'. AppConfig's constructor does not call super() explicitly. Java inserts an implicit no-arg super() call. But Config has no no-arg constructor — only Config(String). Fix: add super(\"default\") or super(appName) as the first statement in AppConfig's constructor:\npublic AppConfig(String appName) {\n    super(\"production\"); // or pass a meaningful value\n    this.appName = appName;\n}",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Identify the bug and fix it:\nclass Counter {\n    int count;\n    public Counter(int count) {\n        count = count;\n    }\n    public int getCount() { return count; }\n}\nCounter c = new Counter(10);\nSystem.out.println(c.getCount()); // prints 0, not 10",
+              "a": "Bug: 'count = count' assigns the parameter to itself — the field this.count is never updated. Both sides resolve to the local parameter 'count', not the field.\nFix: use 'this.count = count;'\npublic Counter(int count) {\n    this.count = count; // 'this.count' = field; 'count' = parameter\n}\nNow c.getCount() returns 10 correctly.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. Write a class 'Circle' with: a private double radius, a no-arg constructor (radius = 1.0), a parameterized constructor (takes radius with validation: must be > 0), and a copy constructor. Include a getArea() method.",
+              "a": "public class Circle {\n    private double radius;\n\n    // No-arg — default radius\n    public Circle() {\n        this(1.0);\n    }\n\n    // Parameterized — with validation\n    public Circle(double radius) {\n        if (radius <= 0)\n            throw new IllegalArgumentException(\"Radius must be positive, got: \" + radius);\n        this.radius = radius;\n    }\n\n    // Copy constructor\n    public Circle(Circle other) {\n        this(other.radius); // Delegates to parameterized — reuses validation\n    }\n\n    public double getArea() { return Math.PI * radius * radius; }\n    public double getRadius() { return radius; }\n\n    @Override\n    public String toString() { return \"Circle(r=\" + radius + \")\"; }\n}\n// Usage:\nCircle c1 = new Circle();       // radius=1.0\nCircle c2 = new Circle(5.0);    // radius=5.0\nCircle c3 = new Circle(c2);     // radius=5.0 — independent copy\nSystem.out.println(c3.getArea()); // 78.53...",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. What is the output? Explain the this() chain.\nclass Pizza {\n    String size, crust, topping;\n    Pizza(String size) {\n        this(size, \"Thin\");\n        System.out.println(\"1-arg done\");\n    }\n    Pizza(String size, String crust) {\n        this(size, crust, \"Cheese\");\n        System.out.println(\"2-arg done\");\n    }\n    Pizza(String size, String crust, String topping) {\n        this.size    = size;\n        this.crust   = crust;\n        this.topping = topping;\n        System.out.println(\"3-arg done: \" + size + \", \" + crust + \", \" + topping);\n    }\n}\nnew Pizza(\"Large\");",
+              "a": "Output:\n3-arg done: Large, Thin, Cheese\n2-arg done\n1-arg done\nReason: Pizza(\"Large\") calls this(\"Large\",\"Thin\") — pauses. Pizza(size,crust) calls this(size,crust,\"Cheese\") — pauses. Pizza(size,crust,topping) runs fully → prints '3-arg done'. Returns to Pizza(size,crust) → prints '2-arg done'. Returns to Pizza(size) → prints '1-arg done'. Key: this() delegates BEFORE executing remaining code — println runs AFTER the chain returns.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. Implement the Singleton pattern for a Logger class with: a private static instance, a private constructor that sets a log file name, a public static getInstance() method, and a public log(String message) method.",
+              "a": "public class Logger {\n    private static Logger instance;\n    private final String logFileName;\n\n    private Logger() {\n        this.logFileName = \"app_\" + System.currentTimeMillis() + \".log\";\n        System.out.println(\"Logger initialized: \" + logFileName);\n    }\n\n    public static Logger getInstance() {\n        if (instance == null) {\n            instance = new Logger();\n        }\n        return instance;\n    }\n\n    public void log(String message) {\n        System.out.println(\"[LOG → \" + logFileName + \"] \" + message);\n    }\n}\n// Usage:\nLogger l1 = Logger.getInstance();\nLogger l2 = Logger.getInstance();\nSystem.out.println(l1 == l2); // true — same object\nl1.log(\"Application started\");\nl2.log(\"User logged in\"); // Same logger instance",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What is the output? Why?\nabstract class Shape {\n    String type;\n    Shape() {\n        type = getType(); // Calls overridden method!\n        System.out.println(\"Shape type: \" + type);\n    }\n    abstract String getType();\n}\nclass Triangle extends Shape {\n    int sides = 3;\n    Triangle() {\n        super();\n        System.out.println(\"Triangle sides: \" + sides);\n    }\n    @Override\n    String getType() { return \"Triangle with \" + sides + \" sides\"; }\n}\nnew Triangle();",
+              "a": "Output:\nShape type: Triangle with 0 sides\nTriangle sides: 3\nExplanation: new Triangle() → Triangle() calls super() → Shape() runs. Inside Shape(), getType() is called — this is overridden by Triangle.getType(). The overriding method runs, but at this point Triangle's field 'sides' has NOT been initialized yet (field initializers run after super() returns). So sides is 0 (default int value), giving 'Triangle with 0 sides'. After super() returns, 'sides = 3' runs, then Triangle() body prints 'Triangle sides: 3'. This is the danger of calling overridable methods from constructors.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Create a class 'ImmutablePoint' representing a 2D point that: cannot have its x, y changed after creation, supports creation from Cartesian (x, y) or Polar (radius, angle in radians) coordinates using private constructors and static factory methods, and implements toString().",
+              "a": "public final class ImmutablePoint {\n    private final double x;\n    private final double y;\n\n    // Private constructor — direct Cartesian\n    private ImmutablePoint(double x, double y) {\n        this.x = x;\n        this.y = y;\n    }\n\n    // Static factory — Cartesian\n    public static ImmutablePoint fromCartesian(double x, double y) {\n        return new ImmutablePoint(x, y);\n    }\n\n    // Static factory — Polar\n    public static ImmutablePoint fromPolar(double radius, double angleRadians) {\n        return new ImmutablePoint(\n            radius * Math.cos(angleRadians),\n            radius * Math.sin(angleRadians)\n        );\n    }\n\n    public double getX() { return x; }\n    public double getY() { return y; }\n\n    public double distanceTo(ImmutablePoint other) {\n        return Math.sqrt(Math.pow(x - other.x, 2) + Math.pow(y - other.y, 2));\n    }\n\n    @Override\n    public String toString() {\n        return String.format(\"(%.2f, %.2f)\", x, y);\n    }\n}\n// Usage:\nImmutablePoint p1 = ImmutablePoint.fromCartesian(3, 4);\nImmutablePoint p2 = ImmutablePoint.fromPolar(5, Math.PI / 4);\nSystem.out.println(p1); // (3.00, 4.00)\nSystem.out.println(p2); // (3.54, 3.54)\nSystem.out.println(p1.distanceTo(p2)); // ~0.65",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Constructors: The Birth Certificate of Every Java Object",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Constructors are the <strong>entry point of every object's life</strong>. They establish the initial state, enforce invariants, and determine the valid ways an object can be created. A well-designed constructor ensures that an object is <strong>always valid from the moment it exists</strong> — no partial initialization, no null fields that shouldn't be null, no negative values where only positive are meaningful."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The difference between junior and senior Java code is visible in constructor design. Junior code has constructors that do too much (database calls, file I/O), too little (no validation, public setters for everything), or too many variations (duplicated logic instead of this() delegation). Senior code has <strong>lean, validating constructors</strong> that delegate through this() chains, use the Builder pattern for complex objects, private constructors for Singletons and utilities, and copy constructors for safe object duplication."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Constructor Type",             "Purpose",                                              "When to Use"],
+          "rows": [
+            ["Default (auto-generated)",              "No-arg, empty body — allows new ClassName()",          "When no initialization logic is needed"],
+            ["No-arg (explicit)",                     "Sets sensible defaults; required by frameworks",        "Frameworks (Hibernate, Jackson); default config"],
+            ["Parameterized",                         "Initializes object with provided values + validation",  "Primary way to create well-defined domain objects"],
+            ["Copy constructor",                      "Creates independent copy (deep copy) of an object",    "When you need isolated copies of mutable objects"],
+            ["Constructor overloading",               "Multiple creation paths — shorter ones delegate",       "Optional parameters; simulating default args"],
+            ["this() call",                           "Delegates to another constructor in same class",        "Eliminate duplicate init code; delegation pattern"],
+            ["super() call",                          "Calls parent class constructor",                        "Every subclass must initialize parent's fields"],
+            ["Private constructor",                   "Prevent external instantiation",                        "Singleton, utility classes, Factory Method Pattern"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Method Parameters</strong> — where you'll explore how data flows into methods (and constructors) through parameters, pass-by-value semantics for primitives and objects, varargs, and parameter design best practices. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Constructor",
+    "items": [
+      {
+        "q": "What is a constructor in Java?",
+        "a": "A constructor is a special block of code with the same name as the class and no return type, automatically called when an object is created with 'new'. Its purpose is to initialize the object — setting field values and ensuring a valid initial state. Constructors can be overloaded (multiple constructors with different parameter lists) and can call each other via this() or call the parent constructor via super()."
+      },
+      {
+        "q": "What is the difference between a default constructor and a no-arg constructor?",
+        "a": "A default constructor is the no-arg constructor automatically generated by the compiler when the class defines NO constructors. It has an empty body with only an implicit super() call. A no-arg constructor is explicitly written by the programmer with no parameters but may contain initialization logic. Once you define any constructor, the compiler no longer generates the default — you must write the no-arg constructor yourself if needed."
+      },
+      {
+        "q": "What is constructor chaining in Java?",
+        "a": "Constructor chaining is having one constructor call another — either in the same class via this() or in the parent class via super(). This() and super() must be the first statement in a constructor. Chaining allows all overloaded constructors to delegate to one 'master' constructor, avoiding duplicate initialization code. Constructor execution always flows from the topmost parent (Object) down to the concrete class."
+      },
+      {
+        "q": "Can a constructor be private in Java?",
+        "a": "Yes. A private constructor prevents external code from using 'new' to create instances. This is used for the Singleton Pattern (only one instance, managed internally), Utility Classes (all-static methods, no instance needed), and the Factory Method Pattern (object creation through named static methods instead of direct construction). The class can still create instances of itself from within its own code."
+      },
+      {
+        "q": "What is the difference between a constructor and a method in Java?",
+        "a": "Constructor: same name as class, no return type, called automatically by 'new', not inherited, cannot be static/abstract/final. Method: any name, must declare a return type (or void), called explicitly, inherited by subclasses, can be static/abstract/final/overridden. Both can be overloaded. The key difference: constructors initialize objects; methods define their ongoing behavior."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Abstract/Concrete Class",  "path": "/java/java-abstract-concrete-class" },
+    "next": { "label": "Java Super()/This() Methods →",   "path": "/java/java-super-this-method" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Name rule",              "dd": "Must match class name exactly" },
+      { "dt": "Return type",            "dd": "None — not even void" },
+      { "dt": "Auto-generated?",        "dd": "Yes — only when NO constructor is defined" },
+      { "dt": "this() / super()",       "dd": "Must be the FIRST statement" },
+      { "dt": "Inherited?",             "dd": "❌ No — constructors are NOT inherited" },
+      { "dt": "Overloadable?",          "dd": "✅ Yes — constructor overloading is common" }
+    ],
+    "relatedArticles": [
+      { "label": "Java Classes & Objects",   "path": "/java/java-classes" },
+      { "label": "Java Method Parameters",   "path": "/java/java-method-parameters" },
+      { "label": "Java Inheritance",         "path": "/java/java-inheritance" },
+      { "label": "Java Method Overloading",  "path": "/java/java-method-overloading" },
+      { "label": "Java Abstract Class",      "path": "/java/java-abstract-class" },
+      { "label": "Java Interface",           "path": "/java/java-interface" },
+      { "label": "Java OOPs Concepts",       "path": "/java/java-oops" },
+      { "label": "Java Access Modifiers",    "path": "/java/java-access-modifiers" }
+    ],
+    "tags": ["Java Constructor", "Default Constructor", "No-Arg Constructor", "Parameterized Constructor", "Copy Constructor", "Constructor Overloading", "Constructor Chaining", "this() super()", "Private Constructor", "Singleton Pattern", "Factory Method", "Builder Pattern", "Java Object Initialization", "Java OOP", "Java Best Practices", "Java 21"]
+  }
+}

@@ -1,0 +1,1811 @@
+{
+  "meta": {
+    "title": "Java Encapsulation — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Encapsulation with private fields, getters and setters, data hiding, access modifiers, immutable classes, defensive copying, real-world examples, best practices, common mistakes, and interview questions. Covers all encapsulation patterns in Java. Updated March 2026.",
+    "keywords": "java encapsulation, java encapsulation example, java private fields, java getters and setters, java data hiding, java access modifiers encapsulation, java encapsulation syntax, java OOP encapsulation, java immutable class, java encapsulation best practices, java encapsulation interview questions, java encapsulation vs abstraction, java bean, java defensive copy, java encapsulation real world example, java 21 encapsulation, java record encapsulation",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-encapsulation",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Encapsulation — Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java Encapsulation — private fields, getters/setters, data hiding, access modifiers, immutable classes, defensive copying, Java Records, real-world examples, pitfalls, and interview questions.",
+      "url": "https://www.techsustainify.com/java/java-encapsulation",
+      "image": "https://www.techsustainify.com/images/java-encapsulation-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Encapsulation Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-03-05T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Encapsulation",
+          "Java Private Fields",
+          "Java Getters Setters",
+          "Java Data Hiding",
+          "Java Access Modifiers",
+          "Java Immutable Class",
+          "Java Defensive Copy",
+          "Java Records",
+          "Java OOP",
+          "Java 21"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Encapsulation — Syntax, Examples & Best Practices 2026",
+      "description": "Complete guide to Java Encapsulation — private fields, getters/setters, data hiding, immutable classes, defensive copying, Java Records, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-encapsulation-og.png",
+      "imageAlt": "Java Encapsulation Guide 2026 - Tech Sustainify",
+      "readingTime": "24 minutes",
+      "level": "Intermediate",
+      "label1": "Reading Time",
+      "data1": "24 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Intermediate"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Encapsulation — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering all Java Encapsulation concepts — private fields, getters and setters, data hiding, access modifiers, immutable classes, defensive copying, Java Records (Java 16+), real-world examples, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-03-05",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Intermediate",
+        "wordCount": 6600,
+        "timeRequired": "PT24M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Encapsulation" },
+          { "@type": "Thing", "name": "Java Data Hiding" },
+          { "@type": "Thing", "name": "Java Getters and Setters" },
+          { "@type": "Thing", "name": "Java Immutable Classes" }
+        ],
+        "keywords": "java encapsulation, private fields, getters setters, data hiding, access modifiers, immutable class, defensive copy, java records, OOP encapsulation"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Encapsulation" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is encapsulation in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Encapsulation in Java is the OOP principle of bundling data (fields) and the methods that operate on that data into a single unit (class), while hiding the internal state from direct outside access. It is achieved by declaring fields as private and providing public getter and setter methods to read and modify them. Encapsulation protects an object's integrity by ensuring all data modifications go through controlled, validated access points. It answers the question 'HOW is the data stored and protected?' as opposed to abstraction which answers 'WHAT does this do?'."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do we use private fields in encapsulation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Private fields prevent any outside code from directly reading or modifying an object's internal state. This is critical because: (1) Validation — the setter can check that a value is valid before accepting it (e.g., age cannot be negative). (2) Control — you can make a field read-only by providing only a getter. (3) Flexibility — you can change the internal representation later without breaking any external code. (4) Consistency — invalid states (like a bank account with negative balance) can be prevented at the point of entry. Public fields bypass all of this — anyone can set any value, valid or not."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between encapsulation and abstraction?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Encapsulation is about DATA HIDING — protecting internal state using private fields and controlled access via getters/setters. Abstraction is about BEHAVIOUR HIDING — hiding implementation complexity and exposing only essential behaviour through abstract classes and interfaces. Analogy: a capsule medicine — the outer shell (encapsulation) hides the medicine powder inside and controls how it's released; the medicine's effect on your body is the abstraction (you know it cures the disease but not the molecular mechanism). In code: encapsulation = private fields + getters/setters; abstraction = abstract class/interface."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an immutable class in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An immutable class is a class whose instances cannot be modified after creation. Every field is final and private, there are no setters, and all mutable fields are defensively copied in the constructor and any getters. Java's String, Integer, LocalDate, and BigDecimal are all immutable. To create an immutable class: (1) declare the class final, (2) make all fields private final, (3) initialize all fields via constructor only, (4) provide no setters, (5) return defensive copies of any mutable field objects in getters. Immutable objects are inherently thread-safe and free of aliasing bugs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are Java Records and how do they relate to encapsulation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Java Records (introduced in Java 16 as a standard feature) are a concise way to create immutable data-carrier classes with full encapsulation built in. A record automatically generates: private final fields, a canonical constructor, public accessor methods (no 'get' prefix), equals(), hashCode(), and toString(). Syntax: record Point(int x, int y) {} — this single line replaces ~50 lines of traditional encapsulation boilerplate. Records enforce immutability by design — all fields are final and there are no setters. They are ideal for DTOs, value objects, and data transfer between layers."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Intermediate",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-03-05",
+      "dateModified": "2026-03-20",
+      "readingTime": "24 minutes",
+      "wordCount": 6600,
+      "difficulty": "Intermediate",
+      "chapter": 19,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-encapsulation",       "title": "What is Encapsulation in Java?" },
+        { "id": "data-hiding",                 "title": "Data Hiding — private Fields" },
+        { "id": "getters-setters",             "title": "Getters & Setters" },
+        { "id": "access-modifiers-role",       "title": "Role of Access Modifiers" },
+        { "id": "validation-in-setters",       "title": "Validation Inside Setters" },
+        { "id": "read-only-write-only",        "title": "Read-Only & Write-Only Fields" },
+        { "id": "immutable-classes",           "title": "Immutable Classes" },
+        { "id": "defensive-copying",           "title": "Defensive Copying" },
+        { "id": "java-records",                "title": "Java Records — Modern Encapsulation" },
+        { "id": "encapsulation-vs-abstraction","title": "Encapsulation vs Abstraction" },
+        { "id": "common-mistakes",             "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",               "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",         "title": "Real-World Production Code Examples" },
+        { "id": "encapsulation-flowchart",     "title": "Encapsulation Flowchart" },
+        { "id": "interview-questions",         "title": "Interview Questions" },
+        { "id": "practice-questions",          "title": "Practice Questions" },
+        { "id": "conclusion-heading",          "title": "Conclusion" },
+        { "id": "faq-heading",                 "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-encapsulation" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-encapsulation" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-encapsulation" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-abstraction",
+      "next": "https://www.techsustainify.com/java/java-inheritance"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-oop",
+      "contentTopic": "java-encapsulation",
+      "chapterNumber": 19,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "intermediate",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Encapsulation" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Encapsulation — Syntax, Types, Examples & Best Practices",
+    "subtitle": "Everything you need to know about Java Encapsulation — private fields, getters and setters, data hiding, access modifiers, validation in setters, read-only and write-only fields, immutable classes, defensive copying, Java Records (Java 16+), and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "24 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Intermediate" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "19 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-encapsulation",
+      "title": "What is Encapsulation in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Encapsulation</strong> is one of the four fundamental pillars of Object-Oriented Programming, alongside Abstraction, Inheritance, and Polymorphism. It is the principle of <strong>bundling data (fields) and the methods that operate on that data into a single unit</strong> (a class), while <strong>hiding the internal state</strong> from direct outside access. The word comes from the Latin <em>capsula</em> — a small container — just as a medicine capsule contains and protects its contents from the outside environment."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In real life, encapsulation is everywhere. A <strong>medicine capsule</strong> hides the powder inside and controls how it is released into the body. An <strong>ATM machine</strong> hides its cash mechanism — you interact only through the PIN pad and slot, never touching the internal hardware directly. A <strong>TV remote</strong> encapsulates the circuit board — you press buttons, and the internal signal encoding is hidden. In all these cases, the internal details are protected; you interact only through a defined, controlled interface."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In Java, encapsulation is achieved by: (1) declaring all fields as <code>private</code> — making them inaccessible from outside the class, and (2) providing <code>public</code> getter methods to <strong>read</strong> those fields and <code>public</code> setter methods to <strong>modify</strong> them — with validation logic inside the setters to prevent invalid data from ever entering the object."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java Encapsulation at a Glance",
+          "text": "Core encapsulation mechanism: (1) private fields — data cannot be accessed or changed directly from outside. (2) public getter — controlled read access: getFieldName(). (3) public setter — controlled write access with validation: setFieldName(value). (4) Read-only field — getter only, no setter. (5) Write-only field — setter only, no getter (rare). (6) Immutable class — all fields final, no setters at all — object state never changes after construction. (7) Java Records (Java 16+) — compiler auto-generates all encapsulation boilerplate."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "data-hiding",
+      "title": "Data Hiding — The Foundation of Encapsulation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Data hiding</strong> is the core mechanism of encapsulation — it means making fields <code>private</code> so that no code outside the class can directly read or modify them. Without data hiding, any code anywhere in the project can set a field to an invalid value, creating bugs that are nearly impossible to trace. With data hiding, all access goes through one controlled point — the getter or setter — where you can validate, log, transform, or react to changes."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🔒",
+              "title": "Without Data Hiding — Dangerous",
+              "text": "public int age;\n// Anywhere in the codebase:\nstudent.age = -5;   // Invalid — no way to prevent\nstudent.age = 999;  // Invalid — no way to prevent\nstudent.age = 0;    // Silently wrong — no validation\n\nWith public fields, broken data enters the object silently. Debugging where it came from is extremely hard — any of thousands of lines could have set it."
+            },
+            {
+              "icon": "🔐",
+              "title": "With Data Hiding — Safe",
+              "text": "private int age;\npublic void setAge(int age) {\n    if (age < 0 || age > 150)\n        throw new IllegalArgumentException(\"Invalid age\");\n    this.age = age;\n}\n\nNow EVERY write goes through setAge(). Invalid values are caught at the entry point with a clear error. You always know where age gets set — in one method."
+            },
+            {
+              "icon": "🎯",
+              "title": "Benefits of Data Hiding",
+              "text": "1. Prevents invalid state — validation at the entry point.\n2. Single responsibility — all write logic in one place.\n3. Easy debugging — if age is wrong, check setAge().\n4. Change-proof — change internal storage without breaking callers.\n5. Read-only fields — simply omit the setter.\n6. Thread safety foundation — easier to synchronize one method."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "DataHiding.java — Public vs Private Fields",
+          "lines": [
+            "// ❌ BAD: No encapsulation — public fields, no protection",
+            "class StudentBad {",
+            "    public String name;",
+            "    public int    age;",
+            "    public double gpa;",
+            "    public String email;",
+            "}",
+            "",
+            "// Anywhere in code — invalid data enters silently:",
+            "// StudentBad s = new StudentBad();",
+            "// s.age   = -5;          // Invalid — accepted silently",
+            "// s.gpa   = 15.0;        // GPA > 10 — invalid but accepted",
+            "// s.email = \"notanemail\"; // No @ sign — invalid but accepted",
+            "// s.name  = null;        // Null name — causes NPE later, hard to trace",
+            "",
+            "// ✅ GOOD: Full encapsulation — private fields, public controlled access",
+            "class Student {",
+            "",
+            "    private String name;",
+            "    private int    age;",
+            "    private double gpa;",
+            "    private String email;",
+            "",
+            "    // Constructor uses setters — validation runs at creation too",
+            "    public Student(String name, int age, double gpa, String email) {",
+            "        setName(name);",
+            "        setAge(age);",
+            "        setGpa(gpa);",
+            "        setEmail(email);",
+            "    }",
+            "",
+            "    // ── Getters ───────────────────────────────────────────────────",
+            "    public String getName()  { return name; }",
+            "    public int    getAge()   { return age; }",
+            "    public double getGpa()   { return gpa; }",
+            "    public String getEmail() { return email; }",
+            "",
+            "    // ── Setters with validation ───────────────────────────────────",
+            "    public void setName(String name) {",
+            "        if (name == null || name.isBlank())",
+            "            throw new IllegalArgumentException(\"Name cannot be blank\");",
+            "        this.name = name.trim();",
+            "    }",
+            "",
+            "    public void setAge(int age) {",
+            "        if (age < 5 || age > 100)",
+            "            throw new IllegalArgumentException(\"Age must be between 5 and 100, got: \" + age);",
+            "        this.age = age;",
+            "    }",
+            "",
+            "    public void setGpa(double gpa) {",
+            "        if (gpa < 0.0 || gpa > 10.0)",
+            "            throw new IllegalArgumentException(\"GPA must be between 0.0 and 10.0\");",
+            "        this.gpa = gpa;",
+            "    }",
+            "",
+            "    public void setEmail(String email) {",
+            "        if (email == null || !email.contains(\"@\") || !email.contains(\".\"))",
+            "            throw new IllegalArgumentException(\"Invalid email: \" + email);",
+            "        this.email = email.toLowerCase().trim();",
+            "    }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return \"Student{name='\" + name + \"', age=\" + age",
+            "             + \", gpa=\" + gpa + \", email='\" + email + \"'}\";",
+            "    }",
+            "}",
+            "",
+            "class DataHidingDemo {",
+            "    public static void main(String[] args) {",
+            "        Student s = new Student(\"Anjali Verma\", 20, 8.75, \"anjali@example.com\");",
+            "        System.out.println(s);",
+            "",
+            "        s.setGpa(9.1);",
+            "        System.out.println(\"Updated GPA: \" + s.getGpa());",
+            "",
+            "        // s.setAge(-5); // ❌ Throws IllegalArgumentException — caught immediately",
+            "        // s.age = -5;   // ❌ Compile error — field is private",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "getters-setters",
+      "title": "Getters & Setters — Controlled Access to Private Fields",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Getters</strong> and <strong>setters</strong> are the access points of an encapsulated class. A <strong>getter</strong> (accessor method) reads and returns the value of a private field. A <strong>setter</strong> (mutator method) accepts a new value, optionally validates it, and assigns it to the private field. Together, they give the class <strong>full control</strong> over how its data is read and written — now and in the future — without exposing the underlying field."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "GettersSetters.java — Naming, Patterns & Advanced Usage",
+          "lines": [
+            "import java.time.LocalDate;",
+            "",
+            "public class Employee {",
+            "",
+            "    private String    name;",
+            "    private String    employeeId;",
+            "    private double    salary;",
+            "    private String    department;",
+            "    private LocalDate joiningDate;",
+            "    private boolean   active;",
+            "",
+            "    public Employee(String name, String employeeId, double salary,",
+            "                    String department, LocalDate joiningDate) {",
+            "        setName(name);",
+            "        this.employeeId  = employeeId;   // ID is set once — no setter",
+            "        setSalary(salary);",
+            "        setDepartment(department);",
+            "        this.joiningDate = joiningDate;",
+            "        this.active      = true;         // default value",
+            "    }",
+            "",
+            "    // ── Standard Getters ──────────────────────────────────────────",
+            "    public String    getName()        { return name; }",
+            "    public String    getEmployeeId()  { return employeeId; }   // read-only — no setter",
+            "    public double    getSalary()      { return salary; }",
+            "    public String    getDepartment()  { return department; }",
+            "    public LocalDate getJoiningDate() { return joiningDate; }",
+            "",
+            "    // Boolean getter uses 'is' prefix — NOT 'get'",
+            "    public boolean isActive() { return active; }",
+            "",
+            "    // ── Standard Setters with validation ──────────────────────────",
+            "    public void setName(String name) {",
+            "        if (name == null || name.isBlank())",
+            "            throw new IllegalArgumentException(\"Employee name cannot be blank\");",
+            "        this.name = name.trim();",
+            "    }",
+            "",
+            "    public void setSalary(double salary) {",
+            "        if (salary < 0)",
+            "            throw new IllegalArgumentException(\"Salary cannot be negative: \" + salary);",
+            "        this.salary = salary;",
+            "    }",
+            "",
+            "    public void setDepartment(String department) {",
+            "        if (department == null || department.isBlank())",
+            "            throw new IllegalArgumentException(\"Department cannot be blank\");",
+            "        this.department = department.trim();",
+            "    }",
+            "",
+            "    public void setActive(boolean active) { this.active = active; }",
+            "",
+            "    // ── Derived / Computed Getter — no backing field ──────────────",
+            "    public int getYearsOfService() {",
+            "        return LocalDate.now().getYear() - joiningDate.getYear();",
+            "    }",
+            "",
+            "    // ── Conditional setter — applies raise only if eligible ────────",
+            "    public void applyRaise(double percentage) {",
+            "        if (percentage <= 0 || percentage > 50)",
+            "            throw new IllegalArgumentException(\"Raise % must be between 0 and 50\");",
+            "        this.salary = this.salary * (1 + percentage / 100);",
+            "    }",
+            "",
+            "    // ── Masked getter — sensitive data partially hidden ────────────",
+            "    public String getMaskedId() {",
+            "        return \"EMP-****\" + employeeId.substring(employeeId.length() - 3);",
+            "    }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return \"Employee{name='\" + name + \"', id='\" + getMaskedId()",
+            "             + \"', salary=\" + salary + \", dept='\" + department + \"', active=\" + active + \"}\";",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "Getter (Accessor)", "Setter (Mutator)"],
+          "rows": [
+            ["Purpose",           "Read a private field's value",                           "Write / update a private field's value"],
+            ["Naming convention", "getFieldName() / isFieldName() for boolean",             "setFieldName(value)"],
+            ["Return type",       "The field's type",                                       "void (usually)"],
+            ["Parameters",        "None",                                                    "One parameter — the new value"],
+            ["Validation",        "Not common (read-only)",                                 "Common and encouraged — reject bad values"],
+            ["Optional?",         "Omit getter to make field write-only (rare)",            "Omit setter to make field read-only"],
+            ["Side effects",      "Can compute derived values (no backing field needed)",   "Can trigger events, logging, caching"],
+            ["IDE generation",    "Alt+Insert → Getter in IntelliJ / Eclipse",              "Alt+Insert → Setter in IntelliJ / Eclipse"]
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Boolean Getters Use 'is' Prefix, Not 'get'",
+          "text": "Java naming convention and the JavaBean specification require boolean getters to use the 'is' prefix: isActive(), isLoggedIn(), isVerified(), isPremium(). NOT getActive() or getIsLoggedIn(). This convention is respected by all Java frameworks — Spring, Hibernate, Jackson (JSON serialization), and Lombok all look for the 'is' prefix when processing boolean fields. Using 'get' for booleans causes serialization bugs and fails framework auto-discovery."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "access-modifiers-role",
+      "title": "Role of Access Modifiers in Encapsulation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Access modifiers</strong> are the language-level enforcers of encapsulation. They control the visibility of classes, fields, methods, and constructors across different scopes — the same class, the same package, subclasses, and the entire codebase. Choosing the right access modifier is not just good style — it is the first line of defence against unintended use of your class internals."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Modifier", "Same Class", "Same Package", "Subclass (other pkg)", "Everywhere"],
+          "rows": [
+            ["private",   "✅", "❌", "❌", "❌"],
+            ["default",   "✅", "✅", "❌", "❌"],
+            ["protected", "✅", "✅", "✅", "❌"],
+            ["public",    "✅", "✅", "✅", "✅"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "AccessModifiersEncapsulation.java",
+          "lines": [
+            "package com.techsustainify.bank;",
+            "",
+            "public class BankAccount {",
+            "",
+            "    // ── private: only this class ──────────────────────────────────",
+            "    private String accountNumber;",
+            "    private double balance;",
+            "    private String pin;             // never exposed outside — not even a getter",
+            "",
+            "    // ── private static: shared but internal ───────────────────────",
+            "    private static final double MIN_BALANCE     = 500.0;",
+            "    private static final int    MAX_DAILY_LIMIT = 50000;",
+            "",
+            "    // ── protected: accessible in subclasses ───────────────────────",
+            "    protected String holderName;",
+            "    protected String accountType;",
+            "",
+            "    // ── public: part of the class's API ───────────────────────────",
+            "    public BankAccount(String accountNumber, String holderName,",
+            "                       String accountType, double initialDeposit, String pin) {",
+            "        this.accountNumber = accountNumber;",
+            "        this.holderName    = holderName;",
+            "        this.accountType   = accountType;",
+            "        this.balance       = initialDeposit;",
+            "        this.pin           = hashPin(pin);",
+            "    }",
+            "",
+            "    // ── public API — what the outside world sees ──────────────────",
+            "    public double getBalance()       { return balance; }",
+            "    public String getAccountNumber() { return \"XXXX\" + accountNumber.substring(8); }",
+            "    public String getHolderName()    { return holderName; }",
+            "",
+            "    public boolean deposit(double amount) {",
+            "        if (amount <= 0) return false;",
+            "        balance += amount;",
+            "        return true;",
+            "    }",
+            "",
+            "    public boolean withdraw(double amount, String enteredPin) {",
+            "        if (!verifyPin(enteredPin))      return false;",
+            "        if (amount <= 0)                 return false;",
+            "        if (amount > MAX_DAILY_LIMIT)    return false;",
+            "        if (balance - amount < MIN_BALANCE) return false;",
+            "        balance -= amount;",
+            "        return true;",
+            "    }",
+            "",
+            "    // ── private helpers — internal implementation, never exposed ──",
+            "    private String hashPin(String rawPin) {",
+            "        return Integer.toHexString(rawPin.hashCode()); // simplified",
+            "    }",
+            "",
+            "    private boolean verifyPin(String enteredPin) {",
+            "        return hashPin(enteredPin).equals(this.pin);",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Principle of Minimum Exposure",
+          "text": "Always start with the most restrictive access level and open up only when you have a clear reason: private → default → protected → public. Every unnecessary public or protected member increases the surface area of your API, making it harder to change later. A class that exposes 5 public methods can have its internals freely refactored. A class that exposes 50 public fields has its hands tied — any change risks breaking external code. Professional codebases follow this rule rigorously, and tools like SonarQube flag overly permissive access as code smell."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "validation-in-setters",
+      "title": "Validation Inside Setters — The First Line of Defence",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The real power of encapsulation is not just hiding fields — it is the ability to put <strong>validation logic inside setters</strong>. Every write to a private field goes through the setter, giving you one central place to enforce business rules, domain constraints, and data integrity. This prevents <em>corrupt object state</em> — a situation where an object holds internally inconsistent data that causes mysterious bugs far from where the bad data was introduced."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ValidationInSetters.java — Product Catalogue",
+          "lines": [
+            "import java.util.regex.Pattern;",
+            "",
+            "public class Product {",
+            "",
+            "    private static final Pattern SKU_PATTERN =",
+            "        Pattern.compile(\"^[A-Z]{3}-\\\\d{4}-[A-Z0-9]{2}$\"); // e.g. LAP-1024-AB",
+            "",
+            "    private String sku;",
+            "    private String name;",
+            "    private double mrp;",
+            "    private double sellingPrice;",
+            "    private int    stockQuantity;",
+            "    private String category;",
+            "",
+            "    public Product(String sku, String name, double mrp,",
+            "                   double sellingPrice, int stockQuantity, String category) {",
+            "        setSku(sku);",
+            "        setName(name);",
+            "        setMrp(mrp);",
+            "        setSellingPrice(sellingPrice);  // validates against MRP too",
+            "        setStockQuantity(stockQuantity);",
+            "        setCategory(category);",
+            "    }",
+            "",
+            "    // ── Setters with domain-specific validation ───────────────────",
+            "",
+            "    public void setSku(String sku) {",
+            "        if (sku == null || !SKU_PATTERN.matcher(sku).matches())",
+            "            throw new IllegalArgumentException(",
+            "                \"Invalid SKU format. Expected: XXX-0000-XX, got: \" + sku);",
+            "        this.sku = sku.toUpperCase();",
+            "    }",
+            "",
+            "    public void setName(String name) {",
+            "        if (name == null || name.isBlank())",
+            "            throw new IllegalArgumentException(\"Product name cannot be blank\");",
+            "        if (name.length() > 100)",
+            "            throw new IllegalArgumentException(\"Product name too long (max 100 chars)\");",
+            "        this.name = name.trim();",
+            "    }",
+            "",
+            "    public void setMrp(double mrp) {",
+            "        if (mrp <= 0)",
+            "            throw new IllegalArgumentException(\"MRP must be positive, got: \" + mrp);",
+            "        this.mrp = mrp;",
+            "        // If selling price already set, re-validate it",
+            "        if (this.sellingPrice > 0 && this.sellingPrice > mrp)",
+            "            throw new IllegalStateException(\"Selling price cannot exceed new MRP\");",
+            "    }",
+            "",
+            "    public void setSellingPrice(double sellingPrice) {",
+            "        if (sellingPrice <= 0)",
+            "            throw new IllegalArgumentException(\"Selling price must be positive\");",
+            "        if (mrp > 0 && sellingPrice > mrp)",
+            "            throw new IllegalArgumentException(",
+            "                \"Selling price (\" + sellingPrice + \") cannot exceed MRP (\" + mrp + \")\");",
+            "        this.sellingPrice = sellingPrice;",
+            "    }",
+            "",
+            "    public void setStockQuantity(int qty) {",
+            "        if (qty < 0)",
+            "            throw new IllegalArgumentException(\"Stock quantity cannot be negative\");",
+            "        this.stockQuantity = qty;",
+            "    }",
+            "",
+            "    public void setCategory(String category) {",
+            "        if (category == null || category.isBlank())",
+            "            throw new IllegalArgumentException(\"Category cannot be blank\");",
+            "        this.category = category.trim();",
+            "    }",
+            "",
+            "    // ── Getters ───────────────────────────────────────────────────",
+            "    public String getSku()           { return sku; }",
+            "    public String getName()          { return name; }",
+            "    public double getMrp()           { return mrp; }",
+            "    public double getSellingPrice()  { return sellingPrice; }",
+            "    public int    getStockQuantity() { return stockQuantity; }",
+            "    public String getCategory()      { return category; }",
+            "",
+            "    // ── Derived getter ────────────────────────────────────────────",
+            "    public double getDiscountPercent() {",
+            "        return ((mrp - sellingPrice) / mrp) * 100;",
+            "    }",
+            "",
+            "    public boolean isInStock() { return stockQuantity > 0; }",
+            "",
+            "    @Override",
+            "    public String toString() {",
+            "        return String.format(\"Product{sku='%s', name='%s', mrp=%.2f, price=%.2f,\" +",
+            "               \" discount=%.1f%%, stock=%d, category='%s'}\",",
+            "               sku, name, mrp, sellingPrice, getDiscountPercent(), stockQuantity, category);",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 Call Setters from Constructor — Never Duplicate Validation",
+          "text": "Always call your own setters inside the constructor (as shown above) instead of assigning fields directly. This ensures validation runs at object creation time — not just when setters are called later. If you write 'this.name = name' in the constructor, you bypass the null/blank check in setName(). If someone creates a Product with a blank name, the object will be in an invalid state from birth. One validation method, called everywhere — constructor and setter — is always correct."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "read-only-write-only",
+      "title": "Read-Only & Write-Only Fields",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Encapsulation gives fine-grained control over field access. By selectively providing only a getter or only a setter, you create <strong>read-only</strong> or <strong>write-only</strong> fields — enforcing design intent directly in the type system."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ReadOnlyWriteOnly.java",
+          "lines": [
+            "import java.time.LocalDateTime;",
+            "import java.util.UUID;",
+            "",
+            "public class Order {",
+            "",
+            "    // ── Read-only fields — set once, never changed ────────────────",
+            "    private final String        orderId;      // auto-generated — no setter",
+            "    private final LocalDateTime createdAt;    // set at creation — no setter",
+            "    private final String        customerId;   // owner — no setter",
+            "",
+            "    // ── Mutable fields — getter + setter ──────────────────────────",
+            "    private String deliveryAddress;",
+            "    private String status;",
+            "",
+            "    // ── Write-only field — stored but never directly exposed ───────",
+            "    private String internalNotes;   // only set by support team, never returned",
+            "",
+            "    public Order(String customerId, String deliveryAddress) {",
+            "        this.orderId         = UUID.randomUUID().toString();  // generated internally",
+            "        this.createdAt       = LocalDateTime.now();            // timestamped internally",
+            "        this.customerId      = customerId;",
+            "        this.deliveryAddress = deliveryAddress;",
+            "        this.status          = \"PENDING\";",
+            "    }",
+            "",
+            "    // ── Read-only getters (no corresponding setters) ──────────────",
+            "    public String        getOrderId()    { return orderId; }",
+            "    public LocalDateTime getCreatedAt()  { return createdAt; }",
+            "    public String        getCustomerId() { return customerId; }",
+            "",
+            "    // ── Normal getter + setter ────────────────────────────────────",
+            "    public String getDeliveryAddress() { return deliveryAddress; }",
+            "    public void setDeliveryAddress(String address) {",
+            "        if (\"DELIVERED\".equals(status))",
+            "            throw new IllegalStateException(\"Cannot change address after delivery\");",
+            "        if (address == null || address.isBlank())",
+            "            throw new IllegalArgumentException(\"Address cannot be blank\");",
+            "        this.deliveryAddress = address;",
+            "    }",
+            "",
+            "    public String getStatus() { return status; }",
+            "    public void setStatus(String status) {",
+            "        // Validate state machine transitions",
+            "        if (!isValidTransition(this.status, status))",
+            "            throw new IllegalStateException(",
+            "                \"Invalid status transition: \" + this.status + \" → \" + status);",
+            "        this.status = status;",
+            "    }",
+            "",
+            "    // ── Write-only setter — no getter for internalNotes ───────────",
+            "    public void setInternalNotes(String notes) {",
+            "        this.internalNotes = notes; // stored internally but never exposed",
+            "    }",
+            "",
+            "    // internalNotes has NO getter — write-only field",
+            "    // External code can set it but never read it back",
+            "",
+            "    private boolean isValidTransition(String from, String to) {",
+            "        return switch (from) {",
+            "            case \"PENDING\"    -> to.equals(\"CONFIRMED\") || to.equals(\"CANCELLED\");",
+            "            case \"CONFIRMED\"  -> to.equals(\"SHIPPED\")   || to.equals(\"CANCELLED\");",
+            "            case \"SHIPPED\"    -> to.equals(\"DELIVERED\");",
+            "            default           -> false;",
+            "        };",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Read-Only vs final — What's the Difference?",
+          "text": "A read-only field via encapsulation (private field + getter only) can still be changed internally by the class's own methods (like setStatus() changes status internally). A 'final' field is TRULY immutable — it can only be assigned once, in the constructor or at declaration, and never again. Use 'private final' for fields that should never change after construction (orderId, createdAt). Use 'private' with getter only for fields that the class itself may update but external code should only read (status, balance)."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "immutable-classes",
+      "title": "Immutable Classes — Maximum Encapsulation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "An <strong>immutable class</strong> is a class whose instances <strong>cannot be modified after creation</strong>. Every field is set in the constructor and never changed again. There are no setters. Java's own core library is full of immutable classes: <code>String</code>, <code>Integer</code>, <code>Long</code>, <code>BigDecimal</code>, <code>LocalDate</code>, <code>LocalDateTime</code>. Immutable objects are <strong>inherently thread-safe</strong>, safe to cache, and free from aliasing bugs where one reference unexpectedly modifies another's data."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📋",
+              "title": "Rules for Immutable Class",
+              "text": "1. Declare class as final — prevents subclass from adding mutable state.\n2. All fields private final — cannot be reassigned.\n3. No setters — no way to modify after construction.\n4. Initialize all fields in constructor.\n5. Defensive copy mutable objects passed into constructor.\n6. Return defensive copies of mutable fields from getters.\n7. If the class has mutable field types (List, Date, arrays), extra care is needed."
+            },
+            {
+              "icon": "✅",
+              "title": "Benefits of Immutability",
+              "text": "1. Thread safety — safe to share across threads with no synchronization.\n2. Caching — safe to cache because state never changes.\n3. No defensive copying needed by callers.\n4. Simple reasoning — object state is always the same as at creation.\n5. Safe map keys & set elements — hashCode() never changes.\n6. No aliasing bugs — sharing the reference is safe."
+            },
+            {
+              "icon": "🔁",
+              "title": "'Modification' via New Instances",
+              "text": "Immutable objects don't modify themselves — they return new instances. String example: 'hello'.toUpperCase() returns a NEW String 'HELLO' — the original 'hello' is untouched. Similarly, LocalDate.plusDays(7) returns a new LocalDate — the original is unchanged. This is the standard pattern for immutable 'updates': create a new object with the changed value instead of modifying the existing one."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ImmutableClass.java — Money Value Object",
+          "lines": [
+            "import java.math.BigDecimal;",
+            "import java.math.RoundingMode;",
+            "import java.util.Objects;",
+            "",
+            "// ── Immutable Money class ─────────────────────────────────────────",
+            "public final class Money {   // 'final' — cannot be subclassed",
+            "",
+            "    private final BigDecimal amount;   // 'final' — cannot be reassigned",
+            "    private final String     currency;",
+            "",
+            "    // Constructor — only place state is set",
+            "    public Money(BigDecimal amount, String currency) {",
+            "        if (amount == null)",
+            "            throw new IllegalArgumentException(\"Amount cannot be null\");",
+            "        if (currency == null || currency.isBlank())",
+            "            throw new IllegalArgumentException(\"Currency cannot be blank\");",
+            "        if (amount.compareTo(BigDecimal.ZERO) < 0)",
+            "            throw new IllegalArgumentException(\"Amount cannot be negative\");",
+            "        this.amount   = amount.setScale(2, RoundingMode.HALF_UP);",
+            "        this.currency = currency.toUpperCase().trim();",
+            "    }",
+            "",
+            "    // Convenience constructor",
+            "    public Money(double amount, String currency) {",
+            "        this(BigDecimal.valueOf(amount), currency);",
+            "    }",
+            "",
+            "    // ── Getters only — NO setters ──────────────────────────────────",
+            "    public BigDecimal getAmount()   { return amount; }",
+            "    public String     getCurrency() { return currency; }",
+            "",
+            "    // ── 'Modification' returns NEW instances — original unchanged ──",
+            "    public Money add(Money other) {",
+            "        assertSameCurrency(other);",
+            "        return new Money(this.amount.add(other.amount), this.currency);",
+            "    }",
+            "",
+            "    public Money subtract(Money other) {",
+            "        assertSameCurrency(other);",
+            "        BigDecimal result = this.amount.subtract(other.amount);",
+            "        if (result.compareTo(BigDecimal.ZERO) < 0)",
+            "            throw new IllegalArgumentException(\"Result cannot be negative\");",
+            "        return new Money(result, this.currency);",
+            "    }",
+            "",
+            "    public Money multiply(double factor) {",
+            "        if (factor < 0) throw new IllegalArgumentException(\"Factor cannot be negative\");",
+            "        return new Money(this.amount.multiply(BigDecimal.valueOf(factor)), this.currency);",
+            "    }",
+            "",
+            "    public boolean isGreaterThan(Money other) {",
+            "        assertSameCurrency(other);",
+            "        return this.amount.compareTo(other.amount) > 0;",
+            "    }",
+            "",
+            "    private void assertSameCurrency(Money other) {",
+            "        if (!this.currency.equals(other.currency))",
+            "            throw new IllegalArgumentException(",
+            "                \"Currency mismatch: \" + this.currency + \" vs \" + other.currency);",
+            "    }",
+            "",
+            "    // ── equals, hashCode, toString — essential for value objects ──",
+            "    @Override",
+            "    public boolean equals(Object o) {",
+            "        if (this == o) return true;",
+            "        if (!(o instanceof Money m)) return false;",
+            "        return amount.compareTo(m.amount) == 0 && currency.equals(m.currency);",
+            "    }",
+            "",
+            "    @Override",
+            "    public int hashCode() { return Objects.hash(amount, currency); }",
+            "",
+            "    @Override",
+            "    public String toString() { return currency + \" \" + amount.toPlainString(); }",
+            "}",
+            "",
+            "class MoneyDemo {",
+            "    public static void main(String[] args) {",
+            "        Money price    = new Money(999.00, \"INR\");",
+            "        Money discount = new Money(100.00, \"INR\");",
+            "        Money tax      = new Money(0.18 * 899.0, \"INR\");",
+            "",
+            "        Money finalPrice = price.subtract(discount).add(tax);",
+            "        System.out.println(\"Final price: \" + finalPrice); // INR 1061.18",
+            "",
+            "        // 'price' is still unchanged — immutability guarantees this",
+            "        System.out.println(\"Original price unchanged: \" + price); // INR 999.00",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "defensive-copying",
+      "title": "Defensive Copying — Protecting Mutable Internal State",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Defensive copying</strong> is the practice of making a copy of a mutable object when accepting it into a class (in the constructor or setter) and when returning it from a class (in a getter). Without it, an encapsulated field that holds a mutable reference can be modified from outside the class through the shared reference, <strong>completely bypassing all encapsulation</strong>. This is one of the most subtle and dangerous encapsulation bugs in Java."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "DefensiveCopying.java",
+          "lines": [
+            "import java.util.ArrayList;",
+            "import java.util.Collections;",
+            "import java.util.Date;",
+            "import java.util.List;",
+            "",
+            "// ── BAD: No defensive copying — encapsulation broken ─────────────",
+            "class CourseRosterBad {",
+            "    private List<String> students;",
+            "",
+            "    public CourseRosterBad(List<String> students) {",
+            "        this.students = students; // ❌ stores the SAME reference",
+            "    }",
+            "",
+            "    public List<String> getStudents() {",
+            "        return students; // ❌ returns the SAME reference",
+            "    }",
+            "}",
+            "",
+            "// Attack:",
+            "// List<String> list = new ArrayList<>(List.of(\"Ravi\", \"Priya\"));",
+            "// CourseRosterBad roster = new CourseRosterBad(list);",
+            "// list.add(\"HACKER\");   // ❌ modifies the roster's internal list!",
+            "// roster.getStudents().clear(); // ❌ wipes the roster from outside!",
+            "",
+            "// ── GOOD: Defensive copying — encapsulation intact ───────────────",
+            "class CourseRoster {",
+            "",
+            "    private final List<String> students;",
+            "",
+            "    public CourseRoster(List<String> students) {",
+            "        if (students == null)",
+            "            throw new IllegalArgumentException(\"Students list cannot be null\");",
+            "        // ✅ Defensive copy IN constructor — caller's list changes don't affect us",
+            "        this.students = new ArrayList<>(students);",
+            "    }",
+            "",
+            "    public void addStudent(String name) {",
+            "        if (name == null || name.isBlank())",
+            "            throw new IllegalArgumentException(\"Student name cannot be blank\");",
+            "        students.add(name.trim());",
+            "    }",
+            "",
+            "    public List<String> getStudents() {",
+            "        // ✅ Defensive copy OUT of getter — caller cannot modify our list",
+            "        return Collections.unmodifiableList(students);",
+            "        // OR: return new ArrayList<>(students);",
+            "    }",
+            "",
+            "    public int size() { return students.size(); }",
+            "}",
+            "",
+            "// ── Date fields — classic defensive copy need ─────────────────────",
+            "final class EventSchedule {",
+            "",
+            "    private final String name;",
+            "    private final Date   eventDate;  // Date is mutable!",
+            "",
+            "    public EventSchedule(String name, Date eventDate) {",
+            "        this.name      = name;",
+            "        this.eventDate = new Date(eventDate.getTime()); // ✅ defensive copy IN",
+            "    }",
+            "",
+            "    public Date getEventDate() {",
+            "        return new Date(eventDate.getTime()); // ✅ defensive copy OUT",
+            "        // Caller modifying returned Date won't affect our field",
+            "    }",
+            "",
+            "    // ✅ BETTER: Use java.time.LocalDate — it's immutable, no copying needed",
+            "    // private final LocalDate eventDate;",
+            "}",
+            "",
+            "class DefensiveCopyDemo {",
+            "    public static void main(String[] args) {",
+            "        List<String> original = new ArrayList<>(List.of(\"Ravi\", \"Priya\", \"Anjali\"));",
+            "        CourseRoster roster   = new CourseRoster(original);",
+            "",
+            "        original.add(\"Attacker\"); // modifying original — should NOT affect roster",
+            "        System.out.println(roster.getStudents()); // [Ravi, Priya, Anjali] — safe ✅",
+            "",
+            "        roster.addStudent(\"Rahul\");",
+            "        System.out.println(roster.getStudents()); // [Ravi, Priya, Anjali, Rahul]",
+            "",
+            "        // roster.getStudents().add(\"External\"); // ❌ UnsupportedOperationException",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ Prefer java.time Over java.util.Date",
+          "text": "java.util.Date is mutable and considered legacy. If you use it as a field, you MUST defensively copy it in both constructor and getter. The modern replacement — java.time.LocalDate, LocalDateTime, Instant, ZonedDateTime — are all immutable. With immutable types, defensive copying is unnecessary: no reference to an immutable object can be used to modify it. Prefer java.time types in all new code to eliminate an entire category of defensive-copy bugs."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "java-records",
+      "title": "Java Records — Modern Encapsulation Without Boilerplate",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java 16 introduced <strong>Records</strong> (JEP 395) as a standard feature — a concise, compiler-supported way to create <strong>immutable data-carrier classes</strong> with full encapsulation built in. A single record declaration replaces the entire boilerplate of: private final fields, a canonical constructor, public accessor methods, <code>equals()</code>, <code>hashCode()</code>, and <code>toString()</code>. Records are ideal for DTOs, value objects, API response models, and any class that simply carries data."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "JavaRecords.java — Records vs Traditional Class",
+          "lines": [
+            "// ── Traditional immutable class — ~50 lines of boilerplate ───────",
+            "public final class PointTraditional {",
+            "    private final int x;",
+            "    private final int y;",
+            "    public PointTraditional(int x, int y) { this.x = x; this.y = y; }",
+            "    public int x() { return x; }",
+            "    public int y() { return y; }",
+            "    @Override public boolean equals(Object o) {",
+            "        if (!(o instanceof PointTraditional p)) return false;",
+            "        return x == p.x && y == p.y;",
+            "    }",
+            "    @Override public int hashCode() { return java.util.Objects.hash(x, y); }",
+            "    @Override public String toString() { return \"Point[x=\" + x + \", y=\" + y + \"]\"; }",
+            "}",
+            "",
+            "// ── Java 16+ Record — same thing in 1 line ────────────────────────",
+            "record Point(int x, int y) {}",
+            "// Compiler auto-generates: private final fields, canonical constructor,",
+            "// public accessors x() and y(), equals(), hashCode(), toString()",
+            "",
+            "// ── Record with custom validation (compact constructor) ────────────",
+            "record Product(String name, double price, int stock) {",
+            "",
+            "    // Compact constructor — no parameter list, fields assigned automatically",
+            "    public Product {",
+            "        if (name == null || name.isBlank())",
+            "            throw new IllegalArgumentException(\"Name cannot be blank\");",
+            "        if (price <= 0)",
+            "            throw new IllegalArgumentException(\"Price must be positive\");",
+            "        if (stock < 0)",
+            "            throw new IllegalArgumentException(\"Stock cannot be negative\");",
+            "        name = name.trim(); // can reassign parameters before they become fields",
+            "    }",
+            "",
+            "    // ── Custom methods can be added ────────────────────────────────",
+            "    public boolean isInStock()     { return stock > 0; }",
+            "    public String displayPrice()   { return \"₹\" + String.format(\"%.2f\", price); }",
+            "}",
+            "",
+            "// ── Record as DTO (Data Transfer Object) ─────────────────────────",
+            "record UserDto(String username, String email, String role) {}",
+            "",
+            "record ApiResponse<T>(boolean success, String message, T data) {",
+            "    // Static factory methods on records",
+            "    public static <T> ApiResponse<T> ok(T data) {",
+            "        return new ApiResponse<>(true, \"Success\", data);",
+            "    }",
+            "    public static <T> ApiResponse<T> error(String message) {",
+            "        return new ApiResponse<>(false, message, null);",
+            "    }",
+            "}",
+            "",
+            "class RecordDemo {",
+            "    public static void main(String[] args) {",
+            "",
+            "        Point p1 = new Point(3, 4);",
+            "        Point p2 = new Point(3, 4);",
+            "        System.out.println(p1);           // Point[x=3, y=4]",
+            "        System.out.println(p1.equals(p2)); // true — equals auto-generated",
+            "        System.out.println(p1.x());        // 3 — accessor (no 'get' prefix)",
+            "",
+            "        Product laptop = new Product(\"Laptop\", 75000.0, 15);",
+            "        System.out.println(laptop);           // Product[name=Laptop, price=75000.0, stock=15]",
+            "        System.out.println(laptop.isInStock()); // true",
+            "        System.out.println(laptop.displayPrice()); // ₹75000.00",
+            "",
+            "        // new Product(\"\", 100, 5); // ❌ throws IllegalArgumentException",
+            "",
+            "        UserDto user = new UserDto(\"ravi_k\", \"ravi@example.com\", \"ADMIN\");",
+            "        ApiResponse<UserDto> response = ApiResponse.ok(user);",
+            "        System.out.println(response.success()); // true",
+            "        System.out.println(response.data().username()); // ravi_k",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Traditional Immutable Class", "Java Record (Java 16+)"],
+          "rows": [
+            ["Lines of code",       "~50 lines for 3 fields",                       "1 line for any number of fields"],
+            ["Fields",              "private final — manually written",              "private final — auto-generated"],
+            ["Constructor",         "Manually written",                              "Canonical constructor auto-generated"],
+            ["Accessors",           "getFieldName() — manually written",             "fieldName() — auto-generated (no 'get')"],
+            ["equals() / hashCode()","Manually written — easy to get wrong",         "Auto-generated — always correct"],
+            ["toString()",          "Manually written",                              "Auto-generated: ClassName[field=value, ...]"],
+            ["Immutability",        "By convention — must follow all rules manually","Enforced by design — fields are always final"],
+            ["Custom constructor",  "Full constructor body",                         "Compact constructor — params auto-assigned"],
+            ["Inheritance",         "Can extend other classes",                      "Implicitly extends Record — cannot extend others"],
+            ["Setters",             "Can add (breaks immutability)",                 "Cannot add — records are always immutable"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "encapsulation-vs-abstraction",
+      "title": "Encapsulation vs Abstraction — Clear Distinction",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Encapsulation and abstraction are frequently confused — even by experienced developers. Both are OOP pillars and both involve <em>hiding</em> something, but they hide <strong>fundamentally different things</strong> and are implemented with different mechanisms."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "Encapsulation", "Abstraction"],
+          "rows": [
+            ["What it hides",        "Internal DATA / state of an object",                    "Internal IMPLEMENTATION / complexity"],
+            ["The question it answers","HOW is data stored and protected?",                   "WHAT does this do?"],
+            ["Goal",                  "Protect object integrity — prevent invalid state",     "Simplify usage — hide implementation details"],
+            ["Mechanism in Java",     "private fields + public getters/setters",              "abstract classes + interfaces"],
+            ["Who benefits",          "The class itself — its own data is protected",         "The caller — doesn't need to know implementation"],
+            ["Real-world analogy",    "Medicine capsule — hides and protects the powder",     "Car accelerator — hides the engine complexity"],
+            ["Code analogy",          "private int age; + getAge() + setAge()",               "interface Sortable { void sort(); }"],
+            ["Can exist without other?","Yes — encapsulation without abstraction is common", "Yes — abstract class with no private fields"]
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 They Work Together, But Are Not the Same",
+          "text": "A well-designed class typically uses BOTH. Example: BankAccount has private fields (encapsulation — hides balance, pin) AND implements an interface like Account (abstraction — hides which bank type it is). Encapsulation protects data inside the class; abstraction hides the class's implementation from its callers. They are complementary, not the same thing."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Bugs That Fool Everyone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These mistakes are consistently found in Java beginner and intermediate code involving encapsulation. Each one either breaks data protection or creates subtle state corruption bugs."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "EncapsulationMistakes.java",
+          "lines": [
+            "// ❌ MISTAKE 1: Public fields — no encapsulation at all",
+            "class PersonBad {",
+            "    public String name;   // ❌ anyone can set null, blank, or anything",
+            "    public int    age;    // ❌ anyone can set -5, -999, no validation",
+            "}",
+            "",
+            "// ❌ MISTAKE 2: Bypassing validation in constructor (not calling setters)",
+            "class PersonMistake {",
+            "    private String name;",
+            "    private int    age;",
+            "    public PersonMistake(String name, int age) {",
+            "        this.name = name; // ❌ bypasses setName() validation — null accepted",
+            "        this.age  = age;  // ❌ bypasses setAge() validation — negative accepted",
+            "    }",
+            "    public void setName(String name) {",
+            "        if (name == null || name.isBlank())",
+            "            throw new IllegalArgumentException(\"Name required\");",
+            "        this.name = name;",
+            "    }",
+            "    public void setAge(int age) {",
+            "        if (age < 0) throw new IllegalArgumentException(\"Age cannot be negative\");",
+            "        this.age = age;",
+            "    }",
+            "}",
+            "// Fix: call setName(name) and setAge(age) in the constructor",
+            "",
+            "// ❌ MISTAKE 3: Returning mutable internal reference from getter",
+            "import java.util.List;",
+            "import java.util.ArrayList;",
+            "class CartBad {",
+            "    private List<String> items = new ArrayList<>();",
+            "    public List<String> getItems() { return items; } // ❌ exposes internal list",
+            "}",
+            "// CartBad cart = new CartBad();",
+            "// cart.getItems().clear(); // ❌ wipes internal list bypassing all logic!",
+            "// Fix: return Collections.unmodifiableList(items)",
+            "",
+            "// ❌ MISTAKE 4: Storing mutable object reference without defensive copy",
+            "import java.util.Date;",
+            "class EventBad {",
+            "    private Date date;",
+            "    public EventBad(Date date) {",
+            "        this.date = date; // ❌ caller keeps reference — can mutate the date!",
+            "    }",
+            "}",
+            "// Date d = new Date();",
+            "// EventBad e = new EventBad(d);",
+            "// d.setTime(0); // ❌ modifies the internal date of 'e' from outside!",
+            "// Fix: this.date = new Date(date.getTime()); // defensive copy",
+            "",
+            "// ❌ MISTAKE 5: Exposing internal array directly",
+            "class ConfigBad {",
+            "    private int[] values = {1, 2, 3, 4, 5};",
+            "    public int[] getValues() { return values; } // ❌ returns reference to internal array",
+            "}",
+            "// ConfigBad c = new ConfigBad();",
+            "// c.getValues()[0] = 999; // ❌ modifies internal array from outside!",
+            "// Fix: return Arrays.copyOf(values, values.length);",
+            "",
+            "// ❌ MISTAKE 6: Setting boolean field name with 'get' instead of 'is'",
+            "class UserBad {",
+            "    private boolean active;",
+            "    public boolean getActive() { return active; } // ❌ wrong naming convention",
+            "}",
+            "// Fix: public boolean isActive() { return active; }",
+            "// Jackson, Hibernate, Spring all look for 'is' prefix for boolean fields"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These encapsulation anti-patterns are the most common reasons for <strong>failed code reviews</strong> in professional Java teams. Each either breaks data integrity, creates hidden coupling, or makes the codebase fragile under change."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Anemic Domain Model",
+              "text": "A class with only getters and setters and zero business logic — all logic lives in service classes that manipulate the model externally. Example: BankAccount with just getBalance()/setBalance() — and a separate BankService that calls account.setBalance(account.getBalance() - amount). This violates OOP — the account should know how to withdraw(). Push business logic into the class that owns the data. An object should protect its own invariants."
+            },
+            {
+              "icon": "🚫",
+              "title": "Generating Setters for All Fields Blindly",
+              "text": "IDEs offer 'Generate All Setters' with one click. Using this blindly creates setters for fields that should never be externally modified — like orderId, createdAt, or status. Each unnecessary setter is a hole in your encapsulation. Generate setters ONLY for fields that genuinely need external modification. Question every setter: 'Should external code really be able to change this directly?'"
+            },
+            {
+              "icon": "🚫",
+              "title": "Protected Fields in Non-Abstract Classes",
+              "text": "Making fields 'protected' in a concrete class so subclasses can access them directly creates tight coupling between parent and child classes. If the parent later needs to change the field name, type, or storage strategy, all subclasses break. Use private fields in the parent and protected getter/setter methods if subclasses genuinely need access. Fields should be private; method access can be protected."
+            },
+            {
+              "icon": "🚫",
+              "title": "Setters That Return void in Fluent APIs",
+              "text": "Traditional void setters break method chaining in builder-style APIs. If your class is used with builder-style code, have setters return 'this' to enable fluent chaining: account.setName('Ravi').setSalary(50000). For pure data classes, Java Records or the Builder pattern are better. Mixing traditional void setters with a fluent API expectation is a design inconsistency that confuses users."
+            },
+            {
+              "icon": "🚫",
+              "title": "Exposing Internal Collection Without Unmodifiable Wrapper",
+              "text": "Returning a raw internal List, Set, or Map from a getter without wrapping it gives callers the ability to add, remove, or clear elements, bypassing all business logic. Always return Collections.unmodifiableList(), Set.copyOf(), or Map.copyOf(). Even better for true safety, return a defensive copy with new ArrayList<>(items). The choice depends on whether you want callers to see later modifications to your internal list."
+            },
+            {
+              "icon": "🚫",
+              "title": "Mutable Static Fields as Shared State",
+              "text": "public static int userCount = 0 with no synchronization and direct public access is the worst of both worlds — global mutable state that any class can corrupt. If you need shared mutable state (like a counter), encapsulate it: private static int count with a synchronized public static void increment() and public static int getCount(). Or use AtomicInteger for thread-safe counters without manual synchronization."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Encapsulation in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples model encapsulation patterns used in real enterprise Java codebases — Spring Boot application layers with proper data protection at every level."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "UserAccount.java — Full Encapsulation with Business Logic",
+          "lines": [
+            "package com.techsustainify.user.domain;",
+            "",
+            "import java.time.LocalDateTime;",
+            "import java.util.ArrayList;",
+            "import java.util.Collections;",
+            "import java.util.List;",
+            "import java.util.UUID;",
+            "",
+            "public class UserAccount {",
+            "",
+            "    // ── Read-only identity fields ─────────────────────────────────",
+            "    private final String        userId;",
+            "    private final LocalDateTime createdAt;",
+            "",
+            "    // ── Mutable but controlled fields ─────────────────────────────",
+            "    private String  username;",
+            "    private String  email;",
+            "    private String  passwordHash;",
+            "    private String  role;",
+            "    private boolean active;",
+            "    private boolean emailVerified;",
+            "    private int     failedLoginAttempts;",
+            "",
+            "    // ── Mutable collection — protected by defensive copy ──────────",
+            "    private final List<String> loginHistory;",
+            "",
+            "    // ── Constants ─────────────────────────────────────────────────",
+            "    private static final int MAX_FAILED_ATTEMPTS = 5;",
+            "",
+            "    public UserAccount(String username, String email, String passwordHash) {",
+            "        this.userId              = UUID.randomUUID().toString();",
+            "        this.createdAt           = LocalDateTime.now();",
+            "        this.loginHistory        = new ArrayList<>();",
+            "        this.active              = true;",
+            "        this.emailVerified       = false;",
+            "        this.failedLoginAttempts = 0;",
+            "        this.role                = \"USER\";",
+            "        setUsername(username);",
+            "        setEmail(email);",
+            "        this.passwordHash = passwordHash; // pre-hashed by service layer",
+            "    }",
+            "",
+            "    // ── Business methods — logic lives WITH the data ──────────────",
+            "",
+            "    public boolean recordLoginSuccess(String ipAddress) {",
+            "        if (!active) return false;",
+            "        this.failedLoginAttempts = 0;",
+            "        loginHistory.add(LocalDateTime.now() + \" SUCCESS from \" + ipAddress);",
+            "        return true;",
+            "    }",
+            "",
+            "    public boolean recordLoginFailure(String ipAddress) {",
+            "        failedLoginAttempts++;",
+            "        loginHistory.add(LocalDateTime.now() + \" FAILED from \" + ipAddress);",
+            "        if (failedLoginAttempts >= MAX_FAILED_ATTEMPTS) {",
+            "            this.active = false;",
+            "            return false; // account locked",
+            "        }",
+            "        return true; // still active",
+            "    }",
+            "",
+            "    public void changePassword(String oldHash, String newHash) {",
+            "        if (!this.passwordHash.equals(oldHash))",
+            "            throw new IllegalArgumentException(\"Current password is incorrect\");",
+            "        if (newHash == null || newHash.length() < 8)",
+            "            throw new IllegalArgumentException(\"New password hash is too short\");",
+            "        this.passwordHash = newHash;",
+            "    }",
+            "",
+            "    public void verifyEmail() { this.emailVerified = true; }",
+            "",
+            "    public void deactivate() { this.active = false; }",
+            "",
+            "    public void reactivate() {",
+            "        this.active              = true;",
+            "        this.failedLoginAttempts = 0;",
+            "    }",
+            "",
+            "    // ── Getters — controlled read access ──────────────────────────",
+            "    public String        getUserId()            { return userId; }",
+            "    public LocalDateTime getCreatedAt()         { return createdAt; }",
+            "    public String        getUsername()          { return username; }",
+            "    public String        getEmail()             { return email; }",
+            "    public String        getRole()              { return role; }",
+            "    public boolean       isActive()             { return active; }",
+            "    public boolean       isEmailVerified()      { return emailVerified; }",
+            "    public int           getFailedLoginAttempts() { return failedLoginAttempts; }",
+            "",
+            "    // passwordHash is NEVER exposed via getter — write-only from outside",
+            "",
+            "    // Defensive copy of mutable list",
+            "    public List<String> getLoginHistory() {",
+            "        return Collections.unmodifiableList(loginHistory);",
+            "    }",
+            "",
+            "    // ── Setters with validation ───────────────────────────────────",
+            "    public void setUsername(String username) {",
+            "        if (username == null || username.isBlank())",
+            "            throw new IllegalArgumentException(\"Username cannot be blank\");",
+            "        if (!username.matches(\"^[a-zA-Z0-9_]{3,30}$\"))",
+            "            throw new IllegalArgumentException(",
+            "                \"Username must be 3-30 alphanumeric characters or underscores\");",
+            "        this.username = username.toLowerCase();",
+            "    }",
+            "",
+            "    public void setEmail(String email) {",
+            "        if (email == null || !email.matches(\"^[^@]+@[^@]+\\\\.[^@]+$\"))",
+            "            throw new IllegalArgumentException(\"Invalid email: \" + email);",
+            "        this.email         = email.toLowerCase().trim();",
+            "        this.emailVerified = false; // reset verification on email change",
+            "    }",
+            "",
+            "    public void setRole(String role) {",
+            "        if (!List.of(\"USER\", \"ADMIN\", \"MODERATOR\").contains(role))",
+            "            throw new IllegalArgumentException(\"Invalid role: \" + role);",
+            "        this.role = role;",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InventoryItem.java — Record + Traditional Class Combination",
+          "lines": [
+            "package com.techsustainify.inventory;",
+            "",
+            "import java.time.LocalDate;",
+            "import java.util.Objects;",
+            "",
+            "// ── Immutable value object using Record ───────────────────────────",
+            "record ItemCode(String value) {",
+            "    public ItemCode {",
+            "        if (value == null || !value.matches(\"^ITM-[0-9]{6}$\"))",
+            "            throw new IllegalArgumentException(",
+            "                \"ItemCode must match ITM-XXXXXX format, got: \" + value);",
+            "        value = value.toUpperCase();",
+            "    }",
+            "}",
+            "",
+            "// ── Mutable entity with full encapsulation ────────────────────────",
+            "public class InventoryItem {",
+            "",
+            "    private final ItemCode   itemCode;     // value object — immutable",
+            "    private final LocalDate  addedDate;    // read-only after creation",
+            "    private       String     name;",
+            "    private       int        quantity;",
+            "    private       double     unitCost;",
+            "    private       double     sellingPrice;",
+            "    private       boolean    discontinued;",
+            "",
+            "    public InventoryItem(String itemCode, String name, int quantity,",
+            "                         double unitCost, double sellingPrice) {",
+            "        this.itemCode     = new ItemCode(itemCode); // validates format",
+            "        this.addedDate    = LocalDate.now();",
+            "        this.discontinued = false;",
+            "        setName(name);",
+            "        setQuantity(quantity);",
+            "        setUnitCost(unitCost);",
+            "        setSellingPrice(sellingPrice);",
+            "    }",
+            "",
+            "    // ── Business operations ───────────────────────────────────────",
+            "    public void restock(int additionalQty) {",
+            "        if (discontinued)",
+            "            throw new IllegalStateException(\"Cannot restock a discontinued item\");",
+            "        if (additionalQty <= 0)",
+            "            throw new IllegalArgumentException(\"Restock quantity must be positive\");",
+            "        this.quantity += additionalQty;",
+            "    }",
+            "",
+            "    public boolean sell(int qty) {",
+            "        if (qty <= 0 || qty > quantity) return false;",
+            "        this.quantity -= qty;",
+            "        return true;",
+            "    }",
+            "",
+            "    public void discontinue() { this.discontinued = true; }",
+            "",
+            "    // ── Computed getters ──────────────────────────────────────────",
+            "    public double getTotalStockValue()  { return quantity * unitCost; }",
+            "    public double getProfitMargin()     { return sellingPrice - unitCost; }",
+            "    public double getProfitMarginPct()  { return (getProfitMargin() / unitCost) * 100; }",
+            "",
+            "    // ── Getters ───────────────────────────────────────────────────",
+            "    public ItemCode  getItemCode()      { return itemCode; }",
+            "    public LocalDate getAddedDate()     { return addedDate; }",
+            "    public String    getName()          { return name; }",
+            "    public int       getQuantity()      { return quantity; }",
+            "    public double    getUnitCost()      { return unitCost; }",
+            "    public double    getSellingPrice()  { return sellingPrice; }",
+            "    public boolean   isDiscontinued()   { return discontinued; }",
+            "",
+            "    // ── Setters with validation ───────────────────────────────────",
+            "    public void setName(String name) {",
+            "        if (name == null || name.isBlank())",
+            "            throw new IllegalArgumentException(\"Name cannot be blank\");",
+            "        this.name = name.trim();",
+            "    }",
+            "    public void setQuantity(int qty) {",
+            "        if (qty < 0) throw new IllegalArgumentException(\"Quantity cannot be negative\");",
+            "        this.quantity = qty;",
+            "    }",
+            "    public void setUnitCost(double cost) {",
+            "        if (cost <= 0) throw new IllegalArgumentException(\"Unit cost must be positive\");",
+            "        this.unitCost = cost;",
+            "    }",
+            "    public void setSellingPrice(double price) {",
+            "        if (price <= 0) throw new IllegalArgumentException(\"Selling price must be positive\");",
+            "        if (price < unitCost)",
+            "            throw new IllegalArgumentException(",
+            "                \"Selling price cannot be below unit cost (would cause loss)\");",
+            "        this.sellingPrice = price;",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "encapsulation-flowchart",
+      "title": "Encapsulation Flowchart — Data Access Decision Flow",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This flowchart shows the decision path for every field in a well-encapsulated Java class — from choosing access level to deciding whether a getter, setter, or both are appropriate."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "▶ Designing a field",              "sublabel": "For a class member",                          "type": "start"    },
+            { "id": "2", "label": "🔍 Should it be mutable?",         "sublabel": "Can it change after construction?",           "type": "decision" },
+            { "id": "3", "label": "✅ private final field",           "sublabel": "Getter only — immutable after construction",   "type": "process"  },
+            { "id": "4", "label": "🔍 Should outside code read it?",  "sublabel": "Is the value needed externally?",             "type": "decision" },
+            { "id": "5", "label": "🔍 Should outside code write it?", "sublabel": "Can external code change this value?",        "type": "decision" },
+            { "id": "6", "label": "✅ public getter only",            "sublabel": "Read-only from outside",                      "type": "process"  },
+            { "id": "7", "label": "✅ public setter only",            "sublabel": "Write-only (rare — e.g. passwords)",          "type": "process"  },
+            { "id": "8", "label": "✅ getter + setter with validation","sublabel": "Full controlled read-write access",           "type": "process"  },
+            { "id": "9", "label": "✅ No getter, no setter",          "sublabel": "Purely internal — private helper field",      "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1", "to": "2",  "label": "" },
+            { "from": "2", "to": "3",  "label": "NO — immutable" },
+            { "from": "2", "to": "4",  "label": "YES — mutable" },
+            { "from": "4", "to": "5",  "label": "YES — needs getter" },
+            { "from": "4", "to": "7",  "label": "NO — no getter" },
+            { "from": "5", "to": "8",  "label": "YES — needs setter" },
+            { "from": "5", "to": "6",  "label": "NO — read-only" },
+            { "from": "7", "to": "9",  "label": "No read needed either" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Encapsulation Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are consistently asked in Java fresher and experienced interviews, OCPJP certification exams, and campus placement tests."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is encapsulation in Java? Why is it important?",
+              "a": "Encapsulation is the OOP principle of bundling data (fields) and the methods operating on that data into one unit (class), while restricting direct access to the fields using the private modifier. Importance: (1) Data integrity — all writes go through setters with validation, preventing invalid state. (2) Flexibility — the internal representation can change without affecting callers (you can change 'private int age' to 'private LocalDate birthDate' and update just the getter — all callers see the same int). (3) Debugging — if 'age' is wrong, check setAge() — there's only one place. (4) Security — sensitive fields like PIN, password hash are never exposed. (5) Controlled API — expose only what external code needs.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between encapsulation and abstraction?",
+              "a": "Encapsulation = DATA hiding — protecting the internal state of an object using private fields + public getters/setters. It answers HOW the data is stored and protected. Abstraction = BEHAVIOUR hiding — hiding implementation complexity and exposing only essential behaviour through abstract classes and interfaces. It answers WHAT something does. Analogy: a bank ATM — encapsulation hides the cash inside the machine (you can't reach in and take cash directly — you use the PIN pad and slot). Abstraction hides how the machine processes transactions (you don't know if it uses HDFC or ICICI backend systems).",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is data hiding in Java? How is it achieved?",
+              "a": "Data hiding means making an object's internal fields inaccessible to external code, so they can only be read or modified through controlled methods. In Java, it is achieved with the private access modifier on fields. With private fields, direct access (object.field = value) causes a compile error — all access must go through public getters and setters. Data hiding is the primary mechanism of encapsulation — encapsulation is the principle, private fields are the implementation.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. Can we achieve encapsulation without using getters and setters?",
+              "a": "Yes — encapsulation's core is private fields. Getters and setters are the common access mechanism, but they are not the only one. Alternatives: (1) Business methods — instead of 'setBalance(newBalance)', expose 'deposit(amount)' and 'withdraw(amount)' — these are encapsulated operations, not raw field accessors. (2) Immutable classes — no setters at all; all fields are private final. (3) Java Records — auto-generate accessor methods without the 'get' prefix. The key principle is that external code cannot directly set the field — how it accesses it is secondary.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. What is an immutable class in Java? How do you create one?",
+              "a": "An immutable class produces objects whose state cannot be changed after construction. Creating one: (1) Declare the class final — prevents subclasses from adding mutable state. (2) Make all fields private final — cannot be reassigned. (3) Provide no setters. (4) Initialize all fields in the constructor. (5) Defensively copy mutable objects in the constructor. (6) Return defensive copies (or use immutable types) in getters. Java examples: String, Integer, BigDecimal, LocalDate, LocalDateTime. Benefits: thread-safe without synchronization, safe to cache, no aliasing bugs.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q6. What is defensive copying and when is it needed?",
+              "a": "Defensive copying is creating a copy of a mutable object (a) when receiving it into a class and (b) when returning it from a class, so the internal state cannot be modified through shared references. It is needed whenever a field holds a reference to a mutable type — java.util.Date, arrays (int[]), List, Map, Set. Without it: a caller passes a List, stores the reference, then adds items to the original List — the class's field is now modified! Similarly, returning the internal List directly lets callers call .clear() on it. Fix: 'this.items = new ArrayList<>(items)' in constructor; 'return Collections.unmodifiableList(items)' in getter.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. What are Java Records and how do they relate to encapsulation?",
+              "a": "Java Records (standard from Java 16) are compiler-supported immutable data-carrier classes. A single line 'record Point(int x, int y) {}' generates: private final fields, a canonical constructor, public accessor methods x() and y(), plus correct equals(), hashCode(), and toString(). Records provide encapsulation by design — all fields are private and final, there are no setters, and accessors are generated. They are ideal for DTOs, value objects, and query result carriers. Compact constructors allow adding validation without losing the conciseness benefit.",
+              "tag": "Modern Java"
+            },
+            {
+              "q": "Q8. Why should boolean getters use 'is' prefix instead of 'get'?",
+              "a": "The JavaBean specification defines that boolean property accessors must use the 'is' prefix — isActive(), isLoggedIn(), isVerified(). Frameworks that rely on reflection and JavaBean conventions — including Jackson (JSON), Hibernate, Spring MVC, and Lombok — look for 'is' prefix when processing boolean fields. Using getActive() for a boolean field causes: (1) Jackson serializes the field as 'active' from getActive() but looks for a different name. (2) Hibernate may fail to detect the property. (3) Spring form binding may not match correctly. It's also cleaner English — 'if (user.isActive())' reads naturally; 'if (user.getActive())' does not.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q9. What is the Anemic Domain Model anti-pattern and how does it violate encapsulation?",
+              "a": "The Anemic Domain Model (term coined by Martin Fowler) is a pattern where domain classes (like BankAccount, Order) contain only fields and getters/setters, with zero business logic — all logic is in separate service classes. Example: BankService calls account.setBalance(account.getBalance() - amount) instead of account.withdraw(amount). This violates encapsulation because: (1) Any service can set the balance to any value — no validation enforced by the object itself. (2) The object cannot protect its own invariants (e.g., 'balance must never go below minimum'). (3) Business logic is scattered in services instead of being co-located with the data it operates on.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q10. How does encapsulation help with future code changes?",
+              "a": "Encapsulation creates a stable public API behind which internal implementation can change freely. Example: suppose you store age as 'private int age' today. Later you need to support both 'age' and 'birthDate'. You can change the internal storage to 'private LocalDate birthDate' and update the getter to compute age: 'return Period.between(birthDate, LocalDate.now()).getYears()'. All callers continue calling getAge() and see no change. Without encapsulation ('public int age'), all code that directly accesses the field would break immediately — potentially thousands of call sites. Encapsulation is the foundation of the Open/Closed Principle.",
+              "tag": "Advanced"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Encapsulation Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Challenge yourself with these practice questions. Attempt each independently before reading the answer — active recall is proven to be 2–3x more effective than passive reading."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. Find all encapsulation violations in this class and list the fixes:\nclass Student {\n    public String name;\n    public int rollNumber;\n    public double gpa;\n    public boolean active = true;\n}",
+              "a": "Violations: (1) All fields are public — any code can set name = null, gpa = -5 or 999, rollNumber = negative. No validation possible. Fixes: (1) Make all fields private. (2) Add a constructor that accepts all values and calls setters. (3) Add getters for all fields. (4) Add setters with validation: setName() — reject null/blank; setRollNumber() — reject ≤ 0; setGpa() — reject outside 0.0–10.0 range. (5) Boolean getter should be isActive(), not getActive(). (6) Optionally make rollNumber read-only (getter only, no setter) if roll numbers never change after assignment.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What is the output and what encapsulation issue does it demonstrate?\nimport java.util.ArrayList;\nimport java.util.List;\nclass Team {\n    private List<String> members = new ArrayList<>();\n    public void addMember(String name) { members.add(name); }\n    public List<String> getMembers() { return members; }\n}\npublic class Test {\n    public static void main(String[] args) {\n        Team t = new Team();\n        t.addMember(\"Ravi\");\n        t.addMember(\"Priya\");\n        List<String> list = t.getMembers();\n        list.clear(); // External code modifies internal state!\n        System.out.println(t.getMembers().size());\n    }\n}",
+              "a": "Output: 0. Even though Team has a private List, getMembers() returns the direct internal reference. The caller gets that reference, calls clear() on it, and the team's internal list is now empty — completely bypassing the Team class. This is a defensive copy violation. Fix: return Collections.unmodifiableList(members) — caller can read but not modify. Or return new ArrayList<>(members) if you want the caller to have an independent copy. The UnsupportedOperationException thrown by unmodifiableList is preferable to silent state corruption.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Why is this immutable class broken? Fix it.\nfinal class Range {\n    private final int[] bounds;  // [min, max]\n    public Range(int[] bounds) { this.bounds = bounds; }\n    public int[] getBounds() { return bounds; }\n}",
+              "a": "Two breaks: (1) Constructor stores the passed-in array reference directly — the caller can later do 'bounds[0] = -999' and modify the internal state of the Range object. Fix: this.bounds = Arrays.copyOf(bounds, bounds.length). (2) getBounds() returns the internal array reference — caller can do 'range.getBounds()[0] = 0' to modify it. Fix: return Arrays.copyOf(bounds, bounds.length). Fixed class: final class Range { private final int[] bounds; public Range(int[] bounds) { this.bounds = Arrays.copyOf(bounds, bounds.length); } public int[] getBounds() { return Arrays.copyOf(bounds, bounds.length); } }",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. Convert this traditional class to a Java Record with compact constructor validation:\npublic final class Coordinate {\n    private final double latitude;\n    private final double longitude;\n    public Coordinate(double latitude, double longitude) {\n        if (latitude < -90 || latitude > 90) throw new IllegalArgumentException(\"Invalid lat\");\n        if (longitude < -180 || longitude > 180) throw new IllegalArgumentException(\"Invalid long\");\n        this.latitude = latitude;\n        this.longitude = longitude;\n    }\n    public double getLatitude()  { return latitude; }\n    public double getLongitude() { return longitude; }\n    // + equals, hashCode, toString omitted for brevity\n}",
+              "a": "record Coordinate(double latitude, double longitude) {\n    public Coordinate {\n        if (latitude < -90 || latitude > 90)\n            throw new IllegalArgumentException(\"Latitude must be between -90 and 90, got: \" + latitude);\n        if (longitude < -180 || longitude > 180)\n            throw new IllegalArgumentException(\"Longitude must be between -180 and 180, got: \" + longitude);\n        // latitude and longitude are assigned automatically after this block\n    }\n    // Optional helper\n    public String toDecimalDegrees() {\n        return String.format(\"%.6f°%s, %.6f°%s\",\n            Math.abs(latitude), latitude >= 0 ? \"N\" : \"S\",\n            Math.abs(longitude), longitude >= 0 ? \"E\" : \"W\");\n    }\n}\n// Usage: coordinate.latitude() not coordinate.getLatitude()",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. The following class tries to be immutable but fails. Find all the issues:\nimport java.util.List;\npublic final class Department {\n    private final String name;\n    private final List<String> employees;\n    public Department(String name, List<String> employees) {\n        this.name = name;\n        this.employees = employees;\n    }\n    public String getName() { return name; }\n    public List<String> getEmployees() { return employees; }\n}",
+              "a": "Two immutability failures: (1) Constructor stores the passed list directly — List<String> ext = new ArrayList<>(List.of(\"Ravi\")); Department d = new Department(\"IT\", ext); ext.add(\"Hacker\"); — now d.getEmployees() shows 'Hacker'. Fix: this.employees = List.copyOf(employees) (returns an unmodifiable copy). (2) getEmployees() returns the direct reference — d.getEmployees().add(\"Hacker\") modifies the internal list. Fix: the List.copyOf() in the constructor already returns an unmodifiable list, so the getter can return it safely. Full fix: this.employees = List.copyOf(employees); and getEmployees() can return employees directly since it's already unmodifiable.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. Refactor this anemic class into a properly encapsulated domain object:\nclass BankAccountBad {\n    public double balance;\n    public boolean frozen;\n}\n// In BankService:\n// account.balance = account.balance - amount; // withdraw\n// account.balance = account.balance + amount; // deposit\n// account.frozen = true;                     // freeze",
+              "a": "public class BankAccount {\n    private static final double MIN_BALANCE = 500.0;\n    private double  balance;\n    private boolean frozen;\n    public BankAccount(double initialDeposit) {\n        if (initialDeposit < MIN_BALANCE)\n            throw new IllegalArgumentException(\"Initial deposit must be at least ₹\" + MIN_BALANCE);\n        this.balance = initialDeposit;\n        this.frozen  = false;\n    }\n    public boolean deposit(double amount) {\n        if (frozen || amount <= 0) return false;\n        balance += amount; return true;\n    }\n    public boolean withdraw(double amount) {\n        if (frozen || amount <= 0) return false;\n        if (balance - amount < MIN_BALANCE) return false;\n        balance -= amount; return true;\n    }\n    public void freeze()   { this.frozen = true; }\n    public void unfreeze() { this.frozen = false; }\n    public double getBalance()  { return balance; }\n    public boolean isFrozen()   { return frozen; }\n}\n// The object now protects its own invariants — no service can bypass withdrawal rules.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What is the output? Explain the encapsulation behaviour of String.\nString s1 = \"Hello\";\nString s2 = s1;\ns1 = s1.toUpperCase();\nSystem.out.println(s1);\nSystem.out.println(s2);",
+              "a": "Output: HELLO, Hello. String is immutable — toUpperCase() does NOT modify the existing String. It creates a NEW String object ('HELLO') and assigns it to s1. The variable s2 still points to the original String object 'Hello', which is completely unchanged. This is exactly the behavior of immutable objects: 'modifications' return new instances, the original is always preserved. This is why String is safe to pass around — no one can change it through a reference. It also explains why String concatenation in loops is inefficient — each '+' creates a new String object.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "8. Design an encapsulated Temperature class that: stores temperature internally as Celsius, accepts input in Celsius, Fahrenheit, or Kelvin via static factory methods, provides getters for all three scales, and prevents temperatures below absolute zero (−273.15°C).",
+              "a": "public final class Temperature {\n    private final double celsius; // single internal representation\n    private static final double ABSOLUTE_ZERO_C = -273.15;\n    private Temperature(double celsius) {\n        if (celsius < ABSOLUTE_ZERO_C)\n            throw new IllegalArgumentException(\"Below absolute zero: \" + celsius + \"°C\");\n        this.celsius = celsius;\n    }\n    // Static factory methods — named constructors\n    public static Temperature ofCelsius(double c)    { return new Temperature(c); }\n    public static Temperature ofFahrenheit(double f) { return new Temperature((f - 32) * 5.0 / 9.0); }\n    public static Temperature ofKelvin(double k)     { return new Temperature(k - 273.15); }\n    // Getters — computed from single source of truth\n    public double toCelsius()    { return celsius; }\n    public double toFahrenheit() { return celsius * 9.0 / 5.0 + 32; }\n    public double toKelvin()     { return celsius + 273.15; }\n    @Override public String toString() {\n        return String.format(\"%.2f°C / %.2f°F / %.2fK\", celsius, toFahrenheit(), toKelvin());\n    }\n}\n// Temperature t = Temperature.ofFahrenheit(98.6);\n// System.out.println(t.toCelsius()); // 37.0",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Encapsulation: The Guardian of Object Integrity",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Encapsulation is the <strong>guardian of your objects</strong>. It ensures that no matter how many places in the codebase create or use an object, the object's internal state is always valid — because every write goes through a controlled, validated entry point. Without encapsulation, a class is just a data bag that anyone can corrupt. With encapsulation, a class is a self-protecting, self-consistent unit of logic."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The difference between junior and senior Java developers is visible in how they approach field access. Junior code uses <code>public</code> fields for convenience. Senior code uses <code>private</code> fields, validated setters, read-only fields where appropriate, immutable classes for value objects, defensive copies for mutable references, and <strong>Java Records</strong> for clean, boilerplate-free immutable data carriers. These are not style preferences — they are the foundation of bug-free, maintainable, testable Java code."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept",                   "Purpose",                                                     "Key Point"],
+          "rows": [
+            ["Data Hiding",                          "Block direct field access from outside",                      "private fields — compile error if accessed directly"],
+            ["Getter",                               "Controlled read access",                                      "getFieldName() / isFieldName() for boolean"],
+            ["Setter with validation",               "Controlled write access — reject invalid data",               "One place for all write validation"],
+            ["Read-only field",                      "Expose value without allowing external modification",         "Getter only — no setter"],
+            ["Write-only field",                     "Accept value without exposing it (e.g. passwords)",           "Setter only — no getter"],
+            ["Immutable class",                      "Object state fixed at construction — never changes",          "final class, all fields private final, no setters"],
+            ["Defensive copy",                       "Protect mutable internal fields from external reference",     "Copy in constructor AND copy out in getter"],
+            ["Java Record (Java 16+)",               "Compiler-generated immutable encapsulation",                  "1 line replaces ~50 lines of boilerplate"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Inheritance</strong> — where you'll learn how encapsulation, access modifiers, and constructor chaining interact as classes extend each other, and how to design class hierarchies that are both flexible and safe. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Encapsulation",
+    "items": [
+      {
+        "q": "What is encapsulation in Java?",
+        "a": "Encapsulation in Java is the OOP principle of bundling an object's data (fields) and the methods that operate on that data into a single class, while hiding the internal state from direct outside access. It is implemented using private fields and public getter/setter methods. Every write to a private field goes through a setter where validation logic prevents invalid data from entering the object. It answers 'HOW is data stored and protected?' — as opposed to abstraction which answers 'WHAT does this do?'."
+      },
+      {
+        "q": "Why do we use private fields in encapsulation?",
+        "a": "Private fields prevent any code outside the class from directly reading or modifying the object's internal state. Without private fields, any code can set a field to an invalid value (negative age, null name) with no way to prevent it. With private fields, all writes go through setters where you validate, transform, and control what values are accepted. This guarantees the object is always in a valid, consistent state — no matter how or where it is used."
+      },
+      {
+        "q": "What is the difference between encapsulation and abstraction?",
+        "a": "Encapsulation is about DATA hiding — protecting the internal state using private fields and controlled access methods. It answers HOW data is stored and protected. Abstraction is about BEHAVIOUR hiding — hiding implementation complexity and exposing only essential behaviour via abstract classes and interfaces. It answers WHAT something does. Analogy: a medicine capsule — the shell (encapsulation) protects the powder; the medicine's healing effect on the body (abstraction) hides the molecular mechanism."
+      },
+      {
+        "q": "What is an immutable class in Java?",
+        "a": "An immutable class produces objects that cannot be modified after creation. All fields are private final, there are no setters, the class is declared final, and defensive copies are made of any mutable fields. Java's String, Integer, BigDecimal, and java.time classes are all immutable. Benefits: inherently thread-safe, safe to cache and share, free from aliasing bugs. To 'modify' an immutable object, you create a new instance with the updated value — the original is unchanged."
+      },
+      {
+        "q": "What are Java Records and how do they relate to encapsulation?",
+        "a": "Java Records (standard since Java 16) are a concise, compiler-supported mechanism for creating immutable data-carrier classes with full encapsulation built in. A single line 'record Point(int x, int y) {}' generates: private final fields, a canonical constructor, public accessor methods x() and y(), and correct equals(), hashCode(), toString(). Records enforce encapsulation by design — all fields are final, there are no setters, and all access is through the generated accessors. Compact constructors allow adding validation without losing conciseness."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Abstraction",  "path": "/java/java-abstraction" },
+    "next": { "label": "Java Inheritance →",  "path": "/java/java-inheritance" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "OOP Pillar",            "dd": "Encapsulation — one of 4 OOP pillars" },
+      { "dt": "Core mechanism",        "dd": "private fields + public getters/setters" },
+      { "dt": "Boolean getter prefix", "dd": "isFieldName() — NOT getFieldName()" },
+      { "dt": "Immutable class rules",  "dd": "final class, private final fields, no setters" },
+      { "dt": "Defensive copy",        "dd": "Copy mutable objects in AND out of class" },
+      { "dt": "Java Records",          "dd": "Auto-generates all encapsulation boilerplate" }
+    ],
+    "relatedArticles": [
+      { "label": "Java Abstraction",        "path": "/java/java-abstraction" },
+      { "label": "Java Inheritance",        "path": "/java/java-inheritance" },
+      { "label": "Java Polymorphism",       "path": "/java/java-polymorphism" },
+      { "label": "Java Access Modifiers",   "path": "/java/java-access-modifiers" },
+      { "label": "Java Classes & Objects",  "path": "/java/java-classes-objects" },
+      { "label": "Java Records",            "path": "/java/java-records" },
+      { "label": "Java this Keyword",       "path": "/java/java-this-keyword" },
+      { "label": "Java final Keyword",      "path": "/java/java-final" }
+    ],
+    "tags": ["Java Encapsulation", "Private Fields", "Getters Setters", "Data Hiding", "Access Modifiers", "Immutable Class", "Defensive Copy", "Java Records", "OOP Pillars", "Read-Only Field", "Write-Only Field", "Anemic Domain Model", "JavaBean", "Java 16", "Java 21"]
+  }
+}

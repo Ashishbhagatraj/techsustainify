@@ -1,0 +1,1775 @@
+{
+  "meta": {
+    "title": "Java Date & Time — Complete Guide with java.time API, Formatting, Time Zones & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Date & Time with LocalDate, LocalTime, LocalDateTime, ZonedDateTime, Instant, Duration, Period, DateTimeFormatter, TemporalAdjusters, ChronoUnit, legacy Date/Calendar migration, time zone handling, real-world examples, and interview questions. Updated March 2026.",
+    "keywords": "java date, java localdate, java localdatetime, java zoneddatetime, java instant, java duration, java period, java datetimeformatter, java time zone, java date formatting, java date parsing, java date arithmetic, java temporaladjusters, java chronounit, java date interview questions, java 8 date api, java.time package, java date best practices, java date vs calendar, java date comparison",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-date",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Date & Time — LocalDate, ZonedDateTime, Formatting & Best Practices 2026 | Tech Sustainify",
+      "description": "Complete guide to Java Date & Time — LocalDate, LocalTime, LocalDateTime, ZonedDateTime, Instant, Duration, Period, DateTimeFormatter, TemporalAdjusters, time zones, legacy migration, real-world examples, and interview questions.",
+      "url": "https://www.techsustainify.com/java/java-date",
+      "image": "https://www.techsustainify.com/images/java-date-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Date and Time Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-04-15T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Date",
+          "java.time API",
+          "LocalDate",
+          "LocalDateTime",
+          "ZonedDateTime",
+          "Instant",
+          "Duration",
+          "Period",
+          "DateTimeFormatter",
+          "Java 21"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Date & Time — LocalDate, ZonedDateTime, Formatting & Best Practices 2026",
+      "description": "Complete guide — LocalDate, LocalDateTime, ZonedDateTime, Instant, Duration, Period, DateTimeFormatter, time zones, legacy migration, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-date-og.png",
+      "imageAlt": "Java Date and Time Guide 2026 - Tech Sustainify",
+      "readingTime": "28 minutes",
+      "level": "Intermediate",
+      "label1": "Reading Time",
+      "data1": "28 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Intermediate"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Date & Time — Complete Guide with java.time API, Formatting, Time Zones & Best Practices 2026",
+        "description": "A comprehensive intermediate guide covering the full Java Date & Time landscape — legacy Date/Calendar, modern java.time package, LocalDate/LocalTime/LocalDateTime, ZonedDateTime, Instant, Duration, Period, DateTimeFormatter, TemporalAdjusters, ChronoUnit, time zone handling, DST pitfalls, real-world production patterns, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-04-15",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Intermediate",
+        "wordCount": 7500,
+        "timeRequired": "PT28M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Date and Time API" },
+          { "@type": "Thing", "name": "java.time Package" },
+          { "@type": "Thing", "name": "LocalDate LocalDateTime ZonedDateTime" },
+          { "@type": "Thing", "name": "Java Time Zone Handling" }
+        ],
+        "keywords": "java date, localdate, localdatetime, zoneddatetime, instant, duration, period, datetimeformatter, temporaladjusters, time zone, java.time"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Date & Time" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the difference between LocalDate, LocalDateTime, and ZonedDateTime in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "LocalDate represents a date only (year-month-day) with no time or time zone — perfect for birthdays, holidays, and deadlines. LocalDateTime represents a date AND time (year-month-day-hour-minute-second) but with no time zone — useful for scheduling within one zone. ZonedDateTime represents a date, time, AND time zone — the complete temporal value for cross-timezone operations, meeting scheduling, and anything that needs to represent a precise global moment. Rule of thumb: use the simplest type that carries the information you actually need."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is wrong with java.util.Date and java.util.Calendar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "java.util.Date has multiple design flaws: (1) Mutable — not thread-safe. (2) January is month 0 — off-by-one errors everywhere. (3) Year is stored as (year - 1900) — getYear() returns 124 for 2024. (4) Despite the name, it represents both date AND time (milliseconds since epoch). (5) No time zone support. (6) Most methods are deprecated. Calendar is even more verbose and error-prone. Java 8's java.time package (based on Joda-Time) replaced both entirely with an immutable, fluent, thread-safe API."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Instant in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Instant represents a specific point on the global timeline — nanoseconds elapsed since the Unix epoch (January 1, 1970, 00:00:00 UTC). It is time zone-independent, always in UTC, and the most precise temporal type in java.time. Use Instant for: timestamping events, database timestamp columns, measuring elapsed time (with Duration), logging, and any operation that needs a precise machine-readable moment. Convert to human-readable form using atZone(ZoneId) when display is needed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between Duration and Period in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Duration measures time in machine units — seconds and nanoseconds. It is used with time-based values: LocalTime, LocalDateTime, Instant. Example: Duration between two LocalDateTime instances. Period measures time in calendar units — years, months, days. It is used with date-only values: LocalDate. Example: Period between two LocalDates. Key insight: Duration.ofDays(1) is always exactly 86,400 seconds, but Period.ofDays(1) is 'one calendar day' which may be 23 or 25 hours during Daylight Saving Time transitions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you format a date in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use DateTimeFormatter from java.time.format. Two approaches: (1) Predefined formats: DateTimeFormatter.ISO_LOCAL_DATE, DateTimeFormatter.ISO_DATE_TIME, etc. (2) Custom pattern: DateTimeFormatter.ofPattern('dd-MMM-yyyy HH:mm:ss'). Formatting: String formatted = localDate.format(DateTimeFormatter.ofPattern('dd/MM/yyyy')). Parsing: LocalDate parsed = LocalDate.parse('25/12/2026', DateTimeFormatter.ofPattern('dd/MM/yyyy')). DateTimeFormatter is thread-safe and can be stored as a static final constant. Never use the old, thread-unsafe SimpleDateFormat in new code."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-04-15",
+      "dateModified": "2026-03-20",
+      "readingTime": "28 minutes",
+      "wordCount": 7500,
+      "difficulty": "Intermediate",
+      "chapter": 22,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "java-date-history",        "title": "A Brief History of Java Date APIs" },
+        { "id": "legacy-api-problems",      "title": "Legacy API: java.util.Date & Calendar — The Problems" },
+        { "id": "java-time-overview",       "title": "java.time Package — The Modern Solution" },
+        { "id": "localdate",                "title": "LocalDate — Date Without Time" },
+        { "id": "localtime",                "title": "LocalTime — Time Without Date" },
+        { "id": "localdatetime",            "title": "LocalDateTime — Date and Time, No Zone" },
+        { "id": "zoneddatetime",            "title": "ZonedDateTime — The Complete Temporal Type" },
+        { "id": "instant",                  "title": "Instant — Machine Timestamp" },
+        { "id": "duration-period",          "title": "Duration vs Period — Measuring Time Gaps" },
+        { "id": "date-formatting-parsing",  "title": "DateTimeFormatter — Formatting & Parsing" },
+        { "id": "temporal-adjusters",       "title": "TemporalAdjusters — Navigating the Calendar" },
+        { "id": "chronounit",               "title": "ChronoUnit — Measuring Between Dates" },
+        { "id": "timezone-handling",        "title": "Time Zone Handling & DST Pitfalls" },
+        { "id": "legacy-migration",         "title": "Migrating from Legacy Date/Calendar" },
+        { "id": "date-bad-practices",       "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",      "title": "Real-World Production Code Examples" },
+        { "id": "date-flowchart",           "title": "Which Date Type to Choose?" },
+        { "id": "interview-questions",      "title": "Interview Questions" },
+        { "id": "practice-questions",       "title": "Practice Questions" },
+        { "id": "conclusion-heading",       "title": "Conclusion" },
+        { "id": "faq-heading",              "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-date" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-date" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-date" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-annotations",
+      "next": "https://www.techsustainify.com/java/java-exceptions"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-standard-library",
+      "contentTopic": "java-date-time",
+      "chapterNumber": 22,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "intermediate",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Date & Time" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Date & Time — LocalDate, ZonedDateTime, Formatting & Best Practices",
+    "subtitle": "A complete guide to Java Date & Time — from the broken legacy API to the modern java.time package. Covers LocalDate, LocalTime, LocalDateTime, ZonedDateTime, Instant, Duration, Period, DateTimeFormatter, TemporalAdjusters, DST pitfalls, and production-ready patterns."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "28 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Intermediate" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "22 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "java-date-history",
+      "title": "A Brief History of Java Date APIs — Three Generations",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java's date and time handling has a famously troubled history — spanning three distinct generations over 25+ years. Understanding <em>why</em> the API evolved the way it did is essential context for every Java developer: it explains why the codebase you maintain might be using three different date APIs simultaneously, and it makes the design decisions of <code>java.time</code> immediately clear."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "1️⃣",
+              "title": "Generation 1 — java.util.Date (Java 1.0, 1995)",
+              "text": "The original java.util.Date was designed in haste and is widely regarded as one of Java's worst design decisions. It is mutable (not thread-safe), months are 0-indexed (January = 0), years are stored as (year - 1900), and despite being named 'Date' it also stores time. Most of its methods were deprecated in Java 1.1. Still found in legacy codebases and some JDBC APIs."
+            },
+            {
+              "icon": "2️⃣",
+              "title": "Generation 2 — java.util.Calendar (Java 1.1, 1997)",
+              "text": "Calendar was introduced to fix Date's problems. It partially succeeded — it added time zone support and fixed the year storage issue — but it remained mutable, was even more verbose, still used 0-indexed months, and mixed date/time concepts in one bloated class. Calendar arithmetic was notoriously error-prone. The community turned to Joda-Time, a third-party library, as the de-facto standard."
+            },
+            {
+              "icon": "3️⃣",
+              "title": "Generation 3 — java.time (Java 8, 2014, JSR-310)",
+              "text": "java.time was designed by the author of Joda-Time (Stephen Colebourne) as JSR-310 and is a ground-up redesign. Key principles: immutability (all types are thread-safe), clear separation of concepts (date-only, time-only, with-zone, machine-time), fluent API, nanosecond precision, and comprehensive time zone support via the IANA timezone database. This is the only API you should use in new code written after Java 8."
+            }
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 Which API Should You Use in 2026?",
+          "text": "New code: exclusively java.time (java.time.LocalDate, java.time.ZonedDateTime, etc.). Legacy code using java.util.Date or Calendar: migrate to java.time — bridge methods like Date.toInstant() and Calendar.toInstant() exist for this. Third-party: Joda-Time is still maintained but its author explicitly says 'Migrate to java.time; it is essentially the same design.' Never use SimpleDateFormat in new code — use DateTimeFormatter."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "legacy-api-problems",
+      "title": "Legacy API: java.util.Date & Calendar — The Problems You Must Know",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Even if you never write new legacy Date code, you will encounter it in production codebases, third-party libraries, and JDBC results. Understanding its specific failure modes prevents subtle bugs during maintenance — and explains every interview question about why <code>java.util.Date</code> was replaced."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "LegacyDateProblems.java — The 7 Design Failures",
+          "lines": [
+            "import java.util.Date;",
+            "import java.util.Calendar;",
+            "",
+            "public class LegacyDateProblems {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ❌ PROBLEM 1: Mutability — not thread-safe",
+            "        Date date = new Date();",
+            "        date.setTime(0); // Can be mutated anywhere — race conditions in multi-threaded code",
+            "",
+            "        // ❌ PROBLEM 2: Zero-indexed months (January = 0, December = 11)",
+            "        // The MOST common java.util.Date bug ever:",
+            "        Calendar cal = Calendar.getInstance();",
+            "        cal.set(2026, 2, 20); // This is MARCH 20 — not February! Month 2 = March",
+            "        cal.set(2026, Calendar.MARCH, 20); // Correct way — use constants",
+            "",
+            "        // ❌ PROBLEM 3: Year stored as (year - 1900)",
+            "        Date d = new Date(2026 - 1900, 2, 20); // Deprecated constructor",
+            "        System.out.println(d.getYear());  // Prints 126 — not 2026!",
+            "        System.out.println(d.getMonth()); // Prints 2 — March, not 2!",
+            "",
+            "        // ❌ PROBLEM 4: Date also stores time (misleading name)",
+            "        Date today = new Date(); // Has hours, minutes, seconds, millis too",
+            "        // 'Date' is really a 'DateAndTime' — milliseconds since Unix epoch",
+            "",
+            "        // ❌ PROBLEM 5: No time zone in java.util.Date",
+            "        Date now = new Date(); // Always UTC internally, no zone stored",
+            "        // Timezone only applied at formatting (SimpleDateFormat) level",
+            "",
+            "        // ❌ PROBLEM 6: SimpleDateFormat is NOT thread-safe",
+            "        // DO NOT store SimpleDateFormat as a static field — race condition!",
+            "        // java.text.SimpleDateFormat sdf = new SimpleDateFormat(\"dd/MM/yyyy\");",
+            "        // If two threads call sdf.format() simultaneously — CORRUPT OUTPUT",
+            "",
+            "        // ❌ PROBLEM 7: Date comparison is error-prone",
+            "        Date d1 = new Date();",
+            "        Date d2 = new Date();",
+            "        // d1 == d2 compares REFERENCES, not values",
+            "        // d1.equals(d2) compares millisecond timestamps",
+            "        // What about 'same day regardless of time'? No built-in way.",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ The SimpleDateFormat Thread-Safety Trap",
+          "text": "SimpleDateFormat is stateful and NOT thread-safe. A notorious production bug: storing a static SimpleDateFormat in a shared service class and calling format()/parse() from multiple threads — leads to corrupted output, wrong dates, and impossible-to-reproduce bugs. Fix: either create a new SimpleDateFormat instance per call (expensive), use ThreadLocal<SimpleDateFormat>, or better yet — migrate to DateTimeFormatter, which IS thread-safe and can be safely shared as static final."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "java-time-overview",
+      "title": "java.time Package — Architecture & Core Types",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>java.time</code> package (introduced in Java 8 as JSR-310) organises date/time concepts into a clear taxonomy. Every type is <strong>immutable and thread-safe</strong>. Every modification method (like <code>plusDays()</code> or <code>withMonth()</code>) returns a <strong>new instance</strong> — the original is never modified. The API is <strong>fluent</strong> — methods return the same type, enabling clean method chaining."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Type", "Package", "Stores", "Has Time Zone?", "Typical Use Case"],
+          "rows": [
+            ["LocalDate",         "java.time", "Date only (y-m-d)",                   "❌ No",  "Birthdays, holidays, deadlines, business days"],
+            ["LocalTime",         "java.time", "Time only (h-m-s-ns)",                "❌ No",  "Store opening hours, alarm times, daily schedules"],
+            ["LocalDateTime",     "java.time", "Date + Time",                         "❌ No",  "Single-timezone scheduling, DB timestamps without zone"],
+            ["ZonedDateTime",     "java.time", "Date + Time + Zone",                  "✅ Yes", "Cross-timezone meetings, flight schedules, global events"],
+            ["OffsetDateTime",    "java.time", "Date + Time + UTC offset",            "✅ Yes", "Database storage, REST API serialization (ISO-8601)"],
+            ["Instant",           "java.time", "Epoch seconds + nanoseconds (UTC)",   "✅ UTC", "Event timestamps, DB created_at, measuring durations"],
+            ["Duration",          "java.time", "Amount of time in seconds + nanos",   "N/A",   "Time between two time-based events"],
+            ["Period",            "java.time", "Amount of time in years-months-days", "N/A",   "Age calculation, subscription length"],
+            ["ZoneId",            "java.time", "IANA timezone identifier",            "N/A",   "'Asia/Kolkata', 'America/New_York'"],
+            ["ZoneOffset",        "java.time", "Fixed UTC offset",                    "N/A",   "'+05:30', '-08:00'"],
+            ["MonthDay",          "java.time", "Month + Day (no year)",               "❌ No",  "Annual recurring events (anniversaries, festivals)"],
+            ["YearMonth",         "java.time", "Year + Month (no day)",               "❌ No",  "Credit card expiry, billing month"],
+            ["DateTimeFormatter", "java.time.format", "Formatting/parsing pattern",  "N/A",   "Parsing and formatting all java.time types"]
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 The Golden Rule for Choosing the Right Type",
+          "text": "Ask yourself three questions: (1) Do I need a DATE or a TIME or BOTH? → LocalDate / LocalTime / LocalDateTime. (2) Do I need to handle multiple time zones or precise global moments? → ZonedDateTime (for human use) or Instant (for machine use). (3) Am I measuring a SPAN of time? → Duration (for time-based) or Period (for calendar-based). The simplest type that accurately models your requirement is always the right choice."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "localdate",
+      "title": "LocalDate — Date Without Time or Zone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>LocalDate</code> represents a date — <strong>year, month, day</strong> — with no time component and no time zone. It is the right choice for any domain concept that is inherently date-only: a person's birthday, a public holiday, a project deadline, a payment due date. Internally, LocalDate stores year (int), month (Month enum), and day (int). It is immutable and thread-safe."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "LocalDateDemo.java",
+          "lines": [
+            "import java.time.LocalDate;",
+            "import java.time.Month;",
+            "import java.time.DayOfWeek;",
+            "import java.time.format.DateTimeFormatter;",
+            "",
+            "public class LocalDateDemo {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Creating LocalDate",
+            "        LocalDate today    = LocalDate.now();                    // Current date",
+            "        LocalDate specific = LocalDate.of(2026, 8, 15);         // Aug 15, 2026",
+            "        LocalDate withEnum = LocalDate.of(2026, Month.AUGUST, 15); // Same, using enum",
+            "        LocalDate parsed   = LocalDate.parse(\"2026-08-15\");     // ISO-8601 default",
+            "",
+            "        System.out.println(today);    // e.g., 2026-03-20",
+            "        System.out.println(specific); // 2026-08-15",
+            "",
+            "        // ✅ Extracting fields",
+            "        System.out.println(specific.getYear());        // 2026",
+            "        System.out.println(specific.getMonth());       // AUGUST",
+            "        System.out.println(specific.getMonthValue());  // 8  ← 1-indexed! (not 0!)",
+            "        System.out.println(specific.getDayOfMonth());  // 15",
+            "        System.out.println(specific.getDayOfWeek());   // SATURDAY",
+            "        System.out.println(specific.getDayOfYear());   // 227",
+            "        System.out.println(specific.lengthOfMonth());  // 31",
+            "        System.out.println(specific.lengthOfYear());   // 365",
+            "        System.out.println(specific.isLeapYear());     // false",
+            "",
+            "        // ✅ Date arithmetic — returns NEW instance (immutable)",
+            "        LocalDate nextWeek      = today.plusWeeks(1);",
+            "        LocalDate lastMonth     = today.minusMonths(1);",
+            "        LocalDate twoYearsLater = today.plusYears(2);",
+            "        LocalDate firstOfMonth  = today.withDayOfMonth(1);",
+            "        LocalDate lastOfMonth   = today.withDayOfMonth(today.lengthOfMonth());",
+            "",
+            "        // ✅ Comparing dates",
+            "        LocalDate deadline = LocalDate.of(2026, 12, 31);",
+            "        System.out.println(today.isBefore(deadline));    // true",
+            "        System.out.println(today.isAfter(deadline));     // false",
+            "        System.out.println(today.isEqual(deadline));     // false",
+            "        System.out.println(today.compareTo(deadline));   // negative (today < deadline)",
+            "",
+            "        // ✅ Checking business day",
+            "        DayOfWeek dow = today.getDayOfWeek();",
+            "        boolean isBusinessDay = dow != DayOfWeek.SATURDAY && dow != DayOfWeek.SUNDAY;",
+            "        System.out.println(\"Business day: \" + isBusinessDay);",
+            "",
+            "        // ✅ Custom formatting",
+            "        DateTimeFormatter indianFormat = DateTimeFormatter.ofPattern(\"dd-MMM-yyyy\");",
+            "        System.out.println(today.format(indianFormat)); // e.g., 20-Mar-2026",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Month is 1-Indexed in java.time — No More January=0 Bug!",
+          "text": "One of java.time's most celebrated fixes: months are 1-indexed. January = 1, December = 12. LocalDate.of(2026, 1, 26) is January 26 — exactly as you'd expect. The old Calendar.JANUARY = 0 bug that caused countless production incidents is gone. You can also use the Month enum for maximum clarity: LocalDate.of(2026, Month.JANUARY, 26). Both approaches are readable and correct."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "localtime",
+      "title": "LocalTime — Time Without Date or Zone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>LocalTime</code> represents a time of day — <strong>hour, minute, second, nanosecond</strong> — with no date and no time zone. It models the wall-clock time seen on a clock face, independent of any particular day. Perfect for representing store opening hours, shift schedules, alarm times, and daily recurring events that are not tied to a specific calendar date."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "LocalTimeDemo.java",
+          "lines": [
+            "import java.time.LocalTime;",
+            "import java.time.format.DateTimeFormatter;",
+            "",
+            "public class LocalTimeDemo {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Creating LocalTime",
+            "        LocalTime now        = LocalTime.now();                   // Current time",
+            "        LocalTime morning    = LocalTime.of(9, 30);               // 09:30:00",
+            "        LocalTime precise    = LocalTime.of(14, 45, 30, 500_000_000); // 14:45:30.5",
+            "        LocalTime midnight   = LocalTime.MIDNIGHT;               // 00:00",
+            "        LocalTime noon       = LocalTime.NOON;                   // 12:00",
+            "        LocalTime parsed     = LocalTime.parse(\"18:30:00\");      // 6:30 PM",
+            "",
+            "        // ✅ Extracting fields",
+            "        System.out.println(morning.getHour());        // 9",
+            "        System.out.println(morning.getMinute());      // 30",
+            "        System.out.println(morning.getSecond());      // 0",
+            "        System.out.println(morning.getNano());        // 0",
+            "",
+            "        // ✅ Time arithmetic",
+            "        LocalTime breakTime    = morning.plusHours(2).plusMinutes(30); // 12:00",
+            "        LocalTime reminderTime = morning.minusMinutes(15);             // 09:15",
+            "        LocalTime endOfDay     = LocalTime.of(17, 0).plusSeconds(3600); // 18:00",
+            "",
+            "        // ✅ Comparing times",
+            "        LocalTime openingTime = LocalTime.of(9, 0);",
+            "        LocalTime closingTime = LocalTime.of(21, 0);",
+            "        LocalTime visitTime   = LocalTime.of(14, 30);",
+            "",
+            "        boolean isOpen = visitTime.isAfter(openingTime) && visitTime.isBefore(closingTime);",
+            "        System.out.println(\"Store is open: \" + isOpen); // true",
+            "",
+            "        // ✅ Formatting",
+            "        DateTimeFormatter fmt12h = DateTimeFormatter.ofPattern(\"hh:mm a\");",
+            "        System.out.println(morning.format(fmt12h)); // 09:30 AM",
+            "",
+            "        DateTimeFormatter fmt24h = DateTimeFormatter.ofPattern(\"HH:mm:ss\");",
+            "        System.out.println(parsed.format(fmt24h));  // 18:30:00",
+            "",
+            "        // ✅ Truncating precision",
+            "        LocalTime truncated = LocalTime.now().truncatedTo(java.time.temporal.ChronoUnit.MINUTES);",
+            "        System.out.println(truncated); // e.g., 14:35 (no seconds/nanos)",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "localdatetime",
+      "title": "LocalDateTime — Date and Time, No Zone",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>LocalDateTime</code> is the combination of <code>LocalDate</code> and <code>LocalTime</code> — it holds a date AND time with no time zone information. It is ideal for recording timestamps within a single time zone context, like a meeting scheduled at a specific date and time within one region, or a database timestamp column where the application always operates in one known time zone."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "LocalDateTimeDemo.java",
+          "lines": [
+            "import java.time.*;",
+            "import java.time.format.DateTimeFormatter;",
+            "",
+            "public class LocalDateTimeDemo {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Creating LocalDateTime",
+            "        LocalDateTime now      = LocalDateTime.now();",
+            "        LocalDateTime specific = LocalDateTime.of(2026, 8, 15, 10, 30, 0);",
+            "        LocalDateTime fromParts = LocalDateTime.of(",
+            "            LocalDate.of(2026, Month.DECEMBER, 31),",
+            "            LocalTime.of(23, 59, 59)",
+            "        );",
+            "        LocalDateTime parsed = LocalDateTime.parse(\"2026-12-31T23:59:59\");",
+            "",
+            "        System.out.println(specific);  // 2026-08-15T10:30",
+            "        System.out.println(fromParts); // 2026-12-31T23:59:59",
+            "",
+            "        // ✅ Extracting components",
+            "        System.out.println(specific.toLocalDate()); // 2026-08-15",
+            "        System.out.println(specific.toLocalTime()); // 10:30",
+            "        System.out.println(specific.getYear());     // 2026",
+            "        System.out.println(specific.getDayOfWeek()); // SATURDAY",
+            "",
+            "        // ✅ Immutable arithmetic",
+            "        LocalDateTime meeting      = specific.plusHours(2);            // 12:30",
+            "        LocalDateTime nextReminder = specific.plusDays(7);             // Aug 22",
+            "        LocalDateTime yearEnd      = specific.withMonth(12).withDayOfMonth(31);",
+            "",
+            "        // ✅ Formatting",
+            "        DateTimeFormatter formatter =",
+            "            DateTimeFormatter.ofPattern(\"dd MMM yyyy, hh:mm a\");",
+            "        System.out.println(specific.format(formatter));",
+            "        // Output: 15 Aug 2026, 10:30 AM",
+            "",
+            "        // ✅ Converting to ZonedDateTime when zone info is needed",
+            "        ZoneId kolkata = ZoneId.of(\"Asia/Kolkata\");",
+            "        ZonedDateTime zoned = specific.atZone(kolkata);",
+            "        System.out.println(zoned); // 2026-08-15T10:30+05:30[Asia/Kolkata]",
+            "",
+            "        // ✅ Converting to Instant (UTC epoch)",
+            "        Instant instant = specific.toInstant(ZoneOffset.of(\"+05:30\"));",
+            "        System.out.println(instant); // 2026-08-15T05:00:00Z",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "zoneddatetime",
+      "title": "ZonedDateTime — The Complete Temporal Type",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>ZonedDateTime</code> is the most complete temporal type in <code>java.time</code> — it stores a <strong>date, time, UTC offset, AND time zone ID</strong>. Unlike <code>LocalDateTime</code>, it unambiguously identifies a precise point in time visible to a person in a specific region. It correctly handles <strong>Daylight Saving Time (DST)</strong> transitions, historical time zone changes, and cross-timezone arithmetic. Use it when your application genuinely needs to reason about time in multiple zones."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ZonedDateTimeDemo.java",
+          "lines": [
+            "import java.time.*;",
+            "import java.time.format.DateTimeFormatter;",
+            "",
+            "public class ZonedDateTimeDemo {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ Creating ZonedDateTime",
+            "        ZoneId kolkata   = ZoneId.of(\"Asia/Kolkata\");",
+            "        ZoneId newYork   = ZoneId.of(\"America/New_York\");",
+            "        ZoneId london    = ZoneId.of(\"Europe/London\");",
+            "        ZoneId utc       = ZoneId.of(\"UTC\");",
+            "",
+            "        ZonedDateTime nowKolkata = ZonedDateTime.now(kolkata);",
+            "        ZonedDateTime nowNY      = ZonedDateTime.now(newYork);",
+            "",
+            "        System.out.println(nowKolkata); // 2026-03-20T15:30:00+05:30[Asia/Kolkata]",
+            "        System.out.println(nowNY);      // 2026-03-20T05:00:00-05:00[America/New_York]",
+            "",
+            "        // ✅ Creating a specific ZonedDateTime",
+            "        ZonedDateTime teamCall = ZonedDateTime.of(",
+            "            LocalDateTime.of(2026, Month.APRIL, 10, 10, 0),",
+            "            newYork",
+            "        );",
+            "        System.out.println(\"NYC time: \" + teamCall);",
+            "",
+            "        // ✅ Converting between time zones — same instant, different wall-clock",
+            "        ZonedDateTime callInKolkata = teamCall.withZoneSameInstant(kolkata);",
+            "        ZonedDateTime callInLondon  = teamCall.withZoneSameInstant(london);",
+            "",
+            "        System.out.println(\"Same call in Kolkata: \" + callInKolkata);",
+            "        // 2026-04-10T19:30+05:30[Asia/Kolkata]",
+            "        System.out.println(\"Same call in London:  \" + callInLondon);",
+            "        // 2026-04-10T15:00+01:00[Europe/London]",
+            "",
+            "        // ✅ vs withZoneSameLocal — changes zone, keeps clock time (different instant)",
+            "        ZonedDateTime locallyEquivalent = teamCall.withZoneSameLocal(kolkata);",
+            "        System.out.println(\"Local equivalent: \" + locallyEquivalent);",
+            "        // 2026-04-10T10:00+05:30[Asia/Kolkata] — 10:00 Kolkata ≠ 10:00 NYC",
+            "",
+            "        // ✅ Listing all available time zones (partial)",
+            "        ZoneId.getAvailableZoneIds()",
+            "            .stream()",
+            "            .filter(z -> z.startsWith(\"Asia/\"))",
+            "            .sorted()",
+            "            .limit(5)",
+            "            .forEach(System.out::println);",
+            "        // Asia/Aden, Asia/Almaty, Asia/Amman, Asia/Anadyr, Asia/Aqtau",
+            "",
+            "        // ✅ Formatting for display",
+            "        DateTimeFormatter fmt = DateTimeFormatter.ofPattern(\"dd MMM yyyy HH:mm z\");",
+            "        System.out.println(callInKolkata.format(fmt)); // 10 Apr 2026 19:30 IST",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ withZoneSameInstant() vs withZoneSameLocal() — Critical Distinction",
+          "text": "withZoneSameInstant(zone) converts the same MOMENT to another zone — like asking 'what does a clock in Kolkata show right now?' The underlying instant (epoch millis) doesn't change. withZoneSameLocal(zone) keeps the CLOCK READING the same but changes the zone — creating a DIFFERENT instant. Example: 10:00 AM New York → withZoneSameInstant(Kolkata) = 19:30 IST (same moment). 10:00 AM New York → withZoneSameLocal(Kolkata) = 10:00 IST (different moment — 9.5 hours earlier). Mixing these up causes ghost meeting bugs."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "instant",
+      "title": "Instant — The Machine Timestamp",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>Instant</code> represents a <strong>single, specific point on the global timeline</strong> — the number of seconds (and nanoseconds) elapsed since the <strong>Unix epoch: January 1, 1970, 00:00:00 UTC</strong>. It has no time zone, no DST consideration, no calendar system — it is the rawest, most machine-centric time value in <code>java.time</code>. Instant is the go-to type for <strong>event timestamping, database records, elapsed time measurement, and logging</strong>."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InstantDemo.java",
+          "lines": [
+            "import java.time.*;",
+            "import java.time.temporal.ChronoUnit;",
+            "",
+            "public class InstantDemo {",
+            "    public static void main(String[] args) throws InterruptedException {",
+            "",
+            "        // ✅ Creating Instant",
+            "        Instant now   = Instant.now();           // Current UTC moment",
+            "        Instant epoch = Instant.EPOCH;           // 1970-01-01T00:00:00Z",
+            "        Instant future = Instant.now().plusSeconds(3600); // 1 hour from now",
+            "        Instant fromEpoch = Instant.ofEpochSecond(1_700_000_000L); // Unix timestamp",
+            "        Instant fromMilli = Instant.ofEpochMilli(System.currentTimeMillis());",
+            "",
+            "        System.out.println(now);        // e.g., 2026-03-20T10:00:00.123456789Z",
+            "        System.out.println(epoch);      // 1970-01-01T00:00:00Z",
+            "",
+            "        // ✅ Reading Instant values",
+            "        System.out.println(now.getEpochSecond()); // epoch seconds",
+            "        System.out.println(now.getNano());        // nanosecond adjustment",
+            "        System.out.println(now.toEpochMilli());   // milliseconds since epoch",
+            "",
+            "        // ✅ Measuring elapsed time — the RIGHT way",
+            "        Instant start = Instant.now();",
+            "        Thread.sleep(50); // Simulate some work",
+            "        Instant end = Instant.now();",
+            "        Duration elapsed = Duration.between(start, end);",
+            "        System.out.println(\"Elapsed: \" + elapsed.toMillis() + \" ms\"); // ~50ms",
+            "",
+            "        // ✅ Comparing Instants",
+            "        System.out.println(start.isBefore(end));  // true",
+            "        System.out.println(start.isAfter(end));   // false",
+            "        System.out.println(start.compareTo(end)); // negative",
+            "",
+            "        // ✅ Instant ↔ ZonedDateTime conversion",
+            "        ZoneId kolkata = ZoneId.of(\"Asia/Kolkata\");",
+            "        ZonedDateTime humanReadable = now.atZone(kolkata);",
+            "        System.out.println(humanReadable);",
+            "        // 2026-03-20T15:30:00.123456789+05:30[Asia/Kolkata]",
+            "",
+            "        // ✅ Instant ↔ java.util.Date (bridge for legacy code)",
+            "        java.util.Date legacyDate = java.util.Date.from(now);",
+            "        Instant backToInstant = legacyDate.toInstant();",
+            "",
+            "        // ✅ Truncating precision (useful for comparisons)",
+            "        Instant truncatedToSeconds = now.truncatedTo(ChronoUnit.SECONDS);",
+            "        Instant truncatedToMinutes = now.truncatedTo(ChronoUnit.MINUTES);",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "📌 Instant vs ZonedDateTime — When to Use Which",
+          "text": "Instant is for MACHINES — storing when something happened (database created_at, audit log timestamp, JWT iat claim). It has no zone, no DST, no ambiguity. ZonedDateTime is for HUMANS — displaying when something happens to a person in a specific locale. Rule: store as Instant (or OffsetDateTime for SQL), display as ZonedDateTime. Never store ZonedDateTime in a database — the zone info is presentation logic, not data. Store epoch seconds or UTC timestamps."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "duration-period",
+      "title": "Duration vs Period — Measuring Time Gaps Correctly",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java provides two distinct types for representing an <strong>amount of time</strong>: <code>Duration</code> for machine-precision time spans, and <code>Period</code> for human-calendar spans. Choosing the wrong one leads to subtle DST-related bugs — one of the most insidious classes of datetime errors in production systems."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "Duration", "Period"],
+          "rows": [
+            ["Unit",              "Seconds + nanoseconds",                              "Years + months + days"],
+            ["Works with",        "LocalTime, LocalDateTime, Instant",                  "LocalDate"],
+            ["DST aware?",        "❌ No — 1 day = always 86,400 seconds",             "✅ Yes — 1 day = 'next calendar day'"],
+            ["Precision",         "Nanosecond",                                         "Day (no time component)"],
+            ["Creation",          "Duration.of(), between(), ofHours(), ofMinutes()",   "Period.of(), between(), ofYears(), ofMonths()"],
+            ["Example",           "Duration.ofHours(2) = exactly 7,200 seconds",        "Period.ofMonths(1) = '1 month' (28-31 days)"],
+            ["Use case",          "Code benchmarking, SLA timers, connection timeouts", "Age calculation, subscription expiry, billing cycles"],
+            ["Negative allowed?", "✅ Yes — negative Duration is valid",              "✅ Yes — Period can be negative"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "DurationAndPeriod.java",
+          "lines": [
+            "import java.time.*;",
+            "import java.time.temporal.ChronoUnit;",
+            "",
+            "public class DurationAndPeriod {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ============================================================",
+            "        // DURATION — time-based amount (seconds + nanoseconds)",
+            "        // ============================================================",
+            "",
+            "        // Creating Duration",
+            "        Duration twoHours     = Duration.ofHours(2);",
+            "        Duration thirtyMins   = Duration.ofMinutes(30);",
+            "        Duration halfDay      = Duration.ofSeconds(43200);",
+            "        Duration withNanos    = Duration.ofSeconds(5, 500_000_000); // 5.5 seconds",
+            "",
+            "        // Duration between two time-based values",
+            "        LocalDateTime start   = LocalDateTime.of(2026, 3, 20, 9, 0, 0);",
+            "        LocalDateTime end     = LocalDateTime.of(2026, 3, 20, 17, 30, 0);",
+            "        Duration workDay      = Duration.between(start, end);",
+            "",
+            "        System.out.println(workDay);                 // PT8H30M",
+            "        System.out.println(workDay.toHours());       // 8",
+            "        System.out.println(workDay.toMinutes());     // 510",
+            "        System.out.println(workDay.toMinutesPart()); // 30 (Java 9+)",
+            "        System.out.println(workDay.toHoursPart());   // 8  (Java 9+)",
+            "",
+            "        // Duration arithmetic",
+            "        Duration overtime     = workDay.plusHours(2);  // PT10H30M",
+            "        Duration halfWorkDay  = workDay.dividedBy(2);  // PT4H15M",
+            "        boolean isLongDay     = workDay.compareTo(Duration.ofHours(10)) > 0;",
+            "",
+            "        // ============================================================",
+            "        // PERIOD — date-based amount (years, months, days)",
+            "        // ============================================================",
+            "",
+            "        // Creating Period",
+            "        Period oneYear      = Period.ofYears(1);",
+            "        Period sixMonths    = Period.ofMonths(6);",
+            "        Period threeWeeks   = Period.ofWeeks(3);  // Stored as 21 days",
+            "        Period complex      = Period.of(1, 6, 15); // 1 year, 6 months, 15 days",
+            "",
+            "        // Period between two dates",
+            "        LocalDate dob         = LocalDate.of(1995, Month.JULY, 15);",
+            "        LocalDate today       = LocalDate.of(2026, Month.MARCH, 20);",
+            "        Period age            = Period.between(dob, today);",
+            "",
+            "        System.out.println(age);                  // P30Y8M5D",
+            "        System.out.println(age.getYears());       // 30",
+            "        System.out.println(age.getMonths());      // 8",
+            "        System.out.println(age.getDays());        // 5",
+            "        System.out.println(\"Age: \" + age.getYears() + \" years\"); // Age: 30 years",
+            "",
+            "        // Period arithmetic",
+            "        LocalDate subscriptionStart = LocalDate.of(2026, 1, 1);",
+            "        LocalDate subscriptionEnd   = subscriptionStart.plus(Period.ofYears(1));",
+            "        System.out.println(\"Subscription ends: \" + subscriptionEnd); // 2027-01-01",
+            "",
+            "        // ⚠️ Critical difference: Duration.ofDays(1) vs Period.ofDays(1) at DST",
+            "        // Duration.ofDays(1) = always 86400 seconds",
+            "        // Period.ofDays(1) added to a ZonedDateTime near DST = may be 23 or 25 hours",
+            "        ZonedDateTime beforeDST = ZonedDateTime.of(",
+            "            LocalDate.of(2026, 3, 8), LocalTime.of(10, 0),",
+            "            ZoneId.of(\"America/New_York\")); // DST starts March 8 in US",
+            "        ZonedDateTime plusOnePeriod  = beforeDST.plus(Period.ofDays(1));",
+            "        ZonedDateTime plusOneDuration = beforeDST.plus(Duration.ofDays(1));",
+            "        System.out.println(\"Period +1 day:   \" + plusOnePeriod.toLocalTime());",
+            "        // 10:00 — same wall-clock time next day (DST-aware)",
+            "        System.out.println(\"Duration +1 day: \" + plusOneDuration.toLocalTime());",
+            "        // 11:00 — exactly 86400 seconds later (DST shifted clock forward 1hr)",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "date-formatting-parsing",
+      "title": "DateTimeFormatter — Formatting & Parsing",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>DateTimeFormatter</code> is the thread-safe, immutable replacement for <code>SimpleDateFormat</code>. It converts between <code>java.time</code> objects and <code>String</code> in both directions: <strong>formatting</strong> (date object → string) and <strong>parsing</strong> (string → date object). It supports predefined ISO patterns, custom patterns, locale-sensitive formats, and even optional sections."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📐",
+              "title": "Predefined ISO Formatters",
+              "text": "DateTimeFormatter.ISO_LOCAL_DATE → '2026-08-15'. ISO_LOCAL_TIME → '10:30:00'. ISO_LOCAL_DATE_TIME → '2026-08-15T10:30:00'. ISO_OFFSET_DATE_TIME → '2026-08-15T10:30:00+05:30'. ISO_INSTANT → '2026-08-15T05:00:00Z'. ISO_ZONED_DATE_TIME → '2026-08-15T10:30:00+05:30[Asia/Kolkata]'. These are the defaults used by toString() on java.time objects."
+            },
+            {
+              "icon": "🎨",
+              "title": "Pattern Letters — Custom Formats",
+              "text": "y=year, M=month, d=day, H=hour(0-23), h=hour(1-12), m=minute, s=second, n=nanosecond, a=AM/PM, z=zone name, Z=zone offset, E=day name, D=day of year, w=week of year. Case and repetition matter: M=month digit, MM=zero-padded, MMM=Jan, MMMM=January. H=hour, HH=zero-padded. Always quote literal text with single quotes: 'T' in a pattern is literal T."
+            },
+            {
+              "icon": "🌍",
+              "title": "Locale-Sensitive Formatters",
+              "text": "DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL) produces locale-aware output. With Locale.of('hi', 'IN') you get Hindi format; with Locale.US you get US format. FormatStyle options: FULL ('Thursday, March 20, 2026'), LONG ('March 20, 2026'), MEDIUM ('Mar 20, 2026'), SHORT ('3/20/26'). Use withLocale(Locale) to chain: DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG).withLocale(Locale.UK)."
+            },
+            {
+              "icon": "🔒",
+              "title": "Thread Safety — Static Constants Are Safe",
+              "text": "Unlike SimpleDateFormat, DateTimeFormatter is IMMUTABLE and THREAD-SAFE. Store it safely as a private static final field: private static final DateTimeFormatter INDIAN_FORMAT = DateTimeFormatter.ofPattern('dd-MMM-yyyy'); This is the standard pattern in production code — create once, reuse everywhere, no synchronization needed."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "DateTimeFormatterDemo.java",
+          "lines": [
+            "import java.time.*;",
+            "import java.time.format.*;",
+            "import java.util.Locale;",
+            "",
+            "public class DateTimeFormatterDemo {",
+            "",
+            "    // ✅ Thread-safe — store as static final",
+            "    private static final DateTimeFormatter ISO_DATE      = DateTimeFormatter.ISO_LOCAL_DATE;",
+            "    private static final DateTimeFormatter INDIAN_DATE   = DateTimeFormatter.ofPattern(\"dd-MMM-yyyy\");",
+            "    private static final DateTimeFormatter INVOICE_DT    = DateTimeFormatter.ofPattern(\"dd/MM/yyyy HH:mm:ss\");",
+            "    private static final DateTimeFormatter DISPLAY_DT    = DateTimeFormatter.ofPattern(\"EEEE, dd MMMM yyyy 'at' hh:mm a\", Locale.ENGLISH);",
+            "    private static final DateTimeFormatter API_TIMESTAMP = DateTimeFormatter.ISO_OFFSET_DATE_TIME;",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        LocalDate date       = LocalDate.of(2026, 8, 15);",
+            "        LocalDateTime ldt    = LocalDateTime.of(2026, 8, 15, 10, 30, 0);",
+            "        ZonedDateTime zdt    = ldt.atZone(ZoneId.of(\"Asia/Kolkata\"));",
+            "",
+            "        // ✅ Formatting",
+            "        System.out.println(date.format(ISO_DATE));     // 2026-08-15",
+            "        System.out.println(date.format(INDIAN_DATE));  // 15-Aug-2026",
+            "        System.out.println(ldt.format(INVOICE_DT));    // 15/08/2026 10:30:00",
+            "        System.out.println(ldt.format(DISPLAY_DT));    // Saturday, 15 August 2026 at 10:30 AM",
+            "        System.out.println(zdt.format(API_TIMESTAMP)); // 2026-08-15T10:30:00+05:30",
+            "",
+            "        // ✅ Parsing — string → date object",
+            "        LocalDate parsed1 = LocalDate.parse(\"15-Aug-2026\", INDIAN_DATE);",
+            "        LocalDate parsed2 = LocalDate.parse(\"2026-08-15\"); // uses ISO default",
+            "        LocalDateTime parsed3 = LocalDateTime.parse(\"15/08/2026 10:30:00\", INVOICE_DT);",
+            "",
+            "        System.out.println(parsed1); // 2026-08-15",
+            "        System.out.println(parsed3); // 2026-08-15T10:30",
+            "",
+            "        // ✅ Safe parsing with error handling",
+            "        String userInput = \"not-a-date\";",
+            "        try {",
+            "            LocalDate result = LocalDate.parse(userInput, INDIAN_DATE);",
+            "        } catch (DateTimeParseException e) {",
+            "            System.out.println(\"Invalid date format: \" + e.getMessage());",
+            "        }",
+            "",
+            "        // ✅ Locale-sensitive formatting",
+            "        DateTimeFormatter hindi = DateTimeFormatter",
+            "            .ofLocalizedDate(FormatStyle.FULL)",
+            "            .withLocale(new Locale(\"hi\", \"IN\"));",
+            "        DateTimeFormatter us = DateTimeFormatter",
+            "            .ofLocalizedDate(FormatStyle.LONG)",
+            "            .withLocale(Locale.US);",
+            "",
+            "        System.out.println(date.format(hindi)); // शनिवार, 15 अगस्त 2026",
+            "        System.out.println(date.format(us));    // August 15, 2026",
+            "",
+            "        // ✅ Common pattern reference",
+            "        String[][] patterns = {",
+            "            {\"dd/MM/yyyy\",          \"15/08/2026\"},",
+            "            {\"yyyy-MM-dd\",          \"2026-08-15\"},",
+            "            {\"dd-MMM-yyyy\",         \"15-Aug-2026\"},",
+            "            {\"dd MMMM yyyy\",        \"15 August 2026\"},",
+            "            {\"EEEE, dd MMM yyyy\",   \"Saturday, 15 Aug 2026\"},",
+            "            {\"HH:mm:ss\",            \"10:30:00\"},",
+            "            {\"hh:mm a\",             \"10:30 AM\"},",
+            "            {\"dd/MM/yyyy HH:mm:ss\", \"15/08/2026 10:30:00\"}",
+            "        };",
+            "        System.out.println(\"\\nPattern Reference:\");",
+            "        for (String[] p : patterns) {",
+            "            System.out.printf(\"  %-30s → %s%n\", p[0], p[1]);",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "temporal-adjusters",
+      "title": "TemporalAdjusters — Navigating the Calendar Like a Pro",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>TemporalAdjusters</code> is a utility class in <code>java.time.temporal</code> providing factory methods for common calendar navigation tasks — finding the next Monday, the last day of the month, the second Tuesday of the month, and so on. These cover the kinds of date calculations that plague financial, HR, and scheduling systems — calculations that look simple but have dozens of edge cases."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "TemporalAdjustersDemo.java",
+          "lines": [
+            "import java.time.*;",
+            "import java.time.temporal.TemporalAdjusters;",
+            "import java.time.temporal.TemporalAdjuster;",
+            "",
+            "public class TemporalAdjustersDemo {",
+            "    public static void main(String[] args) {",
+            "",
+            "        LocalDate today = LocalDate.of(2026, Month.MARCH, 20); // Thursday",
+            "",
+            "        // ✅ Built-in adjusters",
+            "        LocalDate firstOfMonth  = today.with(TemporalAdjusters.firstDayOfMonth());",
+            "        LocalDate lastOfMonth   = today.with(TemporalAdjusters.lastDayOfMonth());",
+            "        LocalDate firstOfYear   = today.with(TemporalAdjusters.firstDayOfYear());",
+            "        LocalDate lastOfYear    = today.with(TemporalAdjusters.lastDayOfYear());",
+            "        LocalDate firstOfNextM  = today.with(TemporalAdjusters.firstDayOfNextMonth());",
+            "        LocalDate firstOfNextY  = today.with(TemporalAdjusters.firstDayOfNextYear());",
+            "",
+            "        System.out.println(\"First of month:  \" + firstOfMonth);  // 2026-03-01",
+            "        System.out.println(\"Last of month:   \" + lastOfMonth);   // 2026-03-31",
+            "        System.out.println(\"First of year:   \" + firstOfYear);   // 2026-01-01",
+            "        System.out.println(\"Last of year:    \" + lastOfYear);    // 2026-12-31",
+            "",
+            "        // ✅ Day-of-week navigation",
+            "        LocalDate nextMonday    = today.with(TemporalAdjusters.next(DayOfWeek.MONDAY));",
+            "        LocalDate lastFriday    = today.with(TemporalAdjusters.previous(DayOfWeek.FRIDAY));",
+            "        LocalDate nextOrSameMon = today.with(TemporalAdjusters.nextOrSame(DayOfWeek.THURSDAY));",
+            "",
+            "        System.out.println(\"Next Monday:     \" + nextMonday);     // 2026-03-23",
+            "        System.out.println(\"Last Friday:     \" + lastFriday);     // 2026-03-20 (today IS Friday... wait)",
+            "        System.out.println(\"Next or same Thu: \" + nextOrSameMon); // 2026-03-20 (today is Thursday)",
+            "",
+            "        // ✅ Nth occurrence — e.g., second Tuesday of the month (Tax day, meeting schedules)",
+            "        LocalDate secondTuesdayOfMonth = today.with(",
+            "            TemporalAdjusters.dayOfWeekInMonth(2, DayOfWeek.TUESDAY));",
+            "        System.out.println(\"2nd Tuesday:     \" + secondTuesdayOfMonth); // 2026-03-10",
+            "",
+            "        // ✅ Last occurrence — e.g., last Friday of the month (salary day)",
+            "        LocalDate lastFridayOfMonth = today.with(",
+            "            TemporalAdjusters.lastInMonth(DayOfWeek.FRIDAY));",
+            "        System.out.println(\"Last Friday:     \" + lastFridayOfMonth); // 2026-03-27",
+            "",
+            "        // ✅ Custom adjuster — next business day (skip weekend)",
+            "        TemporalAdjuster nextBusinessDay = temporal -> {",
+            "            LocalDate date = LocalDate.from(temporal);",
+            "            DayOfWeek dow  = date.getDayOfWeek();",
+            "            int daysToAdd  = switch (dow) {",
+            "                case FRIDAY   -> 3; // Skip Sat + Sun",
+            "                case SATURDAY -> 2; // Skip Sun",
+            "                default       -> 1;",
+            "            };",
+            "            return date.plusDays(daysToAdd);",
+            "        };",
+            "",
+            "        LocalDate friday  = LocalDate.of(2026, 3, 20);",
+            "        LocalDate nextBiz = friday.with(nextBusinessDay);",
+            "        System.out.println(\"Next business day from Friday: \" + nextBiz); // 2026-03-23 (Monday)",
+            "",
+            "        // ✅ Salary payment example: if 25th is weekend, pay on last business day",
+            "        LocalDate payDay = LocalDate.of(2026, 3, 25); // Wednesday",
+            "        DayOfWeek payDow = payDay.getDayOfWeek();",
+            "        if (payDow == DayOfWeek.SATURDAY) payDay = payDay.minusDays(1);",
+            "        if (payDow == DayOfWeek.SUNDAY)   payDay = payDay.minusDays(2);",
+            "        System.out.println(\"Salary credited: \" + payDay); // 2026-03-25 (Wed — no change)",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "chronounit",
+      "title": "ChronoUnit — Measuring Between Dates with Precision",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>ChronoUnit</code> is an enum in <code>java.time.temporal</code> representing standard units of time — from nanoseconds to millennia. Its most practical method is <code>between(temporal1, temporal2)</code>, which calculates the <strong>number of complete units</strong> between two temporal objects. It is the clearest way to answer questions like: 'How many days until the deadline?' or 'How many months has this subscription been active?'"
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ChronoUnitDemo.java",
+          "lines": [
+            "import java.time.*;",
+            "import java.time.temporal.ChronoUnit;",
+            "",
+            "public class ChronoUnitDemo {",
+            "    public static void main(String[] args) {",
+            "",
+            "        LocalDate projectStart = LocalDate.of(2026, 1, 1);",
+            "        LocalDate projectEnd   = LocalDate.of(2026, 12, 31);",
+            "        LocalDate today        = LocalDate.of(2026, 3, 20);",
+            "",
+            "        // ✅ Count between two dates",
+            "        long totalDays    = ChronoUnit.DAYS.between(projectStart, projectEnd);",
+            "        long weeksLeft    = ChronoUnit.WEEKS.between(today, projectEnd);",
+            "        long monthsLeft   = ChronoUnit.MONTHS.between(today, projectEnd);",
+            "        long daysElapsed  = ChronoUnit.DAYS.between(projectStart, today);",
+            "",
+            "        System.out.println(\"Project total days:  \" + totalDays);   // 364",
+            "        System.out.println(\"Weeks remaining:     \" + weeksLeft);   // 41",
+            "        System.out.println(\"Months remaining:    \" + monthsLeft);  // 9",
+            "        System.out.println(\"Days elapsed:        \" + daysElapsed); // 78",
+            "",
+            "        // ✅ With LocalDateTime — time units too",
+            "        LocalDateTime meetingStart = LocalDateTime.of(2026, 3, 20, 9, 0, 0);",
+            "        LocalDateTime meetingEnd   = LocalDateTime.of(2026, 3, 20, 11, 45, 30);",
+            "",
+            "        long hours   = ChronoUnit.HOURS.between(meetingStart, meetingEnd);",
+            "        long minutes = ChronoUnit.MINUTES.between(meetingStart, meetingEnd);",
+            "        long seconds = ChronoUnit.SECONDS.between(meetingStart, meetingEnd);",
+            "",
+            "        System.out.println(\"Meeting hours:   \" + hours);   // 2",
+            "        System.out.println(\"Meeting minutes: \" + minutes); // 165",
+            "        System.out.println(\"Meeting seconds: \" + seconds); // 9930",
+            "",
+            "        // ✅ Age calculation — complete years",
+            "        LocalDate birthday = LocalDate.of(1995, 7, 15);",
+            "        long age = ChronoUnit.YEARS.between(birthday, today);",
+            "        System.out.println(\"Age: \" + age + \" years\"); // Age: 30 years",
+            "",
+            "        // ✅ Days until next birthday",
+            "        LocalDate nextBirthday = birthday.withYear(today.getYear());",
+            "        if (nextBirthday.isBefore(today) || nextBirthday.isEqual(today)) {",
+            "            nextBirthday = nextBirthday.plusYears(1);",
+            "        }",
+            "        long daysUntilBirthday = ChronoUnit.DAYS.between(today, nextBirthday);",
+            "        System.out.println(\"Days to birthday: \" + daysUntilBirthday);",
+            "",
+            "        // ✅ All ChronoUnit values",
+            "        System.out.println(\"\\nAll ChronoUnits:\");",
+            "        for (ChronoUnit unit : ChronoUnit.values()) {",
+            "            System.out.printf(\"  %-15s — estimated duration: %s%n\",",
+            "                unit, unit.getDuration());",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "timezone-handling",
+      "title": "Time Zone Handling & DST Pitfalls — The Hard Part",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Time zones are the most complex part of any date/time system. The <strong>IANA Time Zone Database</strong> (also called the tz or zoneinfo database) is Java's source of truth — accessed via <code>ZoneId</code>. It defines over 600 named zones, each with its complete history of UTC offsets and DST transitions. Getting time zones right in production requires understanding three common failure modes: <strong>DST gaps, DST overlaps, and offset vs zone ID</strong>."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "TimeZoneHandling.java",
+          "lines": [
+            "import java.time.*;",
+            "import java.time.format.DateTimeFormatter;",
+            "",
+            "public class TimeZoneHandling {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ✅ ZoneId vs ZoneOffset — know the difference",
+            "        ZoneId    kolkataZoneId = ZoneId.of(\"Asia/Kolkata\");    // Named zone — full DST history",
+            "        ZoneOffset fixedOffset  = ZoneOffset.of(\"+05:30\");       // Fixed offset — no DST logic",
+            "        ZoneOffset utcOffset    = ZoneOffset.UTC;                // UTC — zero offset",
+            "",
+            "        // India doesn't observe DST — so both are equivalent for IST",
+            "        // But for America/New_York (which does DST), they behave differently:",
+            "        ZoneId    nyZoneId      = ZoneId.of(\"America/New_York\"); // -05:00 or -04:00 (DST)",
+            "        ZoneOffset nyFixedOffset = ZoneOffset.of(\"-05:00\");      // Always -5 (ignores DST)",
+            "",
+            "        // ✅ DST GAP — 'Spring Forward': an hour that doesn't exist",
+            "        // US Eastern DST starts: 2026-03-08 02:00 → jumps to 03:00",
+            "        // So 02:30 AM on March 8 does NOT EXIST in America/New_York",
+            "        LocalDateTime gapTime = LocalDateTime.of(2026, 3, 8, 2, 30);",
+            "        ZonedDateTime gapZoned = gapTime.atZone(nyZoneId);",
+            "        System.out.println(\"Gap time resolved: \" + gapZoned);",
+            "        // Java auto-adjusts: 2026-03-08T03:30-04:00[America/New_York]",
+            "",
+            "        // ✅ DST OVERLAP — 'Fall Back': an hour that appears twice",
+            "        // US Eastern DST ends: 2026-11-01 02:00 → falls back to 01:00",
+            "        // So 01:30 AM on Nov 1 is AMBIGUOUS — could be -04:00 or -05:00",
+            "        LocalDateTime overlapTime = LocalDateTime.of(2026, 11, 1, 1, 30);",
+            "        ZonedDateTime overlapEarlier = overlapTime.atZone(nyZoneId); // Default: earlier (DST)",
+            "        ZonedDateTime overlapLater   = overlapTime.atZone(nyZoneId)",
+            "            .withLaterOffsetAtOverlap(); // Explicitly choose later (standard)",
+            "        System.out.println(\"Overlap earlier: \" + overlapEarlier);",
+            "        // 2026-11-01T01:30-04:00[America/New_York]",
+            "        System.out.println(\"Overlap later:   \" + overlapLater);",
+            "        // 2026-11-01T01:30-05:00[America/New_York]",
+            "",
+            "        // ✅ Best practice: store as Instant, display in user's zone",
+            "        Instant eventInstant = Instant.parse(\"2026-04-10T09:00:00Z\"); // Stored in DB",
+            "        String[] userZones = {\"Asia/Kolkata\", \"America/New_York\", \"Europe/London\", \"Australia/Sydney\"};",
+            "        DateTimeFormatter fmt = DateTimeFormatter.ofPattern(\"dd MMM yyyy HH:mm z\");",
+            "",
+            "        System.out.println(\"\\nGlobal display of the same event:\");",
+            "        for (String zone : userZones) {",
+            "            ZonedDateTime userView = eventInstant.atZone(ZoneId.of(zone));",
+            "            System.out.printf(\"  %-20s → %s%n\", zone, userView.format(fmt));",
+            "        }",
+            "        // Asia/Kolkata         → 10 Apr 2026 14:30 IST",
+            "        // America/New_York     → 10 Apr 2026 05:00 EDT",
+            "        // Europe/London        → 10 Apr 2026 10:00 BST",
+            "        // Australia/Sydney     → 10 Apr 2026 20:00 AEST",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "warning",
+          "title": "⚠️ The 3 Most Dangerous Time Zone Mistakes in Production",
+          "text": "1. Storing ZonedDateTime as a string in the database (zone name gets lost on read). Fix: store as TIMESTAMP WITH TIME ZONE (SQL) mapped to OffsetDateTime (Java). 2. Using ZoneOffset.of('+05:30') instead of ZoneId.of('Asia/Kolkata') — the fixed offset never adjusts for DST or historical changes. 3. Using LocalDateTime.now() without specifying a zone — it uses the JVM's default zone, which varies by server. Fix: always pass the zone explicitly: LocalDateTime.now(ZoneId.of('Asia/Kolkata'))."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "legacy-migration",
+      "title": "Migrating from Legacy Date/Calendar to java.time",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If you work in any codebase more than a few years old, you will encounter <code>java.util.Date</code>, <code>java.util.Calendar</code>, and <code>java.sql.Timestamp</code>. Java provides official <strong>bridge methods</strong> on the legacy classes to convert to and from <code>java.time</code> types — enabling incremental migration without rewriting everything at once."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "LegacyMigration.java — Bridge Methods",
+          "lines": [
+            "import java.time.*;",
+            "import java.util.Calendar;",
+            "import java.util.TimeZone;",
+            "",
+            "public class LegacyMigration {",
+            "    public static void main(String[] args) {",
+            "",
+            "        // ============================================================",
+            "        // java.util.Date  ←→  java.time",
+            "        // ============================================================",
+            "",
+            "        // ✅ Date → Instant (the primary bridge)",
+            "        java.util.Date legacyDate = new java.util.Date();",
+            "        Instant instant = legacyDate.toInstant();",
+            "        System.out.println(\"Instant: \" + instant);",
+            "",
+            "        // ✅ Instant → Date (for legacy APIs that still require Date)",
+            "        java.util.Date backToDate = java.util.Date.from(instant);",
+            "",
+            "        // ✅ Date → LocalDateTime (via Instant + ZoneId)",
+            "        LocalDateTime ldt = instant",
+            "            .atZone(ZoneId.systemDefault())",
+            "            .toLocalDateTime();",
+            "",
+            "        // ✅ LocalDateTime → Date (for legacy output)",
+            "        java.util.Date fromLdt = java.util.Date.from(",
+            "            ldt.atZone(ZoneId.systemDefault()).toInstant());",
+            "",
+            "        // ============================================================",
+            "        // java.util.Calendar  ←→  java.time",
+            "        // ============================================================",
+            "",
+            "        // ✅ Calendar → Instant",
+            "        Calendar cal = Calendar.getInstance();",
+            "        Instant calInstant = cal.toInstant();",
+            "",
+            "        // ✅ Calendar → ZonedDateTime",
+            "        TimeZone tz  = cal.getTimeZone();",
+            "        ZoneId zoneId = tz.toZoneId();",
+            "        ZonedDateTime zdt = calInstant.atZone(zoneId);",
+            "        System.out.println(\"ZonedDateTime: \" + zdt);",
+            "",
+            "        // ============================================================",
+            "        // java.sql.Date  ←→  LocalDate  (JDBC)",
+            "        // ============================================================",
+            "",
+            "        // ✅ sql.Date → LocalDate",
+            "        java.sql.Date sqlDate = java.sql.Date.valueOf(\"2026-08-15\");",
+            "        LocalDate localDate = sqlDate.toLocalDate();",
+            "        System.out.println(\"LocalDate: \" + localDate);",
+            "",
+            "        // ✅ LocalDate → sql.Date",
+            "        java.sql.Date backToSql = java.sql.Date.valueOf(localDate);",
+            "",
+            "        // ============================================================",
+            "        // java.sql.Timestamp  ←→  LocalDateTime / Instant (JDBC)",
+            "        // ============================================================",
+            "",
+            "        // ✅ Timestamp → LocalDateTime",
+            "        java.sql.Timestamp ts = new java.sql.Timestamp(System.currentTimeMillis());",
+            "        LocalDateTime fromTs = ts.toLocalDateTime();",
+            "        System.out.println(\"LocalDateTime: \" + fromTs);",
+            "",
+            "        // ✅ Timestamp → Instant",
+            "        Instant tsInstant = ts.toInstant();",
+            "",
+            "        // ✅ LocalDateTime → Timestamp",
+            "        java.sql.Timestamp backToTs = java.sql.Timestamp.valueOf(LocalDateTime.now());",
+            "",
+            "        // ============================================================",
+            "        // Cheat Sheet Summary",
+            "        // ============================================================",
+            "        System.out.println(\"\\n=== Migration Cheat Sheet ===\");",
+            "        System.out.println(\"Date     → Instant:           date.toInstant()\");",
+            "        System.out.println(\"Instant  → Date:              Date.from(instant)\");",
+            "        System.out.println(\"Calendar → Instant:           cal.toInstant()\");",
+            "        System.out.println(\"Calendar → ZoneId:            cal.getTimeZone().toZoneId()\");",
+            "        System.out.println(\"sql.Date → LocalDate:         sqlDate.toLocalDate()\");",
+            "        System.out.println(\"LocalDate → sql.Date:         sql.Date.valueOf(ld)\");",
+            "        System.out.println(\"Timestamp → LocalDateTime:    ts.toLocalDateTime()\");",
+            "        System.out.println(\"LocalDateTime → Timestamp:    Timestamp.valueOf(ldt)\");",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "date-bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Causes Production Incidents",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Date/time bugs are disproportionately responsible for production incidents — they are hard to reproduce (depend on the current time, JVM timezone, or DST state), silent (no exception, just wrong data), and costly (incorrect billing, missed deadlines, corrupted records). These are the most common anti-patterns found in enterprise Java codebases."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Using LocalDateTime for Cross-Timezone Operations",
+              "text": "Scheduling a meeting at LocalDateTime.of(2026, 4, 10, 10, 0) and sending it to participants in different time zones is a silent bug. LocalDateTime has no zone — it cannot represent a global moment. Use ZonedDateTime or Instant for any event involving multiple time zones. The meeting in NYC at 10:00 AM is 19:30 IST — LocalDateTime captures neither correctly."
+            },
+            {
+              "icon": "🚫",
+              "title": "Relying on JVM Default Timezone",
+              "text": "LocalDateTime.now() and ZonedDateTime.now() without an explicit ZoneId use ZoneId.systemDefault() — which varies between developer machines, CI servers, and production servers. A JVM arg change, Docker base image update, or server migration can silently shift all timestamps. Always be explicit: LocalDateTime.now(ZoneId.of('Asia/Kolkata')). Never assume the JVM's default zone."
+            },
+            {
+              "icon": "🚫",
+              "title": "Using SimpleDateFormat as a Shared Static Field",
+              "text": "private static final SimpleDateFormat SDF = new SimpleDateFormat('dd/MM/yyyy') is a classic thread-safety bug. SimpleDateFormat uses internal state during format/parse — concurrent calls corrupt each other's output. Fix: use DateTimeFormatter (thread-safe), or create a new SimpleDateFormat per call, or use ThreadLocal<SimpleDateFormat>."
+            },
+            {
+              "icon": "🚫",
+              "title": "Storing java.util.Date.getTime() as Business Data",
+              "text": "Using epoch milliseconds (System.currentTimeMillis()) directly in business logic — storing them in databases, sending them in APIs, comparing them — makes your code opaque and error-prone. Use Instant, LocalDate, or ZonedDateTime which carry semantic meaning. When you see 1711929600000L you need to decode it; when you see 2024-04-01T00:00:00Z you understand it instantly."
+            },
+            {
+              "icon": "🚫",
+              "title": "Comparing Dates with == or Ignoring Time Component",
+              "text": "new Date() == new Date() is always false (reference comparison). date1.equals(date2) compares millisecond precision — two 'same day' dates with different times won't be equal. For same-day comparison: date1.toLocalDate().isEqual(date2.toLocalDate()). For range checks: always use isBefore/isAfter on LocalDate or compareTo on Instant."
+            },
+            {
+              "icon": "🚫",
+              "title": "Ignoring DST During 'Add One Day' Operations",
+              "text": "On DST transition days, adding 24 hours to a ZonedDateTime gives a different wall-clock time than 'tomorrow'. Use Period.ofDays(1) (calendar-aware) not Duration.ofDays(1) (exactly 86400 seconds) when you mean 'the same time tomorrow'. Example: adding Duration.ofDays(1) to 10:00 AM on the night clocks go forward gives 11:00 AM — not 10:00 AM as a user would expect."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Date/Time in Enterprise Java",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples model date/time handling patterns in production Spring Boot microservices — covering subscription management, global event scheduling, and audit logging."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SubscriptionService.java — Billing Cycle Date Logic",
+          "lines": [
+            "package com.techsustainify.subscription.service;",
+            "",
+            "import java.time.*;",
+            "import java.time.temporal.ChronoUnit;",
+            "import java.time.temporal.TemporalAdjusters;",
+            "",
+            "public class SubscriptionService {",
+            "",
+            "    private static final ZoneId BUSINESS_ZONE = ZoneId.of(\"Asia/Kolkata\");",
+            "",
+            "    /**",
+            "     * Calculate subscription end date.",
+            "     * Uses Period for calendar-accurate month addition (Feb edge cases handled).",
+            "     */",
+            "    public LocalDate calculateEndDate(LocalDate startDate, int durationMonths) {",
+            "        return startDate.plus(Period.ofMonths(durationMonths));",
+            "        // Period handles Feb correctly:",
+            "        // Jan 31 + 1 month = Feb 28 (not Feb 31 which doesn't exist)",
+            "    }",
+            "",
+            "    /**",
+            "     * Check if subscription is within its grace period (7 days after expiry).",
+            "     */",
+            "    public boolean isInGracePeriod(LocalDate expiryDate) {",
+            "        LocalDate today = LocalDate.now(BUSINESS_ZONE);",
+            "        long daysPastExpiry = ChronoUnit.DAYS.between(expiryDate, today);",
+            "        return daysPastExpiry > 0 && daysPastExpiry <= 7;",
+            "    }",
+            "",
+            "    /**",
+            "     * Get next billing date.",
+            "     * If billing day is 31 and next month has fewer days, use last day.",
+            "     */",
+            "    public LocalDate getNextBillingDate(LocalDate lastBillingDate, int billingDayOfMonth) {",
+            "        LocalDate nextMonth = lastBillingDate.plusMonths(1)",
+            "            .withDayOfMonth(1); // First of next month",
+            "        int maxDay = nextMonth.lengthOfMonth();",
+            "        int actualDay = Math.min(billingDayOfMonth, maxDay);",
+            "        return nextMonth.withDayOfMonth(actualDay);",
+            "    }",
+            "",
+            "    /**",
+            "     * Check if renewal reminder should be sent (7 days before expiry,",
+            "     * but not on weekends — push to nearest weekday).",
+            "     */",
+            "    public LocalDate getReminderSendDate(LocalDate expiryDate) {",
+            "        LocalDate reminderDate = expiryDate.minusDays(7);",
+            "        DayOfWeek dow = reminderDate.getDayOfWeek();",
+            "        if (dow == DayOfWeek.SATURDAY) return reminderDate.minusDays(1); // Friday",
+            "        if (dow == DayOfWeek.SUNDAY)   return reminderDate.minusDays(2); // Friday",
+            "        return reminderDate;",
+            "    }",
+            "",
+            "    /**",
+            "     * Calculate age of account in human-readable form.",
+            "     */",
+            "    public String getAccountAge(LocalDate createdDate) {",
+            "        LocalDate today  = LocalDate.now(BUSINESS_ZONE);",
+            "        Period   age     = Period.between(createdDate, today);",
+            "        long     daysDiff = ChronoUnit.DAYS.between(createdDate, today);",
+            "",
+            "        if (daysDiff < 30)  return daysDiff + \" days\";",
+            "        if (age.getYears() == 0) return age.getMonths() + \" months\";",
+            "        return age.getYears() + \" years, \" + age.getMonths() + \" months\";",
+            "    }",
+            "}"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "AuditLogger.java — Timestamp Best Practices",
+          "lines": [
+            "package com.techsustainify.audit.service;",
+            "",
+            "import java.time.*;",
+            "import java.time.format.DateTimeFormatter;",
+            "",
+            "/**",
+            " * Production audit logging — demonstrates correct Instant usage",
+            " * for machine timestamps and ZonedDateTime for human display.",
+            " */",
+            "public class AuditLogger {",
+            "",
+            "    // Thread-safe formatters — defined once, reused everywhere",
+            "    private static final DateTimeFormatter LOG_FORMAT =",
+            "        DateTimeFormatter.ofPattern(\"yyyy-MM-dd'T'HH:mm:ss.SSSZ\");",
+            "    private static final DateTimeFormatter DISPLAY_FORMAT =",
+            "        DateTimeFormatter.ofPattern(\"dd MMM yyyy HH:mm:ss z\");",
+            "    private static final ZoneId IST = ZoneId.of(\"Asia/Kolkata\");",
+            "",
+            "    public record AuditEntry(",
+            "        String  eventType,",
+            "        String  userId,",
+            "        String  resourceId,",
+            "        Instant occurredAt,   // Store as Instant — machine-precise, UTC, immutable",
+            "        String  ipAddress,",
+            "        boolean success",
+            "    ) {",
+            "        /** Display timestamp in IST for Indian operations team */",
+            "        public String getDisplayTime() {",
+            "            return occurredAt.atZone(IST).format(DISPLAY_FORMAT);",
+            "        }",
+            "",
+            "        /** ISO-8601 timestamp for API responses */",
+            "        public String getIsoTimestamp() {",
+            "            return occurredAt.atZone(ZoneOffset.UTC).format(LOG_FORMAT);",
+            "        }",
+            "",
+            "        /** How long ago did this event occur? */",
+            "        public String getRelativeTime() {",
+            "            Duration since = Duration.between(occurredAt, Instant.now());",
+            "            if (since.toSeconds() < 60)  return since.toSeconds() + \" seconds ago\";",
+            "            if (since.toMinutes() < 60)  return since.toMinutes() + \" minutes ago\";",
+            "            if (since.toHours()   < 24)  return since.toHours()   + \" hours ago\";",
+            "            return ChronoUnit.DAYS.between(occurredAt, Instant.now()) + \" days ago\";",
+            "        }",
+            "    }",
+            "",
+            "    public AuditEntry logEvent(String eventType, String userId, String resourceId,",
+            "                               String ipAddress, boolean success) {",
+            "        return new AuditEntry(",
+            "            eventType, userId, resourceId,",
+            "            Instant.now(),  // Always Instant.now() — never new Date()",
+            "            ipAddress, success",
+            "        );",
+            "    }",
+            "",
+            "    // ✅ Calculating SLA breach",
+            "    public boolean isSlaBreached(Instant ticketCreatedAt, Duration slaDuration) {",
+            "        Instant slaDeadline = ticketCreatedAt.plus(slaDuration);",
+            "        return Instant.now().isAfter(slaDeadline);",
+            "    }",
+            "",
+            "    // ✅ Convert stored Instant to user's local timezone for display",
+            "    public String toUserTimezone(Instant instant, String userTimezone) {",
+            "        ZoneId zone = ZoneId.of(userTimezone);",
+            "        return instant.atZone(zone).format(DISPLAY_FORMAT);",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "date-flowchart",
+      "title": "Which Date Type Should I Use? — Decision Guide",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Use this decision guide to instantly identify the right java.time type for your specific requirement."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1",  "label": "📋 What do you need to represent?",                "sublabel": "",                                         "type": "start"    },
+            { "id": "2",  "label": "📅 Date only? (no time needed)",                   "sublabel": "birthday, deadline, holiday",              "type": "decision" },
+            { "id": "3",  "label": "🕒 Time only? (no date needed)",                   "sublabel": "opening hour, alarm, shift",               "type": "decision" },
+            { "id": "4",  "label": "🌍 Does it need a time zone?",                     "sublabel": "cross-region / global event?",             "type": "decision" },
+            { "id": "5",  "label": "⚡ Machine timestamp / precise epoch?",            "sublabel": "DB record, logging, SLA timer",            "type": "decision" },
+            { "id": "6",  "label": "📐 Amount of time (a gap / span)?",                "sublabel": "duration, age, countdown",                 "type": "decision" },
+            { "id": "7",  "label": "📆 LocalDate",                                     "sublabel": "java.time.LocalDate",                      "type": "end"      },
+            { "id": "8",  "label": "🕑 LocalTime",                                     "sublabel": "java.time.LocalTime",                      "type": "end"      },
+            { "id": "9",  "label": "🌐 ZonedDateTime",                                 "sublabel": "java.time.ZonedDateTime",                  "type": "end"      },
+            { "id": "10", "label": "📋 LocalDateTime",                                 "sublabel": "java.time.LocalDateTime",                  "type": "end"      },
+            { "id": "11", "label": "⚙️ Instant",                                       "sublabel": "java.time.Instant (UTC epoch)",            "type": "end"      },
+            { "id": "12", "label": "⏳ Duration / Period",                             "sublabel": "Duration (time) or Period (calendar)",     "type": "end"      }
+          ],
+          "edges": [
+            { "from": "1",  "to": "2",  "label": "Start" },
+            { "from": "2",  "to": "7",  "label": "YES" },
+            { "from": "2",  "to": "3",  "label": "NO" },
+            { "from": "3",  "to": "8",  "label": "YES" },
+            { "from": "3",  "to": "4",  "label": "NO — date+time" },
+            { "from": "4",  "to": "9",  "label": "YES — has zone" },
+            { "from": "4",  "to": "5",  "label": "NO" },
+            { "from": "5",  "to": "11", "label": "YES — machine time" },
+            { "from": "5",  "to": "6",  "label": "NO" },
+            { "from": "6",  "to": "12", "label": "YES — span of time" },
+            { "from": "6",  "to": "10", "label": "NO — local date+time" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Date & Time Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are asked in Java developer interviews from junior to senior level, in Spring Boot technical rounds, and in backend architect assessments."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What are the main problems with java.util.Date and Calendar?",
+              "a": "java.util.Date problems: (1) Mutable — not thread-safe. (2) January = 0 (months are 0-indexed) — causes widespread off-by-one bugs. (3) getYear() returns (year-1900) — 2026 returns 126. (4) Despite name 'Date', it stores both date AND time as milliseconds since epoch. (5) No time zone support built in. (6) Most methods deprecated in Java 1.1. Calendar problems: (1) Still mutable. (2) Still 0-indexed months. (3) Extremely verbose API — requires 5+ lines for simple operations. (4) No immutability or thread safety. Solution: java.time package (Java 8, JSR-310) replaces both entirely with an immutable, fluent, clear API.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between LocalDate, LocalDateTime, and ZonedDateTime?",
+              "a": "LocalDate: date only (2026-08-15) — no time, no zone. Use for birthdays, holidays, deadlines. LocalDateTime: date + time (2026-08-15T10:30:00) — no zone. Use for scheduling within one zone, DB timestamps where zone is implicit. ZonedDateTime: date + time + zone (2026-08-15T10:30:00+05:30[Asia/Kolkata]) — the complete temporal value. Use for cross-timezone events, flight schedules, global meeting planning. Design rule: use the simplest type that accurately models your requirement. Adding time zone when not needed creates complexity; omitting it when needed creates incorrect behaviour.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is Instant and when should you use it instead of ZonedDateTime?",
+              "a": "Instant represents a point on the global timeline — nanoseconds since Unix epoch (Jan 1, 1970 UTC). It has no zone, no DST, no calendar system. Use Instant for: (1) Database timestamps (created_at, updated_at) — store as TIMESTAMP/BIGINT, read as Instant. (2) Logging and audit trails — precise machine timestamps. (3) Measuring elapsed time: Duration.between(start, end). (4) JWT claims (iat, exp). (5) Message queue timestamps. Use ZonedDateTime for: presenting time to a human in their timezone, scheduling events users will see. Rule: store as Instant, display as ZonedDateTime. Instant is for machines; ZonedDateTime is for people.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What is the difference between Duration and Period in Java?",
+              "a": "Duration measures time in MACHINE units — seconds and nanoseconds. It is exact: Duration.ofDays(1) is always 86,400 seconds regardless of DST. Use with LocalTime, LocalDateTime, Instant. Period measures time in CALENDAR units — years, months, days. It is human-intuitive: Period.ofMonths(1) added to March 31 gives April 30 (not May 1). Use with LocalDate. The classic DST trap: adding Duration.ofDays(1) to a ZonedDateTime on a DST transition night may give 23 or 25 hours, not 24. Adding Period.ofDays(1) gives 'the same clock time tomorrow' — usually what users expect.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q5. Why is SimpleDateFormat not thread-safe? What is the fix?",
+              "a": "SimpleDateFormat maintains internal state (a Calendar instance) during format and parse operations. When two threads call format() or parse() concurrently on the same SimpleDateFormat instance, they corrupt each other's internal state — producing wrong dates, exceptions, or silent incorrect output. This is a non-deterministic, hard-to-reproduce race condition. Three fixes: (1) Best: use DateTimeFormatter (java.time.format) — it is immutable and thread-safe by design, safe as static final. (2) Acceptable: create a new SimpleDateFormat per method call (no sharing, but GC pressure). (3) Legacy workaround: ThreadLocal<SimpleDateFormat> — one instance per thread.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q6. What is the difference between withZoneSameInstant() and withZoneSameLocal()?",
+              "a": "withZoneSameInstant(zone) converts the same MOMENT (epoch millis unchanged) to another zone — like saying 'what does a clock in Kolkata read right now?' The wall-clock time changes; the underlying instant does not. withZoneSameLocal(zone) keeps the CLOCK READING the same but changes the zone — creating a different instant. Example: 10:00 AM New York EST (UTC-5). withZoneSameInstant(Asia/Kolkata) = 19:30 IST (same moment, different clock). withZoneSameLocal(Asia/Kolkata) = 10:00 IST (different moment — 10:00 Kolkata is 9.5 hours before 10:00 New York). Mixing them up causes meeting schedule bugs.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q7. How do you calculate the number of days between two dates in Java?",
+              "a": "Three correct approaches: (1) ChronoUnit.DAYS.between(startDate, endDate) — cleanest, returns long, works with LocalDate and LocalDateTime. (2) Period.between(startDate, endDate).getDays() — WRONG for total days! getDays() returns only the day component of the period, not total days. Period.between(Jan 1, Mar 20).getDays() returns 19 (days part of 2 months and 19 days), not 78 total days. (3) startDate.until(endDate, ChronoUnit.DAYS) — equivalent to option 1. Never use Date subtraction (date1.getTime() - date2.getTime()) / 86_400_000 — fails during DST transitions and leap seconds.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. How do you store and retrieve dates in a JDBC/JPA application?",
+              "a": "With JDBC 4.2+: Use LocalDate for DATE columns (setObject/getObject with LocalDate). Use LocalDateTime for DATETIME columns. Use OffsetDateTime or Instant for TIMESTAMP WITH TIME ZONE columns. Never use java.sql.Date or java.sql.Timestamp in new code. With JPA/Hibernate 5+: annotate LocalDate, LocalDateTime, ZonedDateTime, and Instant fields directly — no @Temporal annotation needed. Hibernate handles the mapping. Best practice: store timestamps as TIMESTAMP WITH TIME ZONE (PostgreSQL) or DATETIME (MySQL, note: MySQL DATETIME has no zone) mapped to OffsetDateTime in Java. Store date-only values (birthdays) as LocalDate mapped to DATE column.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q9. What is TemporalAdjuster and give a real-world example?",
+              "a": "TemporalAdjuster is a functional interface that adjusts a temporal object to produce a new temporal. TemporalAdjusters (utility class) provides factory methods for calendar navigation. Real-world example: Indian payroll — salary is credited on the 25th of each month, but if the 25th falls on a Saturday or Sunday, it is credited on the preceding Friday. Implementation: LocalDate payday = YearMonth.now().atDay(25); if (payday.getDayOfWeek() == SATURDAY) payday = payday.minusDays(1); if (payday.getDayOfWeek() == SUNDAY) payday = payday.minusDays(2);. Or using a custom TemporalAdjuster: payday.with(date -> { DayOfWeek dow = LocalDate.from(date).getDayOfWeek(); return dow == SATURDAY ? date.minus(1, DAYS) : dow == SUNDAY ? date.minus(2, DAYS) : date; }).",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q10. What does 'java.time types are immutable' mean and why does it matter?",
+              "a": "Immutability means no java.time object can be modified after creation. Methods like plusDays(), withMonth(), minusHours() do NOT change the original — they return a NEW object. Example: LocalDate original = LocalDate.of(2026, 1, 1); original.plusDays(10); System.out.println(original); — prints 2026-01-01, not 2026-01-11! The result of plusDays(10) was discarded. Why it matters: (1) Thread safety — immutable objects are automatically safe to share across threads. (2) No defensive copies needed — you can pass a LocalDate to any method knowing it won't be modified. (3) Predictable behaviour — no unexpected mutations through shared references. Contrast with java.util.Date — setTime() mutates the object, causing thread-safety nightmares.",
+              "tag": "Must Know"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Date & Time Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Attempt each question independently before reading the answer. These questions test real-world date/time reasoning — the exact scenarios you'll encounter in production Java development."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output of this code?\nLocalDate d = LocalDate.of(2026, 1, 31);\nLocalDate result = d.plusMonths(1);\nSystem.out.println(result);",
+              "a": "Output: 2026-02-28. Adding one month to January 31 gives February 28 (2026 is not a leap year, so February has 28 days). Java's LocalDate handles this edge case automatically — it adjusts to the last valid day of the resulting month. If 2026 were a leap year, it would give 2026-02-29. This is one of the most important java.time behaviours: it never creates an invalid date by silently overflowing into the next month (unlike Calendar which would give March 3 for calender.add(MONTH, 1) on Jan 31 in some implementations).",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "2. What is wrong with this code? How do you fix it?\nprivate static final SimpleDateFormat FORMATTER =\n    new SimpleDateFormat(\"dd-MMM-yyyy\");\npublic String formatDate(Date date) {\n    return FORMATTER.format(date);\n}",
+              "a": "Bug: SimpleDateFormat is stateful and NOT thread-safe. Storing it as a static field means multiple threads calling formatDate() concurrently will corrupt each other's formatting state — producing wrong output or exceptions. Fix (best): private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern('dd-MMM-yyyy'); public String formatDate(LocalDate date) { return date.format(FORMATTER); } — DateTimeFormatter is immutable and thread-safe. Fix (legacy workaround): create a new SimpleDateFormat() inside the method each time — no sharing, but allocates per call. Fix (ThreadLocal): private static final ThreadLocal<SimpleDateFormat> FORMATTER = ThreadLocal.withInitial(() -> new SimpleDateFormat('dd-MMM-yyyy'));",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Calculate and print the number of days, hours, and minutes a user session lasted:\nInstant loginTime = Instant.parse('2026-03-20T08:30:00Z');\nInstant logoutTime = Instant.parse('2026-03-20T17:45:30Z');",
+              "a": "Duration session = Duration.between(loginTime, logoutTime);\nlong hours   = session.toHours();\nlong minutes = session.toMinutesPart(); // Java 9+\nlong seconds = session.toSecondsPart(); // Java 9+\nSystem.out.printf('Session: %d hours, %d minutes, %d seconds%n', hours, minutes, seconds);\n// Output: Session: 9 hours, 15 minutes, 30 seconds\n// Note: toHours() gives TOTAL hours (9), toMinutesPart() gives only the MINUTES PART (15), not total minutes (555). Using toMinutes() would give 555, which is total minutes — not what we want for human display.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. A flight departs Mumbai at 22:00 IST on March 20, 2026, and arrives in London at 05:00 GMT+1 (BST) on March 21, 2026. Calculate the flight duration.",
+              "a": "ZonedDateTime departure = ZonedDateTime.of(\n    LocalDate.of(2026, 3, 20), LocalTime.of(22, 0),\n    ZoneId.of('Asia/Kolkata'));\nZonedDateTime arrival = ZonedDateTime.of(\n    LocalDate.of(2026, 3, 21), LocalTime.of(5, 0),\n    ZoneId.of('Europe/London'));\nDuration flightTime = Duration.between(departure, arrival);\nSystem.out.println('Flight duration: ' + flightTime.toHours() + 'h ' + flightTime.toMinutesPart() + 'm');\n// IST is UTC+5:30, BST is UTC+1:00\n// Departure: 22:00 IST = 16:30 UTC\n// Arrival:   05:00 BST = 04:00 UTC (next day)\n// Duration: 04:00 UTC - 16:30 UTC(previous day) = 11.5 hours\n// Output: Flight duration: 11h 30m",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "5. Write a method that returns all Mondays in a given month and year.",
+              "a": "public List<LocalDate> getMondaysInMonth(int year, int month) {\n    LocalDate firstDay = LocalDate.of(year, month, 1);\n    LocalDate firstMonday = firstDay.with(\n        TemporalAdjusters.nextOrSame(DayOfWeek.MONDAY));\n    List<LocalDate> mondays = new ArrayList<>();\n    LocalDate current = firstMonday;\n    while (current.getMonthValue() == month) {\n        mondays.add(current);\n        current = current.plusWeeks(1);\n    }\n    return mondays;\n}\n// Usage: getMondaysInMonth(2026, 3) → [2026-03-02, 2026-03-09, 2026-03-16, 2026-03-23, 2026-03-30]",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. What does this print, and why?\nLocalDate date = LocalDate.of(2026, 3, 20);\ndate.plusDays(10);\nSystem.out.println(date);",
+              "a": "Output: 2026-03-20 — NOT 2026-03-30! This is the most common java.time beginner mistake. LocalDate is IMMUTABLE. plusDays(10) does NOT modify 'date' — it returns a NEW LocalDate which is immediately discarded because it's not assigned to anything. The original 'date' is unchanged. Fix: LocalDate newDate = date.plusDays(10); System.out.println(newDate); // 2026-03-30. Always capture the result of all java.time modification methods — the object itself never changes.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "7. Is Period.between() correct for calculating total days? Why or why not?\nLocalDate start = LocalDate.of(2026, 1, 1);\nLocalDate end   = LocalDate.of(2026, 3, 20);\nSystem.out.println(Period.between(start, end).getDays());\nSystem.out.println(ChronoUnit.DAYS.between(start, end));",
+              "a": "Output:\n19\n78\nPeriod.between() creates P2M19D (2 months and 19 days). getDays() returns only the DAYS COMPONENT of that period — 19 — NOT the total days between the dates. ChronoUnit.DAYS.between() returns 78 — the actual total number of days (Jan has 31, Feb has 28 in 2026, plus 19 days in March = 31+28+19=78). This is a critical trap: Period.getDays() is NOT total elapsed days. Use ChronoUnit.DAYS.between() when you need total days. Use Period when you want human-calendar components (X years, Y months, Z days).",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Design a method to check if two Instant values represent the same calendar day in India (Asia/Kolkata).",
+              "a": "private static final ZoneId IST = ZoneId.of('Asia/Kolkata');\n\npublic boolean isSameDay(Instant a, Instant b) {\n    LocalDate dateA = a.atZone(IST).toLocalDate();\n    LocalDate dateB = b.atZone(IST).toLocalDate();\n    return dateA.isEqual(dateB);\n}\n// Key insight: 2026-03-20T23:00:00Z and 2026-03-21T00:00:00Z are the SAME day in IST\n// (23:00 UTC = 04:30 IST next day — wait, that's +5:30)\n// 2026-03-20T23:00:00Z = 2026-03-21T04:30:00 IST → March 21\n// 2026-03-20T18:30:00Z = 2026-03-21T00:00:00 IST → March 21 (midnight IST)\n// Without converting to IST, the same 'day' comparison would be wrong for UTC timestamps near midnight IST.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Master Dates, Master Production Reliability",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Date and time handling is one of the most underestimated sources of production incidents in enterprise software. Incorrect timezone conversions cause billing on the wrong day. Daylight saving bugs cause missed alerts. Thread-unsafe formatters corrupt financial records. The legacy <code>java.util.Date</code> and <code>Calendar</code> APIs — with their zero-indexed months, mutability, and DST blindness — were responsible for countless production bugs over two decades. <code>java.time</code> eliminates all of these by design."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The hallmark of a production-ready Java developer is using the right type for each temporal concept: <code>LocalDate</code> for date-only data, <code>Instant</code> for machine timestamps, <code>ZonedDateTime</code> for human-facing cross-timezone events, <code>Period</code> for calendar-aware spans, and <code>DateTimeFormatter</code> (never <code>SimpleDateFormat</code>) for all formatting needs."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Use Case", "Wrong Approach", "Correct Approach"],
+          "rows": [
+            ["Store a birthday",                   "java.util.Date",                      "LocalDate"],
+            ["Database timestamp",                 "java.sql.Timestamp",                   "Instant → mapped via JDBC 4.2"],
+            ["User's meeting time (IST)",          "LocalDateTime.now()",                  "ZonedDateTime.now(ZoneId.of('Asia/Kolkata'))"],
+            ["Format a date (multi-thread)",       "static SimpleDateFormat",              "static final DateTimeFormatter"],
+            ["Calculate age",                      "date1 - date2 in millis",              "Period.between(dob, today).getYears()"],
+            ["Time a code block",                  "System.currentTimeMillis()",           "Duration.between(Instant.now(), Instant.now())"],
+            ["Add 1 month to Jan 31",              "manual edge-case check",               "date.plusMonths(1) — auto-adjusts to Feb 28"],
+            ["Next business day",                  "if/else chain with Calendar",          "Custom TemporalAdjuster"],
+            ["Cross-timezone conversion",          "Manual hour math",                     "zdt.withZoneSameInstant(targetZone)"],
+            ["'Add 1 day' respecting DST",         "Duration.ofDays(1)",                   "Period.ofDays(1) on ZonedDateTime"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Exceptions</strong> — where you'll learn how to handle the errors that arise when date parsing fails, invalid dates are constructed, or timezone operations throw unexpected exceptions. Robust error handling around date operations is the final piece of production-ready date/time code. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Date & Time",
+    "items": [
+      {
+        "q": "What is the difference between LocalDate, LocalDateTime, and ZonedDateTime in Java?",
+        "a": "LocalDate stores only date (year-month-day) — perfect for birthdays, holidays, deadlines. LocalDateTime stores date and time but no time zone — ideal for single-zone scheduling and database timestamps where zone is implicit. ZonedDateTime stores date, time, and time zone — required for cross-timezone events, flight schedules, and any globally visible moment. Design principle: use the simplest type that accurately models your data. Unnecessary zone info adds complexity; missing zone info when needed causes silent bugs."
+      },
+      {
+        "q": "What is wrong with java.util.Date and java.util.Calendar?",
+        "a": "java.util.Date: mutable (not thread-safe), January = 0 (off-by-one month bugs), getYear() returns year-1900, represents both date and time despite its name, no time zone support, most methods deprecated. java.util.Calendar: still mutable, still 0-indexed months, extremely verbose API, no thread safety. Both are replaced by java.time (Java 8+). SimpleDateFormat — the formatter used with them — is also not thread-safe. Use DateTimeFormatter from java.time.format in all new code."
+      },
+      {
+        "q": "What is Instant in Java?",
+        "a": "Instant represents a specific point on the global timeline — nanoseconds elapsed since the Unix epoch (January 1, 1970, 00:00:00 UTC). It is always UTC, has no time zone, and is the most precise and unambiguous temporal type. Use Instant for: database created_at/updated_at columns, event timestamps, JWT token times, measuring elapsed durations, and logging. Convert to ZonedDateTime for human display: instant.atZone(ZoneId.of('Asia/Kolkata'))."
+      },
+      {
+        "q": "What is the difference between Duration and Period in Java?",
+        "a": "Duration measures time in machine units — seconds and nanoseconds — and is exact: Duration.ofDays(1) is always 86,400 seconds. Use with Instant, LocalTime, LocalDateTime. Period measures time in calendar units — years, months, days — and is human-intuitive: Period.ofMonths(1) added to January 31 gives February 28. Use with LocalDate. Critical DST trap: adding Duration.ofDays(1) to a ZonedDateTime may give 23 or 25 hours on DST transition days; Period.ofDays(1) gives 'same clock time tomorrow'."
+      },
+      {
+        "q": "How do you format a date in Java?",
+        "a": "Use DateTimeFormatter from java.time.format — it is thread-safe, immutable, and can be stored as static final. Two approaches: (1) Predefined: DateTimeFormatter.ISO_LOCAL_DATE for '2026-08-15'. (2) Custom pattern: DateTimeFormatter.ofPattern('dd-MMM-yyyy') for '15-Aug-2026'. Formatting: String s = localDate.format(formatter). Parsing: LocalDate d = LocalDate.parse('15-Aug-2026', formatter). Never use SimpleDateFormat in new code — it is not thread-safe and causes concurrent output corruption when shared across threads."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Enums", "path": "/java/java-enums" },
+    "next": { "label": "Java Math →", "path": "/java/java-math" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Legacy API",          "dd": "java.util.Date, Calendar (avoid)" },
+      { "dt": "Modern API",          "dd": "java.time (Java 8+, JSR-310)" },
+      { "dt": "Immutable?",          "dd": "✅ All java.time types are immutable" },
+      { "dt": "Thread-Safe?",        "dd": "✅ Yes — DateTimeFormatter too" },
+      { "dt": "Months (java.time)",  "dd": "1-indexed (Jan=1, Dec=12) ✅" },
+      { "dt": "Months (old API)",    "dd": "0-indexed (Jan=0) ❌" },
+      { "dt": "IANA TZ Database",    "dd": "ZoneId.of('Asia/Kolkata')" }
+    ],
+    "relatedArticles": [
+      { "label": "Java Exceptions",         "path": "/java/java-exceptions" },
+      { "label": "Java Annotations",        "path": "/java/java-annotations" },
+      { "label": "Java Generics",           "path": "/java/java-generics" },
+      { "label": "Java Collections",        "path": "/java/java-collections" },
+      { "label": "Java Streams",            "path": "/java/java-streams" },
+      { "label": "Java String Methods",     "path": "/java/java-string" },
+      { "label": "Java Math Class",         "path": "/java/java-math" },
+      { "label": "Java OOP Concepts",       "path": "/java/java-oop" }
+    ],
+    "tags": ["LocalDate", "LocalTime", "LocalDateTime", "ZonedDateTime", "Instant", "Duration", "Period", "DateTimeFormatter", "TemporalAdjusters", "ChronoUnit", "ZoneId", "DST", "Time Zone", "java.time", "JSR-310", "Java 8", "Legacy Migration", "SimpleDateFormat", "Thread Safety", "Immutability", "Java Best Practices"]
+  }
+}

@@ -1,0 +1,2061 @@
+{
+  "meta": {
+    "title": "Java Inheritance — Complete Guide with Syntax, Examples & Best Practices 2026 | Tech Sustainify",
+    "titleTemplate": "%s | Tech Sustainify",
+    "description": "Master Java Inheritance — single, multilevel & hierarchical inheritance, extends keyword, method overriding, super keyword, constructor chaining, final keyword, abstract classes, instanceof, Liskov Substitution Principle, real-world examples & interview questions. Updated March 2026.",
+    "keywords": "java inheritance, java inheritance example, java extends keyword, java method overriding, java super keyword, java single inheritance, java multilevel inheritance, java hierarchical inheritance, java multiple inheritance, java abstract class inheritance, java final class, java instanceof, java is-a relationship, java inheritance best practices, java inheritance interview questions, java constructor chaining inheritance, java polymorphism inheritance, java IS-A HAS-A",
+    "author": "Tech Sustainify",
+    "authorUrl": "https://www.techsustainify.com/about",
+    "publisher": "Tech Sustainify",
+    "publisherUrl": "https://www.techsustainify.com",
+    "copyright": "© 2026 Tech Sustainify. All rights reserved.",
+    "language": "en-IN",
+    "locale": "en_IN",
+    "canonical": "https://www.techsustainify.com/java/java-inheritance",
+    "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "bingbot": "index, follow",
+    "revisitAfter": "7 days",
+    "rating": "general",
+    "category": "Technology / Programming / Java",
+
+    "openGraph": {
+      "type": "article",
+      "title": "Java Inheritance — extends, super, Overriding & Best Practices 2026 | Tech Sustainify",
+      "description": "Everything about Java Inheritance — single, multilevel, hierarchical, extends, super keyword, method overriding, constructor chaining, abstract classes, instanceof, IS-A vs HAS-A, Liskov Substitution Principle, real-world examples & interview questions.",
+      "url": "https://www.techsustainify.com/java/java-inheritance",
+      "image": "https://www.techsustainify.com/images/java-inheritance-og.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Java Inheritance Complete Guide 2026 - Tech Sustainify",
+      "imageType": "image/png",
+      "siteName": "Tech Sustainify",
+      "locale": "en_IN",
+      "article": {
+        "publishedTime": "2024-03-01T00:00:00+05:30",
+        "modifiedTime": "2026-03-20T10:00:00+05:30",
+        "author": "https://www.techsustainify.com/about",
+        "section": "Java Tutorial",
+        "tags": [
+          "Java Inheritance",
+          "Java extends",
+          "Method Overriding",
+          "super keyword",
+          "Java OOP",
+          "Java Polymorphism",
+          "Abstract Class",
+          "IS-A Relationship",
+          "Liskov Substitution",
+          "Java Best Practices"
+        ]
+      }
+    },
+
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@TechSustainify",
+      "creator": "@TechSustainify",
+      "title": "Java Inheritance — extends, super, Overriding & Best Practices 2026",
+      "description": "Complete guide to Java Inheritance — types, extends, super, method overriding, constructor chaining, abstract classes, instanceof, IS-A vs HAS-A, pitfalls & interview Qs.",
+      "image": "https://www.techsustainify.com/images/java-inheritance-og.png",
+      "imageAlt": "Java Inheritance Guide 2026 - Tech Sustainify",
+      "readingTime": "27 minutes",
+      "level": "Beginner to Intermediate",
+      "label1": "Reading Time",
+      "data1": "27 minutes",
+      "label2": "Difficulty Level",
+      "data2": "Beginner to Intermediate"
+    },
+
+    "schema": {
+      "article": {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Java Inheritance — Complete Guide with Syntax, Examples & Best Practices 2026",
+        "description": "A comprehensive beginner-to-intermediate guide covering all Java Inheritance concepts — types of inheritance, extends keyword, super keyword, method overriding, constructor chaining, final keyword, abstract classes, instanceof operator, IS-A vs HAS-A, Liskov Substitution Principle, real-world examples, anti-patterns, and interview questions.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tech Sustainify",
+          "url": "https://www.techsustainify.com"
+        },
+        "datePublished": "2024-03-01",
+        "dateModified": "2026-03-20",
+        "proficiencyLevel": "Beginner",
+        "wordCount": 7200,
+        "timeRequired": "PT27M",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@type": "Course",
+          "name": "Complete Java Tutorial 2026",
+          "url": "https://www.techsustainify.com/java/java-home"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Java Inheritance" },
+          { "@type": "Thing", "name": "Method Overriding" },
+          { "@type": "Thing", "name": "Java super Keyword" },
+          { "@type": "Thing", "name": "Liskov Substitution Principle" }
+        ],
+        "keywords": "java inheritance, extends keyword, super keyword, method overriding, types of inheritance, abstract class, instanceof, IS-A relationship, constructor chaining, final class"
+      },
+
+      "breadcrumb": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://www.techsustainify.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Java Tutorial", "item": "https://www.techsustainify.com/java/java-home" },
+          { "@type": "ListItem", "position": 3, "name": "Java Inheritance" }
+        ]
+      },
+
+      "faq": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is inheritance in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Inheritance in Java is an OOP mechanism where one class (subclass/child) acquires the fields and methods of another class (superclass/parent) using the 'extends' keyword. It models the IS-A relationship — a Dog IS-A Animal. Inheritance promotes code reuse: common behaviour defined once in the parent is automatically available in all subclasses. Java supports single inheritance for classes (one direct parent) but a class can implement multiple interfaces."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between method overriding and method overloading?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Method Overriding: subclass provides a new implementation for a method already defined in the parent class. Same name, same parameter list, same or covariant return type. Resolved at RUNTIME (dynamic dispatch). Requires inheritance. Method Overloading: same class defines multiple methods with the same name but different parameter lists. Resolved at COMPILE TIME. Does not require inheritance. Overriding = runtime polymorphism. Overloading = compile-time polymorphism."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does Java not support multiple inheritance through classes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Java avoids the 'Diamond Problem' — if class C extends both A and B, and both A and B override the same method from a common ancestor, which version does C inherit? This ambiguity makes the language complex and error-prone. Java solves this by: (1) Allowing only single inheritance for classes. (2) Allowing multiple interface implementation — interfaces define contracts without concrete state, so no diamond ambiguity. Java 8+ default methods in interfaces can create a similar conflict, resolved by explicit override rules."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the super keyword in Java?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 'super' keyword in Java refers to the immediate parent class. Three uses: (1) 'super.field' — access a parent field hidden by a subclass field with the same name. (2) 'super.method()' — call the parent's version of an overridden method. (3) 'super(args)' — call the parent's constructor from the subclass constructor; must be the first statement. If no explicit super() is written in a subclass constructor, Java auto-inserts 'super()' (no-arg parent constructor)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the Liskov Substitution Principle?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Liskov Substitution Principle (LSP) states that objects of a subclass must be substitutable for objects of the parent class without altering the correctness of the program. In simple terms: wherever a Parent type is expected, a Child object must work correctly. Violations occur when a subclass overrides a method in a way that weakens preconditions, strengthens postconditions, or throws new exceptions not declared in the parent. LSP is the 'L' in SOLID principles and is the litmus test for whether 'extends' is the right tool for a relationship."
+            }
+          }
+        ]
+      },
+
+      "course": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Complete Java Tutorial for Beginners 2026",
+        "description": "A comprehensive, free Java tutorial covering everything from Java basics to enterprise development.",
+        "url": "https://www.techsustainify.com/java/java-home",
+        "provider": { "@type": "Organization", "name": "Tech Sustainify" },
+        "educationalLevel": "Beginner",
+        "isAccessibleForFree": true
+      }
+    },
+
+    "page": {
+      "datePublished": "2024-03-01",
+      "dateModified": "2026-03-20",
+      "readingTime": "27 minutes",
+      "wordCount": 7200,
+      "difficulty": "Beginner to Intermediate",
+      "chapter": 19,
+      "totalChapters": 35,
+      "series": "Complete Java Tutorial 2026",
+      "seriesUrl": "https://www.techsustainify.com/java/java-home",
+      "tableOfContents": [
+        { "id": "what-is-inheritance",        "title": "What is Inheritance in Java?" },
+        { "id": "extends-keyword",            "title": "The extends Keyword" },
+        { "id": "types-of-inheritance",       "title": "Types of Inheritance in Java" },
+        { "id": "super-keyword",              "title": "The super Keyword" },
+        { "id": "constructor-chaining",       "title": "Constructor Chaining in Inheritance" },
+        { "id": "method-overriding",          "title": "Method Overriding" },
+        { "id": "final-in-inheritance",       "title": "final with Inheritance" },
+        { "id": "is-a-has-a",                 "title": "IS-A vs HAS-A Relationship" },
+        { "id": "instanceof-operator",        "title": "instanceof Operator" },
+        { "id": "object-class",               "title": "java.lang.Object — The Root of All Classes" },
+        { "id": "liskov-principle",           "title": "Liskov Substitution Principle (LSP)" },
+        { "id": "common-mistakes",            "title": "Common Mistakes & Pitfalls" },
+        { "id": "bad-practices",              "title": "Bad Practices & Anti-Patterns" },
+        { "id": "real-world-examples",        "title": "Real-World Production Code Examples" },
+        { "id": "inheritance-flowchart",      "title": "Inheritance Hierarchy Flowchart" },
+        { "id": "interview-questions",        "title": "Interview Questions" },
+        { "id": "practice-questions",         "title": "Practice Questions" },
+        { "id": "conclusion-heading",         "title": "Conclusion" },
+        { "id": "faq-heading",                "title": "FAQ" }
+      ]
+    },
+
+    "alternate": {
+      "hreflang": [
+        { "lang": "en",        "href": "https://www.techsustainify.com/java/java-inheritance" },
+        { "lang": "en-IN",     "href": "https://www.techsustainify.com/java/java-inheritance" },
+        { "lang": "x-default", "href": "https://www.techsustainify.com/java/java-inheritance" }
+      ]
+    },
+
+    "links": {
+      "prev": "https://www.techsustainify.com/java/java-access-modifiers",
+      "next": "https://www.techsustainify.com/java/java-polymorphism"
+    },
+
+    "analytics": {
+      "pageType": "tutorial-article",
+      "contentCategory": "java",
+      "contentSubcategory": "java-oop",
+      "contentTopic": "java-inheritance",
+      "chapterNumber": 19,
+      "seriesName": "java-tutorial-2026",
+      "targetAudience": "beginner",
+      "contentLanguage": "en-IN"
+    }
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",          "path": "/" },
+    { "position": 2, "name": "Java Tutorial", "path": "/java/java-home" },
+    { "position": 3, "name": "Java Inheritance" }
+  ],
+
+  "articleHeader": {
+    "badge": "☕ Java",
+    "title": "Java Inheritance — extends, super, Overriding & Best Practices",
+    "subtitle": "Everything you need to know about Java Inheritance — types of inheritance, extends keyword, super keyword, method overriding, constructor chaining, final keyword, IS-A vs HAS-A, instanceof, Liskov Substitution Principle, anti-patterns, and real-world production code examples."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-20", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "27 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner to Intermediate" },
+    { "icon": "🏷️", "label": "Chapter",       "value": "19 of 35" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-inheritance",
+      "title": "What is Inheritance in Java?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Inheritance</strong> is one of the four pillars of object-oriented programming (alongside Encapsulation, Polymorphism, and Abstraction). It is the mechanism by which one class — called the <strong>subclass</strong> or <em>child class</em> — acquires the <strong>fields and methods</strong> of another class — called the <strong>superclass</strong> or <em>parent class</em>. In Java, inheritance is declared using the <code>extends</code> keyword."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Inheritance models the <strong>IS-A relationship</strong> between classes. A <code>Dog</code> IS-A <code>Animal</code>. A <code>SavingsAccount</code> IS-A <code>BankAccount</code>. A <code>ElectricCar</code> IS-A <code>Vehicle</code>. When this relationship holds, the subclass can reuse the parent's code, extend it with new behaviour, and substitute for the parent wherever the parent type is expected — this is the essence of <em>runtime polymorphism</em>."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The two core benefits of inheritance are: (1) <strong>Code Reuse</strong> — common logic written once in the parent is inherited by all subclasses without duplication. (2) <strong>Polymorphism</strong> — a parent type reference can hold any subclass object, and calling a method on it invokes the subclass's version at runtime. This enables writing flexible, extensible systems where new subclasses can be added without modifying existing code."
+        },
+        {
+          "type": "calloutBox",
+          "variant": "info",
+          "title": "🔑 Java Inheritance at a Glance",
+          "text": "Key facts: (1) Java supports SINGLE inheritance for classes — one class can extend only one parent. (2) Java supports MULTIPLE inheritance through interfaces. (3) Every class in Java implicitly extends java.lang.Object — the root of all class hierarchies. (4) Inherited members include: public and protected fields and methods. private members are NOT inherited — they stay within the declaring class. (5) Constructors are NOT inherited — but the parent constructor is called via super(). (6) Use 'extends' for class inheritance, 'implements' for interface implementation."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "extends-keyword",
+      "title": "The extends Keyword — Establishing Inheritance",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>extends</code> keyword is Java's mechanism for declaring that one class inherits from another. It creates a permanent <strong>parent-child relationship</strong> between the two classes. The subclass automatically receives all non-private members of the superclass and can also define its own additional fields and methods."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📌",
+              "title": "Syntax",
+              "text": "public class SubClass extends SuperClass {\n    // Inherited: all public and protected members of SuperClass\n    // Can add: new fields, new methods\n    // Can override: non-private, non-final methods\n    // Cannot override: private methods, static methods (hidden, not overridden)\n}"
+            },
+            {
+              "icon": "🔒",
+              "title": "What Gets Inherited",
+              "text": "✅ Inherited: public fields, protected fields, public methods, protected methods, default (package-private) members (same package only).\n❌ NOT inherited: private fields and methods (hidden within declaring class), constructors (but accessible via super()), static members (accessible but not 'inherited' in polymorphic sense)."
+            },
+            {
+              "icon": "🧬",
+              "title": "Single Inheritance Rule",
+              "text": "A Java class can extend ONLY ONE class — this is single inheritance. 'class C extends A, B' is a compile error. This avoids the Diamond Problem. However, a class CAN implement multiple interfaces: 'class C extends A implements B, D'. And an interface CAN extend multiple interfaces: 'interface C extends A, B'."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ExtendsKeywordDemo.java",
+          "lines": [
+            "// ── PARENT CLASS ──────────────────────────────────────",
+            "public class Vehicle {",
+            "",
+            "    // protected — accessible in subclasses across packages",
+            "    protected String brand;",
+            "    protected String model;",
+            "    protected int    year;",
+            "    protected double fuelLevel; // 0.0 to 1.0",
+            "",
+            "    // private — NOT inherited by subclasses",
+            "    private String vehicleIdentificationNumber;",
+            "",
+            "    public Vehicle(String brand, String model, int year) {",
+            "        this.brand  = brand;",
+            "        this.model  = model;",
+            "        this.year   = year;",
+            "        this.fuelLevel = 1.0;",
+            "        this.vehicleIdentificationNumber = generateVIN();",
+            "    }",
+            "",
+            "    // public — inherited and can be overridden",
+            "    public void startEngine() {",
+            "        System.out.println(brand + \" \" + model + \" engine started.\");",
+            "    }",
+            "",
+            "    public void refuel(double amount) {",
+            "        fuelLevel = Math.min(1.0, fuelLevel + amount);",
+            "        System.out.printf(\"Refuelled. Fuel level: %.0f%%%n\", fuelLevel * 100);",
+            "    }",
+            "",
+            "    public String getDetails() {",
+            "        return String.format(\"%s %s (%d) | Fuel: %.0f%%\",",
+            "               brand, model, year, fuelLevel * 100);",
+            "    }",
+            "",
+            "    // private — NOT accessible in subclasses",
+            "    private String generateVIN() {",
+            "        return \"VIN-\" + System.currentTimeMillis();",
+            "    }",
+            "}",
+            "",
+            "// ── SUBCLASS — inherits Vehicle ───────────────────────",
+            "public class Car extends Vehicle {",
+            "",
+            "    private int   numberOfDoors;",
+            "    private String transmissionType; // \"Manual\" or \"Automatic\"",
+            "",
+            "    public Car(String brand, String model, int year,",
+            "               int doors, String transmission) {",
+            "        super(brand, model, year); // ✅ Must call parent constructor",
+            "        this.numberOfDoors    = doors;",
+            "        this.transmissionType = transmission;",
+            "    }",
+            "",
+            "    // NEW method — only in Car",
+            "    public void openTrunk() {",
+            "        System.out.println(model + \" trunk opened.\");",
+            "    }",
+            "",
+            "    // OVERRIDING parent method — custom behaviour for Car",
+            "    @Override",
+            "    public String getDetails() {",
+            "        return super.getDetails() +  // Reuse parent's version",
+            "               String.format(\" | Doors: %d | %s\",",
+            "                             numberOfDoors, transmissionType);",
+            "    }",
+            "}",
+            "",
+            "// ── ANOTHER SUBCLASS ──────────────────────────────────",
+            "public class Truck extends Vehicle {",
+            "",
+            "    private double payloadCapacityTons;",
+            "",
+            "    public Truck(String brand, String model, int year, double payload) {",
+            "        super(brand, model, year);",
+            "        this.payloadCapacityTons = payload;",
+            "    }",
+            "",
+            "    @Override",
+            "    public void startEngine() {",
+            "        System.out.println(brand + \" \" + model +",
+            "                           \" heavy engine roaring to life!\");",
+            "    }",
+            "",
+            "    public double getPayload() { return payloadCapacityTons; }",
+            "}",
+            "",
+            "// ── USAGE ─────────────────────────────────────────────",
+            "// Car    car   = new Car(\"Toyota\", \"Camry\", 2024, 4, \"Automatic\");",
+            "// Truck  truck = new Truck(\"Tata\", \"Prima\", 2023, 25.0);",
+            "// car.startEngine();  // Toyota Camry engine started.",
+            "// truck.startEngine(); // Tata Prima heavy engine roaring to life!",
+            "// car.openTrunk();    // Camry trunk opened.",
+            "// System.out.println(car.getDetails());",
+            "// → Toyota Camry (2024) | Fuel: 100% | Doors: 4 | Automatic"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "types-of-inheritance",
+      "title": "Types of Inheritance in Java",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Java supports several forms of inheritance, each modelling a different structural relationship between classes. Understanding these types helps you design class hierarchies that are clean, logical, and extensible."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "1️⃣",
+              "title": "Single Inheritance",
+              "text": "One class extends exactly ONE parent class. The most common and straightforward form. Example: 'class Car extends Vehicle'. Car inherits all accessible members of Vehicle. Java mandates single inheritance to avoid the Diamond Problem. This is the default and most-used inheritance type in Java applications."
+            },
+            {
+              "icon": "📶",
+              "title": "Multilevel Inheritance",
+              "text": "A class extends another class which itself extends another class — forming a chain. Example: Animal → Mammal → Dog. Dog inherits from both Mammal and Animal. The chain can be as long as needed, but deep chains (4+ levels) are generally a code smell — they make the hierarchy fragile and hard to understand. Rule: keep hierarchies shallow."
+            },
+            {
+              "icon": "🌿",
+              "title": "Hierarchical Inheritance",
+              "text": "Multiple classes extend the SAME parent class. Example: Vehicle is extended by Car, Truck, and Motorcycle. All three inherit the common Vehicle behaviour but add their own specialisations. This is the most natural use of inheritance — capturing shared structure in a parent and specialising in children."
+            },
+            {
+              "icon": "🔀",
+              "title": "Multiple Inheritance — Through Interfaces Only",
+              "text": "Java does NOT allow a class to extend multiple classes. However, a class CAN implement multiple interfaces: 'class Robot implements Movable, Chargeable, Programmable'. And an interface CAN extend multiple interfaces. Java 8+ default methods in interfaces can provide shared implementations, giving most benefits of multiple inheritance without the Diamond Problem."
+            },
+            {
+              "icon": "🚫",
+              "title": "Hybrid Inheritance — Not Directly Supported",
+              "text": "A combination of multiple inheritance types. Java does not support hybrid inheritance through classes for the same reason it avoids multiple class inheritance. However, hybrid-like structures are achievable using interfaces and abstract classes together — a common real-world pattern in enterprise frameworks like Spring."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "TypesOfInheritance.java",
+          "lines": [
+            "// ── SINGLE INHERITANCE ────────────────────────────────",
+            "class Animal {",
+            "    String name;",
+            "    void breathe() { System.out.println(name + \" breathes.\"); }",
+            "}",
+            "class Dog extends Animal {         // Single — Dog extends Animal",
+            "    void bark() { System.out.println(name + \" barks!\"); }",
+            "}",
+            "",
+            "// ── MULTILEVEL INHERITANCE ────────────────────────────",
+            "class LivingBeing {",
+            "    void eat() { System.out.println(\"Eating...\"); }",
+            "}",
+            "class Animal2 extends LivingBeing {  // Level 1",
+            "    void breathe() { System.out.println(\"Breathing...\"); }",
+            "}",
+            "class Dog2 extends Animal2 {          // Level 2 — inherits from both",
+            "    void bark() { System.out.println(\"Barking!\"); }",
+            "}",
+            "// Dog2 object can call: eat(), breathe(), bark()",
+            "",
+            "// ── HIERARCHICAL INHERITANCE ──────────────────────────",
+            "class Shape {",
+            "    String colour;",
+            "    double getArea() { return 0; }",
+            "}",
+            "class Circle    extends Shape {  // Child 1",
+            "    double radius;",
+            "    @Override double getArea() { return Math.PI * radius * radius; }",
+            "}",
+            "class Rectangle extends Shape {  // Child 2",
+            "    double width, height;",
+            "    @Override double getArea() { return width * height; }",
+            "}",
+            "class Triangle  extends Shape {  // Child 3",
+            "    double base, height;",
+            "    @Override double getArea() { return 0.5 * base * height; }",
+            "}",
+            "",
+            "// ── MULTIPLE INHERITANCE via INTERFACES ───────────────",
+            "interface Flyable  { void fly(); }",
+            "interface Swimmable { void swim(); }",
+            "",
+            "class Duck extends Animal implements Flyable, Swimmable {",
+            "    @Override public void fly()  { System.out.println(name + \" flies.\"); }",
+            "    @Override public void swim() { System.out.println(name + \" swims.\"); }",
+            "}",
+            "// Duck IS-A Animal, IS-A Flyable, IS-A Swimmable — all valid!",
+            "",
+            "// ❌ NOT ALLOWED — multiple class inheritance",
+            "// class Mule extends Horse, Donkey { } // Compile error"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "super-keyword",
+      "title": "The super Keyword — Accessing the Parent",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>super</code> keyword in Java is a reference to the <strong>immediate parent class</strong>. It is the complement to <code>this</code> — where <code>this</code> refers to the current object, <code>super</code> refers to the parent portion of the current object. It has three distinct uses, each critical to working correctly with inheritance."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "1️⃣",
+              "title": "super.field — Access Hidden Parent Field",
+              "text": "When a subclass declares a field with the same name as a parent field, the parent's field is 'hidden'. 'super.fieldName' accesses the parent's version. This is rarely needed in well-designed code — field hiding is generally a bad practice. Prefer unique field names in subclasses. But understanding this is essential for exam questions."
+            },
+            {
+              "icon": "2️⃣",
+              "title": "super.method() — Call Overridden Parent Method",
+              "text": "When a subclass overrides a parent method, 'super.method()' calls the parent's original version. This is very common — a subclass often wants to EXTEND rather than REPLACE the parent's behaviour. Example: getDetails() in Car calls 'super.getDetails()' to include the parent's output, then appends its own. Without super, the parent logic must be duplicated."
+            },
+            {
+              "icon": "3️⃣",
+              "title": "super() — Call Parent Constructor",
+              "text": "super(args) calls the parent's constructor. MUST be the FIRST statement in the subclass constructor. If not written explicitly, Java auto-inserts 'super()' (no-arg parent constructor). If the parent has no no-arg constructor, omitting super(args) is a compile error. Used to initialise the inherited portion of the object — the parent's fields need to be set up before the subclass extends them."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "SuperKeywordDemo.java",
+          "lines": [
+            "public class Employee {",
+            "",
+            "    protected String name;",
+            "    protected String department;",
+            "    protected double baseSalary;",
+            "",
+            "    public Employee(String name, String department, double baseSalary) {",
+            "        this.name       = name;",
+            "        this.department = department;",
+            "        this.baseSalary = baseSalary;",
+            "    }",
+            "",
+            "    public double calculateMonthlyPay() {",
+            "        return baseSalary;",
+            "    }",
+            "",
+            "    public String getPaySlip() {",
+            "        return String.format(\"Employee: %s | Dept: %s | Base: ₹%.2f\",",
+            "                            name, department, baseSalary);",
+            "    }",
+            "}",
+            "",
+            "// ── Manager EXTENDS Employee ──────────────────────────",
+            "public class Manager extends Employee {",
+            "",
+            "    private double teamBonus;",
+            "    private int    teamSize;",
+            "",
+            "    public Manager(String name, String department,",
+            "                   double baseSalary, double teamBonus, int teamSize) {",
+            "        super(name, department, baseSalary); // ✅ Use 1: calls Employee constructor",
+            "        this.teamBonus = teamBonus;",
+            "        this.teamSize  = teamSize;",
+            "    }",
+            "",
+            "    // ✅ Use 2: call overridden method to extend (not replace) logic",
+            "    @Override",
+            "    public double calculateMonthlyPay() {",
+            "        double base      = super.calculateMonthlyPay(); // Parent's version",
+            "        double bonusShare = teamBonus / teamSize;       // Manager's extra",
+            "        return base + bonusShare;",
+            "    }",
+            "",
+            "    @Override",
+            "    public String getPaySlip() {",
+            "        return super.getPaySlip() +  // ✅ Reuse parent's formatted string",
+            "               String.format(\" | Bonus Share: ₹%.2f | Team: %d\",",
+            "                             teamBonus / teamSize, teamSize);",
+            "    }",
+            "}",
+            "",
+            "// ── SeniorManager EXTENDS Manager (Multilevel) ────────",
+            "public class SeniorManager extends Manager {",
+            "",
+            "    private double performanceBonus;",
+            "",
+            "    public SeniorManager(String name, String department,",
+            "                         double baseSalary, double teamBonus,",
+            "                         int teamSize, double perfBonus) {",
+            "        super(name, department, baseSalary, teamBonus, teamSize);",
+            "        this.performanceBonus = perfBonus;",
+            "    }",
+            "",
+            "    @Override",
+            "    public double calculateMonthlyPay() {",
+            "        return super.calculateMonthlyPay() + performanceBonus;",
+            "    }",
+            "",
+            "    @Override",
+            "    public String getPaySlip() {",
+            "        return super.getPaySlip() +",
+            "               String.format(\" | Perf Bonus: ₹%.2f\", performanceBonus);",
+            "    }",
+            "}",
+            "",
+            "// Usage:",
+            "// Employee   e = new Employee(\"Ravi\",   \"Dev\",    60000);",
+            "// Manager    m = new Manager(\"Priya\",   \"Dev\",    90000, 50000, 5);",
+            "// SeniorManager s = new SeniorManager(\"Arjun\", \"Dev\", 130000, 80000, 8, 20000);",
+            "// System.out.println(e.getPaySlip());",
+            "// System.out.println(m.getPaySlip());",
+            "// System.out.println(s.getPaySlip());"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "constructor-chaining",
+      "title": "Constructor Chaining in Inheritance",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When an object is created from a subclass, Java <strong>does not just call the subclass constructor</strong>. It initiates a <em>constructor chain</em> — walking up the entire inheritance hierarchy and executing each class's constructor from the top (Object) downward. This ensures every level of the hierarchy has a chance to initialise its own fields before the subclass adds to them."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "📋",
+              "title": "Constructor Chain Order",
+              "text": "When 'new GrandChild()' is called, execution order is:\n1. GrandChild() starts, immediately calls super()\n2. Child() starts, immediately calls super()\n3. Object() runs (java.lang.Object constructor)\n4. Child() body continues\n5. GrandChild() body continues\nEach constructor's body runs from TOP (most ancestral) to BOTTOM (most derived). Fields are always initialised before the constructor body they belong to runs."
+            },
+            {
+              "icon": "⚠️",
+              "title": "The Auto-insert Rule",
+              "text": "If a subclass constructor does NOT explicitly call super() or this() as its first statement, Java automatically inserts 'super()' (no-arg parent constructor) at the very beginning. Consequence: if the parent class has NO no-arg constructor (because a parameterised one was defined), the compile fails with 'no suitable constructor found'. Always explicitly call super(args) when the parent has no default constructor."
+            },
+            {
+              "icon": "🔗",
+              "title": "this() vs super() — Cannot Have Both",
+              "text": "Both 'this(args)' (same-class constructor chaining) and 'super(args)' (parent constructor) must be the FIRST statement in a constructor. Therefore, a single constructor CANNOT have both. The way it works: 'this(args)' delegates to another constructor in the same class, which eventually calls super(). The super() call bubbles up through 'this()' chains, not directly."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ConstructorChainingDemo.java",
+          "lines": [
+            "class A {",
+            "    A() {",
+            "        System.out.println(\"A constructor\");",
+            "    }",
+            "}",
+            "",
+            "class B extends A {",
+            "    B() {",
+            "        // Java auto-inserts: super(); here if not written",
+            "        System.out.println(\"B constructor\");",
+            "    }",
+            "}",
+            "",
+            "class C extends B {",
+            "    C() {",
+            "        // Java auto-inserts: super(); here if not written",
+            "        System.out.println(\"C constructor\");",
+            "    }",
+            "}",
+            "",
+            "// new C() output:",
+            "// A constructor   ← runs first (top of chain)",
+            "// B constructor",
+            "// C constructor   ← runs last (most derived)",
+            "",
+            "// ── PRACTICAL EXAMPLE ─────────────────────────────────",
+            "class Account {",
+            "    protected String accountId;",
+            "    protected String ownerName;",
+            "    protected double balance;",
+            "",
+            "    Account(String accountId, String ownerName, double initialDeposit) {",
+            "        if (initialDeposit < 0)",
+            "            throw new IllegalArgumentException(\"Initial deposit cannot be negative\");",
+            "        this.accountId  = accountId;",
+            "        this.ownerName  = ownerName;",
+            "        this.balance    = initialDeposit;",
+            "        System.out.println(\"Account created: \" + accountId);",
+            "    }",
+            "}",
+            "",
+            "class SavingsAccount extends Account {",
+            "    private double interestRate;",
+            "    private double minimumBalance;",
+            "",
+            "    SavingsAccount(String id, String owner,",
+            "                   double deposit, double interestRate) {",
+            "        super(id, owner, deposit);          // ✅ Initialise Account part first",
+            "        this.interestRate   = interestRate;",
+            "        this.minimumBalance = 1000.0;",
+            "        System.out.println(\"SavingsAccount configured. Rate: \" + interestRate);",
+            "    }",
+            "",
+            "    double calculateYearlyInterest() {",
+            "        return balance * interestRate / 100;",
+            "    }",
+            "}",
+            "",
+            "class FixedDepositAccount extends SavingsAccount {",
+            "    private int    tenureMonths;",
+            "    private double lockinPenaltyPercent;",
+            "",
+            "    FixedDepositAccount(String id, String owner, double deposit,",
+            "                        double rate, int tenure) {",
+            "        super(id, owner, deposit, rate);     // ✅ Initialise SavingsAccount part",
+            "        this.tenureMonths          = tenure;",
+            "        this.lockinPenaltyPercent  = 1.5;",
+            "        System.out.println(\"FD Account. Tenure: \" + tenure + \" months\");",
+            "    }",
+            "}",
+            "",
+            "// new FixedDepositAccount(\"FD001\",\"Ravi\",100000,7.5,24) prints:",
+            "// Account created: FD001",
+            "// SavingsAccount configured. Rate: 7.5",
+            "// FD Account. Tenure: 24 months"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "method-overriding",
+      "title": "Method Overriding — Runtime Polymorphism",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Method overriding</strong> occurs when a subclass provides its own implementation for a method that is already defined in its parent class. It is the mechanism behind <strong>runtime polymorphism</strong> (dynamic dispatch) — when you call a method on a parent-type reference that actually holds a subclass object, Java calls the <em>subclass's</em> version at runtime, not the parent's."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "✅",
+              "title": "Rules for Valid Overriding",
+              "text": "1. Same method name as parent.\n2. Same parameter list (number, types, order).\n3. Return type: same, or a covariant (subtype) return.\n4. Access modifier: same or WIDER (protected→public ✅, public→protected ❌).\n5. Cannot override: private methods (not visible), static methods (hiding, not overriding), final methods.\n6. @Override annotation: not mandatory but strongly recommended — compiler catches mistakes."
+            },
+            {
+              "icon": "🔄",
+              "title": "Dynamic Dispatch — How Runtime Polymorphism Works",
+              "text": "When 'Animal a = new Dog(); a.makeSound();' is written, Java doesn't decide which makeSound() to call at compile time — it decides at RUNTIME by looking at the actual object type (Dog), not the reference type (Animal). This is dynamic dispatch. The JVM maintains a virtual method table (vtable) for each class — method calls are resolved through this table at runtime. This is how 'write once, work with many types' polymorphism works."
+            },
+            {
+              "icon": "📌",
+              "title": "@Override Annotation",
+              "text": "@Override tells the compiler: 'I intend this to be an override'. The compiler then verifies it actually overrides a parent method. Benefits: (1) Compile error if method name is misspelled. (2) Compile error if parameter list doesn't match. (3) Documents intent clearly. Without @Override, a typo in the method name silently creates a NEW method instead of overriding — a hard-to-find bug."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "MethodOverridingDemo.java",
+          "lines": [
+            "// ── PARENT ────────────────────────────────────────────",
+            "public abstract class PaymentProcessor {",
+            "",
+            "    protected String processorName;",
+            "    protected double transactionFeePercent;",
+            "",
+            "    public PaymentProcessor(String name, double fee) {",
+            "        this.processorName        = name;",
+            "        this.transactionFeePercent = fee;",
+            "    }",
+            "",
+            "    // Template method — calls overridable processTransaction()",
+            "    public final PaymentResult pay(double amount, String currency) {",
+            "        if (amount <= 0)",
+            "            return PaymentResult.failure(\"Amount must be positive\");",
+            "        double fee    = amount * transactionFeePercent / 100;",
+            "        double netAmt = amount - fee;",
+            "        System.out.printf(\"[%s] Processing %.2f %s (fee: %.2f)%n\",",
+            "                          processorName, amount, currency, fee);",
+            "        return processTransaction(netAmt, currency); // Calls overridden version",
+            "    }",
+            "",
+            "    // ← Subclasses MUST override this to provide gateway-specific logic",
+            "    protected abstract PaymentResult processTransaction(double amount, String currency);",
+            "",
+            "    // Can be overridden if needed",
+            "    public String getProcessorInfo() {",
+            "        return processorName + \" (Fee: \" + transactionFeePercent + \"%)\";",
+            "    }",
+            "}",
+            "",
+            "// ── SUBCLASS 1: UPI ───────────────────────────────────",
+            "public class UPIProcessor extends PaymentProcessor {",
+            "",
+            "    private String upiId;",
+            "",
+            "    public UPIProcessor(String upiId) {",
+            "        super(\"UPI\", 0.0); // UPI has zero transaction fee",
+            "        this.upiId = upiId;",
+            "    }",
+            "",
+            "    @Override",
+            "    protected PaymentResult processTransaction(double amount, String currency) {",
+            "        System.out.println(\"  → UPI transfer to \" + upiId);",
+            "        return PaymentResult.success(\"UPI-\" + System.currentTimeMillis());",
+            "    }",
+            "",
+            "    @Override",
+            "    public String getProcessorInfo() {",
+            "        return super.getProcessorInfo() + \" | UPI ID: \" + upiId;",
+            "    }",
+            "}",
+            "",
+            "// ── SUBCLASS 2: Credit Card ───────────────────────────",
+            "public class CreditCardProcessor extends PaymentProcessor {",
+            "",
+            "    private String maskedCardNumber;",
+            "",
+            "    public CreditCardProcessor(String maskedCard) {",
+            "        super(\"CreditCard\", 1.8); // 1.8% fee",
+            "        this.maskedCardNumber = maskedCard;",
+            "    }",
+            "",
+            "    @Override",
+            "    protected PaymentResult processTransaction(double amount, String currency) {",
+            "        System.out.println(\"  → Credit card charge on \" + maskedCardNumber);",
+            "        return PaymentResult.success(\"CC-\" + System.currentTimeMillis());",
+            "    }",
+            "}",
+            "",
+            "// ── RUNTIME POLYMORPHISM IN ACTION ────────────────────",
+            "// PaymentProcessor processor; // Parent type reference",
+            "//",
+            "// processor = new UPIProcessor(\"ravi@upi\");",
+            "// processor.pay(1000, \"INR\"); // Calls UPIProcessor.processTransaction()",
+            "//",
+            "// processor = new CreditCardProcessor(\"**** **** 4521\");",
+            "// processor.pay(5000, \"INR\"); // Calls CreditCardProcessor.processTransaction()",
+            "//",
+            "// SAME method call 'processor.pay()' — DIFFERENT behaviour at runtime!"
+          ]
+        },
+        {
+          "type": "calloutBox",
+          "variant": "tip",
+          "title": "💡 Covariant Return Type — Java 5+",
+          "text": "An overriding method can return a subtype of the parent's return type. If the parent declares 'Animal create()', the subclass can override with 'Dog create()' — this is valid because Dog IS-A Animal. This is called covariant return type. It allows subclass factory methods to return more specific types without requiring callers to cast. Real example: 'Object.clone()' returns Object, but an overriding clone() can return the specific class type."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "final-in-inheritance",
+      "title": "final with Inheritance — Preventing Extension & Override",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>final</code> keyword interacts with inheritance in three important ways — preventing subclassing, preventing method override, and making fields immutable. These restrictions are deliberate design decisions that protect invariants and communicate intent."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Context", "What final Prevents", "Example", "Common Use Case"],
+          "rows": [
+            ["final class",  "Cannot be subclassed — no extends allowed",    "public final class String",               "Security-sensitive or complete implementations: String, Integer, Math"],
+            ["final method", "Cannot be overridden in any subclass",          "public final void processPayment()",      "Template method pattern — lock core algorithm while allowing hooks"],
+            ["final field",  "Cannot be reassigned after initialisation",     "private final String id;",                "Immutable identity fields: IDs, keys, config values set in constructor"],
+            ["final param",  "Cannot be reassigned inside the method body",   "void method(final int x)",                "Defensive coding — prevent accidental reassignment of parameters"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "FinalInInheritance.java",
+          "lines": [
+            "// ── FINAL CLASS — cannot be extended ─────────────────",
+            "public final class SSLCertificate {",
+            "    private final String thumbprint;",
+            "    private final String issuer;",
+            "",
+            "    public SSLCertificate(String thumbprint, String issuer) {",
+            "        this.thumbprint = thumbprint;",
+            "        this.issuer     = issuer;",
+            "    }",
+            "    // No subclass can tamper with certificate validation logic",
+            "}",
+            "// class FakeSSL extends SSLCertificate { } // ❌ Compile error",
+            "",
+            "// ── FINAL METHOD — cannot be overridden ──────────────",
+            "public class OrderProcessor {",
+            "",
+            "    // This core algorithm must never be changed by subclasses",
+            "    public final OrderResult process(Order order) {",
+            "        validate(order);          // Overridable hook",
+            "        applyDiscounts(order);    // Overridable hook",
+            "        PaymentResult p = chargePayment(order); // Overridable hook",
+            "        if (!p.isSuccess()) return OrderResult.failure(p.getReason());",
+            "        fulfil(order);            // Overridable hook",
+            "        sendConfirmation(order);  // Overridable hook",
+            "        return OrderResult.success(order);",
+            "    }",
+            "",
+            "    // These CAN be overridden — customise the steps",
+            "    protected void validate(Order order)              { /* default impl */ }",
+            "    protected void applyDiscounts(Order order)        { /* default impl */ }",
+            "    protected PaymentResult chargePayment(Order order){ return PaymentResult.success(\"\"); }",
+            "    protected void fulfil(Order order)                { /* default impl */ }",
+            "    protected void sendConfirmation(Order order)      { /* default impl */ }",
+            "}",
+            "",
+            "// Subclass can customise steps but NOT the overall algorithm",
+            "public class ExpressOrderProcessor extends OrderProcessor {",
+            "",
+            "    @Override",
+            "    protected void fulfil(Order order) {",
+            "        System.out.println(\"Priority fulfillment for order: \" + order.getId());",
+            "        // Express-specific fulfilment logic",
+            "    }",
+            "",
+            "    // @Override",
+            "    // public OrderResult process(Order o) { } // ❌ Compile error — process() is final",
+            "}",
+            "",
+            "// ── FINAL FIELD — immutable after construction ────────",
+            "public class TransactionRecord {",
+            "    private final String transactionId;  // Set once — never changes",
+            "    private final long   timestamp;",
+            "    private       TransactionStatus status; // Mutable — status can change",
+            "",
+            "    public TransactionRecord(String id) {",
+            "        this.transactionId = id;",
+            "        this.timestamp     = System.currentTimeMillis();",
+            "        this.status        = TransactionStatus.PENDING;",
+            "    }",
+            "    public String getTransactionId() { return transactionId; }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "is-a-has-a",
+      "title": "IS-A vs HAS-A — Choosing Inheritance or Composition",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "One of the most important design decisions in OOP is choosing between <strong>inheritance</strong> (IS-A) and <strong>composition</strong> (HAS-A). Misusing inheritance when composition is appropriate — or vice versa — leads to fragile, unmaintainable class hierarchies. The litmus test is always: <em>does the relationship truly hold in every possible context?</em>"
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🧬",
+              "title": "IS-A — When to Use Inheritance",
+              "text": "Use inheritance when: (1) The subclass genuinely IS a more specific type of the parent — a Dog IS-A Animal, a SavingsAccount IS-A BankAccount, an EmailNotification IS-A Notification. (2) The subclass can substitute for the parent in all situations (Liskov Substitution Principle). (3) You want to extend or specialise the parent's behaviour. Red flag: if you need to override a method and throw an exception to say 'not applicable', inheritance is wrong."
+            },
+            {
+              "icon": "🔗",
+              "title": "HAS-A — When to Use Composition",
+              "text": "Use composition when: (1) One class CONTAINS or USES another — a Car HAS-A Engine, an Order HAS-A PaymentMethod, a Logger HAS-A Formatter. (2) The relationship is 'uses' or 'is made of', not 'is a type of'. (3) You want flexibility — the 'has-a' component can be swapped at runtime. Composition is more flexible than inheritance — you can change behaviours by injecting different implementations."
+            },
+            {
+              "icon": "⚖️",
+              "title": "Favour Composition Over Inheritance",
+              "text": "The classic GoF design principle: 'Favour object composition over class inheritance'. Inheritance creates tight coupling — the subclass is intimately coupled to the parent's implementation. Adding a method to the parent can break subclasses. Composition is looser — the outer class only depends on the component's public API. In Spring and modern Java enterprise code, composition (dependency injection) is strongly preferred over deep inheritance trees."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "IsAHasADemo.java",
+          "lines": [
+            "// ── IS-A: Correct inheritance ─────────────────────────",
+            "public class Notification {",
+            "    protected String recipientId;",
+            "    protected String message;",
+            "    protected NotificationPriority priority;",
+            "",
+            "    public Notification(String recipientId, String message,",
+            "                        NotificationPriority priority) {",
+            "        this.recipientId = recipientId;",
+            "        this.message     = message;",
+            "        this.priority    = priority;",
+            "    }",
+            "",
+            "    public void send() {",
+            "        System.out.println(\"Sending to \" + recipientId + \": \" + message);",
+            "    }",
+            "}",
+            "",
+            "// ✅ EmailNotification IS-A Notification — inheritance makes sense",
+            "public class EmailNotification extends Notification {",
+            "    private String subject;",
+            "    private String fromAddress;",
+            "",
+            "    public EmailNotification(String recipientId, String subject,",
+            "                             String body, String from) {",
+            "        super(recipientId, body, NotificationPriority.NORMAL);",
+            "        this.subject     = subject;",
+            "        this.fromAddress = from;",
+            "    }",
+            "",
+            "    @Override",
+            "    public void send() {",
+            "        System.out.printf(\"Email → %s | Subject: %s | From: %s%n\",",
+            "                          recipientId, subject, fromAddress);",
+            "    }",
+            "}",
+            "",
+            "// ── HAS-A: Correct composition ────────────────────────",
+            "public class Engine {",
+            "    private int   horsePower;",
+            "    private String fuelType;",
+            "",
+            "    public Engine(int hp, String fuelType) {",
+            "        this.horsePower = hp;",
+            "        this.fuelType   = fuelType;",
+            "    }",
+            "    public void start()  { System.out.println(horsePower + \"hp engine started.\"); }",
+            "    public void stop()   { System.out.println(\"Engine stopped.\"); }",
+            "    public int  getHP()  { return horsePower; }",
+            "}",
+            "",
+            "// ✅ Car HAS-A Engine — composition is correct",
+            "// ❌ Car extends Engine — WRONG: a Car is NOT a type of Engine",
+            "public class Car {",
+            "    private final Engine  engine;  // HAS-A relationship",
+            "    private       String  brand;",
+            "    private       boolean running;",
+            "",
+            "    public Car(String brand, Engine engine) {",
+            "        this.brand  = brand;",
+            "        this.engine = engine; // Engine injected — can swap petrol/electric",
+            "        this.running = false;",
+            "    }",
+            "",
+            "    public void start() {",
+            "        engine.start();  // DELEGATES to the Engine object",
+            "        running = true;",
+            "        System.out.println(brand + \" is now running.\");",
+            "    }",
+            "",
+            "    // Benefit: engine can be swapped — ElectricEngine, HybridEngine, etc.",
+            "    public int getEnginePower() { return engine.getHP(); }",
+            "}",
+            "",
+            "// Car car = new Car(\"Honda\", new Engine(150, \"Petrol\"));",
+            "// car.start(); // 150hp engine started. → Honda is now running."
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "instanceof-operator",
+      "title": "instanceof Operator — Type Checking in Inheritance",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>instanceof</code> operator tests whether an object is an instance of a specific class, or of a class that inherits from it. It returns <code>true</code> if the object IS-A that type (directly or through inheritance), and <code>false</code> otherwise. Java 16+ enhances this with <strong>Pattern Matching instanceof</strong> — combining the type check with an automatic cast."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🔍",
+              "title": "Classic instanceof",
+              "text": "'obj instanceof ClassName' — returns true if obj is an instance of ClassName or any of its subclasses. Always returns false for null (never throws NullPointerException). Example: in an inheritance chain Animal → Mammal → Dog, a Dog object is instanceof Dog (true), instanceof Mammal (true), instanceof Animal (true), instanceof Object (true)."
+            },
+            {
+              "icon": "⚡",
+              "title": "Pattern Matching instanceof (Java 16+)",
+              "text": "'if (shape instanceof Circle c)' — tests AND casts in one step. If true, 'c' is automatically bound as a Circle reference — no explicit cast needed. The binding variable is in scope only where guaranteed to match. Eliminates the verbose test-then-cast boilerplate. Combined with && for additional conditions: 'if (obj instanceof String s && s.length() > 5)'."
+            },
+            {
+              "icon": "🌳",
+              "title": "instanceof in Inheritance Trees",
+              "text": "A subclass object is instanceof its parent, grandparent, and all ancestors — up to Object. 'new Dog() instanceof Animal' → true. 'new Dog() instanceof Object' → true. This is the foundation of polymorphism — you can treat any object through its parent type interface. Use instanceof when you genuinely need to know the specific type; avoid it when polymorphism (method overriding) can handle it more cleanly."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InstanceofDemo.java",
+          "lines": [
+            "public class InstanceofDemo {",
+            "",
+            "    // ── Class hierarchy ───────────────────────────────",
+            "    static class Shape        { double getArea() { return 0; } }",
+            "    static class Circle    extends Shape {",
+            "        double radius;",
+            "        Circle(double r)    { radius = r; }",
+            "        @Override double getArea() { return Math.PI * radius * radius; }",
+            "    }",
+            "    static class Rectangle extends Shape {",
+            "        double w, h;",
+            "        Rectangle(double w, double h) { this.w=w; this.h=h; }",
+            "        @Override double getArea() { return w * h; }",
+            "    }",
+            "    static class Square extends Rectangle {",
+            "        Square(double side) { super(side, side); }",
+            "    }",
+            "",
+            "    public static void main(String[] args) {",
+            "",
+            "        Shape[] shapes = {",
+            "            new Circle(5),",
+            "            new Rectangle(4, 6),",
+            "            new Square(3),",
+            "            null",
+            "        };",
+            "",
+            "        for (Shape s : shapes) {",
+            "",
+            "            // ── Classic instanceof ────────────────────",
+            "            System.out.println(\"--- Next shape ---\");",
+            "            System.out.println(\"instanceof Shape:     \" + (s instanceof Shape));",
+            "            System.out.println(\"instanceof Circle:    \" + (s instanceof Circle));",
+            "            System.out.println(\"instanceof Rectangle: \" + (s instanceof Rectangle));",
+            "            System.out.println(\"instanceof Square:    \" + (s instanceof Square));",
+            "            // null instanceof anything → always false (no NPE!)",
+            "        }",
+            "",
+            "        // ── Pattern Matching instanceof (Java 16+) ────",
+            "        Shape shape = new Circle(7.0);",
+            "",
+            "        // Old way — verbose: test + separate cast",
+            "        if (shape instanceof Circle) {",
+            "            Circle c = (Circle) shape;   // Redundant cast",
+            "            System.out.println(\"Old way — Radius: \" + c.radius);",
+            "        }",
+            "",
+            "        // ✅ New way — test + bind in one step (Java 16+)",
+            "        if (shape instanceof Circle c) {",
+            "            System.out.println(\"New way — Radius: \" + c.radius);",
+            "            System.out.println(\"Area: \" + String.format(\"%.2f\", c.getArea()));",
+            "        }",
+            "",
+            "        // ✅ With extra condition on the bound variable",
+            "        if (shape instanceof Circle c && c.radius > 5.0) {",
+            "            System.out.println(\"Large circle — radius: \" + c.radius);",
+            "        }",
+            "",
+            "        // ── Preferred: Polymorphism over instanceof ───",
+            "        // Instead of instanceof + cast, rely on overriding:",
+            "        for (Shape s2 : new Shape[]{ new Circle(3), new Rectangle(2,4) }) {",
+            "            System.out.println(\"Area: \" + String.format(\"%.2f\", s2.getArea()));",
+            "            // No instanceof needed — dynamic dispatch handles it!",
+            "        }",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "object-class",
+      "title": "java.lang.Object — The Root of All Java Classes",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every class in Java <strong>implicitly extends <code>java.lang.Object</code></strong> — even if you don't write <code>extends Object</code>. This means every object, no matter what class it belongs to, inherits a set of core methods from Object. Understanding these methods is essential — some require overriding to work correctly, and their contracts have precise rules."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Method", "Default Behaviour", "Should Override?", "When to Override"],
+          "rows": [
+            ["toString()",        "ClassName@hexHashCode (rarely useful)",         "✅ Almost always",   "Any class whose instances will be printed or logged"],
+            ["equals(Object o)",  "Reference equality (== same object identity)",  "✅ For value objects", "When two different objects with same data should be 'equal'"],
+            ["hashCode()",        "Based on memory address (JVM-specific)",         "✅ With equals()",    "Whenever equals() is overridden — always as a pair"],
+            ["clone()",           "Shallow copy (implements Cloneable interface)",  "⚠️ Rarely",          "When controlled copying is needed — prefer copy constructors"],
+            ["getClass()",        "Returns Class<T> at runtime",                    "❌ Never",           "—"],
+            ["finalize()",        "Called before GC (deprecated since Java 9)",     "❌ Avoid",           "Use try-with-resources or Cleaner API instead"],
+            ["wait()/notify()",   "Thread synchronisation primitives",              "❌ Never",           "Use java.util.concurrent classes instead"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ObjectMethodsDemo.java",
+          "lines": [
+            "import java.util.Objects;",
+            "",
+            "public class OrderItem {",
+            "",
+            "    private final String productId;",
+            "    private final String productName;",
+            "    private final int    quantity;",
+            "    private final double unitPrice;",
+            "",
+            "    public OrderItem(String productId, String name, int qty, double price) {",
+            "        this.productId   = productId;",
+            "        this.productName = name;",
+            "        this.quantity    = qty;",
+            "        this.unitPrice   = price;",
+            "    }",
+            "",
+            "    // ── toString: human-readable representation ───────",
+            "    @Override",
+            "    public String toString() {",
+            "        return String.format(\"OrderItem{id='%s', name='%s', qty=%d, price=₹%.2f, total=₹%.2f}\",",
+            "               productId, productName, quantity, unitPrice, getTotal());",
+            "    }",
+            "",
+            "    // ── equals: value-based equality ──────────────────",
+            "    @Override",
+            "    public boolean equals(Object o) {",
+            "        if (this == o) return true;                    // Same object",
+            "        if (!(o instanceof OrderItem item)) return false; // Different type or null",
+            "        return quantity == item.quantity",
+            "            && Double.compare(unitPrice, item.unitPrice) == 0",
+            "            && Objects.equals(productId, item.productId);",
+            "    }",
+            "",
+            "    // ── hashCode: consistent with equals ──────────────",
+            "    @Override",
+            "    public int hashCode() {",
+            "        return Objects.hash(productId, quantity, unitPrice);",
+            "    }",
+            "",
+            "    // Business method",
+            "    public double getTotal() { return quantity * unitPrice; }",
+            "",
+            "    // Getters",
+            "    public String getProductId()   { return productId; }",
+            "    public String getProductName() { return productName; }",
+            "    public int    getQuantity()    { return quantity; }",
+            "    public double getUnitPrice()   { return unitPrice; }",
+            "}",
+            "",
+            "// Usage demonstration:",
+            "// OrderItem a = new OrderItem(\"P001\", \"Laptop\", 1, 65000);",
+            "// OrderItem b = new OrderItem(\"P001\", \"Laptop\", 1, 65000);",
+            "// System.out.println(a);          // OrderItem{id='P001', name='Laptop'...}",
+            "// System.out.println(a.equals(b)); // true  — value equality",
+            "// System.out.println(a == b);      // false — different objects in memory",
+            "//",
+            "// var set = new java.util.HashSet<OrderItem>();",
+            "// set.add(a);",
+            "// set.contains(b); // true — works correctly with hashCode override"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "liskov-principle",
+      "title": "Liskov Substitution Principle — The Test of Good Inheritance",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <strong>Liskov Substitution Principle (LSP)</strong> — the 'L' in SOLID — states: <em>if S is a subtype of T, then objects of type T may be replaced with objects of type S without altering the correctness of the program</em>. In plain English: wherever you use a Parent object, you should be able to substitute a Child object and everything should still work correctly."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "✅",
+              "title": "LSP-Compliant Inheritance",
+              "text": "A subclass honours the parent's contract: (1) Does not weaken preconditions — accepts at least the same inputs. (2) Does not strengthen postconditions — delivers at least the same guarantees. (3) Does not throw new exceptions not declared by the parent. (4) Preserves invariants — properties that always hold for the parent type. If Dog extends Animal and Animal.makeSound() is supposed to make a non-silent sound, Dog.makeSound() must also make a sound."
+            },
+            {
+              "icon": "❌",
+              "title": "LSP Violations — Classic Example",
+              "text": "The Rectangle-Square problem: Square extends Rectangle seems logical mathematically. But if Rectangle has setWidth() and setHeight() and code sets them independently, Square breaks the contract — setting width also changes height (to stay square), violating the caller's expectation that width and height are independent. The fix: Square should NOT extend Rectangle — they should share a common Shape interface instead."
+            },
+            {
+              "icon": "🛡️",
+              "title": "How to Detect LSP Violations",
+              "text": "Warning signs: (1) Overriding a method to throw UnsupportedOperationException ('not applicable'). (2) Overriding a method to do nothing (empty body) when the parent's version does something important. (3) Strengthening input validation in an override (rejecting valid parent inputs). (4) Overriding to return null when the parent guarantees non-null. Any of these means inheritance is the wrong tool — use composition or a shared interface instead."
+            }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "LSPDemo.java",
+          "lines": [
+            "// ── LSP VIOLATION: Rectangle-Square Problem ───────────",
+            "class Rectangle {",
+            "    protected double width;",
+            "    protected double height;",
+            "",
+            "    public void setWidth(double w)  { this.width  = w; }",
+            "    public void setHeight(double h) { this.height = h; }",
+            "    public double getArea()         { return width * height; }",
+            "}",
+            "",
+            "// ❌ VIOLATES LSP — Square breaks Rectangle's behaviour contract",
+            "class Square extends Rectangle {",
+            "    @Override",
+            "    public void setWidth(double w) {",
+            "        this.width  = w;",
+            "        this.height = w; // Forces equal sides — breaks Rectangle contract!",
+            "    }",
+            "    @Override",
+            "    public void setHeight(double h) {",
+            "        this.width  = h; // Same problem",
+            "        this.height = h;",
+            "    }",
+            "}",
+            "",
+            "// Code that works for Rectangle but BREAKS for Square:",
+            "static void testRectangle(Rectangle r) {",
+            "    r.setWidth(5);",
+            "    r.setHeight(3);",
+            "    // Expects area = 15 for ANY Rectangle",
+            "    assert r.getArea() == 15 : \"Expected 15 but got \" + r.getArea();",
+            "}",
+            "// testRectangle(new Rectangle()); // ✅ Passes",
+            "// testRectangle(new Square());    // ❌ Fails — area is 9, not 15!",
+            "",
+            "// ── LSP-COMPLIANT FIX: Use abstraction instead ────────",
+            "interface Shape {",
+            "    double getArea();",
+            "    double getPerimeter();",
+            "}",
+            "",
+            "class RectangleFixed implements Shape {",
+            "    private final double width;",
+            "    private final double height;",
+            "    RectangleFixed(double w, double h) { width=w; height=h; }",
+            "    @Override public double getArea()      { return width * height; }",
+            "    @Override public double getPerimeter() { return 2*(width+height); }",
+            "}",
+            "",
+            "class SquareFixed implements Shape {",
+            "    private final double side;",
+            "    SquareFixed(double s) { side = s; }",
+            "    @Override public double getArea()      { return side * side; }",
+            "    @Override public double getPerimeter() { return 4 * side; }",
+            "}",
+            "// Both implement Shape — no LSP violation.",
+            "// Square is not forced to pretend it's a mutable Rectangle.",
+            "",
+            "// ── LSP-COMPLIANT Inheritance Example ─────────────────",
+            "abstract class Discount {",
+            "    // Contract: always returns a value between 0.0 and 1.0",
+            "    public abstract double getDiscountRate(double orderValue);",
+            "}",
+            "",
+            "class FestivalDiscount extends Discount {",
+            "    @Override",
+            "    public double getDiscountRate(double orderValue) {",
+            "        return orderValue > 5000 ? 0.20 : 0.10; // ✅ Always 0.0–1.0",
+            "    }",
+            "}",
+            "",
+            "class PremiumMemberDiscount extends Discount {",
+            "    @Override",
+            "    public double getDiscountRate(double orderValue) {",
+            "        return 0.15; // ✅ Always 0.0–1.0 — LSP honoured",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes & Pitfalls — Bugs That Trip Everyone Up",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These inheritance-related mistakes appear consistently in Java beginner and intermediate code. Each one either produces a compile-time error or — more dangerously — a silent runtime bug that is difficult to trace."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "InheritanceMistakes.java",
+          "lines": [
+            "// ❌ MISTAKE 1: Forgetting super() when parent has no no-arg constructor",
+            "class Vehicle {",
+            "    String brand;",
+            "    Vehicle(String brand) { this.brand = brand; } // No default constructor!",
+            "}",
+            "class Car extends Vehicle {",
+            "    int doors;",
+            "    Car(int doors) {",
+            "        // Java auto-inserts super() — but Vehicle has no no-arg constructor!",
+            "        // ❌ Compile error: no suitable constructor found",
+            "        this.doors = doors;",
+            "    }",
+            "}",
+            "// ✅ Fix: explicitly call super(args)",
+            "class CarFixed extends Vehicle {",
+            "    int doors;",
+            "    CarFixed(String brand, int doors) {",
+            "        super(brand);  // ✅ Calls Vehicle(String brand)",
+            "        this.doors = doors;",
+            "    }",
+            "}",
+            "",
+            "// ❌ MISTAKE 2: @Override typo silently creates a NEW method",
+            "class Animal {",
+            "    public void makeSound() { System.out.println(\"...\"); }",
+            "}",
+            "class Cat extends Animal {",
+            "    // Missing @Override — 'makesound' is a NEW method, not an override",
+            "    public void makesound() { System.out.println(\"Meow\"); } // Silent bug!",
+            "}",
+            "// Animal a = new Cat();",
+            "// a.makeSound(); // Prints \"...\" — Cat's method never called!",
+            "// ✅ Fix: always add @Override — compiler will catch the typo",
+            "",
+            "// ❌ MISTAKE 3: Narrowing access modifier in override",
+            "class Base {",
+            "    public void display() { System.out.println(\"Base\"); }",
+            "}",
+            "class Derived extends Base {",
+            "    // @Override",
+            "    // protected void display() { } // ❌ Compile error — narrows public to protected",
+            "    @Override",
+            "    public void display() { System.out.println(\"Derived\"); } // ✅ Same or wider",
+            "}",
+            "",
+            "// ❌ MISTAKE 4: Calling overridable method from constructor",
+            "class Parent {",
+            "    public Parent() {",
+            "        printInfo(); // ❌ Dangerous — calls overridden version before subclass is ready",
+            "    }",
+            "    public void printInfo() { System.out.println(\"Parent info\"); }",
+            "}",
+            "class Child extends Parent {",
+            "    private String info = \"Child data\";",
+            "    @Override",
+            "    public void printInfo() {",
+            "        System.out.println(info.toUpperCase()); // ❌ NPE! 'info' is null here",
+            "    }",
+            "}",
+            "// new Child() → NullPointerException in printInfo() before info is set",
+            "",
+            "// ❌ MISTAKE 5: instanceof misused — checking specific type when polymorphism works",
+            "// BAD: every time Animal adds a new subclass, this switch breaks",
+            "for (Animal a : animals) {",
+            "    if (a instanceof Dog)  { ((Dog)a).fetch(); }",
+            "    else if (a instanceof Cat)  { ((Cat)a).purr(); }",
+            "    else if (a instanceof Bird) { ((Bird)a).tweet(); }",
+            "}",
+            "// ✅ Better: use polymorphism — each subclass overrides 'performAction()'",
+            "for (Animal a : animals) {",
+            "    a.performAction(); // Dog.performAction() fetches, Cat.purr()s, etc.",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "bad-practices",
+      "title": "Bad Practices & Anti-Patterns — What Senior Developers Reject",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These inheritance anti-patterns are the most common causes of <strong>fragile, unmaintainable class hierarchies</strong> in professional Java codebases. Each one has a cleaner alternative."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            {
+              "icon": "🚫",
+              "title": "Deep Inheritance Chains (The Gorilla-Banana Problem)",
+              "text": "Classes 5+ levels deep — every change to the top of the hierarchy ripples to all descendants. Joe Armstrong (Erlang creator) famously said: 'You wanted a banana but you got a gorilla holding the banana and the entire jungle.' Deep chains are fragile, hard to understand, and signal that composition may be more appropriate. Rule: inheritance hierarchies beyond 3 levels are a code smell."
+            },
+            {
+              "icon": "🚫",
+              "title": "Inheriting for Code Reuse Alone",
+              "text": "Using inheritance ONLY because a parent has methods you want — not because a true IS-A relationship exists. Example: 'class Stack extends ArrayList' to reuse ArrayList's storage. But a Stack IS NOT an ArrayList — Stack should restrict access to top only. Result: all ArrayList methods (get(), add(index), remove(index)) are exposed on Stack, breaking encapsulation. Fix: composition — Stack CONTAINS an ArrayList internally."
+            },
+            {
+              "icon": "🚫",
+              "title": "Overriding to Disable (UnsupportedOperationException)",
+              "text": "Overriding a method and throwing UnsupportedOperationException to say 'this method doesn't apply here' is a clear LSP violation. If a subclass cannot honour the parent's method contract, the inheritance is wrong. Real example: java.util.Collections.unmodifiableList() adds() throws UnsupportedOperationException — it shouldn't extend a mutable list at all. Fix: use a separate interface or composition."
+            },
+            {
+              "icon": "🚫",
+              "title": "Exposing Parent Internals Through Protected Fields",
+              "text": "Making fields 'protected' instead of 'private' because subclasses need them directly is lazy encapsulation. Protected fields tightly couple every subclass to the parent's internal representation. If the parent changes how it stores data, all subclasses break. Fix: keep fields private in the parent and provide protected methods (getters, callbacks) for subclasses to interact with them safely."
+            },
+            {
+              "icon": "🚫",
+              "title": "Concrete Class Inheritance Across Libraries",
+              "text": "Extending a concrete class from a third-party library you don't control is risky — the library may add final methods, change behaviour, or the class may not be designed for extension. This creates a tight coupling to an external implementation detail. Fix: wrap the class with composition (Decorator/Adapter pattern). Only extend when the class was explicitly designed for extension."
+            },
+            {
+              "icon": "🚫",
+              "title": "Not Overriding equals/hashCode in Value Subclasses",
+              "text": "If a subclass adds fields that are part of equality (e.g., a GoldMember extends Member, adds a 'membershipLevel' field), failing to override equals() and hashCode() in the subclass means two GoldMembers with different levels may compare as equal using the parent's equals(). This breaks Set and Map behaviour. JEP note: Java's Effective Java (Bloch) recommends avoiding extending concrete classes when value equality is involved — use composition."
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-examples",
+      "title": "Real-World Production Code Examples — Inheritance in Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The following examples demonstrate carefully designed inheritance hierarchies from real enterprise Java applications — showing how inheritance, abstract classes, method overriding, and the template method pattern work together in production-grade code."
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "ReportGenerator.java — Template Method Pattern",
+          "lines": [
+            "package com.techsustainify.report;",
+            "",
+            "import java.time.LocalDateTime;",
+            "import java.util.List;",
+            "",
+            "/**",
+            " * Abstract base class — defines the TEMPLATE for report generation.",
+            " * The algorithm skeleton is fixed (final); steps are customisable (overridable).",
+            " * Pattern: Template Method — GoF Behavioural Pattern",
+            " */",
+            "public abstract class ReportGenerator {",
+            "",
+            "    protected final String  reportTitle;",
+            "    protected final String  generatedBy;",
+            "    protected final LocalDateTime generatedAt;",
+            "",
+            "    protected ReportGenerator(String title, String generatedBy) {",
+            "        this.reportTitle  = title;",
+            "        this.generatedBy  = generatedBy;",
+            "        this.generatedAt  = LocalDateTime.now();",
+            "    }",
+            "",
+            "    // ── TEMPLATE METHOD — algorithm skeleton, cannot be overridden ──",
+            "    public final ReportOutput generate(ReportRequest request) {",
+            "        validateRequest(request);       // Hook 1",
+            "        List<?> data    = fetchData(request);   // Hook 2 — must override",
+            "        List<?> filtered = filterData(data, request); // Hook 3",
+            "        List<?> sorted   = sortData(filtered);         // Hook 4",
+            "        ReportBody body  = formatBody(sorted);         // Hook 5 — must override",
+            "        ReportHeader header = buildHeader(request);    // Hook 6",
+            "        ReportFooter footer = buildFooter();           // Hook 7",
+            "        return assembleReport(header, body, footer);",
+            "    }",
+            "",
+            "    // ── ABSTRACT HOOKS — subclasses MUST implement ────",
+            "    protected abstract List<?> fetchData(ReportRequest request);",
+            "    protected abstract ReportBody formatBody(List<?> data);",
+            "",
+            "    // ── OVERRIDABLE HOOKS — subclasses MAY customise ──",
+            "    protected void validateRequest(ReportRequest request) {",
+            "        if (request == null)",
+            "            throw new IllegalArgumentException(\"Request cannot be null\");",
+            "    }",
+            "",
+            "    protected List<?> filterData(List<?> data, ReportRequest request) {",
+            "        return data; // Default: no filtering",
+            "    }",
+            "",
+            "    protected List<?> sortData(List<?> data) {",
+            "        return data; // Default: preserve order",
+            "    }",
+            "",
+            "    protected ReportHeader buildHeader(ReportRequest request) {",
+            "        return new ReportHeader(reportTitle, generatedBy, generatedAt);",
+            "    }",
+            "",
+            "    protected ReportFooter buildFooter() {",
+            "        return new ReportFooter(\"Page 1 of 1\", \"Confidential\");",
+            "    }",
+            "",
+            "    private ReportOutput assembleReport(ReportHeader h,",
+            "                                        ReportBody b, ReportFooter f) {",
+            "        return new ReportOutput(h, b, f);",
+            "    }",
+            "}",
+            "",
+            "// ── CONCRETE SUBCLASS 1: Sales Report ─────────────────",
+            "public class SalesReportGenerator extends ReportGenerator {",
+            "",
+            "    private final SalesRepository salesRepo;",
+            "",
+            "    public SalesReportGenerator(SalesRepository repo, String generatedBy) {",
+            "        super(\"Monthly Sales Report\", generatedBy);",
+            "        this.salesRepo = repo;",
+            "    }",
+            "",
+            "    @Override",
+            "    protected List<SaleRecord> fetchData(ReportRequest request) {",
+            "        return salesRepo.findByDateRange(",
+            "               request.getFromDate(), request.getToDate());",
+            "    }",
+            "",
+            "    @Override",
+            "    protected List<?> sortData(List<?> data) {",
+            "        // Sales reports sorted by date descending",
+            "        return ((List<SaleRecord>) data).stream()",
+            "               .sorted((a, b) -> b.getSaleDate().compareTo(a.getSaleDate()))",
+            "               .toList();",
+            "    }",
+            "",
+            "    @Override",
+            "    protected ReportBody formatBody(List<?> data) {",
+            "        List<SaleRecord> sales = (List<SaleRecord>) data;",
+            "        double totalRevenue = sales.stream().mapToDouble(SaleRecord::getAmount).sum();",
+            "        return new SalesReportBody(sales, totalRevenue);",
+            "    }",
+            "}",
+            "",
+            "// ── CONCRETE SUBCLASS 2: Inventory Report ─────────────",
+            "public class InventoryReportGenerator extends ReportGenerator {",
+            "",
+            "    private final InventoryRepository inventoryRepo;",
+            "    private final int lowStockThreshold;",
+            "",
+            "    public InventoryReportGenerator(InventoryRepository repo,",
+            "                                    int threshold, String generatedBy) {",
+            "        super(\"Inventory Status Report\", generatedBy);",
+            "        this.inventoryRepo    = repo;",
+            "        this.lowStockThreshold = threshold;",
+            "    }",
+            "",
+            "    @Override",
+            "    protected List<InventoryItem> fetchData(ReportRequest request) {",
+            "        return inventoryRepo.findAll();",
+            "    }",
+            "",
+            "    @Override",
+            "    protected List<?> filterData(List<?> data, ReportRequest request) {",
+            "        // Only include low-stock items",
+            "        return ((List<InventoryItem>) data).stream()",
+            "               .filter(item -> item.getStock() < lowStockThreshold)",
+            "               .toList();",
+            "    }",
+            "",
+            "    @Override",
+            "    protected ReportBody formatBody(List<?> data) {",
+            "        return new InventoryReportBody((List<InventoryItem>) data, lowStockThreshold);",
+            "    }",
+            "}",
+            "",
+            "// Both generators use the SAME template (generate()) but produce",
+            "// completely different reports through method overriding."
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "☕ Java",
+          "label": "NotificationService.java — Hierarchical Inheritance",
+          "lines": [
+            "package com.techsustainify.notification;",
+            "",
+            "import java.time.LocalDateTime;",
+            "",
+            "// ── ROOT: Abstract Notification ───────────────────────",
+            "public abstract class BaseNotification {",
+            "",
+            "    private final String id;",
+            "    private final String recipientId;",
+            "    private final String body;",
+            "    private final NotificationPriority priority;",
+            "    private final LocalDateTime        createdAt;",
+            "    private       NotificationStatus   status;",
+            "",
+            "    protected BaseNotification(String recipientId, String body,",
+            "                               NotificationPriority priority) {",
+            "        this.id          = java.util.UUID.randomUUID().toString();",
+            "        this.recipientId = recipientId;",
+            "        this.body        = body;",
+            "        this.priority    = priority;",
+            "        this.createdAt   = LocalDateTime.now();",
+            "        this.status      = NotificationStatus.PENDING;",
+            "    }",
+            "",
+            "    // Template method — fixed delivery flow",
+            "    public final DeliveryResult deliver() {",
+            "        try {",
+            "            if (!isRecipientReachable()) {",
+            "                status = NotificationStatus.FAILED;",
+            "                return DeliveryResult.failure(\"Recipient unreachable\");",
+            "            }",
+            "            DeliveryResult result = doDeliver();",
+            "            status = result.isSuccess()",
+            "                   ? NotificationStatus.DELIVERED",
+            "                   : NotificationStatus.FAILED;",
+            "            return result;",
+            "        } catch (Exception e) {",
+            "            status = NotificationStatus.FAILED;",
+            "            return DeliveryResult.failure(\"Delivery error: \" + e.getMessage());",
+            "        }",
+            "    }",
+            "",
+            "    // Each notification type implements its own delivery",
+            "    protected abstract DeliveryResult doDeliver();",
+            "    protected abstract boolean isRecipientReachable();",
+            "",
+            "    // Getters",
+            "    public String                getId()          { return id; }",
+            "    public String                getRecipientId() { return recipientId; }",
+            "    public String                getBody()        { return body; }",
+            "    public NotificationPriority  getPriority()    { return priority; }",
+            "    public NotificationStatus    getStatus()      { return status; }",
+            "    public boolean               isPending()      { return status == NotificationStatus.PENDING; }",
+            "}",
+            "",
+            "// ── EMAIL NOTIFICATION ────────────────────────────────",
+            "public class EmailNotification extends BaseNotification {",
+            "",
+            "    private final String subject;",
+            "    private final String toEmail;",
+            "    private final EmailClient emailClient;",
+            "",
+            "    public EmailNotification(String recipientId, String toEmail,",
+            "                             String subject, String body,",
+            "                             EmailClient client) {",
+            "        super(recipientId, body, NotificationPriority.NORMAL);",
+            "        this.subject     = subject;",
+            "        this.toEmail     = toEmail;",
+            "        this.emailClient = client;",
+            "    }",
+            "",
+            "    @Override",
+            "    protected boolean isRecipientReachable() {",
+            "        return toEmail != null && toEmail.contains(\"@\");",
+            "    }",
+            "",
+            "    @Override",
+            "    protected DeliveryResult doDeliver() {",
+            "        return emailClient.send(toEmail, subject, getBody());",
+            "    }",
+            "}",
+            "",
+            "// ── SMS NOTIFICATION ──────────────────────────────────",
+            "public class SmsNotification extends BaseNotification {",
+            "",
+            "    private final String phoneNumber;",
+            "    private final SmsGateway smsGateway;",
+            "",
+            "    public SmsNotification(String recipientId, String phoneNumber,",
+            "                           String body, SmsGateway gateway) {",
+            "        super(recipientId, body, NotificationPriority.HIGH);",
+            "        this.phoneNumber = phoneNumber;",
+            "        this.smsGateway  = gateway;",
+            "    }",
+            "",
+            "    @Override",
+            "    protected boolean isRecipientReachable() {",
+            "        return phoneNumber != null && phoneNumber.matches(\"[6-9]\\\\d{9}\");",
+            "    }",
+            "",
+            "    @Override",
+            "    protected DeliveryResult doDeliver() {",
+            "        return smsGateway.sendSms(phoneNumber, getBody());",
+            "    }",
+            "}",
+            "",
+            "// ── Dispatch service uses parent type — polymorphism ──",
+            "public class NotificationDispatcher {",
+            "    public void dispatch(List<BaseNotification> notifications) {",
+            "        notifications.stream()",
+            "            .filter(BaseNotification::isPending)",
+            "            .forEach(n -> {",
+            "                DeliveryResult r = n.deliver(); // Dynamic dispatch",
+            "                System.out.printf(\"[%s] %s → %s%n\",",
+            "                    n.getClass().getSimpleName(),",
+            "                    n.getRecipientId(),",
+            "                    r.isSuccess() ? \"Delivered\" : \"Failed: \" + r.getReason());",
+            "            });",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "inheritance-flowchart",
+      "title": "Inheritance Hierarchy Flowchart — Object Creation Chain",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This flowchart illustrates what happens at the JVM level when you create a subclass object — showing the constructor chain, method resolution, and memory layout."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "▶ new SubClass() called",            "sublabel": "e.g. new SavingsAccount(args)",              "type": "start" },
+            { "id": "2", "label": "📦 JVM allocates memory on Heap",    "sublabel": "space for ALL fields: Object + Parent + Child", "type": "process" },
+            { "id": "3", "label": "🔗 SubClass() constructor begins",   "sublabel": "first statement auto-calls super()",           "type": "process" },
+            { "id": "4", "label": "⬆️ Parent constructor runs",         "sublabel": "initialises parent fields",                    "type": "process" },
+            { "id": "5", "label": "⬆️ Object() constructor runs",       "sublabel": "java.lang.Object — root of all",               "type": "process" },
+            { "id": "6", "label": "🔽 Return to Parent constructor",     "sublabel": "continues after super() call",                 "type": "process" },
+            { "id": "7", "label": "🔽 Return to SubClass constructor",   "sublabel": "subclass fields initialised",                  "type": "process" },
+            { "id": "8", "label": "📋 vtable built for object",         "sublabel": "maps method names to implementations",         "type": "process" },
+            { "id": "9", "label": "✅ Object reference returned",        "sublabel": "ready for use — all fields initialised",       "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "allocate" },
+            { "from": "2", "to": "3", "label": "enter" },
+            { "from": "3", "to": "4", "label": "super()" },
+            { "from": "4", "to": "5", "label": "super()" },
+            { "from": "5", "to": "6", "label": "return" },
+            { "from": "6", "to": "7", "label": "return" },
+            { "from": "7", "to": "8", "label": "build vtable" },
+            { "from": "8", "to": "9", "label": "done" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Java Inheritance Interview Questions — Beginner to Advanced",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These questions are consistently asked in Java fresher and experienced developer interviews, campus placements, and OCPJP certification exams."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is inheritance in Java and what are its types?",
+              "a": "Inheritance is an OOP mechanism where a subclass acquires fields and methods of a superclass using the 'extends' keyword. It models the IS-A relationship and promotes code reuse and runtime polymorphism. Types in Java: (1) Single — one class extends one parent. (2) Multilevel — A extends B extends C — a chain. (3) Hierarchical — multiple classes extend the same parent. (4) Multiple — NOT supported through classes (Diamond Problem); achieved through interfaces. (5) Hybrid — combination of above, achievable through interfaces. Java mandates single inheritance for classes to avoid ambiguity, but allows multiple interface implementation.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between method overriding and method overloading?",
+              "a": "Overriding: subclass provides a new implementation for a parent's method. SAME name, SAME parameter list, SAME or covariant return type. Resolved at RUNTIME (dynamic dispatch). Requires inheritance. Access modifier can only widen. @Override annotation recommended. Overloading: same class (or inherited) defines multiple methods with the SAME name but DIFFERENT parameter lists. Resolved at COMPILE TIME (static binding). Does not require inheritance. Return type alone cannot differentiate. Memory aid: overrIDing = different at runtIME. Overloading = different at compile time.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. Why does Java not support multiple inheritance through classes?",
+              "a": "Java avoids the Diamond Problem. If class C extends A and B, and both A and B override a method from their common ancestor, which version does C inherit? This ambiguity makes the language complex and error-prone. Java's solution: (1) Only single inheritance for classes — no ambiguity. (2) Multiple interface implementation allowed — interfaces traditionally had no state and no concrete methods, so no diamond conflict. (3) Java 8 default methods in interfaces can create a similar conflict, resolved by explicit rules: the class's own override wins; if two interfaces provide defaults, the implementing class MUST explicitly override to resolve.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What is the super keyword in Java? When must super() be used?",
+              "a": "super refers to the IMMEDIATE parent class and has three uses: (1) super.field — access a parent field hidden by a subclass field with the same name. (2) super.method() — call the parent's version of an overridden method; critical for extending (not replacing) parent behaviour. (3) super(args) — call the parent's constructor; MUST be the first statement in the subclass constructor. super() is auto-inserted if not written — but if the parent has no no-arg constructor, the compile fails. super() and this() cannot both be first statements — super() chains up; this() chains sideways within the same class.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q5. Can a subclass override a static method? What is method hiding?",
+              "a": "No — static methods cannot be overridden in the OOP polymorphism sense. If a subclass declares a static method with the same signature as a parent's static method, it HIDES the parent's method, not overrides it. The difference: with overriding, the runtime type determines which method runs (dynamic dispatch). With hiding, the REFERENCE type (compile-time type) determines which method runs — the subclass's version runs only when called through a subclass reference. @Override on a static method causes a compile error. Example: 'Parent p = new Child(); p.staticMethod()' → runs Parent's version. 'Child c = new Child(); c.staticMethod()' → runs Child's version.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. What is the difference between IS-A and HAS-A relationships?",
+              "a": "IS-A (inheritance): a subclass IS A more specific type of the parent. Modelled with 'extends'. Example: SavingsAccount IS-A BankAccount. Car IS-A Vehicle. Use when the subclass can genuinely substitute for the parent in all situations (Liskov). HAS-A (composition): one class CONTAINS or USES another as a field. Modelled with field declarations. Example: Car HAS-A Engine. Order HAS-A PaymentMethod. Logger HAS-A Formatter. Rule of thumb: 'Favour composition over inheritance' (GoF). Use inheritance for IS-A + LSP compliance. Use composition when you need flexibility to swap components or the relationship is ownership/use rather than type specialisation.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. What is the Liskov Substitution Principle (LSP)?",
+              "a": "LSP states: if S is a subtype of T, objects of type T may be replaced with objects of type S without altering correctness. Practical meaning: wherever a Parent reference is used, any Subclass object should work correctly. Violations include: overriding a method to throw UnsupportedOperationException (breaks method contract), narrowing input validation (rejecting inputs the parent accepted), returning null where parent guarantees non-null, or strengthening postconditions. Classic violation: Square extending Rectangle — setting width also changes height, breaking code that expects independent width/height. Fix: make them sibling implementations of a Shape interface instead of one extending the other.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q8. What happens when a constructor is called in an inheritance chain?",
+              "a": "Java initiates a constructor chain from most derived to most ancestral, but executes from most ancestral to most derived. When 'new C()' is called (where C extends B extends A): C() starts → auto-calls super() → B() starts → auto-calls super() → A() starts → Object() runs → A() body continues → B() body continues → C() body continues. Each constructor's body runs after all parent constructors complete. This ensures parent fields are initialised before the child tries to build on top of them. If the parent has no no-arg constructor and the child doesn't explicitly call super(args), it's a compile error.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q9. Can we override the equals() method in a subclass that extends a class already overriding equals()?",
+              "a": "Yes, you can, but it is tricky and generally advised against for concrete subclasses (Effective Java Item 10). The issue: if Parent overrides equals() based on certain fields, and Child adds new fields, Child's equals() that considers those extra fields can break the symmetry contract of equals(). Example: Parent.equals(Child) might return true but Child.equals(Parent) returns false — symmetry violated. The recommended approach: if you add fields that affect equality, use composition instead of inheritance, or mark Parent as abstract so the subclass always defines equals completely. Java records (Java 16+) provide automatic, correct equals/hashCode based on all components.",
+              "tag": "Advanced"
+            },
+            {
+              "q": "Q10. What is the output of: 'Animal a = new Dog(); a.makeSound();' if both Animal and Dog define makeSound()?",
+              "a": "Dog's makeSound() is called — this is RUNTIME POLYMORPHISM (dynamic dispatch). The reference type is Animal, but the actual object at runtime is a Dog. Java uses the vtable (virtual method table) to look up the actual runtime type and call that type's method. This is the core power of inheritance + overriding — you can write code that works against the parent type (Animal) but executes the most specific subclass behaviour at runtime. This is why frameworks like Spring can call methods on proxy objects, why Collections.sort() works for any Comparable, and why plugin systems work.",
+              "tag": "Must Know"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Inheritance Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Attempt each question independently before reading the answer — active recall significantly improves retention and understanding."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output?\nclass A {\n    A() { System.out.println(\"A\"); }\n}\nclass B extends A {\n    B() { System.out.println(\"B\"); }\n}\nclass C extends B {\n    C() { System.out.println(\"C\"); }\n}\npublic class Test {\n    public static void main(String[] args) { new C(); }\n}",
+              "a": "Output: A  B  C. When 'new C()' is called: C() constructor starts, auto-inserts super() which calls B(). B() starts, auto-inserts super() which calls A(). A() starts, prints 'A', returns. B() body resumes, prints 'B', returns. C() body resumes, prints 'C'. Constructors always execute from most ancestral (top) to most derived (bottom). This is the constructor chain — it ensures every level initialises itself before the child extends it.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Will this compile? If not, why?\nclass Animal {\n    Animal(String name) {\n        System.out.println(\"Animal: \" + name);\n    }\n}\nclass Dog extends Animal {\n    Dog() {\n        System.out.println(\"Dog created\");\n    }\n}",
+              "a": "COMPILE ERROR. Animal defines only a parameterised constructor 'Animal(String name)' — this removes the automatic default no-arg constructor. Dog's constructor 'Dog()' doesn't explicitly call super(), so Java auto-inserts 'super()'. But 'super()' (no-arg) doesn't exist in Animal — compile error: 'no suitable constructor found in class Animal'. Fix: 'Dog() { super(\"Unknown\"); System.out.println(\"Dog created\"); }' — explicitly call the available constructor.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. What is the output?\nclass Parent {\n    String name = \"Parent\";\n    void display() { System.out.println(\"Parent: \" + name); }\n}\nclass Child extends Parent {\n    String name = \"Child\";  // Field hiding\n    @Override\n    void display() { System.out.println(\"Child: \" + name); }\n}\npublic class Test {\n    public static void main(String[] args) {\n        Parent p = new Child();\n        p.display();\n        System.out.println(p.name);\n    }\n}",
+              "a": "Output: 'Child: Child'  then  'Parent'. display() is an instance method — dynamic dispatch applies. 'p' holds a Child object, so Child.display() runs, printing 'Child: Child'. For field access ('p.name'), fields are NOT polymorphic — they are resolved based on the REFERENCE TYPE at compile time, not the runtime object type. Since 'p' is declared as type Parent, 'p.name' resolves to Parent's 'name' field = 'Parent'. Key rule: method calls are polymorphic (runtime type); field access is NOT (reference type). This is why fields should always be private.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. Design a class hierarchy for a Shape system: Shape (abstract, getArea(), getPerimeter()), Circle, Rectangle, and Square. Square should use composition or correct inheritance. Add a ShapeCalculator that works with any Shape.",
+              "a": "abstract class Shape { public abstract double getArea(); public abstract double getPerimeter(); public String describe() { return String.format(\"%s | Area: %.2f | Perimeter: %.2f\", getClass().getSimpleName(), getArea(), getPerimeter()); } }  class Circle extends Shape { private final double radius; Circle(double r) { if(r<=0) throw new IllegalArgumentException(); this.radius=r; } @Override public double getArea() { return Math.PI*radius*radius; } @Override public double getPerimeter() { return 2*Math.PI*radius; } }  class Rectangle extends Shape { protected final double width, height; Rectangle(double w, double h) { if(w<=0||h<=0) throw new IllegalArgumentException(); this.width=w; this.height=h; } @Override public double getArea() { return width*height; } @Override public double getPerimeter() { return 2*(width+height); } }  class Square extends Shape { private final double side; Square(double s) { if(s<=0) throw new IllegalArgumentException(); this.side=s; } @Override public double getArea() { return side*side; } @Override public double getPerimeter() { return 4*side; } }  // Square does NOT extend Rectangle — LSP would be violated. class ShapeCalculator { public double totalArea(List<Shape> shapes) { return shapes.stream().mapToDouble(Shape::getArea).sum(); } }",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Identify the LSP violation:\nclass Bird {\n    public void fly() { System.out.println(\"Flying...\"); }\n    public void eat() { System.out.println(\"Eating...\"); }\n}\nclass Penguin extends Bird {\n    @Override\n    public void fly() {\n        throw new UnsupportedOperationException(\"Penguins cannot fly!\");\n    }\n}",
+              "a": "LSP Violation: code that expects any Bird to fly() will break with a Penguin. 'Bird b = new Penguin(); b.fly();' throws UnsupportedOperationException — the parent's contract is broken. Penguin CANNOT substitute for Bird when flying is involved. Fix: Restructure the hierarchy. Introduce a Flyable interface: 'interface Flyable { void fly(); }'. Make Bird abstract or concrete but without fly(). Only birds that actually fly implement Flyable: 'class Sparrow extends Bird implements Flyable'. 'class Penguin extends Bird' (no Flyable). Now 'Flyable f = new Penguin()' is a compile error — the type system prevents the violation.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. What is the output?\nclass Base {\n    static void staticMethod() { System.out.println(\"Base static\"); }\n    void instanceMethod()      { System.out.println(\"Base instance\"); }\n}\nclass Derived extends Base {\n    static void staticMethod()  { System.out.println(\"Derived static\"); }\n    @Override\n    void instanceMethod()       { System.out.println(\"Derived instance\"); }\n}\npublic class Test {\n    public static void main(String[] args) {\n        Base obj = new Derived();\n        obj.staticMethod();\n        obj.instanceMethod();\n    }\n}",
+              "a": "Output: 'Base static'  then  'Derived instance'. staticMethod(): static methods are NOT overridden — they are HIDDEN. Method hiding is resolved at compile time based on the REFERENCE TYPE. 'obj' is declared as Base, so Base.staticMethod() runs — printing 'Base static'. instanceMethod(): instance methods ARE overridden — dynamic dispatch applies. The runtime type of 'obj' is Derived, so Derived.instanceMethod() runs — printing 'Derived instance'. Key: static = compile-time resolution (reference type). Instance = runtime resolution (actual object type).",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. Write a multilevel inheritance example: LivingBeing → Animal → Pet → Dog. Each class adds one field and one method. Show constructor chaining.",
+              "a": "class LivingBeing { boolean alive; LivingBeing(boolean alive) { this.alive=alive; System.out.println(\"LivingBeing()\"); } void breathe() { System.out.println(\"Breathing...\"); } }  class Animal extends LivingBeing { String species; Animal(String species) { super(true); this.species=species; System.out.println(\"Animal()\"); } void makeSound() { System.out.println(species+\" makes a sound.\"); } }  class Pet extends Animal { String ownerName; Pet(String species, String owner) { super(species); this.ownerName=owner; System.out.println(\"Pet()\"); } void greetOwner() { System.out.println(\"Greeting \"+ownerName+\"!\"); } }  class Dog extends Pet { String breed; Dog(String owner, String breed) { super(\"Canis lupus\", owner); this.breed=breed; System.out.println(\"Dog()\"); } void fetch() { System.out.println(breed+\" fetches the ball!\"); } }  // new Dog(\"Ravi\",\"Labrador\") prints: LivingBeing() → Animal() → Pet() → Dog() // Dog object can call: breathe(), makeSound(), greetOwner(), fetch()",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Explain why 'class Stack extends ArrayList' is a bad design. What is the correct approach?",
+              "a": "Stack extends ArrayList violates the IS-A principle and LSP. A Stack IS NOT a general-purpose ArrayList — a Stack should only allow push, pop, and peek (top only). But by extending ArrayList, Stack inherits all ArrayList operations: get(index), add(index, elem), remove(index), addAll() — allowing direct access at any position. This defeats the purpose of a stack (LIFO only). LSP violation: code expecting any List can break the stack's LIFO contract. Example: ArrayList<T> list = new Stack<T>(); list.add(0, item); // bypasses LIFO — inserts at bottom! Correct design: Stack CONTAINS a List (composition). 'public class Stack<T> { private final Deque<T> storage = new ArrayDeque<>(); public void push(T item) { storage.push(item); } public T pop() { return storage.pop(); } public T peek() { return storage.peek(); } public boolean isEmpty() { return storage.isEmpty(); } } — Only LIFO operations exposed. Internal storage hidden. (Note: java.util.Stack itself has this problem in the JDK — Deque/ArrayDeque is preferred.)",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Inheritance: Power with Responsibility",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Inheritance is one of Java's most powerful features — and one of the most frequently misused. When used correctly, it enables clean code reuse, elegant polymorphism, and extensible architectures. When misused — for code reuse without a true IS-A relationship, or in violation of LSP — it creates fragile, tightly-coupled hierarchies that are painful to maintain."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The professional's approach: <strong>always ask the IS-A question first</strong>. Does this relationship hold in every context, without exception? Does the subclass honour the parent's contract completely? Can I substitute the child wherever the parent is expected? If yes to all — inheritance is right. If no — composition is likely the better tool. The Template Method, Decorator, Strategy, and Composite patterns often provide better design alternatives than deep inheritance trees."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept",               "Key Rule",                                                       "Example"],
+          "rows": [
+            ["extends",                  "Declares IS-A — subclass inherits non-private parent members",   "class Car extends Vehicle"],
+            ["super(args)",              "Call parent constructor — first statement in subclass constructor","super(brand, model, year)"],
+            ["super.method()",           "Call parent's overridden version — extend, not replace",          "return super.getDetails() + extra"],
+            ["@Override",                "Always annotate overrides — catches typos and mistakes",           "@Override public void startEngine()"],
+            ["Method Overriding",        "Same name+params, resolved at RUNTIME via dynamic dispatch",      "Animal a = new Dog(); a.speak()"],
+            ["final class",              "Cannot be extended — protects complete implementations",           "public final class String"],
+            ["final method",             "Cannot be overridden — locks algorithm in Template Method",        "public final OrderResult process()"],
+            ["instanceof",               "Type check — true for the class and all its ancestors",           "new Dog() instanceof Animal → true"],
+            ["IS-A vs HAS-A",            "Inherit only true subtypes; compose for 'uses/contains'",        "Car IS-A Vehicle; Car HAS-A Engine"],
+            ["LSP",                      "Subclass must work wherever parent works — no contract breaking", "Square should NOT extend Rectangle"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Your next step: <strong>Java Polymorphism</strong> — where you will see how inheritance and method overriding combine to create programs that work uniformly across many types, how interfaces extend polymorphism beyond class hierarchies, and how modern Java (sealed classes, records, pattern matching switch) takes these concepts further. ☕"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions — Java Inheritance",
+    "items": [
+      {
+        "q": "What is inheritance in Java?",
+        "a": "Inheritance in Java is an OOP mechanism where one class (subclass/child) acquires the fields and methods of another class (superclass/parent) using the 'extends' keyword. It models the IS-A relationship — a Dog IS-A Animal, a SavingsAccount IS-A BankAccount. Java supports single inheritance for classes (one direct parent) to avoid the Diamond Problem, but allows multiple interface implementation. Every class implicitly extends java.lang.Object."
+      },
+      {
+        "q": "What is the difference between method overriding and method overloading?",
+        "a": "Method Overriding: subclass provides a new implementation for a parent's method with the SAME name and SAME parameter list. Resolved at RUNTIME (dynamic dispatch). Requires inheritance. Access modifier can only widen. Method Overloading: same class defines multiple methods with the SAME name but DIFFERENT parameter lists. Resolved at COMPILE TIME. Does not require inheritance. Return type alone cannot differentiate overloaded methods."
+      },
+      {
+        "q": "Why does Java not support multiple inheritance through classes?",
+        "a": "Java avoids the Diamond Problem — if C extends A and B, and both A and B have different overrides of the same method, which version does C inherit? This ambiguity makes programs complex and error-prone. Java's solution: single inheritance for classes; multiple interface implementation for type flexibility. Java 8+ default methods in interfaces can create similar conflicts, resolved by explicit override rules in the implementing class."
+      },
+      {
+        "q": "What is the super keyword in Java?",
+        "a": "The 'super' keyword refers to the immediate parent class. Three uses: (1) super.field — access a parent field hidden by a same-name subclass field. (2) super.method() — call the parent's version of an overridden method to extend (not replace) parent behaviour. (3) super(args) — call the parent constructor from a subclass constructor; must be the very first statement. If omitted, Java auto-inserts super(), requiring the parent to have a no-arg constructor."
+      },
+      {
+        "q": "What is the Liskov Substitution Principle?",
+        "a": "LSP states that objects of a subclass must be substitutable for objects of the parent class without breaking program correctness. In practice: a subclass must honour the parent's method contracts — same input acceptance, same output guarantees, no new exceptions. Violations include overriding to throw UnsupportedOperationException or to do nothing when the parent's behaviour was meaningful. Classic violation: Square extending Rectangle — setting width changes height, breaking independent dimension expectations."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Java Encapsulation",     "path": "/java/java-encapsulation" },
+    "next": { "label": "Java Polymorphism →",      "path": "/java/java-polymorphism" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Inheritance keyword",   "dd": "extends" },
+      { "dt": "Types supported",       "dd": "Single, Multilevel, Hierarchical" },
+      { "dt": "Multiple inheritance",  "dd": "Via interfaces only" },
+      { "dt": "Root class",            "dd": "java.lang.Object — all classes extend it" },
+      { "dt": "Override rule",         "dd": "Same name+params, access cannot narrow" },
+      { "dt": "LSP",                   "dd": "Subclass must substitute parent correctly" }
+    ],
+    "relatedArticles": [
+      { "label": "Java Access Modifiers",  "path": "/java/java-access-modifiers" },
+      { "label": "Java Polymorphism",      "path": "/java/java-polymorphism" },
+      { "label": "Java Abstraction",       "path": "/java/java-abstraction" },
+      { "label": "Java Interfaces",        "path": "/java/java-interface" },
+      { "label": "Java Encapsulation",     "path": "/java/java-encapsulation" },
+      { "label": "Java Abstract Class",    "path": "/java/java-abstract-class" },
+      { "label": "Java final Keyword",     "path": "/java/java-final" },
+      { "label": "Java Classes & Objects", "path": "/java/java-class-methods" }
+    ],
+    "tags": ["Java Inheritance", "extends keyword", "Method Overriding", "super keyword", "IS-A Relationship", "HAS-A Relationship", "Liskov Substitution Principle", "Constructor Chaining", "final class", "final method", "instanceof operator", "Dynamic Dispatch", "Runtime Polymorphism", "Template Method Pattern", "Java OOP", "Composition over Inheritance"]
+  }
+}
