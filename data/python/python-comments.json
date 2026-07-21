@@ -1,0 +1,1010 @@
+{
+  "meta": {
+    "title": "Python Comments | The Complete Guide to Comments & Docstrings 2026 | Tech Sustainify",
+    "description": "The most complete guide to Python comments available — single-line comments, multi-line techniques, docstrings and their formats (Google, NumPy, reST), PEP 8 and PEP 257 conventions, TODO/FIXME tags, linter directives, commenting anti-patterns, and real-world examples.",
+    "keywords": "python comments, python single line comment, python multi line comment, python docstrings, PEP 257, PEP 8 comments, python comment syntax, python triple quote comment, python comment best practices, how to comment in python, google style docstring, numpy style docstring, python TODO FIXME, python noqa, python type ignore comment, self documenting code",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-comments",
+    "ogTitle": "Python Comments — The Complete Guide to Comments & Docstrings 2026 | Tech Sustainify",
+    "ogDescription": "An in-depth guide to writing comments and docstrings in Python — syntax, conventions, docstring formats, linter directives, and the judgment behind good commenting.",
+    "ogUrl": "https://techsustainify.com/python/python-comments",
+    "ogImage": "https://techsustainify.com/images/python-comments-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "40 minutes",
+    "twitterLevel": "Beginner to Intermediate",
+    "schemaDatePublished": "2024-01-12",
+    "schemaDateModified": "2026-03-16",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 8050
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/pythonhome" },
+    { "position": 3, "name": "Python Comments" }
+  ],
+
+  "articleHeader": {
+    "badge": "💬 Comments",
+    "title": "Python Comments — The Complete Guide",
+    "subtitle": "Everything from the basic # symbol to docstring formats, linter directives, and the judgment calls that separate genuinely useful comments from clutter that actively hurts a codebase."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-16", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time", "value": "40 min" },
+    { "icon": "🎯", "label": "Level", "value": "Beginner to Intermediate" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-are-comments",
+      "title": "What Is a Comment in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>comment</strong> is a piece of text inside your source code that the Python interpreter completely ignores when the program runs. It exists purely for humans — the person reading the code later, which is very often you, six months from now, having forgotten exactly why a particular line does what it does. Comments don't affect execution speed, don't produce output, and don't change program behaviour in any way. Their only job is to make code easier to understand, maintain, and trust."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This sounds almost too simple to deserve an entire page, and mechanically it is simple — Python's comment syntax can be summarised in a single sentence. But the actual skill of commenting well is surprisingly deep. Ask ten experienced developers what makes a good comment, and you'll get ten slightly different answers shaped by hard-won experience: comments that saved them during an outage at 2 a.m., and comments that actively misled them during one. This guide covers both halves of that picture — the mechanics of Python's comment and docstring syntax, and the judgment behind when a comment genuinely earns its place in the code."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It's also worth setting expectations early: comments are not a substitute for clear code. A confusingly written function surrounded by paragraphs of explanation is still a confusingly written function — the comments just make that fact slightly less painful to discover. The best-commented codebases tend to also be the most clearly written ones, because the same instinct that makes someone write a helpful comment also makes them choose a clearer variable name or break a tangled function into smaller pieces in the first place."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-comments-exist",
+      "title": "Why Comments Exist — The Problem They Actually Solve",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Source code answers the question <em>what does this do</em> extremely well — arguably better than any English explanation could, since the code is the literal, executable truth. What code structurally cannot answer, no matter how cleanly it's written, is <em>why</em> a particular approach was chosen over the alternatives, what constraint forced a workaround, or what a future maintainer needs to know before changing something that looks simple but isn't."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Consider a line that looks entirely arbitrary in isolation: <code>timeout = 4.5</code>. The code tells you the timeout is four and a half seconds. It cannot tell you that this specific number came from a support ticket after the payment gateway's 95th-percentile response time was measured at 4.2 seconds under load, and 4.5 was chosen with a small buffer. Without a comment carrying that context, a future developer — quite reasonably — might 'clean up' the number to a rounder 5.0 or 4.0, silently reintroducing a bug that was fixed months earlier for a reason nobody documented. This is the actual problem comments solve: they preserve context that the code's structure has no way of representing on its own."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "context_preserving_comment.py",
+          "lines": [
+            "# Payment gateway p95 latency measured at 4.2s under load (see ticket PAY-1042).",
+            "# Timeout set slightly above that to avoid false failures during traffic spikes.",
+            "timeout = 4.5"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "single-line-comments",
+      "title": "Single-Line Comments — The Hash Symbol in Detail",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python uses the hash symbol <code>#</code> to mark a single-line comment. Everything from the <code>#</code> to the end of that physical line is ignored by the interpreter — it can sit on its own line, or follow actual code on the same line. There is exactly one comment character in the entire language, which is a large part of why Python's comment story is so easy to learn compared to languages offering several overlapping comment mechanisms."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "single_line_comments.py",
+          "lines": [
+            "# This is a full-line comment explaining the next block",
+            "tax_rate = 0.18",
+            "",
+            "price = 500",
+            "total = price * (1 + tax_rate)  # inline comment: adds GST to the base price",
+            "",
+            "print(total)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Both styles shown above are valid: a <strong>standalone (block) comment</strong> on its own line, usually explaining the block of code that follows, and an <strong>inline (trailing) comment</strong> that follows actual code on the same line. PEP 8 gives specific guidance for spacing around both. A block comment should start with a <code>#</code> followed by a single space, and should be indented to the same level as the code it describes. An inline comment should be separated from the code by at least two spaces, and the <code>#</code> itself should be followed by a single space before the comment text begins."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "pep8_comment_spacing.py",
+          "lines": [
+            "# Correct: block comment, one space after #, matches code indentation",
+            "if is_valid:",
+            "    process(order)  # correct: two spaces before #, one space after",
+            "",
+            "#Incorrect: no space after the hash symbol",
+            "if is_valid:",
+            "    process(order) #incorrect: only one space before #, none after"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These spacing rules might feel pedantic in isolation, but they matter more than they seem once a codebase is shared across a team. Consistent spacing is exactly the kind of detail that automated formatters and linters check for, precisely because human reviewers shouldn't have to spend attention on it during a code review — it should simply be uniform everywhere, freeing reviewers to focus on what the comment actually says rather than how it's spaced."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It's also worth knowing exactly where the <code>#</code> loses its special meaning: inside a string literal. A hash symbol that appears within quotes is just a regular character with no comment behaviour at all, since the interpreter is inside a string context at that point and isn't scanning for comment markers."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "hash_inside_string.py",
+          "lines": [
+            "message = \"Use #hashtags to categorise your post\"  # this trailing part IS a comment",
+            "print(message)",
+            "# Output: Use #hashtags to categorise your post",
+            "# The # inside the quotes is just a character in the string, not a comment marker"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "multi-line-comments",
+      "title": "Multi-Line Comments — There's No Dedicated Symbol",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Unlike languages such as Java, C++, or CSS, which offer a dedicated <code>/* ... */</code> block comment syntax that can span any number of lines with a single opening and closing marker, Python has <strong>no true multi-line comment symbol</strong> baked into its grammar. If you want to comment out several consecutive lines, the officially supported approach is simply to repeat the <code>#</code> symbol on every line that needs to be commented."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "repeated_hash_comments.py",
+          "lines": [
+            "# Step 1: read the input file",
+            "# Step 2: parse each line into a dictionary",
+            "# Step 3: filter out any incomplete records",
+            "# Step 4: write the cleaned data to a new file",
+            "",
+            "data = load_file(\"records.csv\")"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In practice, many developers instead reach for a <strong>triple-quoted string</strong> — <code>\"\"\" ... \"\"\"</code> or <code>''' ... '''</code> — spanning multiple lines, to achieve a similar visual effect with a single opening and closing marker, much like <code>/* */</code> in other languages. Technically, this is not a comment at all; it's a string literal that Python parses, evaluates, and then discards, since it isn't assigned to a variable, passed to a function, or used anywhere else. Because it's discarded harmlessly as an unused expression statement, it behaves like a comment in practice, which is why it's so widely used for this purpose despite not being the 'official' comment mechanism."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "triple_quote_as_comment.py",
+          "lines": [
+            "\"\"\"",
+            "This section handles user authentication.",
+            "It checks the submitted credentials against the",
+            "database and returns a session token on success.",
+            "\"\"\"",
+            "",
+            "def authenticate(username, password):",
+            "    pass"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "One caveat worth knowing: a triple-quoted string used this way is not entirely free of cost — unlike a genuine <code>#</code> comment, which is stripped during the parsing/tokenising stage and never becomes part of the executable bytecode at all, a standalone string expression still gets compiled into a bytecode instruction that creates the string object and then immediately discards it. In virtually every real-world program, this overhead is completely unmeasurable, so it's not a practical concern — but it explains why the Python community generally treats this technique as a documentation convention borrowed for comment-like purposes, rather than a strict, interpreter-recognised substitute for a real comment."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "For quickly commenting out a block of code temporarily — say, while debugging — most code editors offer a keyboard shortcut (commonly Ctrl+/ or Cmd+/) that prefixes every selected line with <code>#</code> automatically and removes it again on a second press. This remains the more idiomatic approach for that specific task, since it's unambiguous, easily reversible, and doesn't risk accidentally leaving a stray triple-quoted string sitting in the middle of a function where it could be mistaken for an actual docstring."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Approach", "Truly a Comment?", "Reversible Easily?", "Best Use Case"],
+          "rows": [
+            ["Repeated # on each line", "Yes — stripped during parsing", "Yes, via editor comment toggle", "Explaining or disabling a specific block of code"],
+            ["Triple-quoted string (not first statement)", "No — a discarded expression", "Manual — must remove the quotes", "Longer free-form notes, quick prototyping notes"],
+            ["Triple-quoted string as first statement", "No — becomes a docstring, kept at runtime", "N/A — intentional documentation, not meant to be removed", "Formal documentation of a module, class, or function"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "special-comment-lines",
+      "title": "Special Comment Lines Python Actually Reads",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "There's an interesting exception to the rule that comments are purely for humans: a small number of specific comment-shaped lines are actually inspected by the Python interpreter or by surrounding tooling, even though they're still written using the ordinary <code>#</code> syntax. The two most common are the <strong>shebang line</strong> and the <strong>encoding declaration</strong>."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "shebang_and_encoding.py",
+          "lines": [
+            "#!/usr/bin/env python3",
+            "# -*- coding: utf-8 -*-",
+            "",
+            "print(\"Runs correctly on both Linux and macOS when executed directly\")"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <strong>shebang line</strong> at the very top of a file, starting with <code>#!</code>, tells a Unix-like operating system which interpreter to use when the script is executed directly from the command line (for example, running <code>./script.py</code> instead of <code>python3 script.py</code>). Python itself ignores this line as an ordinary comment when the file is run through the interpreter explicitly — it's the operating system's shell that reads and acts on it before Python ever sees the file."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <strong>encoding declaration</strong>, written as <code># -*- coding: utf-8 -*-</code>, historically told older versions of Python which character encoding to use when reading the source file — necessary before Python 3 made UTF-8 the default. Python 3 already assumes UTF-8 by default, so this line is largely a legacy convention today, though some tools and older codebases still include it for clarity or backward compatibility with Python 2. In both cases, these lines look like ordinary comments and are ignored by Python's own execution logic, but their specific position (the first or second line of the file) and exact format give them meaning to other tools reading the file."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "docstrings-heading",
+      "title": "Docstrings — When a Triple-Quoted String Becomes Documentation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "There's one very specific situation where a triple-quoted string stops being a discarded throwaway and becomes something Python actually keeps around at runtime: when it appears as the <strong>very first statement</strong> inside a module, function, class, or method. In that position, it's called a <strong>docstring</strong> (short for 'documentation string'), and it's stored on the object itself, accessible through the special <code>__doc__</code> attribute."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "docstring_examples.py",
+          "lines": [
+            "def calculate_bmi(weight_kg, height_m):",
+            "    \"\"\"",
+            "    Calculate Body Mass Index (BMI).",
+            "",
+            "    Args:",
+            "        weight_kg (float): weight in kilograms",
+            "        height_m (float): height in metres",
+            "",
+            "    Returns:",
+            "        float: the calculated BMI value",
+            "    \"\"\"",
+            "    return weight_kg / (height_m ** 2)",
+            "",
+            "print(calculate_bmi.__doc__)",
+            "help(calculate_bmi)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is exactly what the built-in <code>help()</code> function displays when you inspect an object, and it's what documentation-generation tools like Sphinx, MkDocs, and pydoc use to automatically build reference documentation directly from your source code, without you writing a separate document by hand that inevitably drifts out of sync with the code over time. Because docstrings carry this extra runtime and tooling significance, they're held to a noticeably higher standard than ordinary comments — a good docstring reliably describes what a function does, what parameters it expects (including their types), what it returns, and, where relevant, what exceptions it might raise."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Regular Comment (#)", "Docstring (\"\"\" \"\"\")"],
+          "rows": [
+            ["Kept at runtime?", "No — stripped entirely during parsing", "Yes — stored in __doc__"],
+            ["Accessible via help()?", "No", "Yes"],
+            ["Valid position", "Anywhere in the code", "Must be the first statement in a module/function/class/method"],
+            ["Typical use", "Explaining a specific line or short block", "Documenting the purpose, parameters, and return value of a whole unit"],
+            ["Used by documentation tools?", "No", "Yes (e.g. Sphinx, pydoc, MkDocs)"],
+            ["Quoting convention (PEP 257)", "Not applicable", "Triple double quotes preferred"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "docstring-levels",
+      "title": "Docstrings at Every Level — Module, Class, and Function",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Docstrings aren't limited to individual functions — they can, and generally should, appear at every organisational level of a Python codebase: the module itself, each class, and each method or function within it. Each level serves a slightly different purpose in the overall documentation picture."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "layered_docstrings.py",
+          "lines": [
+            "\"\"\"",
+            "orders.py",
+            "",
+            "Handles order creation, validation, and price calculation",
+            "for the checkout module.",
+            "\"\"\"",
+            "",
+            "class Order:",
+            "    \"\"\"Represents a single customer order and its line items.\"\"\"",
+            "",
+            "    def __init__(self, customer_id):",
+            "        \"\"\"Initialise a new, empty order for the given customer.\"\"\"",
+            "        self.customer_id = customer_id",
+            "        self.items = []",
+            "",
+            "    def add_item(self, product, quantity):",
+            "        \"\"\"",
+            "        Add a product to the order.",
+            "",
+            "        Args:",
+            "            product (str): the product name or SKU",
+            "            quantity (int): number of units, must be positive",
+            "        \"\"\"",
+            "        self.items.append((product, quantity))"
+          ]
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Module-level docstring", "text": " — placed at the very top of the .py file, before any imports. It describes the overall purpose of the file and is what appears first when someone runs help(module_name)." },
+            { "strong": "Class-level docstring", "text": " — placed immediately after the class definition line. It describes what the class represents conceptually, independent of any single method." },
+            { "strong": "Method/function-level docstring", "text": " — placed immediately after each def line. It describes that specific behaviour: what it does, what it takes in, and what it returns." }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This layered approach mirrors how a reader naturally explores unfamiliar code: they start by skimming the module docstring to understand the file's overall purpose, then look at class docstrings to understand the major concepts involved, and finally drill into individual method docstrings only once they need to understand a specific piece of behaviour in detail."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "docstring-formats",
+      "title": "Docstring Formats — Google Style, NumPy Style, and reStructuredText",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "PEP 257 defines the basic conventions for docstrings — how they should be quoted and structured at a high level — but it deliberately doesn't mandate one single format for describing parameters and return values in detail. Over time, the Python community converged on a small number of widely recognised formats, and most documentation-generation tools can parse any of them. Knowing the differences helps you read documentation from different projects and choose a consistent style for your own."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "google_style_docstring.py",
+          "lines": [
+            "def convert_currency(amount, rate):",
+            "    \"\"\"Convert an amount from one currency to another.",
+            "",
+            "    Args:",
+            "        amount (float): the amount in the source currency.",
+            "        rate (float): the conversion rate to apply.",
+            "",
+            "    Returns:",
+            "        float: the converted amount in the target currency.",
+            "",
+            "    Raises:",
+            "        ValueError: if amount or rate is negative.",
+            "    \"\"\"",
+            "    if amount < 0 or rate < 0:",
+            "        raise ValueError(\"amount and rate must be non-negative\")",
+            "    return amount * rate"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "numpy_style_docstring.py",
+          "lines": [
+            "def convert_currency(amount, rate):",
+            "    \"\"\"",
+            "    Convert an amount from one currency to another.",
+            "",
+            "    Parameters",
+            "    ----------",
+            "    amount : float",
+            "        The amount in the source currency.",
+            "    rate : float",
+            "        The conversion rate to apply.",
+            "",
+            "    Returns",
+            "    -------",
+            "    float",
+            "        The converted amount in the target currency.",
+            "    \"\"\"",
+            "    return amount * rate"
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Format", "Style", "Common In", "Readability as Plain Text"],
+          "rows": [
+            ["Google Style", "Args:/Returns:/Raises: headers, minimal indentation", "General Python projects, Google's own style guide", "Very readable even without rendering tools"],
+            ["NumPy Style", "Parameters/Returns headers with underlined sections", "Scientific computing (NumPy, SciPy, pandas)", "More verbose, but very clear for complex signatures"],
+            ["reStructuredText (reST)", ":param name: / :returns: field markers", "Sphinx-based documentation, older Python projects", "Less readable unrendered; excellent once built into HTML docs"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "None of these formats is objectively 'correct' — the right choice generally comes down to whatever convention a project or team has already adopted. What matters far more than which format you pick is picking one and applying it <strong>consistently</strong> across a codebase, since documentation tools rely on that consistency to parse and render docstrings correctly, and human readers benefit from not having to mentally switch between formats file to file."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-comment-heading",
+      "title": "Why Comment at All? What Good Comments Actually Do",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It's easy to think of comments as optional decoration, something you add if you have time left over at the end of writing a function. In reality, comments serve a handful of specific, practical purposes that code by itself cannot cover, no matter how cleanly it's written or how well the variables are named."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            { "icon": "🧠", "title": "Explaining 'Why', Not 'What'", "text": "Code already shows what happens. A good comment explains the reasoning the code alone can't express — a business rule, a constraint, or a non-obvious tradeoff behind a decision." },
+            { "icon": "⚠️", "title": "Flagging Known Limitations", "text": "A comment can honestly note that a piece of code is a temporary workaround, or that it doesn't yet handle a particular edge case, saving the next reader from wrongly assuming it's fully robust." },
+            { "icon": "🔗", "title": "Linking to Context", "text": "Referencing a ticket number, a specification, or a discussion thread lets a future reader trace back to the original reasoning without that history living entirely in someone's memory or a chat log nobody can search." },
+            { "icon": "🚧", "title": "Marking TODOs Honestly", "text": "A clearly labelled # TODO: comment signals unfinished work honestly, rather than leaving a silent gap in functionality that looks complete but isn't." },
+            { "icon": "📖", "title": "Orienting a Reader in a Large File", "text": "A short comment introducing a large block — 'the section below handles retry logic' — helps someone skim a long file without reading every line in painstaking detail." },
+            { "icon": "🧪", "title": "Documenting Assumptions", "text": "Noting an assumption the code relies on, such as an input always being pre-validated upstream, prevents a future change from silently breaking that assumption elsewhere." },
+            { "icon": "🔬", "title": "Explaining Non-Obvious Algorithms", "text": "When code implements a specific known algorithm or formula, a short comment naming it (and ideally linking a source) saves a reader from reverse-engineering the math from scratch." },
+            { "icon": "🛡️", "title": "Warning About Fragile Code", "text": "A comment can flag that a piece of code is order-dependent or interacts unexpectedly with another part of the system, protecting against a well-intentioned but breaking refactor later." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "commenting-mistakes",
+      "title": "Comments That Actively Hurt — Common Mistakes",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Not every comment is an improvement. Poorly written comments can add noise, go stale, or actively mislead a reader — and a wrong comment is often worse than no comment at all, because a reader instinctively trusts what a comment says without necessarily re-verifying it against the actual code beneath it."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Restating the obvious", "text": " — a comment like # increment counter by one directly above counter += 1 adds nothing the code doesn't already say clearly by itself. It also adds a second thing that has to be kept in sync if the line ever changes." },
+            { "strong": "Leaving stale comments after code changes", "text": " — a comment describing old behaviour that nobody updated when the underlying logic changed is actively misleading, and arguably worse than having no comment, since it actively points a reader in the wrong direction with false confidence." },
+            { "strong": "Commenting out large blocks of dead code indefinitely", "text": " — code that's commented out 'just in case' tends to accumulate for years, cluttering the file and making it harder to tell what's actually in use. Version control systems like Git already preserve old code permanently and searchably, so deleting it outright is almost always the better choice." },
+            { "strong": "Over-explaining trivial code", "text": " — a wall of comments above three lines of straightforward code slows a reader down rather than helping them, and often suggests the code itself might need to be simplified instead of documented around." },
+            { "strong": "Using comments to apologise instead of fixing the problem", "text": " — a comment reading # I know this is ugly, sorry is a strong signal that the code should probably be rewritten, not documented around and left as-is." },
+            { "strong": "Writing comments that contradict the code", "text": " — perhaps the single most dangerous case: a comment claiming a function 'always returns a positive number' sitting above code that can clearly return a negative value under certain inputs. A reader trusting the comment over the code can introduce serious bugs downstream." },
+            { "strong": "Commenting in a way that duplicates version history", "text": " — a comment block listing every past change ('// changed by Amit on 3 March, changed again by Priya on 10 March...') duplicates exactly what a commit history already tracks reliably, and inevitably falls out of date." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "self-documenting-code",
+      "title": "Self-Documenting Code — Reducing the Need for Comments in the First Place",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A subtle but important idea in professional Python development is that the best comment is often the one you don't need to write, because the code communicates its intent clearly enough on its own. This is usually called writing <strong>self-documenting code</strong>, and it's less about avoiding comments entirely and more about not reaching for a comment as a first response to unclear code."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "before_after_self_documenting.py",
+          "lines": [
+            "# Before: a cryptic line rescued only by a comment",
+            "d = (t - 32) * 5 / 9  # convert Fahrenheit to Celsius",
+            "",
+            "# After: the code itself explains what's happening,",
+            "# with no comment required at all",
+            "def fahrenheit_to_celsius(temperature_f):",
+            "    return (temperature_f - 32) * 5 / 9",
+            "",
+            "celsius = fahrenheit_to_celsius(98.6)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Descriptive variable and function names, breaking a long expression into smaller named steps, and extracting a confusing block into a well-named helper function all reduce the burden that would otherwise fall entirely on comments to explain. This doesn't mean comments become unnecessary — the <em>why</em> behind a decision still can't be expressed through naming alone — but it does mean fewer comments are needed purely to explain <em>what</em> the code is doing, freeing the comments that remain to focus on the information that actually can't be expressed any other way."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "todo-comments",
+      "title": "TODO, FIXME, and Other Comment Conventions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Many teams adopt a small set of conventional tags inside comments to flag specific situations consistently across a codebase. These aren't enforced by Python itself — they're just a widely recognised convention — but most editors and IDEs recognise them automatically and can list every occurrence across an entire project, which makes them genuinely useful in team settings rather than purely decorative."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "comment_tags.py",
+          "lines": [
+            "# TODO: add input validation before this reaches production",
+            "def process_order(order):",
+            "    pass",
+            "",
+            "# FIXME: this breaks when quantity is zero — division by zero below",
+            "def average_price(total, quantity):",
+            "    return total / quantity",
+            "",
+            "# NOTE: this function assumes dates are already in UTC",
+            "def schedule_reminder(date):",
+            "    pass",
+            "",
+            "# HACK: bypassing the cache here to work around a stale-data bug (see PERF-88)",
+            "def get_latest_price(product_id):",
+            "    pass",
+            "",
+            "# XXX: this whole module needs a proper rewrite once the new API ships",
+            "def legacy_import(data):",
+            "    pass"
+          ]
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "TODO", "text": " — marks planned but not-yet-implemented work; the most universally recognised of these tags" },
+            { "strong": "FIXME", "text": " — flags a known bug or broken behaviour that needs correcting, distinct from a TODO because something is actively wrong, not just incomplete" },
+            { "strong": "NOTE", "text": " — highlights an important assumption or piece of context worth knowing, without implying any action is required" },
+            { "strong": "HACK", "text": " — admits a workaround that solves the immediate problem but isn't the ideal long-term solution, often paired with a reference to why it exists" },
+            { "strong": "XXX", "text": " — an older, more general-purpose convention signalling 'this needs serious attention,' often used for larger structural concerns rather than a single line" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A practical detail worth adopting: pairing these tags with a ticket number, an issue link, or at minimum a short reason, as shown in the HACK example above. A bare # TODO with no further context, left in a codebase for years, tends to become invisible — everyone scrolls past it without ever addressing it, precisely because it carries no urgency or traceable owner. A TODO linked to a tracked issue is far more likely to actually get resolved."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "comments-for-audience",
+      "title": "Commenting Differently for Different Audiences",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "How much and what kind of commenting is appropriate changes noticeably depending on who the code is written for. Treating every codebase with an identical commenting style, regardless of audience, tends to either under-explain production code or over-explain internal tooling that only the original author will ever touch."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Context", "Typical Comment Density", "What to Prioritise"],
+          "rows": [
+            ["Internal team codebase", "Moderate", "Explain non-obvious decisions and business rules; trust teammates to read straightforward code unaided"],
+            ["Public library / open-source package", "High, with formal docstrings", "Every public function needs a clear docstring covering parameters, return values, and exceptions — external users can't ask you directly"],
+            ["Tutorial or educational code", "High, explanatory", "Comment even fairly obvious steps, since the reader is actively learning the language, not just the specific logic"],
+            ["Quick personal scripts", "Low", "Comment only genuinely non-obvious or reused logic; heavy commenting on a throwaway script has little payoff"],
+            ["Production code others will maintain long-term", "Moderate to high on critical paths", "Focus comments on edge cases, failure modes, and anything a change could silently break"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is also exactly why the code examples throughout educational resources — including this page — tend to be more heavily commented than what you'd typically see in a mature production codebase. The extra explanation is appropriate for a reader encountering the concept for the first time, even though the same density of comments would feel excessive to an experienced developer reading equivalent code in a professional setting."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "comments-vs-version-control",
+      "title": "Comments in the Age of Version Control",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Before tools like Git became universal, commenting out old code and leaving it in place, along with a changelog comment block at the top of a file, was a genuinely practical way to preserve history — there was often no other reliable record of what a file used to look like. That justification has almost entirely disappeared today. Git (or any modern version control system) already preserves every previous version of every line, searchably, with the author, timestamp, and commit message attached automatically."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "avoid_this_pattern.py",
+          "lines": [
+            "def calculate_shipping(weight, distance):",
+            "    # Old implementation, kept just in case:",
+            "    # base_rate = weight * 0.5",
+            "    # return base_rate + (distance * 0.1)",
+            "    #",
+            "    # Updated 2024-11-02 by Aman: switched to tiered pricing",
+            "    if weight <= 5:",
+            "        return distance * 0.08",
+            "    return distance * 0.12"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In a project tracked with Git, the old implementation above is already fully preserved in the commit history — running <code>git log -p</code> or <code>git blame</code> on that file reveals exactly what changed, when, by whom, and typically why, if commit messages are written well. Leaving the old code commented out in the file itself adds visual clutter without adding any information that isn't already captured more reliably elsewhere. The stronger practice is to delete replaced code outright and rely on version control for history, reserving in-code comments for context that's relevant to understanding the <em>current</em> state of the code, not its past."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "linter-directives",
+      "title": "Comments That Talk to Tools — Linter and Type-Checker Directives",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Beyond human-readable notes, Python's tooling ecosystem has adopted a specific pattern where a specially formatted comment is read by an external tool — a linter or type checker — to change how that tool behaves on a particular line, even though Python itself still treats the line as an ordinary, ignored comment."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "linter_directives.py",
+          "lines": [
+            "import os  # noqa: F401  (imported for side effects, flake8 would otherwise flag it as unused)",
+            "",
+            "result = some_legacy_function()  # type: ignore  (third-party stub is outdated)",
+            "",
+            "value = eval(user_expression)  # nosec  (input is sanitised upstream, safe in this context)"
+          ]
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "# noqa", "text": " — recognised by flake8 and similar linters, tells the tool to skip flagging a warning on that specific line, optionally naming the exact rule code to suppress" },
+            { "strong": "# type: ignore", "text": " — recognised by mypy and other type checkers, suppresses a type-checking error on that line, typically used when a third-party library's type stubs are incomplete or incorrect" },
+            { "strong": "# nosec", "text": " — recognised by security linters like Bandit, suppresses a security warning on a line the developer has manually reviewed and judged safe" },
+            { "strong": "# pragma: no cover", "text": " — recognised by coverage.py, excludes a specific line or block from code coverage reporting, typically for defensive code that's genuinely unreachable in normal testing" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These directive comments occupy an interesting middle ground: syntactically, they're indistinguishable from an ordinary comment as far as the Python interpreter is concerned, but semantically, a separate tool parses their exact text and acts on it. Because of this, they should always be used deliberately and sparingly, ideally with a short explanation of why the suppression is justified — a bare <code># noqa</code> with no reasoning, scattered across a file, is a strong signal that warnings are being silenced out of convenience rather than genuine, reviewed necessity."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "comments-vs-type-hints",
+      "title": "Comments vs Type Hints — Overlapping but Different Tools",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Before type hints became widespread, it was common to see comments used purely to document a parameter's expected type — something like <code># price: float</code> above a function. Modern Python offers a more precise, tool-checked alternative: <strong>type hints</strong>, written directly in the function signature using a colon and, for return values, an arrow."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "comment_vs_type_hint.py",
+          "lines": [
+            "# Older style: type documented only via comment, unverified by any tool",
+            "def apply_discount(price, percent):",
+            "    # price: float, percent: float, returns: float",
+            "    return price * (1 - percent / 100)",
+            "",
+            "# Modern style: type hints, checkable by tools like mypy",
+            "def apply_discount(price: float, percent: float) -> float:",
+            "    \"\"\"Apply a percentage discount to a price.\"\"\"",
+            "    return price * (1 - percent / 100)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The key distinction is that a comment describing a type is just text — nothing verifies it matches reality, and it can silently drift out of date the same way any other comment can. A type hint, by contrast, can be checked automatically by tools like <code>mypy</code>, catching a genuine mismatch (someone passing a string where a float was expected) before the code ever runs. This doesn't make comments obsolete for describing behaviour — a docstring explaining <em>what a discount percentage represents</em> still adds value a bare type hint can't — but for the narrow job of documenting a parameter's type specifically, type hints are now the more reliable, tool-verified choice."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "comments-vs-other-languages",
+      "title": "Python Comment Syntax vs Other Languages",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Comment syntax is one of the more visible surface differences between languages, and it's a useful reference if you move between Python and other ecosystems regularly."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Language", "Single-Line Comment", "Multi-Line / Block Comment"],
+          "rows": [
+            ["Python", "# comment", "No dedicated syntax — repeated # or a triple-quoted string"],
+            ["Java", "// comment", "/* comment */"],
+            ["JavaScript / TypeScript", "// comment", "/* comment */"],
+            ["C / C++", "// comment", "/* comment */"],
+            ["HTML", "Not applicable line-by-line", "<!-- comment -->"],
+            ["CSS", "Not applicable line-by-line", "/* comment */"],
+            ["SQL", "-- comment", "/* comment */ (in most dialects)"],
+            ["Bash / Shell", "# comment", "No dedicated syntax — repeated # or a here-doc trick"],
+            ["Ruby", "# comment", "=begin ... =end"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python's decision to skip a dedicated block-comment symbol is consistent with its broader minimalism — rather than adding another piece of syntax for a relatively narrow use case, it lets the single <code>#</code> symbol handle every comment scenario, with triple-quoted strings available as an unofficial but widely accepted alternative for longer blocks. Notably, Python shares its single-line comment character with Bash and shell scripting, which is a small but genuine convenience for developers who frequently move between writing Python scripts and the shell scripts that often surround them in a typical deployment pipeline."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "well-commented-example",
+      "title": "A Fully Worked Example — Before and After",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "To bring every idea on this page together, here's a single function shown twice: first with no comments and unclear naming, and then rewritten with self-documenting code plus comments that add genuine, non-obvious value rather than restating what's already visible."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "before_no_comments.py",
+          "lines": [
+            "def calc(o):",
+            "    t = 0",
+            "    for i in o:",
+            "        t += i[1] * i[2]",
+            "    if t > 5000:",
+            "        t = t * 0.9",
+            "    return t"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "after_well_documented.py",
+          "lines": [
+            "def calculate_order_total(line_items):",
+            "    \"\"\"",
+            "    Calculate the total cost of an order, applying a bulk discount",
+            "    when the pre-discount total exceeds the threshold.",
+            "",
+            "    Args:",
+            "        line_items (list[tuple]): each item is",
+            "            (product_name, unit_price, quantity).",
+            "",
+            "    Returns:",
+            "        float: the final total after any applicable discount.",
+            "    \"\"\"",
+            "    # Bulk discount threshold and rate are set by the Q1 2026 pricing policy (PRICE-204)",
+            "    BULK_DISCOUNT_THRESHOLD = 5000",
+            "    BULK_DISCOUNT_RATE = 0.10",
+            "",
+            "    subtotal = 0",
+            "    for product_name, unit_price, quantity in line_items:",
+            "        subtotal += unit_price * quantity",
+            "",
+            "    if subtotal > BULK_DISCOUNT_THRESHOLD:",
+            "        subtotal *= (1 - BULK_DISCOUNT_RATE)",
+            "",
+            "    return subtotal"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Notice what changed beyond just adding comments: the function and parameter names became self-explanatory, the magic numbers <code>5000</code> and <code>0.9</code> became named constants, and the docstring covers the contract of the function (inputs, outputs) while the single inline comment covers the one thing that genuinely can't be inferred from the code alone — <em>why</em> those specific numbers were chosen. This is the pattern worth internalising: let clear code and a solid docstring handle the mechanics, and reserve inline comments for the handful of details that only exist outside the code itself."
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "def calculate_order_total(line_items):\n    \"\"\"Calculate the total cost of an order.\"\"\"\n    subtotal = 0\n    for product_name, unit_price, quantity in line_items:\n        subtotal += unit_price * quantity\n    return subtotal\n\norder = [(\"Pen\", 10, 3), (\"Notebook\", 50, 2)]\nprint(calculate_order_total(order))"
+        }
+      ]
+    },
+
+    {
+      "sectionId": "comments-syntax-pitfalls",
+      "title": "Syntax Pitfalls Involving Comments and Docstrings",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "While comments are conceptually simple, a small number of syntax mistakes around them show up often enough to be worth flagging explicitly."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Mistake", "What Happens", "Fix"],
+          "rows": [
+            ["Unterminated triple-quoted string used as a comment", "SyntaxError: EOF in multi-line string — Python keeps scanning for the closing \"\"\" past the intended comment", "Always make sure the closing triple quote is present and matches the opening one exactly"],
+            ["Placing a docstring after other code in a function", "It's treated as an ordinary, discarded string expression, not stored in __doc__", "A docstring must be the very first statement — move it directly under the def line"],
+            ["Forgetting the space after #", "Not a syntax error, but flagged by most linters and inconsistent with PEP 8", "Always write # comment, never #comment"],
+            ["Using # inside an f-string's expression part without escaping context", "Can cause confusion since # inside {} is not a comment marker there either", "Keep comments outside of string literals and f-string expressions entirely"],
+            ["Nesting triple quotes of the same type inside a docstring", "SyntaxError, since Python can't tell where the outer string actually ends", "Use the other quote style (' vs \") for any triple-quoted text that appears inside the docstring's body"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "comments-interview-questions",
+      "title": "Interview Questions on Python Comments",
+      "blocks": [
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. Does Python have a dedicated multi-line comment symbol like /* */ in Java?",
+              "a": "No. Python only has the single-line # comment. For multi-line comments, developers either repeat # on each line or use a triple-quoted string, which is technically a discarded string literal rather than a true comment, but achieves a similar visual and functional effect.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between a comment and a docstring?",
+              "a": "A comment, marked with #, is stripped entirely during parsing and leaves no trace at runtime. A docstring is a triple-quoted string placed as the first statement in a module, function, class, or method; it is stored and accessible at runtime via the object's __doc__ attribute, and is used by tools like help() and Sphinx.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q3. Why might a stale comment be worse than having no comment at all?",
+              "a": "A comment that no longer matches the code it describes actively misleads a reader, who typically trusts the comment without re-verifying it line by line against the actual logic. Incorrect documentation can lead to wrong assumptions and introduced bugs, whereas no comment at least prompts the reader to examine the code directly.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q4. What does help(some_function) display, and where does that content come from?",
+              "a": "It displays the function's docstring — the triple-quoted string placed as the first statement inside the function definition — along with the function's signature. If no docstring is present, help() falls back to showing just the signature with no description.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. What is the purpose of a directive comment like # noqa or # type: ignore?",
+              "a": "These are specially formatted comments read not by the Python interpreter itself, but by external tools such as linters (flake8) or type checkers (mypy). They instruct the tool to suppress a specific warning on that line, which the developer has reviewed and judged acceptable, while Python itself treats the line as an ordinary, ignored comment.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. Why is commenting out old code and leaving it in the file considered a poor practice in most modern teams?",
+              "a": "Version control systems like Git already preserve every previous version of a file's contents, searchably, with author and commit context attached. Leaving old code commented out in the file duplicates that history unreliably, clutters the codebase, and can eventually confuse a reader about which version is actually in use, without adding any information Git doesn't already capture more precisely.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q7. Can a docstring appear anywhere inside a function, or does its position matter?",
+              "a": "Position matters strictly. A triple-quoted string only becomes a true docstring, stored in __doc__, if it is the very first statement inside the function, class, or module. The same string placed after any other statement is treated as an ordinary, discarded expression and has no special runtime significance.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q8. What's the practical difference between a comment describing a parameter's type and using an actual type hint?",
+              "a": "A comment describing a type is unverified free text — nothing checks that it still matches the code, and it can silently become inaccurate over time. A type hint, written directly in the function signature, can be automatically verified by tools like mypy, catching genuine mismatches before the code runs, making it the more reliable choice for documenting types specifically.",
+              "tag": "Frequently Asked"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "comments-practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. Write a single-line comment above a variable assignment explaining why a discount rate of 0.1 was chosen.",
+              "a": "# 10% loyalty discount, applied per the Q2 pricing policy\ndiscount_rate = 0.1",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What will print(my_function.__doc__) output if my_function has no docstring defined?",
+              "a": "It will print None, since __doc__ defaults to None when no docstring is present as the first statement inside the function.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Is the following code block a comment, in the strict technical sense? '\"\"\"This explains the section below\"\"\"' placed on its own, not assigned to anything.",
+              "a": "Not strictly — it is a string literal expression statement that Python evaluates and then discards because it isn't used or assigned. It behaves like a comment in practice since it has no runtime effect, but it is not the same mechanism as a genuine # comment, which is stripped during parsing rather than evaluated.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. A teammate leaves the comment '# TODO: handle negative numbers' above a function that already handles negative numbers correctly. What does this suggest, and what should be done?",
+              "a": "It suggests the comment is stale — the code was likely updated to handle negative numbers after the TODO was written, but the comment was never removed. The fix is simply to delete the outdated comment, since leaving it risks confusing future readers into thinking the case is still unhandled.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Rewrite this function so the code is self-documenting enough that the comment becomes unnecessary: '# convert kilometers to miles\\nx = k * 0.621371'",
+              "a": "def kilometers_to_miles(kilometers):\n    return kilometers * 0.621371\n\nThe descriptive function name now conveys exactly what the comment used to explain, making the comment redundant.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. What is wrong with this docstring placement, and how would you fix it? 'def greet(name):\\n    message = f\"Hello {name}\"\\n    \"\"\"Return a greeting for the given name.\"\"\"\\n    return message'",
+              "a": "The triple-quoted string appears after the assignment statement, not as the first statement in the function, so it is not treated as a docstring — it's just a discarded string expression with no runtime effect. The fix is to move it to immediately after the def line, before any other code.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. Explain why a comment like '# noqa' with no further explanation is considered weaker practice than '# noqa: F401 — imported for its side effects on module load'.",
+              "a": "A bare # noqa silently suppresses every possible linter warning on that line without indicating which one, or why it's safe to ignore, making it hard for a future reader (or the original author, later) to judge whether the suppression is still justified. Specifying the exact rule code and a brief reason makes the suppression intentional, auditable, and easy to revisit.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Why does Python raise a SyntaxError for an unterminated triple-quoted comment, but not for a missing closing single # on a line comment?",
+              "a": "A single-line # comment is automatically terminated by the end of the physical line — there's no separate closing symbol required, so nothing can be left 'open'. A triple-quoted string, however, requires an explicit matching closing sequence; if it's missing, Python keeps scanning subsequent lines looking for it, eventually reaching the end of the file without finding one and raising a SyntaxError for an unterminated string.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "comments-conclusion",
+      "title": "Conclusion — Comment With Intent",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python's comment syntax itself is about as simple as it gets — a single <code>#</code> symbol covers the vast majority of everyday cases, with triple-quoted strings and docstrings filling in the gaps for longer explanations and formal, tool-readable documentation. The real skill isn't the syntax; it's judgment — knowing when a comment genuinely helps a future reader, and when the code would be better served by simply being clearer on its own."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "As a rule of thumb worth internalising early: comment the reasoning, not the mechanics — explain why a decision was made, not what a line of code already obviously does. Reach for a clearer name or a smaller, better-named function before reaching for an explanatory comment, and reserve the comments you do write for the handful of things that genuinely can't live inside the code itself: business context, known limitations, and links back to the discussions or tickets that shaped a decision."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Get into the habit of writing a docstring for every function you define from the very start, even a one-line description for something simple. It costs almost nothing in the moment and pays for itself repeatedly later — both for others reading your code, and for you, returning to it after enough time has passed that your own reasoning has quietly slipped out of memory."
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "Can I use both single and double quotes for docstrings?",
+        "a": "Yes. PEP 257, the docstring style convention, recommends triple double quotes (\"\"\" \"\"\") as the standard, but triple single quotes (''' ''') work identically. Sticking to one style consistently across a project is more important than which one you choose."
+      },
+      {
+        "q": "Do comments slow down my Python program?",
+        "a": "No. Comments marked with # are stripped out during parsing and have zero runtime cost. Triple-quoted strings used as comments have a negligible parsing and object-creation cost since they're briefly created before being discarded, but this is not measurable in any real-world program."
+      },
+      {
+        "q": "How much should I comment my code as a beginner?",
+        "a": "Slightly more than feels necessary at first, since it builds the habit of writing docstrings and explaining reasoning. As you gain experience, you'll naturally find the balance — commenting the non-obvious parts and trusting clear code and good naming to explain the rest."
+      },
+      {
+        "q": "Are docstrings required for every Python function?",
+        "a": "Not by the interpreter — Python runs perfectly fine without them. However, they are considered a professional best practice, especially for public functions, classes, and modules meant to be used or read by others, and many teams enforce them through linting tools."
+      },
+      {
+        "q": "Which docstring format should I use — Google, NumPy, or reStructuredText?",
+        "a": "There's no single correct answer; all three are widely used and supported by documentation tools. Google style tends to be the most readable in raw source form, NumPy style is common in scientific/data-focused projects, and reStructuredText integrates tightly with Sphinx. The most important factor is consistency within a single project, not which format you personally prefer."
+      },
+      {
+        "q": "Is it bad practice to comment out code instead of deleting it?",
+        "a": "In a project tracked with version control like Git, generally yes — the old code is already preserved reliably in the commit history, so leaving it commented out in the file mainly adds clutter. A brief exception is temporarily commenting something out during active local debugging, as long as it's cleaned up before the change is committed."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Syntax", "path": "/python/python-syntax" },
+    "next": { "label": "Next: Python Variables →", "path": "/python/python-variables" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Single-line symbol", "dd": "#" },
+      { "dt": "Multi-line syntax", "dd": "None official — repeated # or \"\"\" \"\"\"" },
+      { "dt": "Docstring quotes", "dd": "Triple double quotes (PEP 257)" },
+      { "dt": "Runtime cost", "dd": "None for # comments" },
+      { "dt": "Access docstring via", "dd": "__doc__ or help()" },
+      { "dt": "Common tags", "dd": "TODO, FIXME, NOTE, HACK, XXX" },
+      { "dt": "Linter directive example", "dd": "# noqa, # type: ignore" }
+    ],
+    "relatedArticles": [
+      { "label": "What is Python?", "path": "/pythonhome" },
+      { "label": "Python Intro", "path": "/python/python-intro" },
+      { "label": "Python Installation", "path": "/python/python-installation" },
+      { "label": "Python Syntax", "path": "/python/python-syntax" },
+      { "label": "Python Variables", "path": "/python/python-variables" },
+      { "label": "Python Data Types", "path": "/python/python-datatypes" },
+      { "label": "Python Functions", "path": "/python/python-functions" },
+      { "label": "Python OOP", "path": "/python/python-oop" }
+    ],
+    "tags": ["Comments","Docstrings","PEP 257","PEP 8","TODO","FIXME","Documentation","help()","__doc__","Google Style","NumPy Style","reStructuredText","Type Hints","Linter Directives","Code Readability"]
+  }
+}

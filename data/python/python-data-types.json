@@ -1,0 +1,1224 @@
+{
+  "meta": {
+    "title": "Python Data Types | The Complete Guide to Numbers, Strings, Lists, Tuples, Dicts & More 2026 | Tech Sustainify",
+    "description": "A complete, practical guide to Python's built-in data types — numbers, strings, lists, tuples, sets, dictionaries, booleans, and None — with mutability rules, type conversion, and real examples that show why each type exists.",
+    "keywords": "python data types, python int float complex, python strings, python lists, python tuples, python sets, python dictionaries, python booleans, python none type, mutable vs immutable python, python type conversion, python type casting, python collections, python data structures basics",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-data-types",
+    "ogTitle": "Python Data Types — The Complete Guide 2026 | Tech Sustainify",
+    "ogDescription": "Every built-in Python data type explained clearly, with mutability, conversion rules, and the reasoning behind when to reach for each one.",
+    "ogUrl": "https://techsustainify.com/python/python-datatypes",
+    "ogImage": "https://techsustainify.com/images/python-datatypes-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "40 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-01-10",
+    "schemaDateModified": "2026-04-09",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 8080
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/pythonhome" },
+    { "position": 3, "name": "Python Data Types" }
+  ],
+
+  "articleHeader": {
+    "badge": "🧩 Data Types",
+    "title": "Python Data Types — The Complete Guide",
+    "subtitle": "What every built-in type actually is, why Python offers more than one way to group values together, and how to pick the right one instead of reaching for whatever's familiar."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-04-09", "value": "April 2026" },
+    { "icon": "⏱️", "label": "Read Time", "value": "40 min" },
+    { "icon": "🎯", "label": "Level", "value": "Beginner" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-a-data-type",
+      "title": "What Do We Actually Mean by a 'Data Type'?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every single value a program works with — the number 7, the word \"hello\", the answer true or false — needs to be stored in memory in some particular format, and that format determines what operations are actually valid on it. You can add two numbers together, but adding two words the same way makes no sense unless the language decides to interpret that as joining them. A <strong>data type</strong> is simply the category a value belongs to, and it's this category that tells Python (and you) what can and can't be reasonably done with it."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In Python specifically, every value you ever create is an instance of some type, and you can always ask Python directly what type a value is using the built-in <code>type()</code> function. This single habit — checking <code>type()</code> when something behaves oddly — probably resolves more beginner confusion than any other single debugging trick, because a surprising number of 'weird' bugs in early Python code trace back to a value quietly being a different type than the person writing the code assumed."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "checking_types.py",
+          "lines": [
+            "print(type(7))          # <class 'int'>",
+            "print(type(7.5))        # <class 'float'>",
+            "print(type(\"hello\"))    # <class 'str'>",
+            "print(type(True))       # <class 'bool'>",
+            "print(type([1, 2, 3]))  # <class 'list'>",
+            "print(type((1, 2)))     # <class 'tuple'>",
+            "print(type({1, 2}))     # <class 'set'>",
+            "print(type({\"a\": 1}))   # <class 'dict'>",
+            "print(type(None))       # <class 'NoneType'>"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python's built-in types are usually split into a few broad families for teaching purposes: numeric types (integers, floats, complex numbers), text (strings), sequence types that hold ordered collections of items (lists, tuples, ranges), a mapping type (dictionaries), set types (sets and frozensets), a boolean type, and the singular <code>None</code> type that represents the absence of a value. None of this categorisation is set in stone anywhere in the language itself — it's a convenient way for humans to organise the discussion — but it's the grouping most tutorials, including this one, follow, since it roughly mirrors how you'll actually reach for these types while writing real code."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "numeric-types",
+      "title": "Numeric Types — int, float, and complex",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python offers three built-in numeric types, and in day-to-day programming you'll spend the overwhelming majority of your time with just the first two."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "numeric_types.py",
+          "lines": [
+            "whole_number = 42          # int",
+            "decimal_number = 3.14      # float",
+            "imaginary = 2 + 3j         # complex",
+            "",
+            "print(type(whole_number))   # <class 'int'>",
+            "print(type(decimal_number)) # <class 'float'>",
+            "print(type(imaginary))      # <class 'complex'>"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "An <code>int</code> represents a whole number, positive or negative, with no fractional part. One detail that genuinely sets Python apart from most other mainstream languages is that Python integers have <strong>no fixed size limit</strong> — you can work with a number that's hundreds of digits long, and Python will handle it correctly without overflowing, automatically allocating more memory as needed behind the scenes. Languages like Java or C, by contrast, typically restrict a standard integer to a fixed number of bits, meaning very large numbers require special handling to avoid silently wrapping around to an incorrect value."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "big_integers.py",
+          "lines": [
+            "huge_number = 2 ** 100",
+            "print(huge_number)",
+            "# 1267650600228229401496703205376",
+            "",
+            "print(type(huge_number))  # still just <class 'int'> -- no special 'long' type needed"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <code>float</code> represents a number with a decimal point, and internally Python stores floats using the IEEE 754 double-precision standard, the same format most programming languages use for decimal numbers. This is worth knowing because it explains a genuinely common source of confusion for newcomers: floating-point numbers can't always represent decimal fractions with perfect precision, since they're stored in binary rather than base-10."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "float_precision.py",
+          "lines": [
+            "print(0.1 + 0.2)",
+            "# 0.30000000000000004 -- not a bug, just how binary floating-point works",
+            "",
+            "print(round(0.1 + 0.2, 2))",
+            "# 0.3 -- rounding for display or comparison sidesteps the issue"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This isn't a flaw specific to Python — it happens in essentially every language using the same underlying floating-point standard — but it catches enough beginners off guard that it's worth calling out directly the first time floats are introduced. For situations where exact decimal precision genuinely matters, such as handling money, Python's standard library includes a <code>decimal</code> module specifically designed to avoid this issue, though for most everyday calculations, ordinary floats are perfectly fine."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The third numeric type, <code>complex</code>, represents complex numbers with a real and an imaginary part, written using a trailing <code>j</code> for the imaginary component. Most beginners won't touch this type for a long while — it shows up primarily in specialised scientific, engineering, and signal-processing contexts — but it's built directly into the language rather than requiring a separate library, which says something about how seriously Python takes numerical computing as a use case."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "arithmetic-and-conversion",
+      "title": "Working Across Numeric Types",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python allows arithmetic directly between an <code>int</code> and a <code>float</code> in the same expression, automatically converting the result to whichever type carries more information — in practice, that means mixing an int with a float always produces a float, since a float can represent everything an int can, but not the other way around."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "implicit_numeric_conversion.py",
+          "lines": [
+            "result = 5 + 2.5",
+            "print(result)        # 7.5",
+            "print(type(result))  # <class 'float'>",
+            "",
+            "# Division always returns a float in Python 3, even for two integers",
+            "print(10 / 2)        # 5.0, not 5",
+            "print(type(10 / 2))  # <class 'float'>",
+            "",
+            "# Floor division keeps things as an int when both operands are ints",
+            "print(10 // 2)       # 5",
+            "print(type(10 // 2)) # <class 'int'>"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "That behaviour around division is a genuine, deliberate difference between Python 2 and Python 3. In Python 2, dividing two integers using <code>/</code> performed integer division by default, silently discarding any remainder. Python 3 changed <code>/</code> to always perform true division, returning a float, and introduced <code>//</code> specifically for floor division — a change made precisely because the old behaviour was a common, silent source of bugs, especially for anyone coming from a mathematical or scientific background where division simply means division."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "range-type",
+      "title": "range — A Lazy Sequence of Numbers",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Before moving on to text, it's worth introducing one more sequence type that's easy to overlook precisely because it so often appears tucked inside a for loop rather than being assigned to a variable directly: <code>range</code>. A range represents a sequence of numbers, and it's what's most commonly used to control how many times a loop repeats."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "range_basics.py",
+          "lines": [
+            "numbers = range(5)",
+            "print(numbers)          # range(0, 5) -- not a list of numbers printed out directly",
+            "print(list(numbers))    # [0, 1, 2, 3, 4]",
+            "",
+            "for i in range(2, 10, 2):",
+            "    print(i, end=\" \")",
+            "# 2 4 6 8"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The detail worth genuinely understanding here, rather than just memorising, is that <code>range()</code> does not actually build and store a full list of numbers in memory. It's what's called a <strong>lazy</strong> sequence — it calculates each number on demand, one at a time, as something asks for it, rather than generating and holding onto the whole sequence up front. This is why printing a range directly shows something like <code>range(0, 5)</code> rather than the expanded numbers themselves; you have to explicitly convert it to a list, using <code>list()</code>, to see every value materialised at once."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This laziness matters a great deal in practice once numbers get large. Looping over <code>range(10_000_000)</code> costs almost no memory at all, since Python never needs to hold ten million numbers in memory simultaneously — it just produces the next one, uses it, and discards it. Building the equivalent list explicitly with <code>list(range(10_000_000))</code>, on the other hand, would genuinely allocate memory for every single number at once, which is a meaningfully different, heavier operation. This same idea of computing values lazily, on demand, resurfaces later in more advanced Python through generators, and range is a gentle, built-in first taste of that pattern."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "strings",
+      "title": "Strings — Python's Text Type",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <code>str</code> (short for 'string') represents a sequence of characters — words, sentences, or really any text at all. Strings can be written using single quotes, double quotes, or triple quotes, and Python treats all three as functionally identical for ordinary strings, the choice generally coming down to convenience or house style."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "string_basics.py",
+          "lines": [
+            "greeting = 'Hello'",
+            "name = \"Priya\"",
+            "bio = \"\"\"A multi-line string,",
+            "useful for longer blocks of text",
+            "spanning several lines.\"\"\"",
+            "",
+            "print(greeting + \", \" + name + \"!\")  # Hello, Priya!",
+            "print(len(name))                       # 5"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "One property of strings that surprises a lot of newcomers is that they are <strong>immutable</strong> — once a string object is created, it can never be changed in place. Every operation that looks like it's 'modifying' a string is actually building a brand-new string object and handing that back to you."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "string_immutability.py",
+          "lines": [
+            "word = \"cat\"",
+            "# word[0] = \"b\"   # TypeError: 'str' object does not support item assignment",
+            "",
+            "# The correct approach is to build a new string entirely",
+            "word = \"b\" + word[1:]",
+            "print(word)  # bat"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Strings support indexing and slicing much like lists do, since a string is really just an ordered sequence of individual characters underneath. Indexing starts at 0, and negative indices count backward from the end, a convention that applies consistently across every ordered sequence type in Python, not just strings."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "string_indexing_slicing.py",
+          "lines": [
+            "text = \"Python\"",
+            "",
+            "print(text[0])     # P",
+            "print(text[-1])    # n -- last character",
+            "print(text[0:3])   # Pyt -- characters at index 0, 1, 2",
+            "print(text[2:])    # thon -- from index 2 to the end",
+            "print(text[::-1])  # nohtyP -- a common trick to reverse a string"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Modern Python also gives you <strong>f-strings</strong> (formatted string literals, introduced in Python 3.6), which are by far the most readable and idiomatic way to build a string that embeds variable values. You'll see these everywhere in current Python code, and for good reason — they remove a lot of the awkward concatenation and formatting syntax older approaches required."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "f_strings.py",
+          "lines": [
+            "product = \"Notebook\"",
+            "price = 149.5",
+            "quantity = 3",
+            "",
+            "print(f\"{quantity} x {product} = ₹{price * quantity:.2f}\")",
+            "# 3 x Notebook = ₹448.50"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "unicode-and-encoding",
+      "title": "Unicode Strings and Encoding — Why Python 3 Handles Text Differently",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "One of the quieter but genuinely significant changes between Python 2 and Python 3 involves exactly how text is stored underneath. In Python 3, every ordinary string is Unicode by default, capable of representing characters from virtually any written language, along with emoji and a huge range of other symbols, without needing any special setup or import."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "unicode_strings.py",
+          "lines": [
+            "greeting_hindi = \"नमस्ते\"",
+            "greeting_japanese = \"こんにちは\"",
+            "celebration = \"Congratulations! 🎉\"",
+            "",
+            "print(greeting_hindi, greeting_japanese, celebration)",
+            "print(len(greeting_hindi))  # 6 -- counts characters, not raw bytes"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This matters because, underneath, a computer only ever stores raw bytes — a string has to be converted, or <strong>encoded</strong>, into a specific sequence of bytes before it can be saved to a file or sent across a network, and converted back, or <strong>decoded</strong>, to be read as text again. Python 3 keeps this distinction explicit and clean: an ordinary <code>str</code> is Unicode text, and a separate type, <code>bytes</code>, represents the raw, encoded form. The two are related but genuinely different types, and Python won't silently mix them together."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "encoding_decoding.py",
+          "lines": [
+            "text = \"café\"",
+            "encoded = text.encode(\"utf-8\")",
+            "print(encoded)          # b'caf\\xc3\\xa9' -- a bytes object, not a string",
+            "print(type(encoded))    # <class 'bytes'>",
+            "",
+            "decoded = encoded.decode(\"utf-8\")",
+            "print(decoded)          # café -- back to an ordinary string",
+            "print(type(decoded))    # <class 'str'>"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In Python 2, by contrast, an ordinary string was really just a sequence of raw bytes by default, and true Unicode text needed a separate, explicitly marked type. This led to a genuine, recurring category of bugs when a program mixed encoded bytes and Unicode text without realising it, since Python 2 would often try to silently guess how to combine them, sometimes getting it wrong in ways that only surfaced with certain non-English characters. Python 3's stricter separation between <code>str</code> and <code>bytes</code> was one of the more consequential, if less flashy, reasons the language's core maintainers considered the backward-incompatible break worth making."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "booleans",
+      "title": "Booleans — True, False, and What Counts as 'Truthy'",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>bool</code> type has exactly two possible values: <code>True</code> and <code>False</code>, written with a capital first letter, unlike some other languages where they're written entirely in lowercase. Booleans are what conditions in an <code>if</code> statement ultimately evaluate down to, and they're what comparison operators like <code>==</code>, <code>&lt;</code>, and <code>in</code> return."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A detail worth knowing early: <code>bool</code> is technically a subtype of <code>int</code> in Python, which is a slightly unusual design choice compared to most languages, but a genuinely deliberate one. Because of this relationship, <code>True</code> behaves exactly like <code>1</code> in arithmetic, and <code>False</code> behaves exactly like <code>0</code>."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "bool_as_int.py",
+          "lines": [
+            "print(True + True)   # 2",
+            "print(False * 10)    # 0",
+            "print(isinstance(True, int))  # True -- bool really is a subtype of int",
+            "print(True == 1)     # True",
+            "print(False == 0)    # True"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Beyond actual booleans, Python has a broader concept called <strong>truthiness</strong>, where every object — not just <code>True</code> and <code>False</code> — can be evaluated in a boolean context, like an <code>if</code> statement. A handful of specific values are treated as 'falsy', meaning they behave like <code>False</code> when checked this way, and everything else is treated as 'truthy'."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Value", "Treated As", "Category"],
+          "rows": [
+            ["0, 0.0", "Falsy", "Numeric zero, in any numeric type"],
+            ["\"\" (empty string)", "Falsy", "Any empty sequence"],
+            ["[] (empty list)", "Falsy", "Any empty sequence"],
+            ["{} (empty dict)", "Falsy", "Any empty mapping"],
+            ["set() (empty set)", "Falsy", "Any empty set"],
+            ["None", "Falsy", "The absence of a value"],
+            ["Any non-zero number", "Truthy", "e.g. 1, -1, 3.14"],
+            ["Any non-empty sequence or collection", "Truthy", "e.g. \"hi\", [0], {0: 0}"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "truthiness_demo.py",
+          "lines": [
+            "items = []",
+            "",
+            "if items:",
+            "    print(\"There are items in the list.\")",
+            "else:",
+            "    print(\"The list is empty.\")  # this runs, since an empty list is falsy",
+            "",
+            "# This is generally preferred over the more verbose:",
+            "# if len(items) == 0:"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Relying on truthiness this way — writing <code>if items:</code> instead of <code>if len(items) == 0:</code> — is considered idiomatic, readable Python, and you'll see experienced developers do it constantly. It's worth learning to read comfortably even though it can feel slightly unintuitive the first time you encounter it, since an empty list isn't literally the value <code>False</code>, it just behaves like it in this specific context."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "lists",
+      "title": "Lists — Ordered, Mutable Collections",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <code>list</code> is an ordered collection of items, written between square brackets and separated by commas. Lists are probably the single most commonly used data structure in everyday Python code, and for good reason: they're flexible, they preserve the order items were added in, and — crucially — they're <strong>mutable</strong>, meaning you can change their contents after creation without having to build a whole new object."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "list_basics.py",
+          "lines": [
+            "fruits = [\"apple\", \"banana\", \"mango\"]",
+            "",
+            "fruits.append(\"grape\")       # add to the end",
+            "fruits[1] = \"blueberry\"       # replace an existing item by index",
+            "fruits.remove(\"apple\")        # remove a specific item by value",
+            "",
+            "print(fruits)  # ['blueberry', 'mango', 'grape']",
+            "print(len(fruits))  # 3"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A single list can genuinely hold a mix of different types at once — an integer, a string, and even another list can all sit side by side in the same list — because Python lists don't enforce any type consistency among their elements. This is quite different from arrays in more strictly typed languages, which usually require every element to share exactly one declared type."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "mixed_type_list.py",
+          "lines": [
+            "mixed = [1, \"two\", 3.0, [4, 5], True]",
+            "print(mixed)",
+            "print(type(mixed[3]))  # <class 'list'> -- a list nested inside a list"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Lists support the same indexing and slicing syntax already introduced for strings, since both are sequence types underneath. They also support a particularly popular and expressive shorthand called a <strong>list comprehension</strong>, which builds a new list from an existing iterable in a single, compact line."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "list_comprehension.py",
+          "lines": [
+            "numbers = [1, 2, 3, 4, 5, 6]",
+            "",
+            "even_squares = [n * n for n in numbers if n % 2 == 0]",
+            "print(even_squares)  # [4, 16, 36]",
+            "",
+            "# Equivalent, longer version using a plain loop:",
+            "even_squares_manual = []",
+            "for n in numbers:",
+            "    if n % 2 == 0:",
+            "        even_squares_manual.append(n * n)"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "tuples",
+      "title": "Tuples — Ordered, Immutable Collections",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <code>tuple</code> looks almost identical to a list at first glance — an ordered collection of items — but it's written with parentheses instead of square brackets, and, critically, it is <strong>immutable</strong>. Once a tuple is created, you cannot add, remove, or change any of its elements."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "tuple_basics.py",
+          "lines": [
+            "coordinates = (28.6, 77.2)",
+            "",
+            "# coordinates[0] = 29.0  # TypeError: 'tuple' object does not support item assignment",
+            "",
+            "print(coordinates)      # (28.6, 77.2)",
+            "print(coordinates[1])   # 77.2"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It's fair to ask why Python bothers offering both a mutable and an immutable version of essentially the same idea, and the answer comes down to intent and, in some situations, genuine technical necessity. A tuple communicates to anyone reading the code that this particular grouping of values is fixed and shouldn't be expected to change — a pair of coordinates, the red-green-blue components of a colour, or a row returned from a database query are all natural fits for a tuple, since their structure and meaning are complete the moment they're created."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "There's also a practical technical reason: because tuples are immutable, they can be used as keys in a dictionary or as elements inside a set, both of which require their contents to be <strong>hashable</strong> — a property that mutable types like lists simply don't have, precisely because their contents (and therefore what would need to be hashed) can change after creation."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "tuple_as_dict_key.py",
+          "lines": [
+            "distances = {",
+            "    (\"Delhi\", \"Mumbai\"): 1400,",
+            "    (\"Delhi\", \"Chennai\"): 2200",
+            "}",
+            "",
+            "print(distances[(\"Delhi\", \"Mumbai\")])  # 1400",
+            "",
+            "# The same thing with a list key would fail immediately:",
+            "# bad = {[\"Delhi\", \"Mumbai\"]: 1400}  # TypeError: unhashable type: 'list'"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A small syntax quirk worth remembering: a tuple containing exactly one item requires a trailing comma to actually be recognised as a tuple, since parentheses alone are also used for ordinary grouping in mathematical expressions."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "single_item_tuple.py",
+          "lines": [
+            "not_a_tuple = (5)",
+            "print(type(not_a_tuple))   # <class 'int'> -- just a plain integer in parentheses",
+            "",
+            "actual_tuple = (5,)",
+            "print(type(actual_tuple))  # <class 'tuple'>"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "sets",
+      "title": "Sets — Unordered Collections of Unique Items",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <code>set</code> is a collection that automatically enforces two rules: every item inside it must be unique, and the collection has no fixed, meaningful order. Sets are written using curly braces, and they're the natural choice any time your actual problem is really about membership and uniqueness rather than order or position."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "set_basics.py",
+          "lines": [
+            "tags = {\"python\", \"tutorial\", \"beginner\", \"python\"}",
+            "print(tags)  # {'python', 'tutorial', 'beginner'} -- the duplicate is dropped automatically",
+            "",
+            "tags.add(\"guide\")",
+            "tags.discard(\"beginner\")",
+            "print(tags)",
+            "",
+            "print(\"python\" in tags)  # True -- membership checks on a set are extremely fast"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Sets really shine when you need to compare collections against each other, since Python implements the standard mathematical set operations directly, and they read almost exactly like the underlying concept they represent."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "set_operations.py",
+          "lines": [
+            "python_devs = {\"Aman\", \"Riya\", \"Zaid\", \"Neha\"}",
+            "java_devs = {\"Riya\", \"Sameer\", \"Neha\", \"Tarun\"}",
+            "",
+            "print(python_devs & java_devs)  # {'Riya', 'Neha'} -- intersection, known by both",
+            "print(python_devs | java_devs)  # union, everyone across both groups",
+            "print(python_devs - java_devs)  # difference, python-only devs"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "One frequent, practical use of sets is quietly removing duplicate entries from an existing list, which turns out to be a single, extremely short line thanks to how easily lists and sets convert into each other."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "removing_duplicates.py",
+          "lines": [
+            "numbers = [4, 2, 4, 6, 2, 8, 6]",
+            "unique_numbers = list(set(numbers))",
+            "print(unique_numbers)  # [8, 2, 4, 6] -- order is not guaranteed to be preserved"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Note the caveat in that last example — converting through a set doesn't preserve the original order the numbers appeared in, since sets simply don't track any order at all. If preserving the original order while still removing duplicates genuinely matters, a slightly different approach using a dictionary (covered next) is usually the better tool for the job, since dictionaries in modern Python do reliably preserve insertion order."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "frozensets",
+      "title": "frozenset — The Immutable Sibling of set",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Just as tuples exist alongside lists to offer an immutable version of an ordered collection, Python offers <code>frozenset</code> as the immutable counterpart to an ordinary set. Once created, a frozenset's contents can never be added to or removed — it behaves exactly like a set for reading and comparing, but it locks the collection in place."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "frozenset_demo.py",
+          "lines": [
+            "allowed_roles = frozenset({\"admin\", \"editor\", \"viewer\"})",
+            "",
+            "print(\"editor\" in allowed_roles)  # True",
+            "# allowed_roles.add(\"guest\")  # AttributeError: 'frozenset' object has no attribute 'add'",
+            "",
+            "print(type(allowed_roles))  # <class 'frozenset'>"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The practical reason to reach for a frozenset instead of an ordinary set is exactly the same reason you'd reach for a tuple instead of a list: because it's immutable, a frozenset is hashable, and can therefore be used as a dictionary key or nested inside another set, neither of which an ordinary, mutable set supports. It shows up far less often than the other collection types covered in this guide, but it's worth recognising by name, since it does appear in code dealing with fixed configuration values or permission groupings that are deliberately meant to stay constant."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "dictionaries",
+      "title": "Dictionaries — Key-Value Mappings",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <code>dict</code> stores data as pairs of keys and values, letting you look up a value quickly using a meaningful key instead of a numeric position. Dictionaries are written with curly braces, using a colon to separate each key from its corresponding value."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "dict_basics.py",
+          "lines": [
+            "student = {",
+            "    \"name\": \"Devika\",",
+            "    \"age\": 21,",
+            "    \"course\": \"Computer Science\"",
+            "}",
+            "",
+            "print(student[\"name\"])    # Devika",
+            "student[\"age\"] = 22        # update an existing value",
+            "student[\"college\"] = \"IIT\"  # add a brand new key",
+            "",
+            "print(student)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Dictionary keys have a specific requirement worth knowing: a key must be a hashable, immutable type — strings, numbers, and tuples all work fine as keys, but a list or another dictionary cannot be used as a key, for the same reason lists can't be placed inside a set. Values, on the other hand, have no such restriction at all; a dictionary value can be absolutely anything, including another list or dictionary."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A genuinely important, somewhat lesser-known fact worth calling out clearly: since Python 3.7, dictionaries officially guarantee that they preserve <strong>insertion order</strong> — the order keys were originally added is the order you'll get back when iterating over the dictionary. Before that version, this ordering happened to occur as an implementation detail in one particular Python version but wasn't a guaranteed part of the language's actual specification, so relying on it in code meant to run on older versions wasn't safe."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "dict_iteration.py",
+          "lines": [
+            "scores = {\"maths\": 88, \"science\": 92, \"history\": 79}",
+            "",
+            "for subject, mark in scores.items():",
+            "    print(subject, \"->\", mark)",
+            "",
+            "# maths -> 88",
+            "# science -> 92",
+            "# history -> 79 -- guaranteed to appear in exactly this order"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Dictionaries are, by a wide margin, one of the most heavily used data structures across real Python code, since so many real-world problems are naturally described as 'look this value up by that name' — configuration settings, JSON data from a web API, counting how often each word appears in a piece of text, and countless other everyday tasks all map cleanly onto a dictionary."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "none-type",
+      "title": "NoneType — Representing the Absence of a Value",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>None</code> is a genuinely unique value in Python — it's the sole instance of its own type, <code>NoneType</code>, and it exists specifically to represent 'no meaningful value here', as distinct from an empty string, a zero, or an empty list, each of which still represents a real, present value that simply happens to be empty or zero."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "none_type_demo.py",
+          "lines": [
+            "result = None",
+            "print(type(result))  # <class 'NoneType'>",
+            "",
+            "def find_discount(code):",
+            "    discounts = {\"SAVE10\": 10, \"SAVE20\": 20}",
+            "    return discounts.get(code)  # returns None automatically if the code isn't found",
+            "",
+            "print(find_discount(\"SAVE10\"))   # 10",
+            "print(find_discount(\"INVALID\"))  # None"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "You'll run into <code>None</code> constantly, whether you go looking for it or not — it's what a function returns automatically if it doesn't hit an explicit <code>return</code> statement, it's what many dictionary and search methods return when a lookup fails to find a match, and it's a natural, sensible default value for a function parameter that's genuinely optional."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "mutable-vs-immutable",
+      "title": "Mutable vs Immutable — The Distinction That Ties Everything Together",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "By this point in the guide, one property keeps resurfacing across almost every type discussed: whether a value can be changed in place after it's created, or whether every 'change' actually produces an entirely new object. This distinction — <strong>mutability</strong> — is arguably the single most important organising idea across Python's built-in data types, and it's worth summarising clearly in one place rather than leaving it scattered."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Type", "Mutable?", "Can Be a Dict Key / Set Element?"],
+          "rows": [
+            ["int, float, complex", "No", "Yes"],
+            ["str", "No", "Yes"],
+            ["bool", "No", "Yes"],
+            ["tuple", "No (but can hold mutable items inside it)", "Yes, if all its contents are also hashable"],
+            ["list", "Yes", "No"],
+            ["dict", "Yes", "No"],
+            ["set", "Yes", "No"],
+            ["frozenset", "No", "Yes"],
+            ["None", "N/A — a single, unique value", "Yes"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This table is genuinely worth returning to whenever you're unsure why a particular piece of code raised an error, especially anything involving <code>TypeError: unhashable type</code>, which almost always traces directly back to trying to use a mutable type somewhere Python specifically requires an immutable, hashable one."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It's worth noting one subtlety that trips people up: a tuple is technically immutable itself, but if it contains a mutable object — a list, say — that inner list can still be modified, even though the tuple's own structure (which items it holds, and in what order) can't be. Because of this, a tuple containing a list is not actually hashable, and can't be used as a dictionary key or set element, even though tuples generally can be."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "tuple_with_mutable_content.py",
+          "lines": [
+            "mixed_tuple = (1, 2, [3, 4])",
+            "mixed_tuple[2].append(5)   # this works fine -- the inner list is still mutable",
+            "print(mixed_tuple)          # (1, 2, [3, 4, 5])",
+            "",
+            "# mixed_tuple[0] = 99       # this still fails -- the tuple's own structure is fixed",
+            "",
+            "# hash(mixed_tuple)         # TypeError: unhashable type: 'list'",
+            "# because one of its elements is itself unhashable"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "type-conversion",
+      "title": "Type Conversion — Moving Between Types Deliberately",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Because Python is dynamically but strongly typed, it won't silently guess how to combine incompatible types on your behalf — but it does provide clear, explicit functions for converting a value from one type to another whenever that's genuinely what you want. This is usually called <strong>type conversion</strong> or <strong>type casting</strong>, and it's an everyday, routine part of working with Python, not an advanced or unusual technique."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "explicit_type_conversion.py",
+          "lines": [
+            "age_text = \"25\"",
+            "age_number = int(age_text)",
+            "print(age_number + 5)  # 30",
+            "",
+            "price = 149",
+            "price_text = str(price)",
+            "print(\"Price: \" + price_text)  # Price: 149",
+            "",
+            "print(float(\"3.14\"))   # 3.14",
+            "print(int(3.99))       # 3 -- truncates the decimal, does not round",
+            "print(bool(0))         # False",
+            "print(bool(\"no\"))      # True -- any non-empty string is truthy, regardless of its content"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "That last line is worth pausing on specifically, since it catches out a genuine number of beginners: <code>bool(\"no\")</code> evaluates to <code>True</code>, not <code>False</code>, even though the literal text says 'no'. Python's <code>bool()</code> conversion has no understanding of English words at all — it purely checks whether the string is empty or not, and since <code>\"no\"</code> is a non-empty string, it counts as truthy, regardless of what the text actually says."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Converting between collection types is just as common, especially the conversions already touched on earlier in this guide — turning a list into a set to remove duplicates, or turning a dictionary's keys or values into a list to work with them positionally."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "collection_conversion.py",
+          "lines": [
+            "letters_list = [\"a\", \"b\", \"a\", \"c\"]",
+            "letters_set = set(letters_list)      # list -> set",
+            "letters_tuple = tuple(letters_list)  # list -> tuple",
+            "",
+            "scores = {\"a\": 90, \"b\": 85}",
+            "keys_list = list(scores.keys())      # dict keys -> list",
+            "values_list = list(scores.values())  # dict values -> list",
+            "",
+            "print(letters_set, letters_tuple, keys_list, values_list)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "One conversion that regularly trips people up is trying to convert a string that isn't actually a valid number, which raises a <code>ValueError</code> rather than silently returning something like zero or <code>None</code>. This is entirely consistent with Python's strong typing philosophy — the language would rather fail loudly and immediately than guess at what you probably meant."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "conversion_error.py",
+          "lines": [
+            "user_input = \"twenty\"",
+            "# age = int(user_input)  # ValueError: invalid literal for int() with base 10: 'twenty'",
+            "",
+            "# Handling this safely in real code:",
+            "try:",
+            "    age = int(user_input)",
+            "except ValueError:",
+            "    print(\"That doesn't look like a valid number.\")"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "choosing-the-right-type",
+      "title": "Choosing the Right Data Type — A Practical Decision Guide",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Knowing what each type is capable of is only half the picture — the more practically useful skill is developing a quick sense of which type actually fits a given problem. This is a judgment call experienced Python developers make almost automatically, but it's worth spelling out explicitly for anyone still building that instinct."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Need an ordered collection you'll add to, remove from, or rearrange?", "text": " Reach for a list." },
+            { "strong": "Need a fixed grouping of values that shouldn't change once created, like a coordinate pair or an RGB colour?", "text": " Reach for a tuple." },
+            { "strong": "Need to check membership quickly, or guarantee every item is unique?", "text": " Reach for a set." },
+            { "strong": "Need to look values up by a meaningful name rather than a numeric position?", "text": " Reach for a dictionary." },
+            { "strong": "Working with text of any kind — a name, a sentence, a file path?", "text": " That's a string, almost by definition." },
+            { "strong": "Need a value that's naturally on/off, yes/no, or a condition's outcome?", "text": " Use a boolean." },
+            { "strong": "Need to represent 'nothing here yet' or 'no match found', distinct from zero or an empty collection?", "text": " Use None." }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A genuinely common beginner mistake is reaching for a list purely out of habit, even in situations where a set or a dictionary would represent the actual problem far more naturally. If you find yourself writing code that repeatedly loops through a list just to check whether something is already inside it, that's usually a strong signal a set would fit the job better and run considerably faster, since checking membership in a set is far quicker than scanning through a list item by item."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "sequence-vs-mapping-vs-set",
+      "title": "Sequences, Mappings, and Sets — The Bigger Picture",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Zooming out slightly, Python's collection types can be grouped into three broader families, and understanding which family a type belongs to explains a lot about how it behaves generally, beyond just the specific type itself."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Family", "Defining Trait", "Members", "Access Style"],
+          "rows": [
+            ["Sequences", "Ordered, accessed by numeric position", "str, list, tuple, range", "Indexing and slicing, e.g. my_seq[0], my_seq[1:3]"],
+            ["Mappings", "Accessed by an arbitrary, meaningful key", "dict", "Key lookup, e.g. my_dict[\"key\"]"],
+            ["Sets", "Unordered, guarantees uniqueness", "set, frozenset", "Membership checks and set algebra, e.g. item in my_set"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This grouping is exactly why the same slicing syntax works identically on strings, lists, and tuples — they're all sequences, so Python applies the same consistent access rules to each of them, rather than inventing a separate syntax for every individual type. Once this pattern clicks, learning any new sequence-like type in Python (and there are several more in the standard library beyond the built-in basics) becomes considerably faster, since you already know roughly what to expect from it."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "performance-implications",
+      "title": "Does the Data Type You Choose Actually Affect Performance?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Yes, often more noticeably than beginners expect, and it's worth understanding why in practical terms rather than treating it as an abstract computer-science concern. The clearest example is checking whether a value exists inside a collection. Doing this against a list requires Python to potentially examine every single item, one after another, until it either finds a match or reaches the end — the more items in the list, the longer this can take. Doing the exact same check against a set or a dictionary's keys is, by contrast, close to instantaneous regardless of how large the collection grows, because both rely on a hashing mechanism that jumps almost directly to where a matching item would be, rather than scanning through everything."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "membership_check_comparison.py",
+          "lines": [
+            "import time",
+            "",
+            "big_list = list(range(1_000_000))",
+            "big_set = set(big_list)",
+            "",
+            "start = time.time()",
+            "999_999 in big_list  # has to scan through the list",
+            "print(\"List check:\", time.time() - start)",
+            "",
+            "start = time.time()",
+            "999_999 in big_set   # jumps almost straight there",
+            "print(\"Set check:\", time.time() - start)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Running something like this on your own machine typically shows the set-based check completing many times faster than the list-based one, and the gap only widens as the collection grows larger. This is exactly why a common piece of practical advice for working Python developers is: if your code repeatedly checks whether something is 'in' a collection, and that collection doesn't need to preserve duplicates or a specific order, converting it to a set is often the single easiest performance improvement available, requiring barely any change to the surrounding logic."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "None of this means you should obsess over performance from the very first line of code you write — for small collections, the difference is genuinely too small to notice or care about, and readability should usually win by default. But it's worth having this trade-off in the back of your mind once your programs start working with larger amounts of data, since choosing the right built-in type for the job is very often a simpler, more maintainable win than reaching for a specialised optimisation technique later."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes-datatypes",
+      "title": "Common Mistakes Involving Data Types",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A handful of type-related mistakes come up often enough among beginners — and honestly, sometimes among experienced developers too, on an off day — that they're worth flagging directly."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Assuming division always returns an int", "text": " — in Python 3, the ordinary / operator always returns a float, even when dividing two whole numbers evenly. Use // specifically when an int result is genuinely required." },
+            { "strong": "Comparing floats for exact equality", "text": " — due to how floating-point numbers are stored in binary, a calculation like 0.1 + 0.2 == 0.3 evaluates to False. Comparing floats within a small tolerance, or rounding first, avoids this trap." },
+            { "strong": "Trying to modify a string or tuple in place", "text": " — both are immutable, so any attempt to change an individual element directly raises a TypeError; a new object must be created instead." },
+            { "strong": "Using a mutable type like a list as a dictionary key", "text": " — this raises TypeError: unhashable type immediately, since dictionary keys must be hashable, and lists never are." },
+            { "strong": "Assuming a set preserves the order items were added in", "text": " — sets have no guaranteed order at all; if order matters, a list or, more recently, an ordinary dictionary (used just for its keys) is the appropriate choice instead." },
+            { "strong": "Forgetting the trailing comma when writing a single-item tuple", "text": " — (5) is simply the integer 5 in parentheses, not a tuple; the correct syntax is (5,)." },
+            { "strong": "Assuming bool() understands the meaning of a string's text", "text": " — bool(\"False\") evaluates to True, since it's checking only whether the string is empty, not interpreting its content." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "checking-types-safely",
+      "title": "Checking Types Correctly in Real Code",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Once you start writing functions meant to handle input from other parts of a program — or from an actual user — it becomes useful to check a value's type deliberately, rather than assuming it's always what you expect. Python offers two main tools for this, and the difference between them matters in practice."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "isinstance_vs_type.py",
+          "lines": [
+            "class Animal:",
+            "    pass",
+            "",
+            "class Dog(Animal):",
+            "    pass",
+            "",
+            "my_pet = Dog()",
+            "",
+            "print(type(my_pet) == Dog)          # True",
+            "print(type(my_pet) == Animal)       # False -- type() checks the EXACT class only",
+            "print(isinstance(my_pet, Animal))   # True -- isinstance() also recognises inheritance",
+            "print(isinstance(my_pet, Dog))      # True"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In practice, <code>isinstance()</code> is almost always the better tool for genuine type checks inside real program logic, precisely because it correctly accounts for inheritance — a <code>Dog</code> genuinely is an <code>Animal</code> in any reasonable sense, and code that only checks with <code>type()</code> would incorrectly treat it as something else entirely. <code>isinstance()</code> also conveniently accepts a tuple of types, letting you check against several acceptable types in a single call."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "isinstance_multiple_types.py",
+          "lines": [
+            "def describe_number(value):",
+            "    if isinstance(value, (int, float)):",
+            "        print(f\"{value} is a number.\")",
+            "    else:",
+            "        print(f\"{value} is not a number.\")",
+            "",
+            "describe_number(7)      # 7 is a number.",
+            "describe_number(7.5)    # 7.5 is a number.",
+            "describe_number(\"7\")    # 7 is not a number."
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "datatypes-interview-questions",
+      "title": "Interview Questions on Python Data Types",
+      "blocks": [
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is the difference between a list and a tuple in Python?",
+              "a": "Both are ordered collections, but a list is mutable — its contents can be changed, added to, or removed after creation — while a tuple is immutable, meaning its contents are fixed once it's created. Lists use square brackets, tuples use parentheses.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. Why does Python allow arbitrarily large integers without any overflow?",
+              "a": "Unlike languages that store integers in a fixed number of bits, Python's int type automatically grows to accommodate however many digits a number needs, allocating additional memory behind the scenes as required, so there is no fixed upper limit on integer size.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q3. Why does 0.1 + 0.2 not exactly equal 0.3 in Python?",
+              "a": "Floats are stored using binary floating-point representation, which cannot always represent common base-10 decimal fractions with perfect precision. This produces tiny rounding errors, which is why the raw comparison 0.1 + 0.2 == 0.3 evaluates to False, even though it looks mathematically true.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q4. Can a list be used as a dictionary key? Why or why not?",
+              "a": "No. Dictionary keys must be hashable, and hashability generally requires immutability, since a value's hash needs to remain stable for as long as it's used as a key. Lists are mutable, so Python does not define a hash for them, and using one as a key raises a TypeError.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. What makes a set different from a list?",
+              "a": "A set automatically enforces uniqueness among its elements and does not preserve any particular order, while a list can contain duplicate values and reliably preserves the order items were added in. Sets also support fast membership checks and mathematical set operations like union and intersection.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q6. What type does None belong to, and what is it typically used to represent?",
+              "a": "None belongs to its own unique type, NoneType, and it is the sole instance of that type in a running Python program. It is used to represent the deliberate absence of a value, distinct from zero, an empty string, or an empty collection, all of which are still present, meaningful values.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. What is the difference between using type() and isinstance() to check an object's type?",
+              "a": "type() checks for an exact match against a specific class, ignoring inheritance entirely, while isinstance() also recognises subclasses, correctly identifying an object as belonging to a parent class if its actual class inherits from it. isinstance() is generally the preferred, more robust choice for type checks in real code.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q8. Since Python 3.7, do dictionaries preserve the order in which keys were inserted?",
+              "a": "Yes. As of Python 3.7, insertion order preservation in dictionaries became an official, guaranteed part of the language specification, rather than merely an incidental implementation detail as it had been in one earlier version. Iterating over a dictionary reliably returns keys in the order they were first added.",
+              "tag": "Frequently Asked"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "datatypes-practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What data type does each of the following belong to: 42, 42.0, \"42\", [42], (42,), {42}, {\"answer\": 42}, None, True?",
+              "a": "42 is an int. 42.0 is a float. \"42\" is a str. [42] is a list. (42,) is a tuple. {42} is a set. {\"answer\": 42} is a dict. None is NoneType. True is a bool.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Write code that converts the string \"3.14\" into a float and then rounds it to one decimal place.",
+              "a": "value = float(\"3.14\")\nrounded_value = round(value, 1)\nprint(rounded_value)  # 3.1",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Given the list [1, 2, 2, 3, 3, 3], write a single line of code to get a collection containing only the unique values.",
+              "a": "unique_values = set([1, 2, 2, 3, 3, 3])\nprint(unique_values)  # {1, 2, 3}",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. Explain why the following raises an error, and rewrite it correctly: my_tuple = (10)\\nmy_tuple[0] = 20",
+              "a": "The first issue is that (10) is just the integer 10 in parentheses, not a tuple, so it should be written as (10,) to actually create a one-item tuple. The second issue is that tuples are immutable regardless, so even (10,)[0] = 20 would raise a TypeError; the correct approach is to build a new tuple entirely, such as my_tuple = (20,).",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Write a dictionary representing a product with keys for name, price, and in_stock, then update the price and print the final dictionary.",
+              "a": "product = {\"name\": \"Notebook\", \"price\": 120, \"in_stock\": True}\nproduct[\"price\"] = 135\nprint(product)",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. What will print(bool(\"False\")) output, and why might this surprise someone new to Python?",
+              "a": "It prints True. bool() applied to a string only checks whether the string is empty or not — it has no understanding of the string's actual content, so even the text \"False\" counts as a non-empty, and therefore truthy, string.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. Explain why (1, 2, [3, 4]) is a valid tuple to create, but cannot be used as a dictionary key.",
+              "a": "The tuple itself is immutable in terms of its own structure — you cannot reassign which items it holds — but one of its elements is a list, which is mutable and therefore unhashable. Since a tuple's hash depends on the hash of everything inside it, a tuple containing any unhashable element is itself unhashable, and cannot be used as a dictionary key or set element.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. A function needs to accept either an int or a float as an argument and reject anything else. Write a check using isinstance() that accomplishes this correctly, including rejecting a bool (since bool is technically a subclass of int).",
+              "a": "def accept_number(value):\n    if isinstance(value, bool) or not isinstance(value, (int, float)):\n        raise TypeError(\"Expected an int or float, not a bool or other type.\")\n    return value\n\n# The bool check must come first, since isinstance(True, int) would otherwise incorrectly pass.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "datatypes-conclusion",
+      "title": "Conclusion — Data Types as a Vocabulary, Not Just Rules",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It's tempting to treat data types as a dry list of syntax to memorise — square brackets for this, curly braces for that — but the more useful way to think about them is as a vocabulary for describing the actual shape of the problem you're solving. A list says 'order matters, and this collection can change.' A tuple says 'this grouping is fixed and complete.' A set says 'I only care about uniqueness and membership.' A dictionary says 'I need to look things up by name, not position.' Choosing the type that actually matches your intent, rather than whichever one happens to feel familiar, tends to produce code that's not just correct, but genuinely easier to read and reason about later."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The mutability distinction covered throughout this guide is worth holding onto especially closely, since it resurfaces constantly once you move on to functions, default arguments, and later, object-oriented programming. Get comfortable checking a value's type with <code>type()</code> or <code>isinstance()</code> whenever something behaves unexpectedly, and treat that instinct as a normal, everyday debugging habit rather than a sign that something's gone wrong with your understanding of the language."
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "How many built-in data types does Python actually have?",
+        "a": "There isn't one single official count, since 'data type' can be defined more or less broadly, but the core built-in types most beginners need to know are int, float, complex, str, bool, list, tuple, set, frozenset, dict, and NoneType. Python's standard library and third-party packages add many more specialised types on top of these."
+      },
+      {
+        "q": "Is a string a sequence type, like a list?",
+        "a": "Yes. A string is an ordered sequence of characters, and it supports the same indexing and slicing syntax as lists and tuples. The key difference is that a string is immutable, so individual characters cannot be changed in place the way list elements can."
+      },
+      {
+        "q": "Why does Python have both lists and tuples if they look so similar?",
+        "a": "They serve different intentions. A list signals that a collection is expected to change over time — items added, removed, or reordered. A tuple signals a fixed, complete grouping of values that shouldn't change, and it also comes with the practical benefit of being usable as a dictionary key or set element, which a list can never be."
+      },
+      {
+        "q": "What happens if I try to add an integer and a string directly, like 5 + \"5\"?",
+        "a": "Python raises a TypeError, since it does not automatically convert between fundamentally different types during arithmetic. You need to explicitly convert one side using a function like str() or int() first, so the operation involves two values of a compatible, matching type."
+      },
+      {
+        "q": "Are dictionaries in Python ordered or unordered?",
+        "a": "As of Python 3.7, dictionaries officially preserve the order in which keys were inserted, and this is a guaranteed part of the language specification rather than an implementation detail that might change. Iterating over a dictionary's keys, values, or items reliably returns them in insertion order."
+      },
+      {
+        "q": "What's the practical difference between None, False, 0, and an empty string?",
+        "a": "All four are considered falsy in a boolean context, meaning they behave like False inside conditions such as an if statement. But they represent genuinely different things: None represents the deliberate absence of any value, False represents an actual boolean outcome, 0 represents a real numeric value that happens to be zero, and an empty string represents a real piece of text that simply has no characters in it."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Variables", "path": "/python/python-variables" },
+    "next": { "label": "Next: Python Type Casting →", "path": "/python/python-type-casting" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Numeric types", "dd": "int, float, complex" },
+      { "dt": "Text type", "dd": "str (immutable)" },
+      { "dt": "Ordered mutable collection", "dd": "list" },
+      { "dt": "Ordered immutable collection", "dd": "tuple" },
+      { "dt": "Unique, unordered collection", "dd": "set" },
+      { "dt": "Key-value mapping", "dd": "dict (insertion-ordered since 3.7)" },
+      { "dt": "Boolean values", "dd": "True, False (subtype of int)" },
+      { "dt": "Absence of a value", "dd": "None (type NoneType)" }
+    ],
+    "relatedArticles": [
+      { "label": "Python Introduction", "path": "/python/python-introduction" },
+      { "label": "Python Variables", "path": "/python/python-variables" },
+      { "label": "Python Operators", "path": "/python/python-operators" },
+      { "label": "Python Strings", "path": "/python/python-strings" },
+      { "label": "Python Lists", "path": "/python/python-lists" },
+      { "label": "Python Dictionaries", "path": "/python/python-dictionaries" },
+      { "label": "Python Functions", "path": "/python/python-functions" },
+      { "label": "Python OOP", "path": "/python/python-oop" }
+    ],
+    "tags": ["Data Types","int","float","str","bool","list","tuple","set","dict","None","Mutability","Type Conversion","Type Casting","isinstance","Sequences"]
+  }
+}

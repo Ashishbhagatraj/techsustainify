@@ -48,6 +48,7 @@ import java_java_lambda from '../data/java/java-lambda.json';
 import java_java_linkedlist from '../data/java/java-linkedlist.json';
 import java_java_map from '../data/java/java-map.json';
 import java_java_math from '../data/java/java-math.json';
+import java_java_mcq from '../data/java/java-mcq.json';
 import java_java_method_overloading from '../data/java/java-method-overloading.json';
 import java_java_method_overriding from '../data/java/java-method-overriding.json';
 import java_java_methods from '../data/java/java-methods.json';
@@ -56,7 +57,6 @@ import java_java_null_pointers from '../data/java/java-null-pointers.json';
 import java_java_number_system from '../data/java/java-number-system.json';
 import java_java_oops from '../data/java/java-oops.json';
 import java_java_operators from '../data/java/java-operators.json';
-import java_java_overriding from '../data/java/java-overriding.json';
 import java_java_packages_api from '../data/java/java-packages-api.json';
 import java_java_polymorphism from '../data/java/java-polymorphism.json';
 import java_java_recursion from '../data/java/java-recursion.json';
@@ -81,9 +81,16 @@ import javascript_javascript_home from '../data/javascript/javascript-home.json'
 import kotlin_kotlin_home from '../data/kotlin/kotlin-home.json';
 import mongodb_mongodb_home from '../data/mongodb/mongodb-home.json';
 import node_node_home from '../data/node/node-home.json';
+import python_python_comments from '../data/python/python-comments.json';
+import python_python_data_types from '../data/python/python-data-types.json';
 import python_python_home from '../data/python/python-home.json';
 import python_python_installation from '../data/python/python-installation.json';
 import python_python_intro from '../data/python/python-intro.json';
+import python_python_operators from '../data/python/python-operators.json';
+import python_python_syntax from '../data/python/python-syntax.json';
+import python_python_type_casting from '../data/python/python-type-casting.json';
+import python_python_user_input from '../data/python/python-user-input.json';
+import python_python_variables from '../data/python/python-variables.json';
 import react_react_home from '../data/react/react-home.json';
 import ruby_ruby_home from '../data/ruby/ruby-home.json';
 import rust_rust_home from '../data/rust/rust-home.json';
@@ -140,6 +147,7 @@ export const allTopicData: Record<string, any> = {
   "java/java-linkedlist": java_java_linkedlist,
   "java/java-map": java_java_map,
   "java/java-math": java_java_math,
+  "java/java-mcq": java_java_mcq,
   "java/java-method-overloading": java_java_method_overloading,
   "java/java-method-overriding": java_java_method_overriding,
   "java/java-methods": java_java_methods,
@@ -148,7 +156,6 @@ export const allTopicData: Record<string, any> = {
   "java/java-number-system": java_java_number_system,
   "java/java-oops": java_java_oops,
   "java/java-operators": java_java_operators,
-  "java/java-overriding": java_java_overriding,
   "java/java-packages-api": java_java_packages_api,
   "java/java-polymorphism": java_java_polymorphism,
   "java/java-recursion": java_java_recursion,
@@ -173,9 +180,16 @@ export const allTopicData: Record<string, any> = {
   "kotlin/kotlin-home": kotlin_kotlin_home,
   "mongodb/mongodb-home": mongodb_mongodb_home,
   "node/node-home": node_node_home,
+  "python/python-comments": python_python_comments,
+  "python/python-data-types": python_python_data_types,
   "python/python-home": python_python_home,
   "python/python-installation": python_python_installation,
   "python/python-intro": python_python_intro,
+  "python/python-operators": python_python_operators,
+  "python/python-syntax": python_python_syntax,
+  "python/python-type-casting": python_python_type_casting,
+  "python/python-user-input": python_python_user_input,
+  "python/python-variables": python_python_variables,
   "react/react-home": react_react_home,
   "ruby/ruby-home": ruby_ruby_home,
   "rust/rust-home": rust_rust_home,

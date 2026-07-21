@@ -114,12 +114,12 @@ export const javaTopicsData = [
       // { label: "Java Patterns",      path: "/java/java-patterns" },
     ],
   },
-  // {
-  //   heading: "Java MCQ",
-  //   topics: [
-  //     { label: "Java MCQ", path: "/java/java-mcq" },
-  //   ],
-  // },
+  {
+    heading: "Java MCQ",
+    topics: [
+      { label: "Java MCQ", path: "/java/java-mcq" },
+    ],
+  },
   {
     heading: "Java Interview Question",
     topics: [

@@ -1,0 +1,1092 @@
+{
+  "meta": {
+    "title": "Python Variables | The Complete Guide to Declaring, Naming & Using Variables 2026 | Tech Sustainify",
+    "description": "A complete guide to Python variables — how to create them, naming rules and conventions, dynamic typing, multiple assignment, variable scope, constants, type hints, and common mistakes to avoid.",
+    "keywords": "python variables, python variable declaration, python variable naming rules, python multiple assignment, python variable scope, local vs global variables python, python constants, python type hints, python dynamic typing, python identifiers, python variable best practices, python assignment operator, python nonlocal keyword, python global keyword",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-variables",
+    "ogTitle": "Python Variables — The Complete Guide 2026 | Tech Sustainify",
+    "ogDescription": "Everything about creating, naming, and working with variables in Python — dynamic typing, scope, constants, type hints, and the mistakes that trip up beginners.",
+    "ogUrl": "https://techsustainify.com/python/python-variables",
+    "ogImage": "https://techsustainify.com/images/python-variables-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "39 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-01-08",
+    "schemaDateModified": "2026-04-05",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 8060
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/pythonhome" },
+    { "position": 3, "name": "Python Variables" }
+  ],
+
+  "articleHeader": {
+    "badge": "🧮 Variables",
+    "title": "Python Variables — The Complete Guide",
+    "subtitle": "How Python actually stores your data behind the scenes, the rules and conventions for naming things well, and the scope rules that decide where a variable is visible and where it isn't."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-04-05", "value": "April 2026" },
+    { "icon": "⏱️", "label": "Read Time", "value": "39 min" },
+    { "icon": "🎯", "label": "Level", "value": "Beginner" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-a-variable",
+      "title": "What Is a Variable in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>variable</strong> is a name that refers to a value stored in your computer's memory, so that value can be used, changed, or referenced again later in your program without having to retype it every time. Instead of writing the number <code>29</code> repeatedly throughout a program, you can store it once under a name like <code>temperature</code>, and from that point on the program can simply refer to <code>temperature</code> wherever that value is needed."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In Python, creating a variable is done through <strong>assignment</strong>, using the single equals sign <code>=</code>. This is one of the very first pieces of syntax most beginners encounter, and it looks deceptively simple, but it's worth understanding precisely what happens underneath it, because that understanding avoids a whole category of confusion later on."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "first_variable.py",
+          "lines": [
+            "temperature = 29",
+            "city = \"Patna\"",
+            "is_raining = False",
+            "",
+            "print(city, \"is\", temperature, \"degrees today.\")",
+            "print(\"Raining:\", is_raining)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Unlike many other languages, Python doesn't require you to state in advance what type of value a variable will hold. There's no separate keyword like <code>int</code>, <code>string</code>, or <code>var</code> needed before the name — you simply write the name, an equals sign, and the value, and Python takes care of the rest. This absence of an explicit declaration step is one of the clearest, earliest signs of Python's broader design philosophy: reduce ceremony wherever it doesn't add genuine value."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It's worth being precise about the terminology here, because Python's own documentation is precise about it too. A variable in Python is more accurately described as a <strong>name bound to an object</strong>, rather than a labelled box that directly contains a value the way it's often taught in introductory courses for other languages. That distinction sounds subtle right now, but it becomes genuinely important once you start working with mutable data like lists, so it's worth carrying forward rather than dismissing as a technicality."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "names-not-boxes",
+      "title": "Names, Not Boxes — How Python Actually Stores Variables",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Many beginner resources describe a variable as a labelled box that holds a value, and while that mental model is a reasonable starting point, it doesn't quite match how Python works internally, and the gap matters once your programs grow beyond the simplest examples. In Python, every value you create — a number, a string, a list, anything — exists in memory as an <strong>object</strong>. A variable name isn't a box containing that object; it's more like a label or a sticky note pointing at that object. Assignment doesn't copy a value into a box — it attaches a name to an already-existing object."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "names_point_to_objects.py",
+          "lines": [
+            "a = [1, 2, 3]",
+            "b = a  # b now points to the SAME list object as a, not a copy of it",
+            "",
+            "b.append(4)",
+            "",
+            "print(a)  # [1, 2, 3, 4]  -- changing b also changed what a sees",
+            "print(b)  # [1, 2, 3, 4]",
+            "print(a is b)  # True -- both names refer to the identical object in memory"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This example often genuinely surprises beginners the first time they encounter it, precisely because the 'box' mental model would predict that changing <code>b</code> shouldn't affect <code>a</code> at all. But since both names are simply two separate labels pointing at the exact same list object in memory, a change made through either name is visible through the other, because there was only ever one object to begin with."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Compare that with a similar-looking example using an immutable type like an integer, and the behaviour looks different on the surface, even though the underlying rule — names point to objects — never actually changes."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "immutable_reassignment.py",
+          "lines": [
+            "x = 10",
+            "y = x  # y points to the same integer object 10 that x points to",
+            "",
+            "y = y + 5  # this does NOT modify the object 10; it creates a brand new object, 15,",
+            "           # and rebinds the name y to point at that new object instead",
+            "",
+            "print(x)  # 10 -- x still points at the original object",
+            "print(y)  # 15 -- y now points at a different object entirely"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The difference between these two examples has nothing to do with variables behaving inconsistently — it comes down entirely to whether the underlying object itself is <strong>mutable</strong> (changeable in place, like a list) or <strong>immutable</strong> (unchangeable once created, like an integer or a string). Modifying a mutable object in place, as with <code>append()</code> above, is visible through every name pointing at that same object. Reassigning a name to a new value, as with <code>y = y + 5</code>, never modifies anything — it simply points that one name at a newly created object, leaving any other name (like <code>x</code>) untouched. This single idea — that assignment binds names to objects rather than copying values into boxes — quietly explains a large share of the 'unexpected' behaviour beginners run into with variables, especially once function arguments and lists enter the picture."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "dynamic-typing",
+      "title": "Dynamic Typing — Python Variables Don't Have a Fixed Type",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python is <strong>dynamically typed</strong>, which means a variable name is never permanently locked to a single data type. The same name can be reassigned to point at an integer at one moment, and a completely different type — a string, a list, even a function — moments later, without Python raising any complaint."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "dynamic_typing_demo.py",
+          "lines": [
+            "value = 42",
+            "print(type(value))  # <class 'int'>",
+            "",
+            "value = \"forty-two\"",
+            "print(type(value))  # <class 'str'>",
+            "",
+            "value = [4, 2]",
+            "print(type(value))  # <class 'list'>"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It's the <em>name</em> that's flexible here, not the object itself — each of those reassignments creates a completely separate object of the new type and simply points the name <code>value</code> at whichever object is current. Nothing about the earlier integer object <code>42</code> or the string object <code>\"forty-two\"</code> changes retroactively; they simply stop being referenced by that particular name once it's reassigned, and Python's garbage collector eventually reclaims the memory they occupied if nothing else is still pointing at them."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is in direct contrast to <strong>statically typed</strong> languages such as Java or C++, where a variable's type is fixed permanently at the moment it's declared, and attempting to later assign a value of a different, incompatible type to that same variable produces a compile-time error rather than being silently allowed. Dynamic typing is a large part of why Python code tends to look shorter and feel faster to write — there's no type declaration overhead at all — but it does shift a certain category of type-related bugs from being caught immediately during compilation to potentially surfacing only later, when the program is actually run with a particular set of inputs."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It's worth being precise about a related but distinct concept here too: Python is dynamically typed, but it is also <strong>strongly typed</strong>. Strong typing means Python won't silently and automatically convert between fundamentally incompatible types behind your back the way some dynamically typed languages do — attempting to add a string directly to an integer, for instance, raises a clear error rather than quietly producing an unexpected result."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "strong_typing_demo.py",
+          "lines": [
+            "age = 25",
+            "message = \"I am \" + age + \" years old\"",
+            "# TypeError: can only concatenate str (not \"int\") to str",
+            "",
+            "# The correct, explicit approach:",
+            "message = \"I am \" + str(age) + \" years old\"",
+            "print(message)  # I am 25 years old"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "naming-rules",
+      "title": "Variable Naming Rules — What Python Requires",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python enforces a specific, strict set of rules for what counts as a valid variable name, formally called an <strong>identifier</strong>. Breaking any of these rules produces an actual <code>SyntaxError</code> — these aren't stylistic suggestions, they're requirements the interpreter checks before your code can even run."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Must start with a letter or an underscore", "text": " — a variable name cannot begin with a digit. names1 is valid, but 1name is not." },
+            { "strong": "The remaining characters can be letters, digits, or underscores", "text": " — after the first character, digits are allowed anywhere in the name, e.g. price_2026 is a valid identifier." },
+            { "strong": "No spaces or special symbols", "text": " — characters like spaces, hyphens, or punctuation marks (other than the underscore) are not permitted anywhere in a variable name." },
+            { "strong": "Case-sensitive", "text": " — Python treats age, Age, and AGE as three entirely distinct, unrelated names, since capitalisation is significant." },
+            { "strong": "Cannot be a reserved keyword", "text": " — words that already have a special meaning in the language, such as if, for, class, or return, cannot be used as variable names." }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "valid_and_invalid_names.py",
+          "lines": [
+            "# Valid identifiers",
+            "user_name = \"Rahul\"",
+            "_temp = 98.6",
+            "score2 = 85",
+            "TotalAmount = 4599",
+            "",
+            "# Invalid identifiers -- each of these raises a SyntaxError",
+            "# 2score = 85          -> cannot start with a digit",
+            "# user-name = \"Rahul\"  -> hyphens are not allowed",
+            "# class = \"Physics\"    -> 'class' is a reserved keyword",
+            "# total amount = 500   -> spaces are not allowed"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The full list of reserved keywords that can never be used as a variable name can always be checked directly from within Python itself, by importing the built-in <code>keyword</code> module — a small but genuinely useful trick for confirming whether a particular word you had in mind is actually safe to use."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "list_all_keywords.py",
+          "lines": [
+            "import keyword",
+            "print(keyword.kwlist)",
+            "# ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await',",
+            "#  'break', 'class', 'continue', 'def', 'del', 'elif', 'else', ...]",
+            "",
+            "print(keyword.iskeyword(\"class\"))  # True",
+            "print(keyword.iskeyword(\"class_\"))  # False -- adding an underscore sidesteps the conflict"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "naming-conventions",
+      "title": "Naming Conventions — Writing Names Python Developers Expect",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Beyond the strict rules Python enforces, there's a separate layer of widely followed <strong>conventions</strong> — not enforced by the interpreter, but strongly expected by the community and formalised in PEP 8, Python's official style guide. Following these conventions isn't optional in any practical sense once you're writing code others will read, since deviating from them makes code noticeably harder for experienced Python developers to skim quickly."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Element", "Convention", "Example"],
+          "rows": [
+            ["Ordinary variables", "snake_case — all lowercase, words separated by underscores", "total_price, user_email, is_active"],
+            ["Constants", "UPPER_SNAKE_CASE — all uppercase, words separated by underscores", "MAX_CONNECTIONS, PI, DEFAULT_TIMEOUT"],
+            ["Class names", "PascalCase — each word capitalised, no underscores", "ShoppingCart, UserProfile"],
+            ["'Private' internal names", "A single leading underscore, by convention", "_internal_cache, _helper_value"],
+            ["Names to avoid clashing with keywords", "A single trailing underscore", "class_, type_, id_"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Beyond formatting, choosing genuinely descriptive names matters just as much as following the correct casing style. A variable named <code>d</code> tells a reader nothing about its purpose, while a variable named <code>days_since_last_login</code> makes the surrounding code far easier to understand at a glance, without needing a comment to explain it. This is directly connected to the idea of self-documenting code — a well-chosen variable name does a meaningful share of the explanatory work a comment would otherwise have to do."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "naming_quality_comparison.py",
+          "lines": [
+            "# Poor: short, cryptic names that hide the actual meaning",
+            "n = 3",
+            "p = 499",
+            "t = n * p",
+            "",
+            "# Better: descriptive names that make the logic self-explanatory",
+            "quantity = 3",
+            "unit_price = 499",
+            "total_cost = quantity * unit_price"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A few smaller conventions round this out. Boolean variables are typically named to read naturally in a condition — <code>is_valid</code>, <code>has_permission</code>, <code>can_edit</code> — so that an <code>if</code> statement reads almost like a plain English sentence. Names representing collections are usually plural — <code>orders</code>, <code>usernames</code> — to visually distinguish them from a variable holding a single item, such as <code>order</code> or <code>username</code>."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "assignment-styles",
+      "title": "Assignment Styles — Single, Multiple, and Chained",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Beyond the ordinary single-variable assignment shown earlier, Python supports several additional assignment styles that make certain common patterns noticeably shorter and clearer to write."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "multiple_assignment.py",
+          "lines": [
+            "# Assigning different values to multiple variables in a single line",
+            "name, age, city = \"Meera\", 27, \"Lucknow\"",
+            "",
+            "print(name)  # Meera",
+            "print(age)   # 27",
+            "print(city)  # Lucknow",
+            "",
+            "# The number of variables on the left must match the number of values on the right,",
+            "# otherwise Python raises a ValueError"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "chained_assignment.py",
+          "lines": [
+            "# Assigning the same value to several variables at once",
+            "x = y = z = 0",
+            "",
+            "print(x, y, z)  # 0 0 0",
+            "",
+            "# Each name is bound independently to the same object;",
+            "# reassigning one does not affect the others",
+            "x = 5",
+            "print(x, y, z)  # 5 0 0"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A particularly popular use of multiple assignment is the classic <strong>swap idiom</strong>, which lets you exchange the values held by two variables in a single line, without needing a separate temporary variable the way many other languages require."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "swap_variables.py",
+          "lines": [
+            "a = 10",
+            "b = 25",
+            "",
+            "a, b = b, a",
+            "",
+            "print(a)  # 25",
+            "print(b)  # 10"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python also supports <strong>unpacking</strong>, a closely related feature that lets you assign the individual elements of a list or tuple directly to separate variable names in one step, including a special <code>*</code> syntax for capturing 'everything else' into a single list."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "unpacking_demo.py",
+          "lines": [
+            "coordinates = (12.9, 77.6, \"Bengaluru\")",
+            "latitude, longitude, place = coordinates",
+            "",
+            "print(latitude, longitude, place)  # 12.9 77.6 Bengaluru",
+            "",
+            "scores = [88, 92, 79, 95, 60]",
+            "first, second, *rest = scores",
+            "",
+            "print(first)   # 88",
+            "print(second)  # 92",
+            "print(rest)    # [79, 95, 60]"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "augmented-assignment",
+      "title": "Augmented Assignment Operators",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A very common pattern in programming is updating a variable based on its own current value — adding to a running total, for instance. Python provides shorthand <strong>augmented assignment operators</strong> that combine an arithmetic operation and an assignment into a single, more compact expression."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "augmented_assignment.py",
+          "lines": [
+            "total = 100",
+            "",
+            "total += 20   # equivalent to: total = total + 20",
+            "print(total)  # 120",
+            "",
+            "total -= 30   # equivalent to: total = total - 30",
+            "print(total)  # 90",
+            "",
+            "total *= 2    # equivalent to: total = total * 2",
+            "print(total)  # 180",
+            "",
+            "total //= 4   # equivalent to: total = total // 4",
+            "print(total)  # 45"
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Operator", "Equivalent To", "Meaning"],
+          "rows": [
+            ["+=", "x = x + y", "Adds and reassigns"],
+            ["-=", "x = x - y", "Subtracts and reassigns"],
+            ["*=", "x = x * y", "Multiplies and reassigns"],
+            ["/=", "x = x / y", "Divides (true division) and reassigns"],
+            ["//=", "x = x // y", "Floor-divides and reassigns"],
+            ["%=", "x = x % y", "Applies the modulus and reassigns"],
+            ["**=", "x = x ** y", "Raises to a power and reassigns"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Beyond simply being shorter to type, augmented assignment carries a subtle but genuinely important behavioural difference for mutable types like lists: where possible, Python performs the operation <strong>in place</strong> on the existing object rather than creating a brand new one. For a list specifically, <code>my_list += [4]</code> extends the original list object directly, whereas <code>my_list = my_list + [4]</code> creates an entirely new list object and rebinds the name to it. In ordinary day-to-day code this distinction rarely matters, but it becomes relevant the moment other variables are also pointing at that same list, since only the in-place version is visible through those other names too."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "constants",
+      "title": "Constants in Python — A Convention, Not a Language Feature",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Many languages offer a dedicated keyword — <code>const</code> or <code>final</code>, for example — that genuinely prevents a variable from ever being reassigned once it's set. Python has no such built-in mechanism at the language level; technically, any variable in Python can always be reassigned at any point, no matter how it was originally intended to be used."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Instead, Python relies entirely on a <strong>naming convention</strong> to signal intent: a variable written in <code>UPPER_SNAKE_CASE</code> is understood by convention to be a constant — a value that is not meant to be changed after it's defined — even though Python itself does absolutely nothing to enforce that rule technically. It's purely a signal to other developers (and to your future self) reading the code."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "constants_convention.py",
+          "lines": [
+            "PI = 3.14159",
+            "MAX_LOGIN_ATTEMPTS = 5",
+            "DEFAULT_TIMEOUT_SECONDS = 30",
+            "",
+            "def calculate_circle_area(radius):",
+            "    return PI * radius ** 2",
+            "",
+            "# Nothing technically stops this next line from running,",
+            "# but doing it would violate the convention and confuse anyone reading the code:",
+            "# PI = 3.2"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "For situations where you genuinely need enforced immutability rather than just a naming signal, Python does offer some real tools, though they work differently from a simple <code>const</code> keyword. The <code>typing.Final</code> annotation, checked by static type-checking tools like mypy rather than at runtime, can flag an accidental reassignment before the code is even run. For grouping a fixed, related set of named constants together, Python's built-in <code>enum</code> module provides a proper, structured way to define a closed set of values, which is often a cleaner solution than a loose collection of separate uppercase variables."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "variable-scope",
+      "title": "Variable Scope — Where a Variable Is Actually Visible",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Scope</strong> refers to the region of a program where a particular variable name can be accessed. Not every variable is visible everywhere in a program — a name created inside a function, for instance, generally doesn't exist outside of it. Understanding scope is essential for avoiding a whole category of confusing bugs, especially the moment functions start appearing in your code."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "local_vs_global.py",
+          "lines": [
+            "message = \"Hello from the global scope\"  # a global variable",
+            "",
+            "def greet():",
+            "    local_message = \"Hello from inside the function\"  # a local variable",
+            "    print(local_message)",
+            "    print(message)  # functions CAN read global variables",
+            "",
+            "greet()",
+            "print(message)",
+            "",
+            "# print(local_message)  # NameError: local_message only exists inside greet()"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A variable created inside a function is called a <strong>local variable</strong>, and it only exists for as long as that function is running — it's created fresh each time the function is called, and it disappears entirely once the function finishes. A variable created outside of any function, at the top level of a script or module, is called a <strong>global variable</strong>, and it remains accessible from anywhere in that same file, including from inside functions, as the example above demonstrates by successfully printing <code>message</code> from inside <code>greet()</code>."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It's important to notice the asymmetry here: functions can freely <em>read</em> a global variable without any special syntax, but by default, they cannot <em>reassign</em> a global variable from inside the function — attempting to do so simply creates a brand new local variable with the same name instead, silently leaving the original global variable untouched."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "shadowing_pitfall.py",
+          "lines": [
+            "counter = 0",
+            "",
+            "def increment():",
+            "    counter = counter + 1  # UnboundLocalError!",
+            "    print(counter)",
+            "",
+            "increment()",
+            "",
+            "# Python sees the assignment 'counter = ...' anywhere inside the function",
+            "# and decides counter is local to that function for its ENTIRE body --",
+            "# which means the read on the right-hand side happens before any local",
+            "# value has been assigned yet, raising an error."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This particular error trips up a huge number of beginners the first time they encounter it, precisely because it looks like it should work exactly like the earlier example that successfully read <code>message</code>. The crucial difference is that the earlier example only <em>read</em> the global variable, while this one attempts to <em>reassign</em> it — and the mere presence of an assignment to that name anywhere inside the function is enough for Python to treat it as local throughout the entire function body, even on lines that come before the assignment."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "global-nonlocal-keywords",
+      "title": "The global and nonlocal Keywords",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When you genuinely do need to modify a global variable from inside a function, Python provides the explicit <code>global</code> keyword to state that intention clearly, rather than allowing it to happen silently or by accident."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "global_keyword.py",
+          "lines": [
+            "counter = 0",
+            "",
+            "def increment():",
+            "    global counter",
+            "    counter = counter + 1",
+            "",
+            "increment()",
+            "increment()",
+            "print(counter)  # 2 -- the global variable was genuinely updated"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "There's a closely related but less commonly used keyword, <code>nonlocal</code>, which addresses a similar situation specifically for <strong>nested functions</strong> — a function defined inside another function. It lets an inner function modify a variable that belongs to its immediately enclosing function's scope, rather than the true global scope."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "nonlocal_keyword.py",
+          "lines": [
+            "def make_counter():",
+            "    count = 0",
+            "",
+            "    def increment():",
+            "        nonlocal count",
+            "        count += 1",
+            "        return count",
+            "",
+            "    return increment",
+            "",
+            "counter = make_counter()",
+            "print(counter())  # 1",
+            "print(counter())  # 2",
+            "print(counter())  # 3"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Both <code>global</code> and <code>nonlocal</code> exist for the same underlying reason: by default, Python assumes an assignment inside a function creates a new local variable, purely as a safety measure to prevent functions from silently and accidentally overwriting variables that belong to a different, outer scope. These keywords are the deliberate, explicit way of opting out of that safety measure when it's genuinely needed, and using them sparingly — reaching for them only when truly necessary — is widely considered better practice than relying on global state throughout a program, since functions that freely modify variables outside themselves tend to become harder to reason about and test as a codebase grows."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "scope-resolution-legb",
+      "title": "The LEGB Rule — How Python Resolves a Variable's Scope",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When Python encounters a variable name being read anywhere in your code, it needs a consistent rule for deciding which specific variable — among potentially several with the same name in different scopes — it should actually use. This resolution order is commonly summarised by the acronym <strong>LEGB</strong>, standing for Local, Enclosing, Global, and Built-in, checked strictly in that order."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Scope", "What It Covers", "Example"],
+          "rows": [
+            ["Local (L)", "Names created inside the current function", "A variable defined directly inside the function currently running"],
+            ["Enclosing (E)", "Names in any enclosing function, for nested functions", "A variable from an outer function, accessed by an inner nested function"],
+            ["Global (G)", "Names defined at the top level of the current module/file", "A variable created outside any function, at the top of the script"],
+            ["Built-in (B)", "Names Python provides automatically, with no import needed", "Functions like print, len, or range, and types like list, str, int"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "legb_demo.py",
+          "lines": [
+            "# Global scope",
+            "value = \"global value\"",
+            "",
+            "def outer():",
+            "    # Enclosing scope (relative to inner())",
+            "    value = \"enclosing value\"",
+            "",
+            "    def inner():",
+            "        # Local scope",
+            "        value = \"local value\"",
+            "        print(value)  # local value -- Local wins first",
+            "",
+            "    inner()",
+            "    print(value)  # enclosing value",
+            "",
+            "outer()",
+            "print(value)  # global value",
+            "print(len)     # built-in function, found only because nothing local shadows it"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python checks these four scopes strictly in Local, then Enclosing, then Global, then Built-in order, stopping at the very first match it finds. This is exactly why defining a local variable with the same name as a global one — or, more subtly, the same name as a built-in function like <code>list</code> or <code>str</code> — silently 'hides' that outer name for the rest of the current scope, a phenomenon commonly called <strong>shadowing</strong>. Accidentally naming a variable <code>list</code> is a classic beginner trap for exactly this reason: it doesn't raise any error immediately, but it quietly makes the real, built-in <code>list</code> type inaccessible by that name for the remainder of that scope, which can produce a confusing error later on a completely different line."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "type-hints",
+      "title": "Type Hints — Optional, Tool-Checked Type Documentation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Even though Python is dynamically typed and doesn't require declaring a variable's type up front, modern Python supports an optional feature called <strong>type hints</strong>, introduced primarily through PEP 484. A type hint lets you annotate what type a variable is expected to hold, purely as extra information for humans and external tools — it has no effect on how the program actually runs, and Python's own interpreter does not enforce it at runtime."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "type_hints_demo.py",
+          "lines": [
+            "age: int = 25",
+            "name: str = \"Karan\"",
+            "price: float = 499.99",
+            "is_available: bool = True",
+            "",
+            "# Type hints are purely advisory at runtime -- Python will NOT stop this:",
+            "age = \"twenty-five\"  # runs without error, even though it contradicts the hint above",
+            "print(age)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The genuine value of type hints comes from external <strong>static type-checking tools</strong>, most notably <code>mypy</code>, which read these annotations and flag a mismatch — such as the reassignment shown above — as an error before the code is ever run, without needing to actually execute the program to catch the problem. Many modern code editors also use type hints to power more accurate autocomplete suggestions, since the editor can reliably tell what methods and attributes a given variable is expected to support."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Type hints are entirely optional, and an enormous amount of perfectly good Python code, especially in smaller scripts, doesn't use them at all. They tend to earn their keep specifically in larger codebases maintained by multiple people over a long period, where the extra clarity and tooling support meaningfully reduce a certain category of bugs that would otherwise only surface at runtime, sometimes long after the code was originally written."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "none-and-uninitialized",
+      "title": "None — Representing 'No Value Yet'",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python has no concept of a variable existing but being 'empty' or 'uninitialised' the way some languages do — a name in Python either currently points at some object, or it doesn't exist at all yet in that scope, in which case referencing it raises a <code>NameError</code>. What Python does provide is a special, singleton value called <code>None</code>, used specifically to represent the deliberate absence of a meaningful value."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "none_demo.py",
+          "lines": [
+            "middle_name = None  # deliberately indicates 'not provided', not simply forgotten",
+            "",
+            "def find_user(user_id):",
+            "    # imagine this searches a database and doesn't find a match",
+            "    return None",
+            "",
+            "result = find_user(999)",
+            "",
+            "if result is None:",
+            "    print(\"No user found with that ID.\")",
+            "else:",
+            "    print(\"Found:\", result)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Notice the comparison style used above: checking for <code>None</code> is conventionally done with <code>is None</code> rather than <code>== None</code>, and this isn't just a stylistic preference. Since <code>None</code> is a genuine singleton object — there is exactly one <code>None</code> in an entire running Python program — the identity check <code>is</code> is both the technically correct tool for the job and, in practice, marginally faster, since it doesn't need to invoke any custom equality comparison logic that a more unusual object might define."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "everything-is-an-object",
+      "title": "Everything Is an Object — Even Variables Themselves Reflect This",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "One of Python's more conceptually important design decisions is that genuinely everything is an object — not just the values you'd intuitively expect, like numbers, strings, and lists, but also functions, classes, and even modules. This uniformity has direct, practical consequences for how variables behave, and it's worth seeing concretely rather than only as an abstract claim."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "everything_is_an_object.py",
+          "lines": [
+            "def greet():",
+            "    print(\"Hello!\")",
+            "",
+            "# A function can be assigned to a variable, just like any other value",
+            "say_hello = greet",
+            "say_hello()  # Hello!",
+            "",
+            "print(type(42))       # <class 'int'>",
+            "print(type(\"hi\"))     # <class 'str'>",
+            "print(type(greet))    # <class 'function'>",
+            "print(type(print))    # <class 'builtin_function_or_method'>"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Because functions are objects just like numbers and strings, a variable can point at a function exactly the same way it points at any other value — there's no special, separate syntax needed. This is precisely what makes it possible to pass a function as an argument to another function, or store a collection of functions inside a list, patterns that show up constantly in idiomatic Python code, particularly once you move into more functional-style programming or working with callbacks."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "identity-vs-equality",
+      "title": "Identity vs Equality — is vs ==",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Because a variable in Python is a name pointing at an object rather than a box containing a copy of a value, Python offers two genuinely different ways to compare variables, and confusing the two is a common source of subtle bugs. The <code>==</code> operator checks whether two variables hold values that are considered <strong>equal</strong>, based on the type's own definition of equality. The <code>is</code> operator checks something stricter: whether two variables point at the exact same object in memory — their <strong>identity</strong>."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "identity_vs_equality.py",
+          "lines": [
+            "list_a = [1, 2, 3]",
+            "list_b = [1, 2, 3]",
+            "list_c = list_a",
+            "",
+            "print(list_a == list_b)  # True -- same contents, so considered equal",
+            "print(list_a is list_b)  # False -- two separate, distinct list objects",
+            "",
+            "print(list_a == list_c)  # True -- same contents",
+            "print(list_a is list_c)  # True -- literally the same object, since list_c = list_a"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In everyday code, <code>==</code> is almost always the comparison you actually want — you generally care whether two variables represent the same value, not whether they happen to be the identical object in memory. The main legitimate use of <code>is</code> is specifically for comparing against Python's singleton values, most commonly <code>None</code>, and occasionally <code>True</code> or <code>False</code>, precisely because those particular values are guaranteed to exist as one single shared object throughout a running program, making an identity check both meaningful and reliable in that specific case."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes Beginners Make With Variables",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A handful of specific mistakes involving variables come up so consistently among beginners that they're worth calling out explicitly, since recognising them in advance often prevents a fair amount of confused debugging later."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Confusing = and ==", "text": " — a single equals sign assigns a value to a variable, while a double equals sign checks for equality between two values. Writing if x = 5: instead of if x == 5: raises a SyntaxError, but the confusion still trips up many newcomers switching from other contexts, like spreadsheet formulas." },
+            { "strong": "Assuming a variable copies a mutable value", "text": " — as shown earlier, assigning one variable to another (b = a) for a mutable object like a list does not create an independent copy; both names point at the same underlying object, and this frequently surprises beginners the first time they modify one and see the other change too." },
+            { "strong": "Shadowing built-in names", "text": " — naming a variable list, str, id, or type overrides Python's own built-in functions or types with that same name for the rest of that scope, which can cause a confusing, seemingly unrelated error much later in the same block of code." },
+            { "strong": "Reassigning a global variable inside a function without the global keyword", "text": " — this doesn't raise an error the way many beginners expect; it silently creates a separate local variable instead, leaving the original global variable completely unchanged." },
+            { "strong": "Using vague, single-letter variable names outside of very short, obvious contexts", "text": " — names like x, y, or tmp used throughout a longer function make the code considerably harder for anyone (including your future self) to follow without re-reading it carefully." },
+            { "strong": "Forgetting that variable names are case-sensitive", "text": " — accidentally typing Total instead of total (or vice versa) creates an entirely new, separate variable rather than referencing the one already intended, often producing a NameError rather than the expected value." }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "mutable_default_pitfall.py",
+          "lines": [
+            "# A particularly well-known, more advanced pitfall involving variables and mutability:",
+            "def add_item(item, cart=[]):  # a mutable default argument, created only ONCE",
+            "    cart.append(item)",
+            "    return cart",
+            "",
+            "print(add_item(\"apple\"))    # ['apple']",
+            "print(add_item(\"banana\"))   # ['apple', 'banana'] -- unexpectedly carries over!",
+            "",
+            "# The fix: use None as the default, and create a fresh list inside the function",
+            "def add_item_fixed(item, cart=None):",
+            "    if cart is None:",
+            "        cart = []",
+            "    cart.append(item)",
+            "    return cart"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "variables-in-different-contexts",
+      "title": "Variables Across Different Contexts",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The basic rules covered so far apply consistently everywhere, but variables show up in a few additional contexts worth knowing about as you continue learning, since each has its own small nuance."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "loop_and_comprehension_variables.py",
+          "lines": [
+            "# A loop variable is an ordinary variable, and it remains accessible after the loop ends",
+            "for number in range(3):",
+            "    pass",
+            "print(number)  # 2 -- the loop variable still holds its final value",
+            "",
+            "# A comprehension variable, however, has its OWN separate, private scope",
+            "squares = [n * n for n in range(5)]",
+            "print(squares)  # [0, 1, 4, 9, 16]",
+            "# print(n)  # NameError -- 'n' does not leak out of the comprehension"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This distinction is a common surprise: an ordinary <code>for</code> loop's variable behaves like any other local (or global) variable and remains accessible after the loop finishes, while a variable used inside a list, set, or dictionary comprehension is deliberately scoped only to that comprehension itself, and cannot be accessed outside of it. This was a specific, intentional design change introduced in Python 3, aimed at preventing comprehension variables from accidentally leaking into and overwriting a variable of the same name in the surrounding scope."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Variables used as function parameters are, by default, local to that function, following exactly the same local-scope rules already covered. Class attributes and instance attributes — variables that belong to an object created from a class — follow a related but distinct set of rules involving <code>self</code>, which is generally covered in detail as part of learning object-oriented programming specifically, rather than as a core part of basic variable usage."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "checking-and-inspecting-variables",
+      "title": "Checking and Inspecting Variables",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python provides several handy built-in tools for inspecting a variable while you're writing or debugging code, all of which are worth knowing early since they come up constantly during everyday development."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "inspecting_variables.py",
+          "lines": [
+            "quantity = 5",
+            "",
+            "print(type(quantity))        # <class 'int'> -- shows the variable's current type",
+            "print(id(quantity))          # a large integer -- the object's unique memory identity",
+            "print(isinstance(quantity, int))  # True -- checks if a variable IS a given type",
+            "",
+            "# dir() lists everything available on an object, useful for exploring what a value can do",
+            "# print(dir(quantity))",
+            "",
+            "# globals() and locals() return dictionaries of currently defined variables",
+            "print(\"quantity\" in globals())  # True, if run at the top level of a script"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>type()</code> is by far the most commonly used of these during everyday development, since confirming exactly what type a variable currently holds is often the fastest way to diagnose an unexpected error. <code>isinstance()</code> is generally the preferred way to actually check a variable's type inside real program logic (for example, inside an <code>if</code> statement), since, unlike a direct comparison using <code>type()</code>, it correctly accounts for inheritance relationships between classes."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "variables-interview-questions",
+      "title": "Interview Questions on Python Variables",
+      "blocks": [
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. Do you need to declare a variable's type before using it in Python?",
+              "a": "No. Python is dynamically typed, so a variable is created simply by assigning a value to a name using the = operator, without any separate type declaration. Python determines and tracks the type of the current value automatically at runtime.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What happens when you assign one variable to another, like b = a, if a refers to a list?",
+              "a": "Both a and b become two separate names pointing at the exact same list object in memory; no copy is made. Modifying the list through either name (for example, using append()) is visible through the other name as well, since there was only ever one underlying object.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q3. What is the difference between == and is when comparing two variables?",
+              "a": "== checks whether two variables hold values considered equal according to the type's own equality rules, while is checks whether two variables refer to the exact same object in memory (identity). Two separate but equal-content list objects will compare as == True but is False.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q4. Why does Python raise an UnboundLocalError if you try to modify a global variable inside a function without using the global keyword?",
+              "a": "Because Python decides a variable is local to a function if it detects any assignment to that name anywhere within the function's body, applying this rule to the entire function, not just the lines after the assignment. So a line that reads the variable before reassigning it is actually reading an as-yet-unassigned local variable, not the global one, causing the error.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q5. Does Python have a true, enforced 'constant' keyword like const in JavaScript?",
+              "a": "No. Python relies purely on a naming convention — writing a variable name in UPPER_SNAKE_CASE — to signal that it should be treated as a constant. Nothing in the language itself technically prevents that variable from being reassigned later.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. Explain the LEGB rule.",
+              "a": "LEGB describes the order Python searches through scopes when resolving a variable name: first Local (the current function), then Enclosing (any outer function, for nested functions), then Global (the top level of the current module), and finally Built-in (names Python provides automatically, like print or len). Python uses the first matching name it finds in that order.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q7. What is the practical difference between the global and nonlocal keywords?",
+              "a": "global allows a function to modify a variable that exists in the true global (module-level) scope. nonlocal allows a nested inner function to modify a variable belonging to its immediately enclosing function's scope, rather than the global scope, which is specifically useful for closures.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. Why is checking for None conventionally done with is None rather than == None?",
+              "a": "None is a singleton object — only one instance of it ever exists in a running Python program — so is None checks identity directly and reliably. Using == None instead relies on the object's __eq__ method, which, for unusual custom objects, could theoretically be overridden to behave unexpectedly, making is the more robust and idiomatic choice.",
+              "tag": "Common Trap"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "variables-practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. Create three variables — a string, an integer, and a boolean — and print all three on a single line.",
+              "a": "city = \"Jaipur\"\npopulation = 3900000\nis_capital = True\nprint(city, population, is_capital)",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Which of the following are valid Python variable names, and why: 2total, _score, my-value, class, user_1?",
+              "a": "_score and user_1 are valid. 2total is invalid because it starts with a digit. my-value is invalid because hyphens are not allowed in identifiers. class is invalid because it is a reserved keyword.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Write a single line of code that swaps the values of two variables, a and b, without using a third temporary variable.",
+              "a": "a, b = b, a",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. Explain what will be printed by the following code, and why: x = [1, 2]\\ny = x\\ny.append(3)\\nprint(x)",
+              "a": "It prints [1, 2, 3]. Since y = x makes y point at the exact same list object as x rather than creating a copy, calling y.append(3) modifies that shared object directly, and the change is visible through x as well.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Write a function that increments a global variable called total_visits by 1 each time it is called, using the correct keyword to do so.",
+              "a": "total_visits = 0\n\ndef record_visit():\n    global total_visits\n    total_visits += 1",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. What is the output of the following, and why: print([n for n in range(3)])\\nprint(n)?",
+              "a": "The first line prints [0, 1, 2] successfully. The second line raises a NameError, because the variable n used inside a list comprehension is scoped only to that comprehension in Python 3, and does not leak out into the surrounding scope afterward.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. Why is defining a function with a mutable default argument, like def add(item, cart=[]):, considered a common pitfall, and how would you fix it?",
+              "a": "The default list [] is created only once, when the function is defined, not fresh on every call, so it persists and accumulates values across separate calls that rely on the default. The standard fix is to use cart=None as the default, and then create a genuinely new list inside the function body if cart is None: cart = [].",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Two variables, p and q, both refer to lists containing the same elements: [1, 2, 3], but were created as two entirely separate list literals. What will p == q and p is q each evaluate to, and why?",
+              "a": "p == q evaluates to True, since Python compares lists by their contents, and both lists contain the same elements in the same order. p is q evaluates to False, since they were created as two distinct list objects in memory, even though their contents happen to match.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "variables-conclusion",
+      "title": "Conclusion — Building on a Solid Foundation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Variables might be the very first concept covered in any Python course, but as this guide has hopefully shown, there's genuine depth underneath what looks like a simple <code>=</code> sign. Understanding that a variable is a name bound to an object — rather than a box containing a value — quietly explains a surprising share of behaviour that otherwise looks inconsistent or confusing, particularly once mutable data and functions enter the picture."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The practical habits worth carrying forward from here are straightforward: choose descriptive, convention-following names, understand the difference between local and global scope before it causes a confusing bug, be deliberate about when a variable should hold a mutable versus an immutable type, and reach for tools like type hints once your projects grow large enough to benefit from them. With that foundation in place, the rest of the language — data types, control flow, functions, and eventually classes — builds directly and naturally on top of it."
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "Do Python variables need a type declared before use, like int or String in other languages?",
+        "a": "No. Python is dynamically typed, so you simply assign a value directly to a name using the = operator, and Python automatically determines and tracks that value's type at runtime, without any separate declaration step."
+      },
+      {
+        "q": "Can a Python variable change its type after it's created?",
+        "a": "Yes. Since a variable name is simply bound to whatever object it currently points at, reassigning that name to a different type of value (for example, changing it from an integer to a string) is perfectly valid and creates no error at all."
+      },
+      {
+        "q": "What is the difference between a local variable and a global variable?",
+        "a": "A local variable is created inside a function and only exists while that function is executing, becoming inaccessible once the function finishes. A global variable is created at the top level of a script or module and remains accessible throughout that entire file, including from inside functions, though modifying it from within a function requires the global keyword."
+      },
+      {
+        "q": "Is it bad practice to use single-letter variable names like x or i?",
+        "a": "Not universally — single-letter names are widely accepted and even preferred in very short, conventional contexts, such as i or j as a loop counter, or x and y for mathematical coordinates. They become a problem specifically when used for variables holding less obvious, more significant meaning in longer stretches of code, where a descriptive name would make the logic considerably easier to follow."
+      },
+      {
+        "q": "Can I use Python keywords like for or class as variable names?",
+        "a": "No. Reserved keywords have special meaning built into the language's syntax and cannot be used as variable names under any circumstances; attempting to do so raises a SyntaxError immediately."
+      },
+      {
+        "q": "Are Python variable names case-sensitive?",
+        "a": "Yes. Python treats total, Total, and TOTAL as three completely separate, unrelated variable names, since capitalisation is significant throughout the language, not just for variable names but for keywords, function names, and module names as well."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Comments", "path": "/python/python-comments" },
+    "next": { "label": "Next: Python Data Types →", "path": "/python/python-data-types" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Assignment operator", "dd": "=" },
+      { "dt": "Typing discipline", "dd": "Dynamic and strong" },
+      { "dt": "Naming convention (variables)", "dd": "snake_case" },
+      { "dt": "Naming convention (constants)", "dd": "UPPER_SNAKE_CASE" },
+      { "dt": "Scope resolution order", "dd": "LEGB — Local, Enclosing, Global, Built-in" },
+      { "dt": "Keyword to modify a global", "dd": "global" },
+      { "dt": "Keyword to modify an enclosing variable", "dd": "nonlocal" },
+      { "dt": "Identity check operator", "dd": "is" }
+    ],
+    "relatedArticles": [
+      { "label": "Python Introduction", "path": "/python/python-introduction" },
+      { "label": "Python Syntax", "path": "/python/python-syntax" },
+      { "label": "Python Comments", "path": "/python/python-comments" },
+      { "label": "Python Data Types", "path": "/python/python-datatypes" },
+      { "label": "Python Operators", "path": "/python/python-operators" },
+      { "label": "Python Functions", "path": "/python/python-functions" },
+      { "label": "Python OOP", "path": "/python/python-oop" },
+      { "label": "Python Installation", "path": "/python/python-installation" }
+    ],
+    "tags": ["Variables","Assignment","Dynamic Typing","Naming Conventions","Scope","LEGB","Global Keyword","Nonlocal Keyword","Constants","Type Hints","Mutability","Identity vs Equality","PEP 8","Multiple Assignment","Unpacking"]
+  }
+}

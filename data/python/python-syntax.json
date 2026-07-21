@@ -1,0 +1,846 @@
+{
+  "meta": {
+    "title": "Python Syntax | Complete Guide to Python Syntax Rules 2026 | Tech Sustainify",
+    "description": "A complete, in-depth guide to Python syntax for beginners in 2026 — covering indentation rules, identifiers, keywords, comments, statements vs expressions, operators, print and input syntax, line continuation, and the most common syntax errors beginners face.",
+    "keywords": "python syntax, python syntax rules, python indentation, python identifiers, python keywords list, python comments syntax, python statements vs expressions, python print syntax, python input syntax, python line continuation, python semicolon, python syntax errors, python syntax for beginners 2026",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-syntax",
+    "ogTitle": "Python Syntax — Complete Rules & Structure Guide 2026 | Tech Sustainify",
+    "ogDescription": "Everything beginners need to know about Python syntax — indentation, identifiers, keywords, comments, statements, operators, and common syntax errors, explained in depth.",
+    "ogUrl": "https://techsustainify.com/python/python-syntax",
+    "ogImage": "https://techsustainify.com/images/python-syntax-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "28 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-01-10",
+    "schemaDateModified": "2026-03-16",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 5050
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/pythonhome" },
+    { "position": 3, "name": "Python Syntax" }
+  ],
+
+  "articleHeader": {
+    "badge": "📐 Syntax",
+    "title": "Python Syntax — The Complete Rulebook",
+    "subtitle": "A deep, structured walkthrough of every rule that shapes valid Python code — indentation, identifiers, keywords, comments, statements, operators, and the errors that catch beginners off guard."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-16", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time", "value": "28 min" },
+    { "icon": "🎯", "label": "Level", "value": "Beginner" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-syntax",
+      "title": "What Does 'Syntax' Actually Mean in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In everyday English, syntax refers to the rules that govern how words combine into valid sentences — you can't rearrange them however you like and still be understood. Programming languages work the same way. <strong>Python syntax</strong> is the complete set of rules that determine which arrangements of characters, keywords, and symbols form a valid, runnable Python program, and which ones the interpreter will reject before your code even gets a chance to execute."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This distinction matters more than it might seem at first. A program can be syntactically perfect and still be logically wrong — for example, calculating a discount incorrectly — but it will still run without complaint, because the interpreter only checks structure, not intent. Conversely, a program with a single misplaced colon or an inconsistent indent will refuse to run at all, regardless of how sound the underlying logic is. Learning syntax, therefore, is really about learning the shape Python expects your ideas to take, so the interpreter can understand what you're asking it to do."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python's syntax was deliberately designed to be minimal and close to natural language. Where many languages require punctuation-heavy structures — curly braces, semicolons, explicit type declarations — Python strips almost all of that away, relying instead on consistent indentation and a small set of clear keywords. The tradeoff is that Python is stricter about the few rules it does have, particularly around whitespace, precisely because those rules are doing the structural work that braces do elsewhere."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-syntax-first",
+      "title": "Why Learn Syntax Before Anything Else",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It's tempting to skip straight to 'interesting' topics like functions, loops, or classes, treating syntax as boring scaffolding to get through quickly. In practice, the opposite approach pays off. Every single concept you learn afterward — variables, conditionals, loops, functions, classes — is expressed <em>through</em> syntax. If the underlying rules aren't second nature, every new topic becomes twice as hard, because you're simultaneously learning a new concept and re-deriving basic structural rules you should already know cold."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "There's also a diagnostic benefit. The vast majority of errors a beginner encounters in their first few weeks are not logic errors — they're syntax errors: a missing colon, inconsistent indentation, an unclosed string, a misspelled keyword. Recognising these instantly, rather than treating every red error message as a mystery, is what separates someone who is fighting their tools from someone who is actually learning to program. This page is built to get you to that point as directly as possible."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "program-structure",
+      "title": "The Basic Structure of a Python Program",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every Python program, no matter how large, is built from the same handful of ingredients: <strong>statements</strong>, <strong>expressions</strong>, and <strong>blocks</strong>. Understanding how these three fit together gives you a mental map for reading any Python file, even one you've never seen before."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>statement</strong> is a complete instruction that Python executes — assigning a value to a variable, printing something, importing a module, or defining a function. A <strong>expression</strong> is anything that evaluates to a value, such as <code>3 + 4</code>, <code>len(name)</code>, or <code>age >= 18</code>. Expressions are usually found inside statements — for example, in <code>total = price * quantity</code>, the right-hand side <code>price * quantity</code> is an expression, and the whole line is a statement. A <strong>block</strong> is a group of statements that belong together logically, such as everything that should run inside an <code>if</code> condition or a <code>for</code> loop — and in Python, blocks are defined purely through indentation, not through any bracket or keyword."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "structure_overview.py",
+          "lines": [
+            "# A statement: performs an action",
+            "price = 500          # assignment statement",
+            "quantity = 3          # assignment statement",
+            "",
+            "# An expression inside a statement",
+            "total = price * quantity   # 'price * quantity' is the expression",
+            "",
+            "# A block: grouped statements under a condition",
+            "if total > 1000:",
+            "    print(\"Bulk order\")     # inside the block",
+            "    print(\"Apply discount\")  # inside the block",
+            "print(\"Order processed\")     # outside the block, always runs"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Notice that the final <code>print</code> statement isn't indented, so Python treats it as sitting outside the <code>if</code> block — it will run regardless of whether the condition was true. This single example already demonstrates the core mechanism behind almost all of Python's structural syntax: indentation isn't cosmetic, it's how the interpreter knows what belongs to what."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "indentation-deep-dive",
+      "title": "Indentation — Python's Most Distinctive Rule",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If there is one rule that defines Python's identity more than any other, it's this: <strong>indentation is not a style choice, it is the syntax</strong>. Languages like Java, C++, and JavaScript use curly braces <code>{ }</code> to mark the start and end of a block, and indentation within those braces is purely a formatting convention left to the programmer's discretion — you could write badly-indented Java and it would still run perfectly. Python removed the braces entirely and made the whitespace itself carry that structural meaning, which is why getting indentation wrong doesn't just look messy in Python — it actively breaks the program."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "indentation_correct.py",
+          "lines": [
+            "age = 20",
+            "",
+            "if age >= 18:",
+            "    print(\"You are an adult\")",
+            "    if age >= 65:",
+            "        print(\"You are a senior citizen\")",
+            "    else:",
+            "        print(\"You are not a senior citizen\")",
+            "else:",
+            "    print(\"You are a minor\")"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Each new level of nesting — an <code>if</code> inside another <code>if</code>, for instance — adds one more indentation level, typically another four spaces. The Python interpreter tracks these levels internally, and if a line's indentation doesn't cleanly match one of the levels currently open, it raises an <code>IndentationError</code> before your program runs at all."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Standard convention", "text": " — PEP 8, Python's official style guide, recommends exactly 4 spaces per indentation level. This is what virtually every professional codebase and every code editor's default Python configuration uses." },
+            { "strong": "Never mix tabs and spaces", "text": " — Python 3 explicitly forbids mixing tabs and spaces within the same block, and will raise a TabError if it detects this, because the two can look identical on screen but be interpreted completely differently." },
+            { "strong": "Consistency within a block", "text": " — every statement at the same logical level must use exactly the same indentation. Four spaces on one line and five on the next, even if both look 'about right' visually, will cause an error." },
+            { "strong": "Blank lines are safe", "text": " — an empty line inside a block doesn't need to be indented and doesn't break the structure; Python simply ignores blank lines when tracking indentation." }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "indentation_error_example.py",
+          "lines": [
+            "if True:",
+            "    print(\"This line is indented correctly\")",
+            "  print(\"This line has inconsistent indentation\")",
+            "# Raises: IndentationError: unindent does not match any outer indentation level"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "identifiers-heading",
+      "title": "Identifiers — The Rules for Naming Things",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "An <strong>identifier</strong> is the name you give to a variable, function, class, module, or any other object you define. Python enforces a small, strict set of rules about what counts as a valid identifier, and understanding these rules upfront saves you from a whole category of confusing early errors."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "First character", "text": " — must be a letter (a–z, A–Z) or an underscore (_). It can never be a digit. total1 is valid; 1total is not." },
+            { "strong": "Remaining characters", "text": " — can be any combination of letters, digits, and underscores. Special characters like -, @, #, or spaces are never allowed inside an identifier." },
+            { "strong": "Case sensitivity", "text": " — Python treats uppercase and lowercase letters as completely distinct. Age, age, and AGE are three separate, unrelated identifiers." },
+            { "strong": "Reserved keywords are off-limits", "text": " — you cannot name a variable if, for, class, or any other reserved keyword, since Python needs those words exclusively for its own grammar." },
+            { "strong": "No length limit in practice", "text": " — Python doesn't enforce a maximum identifier length, though extremely long names hurt readability far more than they help." }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Beyond the hard rules the interpreter enforces, the Python community follows a set of widely-adopted naming conventions from PEP 8 that, while not mandatory, are expected in almost any professional or open-source codebase:"
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Element", "Convention", "Example"],
+          "rows": [
+            ["Variables & functions", "snake_case (lowercase, underscores between words)", "total_price, calculate_average()"],
+            ["Classes", "PascalCase (each word capitalised, no underscores)", "BankAccount, StudentRecord"],
+            ["Constants", "UPPER_CASE with underscores", "MAX_RETRIES, PI_VALUE"],
+            ["Private attributes (convention only)", "leading single underscore", "_internal_cache"],
+            ["Modules & packages", "short, lowercase, no underscores if possible", "utils, mathtools"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "keywords-heading",
+      "title": "Reserved Keywords — Words You Can't Reuse",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python reserves a fixed set of words that carry special grammatical meaning and cannot be used as identifiers under any circumstances. As of Python 3.12, there are <strong>35 reserved keywords</strong>. You don't need to memorise this list deliberately — it becomes familiar naturally within your first couple of weeks of writing code — but it's useful to see the full picture at least once."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Value keywords", "text": " — True, False, None" },
+            { "strong": "Logical operators", "text": " — and, or, not, is, in" },
+            { "strong": "Control flow", "text": " — if, elif, else, for, while, break, continue, pass" },
+            { "strong": "Function & class definitions", "text": " — def, return, class, lambda, yield" },
+            { "strong": "Exception handling", "text": " — try, except, finally, raise, assert" },
+            { "strong": "Imports & scope", "text": " — import, from, as, global, nonlocal, del" },
+            { "strong": "Context & async", "text": " — with, async, await" },
+            { "strong": "Structural", "text": " — match, case (introduced as soft keywords in Python 3.10 for structural pattern matching)" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "You can view the complete, always-current list directly from the interpreter itself at any time by typing <code>help(\"keywords\")</code> inside a Python shell, or by importing the <code>keyword</code> module and printing <code>keyword.kwlist</code>. A small subset of these — like <code>match</code>, <code>case</code>, and <code>type</code> — are technically 'soft keywords,' meaning they only carry special meaning in specific contexts and can still be used as ordinary variable names elsewhere, unlike the fully reserved words above."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "comments-docstrings-heading",
+      "title": "Comments and Docstrings — Writing Notes Into Your Code",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Comments let you leave explanatory notes inside your source code that the interpreter completely ignores when running the program. In Python, a single-line comment starts with a hash symbol <code>#</code> and continues to the end of that line."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "comments_syntax.py",
+          "lines": [
+            "# Calculate the total price including tax",
+            "price = 500",
+            "tax_rate = 0.18  # 18% GST",
+            "",
+            "total = price * (1 + tax_rate)",
+            "print(total)  # displays the final amount"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python has no dedicated multi-line comment symbol the way some languages do. Instead, developers commonly use a triple-quoted string — <code>\"\"\" ... \"\"\"</code> — spanning multiple lines, which Python evaluates as a string literal that is simply discarded if it isn't assigned or used, achieving a similar visual effect."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When that same triple-quoted string appears as the very first statement inside a module, function, class, or method, it takes on a special role: it becomes a <strong>docstring</strong>. Unlike an ordinary comment, a docstring is not discarded — it's stored and made accessible at runtime through the object's <code>__doc__</code> attribute, and it's what documentation tools and the built-in <code>help()</code> function display when someone inspects your code."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "docstring_example.py",
+          "lines": [
+            "def calculate_area(radius):",
+            "    \"\"\"",
+            "    Calculate the area of a circle given its radius.",
+            "    Returns the result as a float.",
+            "    \"\"\"",
+            "    return 3.14159 * radius ** 2",
+            "",
+            "print(calculate_area.__doc__)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Good comments explain <em>why</em> code does something, not <em>what</em> it does — the code itself already shows what's happening; the comment should add context a reader couldn't get from the code alone, such as a business reason, a workaround for a known limitation, or a warning about a non-obvious edge case."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "statements-vs-expressions",
+      "title": "Statements vs Expressions — A Distinction Worth Getting Right",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Beginners often use the words 'statement' and 'expression' interchangeably, but the distinction actually explains several syntax rules that otherwise seem arbitrary. An <strong>expression</strong> always produces a value — <code>5 + 3</code>, <code>name.upper()</code>, and <code>age > 18</code> are all expressions, because each one resolves to something: a number, a string, or a boolean. A <strong>statement</strong>, on the other hand, performs an action and does not itself produce a usable value — <code>if</code>, <code>for</code>, <code>import</code>, and assignment are all statements."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This distinction is why, for instance, you cannot write <code>print(x = 5)</code> in older Python versions to both assign and print in one call — assignment is a statement, not an expression, so it doesn't produce a value that <code>print()</code> could receive as an argument. Python 3.8 introduced the <strong>walrus operator</strong> <code>:=</code> specifically to bridge this gap in limited situations, allowing an assignment to occur as part of a larger expression."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "walrus_operator.py",
+          "lines": [
+            "# Traditional approach: two separate statements",
+            "count = len(\"hello\")",
+            "if count > 3:",
+            "    print(f\"Length is {count}\")",
+            "",
+            "# Using the walrus operator: assignment inside an expression",
+            "if (count := len(\"hello\")) > 3:",
+            "    print(f\"Length is {count}\")"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every expression can appear inside a larger expression or as part of a statement, but statements generally cannot be nested inside expressions — this asymmetry is a direct consequence of the fact that expressions must resolve to a value, while statements exist purely to cause an effect."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "variables-assignment-syntax",
+      "title": "Variable Assignment — The Syntax of Storing Data",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Creating a variable in Python requires no type declaration and no special keyword — you simply write a name, an equals sign, and a value. The interpreter figures out the type from the value itself, a behaviour known as <strong>dynamic typing</strong>."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "assignment_syntax.py",
+          "lines": [
+            "name = \"Riya\"          # string",
+            "age = 21                # integer",
+            "height = 5.6            # float",
+            "is_student = True       # boolean",
+            "",
+            "# Multiple assignment on one line",
+            "x, y, z = 1, 2, 3",
+            "",
+            "# Assigning the same value to multiple variables",
+            "a = b = c = 0",
+            "",
+            "# Type hints (optional, purely informational)",
+            "score: int = 95"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python also supports <strong>augmented assignment operators</strong> that combine an operation with assignment in a single step, mirroring similar syntax in languages like Java or JavaScript: <code>x += 1</code> is shorthand for <code>x = x + 1</code>, and the same pattern applies to <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>//=</code>, <code>%=</code>, and <code>**=</code>. The <strong>type hint</strong> syntax shown above, using a colon after the variable name, is entirely optional and purely advisory — Python does not enforce it at runtime, but tools like linters and IDEs use it to catch potential type mismatches before you run the code."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "operators-syntax-overview",
+      "title": "Operators — The Symbols That Build Expressions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Operators are the symbols Python uses to combine values into expressions. While later pages cover each category in depth, understanding their basic syntax now makes every example from this point forward easier to read."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Category", "Symbols", "Example", "Result"],
+          "rows": [
+            ["Arithmetic", "+  -  *  /  //  %  **", "7 // 2", "3 (floor division)"],
+            ["Comparison", "==  !=  >  <  >=  <=", "5 == 5", "True"],
+            ["Logical", "and  or  not", "True and False", "False"],
+            ["Assignment", "=  +=  -=  *=  /=", "x += 2", "adds 2 to x in place"],
+            ["Identity", "is  is not", "a is b", "checks if same object in memory"],
+            ["Membership", "in  not in", "'a' in 'cat'", "True"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "One syntax detail that catches beginners coming from other languages: Python has no <code>++</code> or <code>--</code> increment/decrement operators at all. Where Java or C++ would write <code>count++</code>, Python requires the fuller <code>count += 1</code>. This was a deliberate design decision — the Python core developers considered the terse increment syntax more prone to subtle bugs than it was worth saving in keystrokes."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "print-input-syntax",
+      "title": "The Syntax of print() and input()",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Almost every Python program you write in your first weeks will involve <code>print()</code> for output and <code>input()</code> for accepting user data, so their syntax is worth examining closely rather than treating as a black box."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "print_syntax.py",
+          "lines": [
+            "print(\"Hello, World!\")",
+            "",
+            "# Multiple values, separated by a space by default",
+            "print(\"Name:\", \"Riya\", \"Age:\", 21)",
+            "",
+            "# Custom separator and line ending",
+            "print(\"A\", \"B\", \"C\", sep=\" - \", end=\"!\\n\")",
+            "",
+            "# f-string formatting — the modern, preferred approach",
+            "name = \"Riya\"",
+            "age = 21",
+            "print(f\"{name} is {age} years old\")"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>print()</code> function accepts any number of positional arguments, joins them with the string given to its <code>sep</code> parameter (a single space by default), and finishes the line with whatever string is given to <code>end</code> (a newline character by default). The <strong>f-string</strong> syntax — a lowercase or uppercase <code>f</code> immediately before the opening quote — lets you embed variables and even full expressions directly inside a string using curly braces, and has been the preferred formatting approach since Python 3.6."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "input_syntax.py",
+          "lines": [
+            "name = input(\"Enter your name: \")",
+            "age_text = input(\"Enter your age: \")",
+            "age = int(age_text)   # input() always returns a string",
+            "",
+            "print(f\"Hello {name}, next year you'll be {age + 1}\")"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A syntax detail beginners frequently overlook: <code>input()</code> <strong>always</strong> returns a string, no matter what the user types. If you need a number, you must explicitly convert it using <code>int()</code> or <code>float()</code> — skipping this step and trying to do arithmetic directly on the result of <code>input()</code> is one of the most common early runtime errors."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "control-flow-syntax-shape",
+      "title": "The Syntax Shape of Conditionals and Loops",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "While control flow is covered in full depth on its own dedicated page, it's worth seeing the basic syntax pattern here, because every conditional and loop in Python follows the exact same structural template: a keyword, a condition or iterable, a colon, and an indented block."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "control_flow_shape.py",
+          "lines": [
+            "# if / elif / else",
+            "if condition_one:",
+            "    pass",
+            "elif condition_two:",
+            "    pass",
+            "else:",
+            "    pass",
+            "",
+            "# for loop",
+            "for item in some_iterable:",
+            "    pass",
+            "",
+            "# while loop",
+            "while condition:",
+            "    pass"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every one of these keywords is followed by a <strong>colon</strong>, and every colon is followed by an indented block on the next line (or, for very short bodies, a single statement can technically follow the colon on the same line — though PEP 8 discourages this for readability). Forgetting the colon is one of the single most common syntax errors beginners make, and the interpreter's error message — <code>SyntaxError: expected ':'</code> — points directly at the missing character."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "function-def-syntax",
+      "title": "The Syntax of Defining a Function",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Functions follow the same colon-and-indent template as conditionals and loops, introduced by the <code>def</code> keyword."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "function_syntax.py",
+          "lines": [
+            "def greet(name, greeting=\"Hello\"):",
+            "    \"\"\"Return a greeting message for the given name.\"\"\"",
+            "    message = f\"{greeting}, {name}!\"",
+            "    return message",
+            "",
+            "print(greet(\"Riya\"))",
+            "print(greet(\"Aman\", greeting=\"Welcome\"))"
+          ]
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "def keyword", "text": " — signals the start of a function definition, followed by the function name and a parenthesised parameter list" },
+            { "strong": "Default parameter values", "text": " — writing greeting=\"Hello\" makes that parameter optional; if the caller doesn't supply it, Python uses the default" },
+            { "strong": "The colon and indented body", "text": " — identical structural rule to if, for, and while blocks" },
+            { "strong": "return statement", "text": " — optional; a function without one implicitly returns None" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "line-continuation-semicolons",
+      "title": "Line Continuation, Semicolons, and Multiple Statements",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In most languages, a semicolon marks the end of every statement. Python doesn't require this — a newline is normally sufficient to end a statement — but semicolons are still legal, and occasionally used to place multiple short statements on a single line."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "semicolons_and_continuation.py",
+          "lines": [
+            "# Semicolons are optional but legal",
+            "a = 1; b = 2; c = 3",
+            "print(a, b, c)",
+            "",
+            "# Explicit line continuation with a backslash",
+            "total = 1 + 2 + 3 + \\",
+            "        4 + 5 + 6",
+            "",
+            "# Implicit line continuation inside brackets — the preferred style",
+            "total = (1 + 2 + 3 +",
+            "         4 + 5 + 6)",
+            "",
+            "long_list = [",
+            "    \"apple\",",
+            "    \"banana\",",
+            "    \"cherry\",",
+            "]"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "PEP 8 explicitly discourages using semicolons to cram multiple statements onto one line, since it hurts readability without any real benefit — Python's newline-based statement separation already does the job cleanly. For splitting a genuinely long line across multiple physical lines, PEP 8 also recommends the <strong>implicit continuation</strong> shown above — wrapping the expression inside parentheses, brackets, or braces — over the explicit backslash, because it's visually cleaner and less fragile (a trailing space after a backslash silently breaks the continuation, which is a notoriously hard bug to spot)."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "syntax-comparison-table",
+      "title": "Python Syntax vs Other Languages — A Side-by-Side View",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Seeing the same simple logic expressed in different languages makes Python's syntax choices concrete rather than abstract."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Python", "Java", "JavaScript", "C++"],
+          "rows": [
+            ["Block delimiter", "Indentation", "{ }", "{ }", "{ }"],
+            ["Statement terminator", "Newline (semicolon optional)", "Semicolon required", "Semicolon (often optional)", "Semicolon required"],
+            ["Variable declaration", "x = 5 (no type keyword)", "int x = 5;", "let x = 5;", "int x = 5;"],
+            ["Function definition", "def greet():", "void greet() { }", "function greet() { }", "void greet() { }"],
+            ["Comment syntax", "# single line", "// single line", "// single line", "// single line"],
+            ["String formatting", "f\"{name}\"", "String.format()", "`${name}`", "std::format()"],
+            ["Increment operator", "Not available (x += 1)", "x++", "x++", "x++"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The single biggest structural difference is the first row: everywhere else, curly braces mark a block, and indentation is a courtesy for human readers. In Python, indentation <em>is</em> the block marker, which is precisely why Python code across different codebases tends to look far more visually consistent than equivalent code in brace-based languages, where formatting style varies wildly between teams."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-syntax-errors",
+      "title": "Common Syntax Errors and How to Read Them",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A syntax error means Python could not even parse your code into a valid structure — it never got the chance to run anything. Learning to recognise these quickly, directly from the error message, is one of the fastest ways to speed up as a beginner."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Error Message", "Typical Cause", "Example That Triggers It"],
+          "rows": [
+            ["SyntaxError: expected ':'", "Missing colon after if, for, while, def, or class", "if age > 18\\n    print(\"adult\")"],
+            ["IndentationError: unexpected indent", "A line is indented when it shouldn't be", "x = 5\\n    print(x)"],
+            ["IndentationError: expected an indented block", "A block header (if/for/def) has no indented body underneath it", "if True:\\nprint(\"hi\")"],
+            ["SyntaxError: EOL while scanning string literal", "A string is missing its closing quote", "print(\"Hello)"],
+            ["SyntaxError: invalid syntax", "Often a missing comma, extra bracket, or misused keyword", "print(\"a\" \"b\" +)"],
+            ["TabError: inconsistent use of tabs and spaces", "Mixing tab and space characters for indentation in the same file", "Copy-pasted code from an editor using tabs into one using spaces"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Two habits eliminate the majority of these errors before they happen: configuring your editor to insert spaces (not literal tab characters) whenever you press Tab, and getting into the routine of typing the colon and the next line's indentation together as a single motion, rather than as two separate steps you might forget to complete."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "putting-it-together",
+      "title": "Putting the Syntax Together — A Complete Example",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's a small, complete program that intentionally uses almost every syntax element covered on this page in one place — comments, variables, an f-string, a conditional, a loop, and a function — so you can see how they combine into a real, working piece of code rather than isolated snippets."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "putting_it_together.py",
+          "lines": [
+            "def classify_marks(marks):",
+            "    \"\"\"Return a grade label based on a numeric mark out of 100.\"\"\"",
+            "    if marks >= 90:",
+            "        grade = \"A\"",
+            "    elif marks >= 75:",
+            "        grade = \"B\"",
+            "    elif marks >= 50:",
+            "        grade = \"C\"",
+            "    else:",
+            "        grade = \"Fail\"",
+            "    return grade",
+            "",
+            "# List of (name, marks) pairs to process",
+            "students = [(\"Riya\", 92), (\"Aman\", 68), (\"Kabir\", 40)]",
+            "",
+            "for name, marks in students:",
+            "    grade = classify_marks(marks)",
+            "    print(f\"{name} scored {marks} — Grade {grade}\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Riya scored 92 — Grade A",
+            "Aman scored 68 — Grade C",
+            "Kabir scored 40 — Grade Fail"
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "def classify_marks(marks):\n    if marks >= 90:\n        return \"A\"\n    elif marks >= 50:\n        return \"C\"\n    else:\n        return \"Fail\"\n\nprint(classify_marks(85))"
+        }
+      ]
+    },
+
+    {
+      "sectionId": "syntax-interview-questions",
+      "title": "Interview Questions on Python Syntax",
+      "blocks": [
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. Why does Python use indentation instead of braces to define code blocks?",
+              "a": "Python's design philosophy prioritises readability above almost everything else. By making indentation mandatory rather than optional formatting, every Python program is forced to be visually structured the same way, regardless of who wrote it, eliminating an entire category of formatting-related ambiguity that brace-based languages leave to convention.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between a statement and an expression in Python?",
+              "a": "An expression always evaluates to a value, such as 5 + 3 or name.upper(). A statement performs an action but does not itself produce a usable value, such as an if block, a for loop, or an import. Assignment is a statement in Python, which is why it cannot normally be nested inside another expression without using the walrus operator.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q3. What does the input() function return, and why does this trip up beginners?",
+              "a": "input() always returns a string, regardless of what the user types. Beginners often try to use the result directly in arithmetic — for example age + 5 where age came from input() — which raises a TypeError, because you cannot add an integer to a string. The fix is to explicitly convert with int() or float() first.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q4. What is a docstring and how does it differ from a regular comment?",
+              "a": "A docstring is a triple-quoted string placed as the first statement inside a module, function, class, or method. Unlike a regular comment, which is discarded entirely by the interpreter, a docstring is stored and accessible at runtime via the object's __doc__ attribute, and is used by documentation tools and the built-in help() function.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. Why doesn't Python have ++ or -- operators?",
+              "a": "This was a deliberate design decision by Python's creators. The increment and decrement operators in C-style languages are considered a common source of subtle off-by-one bugs and confusing operator precedence, especially when used inside larger expressions. Python instead requires the explicit and unambiguous x += 1 or x -= 1.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q6. What happens if you mix tabs and spaces for indentation in the same Python file?",
+              "a": "Python 3 raises a TabError, because tabs and spaces can appear visually identical in an editor but are represented by different characters internally, making it impossible for the interpreter to reliably determine the intended indentation level. The recommended practice is to configure your editor to always insert spaces when the Tab key is pressed.",
+              "tag": "Must Know"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "syntax-practice-questions",
+      "title": "Practice Questions — Test Your Syntax Knowledge",
+      "blocks": [
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. Identify the syntax error in this code and explain the fix: 'if age > 18\\n    print(\"adult\")'",
+              "a": "The if statement is missing its trailing colon. The corrected line should read: if age > 18: — Python requires a colon immediately after the condition in every if, elif, else, for, while, def, and class header.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Is 'total-price' a valid Python identifier? Why or why not?",
+              "a": "No. Python identifiers cannot contain hyphens, because the hyphen character is interpreted as the subtraction operator. Python would read total-price as the expression 'total minus price', not as a single variable name. The valid alternative would be total_price using an underscore.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. What is the output of 'print(type(input(\"Enter a number: \")))' if the user types 42?",
+              "a": "<class 'str'>. Regardless of what the user types, input() always returns a string, so type() reports str even though the user entered what looks like a number.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. Explain why 'x = (y := 10) + 5' is valid Python but 'x = (y = 10) + 5' is not.",
+              "a": "The walrus operator := is an expression that both assigns a value and evaluates to that value, so it can legally appear inside a larger expression. The regular = operator is a statement, not an expression, and statements cannot be nested inside another expression the way (y = 10) attempts to do — this raises a SyntaxError.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Why might two blocks of code that look identically indented in a text editor still raise a TabError?",
+              "a": "If one line uses actual tab characters and another uses spaces to reach the same visual indentation, they can appear identical on screen but are stored as different characters internally. Python 3 detects this inconsistency and refuses to guess which indentation level was intended, raising a TabError rather than silently picking one interpretation.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. Rewrite the following using an f-string instead of comma-separated print arguments: print(\"Name:\", name, \"Age:\", age)",
+              "a": "print(f\"Name: {name} Age: {age}\") — the f-string embeds the variables directly inside the string using curly braces, producing equivalent output with more explicit control over spacing and formatting than the default comma-separated, space-joined output of print().",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What is the difference in behaviour between using a backslash for line continuation and wrapping an expression in parentheses across multiple lines?",
+              "a": "Both achieve the same visual result of splitting one logical line across multiple physical lines, but the backslash is fragile — any trailing whitespace after it silently breaks the continuation and produces a confusing SyntaxError. Wrapping the expression in parentheses (implicit line continuation) is the style recommended by PEP 8, since it doesn't share that fragility and is generally easier to read.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "syntax-conclusion",
+      "title": "Conclusion — Syntax Is a Foundation, Not a Finish Line",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Everything covered on this page — indentation, identifiers, keywords, comments, statements, operators, and the errors that come from getting any of these wrong — forms the grammar you'll use in literally every Python program you ever write. None of it is meant to be memorised through repetition alone; it becomes automatic simply by writing code regularly and paying attention when the interpreter pushes back with an error."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The genuinely useful skill isn't reciting these rules from memory — it's recognising, within a few seconds of seeing a red error message, which rule was broken and how to fix it. That instinct is what lets you stop thinking about syntax altogether and start focusing entirely on the logic of what you're actually trying to build, which is where Python becomes genuinely enjoyable to work in."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "From here, the natural next step is exploring Python's built-in data types in depth — strings, integers, floats, booleans, lists, tuples, dictionaries, and sets — since every syntax rule covered here applies directly to how you'll create, read, and manipulate them."
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "Is Python syntax easier than other programming languages?",
+        "a": "Most developers and educators consider Python's syntax among the easiest to learn, largely because it removes boilerplate like type declarations, semicolons, and curly braces, and reads closer to plain English than most alternatives. The one area where Python is stricter than average is indentation, since whitespace itself carries structural meaning."
+      },
+      {
+        "q": "Do I need to use semicolons in Python?",
+        "a": "No. A newline is sufficient to end a statement in Python. Semicolons are legal but rarely used, mainly to place multiple short statements on a single line, and PEP 8 actively discourages this style for readability reasons."
+      },
+      {
+        "q": "What happens if I forget a colon after an if statement?",
+        "a": "Python raises a SyntaxError with the message 'expected :' pointing directly at the line where the colon is missing. This is one of the most common early syntax errors and is always fixed by adding the missing colon at the end of the condition line."
+      },
+      {
+        "q": "Can I use 4 spaces on one line and 2 spaces on another for indentation?",
+        "a": "Not within the same block. Every line at the same logical level must use identical indentation. Mixing indentation widths inconsistently — even if it still visually looks roughly aligned — raises an IndentationError."
+      },
+      {
+        "q": "Is the walrus operator (:=) something beginners need to learn immediately?",
+        "a": "No. It's a useful shorthand introduced in Python 3.8 for specific situations, such as combining an assignment with a condition check, but it is entirely optional. Understanding the standard assignment operator (=) thoroughly is far more important before exploring the walrus operator."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Installation", "path": "/python/python-installation" },
+    "next": { "label": "Next: Python Comments →", "path": "/python/python-comments" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Block delimiter", "dd": "Indentation (no braces)" },
+      { "dt": "Recommended indent", "dd": "4 spaces (PEP 8)" },
+      { "dt": "Reserved keywords", "dd": "35" },
+      { "dt": "Statement terminator", "dd": "Newline (semicolon optional)" },
+      { "dt": "Comment symbol", "dd": "#" },
+      { "dt": "String formatting", "dd": "f-strings (since 3.6)" }
+    ],
+    "relatedArticles": [
+      { "label": "What is Python?", "path": "/pythonhome" },
+      { "label": "Python Intro", "path": "/python/python-intro" },
+      { "label": "Python Installation", "path": "/python/python-installation" },
+      { "label": "Python Variables", "path": "/python/python-variables" },
+      { "label": "Python Data Types", "path": "/python/python-datatypes" },
+      { "label": "Python Operators", "path": "/python/python-operators" },
+      { "label": "Python Control Flow", "path": "/python/python-controlflow" },
+      { "label": "Python Functions", "path": "/python/python-functions" }
+    ],
+    "tags": ["Indentation","Identifiers","Keywords","Comments","Docstrings","Statements","Expressions","Operators","f-strings","PEP 8","Syntax Errors","Walrus Operator"]
+  }
+}
