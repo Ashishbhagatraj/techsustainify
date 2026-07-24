@@ -1,0 +1,936 @@
+{
+  "meta": {
+    "title": "What is a Dictionary in Python? | Python Dictionary Tutorial for Beginners 2026 | Tech Sustainify",
+    "description": "Learn everything about Python Dictionaries in this complete beginner-friendly guide 2026. Covers dictionary creation, keys and values, dictionary methods, nested dictionaries, dictionary comprehension, hashing internals, merging dictionaries, common errors, and real-world use cases.",
+    "keywords": "python dictionary, what is dictionary in python, python dict tutorial, python dictionary methods, python dict vs list, python nested dictionary, python dictionary comprehension, dict keys values items, python hashable keys, python dict merge, python dictionary for beginners 2026",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-dictionaries/",
+    "ogTitle": "What is a Dictionary in Python? Complete Python Dictionary Tutorial for Beginners 2026 | Tech Sustainify",
+    "ogDescription": "Complete beginner-friendly guide to Python Dictionaries — creation, methods, keys/values/items, nested dicts, comprehension, hashing internals, merging, and real-world uses.",
+    "ogUrl": "https://techsustainify.com/python/python-dictionaries/",
+    "ogImage": "https://techsustainify.com/images/python-dict-tutorial-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "28 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-02-18",
+    "schemaDateModified": "2026-03-16",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 8000
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",            "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python Dictionaries" }
+  ],
+
+  "articleHeader": {
+    "badge": "🗂️ Python Dictionaries",
+    "title": "What is a Dictionary in Python?",
+    "subtitle": "A complete beginner-friendly guide to Python Dictionaries — covering creation, key-value pairs, methods, nested dictionaries, dictionary comprehension, hashing internals, merging, common errors, and why dictionaries are Python's most-used data structure."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-16", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "28 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-dict",
+      "title": "What is a Dictionary in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>dictionary</strong> in Python is a built-in data structure that stores data as <strong>key-value pairs</strong>. Instead of accessing items by numeric position like a list, you access items in a dictionary using a unique, descriptive <strong>key</strong>. Every key maps to exactly one value, and that value can be anything — a number, string, list, another dictionary, or even a function."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Dictionaries are written using curly braces <code>{}</code> with each entry separated by a colon: <code>{\"name\": \"Aman\", \"age\": 25}</code>. Here, <code>\"name\"</code> and <code>\"age\"</code> are keys, while <code>\"Aman\"</code> and <code>25</code> are their corresponding values. This structure mirrors real-world lookups — a phone book, an English dictionary, or a database record — where you look something up by a name, not by its position in a list."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Like sets, dictionaries are built on a <strong>hash table</strong> internally. When you write <code>my_dict[\"name\"]</code>, Python hashes the key <code>\"name\"</code> and jumps directly to the memory slot storing its value — giving <strong>O(1) average time complexity</strong> for lookups, insertions, and deletions, regardless of how large the dictionary grows. This is the single biggest reason dictionaries are used so heavily throughout the Python language and standard library."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A crucial detail that changed the language: starting with <strong>Python 3.7</strong>, dictionaries officially <strong>preserve insertion order</strong> as a guaranteed language feature (it was an implementation detail in 3.6). This means iterating over a dictionary today returns keys in the exact order they were added — a behaviour many other languages' hash maps do not offer."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In short: <strong>a dictionary is Python's tool for storing labelled, fast-lookup data</strong> — anywhere you would naturally say \"give me the value for this name\" rather than \"give me the third item\", a dictionary is the right structure. It is arguably the single most important and most-used data structure in the entire Python language — even Python's own internals, like object attributes and namespaces, are implemented using dictionaries."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "creating-dicts",
+      "title": "How to Create a Dictionary in Python",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python offers several ways to build a dictionary, each suited to different situations. Here are the five you'll use most often."
+        },
+        { "type": "subHeading", "text": "1. Using Curly Braces {}" },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "create_dict_literal.py",
+          "lines": [
+            "student = {\"name\": \"Riya\", \"age\": 21, \"course\": \"B.Tech\"}",
+            "print(student)",
+            "print(type(student))"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["{'name': 'Riya', 'age': 21, 'course': 'B.Tech'}", "<class 'dict'>"]
+        },
+        { "type": "subHeading", "text": "2. Using the dict() Constructor" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>dict()</code> constructor is useful when your keys are valid variable names — you can pass them directly as keyword arguments, without quotes."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "dict_constructor.py",
+          "lines": [
+            "student = dict(name=\"Riya\", age=21, course=\"B.Tech\")",
+            "print(student)   # {'name': 'Riya', 'age': 21, 'course': 'B.Tech'}"
+          ]
+        },
+        { "type": "subHeading", "text": "3. Creating an Empty Dictionary" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Unlike sets, dictionaries do <strong>not</strong> have a naming trap here — <code>{}</code> genuinely creates an empty dictionary. This is actually the reverse situation of Python sets, where <code>{}</code> defaults to dict precisely because dict is the more common, default use of curly braces."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "empty_dict.py",
+          "lines": [
+            "empty = {}",
+            "print(type(empty))   # <class 'dict'> — this really is a dict"
+          ]
+        },
+        { "type": "subHeading", "text": "4. From a List of Tuples — dict()" },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "dict_from_pairs.py",
+          "lines": [
+            "pairs = [(\"a\", 1), (\"b\", 2), (\"c\", 3)]",
+            "d = dict(pairs)",
+            "print(d)   # {'a': 1, 'b': 2, 'c': 3}"
+          ]
+        },
+        { "type": "subHeading", "text": "5. Dictionary Comprehension" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Just like list and set comprehension, Python supports building a dictionary in a single expressive line."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "dict_comprehension.py",
+          "lines": [
+            "squares = {x: x**2 for x in range(6)}",
+            "print(squares)   # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Important rule:</strong> dictionary keys must be <strong>unique and hashable</strong> (immutable) — strings, numbers, and tuples all qualify. Values, on the other hand, can be absolutely anything, including lists, other dictionaries, or duplicates of each other."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "dict-characteristics",
+      "title": "Key Characteristics of Python Dictionaries",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Dictionaries have their own distinct rules that separate them from lists, tuples, and sets. Here are the ten most important ones to internalise."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            { "icon": "🔑", "title": "Key-Value Pairs", "text": "Every item is stored as a key mapped to a value — you retrieve data by key, not by numeric position." },
+            { "icon": "📌", "title": "Insertion Order Preserved", "text": "Since Python 3.7, dictionaries officially guarantee that keys keep the order in which they were inserted when you iterate over them." },
+            { "icon": "🚫", "title": "Keys Must Be Unique", "text": "If you assign a value to a key that already exists, the old value is simply overwritten — a dictionary can never have two identical keys." },
+            { "icon": "🔒", "title": "Keys Must Be Hashable", "text": "Only immutable types — strings, numbers, and tuples — are valid keys. Lists and other dictionaries cannot be used as keys." },
+            { "icon": "🎨", "title": "Values Can Be Anything", "text": "Unlike keys, values have no restrictions — they can be strings, numbers, lists, other dictionaries, functions, or even objects." },
+            { "icon": "✏️", "title": "Mutable", "text": "You can add, update, or delete key-value pairs after the dictionary is created — the dictionary itself can grow, shrink, and change." },
+            { "icon": "⚡", "title": "Fast Lookups", "text": "Retrieving a value by key runs in O(1) average time thanks to hashing — regardless of how many items the dictionary holds." },
+            { "icon": "🚷", "title": "No Positional Indexing", "text": "You cannot access my_dict[0] expecting 'the first item' — indexing a dict always means looking up a key, not a position." },
+            { "icon": "🪆", "title": "Supports Nesting", "text": "A dictionary value can itself be another dictionary, letting you model deeply structured, tree-like data such as JSON." },
+            { "icon": "🧮", "title": "Built on Hash Tables", "text": "CPython implements dictionaries using an open-addressing hash table combined with a separate insertion-order array — the technology that also powers Python sets." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "How Python Looks Up a Dictionary Value — Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every time you write <code>my_dict[key]</code>, Python runs the key through a precise internal lookup pipeline before returning a value. The flowchart below traces that exact process, and also shows what happens when the key doesn't exist."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "📝 my_dict[key]",         "sublabel": "Lookup requested",                    "type": "start" },
+            { "id": "2", "label": "🔑 Compute hash(key)",     "sublabel": "Python calls the key's __hash__()",   "type": "process" },
+            { "id": "3", "label": "📍 Locate Hash Bucket",    "sublabel": "Hash value maps to a table slot",     "type": "process" },
+            { "id": "4", "label": "❓ Key Found in Bucket?",  "sublabel": "Compare stored key with ==",          "type": "decision" },
+            { "id": "5", "label": "🔍 Resolve Collision",     "sublabel": "Probe next slot if hashes clashed",   "type": "decision" },
+            { "id": "6", "label": "🚫 Raise KeyError",        "sublabel": "Key not present anywhere",            "type": "end" },
+            { "id": "7", "label": "✅ Return Value",          "sublabel": "Matching key's value retrieved",      "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "hashing" },
+            { "from": "2", "to": "3", "label": "modulo table size" },
+            { "from": "3", "to": "4", "label": "check slot" },
+            { "from": "4", "to": "7", "label": "match — same key" },
+            { "from": "4", "to": "5", "label": "collision suspected" },
+            { "from": "5", "to": "7", "label": "match found after probing" },
+            { "from": "5", "to": "6", "label": "no match — key missing" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Key insight: this is exactly why dictionary keys must be <strong>hashable and immutable</strong> — if a key's hash could change after insertion, Python would look in the wrong bucket entirely and silently fail to find data that is actually there."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "accessing-modifying",
+      "title": "Accessing and Modifying Dictionary Values",
+      "blocks": [
+        { "type": "subHeading", "text": "📖 Reading Values" },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>my_dict[key]</code> — returns the value for key, raises <code>KeyError</code> if the key doesn't exist." },
+            { "html": "<code>my_dict.get(key)</code> — returns the value for key, or <code>None</code> (no error) if the key doesn't exist." },
+            { "html": "<code>my_dict.get(key, default)</code> — returns a custom fallback value instead of None when the key is missing." }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "reading_values.py",
+          "lines": [
+            "student = {\"name\": \"Riya\", \"age\": 21}",
+            "",
+            "print(student[\"name\"])            # Riya",
+            "print(student.get(\"grade\"))        # None — no error",
+            "print(student.get(\"grade\", \"N/A\")) # N/A — custom default"
+          ]
+        },
+        { "type": "subHeading", "text": "✏️ Adding and Updating Values" },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "adding_updating.py",
+          "lines": [
+            "student[\"grade\"] = \"A\"        # adds a new key",
+            "student[\"age\"] = 22           # overwrites existing key's value",
+            "student.update({\"city\": \"Patna\", \"age\": 23})  # updates multiple keys at once",
+            "print(student)"
+          ]
+        },
+        { "type": "subHeading", "text": "🗑️ Removing Values" },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>del my_dict[key]</code> — deletes the key-value pair, raises <code>KeyError</code> if key doesn't exist." },
+            { "html": "<code>my_dict.pop(key)</code> — removes key and returns its value, raises <code>KeyError</code> if missing (unless a default is given)." },
+            { "html": "<code>my_dict.popitem()</code> — removes and returns the <strong>last inserted</strong> key-value pair as a tuple (LIFO order)." },
+            { "html": "<code>my_dict.clear()</code> — removes every key-value pair, leaving an empty dictionary." }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "removing_values.py",
+          "lines": [
+            "del student[\"city\"]",
+            "grade = student.pop(\"grade\", \"N/A\")   # safe removal with default",
+            "last_item = student.popitem()          # removes most recently added pair",
+            "student.clear()",
+            "print(student)   # {}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "dict-methods-table",
+      "title": "Complete Python Dictionary Methods — Cheat Sheet",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Here is every commonly used dictionary method in one reference table, organised by what it does."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Method", "Category", "Description", "Returns"],
+          "rows": [
+            ["get(key, default)",         "Read",   "Safely retrieves a value without raising KeyError", "Value or default"],
+            ["keys()",                    "Read",   "Returns a view of all keys",                        "dict_keys"],
+            ["values()",                  "Read",   "Returns a view of all values",                      "dict_values"],
+            ["items()",                   "Read",   "Returns a view of all (key, value) pairs",          "dict_items"],
+            ["setdefault(key, default)",  "Write",  "Returns value if key exists, else inserts default", "Value"],
+            ["update(other)",             "Write",  "Merges another dict or key-value pairs in",         "None"],
+            ["pop(key, default)",         "Write",  "Removes key and returns its value",                 "Value"],
+            ["popitem()",                 "Write",  "Removes and returns the last-inserted pair",        "(key, value) tuple"],
+            ["clear()",                   "Write",  "Removes every key-value pair",                      "None"],
+            ["copy()",                    "Utility","Returns a shallow copy of the dictionary",           "dict"],
+            ["len(my_dict)",              "Utility","Returns the number of key-value pairs (built-in)",  "int"],
+            ["key in my_dict",            "Utility","Checks whether a key exists (built-in operator)",   "bool"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "iterating-heading",
+      "title": "Iterating Over a Dictionary",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Dictionaries offer three distinct \"views\" for iteration — over keys, over values, or over both together. Since Python 3.7, all three respect the guaranteed insertion order."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "iterating_dict.py",
+          "lines": [
+            "scores = {\"Aman\": 88, \"Zara\": 95, \"Kabir\": 74}",
+            "",
+            "for key in scores:                 # iterates over keys by default",
+            "    print(key)",
+            "",
+            "for value in scores.values():      # iterates over values only",
+            "    print(value)",
+            "",
+            "for key, value in scores.items():  # iterates over both together",
+            "    print(f\"{key} scored {value}\")"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>.items()</code> is by far the most commonly used pattern in real code — it lets you unpack the key and value directly in the loop header, avoiding a separate lookup like <code>scores[key]</code> inside the loop body."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "nested-dicts-heading",
+      "title": "Nested Dictionaries",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A dictionary value can itself be another dictionary — this is called <strong>nesting</strong>, and it's the foundation of how Python represents structured data such as <strong>JSON</strong> API responses, configuration files, and database records."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "nested_dict.py",
+          "lines": [
+            "company = {",
+            "    \"name\": \"Tech Sustainify\",",
+            "    \"founder\": {",
+            "        \"name\": \"Ashish\",",
+            "        \"location\": \"India\"",
+            "    },",
+            "    \"employees\": [",
+            "        {\"name\": \"Riya\", \"role\": \"Developer\"},",
+            "        {\"name\": \"Zara\", \"role\": \"Designer\"}",
+            "    ]",
+            "}",
+            "",
+            "print(company[\"founder\"][\"name\"])          # Ashish",
+            "print(company[\"employees\"][0][\"role\"])     # Developer"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When accessing deeply nested keys that might not exist, chaining <code>.get()</code> calls avoids crashing your program: <code>company.get(\"founder\", {}).get(\"email\", \"N/A\")</code> safely returns <code>\"N/A\"</code> instead of raising a <code>KeyError</code> if <code>\"email\"</code> is missing."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "dict-comprehension-deep-dive",
+      "title": "Dictionary Comprehension — A Deeper Look",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Dictionary comprehension follows the pattern <code>{key_expr: value_expr for item in iterable if condition}</code>, letting you build a dictionary from any iterable in a single readable line."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Inverting a dictionary", "text": " — {v: k for k, v in original.items()} swaps every key with its value, useful for reverse lookups." },
+            { "strong": "Filtering entries", "text": " — {k: v for k, v in scores.items() if v >= 90} keeps only key-value pairs that meet a condition." },
+            { "strong": "Building from two lists", "text": " — {k: v for k, v in zip(names, ages)} pairs up two parallel lists into a dictionary." },
+            { "strong": "Transforming values", "text": " — {k: v.upper() for k, v in data.items()} applies a transformation to every value while keeping the keys unchanged." }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "dict_comprehension_examples.py",
+          "lines": [
+            "scores = {\"Aman\": 88, \"Zara\": 95, \"Kabir\": 74}",
+            "",
+            "toppers = {k: v for k, v in scores.items() if v >= 85}",
+            "print(toppers)   # {'Aman': 88, 'Zara': 95}",
+            "",
+            "reversed_lookup = {v: k for k, v in scores.items()}",
+            "print(reversed_lookup)   # {88: 'Aman', 95: 'Zara', 74: 'Kabir'}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "merging-dicts",
+      "title": "Merging Dictionaries in Python",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python has evolved several ways to merge two dictionaries. Knowing all of them helps you read code written across different Python versions."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Method", "Python Version", "Modifies Original?", "Example"],
+          "rows": [
+            ["update()",          "All versions", "✅ Yes — modifies in place", "a.update(b)"],
+            ["{**a, **b}",        "3.5+",         "❌ No — creates a new dict", "merged = {**a, **b}"],
+            ["a | b (merge operator)",  "3.9+",   "❌ No — creates a new dict", "merged = a | b"],
+            ["a |= b (in-place merge)", "3.9+",   "✅ Yes — modifies in place", "a |= b"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "merging_dicts.py",
+          "lines": [
+            "defaults = {\"theme\": \"light\", \"font_size\": 12}",
+            "user_prefs = {\"font_size\": 16}",
+            "",
+            "# Python 3.9+ merge operator",
+            "final_settings = defaults | user_prefs",
+            "print(final_settings)   # {'theme': 'light', 'font_size': 16}"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In every merge method above, when the same key appears in both dictionaries, <strong>the value from the right-hand (or later) dictionary wins</strong>. This is why <code>user_prefs</code> overrides <code>defaults</code> for <code>font_size</code> in the example above."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "dict-vs-others",
+      "title": "Dictionary vs List vs Tuple vs Set — Comparison",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Choosing the right built-in collection depends on whether you need order, uniqueness, mutability, or key-based lookup."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Dictionary", "List", "Tuple", "Set"],
+          "rows": [
+            ["Stores",             "Key-value pairs",     "Ordered items",      "Ordered items",     "Unique items"],
+            ["Ordered?",           "✅ Yes (3.7+)",        "✅ Yes",             "✅ Yes",             "❌ No"],
+            ["Allows Duplicates?", "❌ No (keys)",         "✅ Yes",             "✅ Yes",             "❌ No"],
+            ["Mutable?",           "✅ Yes",               "✅ Yes",             "❌ No",              "✅ Yes"],
+            ["Access By",          "Key",                  "Index",              "Index",              "Value (membership only)"],
+            ["Syntax",             "{'a': 1}",             "[1, 2, 3]",          "(1, 2, 3)",          "{1, 2, 3}"],
+            ["Lookup Speed",       "⚡ O(1) average",      "🐢 O(n)",            "🐢 O(n)",            "⚡ O(1) average"],
+            ["Best For",           "Labelled/structured data, fast key lookup", "Ordered sequences", "Fixed, unchanging records", "Uniqueness, set math"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Python Dictionaries",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Dictionaries are extraordinarily useful, but understanding their trade-offs helps you choose the right structure every time."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Extremely Fast Lookups", "text": "Retrieving a value by key runs in O(1) average time, regardless of dictionary size — ideal for large datasets that need frequent lookups by name or ID." },
+            { "title": "Self-Documenting Data", "text": "Named keys like 'name' or 'price' make code far more readable than positional access like my_list[3], where the meaning of index 3 isn't obvious." },
+            { "title": "Flexible Value Types", "text": "Values can be numbers, strings, lists, functions, or even other dictionaries, making dicts perfect for representing complex, real-world structured data." },
+            { "title": "Guaranteed Insertion Order", "text": "Since Python 3.7, iteration order matches insertion order, which is a language guarantee you can safely rely on." },
+            { "title": "Native JSON Compatibility", "text": "Python dictionaries map directly onto JSON objects, making dicts the natural structure for working with APIs, config files, and web data." }
+          ],
+          "cons": [
+            { "title": "No Positional Indexing", "text": "You cannot access 'the third entry' the way you can with a list — dictionaries are accessed purely by key." },
+            { "title": "Keys Must Be Hashable", "text": "Lists and other dictionaries cannot be used as keys, which occasionally requires restructuring your data (e.g. converting a list key into a tuple)." },
+            { "title": "Higher Memory Overhead", "text": "The underlying hash table and separate order-tracking array mean dictionaries typically use more memory per item than an equivalent list." },
+            { "title": "KeyError Risk", "text": "Direct key access (my_dict[key]) raises a KeyError if the key is missing, requiring careful use of .get() or membership checks in uncertain cases." },
+            { "title": "Not Suitable for Purely Sequential Data", "text": "If your data doesn't naturally have labels — just an ordered sequence of values — a list is simpler and more appropriate than a dictionary." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "internal-architecture",
+      "title": "How Python Dictionaries Work Internally — Architecture",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The diagram below shows the internal layers behind every dictionary operation — from the Python code you write, down to the compact hash table CPython maintains in memory since the 3.6 redesign."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Your Python Code",
+              "color": "#6366f1",
+              "items": ["my_dict = {'a': 1}", "my_dict['b'] = 2", "for k, v in my_dict.items():"]
+            },
+            {
+              "label": "CPython dict Object API",
+              "color": "#0ea5e9",
+              "items": ["dict_setitem()", "dict_getitem()", "dict_delitem()"]
+            },
+            {
+              "label": "Hashing Layer",
+              "color": "#10b981",
+              "items": ["__hash__() called on each key", "Hash value computed (SipHash for strings)"]
+            },
+            {
+              "label": "Compact Hash Table (3.6+)",
+              "color": "#f59e0b",
+              "items": ["Sparse index array (hash → slot)", "Dense array preserving insertion order", "Automatic resizing as items are added"]
+            },
+            {
+              "label": "Memory Management",
+              "color": "#ef4444",
+              "items": ["Reference counting", "Garbage collector for cyclic references"]
+            },
+            {
+              "label": "Hardware",
+              "color": "#8b5cf6",
+              "items": ["CPU", "RAM"]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Since <strong>Python 3.6</strong>, CPython uses a clever \"compact dict\" design — a sparse index array that maps hashes to positions, alongside a separate dense array that stores the actual key-value pairs in insertion order. This redesign is what made guaranteed ordering possible <em>and</em> reduced memory usage compared to the older implementation, a rare case of getting both benefits at once."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "performance-heading",
+      "title": "Dictionary Performance — Big-O Complexity Table",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Understanding the time complexity of common operations helps you judge when a dictionary is the right performance choice."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Operation", "Dict (Average)", "Dict (Worst Case)", "List (Average, by value)"],
+          "rows": [
+            ["Lookup by key (my_dict[k])", "O(1)", "O(n)", "O(n)"],
+            ["Insert / update a key",       "O(1)", "O(n)", "O(1) (append only)"],
+            ["Delete a key",                "O(1)", "O(n)", "O(n)"],
+            ["Membership test (k in dict)", "O(1)", "O(n)", "O(n)"],
+            ["Iteration over all items",    "O(n)", "O(n)", "O(n)"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The \"worst case\" column applies only under heavy hash collisions, which are extremely rare with Python's well-distributed hash function — this is why dictionaries are described as O(1) \"on average\" in virtually all practical scenarios."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "Your First Python Dictionary Program",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Let's combine everything into one small program — building a dictionary, reading from it safely, updating it, and looping over it, exactly the pattern you'll reuse constantly in real projects."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "first_dict_program.py",
+          "lines": [
+            "# A simple inventory system",
+            "inventory = {\"apples\": 50, \"bananas\": 30, \"oranges\": 20}",
+            "",
+            "inventory[\"grapes\"] = 15                 # add a new item",
+            "inventory[\"bananas\"] -= 10                # update existing quantity",
+            "",
+            "for item, quantity in inventory.items():",
+            "    print(f\"{item}: {quantity} units\")",
+            "",
+            "print(\"Total items:\", sum(inventory.values()))"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "apples: 50 units",
+            "bananas: 20 units",
+            "oranges: 20 units",
+            "grapes: 15 units",
+            "Total items: 105"
+          ]
+        },
+        { "type": "subHeading", "text": "Practice This Code — Live Editor" },
+        {
+          "type": "liveEditor",
+          "initialCode": "inventory = {\"apples\": 50, \"bananas\": 30, \"oranges\": 20}\ninventory[\"grapes\"] = 15\nfor item, qty in inventory.items():\n    print(item, qty)"
+        },
+        { "type": "subHeading", "text": "Line-by-Line Explanation" },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>inventory = {...}</code> — creates a dictionary literal mapping each fruit name (key) to its stock count (value)." },
+            { "html": "<code>inventory[\"grapes\"] = 15</code> — since 'grapes' doesn't exist yet, this adds a brand-new key-value pair." },
+            { "html": "<code>inventory[\"bananas\"] -= 10</code> — since 'bananas' already exists, this updates its existing value instead of adding a duplicate key." },
+            { "html": "<code>inventory.items()</code> — returns every key-value pair, letting the loop unpack both item and quantity directly." },
+            { "html": "<code>sum(inventory.values())</code> — .values() extracts just the numbers, which sum() then adds together." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-errors-heading",
+      "title": "Common Errors and Gotchas When Using Dictionaries",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "These are the mistakes that trip up nearly every Python learner the first time they work with dictionaries in depth."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "KeyError on Missing Keys", "text": " — my_dict[\"missing_key\"] crashes the program if the key isn't present. Use .get() or check 'key in my_dict' first when you're unsure." },
+            { "strong": "TypeError: unhashable type: 'list'", "text": " — you cannot use a list or another dictionary as a key, since both are mutable and unhashable. Use a tuple instead if you need a compound key." },
+            { "strong": "Assuming .keys() Returns a List", "text": " — .keys(), .values(), and .items() return special 'view' objects, not lists. They update automatically if the dictionary changes, and support 'in' checks efficiently, but need list(...) wrapped around them if you need actual list operations like indexing." },
+            { "strong": "Mutable Default Values Shared Across Keys", "text": " — using {}.fromkeys(keys, []) makes every key point to the exact same list object, so modifying one key's list unexpectedly changes them all. Use a dict comprehension instead: {k: [] for k in keys}." },
+            { "strong": "Modifying a Dictionary While Iterating", "text": " — adding or removing keys inside a for loop over the same dictionary raises RuntimeError: dictionary changed size during iteration. Iterate over list(my_dict.items()) instead if you need to modify it during the loop." },
+            { "strong": "Confusing == with is for Dictionary Comparison", "text": " — two separate dictionaries with identical content compare equal with ==, but are not the same object in memory, so 'is' returns False even though the data matches." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-uses",
+      "title": "Where Are Python Dictionaries Used? — Real-World Applications",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Dictionaries are arguably Python's single most-used data structure. Here is where you will actually reach for a dict in real, professional code:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🌐 Working with JSON & APIs", "text": " — every JSON object returned by a web API is automatically parsed into a Python dictionary, making dicts essential for virtually all web and API development." },
+            { "strong": "⚙️ Configuration & Settings", "text": " — application settings, environment variables, and feature flags are almost always modelled as dictionaries mapping setting names to their values." },
+            { "strong": "🧮 Counting & Frequency Analysis", "text": " — counting word frequency in text, votes in a poll, or occurrences of any item is a natural dictionary pattern: word_counts[word] = word_counts.get(word, 0) + 1." },
+            { "strong": "🗄️ Caching & Memoization", "text": " — storing previously computed results keyed by their input arguments (a cache) avoids redoing expensive calculations, and is implemented almost universally with a dict." },
+            { "strong": "📇 Representing Records", "text": " — a single student, product, or user is naturally modelled as one dictionary, with keys like 'name', 'id', and 'email' — mirroring a row in a database." },
+            { "strong": "🕸️ Graph Representation", "text": " — graphs are commonly represented as a dictionary mapping each node to a list of its neighbours, powering algorithms like BFS, DFS, and shortest-path search." },
+            { "strong": "🏷️ Grouping Data", "text": " — grouping a list of items by a shared attribute (e.g. grouping employees by department) is typically done by building a dictionary of lists, keyed by that attribute." },
+            { "strong": "🐍 Python's Own Internals", "text": " — every object's attributes, every module's namespace, and every function's local variables in CPython are themselves implemented internally using dictionaries." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-dicts",
+      "title": "Why Should You Learn Python Dictionaries in 2026?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If you only deeply master one Python data structure, it should be the dictionary. Here's why it consistently pays off across every area of Python development:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🌍 The Language of APIs & JSON", "text": " — nearly every external data source you'll work with — REST APIs, config files, NoSQL databases — arrives as JSON, which maps directly onto Python dictionaries." },
+            { "strong": "🎯 Extremely Common in Interviews", "text": " — 'count word frequency', 'group by category', and 'build a cache' are classic interview problems, and all three are solved cleanly with a dictionary." },
+            { "strong": "⚡ Massive Performance Advantage", "text": " — replacing a linear search through a list with a dictionary lookup is one of the highest-impact, easiest optimisations you can make in everyday code." },
+            { "strong": "🧠 Enables Readable, Self-Documenting Code", "text": " — named keys like order['total_price'] communicate intent far better than an unlabeled positional value like order[4]." },
+            { "strong": "🔗 Foundation for Advanced Python", "text": " — kwargs, class __dict__ attributes, namespaces, and even Python's own object model are all built on the same dictionary concept you learn here." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python Dictionary Interview Questions — Beginner Level",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the most frequently asked interview questions specifically about <strong>Python dictionaries</strong>. Practice explaining each answer in your own words."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is a dictionary in Python and how is it different from a list?",
+              "a": "A dictionary is an unordered-by-value collection of key-value pairs, where each unique key maps to one value. Unlike a list, which is accessed by numeric position, a dictionary is accessed by a descriptive key, and offers much faster average lookups — O(1) versus O(n) for searching a list by value.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. Do Python dictionaries maintain insertion order?",
+              "a": "Yes, as of Python 3.7, dictionaries are guaranteed by the language specification to preserve insertion order. In Python 3.6 this behaviour existed as an implementation detail of CPython, but it only became an official guarantee in 3.7.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q3. What is the difference between dict[key] and dict.get(key)?",
+              "a": "dict[key] raises a KeyError if the key doesn't exist. dict.get(key) returns None (or a custom default you provide as a second argument) instead of raising an error, making it the safer choice when you're not certain the key is present.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. Can a Python dictionary have duplicate keys?",
+              "a": "No. If you assign a value to a key that already exists in a dictionary literal or via assignment, the new value simply overwrites the old one — the dictionary never stores two entries for the same key.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q5. What types of objects can be used as dictionary keys?",
+              "a": "Only hashable, immutable objects can be dictionary keys — strings, numbers, and tuples (as long as the tuple itself contains only hashable elements). Mutable objects like lists, sets, and other dictionaries cannot be used as keys because they are not hashable.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q6. What is the difference between keys(), values(), and items()?",
+              "a": "keys() returns a view of just the dictionary's keys. values() returns a view of just the values. items() returns a view of (key, value) tuple pairs. All three are 'view objects' that dynamically reflect changes to the underlying dictionary rather than static copies.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. How do you merge two dictionaries in Python?",
+              "a": "Several ways exist: dict1.update(dict2) merges in place; {**dict1, **dict2} creates a new merged dictionary (Python 3.5+); and dict1 | dict2 does the same using the merge operator (Python 3.9+). In all cases, when the same key appears in both, the value from the second/right-hand dictionary wins.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. What happens if you use a list as a dictionary key?",
+              "a": "Python raises TypeError: unhashable type: 'list'. Lists are mutable, so their contents — and thus their hash value — could change after being used as a key, which dictionaries cannot allow. Use a tuple instead if you need a compound, list-like key.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q9. What is dictionary comprehension and how does it work?",
+              "a": "Dictionary comprehension is a concise, one-line syntax for building a dictionary: {key_expr: value_expr for item in iterable if condition}. For example, {x: x**2 for x in range(5)} creates a dictionary mapping each number to its square, replacing a longer for-loop-and-assignment pattern.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q10. How is a Python dictionary implemented internally?",
+              "a": "CPython implements dictionaries using a hash table combined with a separate dense array (since the 3.6 redesign) that preserves insertion order. Each key is hashed to determine its bucket, giving O(1) average time for lookups, insertions, and deletions, while the dense array allows fast, ordered iteration.",
+              "tag": "Current Affairs"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Knowledge of Dictionaries",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Try to work out each answer yourself before revealing it — active recall is one of the fastest ways to lock in a new concept."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What does {\"a\": 1, \"a\": 2} evaluate to, and why?",
+              "a": "{'a': 2}. When a dictionary literal repeats the same key, the later value silently overwrites the earlier one — a dictionary can never hold two entries for an identical key.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What is the output of len({\"x\": 1, \"y\": 2, \"z\": 3})?",
+              "a": "3. len() on a dictionary counts the number of key-value pairs, not the number of individual keys and values combined.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. What error does {[1, 2]: \"value\"} raise, and why?",
+              "a": "TypeError: unhashable type: 'list'. The dictionary literal attempts to use a list as a key, but lists are mutable and therefore not hashable, so Python cannot place it correctly in the underlying hash table.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. Given d = {\"a\": 1, \"b\": 2}, what does d.setdefault(\"c\", 3) do, and what does d look like afterward?",
+              "a": "Since 'c' doesn't exist in d, setdefault inserts it with the value 3 and returns 3. Afterward, d becomes {'a': 1, 'b': 2, 'c': 3}. If 'c' had already existed, setdefault would simply return its current value and leave the dictionary unchanged.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Why does {}.fromkeys([\"a\", \"b\"], []) create a subtle bug if you later modify one key's list?",
+              "a": "fromkeys() assigns the exact same list object as the value for every key, rather than creating a separate list for each. Appending to the list under key 'a' will also appear under key 'b', since both keys reference the identical object in memory. Use a dict comprehension {k: [] for k in keys} to give each key its own independent list.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. How would you count how many times each word appears in a list of words, in three lines or fewer?",
+              "a": "counts = {}\nfor word in words:\n    counts[word] = counts.get(word, 0) + 1\nThis uses .get(word, 0) to safely handle words seen for the first time, defaulting their count to 0 before incrementing.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What is the difference between dict1.update(dict2) and dict1 | dict2?",
+              "a": "update() modifies dict1 directly in place and returns None. The | merge operator (Python 3.9+) leaves both original dictionaries untouched and instead returns a brand-new merged dictionary. Use update() when you want to mutate the existing dictionary, and | when you want to preserve the originals.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Write a one-line dictionary comprehension that inverts a dictionary (swaps its keys and values), assuming all original values are unique and hashable.",
+              "a": "inverted = {v: k for k, v in original.items()} — this iterates over each (key, value) pair via .items() and rebuilds a new dictionary with the roles swapped. It only works correctly if the original values are themselves unique and hashable, since they become the new keys.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Why the Dictionary is Python's MVP Data Structure",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The Python <strong>dictionary</strong> is, without exaggeration, the most important data structure in the entire language. It is the natural home for anything with a name or a label — a user profile, an API response, a configuration file, a word count, a cache — and its O(1) average lookup speed means it stays fast even as your data grows into the millions of entries."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "At the same time, dictionaries are not a universal replacement for lists, tuples, or sets. If your data is a plain, unlabeled sequence, or you need strict positional access, a list is simpler and clearer. If you only care about uniqueness and set-theory comparisons, a set is the leaner choice. Knowing when a dictionary is genuinely the right fit — versus reaching for it out of habit — is what separates a beginner from a confident Python developer."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Your Situation", "Should You Use a Dictionary?"],
+          "rows": [
+            ["Data has a clear label or name for each value", "✅ Yes — keys make your code self-documenting"],
+            ["You need fast lookups by name/ID on large data", "✅ Yes — O(1) average beats scanning a list"],
+            ["Working with JSON, APIs, or config files", "✅ Yes — dicts map directly onto JSON objects"],
+            ["Counting or grouping items by a category", "✅ Yes — the classic dict-of-counts / dict-of-lists pattern"],
+            ["Data is a plain, unlabeled ordered sequence", "❌ No — use a list instead"],
+            ["You only need uniqueness, not key-value pairing", "❌ No — use a set instead"],
+            ["Data must never change after creation", "⚠️ Consider a tuple, or types.MappingProxyType for a read-only dict view"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The next step in your Python journey is to practise converting a few of your existing list-of-tuples or parallel-list patterns into dictionaries — you'll notice your code becomes both more readable and measurably faster whenever lookups by name are involved. Continue on to <strong>Python Functions</strong> next, since dictionaries are heavily used for keyword arguments (<code>**kwargs</code>) and default parameter patterns. 🗂️"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "Do Python dictionaries maintain the order items were added?",
+        "a": "Yes. Since Python 3.7, dictionaries officially guarantee insertion order as a language feature — iterating over a dictionary always returns keys in the exact order they were first inserted. This was an unofficial implementation detail in Python 3.6 and became a formal guarantee in 3.7."
+      },
+      {
+        "q": "What is the difference between dict[key] and dict.get(key) in Python?",
+        "a": "dict[key] raises a KeyError and crashes your program if the key doesn't exist. dict.get(key) instead returns None, or a custom fallback value if you provide one as a second argument, making it the safer option whenever you're not certain a key is present."
+      },
+      {
+        "q": "Can a Python dictionary key be a list?",
+        "a": "No. Dictionary keys must be hashable, and hashability requires immutability. Lists are mutable, so Python does not allow them as dictionary keys, raising TypeError: unhashable type: 'list'. Use a tuple instead if you need a compound, list-like key."
+      },
+      {
+        "q": "How do you merge two dictionaries in Python?",
+        "a": "You can use dict1.update(dict2) to merge in place, {**dict1, **dict2} to create a new merged dictionary (Python 3.5+), or the merge operator dict1 | dict2 (Python 3.9+) for the same non-destructive result. In every case, if the same key exists in both, the second/right-hand dictionary's value overwrites the first."
+      },
+      {
+        "q": "What is dictionary comprehension in Python?",
+        "a": "Dictionary comprehension is a concise one-line syntax for constructing a dictionary from an iterable: {key_expr: value_expr for item in iterable if condition}. For example, {x: x*x for x in range(5)} builds a dictionary mapping numbers to their squares without writing a full for loop."
+      },
+      {
+        "q": "Are Python dictionary lookups really O(1)?",
+        "a": "Yes, on average. Python dictionaries use a hash table internally, so looking up a value by key involves computing a hash and jumping directly to the expected memory slot, independent of how many items the dictionary holds. Worst-case performance can degrade to O(n) under heavy hash collisions, but this is extremely rare in practice with Python's hash function."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Sets", "path": "/python/python-sets" },
+    "next": { "label": "Next: Python Arrays →", "path": "/python/python-arrays" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Data type",     "dd": "dict" },
+      { "dt": "Stores",        "dd": "Key-value pairs" },
+      { "dt": "Mutable?",      "dd": "Yes" },
+      { "dt": "Ordered?",      "dd": "Yes (guaranteed since 3.7)" },
+      { "dt": "Duplicate Keys?","dd": "Never allowed" },
+      { "dt": "Lookup Speed",  "dd": "O(1) average" }
+    ],
+    "relatedArticles": [
+      { "label": "Python Sets",           "path": "/python/python-sets" },
+      { "label": "Python Lists",          "path": "/python/python-lists" },
+      { "label": "Python Tuples",         "path": "/python/python-tuples" },
+      { "label": "Python Data Types",     "path": "/python/python-datatypes" },
+      { "label": "Python Comprehensions", "path": "/python/python-comprehensions" },
+      { "label": "Python Functions",      "path": "/python/python-functions" },
+      { "label": "Python JSON Handling",  "path": "/python/python-json" },
+      { "label": "Python OOP",            "path": "/python/python-oop" }
+    ],
+    "tags": ["Dictionary","dict","Key-Value","Hashing","Hash Table","Dict Comprehension","Nested Dictionary","JSON","Merging Dicts","get() method","items()","CPython"]
+  }
+}

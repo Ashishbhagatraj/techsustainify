@@ -31,7 +31,7 @@ import java_java_error_exceptions from '../data/java/java-error-exceptions.json'
 import java_java_for_loop from '../data/java/java-for-loop.json';
 import java_java_function_parameters from '../data/java/java-function-parameters.json';
 import java_java_hashmap from '../data/java/java-hashmap.json';
-import java_java_hastable from '../data/java/java-hastable.json';
+import java_java_hashtable from '../data/java/java-hashtable.json';
 import java_java_home from '../data/java/java-home.json';
 import java_java_identifier from '../data/java/java-identifier.json';
 import java_java_if_else from '../data/java/java-if-else.json';
@@ -81,16 +81,47 @@ import javascript_javascript_home from '../data/javascript/javascript-home.json'
 import kotlin_kotlin_home from '../data/kotlin/kotlin-home.json';
 import mongodb_mongodb_home from '../data/mongodb/mongodb-home.json';
 import node_node_home from '../data/node/node-home.json';
+import python_python_abstraction from '../data/python/python-abstraction.json';
+import python_python_arrays from '../data/python/python-arrays.json';
+import python_python_booleans from '../data/python/python-booleans.json';
+import python_python_break_continue from '../data/python/python-break-continue.json';
+import python_python_classes_objects from '../data/python/python-classes-objects.json';
 import python_python_comments from '../data/python/python-comments.json';
+import python_python_constructors from '../data/python/python-constructors.json';
 import python_python_data_types from '../data/python/python-data-types.json';
+import python_python_dictionaries from '../data/python/python-dictionaries.json';
+import python_python_encapsulation from '../data/python/python-encapsulation.json';
+import python_python_exceptions from '../data/python/python-exceptions.json';
+import python_python_finally from '../data/python/python-finally.json';
+import python_python_for_loop from '../data/python/python-for-loop.json';
+import python_python_function_arguments from '../data/python/python-function-arguments.json';
+import python_python_functions from '../data/python/python-functions.json';
 import python_python_home from '../data/python/python-home.json';
+import python_python_if_else from '../data/python/python-if-else.json';
+import python_python_inheritance from '../data/python/python-inheritance.json';
 import python_python_installation from '../data/python/python-installation.json';
 import python_python_intro from '../data/python/python-intro.json';
+import python_python_lambda from '../data/python/python-lambda.json';
+import python_python_lists from '../data/python/python-lists.json';
+import python_python_match_case from '../data/python/python-match-case.json';
+import python_python_method_overriding from '../data/python/python-method-overriding.json';
+import python_python_oops from '../data/python/python-oops.json';
 import python_python_operators from '../data/python/python-operators.json';
+import python_python_pass_statement from '../data/python/python-pass-statement.json';
+import python_python_polymorphism from '../data/python/python-polymorphism.json';
+import python_python_raise_exception from '../data/python/python-raise-exception.json';
+import python_python_recursion from '../data/python/python-recursion.json';
+import python_python_scope from '../data/python/python-scope.json';
+import python_python_sets from '../data/python/python-sets.json';
+import python_python_strings from '../data/python/python-strings.json';
+import python_python_super_function from '../data/python/python-super-function.json';
 import python_python_syntax from '../data/python/python-syntax.json';
+import python_python_try_except from '../data/python/python-try-except.json';
+import python_python_tuples from '../data/python/python-tuples.json';
 import python_python_type_casting from '../data/python/python-type-casting.json';
 import python_python_user_input from '../data/python/python-user-input.json';
 import python_python_variables from '../data/python/python-variables.json';
+import python_python_while_loop from '../data/python/python-while-loop.json';
 import react_react_home from '../data/react/react-home.json';
 import ruby_ruby_home from '../data/ruby/ruby-home.json';
 import rust_rust_home from '../data/rust/rust-home.json';
@@ -130,7 +161,7 @@ export const allTopicData: Record<string, any> = {
   "java/java-for-loop": java_java_for_loop,
   "java/java-function-parameters": java_java_function_parameters,
   "java/java-hashmap": java_java_hashmap,
-  "java/java-hastable": java_java_hastable,
+  "java/java-hashtable": java_java_hashtable,
   "java/java-home": java_java_home,
   "java/java-identifier": java_java_identifier,
   "java/java-if-else": java_java_if_else,
@@ -180,16 +211,47 @@ export const allTopicData: Record<string, any> = {
   "kotlin/kotlin-home": kotlin_kotlin_home,
   "mongodb/mongodb-home": mongodb_mongodb_home,
   "node/node-home": node_node_home,
+  "python/python-abstraction": python_python_abstraction,
+  "python/python-arrays": python_python_arrays,
+  "python/python-booleans": python_python_booleans,
+  "python/python-break-continue": python_python_break_continue,
+  "python/python-classes-objects": python_python_classes_objects,
   "python/python-comments": python_python_comments,
+  "python/python-constructors": python_python_constructors,
   "python/python-data-types": python_python_data_types,
+  "python/python-dictionaries": python_python_dictionaries,
+  "python/python-encapsulation": python_python_encapsulation,
+  "python/python-exceptions": python_python_exceptions,
+  "python/python-finally": python_python_finally,
+  "python/python-for-loop": python_python_for_loop,
+  "python/python-function-arguments": python_python_function_arguments,
+  "python/python-functions": python_python_functions,
   "python/python-home": python_python_home,
+  "python/python-if-else": python_python_if_else,
+  "python/python-inheritance": python_python_inheritance,
   "python/python-installation": python_python_installation,
   "python/python-intro": python_python_intro,
+  "python/python-lambda": python_python_lambda,
+  "python/python-lists": python_python_lists,
+  "python/python-match-case": python_python_match_case,
+  "python/python-method-overriding": python_python_method_overriding,
+  "python/python-oops": python_python_oops,
   "python/python-operators": python_python_operators,
+  "python/python-pass-statement": python_python_pass_statement,
+  "python/python-polymorphism": python_python_polymorphism,
+  "python/python-raise-exception": python_python_raise_exception,
+  "python/python-recursion": python_python_recursion,
+  "python/python-scope": python_python_scope,
+  "python/python-sets": python_python_sets,
+  "python/python-strings": python_python_strings,
+  "python/python-super-function": python_python_super_function,
   "python/python-syntax": python_python_syntax,
+  "python/python-try-except": python_python_try_except,
+  "python/python-tuples": python_python_tuples,
   "python/python-type-casting": python_python_type_casting,
   "python/python-user-input": python_python_user_input,
   "python/python-variables": python_python_variables,
+  "python/python-while-loop": python_python_while_loop,
   "react/react-home": react_react_home,
   "ruby/ruby-home": ruby_ruby_home,
   "rust/rust-home": rust_rust_home,

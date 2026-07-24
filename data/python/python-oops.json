@@ -1,0 +1,721 @@
+{
+  "meta": {
+    "title": "Python OOPs Concepts | Classes, Objects, Inheritance, Polymorphism Explained | Python Tutorial for Beginners 2026 | Tech Sustainify",
+    "description": "Learn Python OOPs concepts in depth. Covers classes, objects, the __init__ constructor, self, the four pillars of OOP (encapsulation, inheritance, polymorphism, abstraction), dunder methods, and common errors like TypeError: missing 1 required positional argument: 'self' for 2026.",
+    "keywords": "python oops concepts, python classes and objects, self keyword python, __init__ constructor python, encapsulation python, inheritance python, polymorphism python, abstraction python, dunder methods python, python OOP interview questions",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-oops/",
+    "ogTitle": "Python OOPs Concepts — Complete Classes & Objects Guide 2026 | Tech Sustainify",
+    "ogDescription": "Deep dive into Python OOPs — classes, objects, self, __init__, the four pillars of OOP, dunder methods, and the exact TypeErrors every dev hits while learning this.",
+    "ogUrl": "https://techsustainify.com/python/python-oops/",
+    "ogImage": "https://techsustainify.com/images/python-oops-concepts-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "21 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-03-10",
+    "schemaDateModified": "2026-03-25",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 8000
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python OOPs Concepts" }
+  ],
+
+  "articleHeader": {
+    "badge": "🏛️ Python",
+    "title": "Python OOPs Concepts — Classes and Objects Explained Properly",
+    "subtitle": "Everything you actually need to know about Object-Oriented Programming in Python — classes, objects, self, __init__, the four pillars (encapsulation, inheritance, polymorphism, abstraction), and the exact TypeError you'll hit while learning this."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-25", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time", "value": "21 min" },
+    { "icon": "🎯", "label": "Level", "value": "Beginner" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-oops",
+      "title": "What is OOP (Object-Oriented Programming) in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Object-Oriented Programming is a way of organising code around <strong>objects</strong> — self-contained bundles that hold both data (attributes) and the functions that operate on that data (methods) together, instead of keeping data and logic as separate, loosely-related things floating around a script. A <code>BankAccount</code> object holds its own <code>balance</code> and comes with its own <code>deposit()</code> and <code>withdraw()</code> methods bolted directly to it — the data and the behaviour that's allowed to touch that data live in the same place, on purpose."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In Python, you define the blueprint for these objects using the <strong>class</strong> keyword. A class is the template; an <strong>object</strong> (or <strong>instance</strong>) is a specific thing built from that template. <code>class Dog:</code> defines what a dog generally looks like — it has a name, a breed, it can bark — and <code>my_dog = Dog(\"Bruno\", \"Labrador\")</code> creates one specific, real dog object following that template, with its own actual name and breed values, distinct from any other <code>Dog</code> object you create."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's something worth saying plainly, since a lot of tutorials skip it: Python doesn't force you to use OOP. You can write a completely functional Python script using nothing but plain functions and dictionaries, and plenty of good scripts do exactly that. OOP earns its complexity when you're modelling something with genuine identity and internal state that persists and changes over time — a user account, a game character, a database connection — not for every single script you write. My honestly opinionated take: I've seen more damage done by forcing unnecessary classes onto a 40-line script than by beginners avoiding OOP too long. Learn it properly, then use judgment about when it actually earns its place."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This guide covers class and object mechanics, the <code>self</code> keyword and why it exists, the <code>__init__</code> constructor, and the four pillars traditionally used to describe OOP — encapsulation, inheritance, polymorphism, and abstraction — with the exact errors you'll run into along the way, including the notorious <code>TypeError: missing 1 required positional argument: 'self'</code>."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "history-of-oops",
+      "title": "History — How Python's OOP Support Developed",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python has supported classes since its very first release, but the specific way object-oriented code is written in Python has genuinely evolved, with one particularly significant unification that changed how the whole language thinks about types."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "1991 — Python 0.9.0", "text": " — Classes, inheritance, and exception handling as classes were present from Python's first public release — Guido van Rossum's design notes describe classes as a core feature from the very beginning, not a later addition." },
+            { "strong": "Early-to-mid 1990s — Old-Style Classes", "text": " — Early Python had a distinction between 'old-style' classes (which didn't inherit from a common root type) and built-in types like int or list, which were implemented differently in C and behaved with subtly different rules — a genuine wart in the language's early design." },
+            { "strong": "2002 — Python 2.2 (PEP 252, 253)", "text": " — Introduced 'new-style' classes, unifying user-defined classes and built-in types under a single object model, all ultimately inheriting from a common object base type. This was a foundational change that made Python's type system genuinely consistent." },
+            { "strong": "2008 — Python 3.0", "text": " — Made new-style classes the ONLY kind — every class in Python 3 automatically inherits from object, whether you write class Dog(object): or simply class Dog:, finally eliminating the old-style/new-style distinction entirely." },
+            { "strong": "2015 — Python 3.5", "text": " — Introduced typing.NamedTuple and enhanced dataclass-adjacent patterns, offering lighter-weight alternatives to full classes for simple data-holding structures." },
+            { "strong": "2018 — Python 3.7 (PEP 557)", "text": " — Introduced the @dataclass decorator, dramatically reducing the boilerplate needed for classes whose main job is holding structured data, auto-generating __init__, __repr__, and __eq__ methods based on class-level type annotations." },
+            { "strong": "2026 — Current state", "text": " — Full classical OOP support — classes, inheritance, multiple inheritance, abstract base classes via the abc module, and dataclasses for lighter-weight cases — all coexist as options, letting Python developers choose exactly how much OOP ceremony a given problem actually needs." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "features-heading",
+      "title": "Key Characteristics of Python Classes and Objects",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Here are the 12 things worth knowing precisely about how Python's object model actually works:"
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            { "icon": "🏗️", "title": "Defined with class", "text": "class Dog: followed by an indented block defines a class. By convention, class names use PascalCase (Dog, BankAccount), distinguishing them visually from function and variable names, which use snake_case." },
+            { "icon": "🔧", "title": "__init__ Is the Constructor", "text": "The __init__ method runs automatically whenever a new object is created from the class, typically used to set up the object's initial attribute values based on arguments passed at creation time." },
+            { "icon": "🫴", "title": "self Refers to the Specific Instance", "text": "Every regular method's first parameter, conventionally named self, refers to the specific object the method was called on — it's how a method accesses and modifies that particular object's own attributes." },
+            { "icon": "📦", "title": "Objects Hold Their Own State", "text": "Two objects created from the same class are completely independent — changing one object's attribute has zero effect on another object of the same class, unless they're explicitly sharing a mutable class-level attribute." },
+            { "icon": "🧬", "title": "Supports Inheritance", "text": "A class can inherit from another class, automatically gaining its attributes and methods while being free to override or extend them — class Puppy(Dog): builds on everything Dog already defines." },
+            { "icon": "🎭", "title": "Supports Polymorphism", "text": "Different classes can implement the same method name with different behaviour, letting code written against a common interface work correctly regardless of the specific object's exact type." },
+            { "icon": "🔒", "title": "Encapsulation via Naming Convention", "text": "Python doesn't enforce true private attributes the way Java does — a leading underscore (_balance) signals 'internal use, don't touch directly' by convention, while double underscore (__balance) triggers name mangling for a stronger (but still not absolute) form of privacy." },
+            { "icon": "🎩", "title": "Dunder Methods Customise Behaviour", "text": "Methods like __str__, __eq__, __len__, and __add__ (all with double underscores, hence 'dunder') let a custom class integrate with Python's built-in operators and functions — print(), ==, len(), + — behaving naturally rather than needing special custom syntax." },
+            { "icon": "🏛️", "title": "Class Attributes vs Instance Attributes", "text": "Attributes defined directly inside the class body (outside any method) are shared across every instance by default. Attributes assigned via self.x = ... inside __init__ belong to that specific instance alone." },
+            { "icon": "🧪", "title": "abc Module Enables True Abstraction", "text": "The abc module's ABC base class and @abstractmethod decorator let you define a class that cannot be instantiated directly and forces subclasses to implement specific methods, genuinely enforced at runtime." },
+            { "icon": "🔗", "title": "Multiple Inheritance Is Supported", "text": "Unlike Java, a Python class can inherit from more than one parent class simultaneously: class FlyingFish(Fish, Bird): — resolved via a defined, predictable method resolution order (MRO)." },
+            { "icon": "🎯", "title": "Everything in Python Is Actually an Object", "text": "Integers, strings, functions, and even classes themselves are objects in Python, all ultimately inheriting from the base object type — this uniformity is why type(5) returns <class 'int'>, treating even a plain number as an instance of a class." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "How an Object Gets Created and Used — Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Creating an object and calling a method on it goes through a specific, precise sequence — Python allocates memory, runs your constructor, and then routes every method call back to that exact object via <code>self</code>. Here's that full pipeline traced through."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "📝 Dog(\"Bruno\", \"Labrador\") Called", "sublabel": "Class used like a function", "type": "start" },
+            { "id": "2", "label": "🧱 New Object Allocated", "sublabel": "Empty instance created in memory", "type": "process" },
+            { "id": "3", "label": "🔧 __init__ Runs Automatically", "sublabel": "self, \"Bruno\", \"Labrador\" bound", "type": "process" },
+            { "id": "4", "label": "📥 Attributes Set on self", "sublabel": "self.name = \"Bruno\", etc.", "type": "process" },
+            { "id": "5", "label": "📤 Fully Formed Object Returned", "sublabel": "Assigned to my_dog variable", "type": "process" },
+            { "id": "6", "label": "📞 my_dog.bark() Called", "sublabel": "Method called on the object", "type": "decision" },
+            { "id": "7", "label": "🫴 self Bound to my_dog", "sublabel": "Python passes the object automatically", "type": "process" },
+            { "id": "8", "label": "▶️ Method Body Executes", "sublabel": "Using self.name, self.breed, etc.", "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "class called" },
+            { "from": "2", "to": "3", "label": "constructor invoked" },
+            { "from": "3", "to": "4", "label": "runs body" },
+            { "from": "4", "to": "5", "label": "construction complete" },
+            { "from": "5", "to": "6", "label": "later in code" },
+            { "from": "6", "to": "7", "label": "Python auto-binds" },
+            { "from": "7", "to": "8", "label": "runs using that instance's data" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Key insight: step 7 is the part beginners most often miss — when you write <code>my_dog.bark()</code>, you never actually pass <code>my_dog</code> as an argument yourself. Python does that automatically, behind the scenes, which is exactly why <code>bark(self):</code> needs that <code>self</code> parameter in its definition even though you never see it supplied at the call site."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "how-oops-works",
+      "title": "How OOP Actually Works — self, __init__, and the Error They Explain",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Three things separate someone who's copied a class template from someone who actually understands Python's object model: knowing exactly what <code>self</code> is and why it's required, understanding what <code>__init__</code> genuinely does (and doesn't do), and recognising the specific error that appears the moment either of these is misunderstood."
+        },
+        { "type": "subHeading", "text": "🫴 self — Not Magic, Just an Explicit Parameter" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's the thing that makes <code>self</code> click for a lot of people: it's not a keyword, and it's not special syntax. It's a completely ordinary parameter name — Python could work exactly the same if you called it <code>this</code> or <code>instance</code> instead, though breaking the <code>self</code> convention would confuse literally every other Python developer who reads your code. When you write <code>my_dog.bark()</code>, Python automatically translates that, internally, into something functionally equivalent to <code>Dog.bark(my_dog)</code> — the object you called the method on gets passed as the first argument, automatically, every single time. That's the entire mechanism. <code>self</code> is just the name conventionally given to that first, automatically-supplied argument."
+        },
+        { "type": "subHeading", "text": "💥 The Classic Error — Forgetting self" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Write a method without the <code>self</code> parameter — <code>def bark():</code> instead of <code>def bark(self):</code> — and calling <code>my_dog.bark()</code> raises <code>TypeError: bark() takes 0 positional arguments but 1 was given</code>. This confuses nearly everyone the first time, because you genuinely didn't pass any arguments at the call site. But Python still automatically supplies <code>my_dog</code> as that first argument regardless of whether your method's signature has room for it — the method just wasn't written to accept it. This is one of the most common beginner OOP errors, and understanding exactly why it happens (rather than just memorising 'always add self') is what actually prevents it from recurring in slightly different forms later."
+        },
+        { "type": "subHeading", "text": "🔧 __init__ — Setup, Not Creation" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>__init__</code> is commonly called 'the constructor,' but that's a slight simplification worth being precise about: the object has technically already been created (allocated in memory) by the time <code>__init__</code> runs — <code>__init__</code>'s job is <em>initialising</em> that already-existing object's starting state, not creating the object itself (that's technically a separate, rarely-touched method called <code>__new__</code>). In practice, this distinction rarely matters day to day, but it explains why <code>__init__</code> never has a <code>return</code> statement returning a value — its whole job is setting attributes on <code>self</code>, and returning anything other than <code>None</code> from <code>__init__</code> actually raises <code>TypeError: __init__() should return None</code>."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Simple rule to remember:</strong> every regular method needs <code>self</code> as its first parameter, Python supplies that argument automatically whenever you call a method on an object, and <code>__init__</code> is where you set up an object's starting attributes using <code>self.attribute_name = value</code>, never returning anything from it."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "four-pillars-comparison",
+      "title": "The Four Pillars of OOP — Key Differences",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Encapsulation, inheritance, polymorphism, and abstraction are the four concepts traditionally used to describe what makes a language 'object-oriented.' Here's what each one actually means in concrete Python terms."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Pillar", "Core Idea", "Python Mechanism", "Example"],
+          "rows": [
+            ["Encapsulation", "Bundle data and the methods that operate on it together, controlling access", "Underscore naming conventions (_x, __x), properties", "class BankAccount: self._balance — internal, accessed via methods"],
+            ["Inheritance", "A class reuses and extends another class's attributes and behaviour", "class Child(Parent): syntax", "class SavingsAccount(BankAccount): adds interest logic on top"],
+            ["Polymorphism", "Different classes respond to the same method call in their own way", "Method overriding, duck typing", "Both Dog and Cat implement speak(), called identically"],
+            ["Abstraction", "Hide internal complexity behind a simple, well-defined interface", "abc module, ABC base class, @abstractmethod", "class Shape(ABC): forces every subclass to implement area()"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "python-vs-other-oops",
+      "title": "OOP Implementation — Python vs Other Languages",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python's OOP model is genuinely more relaxed than Java's or C++'s in several specific, deliberate ways, and the contrast explains a lot about how Python code tends to look different from enterprise-style OOP code."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Python", "Java", "C++", "JavaScript"],
+          "rows": [
+            ["True private attributes", "❌ Convention only (_x, name mangling for __x)", "✅ Enforced with private keyword", "✅ Enforced with private keyword", "✅ Enforced with # (ES2022+) or closures"],
+            ["Multiple inheritance", "✅ Fully supported, with defined MRO", "❌ Not for classes (interfaces only)", "✅ Supported, genuinely complex", "❌ Not natively (mixins simulate it)"],
+            ["Abstract classes", "✅ Via abc module, opt-in", "✅ Native abstract keyword", "✅ Via pure virtual functions", "❌ Not native, simulated via convention"],
+            ["Method overloading", "❌ Not supported natively", "✅ Supported", "✅ Supported", "❌ Not supported natively"],
+            ["Constructor overloading", "❌ Not directly (use default args instead)", "✅ Supported", "✅ Supported", "❌ Not directly"],
+            ["Access modifier enforcement", "Convention-based, not compiler-enforced", "Compiler-enforced", "Compiler-enforced", "Runtime-enforced for # fields"],
+            ["'this'/'self' explicitness", "Explicit first parameter, always visible", "Implicit this, invisible in method signature", "Implicit this, invisible in method signature", "Implicit this, context-dependent behaviour"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's my honestly opinionated take: Python making <code>self</code> an explicit, visible parameter — rather than an implicit, invisible one like Java's <code>this</code> — is one of its most underrated teaching advantages. It forces every Python developer to actually see, in the method signature itself, exactly how an object gets access to its own data, rather than treating it as invisible magic. I've watched people coming from Java genuinely struggle to explain how <code>this</code> works internally, while Python developers who've internalised <code>self</code> as 'just the object, passed as the first argument, automatically' tend to have a noticeably clearer mental model of what's actually happening."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Python's OOP Approach",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python's relaxed, convention-based approach to OOP is a genuine trade-off — flexible and fast to write, but leaning heavily on developer discipline rather than compiler enforcement."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Minimal Boilerplate Compared to Java/C++", "text": "No mandatory access modifier keywords on every attribute, no separate header/implementation files — a working Python class is often a fraction of the lines an equivalent Java class needs." },
+            { "title": "Multiple Inheritance Without Interface Workarounds", "text": "Python lets a class genuinely inherit from several parent classes directly, unlike Java's single-inheritance-plus-interfaces model, with a clear, predictable method resolution order handling any conflicts." },
+            { "title": "Explicit self Makes the Object Model Transparent", "text": "Seeing self as a real, visible parameter in every method signature demystifies exactly how instance methods access their own object's data, rather than hiding it as invisible language magic." },
+            { "title": "Duck Typing Enables Flexible Polymorphism", "text": "Python doesn't require classes to share a common explicit interface to be used interchangeably — if an object has the right methods, it works, regardless of formal inheritance relationships." },
+            { "title": "Dunder Methods Integrate Naturally with Built-ins", "text": "Custom classes can support +, ==, len(), and print() through dunder methods, making user-defined types feel like genuine first-class citizens alongside Python's built-in types." },
+            { "title": "Opt-In Complexity via dataclasses and abc", "text": "Simple data-holding classes can use @dataclass to skip boilerplate entirely, while genuinely complex hierarchies can opt into strict enforcement via the abc module — Python doesn't force one level of ceremony on every class." }
+          ],
+          "cons": [
+            { "title": "No True Access Control Enforcement", "text": "Private attributes are purely a naming convention (_x) or a mild name-mangling deterrent (__x) — nothing in Python actually PREVENTS external code from directly touching an attribute meant to be internal." },
+            { "title": "self Must Be Manually Included Every Time", "text": "Forgetting self as the first parameter in every method definition is a genuinely common, recurring beginner mistake, producing a confusing TypeError the first several times it happens." },
+            { "title": "No Native Method or Constructor Overloading", "text": "Unlike Java or C++, you can't define multiple versions of __init__ or a method with different parameter types — Python developers work around this with default arguments and manual type checking instead." },
+            { "title": "Multiple Inheritance Can Get Genuinely Complex", "text": "While supported, deep or tangled multiple-inheritance hierarchies can make the method resolution order genuinely hard to reason about, especially in the classic 'diamond problem' shape." },
+            { "title": "Runtime Errors Instead of Compile-Time Checks", "text": "A missing method, wrong attribute name, or forgotten self isn't caught until that specific line actually executes, unlike statically-typed OOP languages that catch many such errors before the program ever runs." },
+            { "title": "Overuse of Classes for Simple Scripts", "text": "Python's flexibility doesn't stop developers from over-engineering small scripts with unnecessary class hierarchies where a handful of plain functions would have been simpler and clearer." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "diagram-heading",
+      "title": "Python's Object Model Architecture",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The diagram below shows how classes, instances, and inheritance actually relate to each other in Python's underlying object model — from your class definition down to how attribute lookup actually resolves at runtime."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Class Definition",
+              "color": "#6366f1",
+              "items": ["class Dog:", "Class-level attributes", "Method definitions (self, ...)"]
+            },
+            {
+              "label": "Instantiation",
+              "color": "#0ea5e9",
+              "items": ["Dog(\"Bruno\", \"Labrador\")", "__new__ allocates the object", "__init__ initialises its attributes"]
+            },
+            {
+              "label": "Instance Namespace",
+              "color": "#10b981",
+              "items": ["self.name, self.breed", "Unique per object", "Checked FIRST for attribute lookup"]
+            },
+            {
+              "label": "Class Namespace",
+              "color": "#f59e0b",
+              "items": ["Shared class-level attributes", "Method definitions", "Checked if not found on the instance"]
+            },
+            {
+              "label": "Inheritance Chain (MRO)",
+              "color": "#ef4444",
+              "items": ["Parent class(es)", "Grandparent class(es)", "Checked in Method Resolution Order"]
+            },
+            {
+              "label": "Base object Type",
+              "color": "#8b5cf6",
+              "items": ["Root of every Python class", "Provides default __repr__, __eq__, etc.", "Final fallback in attribute lookup"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "OOP in Practice — From a Basic Class to Inheritance and the Classic Error",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's a complete, working example covering a base class, inheritance, method overriding, and encapsulation — followed by the exact <code>self</code>-related error and its fix."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "oop_example.py",
+          "lines": [
+            "class Animal:",
+            "    def __init__(self, name, sound):",
+            "        self.name = name",
+            "        self._sound = sound   # single underscore = internal convention",
+            "",
+            "    def speak(self):",
+            "        return f\"{self.name} says {self._sound}\"",
+            "",
+            "    def __str__(self):",
+            "        return f\"Animal({self.name})\"",
+            "",
+            "",
+            "class Dog(Animal):              # inheritance",
+            "    def __init__(self, name, breed):",
+            "        super().__init__(name, sound=\"Woof\")",
+            "        self.breed = breed",
+            "",
+            "    def speak(self):            # polymorphism — overriding the parent method",
+            "        return f\"{self.name} the {self.breed} barks: Woof!\"",
+            "",
+            "",
+            "animals = [Animal(\"Generic Creature\", \"...\"), Dog(\"Bruno\", \"Labrador\")]",
+            "for a in animals:",
+            "    print(a.speak())    # each object responds in its own way",
+            "",
+            "print(animals[1])       # uses __str__ automatically"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["Generic Creature says ...", "Bruno the Labrador barks: Woof!", "Animal(Bruno)"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Now the classic beginner mistake — forgetting <code>self</code> — reproduced exactly:"
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "missing_self.py",
+          "lines": [
+            "class Dog:",
+            "    def __init__(self, name):",
+            "        self.name = name",
+            "",
+            "    def bark():          # BUG: missing self",
+            "        print(\"Woof!\")",
+            "",
+            "my_dog = Dog(\"Bruno\")",
+            "my_dog.bark()"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["Traceback (most recent call last):", "  File \"missing_self.py\", line 8, in <module>", "    my_dog.bark()", "TypeError: bark() takes 0 positional arguments but 1 was given"]
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\nr = Rectangle(5, 3)\nprint(r.area())"
+        },
+        {
+          "type": "subHeading",
+          "text": "Line-by-Line Explanation"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>class Dog(Animal):</code> — This is inheritance. <code>Dog</code> automatically gains everything <code>Animal</code> defines, and can add its own attributes or override methods." },
+            { "html": "<code>super().__init__(name, sound=\"Woof\")</code> — Calls the parent class's <code>__init__</code> to reuse its setup logic, rather than duplicating <code>self.name = name</code> again inside <code>Dog</code>." },
+            { "html": "<code>def speak(self):</code> defined again inside <code>Dog</code> — This is polymorphism through method overriding. Calling <code>.speak()</code> on an <code>Animal</code> object and a <code>Dog</code> object runs genuinely different code, even though the method is called identically in both cases." },
+            { "html": "<code>def __str__(self):</code> — A dunder method that customises what <code>print(animals[1])</code> actually displays, letting a custom object integrate naturally with Python's built-in <code>print()</code> function instead of showing a default, unhelpful memory address." },
+            { "html": "<code>def bark():</code> without <code>self</code> — The fix is simply adding <code>self</code> as the first parameter: <code>def bark(self):</code>. Python was already automatically supplying <code>my_dog</code> as an argument the moment <code>my_dog.bark()</code> was called; the method definition just wasn't written to receive it." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "oops-real-uses",
+      "title": "Where OOP Actually Earns Its Place — Real-World Applications",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "OOP isn't just an academic exercise — it's how a substantial share of real, professional Python code is genuinely structured:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🌐 Django and Web Framework Models", "text": " — Every Django database table is defined as a Python class inheriting from models.Model, with fields as class attributes and custom business logic as methods — genuinely OOP-driven, end to end." },
+            { "strong": "🤖 Machine Learning Model Classes", "text": " — PyTorch's nn.Module and scikit-learn's estimator classes are built entirely around inheritance and method overriding — a custom neural network is a class inheriting from nn.Module, overriding its forward() method." },
+            { "strong": "🎮 Game Development", "text": " — Game entities (Player, Enemy, Projectile) are classic OOP use cases, typically sharing a common base class for shared behaviour (position, health) while each subclass overrides methods for its specific behaviour." },
+            { "strong": "🏦 Business Domain Modelling", "text": " — Real-world business entities — Customer, Order, Invoice, BankAccount — map naturally onto classes, with encapsulation keeping validation logic (like preventing a negative balance) tightly coupled to the data it protects." },
+            { "strong": "🧪 Custom Exception Hierarchies", "text": " — Well-designed applications define their own exception classes inheriting from Exception, letting calling code catch specific, meaningful error types (InsufficientFundsError) rather than generic ones." },
+            { "strong": "🔌 Building Reusable Libraries and APIs", "text": " — Library authors use abstract base classes (via the abc module) to define a required interface, forcing anyone extending the library to implement specific methods, genuinely enforced at runtime." },
+            { "strong": "📊 GUI Application Development", "text": " — Tkinter, PyQt, and similar GUI frameworks are built around widget classes, and application-specific windows and dialogs are typically written as classes inheriting from the framework's base widget classes." },
+            { "strong": "☁️ API Client Wrappers", "text": " — Wrapping a third-party API often means defining a class that holds connection state (API key, session) as instance attributes, with methods for each API endpoint — a natural fit for encapsulation." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-oops",
+      "title": "Why OOP Is Worth the Real Effort It Takes",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "OOP has a genuine learning curve, and it's fair to be honest about that rather than pretending classes are just 'functions with extra steps.' Here's why the investment pays off:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🏗️ It's How Most Real Frameworks Are Structured", "text": " — Django, PyTorch, Tkinter, and most substantial Python libraries expect you to write classes that inherit from their base classes. Not understanding OOP genuinely blocks effective use of these tools." },
+            { "strong": "💼 It's a Core Interview Topic at Every Level", "text": " — Explaining the four pillars, designing a small class hierarchy on a whiteboard, or predicting the output of an inheritance example are all standard, recurring interview scenarios, from fresher to senior roles." },
+            { "strong": "🧠 It Teaches a Genuinely Different Way to Model Problems", "text": " — Thinking in terms of 'what are the things in this system, and what do they know and do' is a distinct, valuable design skill separate from procedural, top-to-bottom scripting." },
+            { "strong": "🔧 It's the Foundation for Design Patterns", "text": " — Nearly every classic software design pattern (Factory, Observer, Strategy, Singleton) is expressed in terms of classes, inheritance, and polymorphism — OOP fluency is a genuine prerequisite for understanding them." },
+            { "strong": "🐛 Understanding self Prevents an Entire Class of Bugs", "text": " — The forgotten-self TypeError, along with confusion about instance versus class attributes, accounts for a real share of early OOP debugging time — properly understanding the mechanism eliminates both almost entirely." },
+            { "strong": "🇮🇳 It's a Major, Heavily Weighted Topic in Indian CS Curricula", "text": " — OOP concepts, often taught first in C++ or Java before Python, are consistently one of the most heavily tested topics in Indian engineering college exams and campus placement technical rounds." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "encapsulation-inheritance-deep-dive",
+      "title": "A Closer Look — Encapsulation and Inheritance Patterns",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Two of the four pillars deserve a bit more concrete detail, since they show up constantly in real class design decisions."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Public attributes (no underscore)", "text": " — self.name — freely accessible and modifiable from outside the class, no restriction implied at all. The default, most common case." },
+            { "strong": "Protected attributes (single underscore)", "text": " — self._balance — a convention signalling 'this is internal, treat it as implementation detail, don't touch it directly from outside the class,' but Python enforces absolutely nothing here; it's purely a courtesy signal to other developers." },
+            { "strong": "Private attributes (double underscore)", "text": " — self.__balance — triggers Python's name mangling, internally renaming the attribute to _ClassName__balance. This makes accidental external access noticeably harder (you'd need to know the mangled name), though it's still technically reachable, not truly private in the Java sense." },
+            { "strong": "@property for controlled access", "text": " — Using the @property decorator lets you expose what looks like a plain attribute externally (account.balance) while actually running validation logic behind the scenes internally — the cleanest, most Pythonic form of real encapsulation." },
+            { "strong": "Single inheritance", "text": " — class SavingsAccount(BankAccount): — the standard, most common inheritance pattern, extending one parent class." },
+            { "strong": "Multiple inheritance", "text": " — class FlyingFish(Fish, Bird): — inheriting from more than one class at once, resolved via Python's Method Resolution Order (MRO), calculated using the C3 linearization algorithm, viewable via ClassName.__mro__." },
+            { "strong": "super() for cooperative inheritance", "text": " — Calling super().__init__(...) lets a subclass extend its parent's setup logic rather than duplicating or completely replacing it, and correctly participates in more complex multiple-inheritance chains too." }
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Encapsulation Level", "Syntax", "Enforcement", "Typical Use"],
+          "rows": [
+            ["Public", "self.name", "None — fully open", "Default for most straightforward attributes"],
+            ["Protected (convention)", "self._name", "None — courtesy signal only", "Internal implementation details other devs shouldn't rely on"],
+            ["Private (name-mangled)", "self.__name", "Weak — requires knowing the mangled name", "Discouraging accidental external access more strongly"],
+            ["Property-based", "@property decorated method", "Genuine — runs validation logic on access/assignment", "Controlled, validated access presented as a plain attribute"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python OOPs Concepts — Interview Questions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are among the most consistently asked Python interview questions across every experience level, from campus placements to senior backend interviews."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is the difference between a class and an object in Python?",
+              "a": "A class is a blueprint or template that defines what attributes and methods its instances will have — class Dog: describes what a dog generally looks like. An object (or instance) is a specific, concrete thing created from that blueprint — my_dog = Dog('Bruno', 'Labrador') is one actual dog object, with its own specific attribute values, distinct from any other Dog object.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is self in Python, and why must it be the first parameter of every regular instance method?",
+              "a": "self refers to the specific object a method is being called on. It's an ordinary parameter, not special syntax — Python automatically passes the calling object as the first argument whenever a method is called on an instance (my_dog.bark() is equivalent to Dog.bark(my_dog)). The method's definition needs self as its first parameter specifically to receive that automatically-supplied argument.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is the difference between __init__ and __new__ in Python?",
+              "a": "__new__ is responsible for actually creating and returning a new instance of the class — it's rarely overridden directly in typical code. __init__ runs immediately after __new__ has created the object, and its job is initialising that already-existing object's starting attribute values. __init__ never returns a value (must implicitly return None), while __new__ must return the newly created instance.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q4. What are the four pillars of Object-Oriented Programming, and give a one-line Python example of each.",
+              "a": "Encapsulation — bundling data and methods together, restricting direct access via naming conventions (self._balance). Inheritance — a class reusing and extending another class's behaviour (class Dog(Animal):). Polymorphism — different classes responding to the same method call differently (Dog and Cat both implementing speak() distinctly). Abstraction — hiding implementation complexity behind a simple required interface (an ABC forcing subclasses to implement area()).",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q5. What causes the error 'TypeError: takes 0 positional arguments but 1 was given' when calling an object's method?",
+              "a": "This happens when a method is defined without self as its first parameter, but Python still automatically passes the calling object as an argument whenever the method is called on an instance. Since the method's definition has no parameter to receive that automatically-supplied argument, Python reports a mismatch between the number of arguments expected (0, as written) and the number actually supplied (1, the object itself).",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q6. What is the difference between a class attribute and an instance attribute in Python?",
+              "a": "A class attribute is defined directly inside the class body, outside any method, and is shared across every instance of that class by default — changing it on the class affects all instances that haven't overridden it individually. An instance attribute is defined via self.attribute = value, typically inside __init__, and belongs uniquely to that specific object, completely independent from other instances of the same class.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q7. Does Python enforce truly private attributes the way Java does?",
+              "a": "No. Python has no genuine access-control enforcement. A single leading underscore (_name) is purely a naming convention signalling 'internal use, don't rely on this externally' — nothing prevents access. A double leading underscore (__name) triggers name mangling, internally renaming the attribute to _ClassName__name, making accidental external access harder but still technically possible if you know the mangled name.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. What is method overriding, and how does it demonstrate polymorphism?",
+              "a": "Method overriding is when a subclass defines a method with the same name as one in its parent class, replacing the parent's version specifically for instances of that subclass. It demonstrates polymorphism because code calling .speak() on a list of different Animal subclasses gets genuinely different behaviour depending on each object's actual type, without needing to check that type explicitly.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q9. What does super() do in Python, and why is it preferred over calling the parent class directly by name?",
+              "a": "super() returns a proxy object that lets you call methods from a class's parent (or, more precisely, the next class in the Method Resolution Order) without hardcoding the parent's name directly. It's preferred because it correctly participates in Python's MRO for multiple inheritance and cooperative method chains, while calling ParentClass.method(self, ...) directly can break in more complex inheritance hierarchies.",
+              "tag": "Current Affairs"
+            },
+            {
+              "q": "Q10. What is an abstract base class in Python, and how do you create one?",
+              "a": "An abstract base class defines a required interface that subclasses must implement, and cannot itself be instantiated directly. In Python, you create one by inheriting from abc.ABC and marking required methods with the @abstractmethod decorator. Attempting to instantiate a class that hasn't implemented all its parent's abstract methods raises TypeError: Can't instantiate abstract class with abstract method.",
+              "tag": "Must Know"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Work through these before checking the answers. Correctly tracing which class's method actually runs — especially with inheritance and overriding — is the real test here."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output of: class Dog: def __init__(self, name): self.name = name \\n d = Dog('Bruno') \\n print(d.name)",
+              "a": "Bruno. __init__ runs automatically when Dog('Bruno') is called, binding self to the new object and setting self.name = 'Bruno', which is then accessible via d.name afterward.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What error occurs, and why, if you run: class Cat: def meow(): print('Meow') \\n c = Cat() \\n c.meow()?",
+              "a": "TypeError: meow() takes 0 positional arguments but 1 was given. The method meow() is missing the required self parameter, but Python still automatically supplies c as an argument when c.meow() is called, since it's called on an instance — creating a mismatch with the method's actual definition.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Trace this: class Animal: def speak(self): return 'generic sound' \\n class Dog(Animal): def speak(self): return 'Woof' \\n a = Animal() \\n d = Dog() \\n print(a.speak(), d.speak())",
+              "a": "generic sound Woof. Dog overrides Animal's speak() method, so calling .speak() on a Dog instance runs Dog's version, while calling it on a plain Animal instance runs Animal's own version — this is polymorphism through method overriding.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. What is the output of: class Counter: count = 0 \\n def __init__(self): Counter.count += 1 \\n a = Counter() \\n b = Counter() \\n c = Counter() \\n print(Counter.count)",
+              "a": "3. count is a CLASS attribute, shared across all instances. Each call to __init__ increments Counter.count directly (via the class name, not self), so creating three separate objects increments the shared class-level counter three times.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Why does this raise an error? class BankAccount: def __init__(self, balance): self.__balance = balance \\n acc = BankAccount(100) \\n print(acc.__balance)",
+              "a": "AttributeError: 'BankAccount' object has no attribute '__balance'. The double underscore prefix triggers name mangling — self.__balance is actually stored internally as self._BankAccount__balance. Trying to access acc.__balance directly from outside the class looks for a plain __balance attribute that doesn't exist under that exact name; you'd need acc._BankAccount__balance to reach it, which is precisely the point of the mangling.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "6. What does class Shape(ABC): @abstractmethod def area(self): pass followed by shape = Shape() produce?",
+              "a": "TypeError: Can't instantiate abstract class Shape with abstract method area. Because Shape inherits from ABC and has an unimplemented @abstractmethod, Python refuses to create an instance of it directly — only a subclass that actually implements area() can be instantiated.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What is the output of: class A: def greet(self): return 'A' \\n class B: def greet(self): return 'B' \\n class C(A, B): pass \\n print(C().greet())",
+              "a": "A. With multiple inheritance class C(A, B):, Python's Method Resolution Order checks A before B (since A is listed first), so greet() resolves to A's version. This demonstrates how MRO determines which parent's method 'wins' when multiple parents define the same method name.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. What does super().__init__(name, sound='Woof') accomplish inside a subclass's own __init__ method?",
+              "a": "It calls the parent class's __init__ method, passing along the given arguments, letting the parent class's own setup logic run and set up whatever attributes it's responsible for — without the subclass needing to duplicate that logic itself. This is the standard, idiomatic way to extend rather than completely replace a parent class's initialisation behaviour.",
+              "difficulty": "Medium"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Objects Are a Modelling Tool, Not a Requirement",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "OOP is genuinely one of the more conceptually dense topics in learning Python, precisely because it isn't just new syntax — it's a different way of thinking about how to structure a program's data and behaviour together. <code>self</code>, <code>__init__</code>, inheritance, and the four pillars all click eventually, usually not from reading a definition but from building a few real classes and watching, first-hand, how an object's state persists and changes across multiple method calls."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If you're a <strong>complete beginner</strong>, the priority is getting comfortable with the basic mechanics — <code>class</code>, <code>__init__</code>, <code>self</code>, and calling methods on instances — until writing a simple class feels automatic. If you're building <strong>real, larger applications</strong>, the priority shifts to judgment: recognising when a problem's structure genuinely calls for a class hierarchy versus when a handful of plain functions would be clearer, faster to write, and easier for someone else to follow six months later."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Your Situation", "What to Focus On"],
+          "rows": [
+            ["Learning classes for the first time", "✅ class, __init__, self — get the mechanics automatic first"],
+            ["Modelling something with real, persistent state", "✅ A class is likely the right tool — bank account, game entity, user session"],
+            ["Simple, stateless data transformation", "⚠️ Plain functions are often clearer than an unnecessary class"],
+            ["Sharing behaviour across related types", "✅ Inheritance — but keep hierarchies shallow and genuinely justified"],
+            ["Different types need to respond to the same call differently", "✅ Polymorphism via method overriding"],
+            ["Need to enforce a required interface for a library", "✅ abc.ABC with @abstractmethod"],
+            ["Class is really just holding structured data", "⚠️ Consider @dataclass instead of a full manual class"],
+            ["Attribute should have validated, controlled access", "✅ @property, not a raw public attribute"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The habit worth carrying forward: before reaching for a class, ask honestly whether the problem actually has meaningful, persistent state that needs protecting and behaviour that genuinely belongs bundled with that state — not just because OOP is what you're 'supposed' to use for anything beyond a script. Classes used deliberately, for the problems that genuinely call for them, are one of the most powerful organising tools in the language. Classes used out of habit, for everything, just add ceremony."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>OOP in Python is genuinely flexible by design — mostly convention, lightly enforced.</strong> Learn the real mechanics behind <code>self</code> and <code>__init__</code> properly, understand what each of the four pillars actually buys you, and you'll have real judgment about when to reach for a class and when to leave it as a plain function. 🐍"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "What is OOP (Object-Oriented Programming) in Python?",
+        "a": "OOP is a way of structuring code around objects — bundles that combine data (attributes) and the functions that operate on that data (methods) together. In Python, you define the blueprint for an object using the class keyword, and each specific object created from that class is called an instance, holding its own independent set of attribute values."
+      },
+      {
+        "q": "What is self in Python, and why does every method need it?",
+        "a": "self is the conventional name for the first parameter of a regular instance method, representing the specific object the method is being called on. Python automatically passes the calling object as this first argument whenever a method is invoked on an instance, so every method definition needs a parameter — by convention named self — to receive it."
+      },
+      {
+        "q": "What is the difference between __init__ and a constructor in other languages?",
+        "a": "__init__ functions similarly to a constructor in languages like Java or C++, running automatically to set up a newly created object's initial attribute values. Technically, the object itself is created by a separate method called __new__, and __init__ only initialises that already-existing object — but for everyday purposes, __init__ is where you write the setup logic that runs when you create a new instance."
+      },
+      {
+        "q": "What are the four main pillars of Object-Oriented Programming?",
+        "a": "Encapsulation (bundling data and the methods that operate on it, controlling direct access), Inheritance (a class reusing and extending another class's attributes and behaviour), Polymorphism (different classes responding to the same method call in their own specific way), and Abstraction (hiding implementation complexity behind a simple, well-defined interface, often enforced with abstract base classes)."
+      },
+      {
+        "q": "Why do I get TypeError: takes 0 positional arguments but 1 was given when calling a method in Python?",
+        "a": "This happens when a method definition is missing its required self parameter. Python still automatically passes the object you called the method on as the first argument every time — my_dog.bark() always supplies my_dog as an argument behind the scenes — so the method definition needs self to receive it, or this exact TypeError results."
+      },
+      {
+        "q": "Does Python support true private variables like Java does?",
+        "a": "Not really. Python relies on naming conventions rather than genuine enforcement: a single leading underscore (_name) signals 'internal use only' by convention but is fully accessible from outside the class. A double leading underscore (__name) triggers name mangling, making accidental external access harder but still technically possible if you know the mangled attribute name."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Scope", "path": "/python/python-scope" },
+    "next": { "label": "Next: Python Classes & Objects →", "path": "/python/python-classes-objects" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Keyword", "dd": "class" },
+      { "dt": "Constructor method", "dd": "__init__" },
+      { "dt": "First method parameter", "dd": "self" },
+      { "dt": "Four pillars", "dd": "Encapsulation, Inheritance, Polymorphism, Abstraction" },
+      { "dt": "New-style classes since", "dd": "Python 2.2 (2002)" },
+      { "dt": "Abstract classes via", "dd": "abc module" }
+    ],
+    "relatedArticles": [
+      { "label": "Python Classes and Objects", "path": "/python/python-classes" },
+      { "label": "Python Inheritance", "path": "/python/python-inheritance" },
+      { "label": "Python Polymorphism", "path": "/python/python-polymorphism" },
+      { "label": "Python Encapsulation", "path": "/python/python-encapsulation" },
+      { "label": "Python Abstraction", "path": "/python/python-abstraction" },
+      { "label": "Python Dunder Methods", "path": "/python/python-dunder-methods" },
+      { "label": "Python Decorators", "path": "/python/python-decorators" },
+      { "label": "Python Exception Handling", "path": "/python/python-exception-handling" }
+    ],
+    "tags": ["OOP", "class", "object", "self", "__init__", "encapsulation", "inheritance", "polymorphism", "abstraction", "dunder methods", "abc module", "MRO", "super()", "Python 3"]
+  }
+}

@@ -31,7 +31,7 @@ function generateSitemap() {
   const urls = [
     `<url><loc>${BASE_URL}</loc></url>`,
     ...params.map(({ subject, topic }) =>
-      `<url><loc>${BASE_URL}/${subject}/${topic}</loc></url>`
+      `<url><loc>${BASE_URL}/${subject}/${topic}/</loc></url>`
     ),
   ];
 

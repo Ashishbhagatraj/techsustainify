@@ -1,0 +1,820 @@
+{
+  "meta": {
+    "title": "Python Match Case Statement Explained | Structural Pattern Matching 2026 | Tech Sustainify",
+    "description": "A complete, practical guide to Python's match-case statement (PEP 634/635/636) — syntax, pattern types, guard clauses, class patterns, sequence and mapping patterns, real bugs, and when match-case actually beats if/elif.",
+    "keywords": "python match case, python switch statement, structural pattern matching python, match case syntax python, python 3.10 match case, PEP 634, PEP 636, python case underscore wildcard, python match case guard, python match case class pattern, python match case vs if elif, python pattern matching tutorial",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-match-case/",
+    "ogTitle": "Python Match Case Explained — Structural Pattern Matching | Tech Sustainify",
+    "ogDescription": "Match-case explained the way you'd explain it to a teammate at 2am — not textbook definitions. Syntax, pattern types, guard clauses, class/sequence/mapping patterns, real bugs, real error messages.",
+    "ogUrl": "https://techsustainify.com/python/python-match-case/",
+    "ogImage": "https://techsustainify.com/images/python-match-case-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "29 minutes",
+    "twitterLevel": "Beginner to Intermediate",
+    "schemaDatePublished": "2024-03-05",
+    "schemaDateModified": "2026-07-22",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 8200
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",            "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python Match Case" }
+  ],
+
+  "articleHeader": {
+    "badge": "🐍 Python",
+    "title": "Python Match Case — Structural Pattern Matching Explained",
+    "subtitle": "Syntax, pattern types, guard clauses, and the real difference between match-case and a switch statement — explained with actual bugs, not textbook definitions."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-07-22", "value": "July 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "29 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner to Intermediate" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-match-case",
+      "title": "What Is match-case in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>match-case</strong> is Python's structural pattern matching statement, introduced in <strong>Python 3.10</strong> under <strong>PEP 634</strong>. On the surface it looks like the <code>switch</code> statement every C, Java, or JavaScript developer already knows. Underneath, it's a completely different beast — it doesn't just compare a value against a list of constants, it can tear apart lists, tuples, dictionaries, and even your own custom objects, pulling values out of their internal structure while it checks them. That's the \"structural\" part, and it's the whole reason this feature took Python developers years of debate to agree on."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's the thing people get wrong immediately: they see <code>match</code> and <code>case</code> and assume it's Python finally catching up to a plain switch statement. It's not. A switch statement in Java compares a value against constants. Python's match-case can destructure a tuple into named variables, check the type and shape of a class instance, match against nested dictionaries pulled straight out of a JSON API response, and combine all of that with conditional guards — in a single readable block. Treat it like a fancy if/elif chain and you'll miss ninety percent of why it exists."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "My honestly opinionated take, upfront: match-case is genuinely great for parsing structured data — API responses, AST nodes, command dispatch, state machines — and genuinely overused for simple value comparisons where a dictionary lookup or a plain if/elif chain would be shorter and just as readable. I've reviewed pull requests where someone converted a three-branch if/elif checking a string status field into an eight-line match-case block purely because it felt more \"modern.\" It wasn't clearer. It was just longer. Use it where the structure of your data actually matters, not as a style statement."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-match-case-was-added",
+      "title": "Why Python Added match-case (And Why It Took So Long)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python survived without a switch statement for three decades. Guido van Rossum himself rejected earlier switch proposals multiple times, mostly because a plain value-comparison switch didn't add much over <code>if/elif</code> chains or dictionary dispatch — the two patterns Python developers had already been using for years. What eventually got approved wasn't a simple switch clone. It was structural pattern matching, borrowed conceptually from functional languages like Haskell, Scala, and Rust, where pattern matching is a first-class way to both branch on and unpack data in one motion."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "PEP 634 defines the syntax, PEP 635 explains the motivation and design philosophy, and PEP 635 wait — correction — PEP 636 is actually the tutorial-style companion document written specifically because the core devs knew this feature would confuse people coming from switch statements in other languages. That's not a small detail. When the language designers ship a dedicated tutorial PEP alongside the feature PEP, it's a signal that the mental model is genuinely different from what most developers expect walking in."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "basic-syntax",
+      "title": "Basic Syntax — match, case, and the Wildcard",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The core structure is simple: <code>match</code> takes a subject expression, and each <code>case</code> block defines a pattern to test that subject against. Python checks patterns top to bottom and runs the first block whose pattern matches — just like <code>if/elif</code>, except the check is structural, not just equality."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "basic_match_case.py",
+          "lines": [
+            "def http_status_message(status_code):",
+            "    match status_code:",
+            "        case 200:",
+            "            return \"OK\"",
+            "        case 404:",
+            "            return \"Not Found\"",
+            "        case 500:",
+            "            return \"Internal Server Error\"",
+            "        case _:",
+            "            return \"Unknown Status Code\"",
+            "",
+            "print(http_status_message(404))",
+            "print(http_status_message(999))"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["Not Found", "Unknown Status Code"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>_</code> in the last case is the <strong>wildcard pattern</strong>. It matches anything and binds nothing — think of it as the <code>default:</code> case in a switch statement, except it's not magic syntax, it's an actual pattern that means \"match anything, I don't care what.\" Leave it out and if none of the cases match, Python just falls through the entire match block silently, doing nothing — no error, no exception, nothing. That silent fallthrough has bitten more than one developer who assumed match-case would raise something like Java's implicit exhaustiveness warnings. It won't. Python doesn't check exhaustiveness at all."
+        },
+        {
+          "type": "subHeading",
+          "text": "match-case Requires Python 3.10 or Newer"
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This one catches people constantly, especially teams deploying to older environments. If your production server, your CI pipeline, or your company's approved Docker base image is running Python 3.9 or earlier, match-case simply doesn't exist — you'll get a <code>SyntaxError: invalid syntax</code> at the exact line where <code>match</code> appears, and it can look confusing because the syntax is otherwise completely valid Python, just not for that interpreter version. Check your runtime version before you commit to match-case in a shared codebase, especially if you work with an older RHEL-based server or a legacy Debian image common in a lot of enterprise deployments here in India."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "How match-case Executes — Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "match-case looks like it just runs top to bottom like an if/elif chain, and mostly it does, but there's a specific evaluation order happening under the hood — the subject is evaluated exactly once, then each pattern is checked in sequence, and inside a matching pattern any capture variables get bound before the guard (if present) is evaluated. The flowchart below walks through the full decision path for a single match statement."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "📝 match subject:",         "sublabel": "Subject expression evaluated once",     "type": "start" },
+            { "id": "2", "label": "🔍 Check case pattern 1",   "sublabel": "Top to bottom, in source order",        "type": "decision" },
+            { "id": "3", "label": "🎯 Pattern structurally matches?", "sublabel": "Type + shape + literal checks", "type": "decision" },
+            { "id": "4", "label": "📌 Bind capture variables",  "sublabel": "e.g. case Point(x, y)",                "type": "process" },
+            { "id": "5", "label": "✅ Guard clause (if any)?",  "sublabel": "case pattern if condition:",           "type": "decision" },
+            { "id": "6", "label": "▶️ Run matched case block",  "sublabel": "Execute the case's code",              "type": "process" },
+            { "id": "7", "label": "⏭️ Try next case pattern",   "sublabel": "No match or guard failed",             "type": "process" },
+            { "id": "8", "label": "🃏 case _: (wildcard)",      "sublabel": "Matches anything, acts as default",    "type": "process" },
+            { "id": "9", "label": "🏁 Exit match block",        "sublabel": "No matching case found — silent, no error", "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "start checking" },
+            { "from": "2", "to": "3", "label": "evaluate pattern" },
+            { "from": "3", "to": "4", "label": "yes ✓" },
+            { "from": "3", "to": "7", "label": "no ✗" },
+            { "from": "4", "to": "5", "label": "bind names" },
+            { "from": "5", "to": "6", "label": "guard True or absent" },
+            { "from": "5", "to": "7", "label": "guard False" },
+            { "from": "7", "to": "2", "label": "next case exists" },
+            { "from": "7", "to": "8", "label": "reached case _" },
+            { "from": "8", "to": "6", "label": "always matches" },
+            { "from": "6", "to": "9", "label": "block finishes" },
+            { "from": "7", "to": "9", "label": "no cases left, no wildcard" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The step most people miss in that flowchart: <strong>capture variables get bound BEFORE the guard runs</strong>, not after. That ordering matters. It means a guard clause like <code>case Point(x, y) if x == y:</code> can actually reference <code>x</code> and <code>y</code>, because pattern matching already extracted them from the object before Python even looks at the <code>if</code> condition. If the guard evaluates to <code>False</code>, Python discards those bindings and moves to the next case — it does NOT fall through to whatever code comes after the guard within that same case block."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "pattern-types",
+      "title": "The 6 Pattern Types You'll Actually Use",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "This is the part most tutorials rush. match-case supports several distinct kinds of patterns, and knowing which one you're writing (and what it actually checks) is the difference between code that works and code that silently matches the wrong thing."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Literal Patterns", "text": " — case 200:, case \"admin\":, case None: — direct equality checks against a constant value, same idea as a traditional switch case." },
+            { "strong": "Capture Patterns", "text": " — case name: binds whatever the subject is to the variable name, unconditionally. This ALWAYS matches, which is exactly why capture patterns are dangerous when placed too early — more on that below." },
+            { "strong": "Wildcard Pattern", "text": " — case _: matches anything without binding it to a name. The conventional \"default\" case, and the only pattern guaranteed to catch everything left over." },
+            { "strong": "Sequence Patterns", "text": " — case [x, y]: or case (a, b, *rest): destructure lists and tuples by position, similar to unpacking assignment but with built-in length and type checking baked in." },
+            { "strong": "Mapping Patterns", "text": " — case {\"status\": \"error\", \"code\": code}: destructure dictionaries by key, checking for required keys while ignoring any extra ones not mentioned in the pattern." },
+            { "strong": "Class Patterns", "text": " — case Point(x=0, y=0): match against a class's type AND unpack its attributes in one step, using either keyword-style or positional __match_args__ based matching." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "capture-pattern-trap",
+      "title": "The Capture Pattern Trap — The #1 match-case Bug",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is, without exaggeration, the bug you will write at least once if you use match-case regularly. A bare lowercase name in a <code>case</code> line is NOT a literal comparison — it's a capture pattern, and capture patterns match absolutely anything, including <code>None</code>, empty strings, zero, everything. If you write <code>case status:</code> intending to check whether the subject equals the value stored in a variable called <code>status</code>, you've actually written a pattern that catches every possible input and silently shadows the outer variable."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "capture_pattern_trap.py",
+          "lines": [
+            "status = \"active\"",
+            "",
+            "def check(value):",
+            "    match value:",
+            "        case status:            # BUG: this is a capture pattern, not a comparison!",
+            "            return f\"Matched status, got: {status}\"",
+            "        case \"inactive\":",
+            "            return \"This line is UNREACHABLE — dead code\"",
+            "",
+            "print(check(\"anything at all\"))",
+            "print(check(None))",
+            "print(check(42))"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Matched status, got: anything at all",
+            "Matched status, got: None",
+            "Matched status, got: 42"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every single call matches the first case, because <code>case status:</code> just captures whatever value comes in and rebinds the local name <code>status</code> to it — it never compares against the pre-existing <code>status = \"active\"</code> variable at all. Worse, most linters won't flag this for you by default, though Pylint's newer versions do warn about unreachable case blocks after a bare name pattern, which is a genuinely useful check to enable. The fix is to use a <strong>dotted name</strong> or a value pattern, which forces Python to treat it as a comparison instead of a capture."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "value_pattern_fix.py",
+          "lines": [
+            "class Status:",
+            "    ACTIVE = \"active\"",
+            "    INACTIVE = \"inactive\"",
+            "",
+            "def check(value):",
+            "    match value:",
+            "        case Status.ACTIVE:      # dotted name = value pattern, compares by equality",
+            "            return \"User is active\"",
+            "        case Status.INACTIVE:",
+            "            return \"User is inactive\"",
+            "        case _:",
+            "            return \"Unknown status\"",
+            "",
+            "print(check(\"active\"))",
+            "print(check(\"banned\"))"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["User is active", "Unknown status"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The rule that actually matters here: any dotted name (<code>Status.ACTIVE</code>, <code>obj.attr</code>, <code>module.constant</code>) is treated as a value to compare against. Any plain undotted lowercase name (<code>status</code>, <code>x</code>, <code>value</code>) is treated as a capture target that matches unconditionally. This asymmetry is intentional in the language design, but it is genuinely one of the least discoverable rules in modern Python, and I'd bet real money it causes more silent bugs per line of code than almost any other single syntax feature added in the last decade."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "sequence-patterns",
+      "title": "Sequence Patterns — Destructuring Lists and Tuples",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Sequence patterns let you match against the shape of a list or tuple while pulling values out of specific positions. This is genuinely useful for command parsers, coordinate handling, and anywhere you're processing tuples returned from another function."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "sequence_patterns.py",
+          "lines": [
+            "def handle_command(command):",
+            "    match command.split():",
+            "        case [\"quit\"]:",
+            "            return \"Exiting program\"",
+            "        case [\"go\", direction]:",
+            "            return f\"Moving {direction}\"",
+            "        case [\"give\", item, \"to\", recipient]:",
+            "            return f\"Giving {item} to {recipient}\"",
+            "        case [\"drop\", *items]:",
+            "            return f\"Dropping items: {', '.join(items)}\"",
+            "        case _:",
+            "            return \"Unknown command\"",
+            "",
+            "print(handle_command(\"go north\"))",
+            "print(handle_command(\"give sword to Ashish\"))",
+            "print(handle_command(\"drop sword shield potion\"))"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Moving north",
+            "Giving sword to Ashish",
+            "Dropping items: sword, shield, potion"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>*items</code> syntax in the last case works exactly like extended unpacking in a regular assignment — it captures everything remaining into a list, however many elements there are, including zero. One thing worth calling out explicitly: sequence patterns match both lists AND tuples by default (they check for anything implementing the sequence protocol), but they explicitly do NOT match strings, even though strings are technically sequences of characters. That exclusion is deliberate — if strings matched sequence patterns, <code>case [a, b]:</code> would silently unpack a two-character string, which would almost never be what anyone actually wants."
+        },
+        {
+          "type": "subHeading",
+          "text": "Fixed-Length vs Variable-Length Matching"
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>case [x, y]:</code> only matches sequences of exactly two elements — pass a three-element list and it falls through to the next case, no error raised. This length-checking behavior is built into the pattern itself, and it's one of the genuinely nice things about sequence patterns compared to manually unpacking with something like <code>x, y = my_list</code>, which raises <code>ValueError: too many values to unpack (expected 2)</code> if the lengths don't line up. With match-case, a length mismatch is just a non-match, not a crash — which makes it far better suited for parsing user input or external data where you can't guarantee the shape ahead of time."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "mapping-patterns",
+      "title": "Mapping Patterns — Destructuring Dictionaries and JSON",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Mapping patterns are where match-case genuinely shines for real-world work, especially parsing JSON payloads from an API response — something almost every backend developer touches daily. A mapping pattern checks for the presence of specific keys and can extract their values, while completely ignoring any extra keys the dictionary might have."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "mapping_patterns.py",
+          "lines": [
+            "def handle_api_response(response):",
+            "    match response:",
+            "        case {\"status\": \"success\", \"data\": data}:",
+            "            return f\"Got data: {data}\"",
+            "        case {\"status\": \"error\", \"code\": 401}:",
+            "            return \"Unauthorized — refresh your token\"",
+            "        case {\"status\": \"error\", \"code\": code, \"message\": msg}:",
+            "            return f\"Error {code}: {msg}\"",
+            "        case {\"status\": \"error\"}:",
+            "            return \"Unknown error occurred\"",
+            "        case _:",
+            "            return \"Malformed response\"",
+            "",
+            "print(handle_api_response({\"status\": \"success\", \"data\": [1, 2, 3], \"timestamp\": 123}))",
+            "print(handle_api_response({\"status\": \"error\", \"code\": 401}))",
+            "print(handle_api_response({\"status\": \"error\", \"code\": 500, \"message\": \"Server crashed\"}))"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Got data: [1, 2, 3]",
+            "Unauthorized — refresh your token",
+            "Error 500: Server crashed"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Notice the first case matched even though the actual response dictionary had a third key, <code>timestamp</code>, that wasn't mentioned in the pattern at all. That's the key behavioral difference from sequence patterns: mapping patterns only check the keys you explicitly list, and silently ignore everything else. This is exactly the right default for API response handling, since real-world JSON payloads constantly grow extra fields as an API evolves, and you don't want your parsing logic to break every time the backend team adds a new field you don't care about."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If you genuinely need to capture the extra unlisted keys too, use <code>**rest</code> inside the pattern, mirroring dictionary unpacking syntax: <code>case {\"status\": \"success\", **rest}:</code> captures everything except <code>status</code> into a dict called <code>rest</code>. One restriction worth knowing — you can only use <code>**rest</code> once per pattern, and it can't be named the same as a key you've already matched. Try to break that rule and Python raises a <code>SyntaxError: multiple starred names in pattern</code> or similar at compile time, before your code even runs."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "class-patterns",
+      "title": "Class Patterns — Matching Your Own Objects",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Class patterns are the most powerful and least understood corner of match-case. They let you check both the type of an object AND unpack its attributes, in a single pattern. This is the feature borrowed most directly from functional languages, and it's genuinely elegant once it clicks."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "class_patterns.py",
+          "lines": [
+            "class Point:",
+            "    def __init__(self, x, y):",
+            "        self.x = x",
+            "        self.y = y",
+            "",
+            "def describe_point(point):",
+            "    match point:",
+            "        case Point(x=0, y=0):",
+            "            return \"Origin\"",
+            "        case Point(x=0, y=y):",
+            "            return f\"On the Y-axis at y={y}\"",
+            "        case Point(x=x, y=0):",
+            "            return f\"On the X-axis at x={x}\"",
+            "        case Point(x=x, y=y) if x == y:",
+            "            return f\"On the diagonal at ({x}, {y})\"",
+            "        case Point():",
+            "            return \"Somewhere else on the plane\"",
+            "        case _:",
+            "            return \"Not a Point at all\"",
+            "",
+            "print(describe_point(Point(0, 0)))",
+            "print(describe_point(Point(0, 5)))",
+            "print(describe_point(Point(3, 3)))",
+            "print(describe_point(Point(2, 7)))",
+            "print(describe_point(\"not a point\"))"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Origin",
+            "On the Y-axis at y=5",
+            "On the diagonal at (3, 3)",
+            "Somewhere else on the plane",
+            "Not a Point at all"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Each <code>case</code> here checks two things at once: is this object actually an instance of <code>Point</code> (using <code>isinstance</code> semantics under the hood), and do its <code>x</code> and <code>y</code> attributes match the pattern given. This is meaningfully different from writing nested <code>isinstance</code> and attribute-access checks by hand, and it reads far closer to how you'd describe the logic out loud — \"if it's a point at the origin,\" not \"if it's an instance of Point, and its x attribute equals zero, and its y attribute also equals zero.\""
+        },
+        {
+          "type": "subHeading",
+          "text": "Positional Class Patterns Need __match_args__"
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The example above uses keyword-style matching (<code>Point(x=0, y=0)</code>), which works out of the box for any class. If you want positional matching instead — <code>case Point(0, 0):</code> without the <code>x=</code> and <code>y=</code> — your class needs to define a class attribute called <code>__match_args__</code> that specifies the order of attributes to match positionally. Dataclasses get this generated automatically for free, which is a big part of why match-case and <code>@dataclass</code> pair so naturally together in real code."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "match_args_positional.py",
+          "lines": [
+            "from dataclasses import dataclass",
+            "",
+            "@dataclass",
+            "class Point:",
+            "    x: int",
+            "    y: int",
+            "    # __match_args__ = ('x', 'y') is generated automatically by @dataclass",
+            "",
+            "def describe(point):",
+            "    match point:",
+            "        case Point(0, 0):          # positional matching works automatically",
+            "            return \"Origin\"",
+            "        case Point(x, y):",
+            "            return f\"Point at ({x}, {y})\"",
+            "",
+            "print(describe(Point(0, 0)))",
+            "print(describe(Point(4, 9)))"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["Origin", "Point at (4, 9)"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Try positional matching on a plain class without <code>__match_args__</code> defined and you'll get <code>TypeError: Point() accepts 0 positional sub-patterns (2 given)</code> — a genuinely unhelpful-looking error the first time you hit it, until you know exactly what it's telling you: the class hasn't declared which attributes correspond to which position."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "or-patterns-guards",
+      "title": "OR Patterns and Guard Clauses",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Two more building blocks round out the pattern-matching toolkit: OR patterns using <code>|</code> to match multiple alternatives in one case, and guard clauses using <code>if</code> to add an extra boolean condition on top of a structural match."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "or_patterns_and_guards.py",
+          "lines": [
+            "def classify_day(day):",
+            "    match day.lower():",
+            "        case \"saturday\" | \"sunday\":",
+            "            return \"Weekend\"",
+            "        case \"monday\" | \"tuesday\" | \"wednesday\" | \"thursday\" | \"friday\":",
+            "            return \"Weekday\"",
+            "        case _:",
+            "            return \"Not a valid day\"",
+            "",
+            "def check_number(n):",
+            "    match n:",
+            "        case int(x) if x < 0:",
+            "            return \"Negative integer\"",
+            "        case int(x) if x == 0:",
+            "            return \"Zero\"",
+            "        case int(x) if x % 2 == 0:",
+            "            return \"Positive even integer\"",
+            "        case int(x):",
+            "            return \"Positive odd integer\"",
+            "        case _:",
+            "            return \"Not an integer at all\"",
+            "",
+            "print(classify_day(\"Sunday\"))",
+            "print(check_number(-4))",
+            "print(check_number(7))",
+            "print(check_number(3.5))"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Weekend",
+            "Negative integer",
+            "Positive odd integer",
+            "Not an integer at all"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "One subtlety with OR patterns and capture variables: every alternative inside an <code>|</code> pattern must bind exactly the same set of variable names. Write <code>case Point(x=0) | Point(y=0):</code> and Python raises a compile-time error, because the first branch would only ever bind nothing extra while structurally they're allowed to differ in what's captured — the language forces consistency here specifically so the code after the case can rely on the same variables existing no matter which alternative actually matched."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "match-case-vs-others",
+      "title": "match-case vs if/elif vs switch (Other Languages)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A side-by-side comparison to settle the 'when do I actually use this' question once and for all."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Python match-case", "Python if/elif", "Java/C switch", "JavaScript switch"],
+          "rows": [
+            ["Value comparison", "✅ Yes (literal patterns)", "✅ Yes", "✅ Yes (values only)", "✅ Yes (values only)"],
+            ["Destructures data structures", "✅ Yes (sequence/mapping/class)", "❌ No (manual unpacking)", "❌ No", "❌ No"],
+            ["Type checking built in", "✅ Yes (class patterns)", "⚠️ Manual isinstance()", "⚠️ Pattern matching in newer Java only", "❌ No"],
+            ["Conditional guards", "✅ Yes (if clause)", "✅ Yes (native)", "❌ No", "❌ No"],
+            ["Fallthrough between cases", "❌ No, never", "N/A", "⚠️ Yes, unless break used", "⚠️ Yes, unless break used"],
+            ["Exhaustiveness checking", "❌ No (silent no-op)", "❌ No", "⚠️ Compiler warning only", "❌ No"],
+            ["Minimum version required", "Python 3.10+", "Any version", "Any version", "Any version"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The fallthrough row is worth pausing on. Java and JavaScript switch statements fall through to the next case by default unless you explicitly add <code>break</code> — a design decision that has caused more accidental bugs across those two ecosystems combined than almost any other single language feature. Python's match-case never falls through, period. Once a case matches and its block runs, match-case exits completely. There's no <code>break</code> keyword to forget, because there's nothing to break out of. This is, frankly, the correct default, and I'll die on that hill."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-uses",
+      "title": "Where match-case Actually Earns Its Place in Real Code",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Parsing API responses", "text": " — mapping patterns destructure JSON-derived dictionaries cleanly, handling success/error/pagination shapes in one readable block instead of nested if checks against dict.get() calls." },
+            { "strong": "Command-line tool dispatch", "text": " — sequence patterns on command.split() results make building a small interactive CLI or REPL genuinely pleasant, replacing a pile of string comparisons." },
+            { "strong": "AST and compiler-style tooling", "text": " — class patterns are a natural fit for walking abstract syntax trees, where each node type needs different handling based on both its type and its children." },
+            { "strong": "State machine transitions", "text": " — matching a (current_state, event) tuple against sequence patterns is a clean way to express transition tables without a wall of nested conditionals." },
+            { "strong": "Type-based dispatch replacing isinstance chains", "text": " — a long chain of if isinstance(x, TypeA): ... elif isinstance(x, TypeB): ... becomes a flat, readable match block with class patterns doing the type check inline." },
+            { "strong": "HTTP method + path routing (toy routers, not production frameworks)", "text": " — matching a (method, path_segments) tuple is a genuinely elegant way to build a tiny routing layer for learning projects or internal tools." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "best-practices",
+      "title": "Do's and Don'ts With match-case",
+      "blocks": [
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Use dotted names or literals for value comparisons", "text": "Status.ACTIVE or \"active\", never a bare lowercase name, if you mean equality comparison rather than capture." },
+            { "title": "Always include a wildcard case in production code", "text": "case _: makes the fallthrough behavior explicit and gives you a place to log or raise on unexpected input, instead of silently doing nothing." },
+            { "title": "Reach for class patterns over isinstance chains", "text": "When you're branching on object type AND need to extract attributes, class patterns replace several lines of manual isinstance + attribute access with one readable case." },
+            { "title": "Use guard clauses for conditions patterns can't express", "text": "Anything involving comparison between two captured values, or a computed condition, belongs in an if guard rather than trying to force it into the pattern itself." },
+            { "title": "Pair match-case with @dataclass", "text": "Dataclasses auto-generate __match_args__, making positional class pattern matching work with zero extra code." }
+          ],
+          "cons": [
+            { "title": "Don't use a bare name expecting value comparison", "text": "case status: is a capture pattern that matches everything — this is the single most common match-case bug in real codebases." },
+            { "title": "Don't reach for match-case on simple two or three branch value checks", "text": "if/elif or a dict lookup is often shorter and just as clear for basic value comparisons — match-case adds real value for structural checks, not simple branching." },
+            { "title": "Don't assume match-case checks exhaustiveness", "text": "Python does not warn you if you've missed a case. If there's no wildcard and nothing matches, the block just silently does nothing — no exception, no error." },
+            { "title": "Don't forget strings don't match sequence patterns", "text": "case [a, b]: will never match a two-character string like \"ab\", by design — this trips people coming from languages where strings ARE sequences for pattern purposes." },
+            { "title": "Don't ship match-case code without checking your minimum supported Python version", "text": "3.10 is the floor. If your deployment target is older, this entire feature is a SyntaxError waiting to happen." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python match-case — Interview Questions",
+      "blocks": [
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What Python version introduced match-case, and under which PEP?",
+              "a": "match-case was introduced in Python 3.10, defined primarily under PEP 634 (syntax specification), with PEP 635 covering motivation and rationale, and PEP 636 serving as a beginner-friendly tutorial companion. Using match-case in Python 3.9 or earlier raises a SyntaxError.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. Is Python's match-case the same as a switch statement in Java or C?",
+              "a": "No. A traditional switch statement compares a value against a fixed set of constants. Python's match-case performs structural pattern matching — it can destructure lists, tuples, dictionaries, and class instances while checking their type and shape, not just compare simple values. It's closer to pattern matching in functional languages like Scala or Rust than to a C-style switch.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is the difference between case status: and case Status.ACTIVE: ?",
+              "a": "case status: with a bare, undotted lowercase name is a capture pattern — it matches ANY value unconditionally and binds it to the name status, shadowing any outer variable with that name. case Status.ACTIVE: with a dotted name is a value pattern — it compares the subject against the actual value of Status.ACTIVE using equality. This distinction is one of the most common sources of bugs in real match-case code.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q4. Does match-case fall through to the next case like Java's switch?",
+              "a": "No, never. Once a case pattern matches and its block executes, Python exits the match statement completely. There is no break keyword needed and no fallthrough behavior to guard against, unlike Java or JavaScript switch statements where omitting break causes execution to continue into the next case.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. What happens if no case pattern matches and there's no wildcard case _: ?",
+              "a": "Nothing happens — the match block simply does nothing and execution continues with whatever code follows it. Python does not raise an error or warn about unmatched cases, and does not perform any exhaustiveness checking at compile time or runtime. This is why production code should almost always include a case _: wildcard.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q6. What is __match_args__ and why does it matter for class patterns?",
+              "a": "__match_args__ is a class attribute that defines which instance attributes can be matched positionally in a class pattern, and in what order. Without it, class patterns can only use keyword-style matching (case Point(x=0, y=0)), not positional (case Point(0, 0)). Classes decorated with @dataclass get __match_args__ generated automatically based on their field order.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. Can match-case patterns match against strings using square bracket sequence syntax?",
+              "a": "No. Even though strings are technically sequences of characters in Python, sequence patterns like case [a, b]: explicitly exclude str, bytes, and bytearray by design. This prevents a two-character string from accidentally matching a two-element sequence pattern, which would rarely be the intended behavior.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q8. How do mapping patterns handle dictionary keys that aren't mentioned in the pattern?",
+              "a": "Mapping patterns only check for the presence and value of the keys explicitly listed in the pattern — any additional keys in the actual dictionary are simply ignored and do not prevent a match. This differs from sequence patterns, which by default require an exact length match unless a *rest capture is used.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q9. What is a guard clause in match-case, and when does it get evaluated?",
+              "a": "A guard clause is an if condition appended to a case pattern, like case Point(x, y) if x == y:. It's evaluated only after the pattern structurally matches and any capture variables have already been bound — so the guard condition can reference those captured values. If the guard evaluates to False, Python moves on to try the next case, discarding the bindings from the failed attempt.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q10. Can you use the | (OR) operator to combine multiple patterns in one case?",
+              "a": "Yes — case \"saturday\" | \"sunday\": matches either value in a single case block. The one restriction is that every alternative joined by | must bind exactly the same set of variable names; Python raises a compile-time error if the alternatives capture different names, to guarantee the code after the case can rely on consistent variable bindings regardless of which branch matched.",
+              "tag": "Frequently Asked"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What does this print? match 5: case x: print(x); case 5: print('five')",
+              "a": "It prints 5. case x: is a capture pattern that matches everything unconditionally, so it always wins on the very first case — the case 5: line becomes dead, unreachable code that never executes for any input.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Why does case [a, b]: fail to match the string 'hi', even though 'hi' has exactly two characters?",
+              "a": "Sequence patterns explicitly exclude str, bytes, and bytearray from matching, even though strings technically satisfy the sequence protocol in Python generally. This is a deliberate exclusion in the pattern matching spec, specifically to avoid strings accidentally matching list/tuple-shaped patterns.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "3. Given class Point: def __init__(self, x, y): self.x, self.y = x, y (no __match_args__ defined), what happens with case Point(1, 2):?",
+              "a": "It raises a TypeError like 'Point() accepts 0 positional sub-patterns (2 given)'. Without __match_args__ defined on the class, positional class pattern matching isn't possible — you'd need to use keyword-style matching instead: case Point(x=1, y=2):.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "4. What's the output of matching {'a': 1, 'b': 2, 'c': 3} against case {'a': 1, 'b': 2}:?",
+              "a": "It matches successfully. Mapping patterns only check the keys explicitly listed in the pattern ('a' and 'b' here) and ignore any extra keys present in the actual dictionary, like 'c' in this example.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Does case 200 | 201 | 204: fall through to the next case if the subject is 200?",
+              "a": "No. If the subject matches any alternative in an OR pattern, that single case block runs and the match statement exits immediately — there's no concept of fallthrough in match-case at all, regardless of how many alternatives a case pattern includes.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "6. Why does case Point(x=0) | Point(y=0): raise a compile-time error?",
+              "a": "Every alternative in an OR pattern must bind the exact same set of variable names, so code after the case can rely on consistent bindings no matter which branch matched. Here, the two alternatives don't capture any variables inconsistently in this specific example (neither binds a name) — but if one branch captured x and the other captured y, Python would reject it at compile time with a pattern-binding error.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. What does case int(x) if x > 0: actually check, step by step?",
+              "a": "First, it checks whether the subject is an instance of int (this is a class pattern with a single positional capture, relying on int's built-in __match_args__-like behavior for simple types). If that's true, it binds the value to x. Only then does it evaluate the guard condition x > 0. If the subject isn't an int at all, the guard never even runs — the pattern itself already failed.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "8. What happens if you run match-case syntax on Python 3.9?",
+              "a": "It raises a SyntaxError: invalid syntax at the line containing match, because structural pattern matching was introduced in Python 3.10 and doesn't exist as valid grammar in any earlier version. There's no way to backport this syntax to older interpreters — you'd need to rewrite the logic using if/elif or dictionary dispatch instead.",
+              "difficulty": "Easy"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Should You Use match-case?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "match-case isn't a switch statement wearing a new hat, and treating it like one is the fastest way to miss what it's actually good at. Its real value shows up the moment you're not just comparing a value, but pulling data out of a structure while you check it — API responses, command parsers, AST nodes, class hierarchies. That's a genuinely different job than <code>if/elif</code>, and for that job, match-case is often the clearest tool Python has."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "For plain value comparisons — a status string, an HTTP code, a single flag — match-case usually isn't worth reaching for. A dictionary lookup or a short <code>if/elif</code> chain says the same thing in fewer lines, without the risk of accidentally writing a capture pattern where you meant a value comparison. Know both tools, and pick based on whether you're branching on a value or unpacking a shape. That one distinction is basically the whole decision."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Situation", "Use match-case?"],
+          "rows": [
+            ["Parsing structured JSON/dict responses", "✅ Yes — mapping patterns are ideal"],
+            ["Simple 2-3 branch value comparison", "❌ No — if/elif or dict lookup is simpler"],
+            ["Dispatching on object type + extracting attributes", "✅ Yes — class patterns replace isinstance chains"],
+            ["Command-line or REPL-style input parsing", "✅ Yes — sequence patterns shine here"],
+            ["Codebase must support Python 3.9 or older", "❌ No — not available, will raise SyntaxError"],
+            ["Need guaranteed exhaustiveness checking", "⚠️ Caution — Python doesn't check this, add case _: manually"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Next, pair this with a solid grip on Python's data classes and type hints — <code>@dataclass</code> combined with match-case's class patterns is genuinely one of the more elegant corners of modern Python, and it's where structural pattern matching stops feeling like a syntax curiosity and starts feeling like a real tool you reach for without thinking twice."
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "Is match-case the same as a switch statement?",
+        "a": "Not exactly. A switch statement compares a value against fixed constants. Python's match-case performs structural pattern matching — it can also destructure lists, tuples, dictionaries, and objects while checking them, and it never falls through between cases the way Java or JavaScript switch statements can. Think of it as a superset of switch, built for a different primary use case."
+      },
+      {
+        "q": "Which Python version do I need for match-case?",
+        "a": "Python 3.10 or newer. It was introduced under PEP 634 and does not exist in Python 3.9 or earlier — using it on an older interpreter raises a SyntaxError at the line where match appears."
+      },
+      {
+        "q": "Why does my case with a variable name always match, even when it shouldn't?",
+        "a": "A bare, undotted lowercase name in a case pattern (like case status:) is a capture pattern, not a value comparison — it matches literally anything and binds the matched value to that name. To compare against an existing variable's value, use a dotted name (case Status.ACTIVE:) or a literal value directly."
+      },
+      {
+        "q": "Does match-case check that all possible cases are covered?",
+        "a": "No. Python does not perform exhaustiveness checking on match-case statements. If no case matches and there's no wildcard case _:, the block silently does nothing — no error is raised. Always include a case _: in production code to handle unexpected input explicitly."
+      },
+      {
+        "q": "Can match-case replace all my if/elif chains?",
+        "a": "It could syntactically, but it shouldn't always. For simple value comparisons with two or three branches, if/elif or a dictionary lookup is typically shorter and clearer. match-case earns its place specifically when you need to check the structure or type of the data — not just its value."
+      },
+      {
+        "q": "Does match-case work with custom classes I've written myself?",
+        "a": "Yes, using class patterns like case Point(x=0, y=0):, which checks both the object's type and its attribute values in one step. For positional matching like case Point(0, 0):, your class needs a __match_args__ attribute defining attribute order — classes decorated with @dataclass get this generated automatically."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python If Else", "path": "/python/python-if-else" },
+    "next": { "label": "Next: Python While Loop →", "path": "/python/python-while-loop" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Introduced In",   "dd": "Python 3.10 (2021)" },
+      { "dt": "Defined By",     "dd": "PEP 634, PEP 635, PEP 636" },
+      { "dt": "Pattern Types",  "dd": "6 (Literal, Capture, Wildcard, Sequence, Mapping, Class)" },
+      { "dt": "Fallthrough?",   "dd": "Never — no break needed" },
+      { "dt": "Exhaustiveness Check", "dd": "None — add case _: manually" },
+      { "dt": "Works Great With", "dd": "@dataclass (auto __match_args__)" }
+    ],
+    "relatedArticles": [
+      { "label": "Python Control Flow",  "path": "/python/python-controlflow" },
+      { "label": "Python Loops",         "path": "/python/python-loops" },
+      { "label": "Python Functions",     "path": "/python/python-functions" },
+      { "label": "Python OOP",           "path": "/python/python-oop" },
+      { "label": "Python Data Classes",  "path": "/python/python-dataclasses" },
+      { "label": "Python Operators",     "path": "/python/python-operators" },
+      { "label": "Python Dictionaries",  "path": "/python/python-dictionaries" },
+      { "label": "Python Exception Handling", "path": "/python/python-exceptions" }
+    ],
+    "tags": ["match case","structural pattern matching","PEP 634","switch statement python","sequence pattern","mapping pattern","class pattern","guard clause","walrus operator","dataclass","match_args","python 3.10"]
+  }
+}

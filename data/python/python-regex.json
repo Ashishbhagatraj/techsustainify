@@ -1,0 +1,720 @@
+{
+  "meta": {
+    "title": "Python RegEx | re Module Explained | Regular Expressions Tutorial | Python Tutorial for Beginners 2026 | Tech Sustainify",
+    "description": "Learn Python regular expressions (RegEx) in depth. Covers the re module, match vs search vs findall vs finditer, groups, special characters, compiled patterns, raw strings, greedy vs lazy matching, and common mistakes with real code examples for 2026.",
+    "keywords": "python regex, python re module, regular expressions python, re.match vs re.search, re.findall python, regex groups python, raw string python regex, greedy vs lazy regex, re.sub python, re.compile python, regex special characters python",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-regex/",
+    "ogTitle": "Python RegEx — Complete re Module Guide 2026 | Tech Sustainify",
+    "ogDescription": "Deep dive into Python regular expressions — the re module, match/search/findall, groups, special characters, raw strings, greedy vs lazy matching, and the exact mistakes every dev makes while learning this.",
+    "ogUrl": "https://techsustainify.com/python/python-regex/",
+    "ogImage": "https://techsustainify.com/images/python-regex-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "21 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-03-14",
+    "schemaDateModified": "2026-03-26",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 8000
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python RegEx" }
+  ],
+
+  "articleHeader": {
+    "badge": "🔎 Python",
+    "title": "Python RegEx — The re Module Explained Properly",
+    "subtitle": "Everything you actually need to know about regular expressions in Python — the re module, match vs search vs findall, groups, special characters, raw strings, greedy vs lazy matching, and the mistakes every developer makes while learning this."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-26", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time", "value": "21 min" },
+    { "icon": "🎯", "label": "Level", "value": "Beginner" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-regex",
+      "title": "What is RegEx in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A regular expression — RegEx for short — is a tiny, specialised pattern language for describing shapes of text: 'a string that starts with three digits, then a hyphen, then four more digits' instead of 'exactly the string 123-4567'. Python gives you access to this pattern language through the built-in <code>re</code> module. <code>re.search(r'\\d{3}-\\d{4}', text)</code> finds a phone-number-shaped chunk of text anywhere inside <code>text</code>, without you writing a single line of manual character-by-character checking."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "RegEx has a genuinely intimidating reputation, and honestly, some of that reputation is earned — a complex pattern like <code>^(?:[a-z0-9!#$%&'*+/=?^_\\`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_\\`{|}~-]+)*)@...</code> looks like line noise to anyone, experienced or not. But the core ideas underneath that intimidating surface are genuinely small: a handful of special characters mean specific things, a few functions do the actual matching, and once those pieces click, most everyday patterns — validate an email format, extract all the numbers from a string, find every hashtag in a tweet — become genuinely quick to write."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's the mistake I see constantly, including from myself early on: reaching for regex when a plain string method would do the job more clearly. Checking if a string starts with <code>\"http\"</code> doesn't need <code>re.match(r'^http', url)</code> — <code>url.startswith('http')</code> says exactly the same thing in code any Python developer can read at a glance, no pattern-language knowledge required. Regex earns its place specifically when the thing you're matching has real structural variation — multiple possible formats, optional parts, repeated patterns — not for simple, fixed-string checks."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This guide covers the <code>re</code> module's core functions, the essential special characters, capturing groups, the crucial difference between greedy and lazy matching, why raw strings matter, and the specific mistakes — like forgetting to escape a literal dot — that produce patterns which look right but silently match the wrong thing."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "history-of-regex",
+      "title": "History — Regular Expressions and Python's re Module",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Regular expressions themselves predate Python by decades, rooted in formal language theory. Python's specific implementation has its own, somewhat bumpy history worth knowing."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "1950s — Mathematical Origins", "text": " — Regular expressions originate from the work of mathematician Stephen Kleene on regular languages and finite automata theory, long before any computer implementation existed." },
+            { "strong": "1960s-70s — Unix Tools", "text": " — Regular expressions became practically famous through Unix tools like grep, sed, and ed, and later through the Perl programming language, which built an entire reputation around expressive, powerful regex support baked directly into its syntax." },
+            { "strong": "Early Python — the regex module (Deprecated)", "text": " — Python's very earliest regex support came through a module simply called regex, using a different, less standardized syntax than what Python developers use today." },
+            { "strong": "1997 — The re Module Introduced", "text": " — The re module, implementing a Perl-influenced regex syntax, was introduced to standardize and modernize Python's pattern-matching capabilities, and the older regex module was eventually deprecated and removed entirely." },
+            { "strong": "2008 — Python 3.0", "text": " — The re module's core API remained stable through the Python 2 to 3 transition, though string handling changes (everything becoming Unicode by default) affected how regex patterns interacted with non-ASCII text." },
+            { "strong": "2019 — Python 3.8 (PEP 572-adjacent tooling)", "text": " — Ongoing refinements continued improving re module performance and adding minor convenience features, while the fundamental pattern syntax itself remained deliberately stable to avoid breaking the enormous amount of existing regex-dependent code." },
+            { "strong": "2026 — Current state", "text": " — The re module remains the standard, built-in way to do regex in Python, though the third-party regex package (offering additional features like nested named groups and better Unicode property support) is genuinely popular for advanced use cases the standard library doesn't cover. For nearly all everyday tasks, though, re remains entirely sufficient." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "features-heading",
+      "title": "Key Characteristics of Python's re Module",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Here are the 11 things worth knowing precisely about how Python's regex support actually works:"
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            { "icon": "📦", "title": "Built Into the Standard Library", "text": "import re gives you full regex support with zero extra installation — no pip install needed for the standard, everyday regex functionality most tasks require." },
+            { "icon": "🔍", "title": "Core Functions Serve Different Purposes", "text": "re.match() checks the START of a string, re.search() finds the FIRST match anywhere, re.findall() returns ALL matches as a list, re.finditer() returns all matches as an iterator of Match objects, and re.sub() replaces matches." },
+            { "icon": "🎯", "title": "Match Objects Hold Rich Information", "text": "A successful match returns a Match object, not just a boolean — .group() gets the matched text, .start()/.end() give its position, and .groups() returns captured subgroups." },
+            { "icon": "🔡", "title": "Raw Strings Are the Convention", "text": "Pattern strings are almost always written with an r prefix — r'\\d+' — to prevent Python's own string escaping (like \\n becoming a newline) from interfering with regex's own use of backslashes." },
+            { "icon": "🎭", "title": "Special Characters Carry Specific Meaning", "text": "Characters like . ^ $ * + ? { } [ ] \\ | ( ) each have a reserved, specific meaning in regex syntax and must be escaped with a backslash to match them as literal characters." },
+            { "icon": "👥", "title": "Parentheses Create Capturing Groups", "text": "Wrapping part of a pattern in () captures that specific portion of the match separately, retrievable via .group(1), .group(2), and so on, or all at once via .groups()." },
+            { "icon": "🏷️", "title": "Groups Can Be Named", "text": "(?P<year>\\d{4}) creates a named capturing group, retrievable more readably via match.group('year') instead of a numbered index that's easy to lose track of in complex patterns." },
+            { "icon": "🍽️", "title": "Greedy by Default, Lazy on Demand", "text": "Quantifiers like * and + match as MUCH as possible by default (greedy). Adding a ? after them (*?, +?) makes them match as LITTLE as possible instead (lazy/non-greedy)." },
+            { "icon": "⚡", "title": "Patterns Can Be Pre-Compiled", "text": "re.compile(pattern) creates a reusable Pattern object, genuinely faster when the same pattern is applied repeatedly, such as inside a loop processing many lines of text." },
+            { "icon": "🚩", "title": "Flags Modify Matching Behaviour", "text": "re.IGNORECASE (or re.I) makes matching case-insensitive, re.MULTILINE changes how ^ and $ behave across multiple lines, and re.DOTALL makes . match newline characters too, which it doesn't by default." },
+            { "icon": "🌍", "title": "Unicode-Aware by Default", "text": "In Python 3, \\w, \\d, and similar character classes match Unicode letters and digits by default, not just ASCII — matching Devanagari or other non-Latin script text correctly without extra configuration." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "How Python Matches a Pattern Against Text — Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Choosing the wrong function — <code>match()</code> versus <code>search()</code> versus <code>findall()</code> — is one of the most common regex mistakes, precisely because they sound similar but behave meaningfully differently. Here's the decision path, plus what happens once a match is actually found."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "🎯 Pattern + Text Ready", "sublabel": "re.match/search/findall(pattern, text)", "type": "start" },
+            { "id": "2", "label": "❓ Which Function Called?", "sublabel": "Determines search behaviour", "type": "decision" },
+            { "id": "3", "label": "📍 match() — Start Only", "sublabel": "Checks position 0 only", "type": "process" },
+            { "id": "4", "label": "🔍 search() — Anywhere, First Hit", "sublabel": "Scans until first match found", "type": "process" },
+            { "id": "5", "label": "📋 findall() — Every Match", "sublabel": "Scans entire string, collects all", "type": "process" },
+            { "id": "6", "label": "❓ Match Found?", "sublabel": "Depends on function used above", "type": "decision" },
+            { "id": "7", "label": "🚫 None Returned", "sublabel": "match()/search() only", "type": "end" },
+            { "id": "8", "label": "✅ Match Object / List Returned", "sublabel": ".group(), .start(), .end() available", "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "decides path" },
+            { "from": "2", "to": "3", "label": "if match()" },
+            { "from": "2", "to": "4", "label": "if search()" },
+            { "from": "2", "to": "5", "label": "if findall()" },
+            { "from": "3", "to": "6", "label": "checks result" },
+            { "from": "4", "to": "6", "label": "checks result" },
+            { "from": "5", "to": "6", "label": "checks result" },
+            { "from": "6", "to": "7", "label": "if no match" },
+            { "from": "6", "to": "8", "label": "if match found" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Key insight: <code>match()</code> only ever looks at the very beginning of the string — if the pattern would match perfectly starting at character five instead of character zero, <code>match()</code> still returns <code>None</code>. This single distinction accounts for a genuinely large share of 'why isn't my regex working' confusion, since <code>search()</code> would find that exact same pattern without any trouble."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "how-regex-works",
+      "title": "How RegEx Actually Works — Special Characters, Groups, and Greedy vs Lazy",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Three things separate someone who's copy-pasted a regex pattern from Stack Overflow from someone who can actually write and debug their own: knowing the core special-character vocabulary precisely, understanding exactly what capturing groups do, and knowing the difference between greedy and lazy matching — a distinction that silently produces wrong results far more often than it produces an outright error."
+        },
+        { "type": "subHeading", "text": "🎭 The Essential Special-Character Vocabulary" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A small set of characters covers the overwhelming majority of everyday regex needs: <code>.</code> matches any single character except a newline; <code>\\d</code> matches any digit; <code>\\w</code> matches any word character (letters, digits, underscore); <code>\\s</code> matches any whitespace; <code>*</code> means 'zero or more of the previous thing'; <code>+</code> means 'one or more'; <code>?</code> means 'zero or one, i.e. optional'; <code>{3}</code> means 'exactly three'; <code>{2,5}</code> means 'between two and five'; <code>^</code> anchors to the start of the string; <code>$</code> anchors to the end; and <code>[abc]</code> matches any single character from that set. Learning these roughly ten symbols covers a genuinely large share of the patterns you'll ever need to write."
+        },
+        { "type": "subHeading", "text": "🔡 Why Raw Strings Matter — And What Breaks Without Them" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python's regular strings already treat backslash as an escape character — <code>'\\n'</code> is a newline, <code>'\\t'</code> is a tab. Regex ALSO uses backslash for its own special sequences — <code>\\d</code> for digit, <code>\\w</code> for word character. Without the <code>r</code> prefix, Python processes the backslash first, before regex ever sees the string — <code>'\\d'</code> isn't a recognised Python escape sequence, so Python actually leaves it alone in this specific case, but plenty of other sequences (<code>\\b</code> for word boundary in regex collides directly with <code>\\b</code> as Python's backspace character escape) genuinely break without the raw-string prefix. The safe, standard habit is simply always writing regex patterns as raw strings: <code>r'\\d+\\s\\w+'</code>, never <code>'\\d+\\s\\w+'</code>."
+        },
+        { "type": "subHeading", "text": "👥 Capturing Groups — Pulling Out the Parts You Actually Want" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A pattern like <code>r'(\\d{4})-(\\d{2})-(\\d{2})'</code> matches a full date like <code>2026-03-24</code>, but the parentheses do something extra: they capture each piece separately. <code>match.group(0)</code> (or just <code>match.group()</code>) gives the whole match, <code>match.group(1)</code> gives the year, <code>match.group(2)</code> the month, <code>match.group(3)</code> the day. This is what turns regex from a yes/no matching tool into a genuine text-extraction tool — finding that a string contains a date is useful, but pulling out the year specifically to use elsewhere in your code is usually the actual goal."
+        },
+        { "type": "subHeading", "text": "🍽️ Greedy vs Lazy — The Silent Wrong-Answer Trap" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is the single most common source of a regex that runs without error but returns the wrong match. Given the text <code>&lt;b&gt;bold&lt;/b&gt; and &lt;i&gt;italic&lt;/i&gt;</code>, the pattern <code>r'&lt;.+&gt;'</code> doesn't match just <code>&lt;b&gt;</code> — because <code>+</code> is <strong>greedy</strong> by default, it grabs as much text as possible while still allowing the overall pattern to match, so it actually matches all the way from the first <code>&lt;</code> to the very last <code>&gt;</code> in the string: <code>&lt;b&gt;bold&lt;/b&gt; and &lt;i&gt;italic&lt;/i&gt;</code> in its entirety. Adding a <code>?</code> after the quantifier — <code>r'&lt;.+?&gt;'</code> — makes it <strong>lazy</strong>, matching as little as possible instead, correctly stopping at the very first <code>&gt;</code> it encounters and giving you just <code>&lt;b&gt;</code>."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Simple rule to remember:</strong> always write patterns as raw strings, use <code>search()</code> unless you specifically need to check the string's start, remember that <code>+</code> and <code>*</code> are greedy by default and add <code>?</code> when you need the lazy version instead, and reach for named or numbered groups whenever you need to extract a specific piece of the match, not just confirm that it matched."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "re-functions-comparison",
+      "title": "re.match vs re.search vs re.findall vs re.finditer vs re.sub — Key Differences",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Each core function in the re module solves a genuinely different problem. This table lines up exactly what each one returns and when to reach for it."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Function", "Searches Where", "Returns", "Typical Use Case"],
+          "rows": [
+            ["re.match()", "Start of the string only", "A Match object, or None", "Validating that a string BEGINS with a specific format"],
+            ["re.search()", "Anywhere in the string, stops at first hit", "A Match object, or None", "Checking if a pattern exists anywhere at all"],
+            ["re.fullmatch()", "The ENTIRE string must match, start to end", "A Match object, or None", "Strict validation — the whole string must be exactly this shape"],
+            ["re.findall()", "Entire string, every non-overlapping match", "A list of matched strings (or tuples, with groups)", "Extracting every occurrence — all emails, all numbers"],
+            ["re.finditer()", "Entire string, every non-overlapping match", "An iterator of Match objects", "Same as findall(), but need position info (.start()/.end()) too"],
+            ["re.sub()", "Entire string, every match by default", "A new string with matches replaced", "Find-and-replace, cleaning or reformatting text"],
+            ["re.split()", "Entire string, splits at every match", "A list of the pieces between matches", "Splitting text on a flexible, pattern-based delimiter"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "python-vs-other-regex",
+      "title": "Regex Support — Python vs Other Languages",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Regular expressions are largely portable across languages — the core syntax is remarkably similar everywhere — but how each language exposes and integrates that syntax genuinely differs."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Python (re)", "JavaScript", "Java", "Perl"],
+          "rows": [
+            ["Native syntax in the language itself?", "❌ String-based, via re module", "✅ Literal /pattern/ syntax built in", "❌ String-based, via Pattern/Matcher classes", "✅ Deeply integrated, =~ operator"],
+            ["Named groups", "✅ (?P<name>...)", "✅ (?<name>...)", "✅ (?<name>...)", "✅ (?<name>...)"],
+            ["Lazy quantifiers", "✅ *?, +?", "✅ *?, +?", "✅ *?, +?", "✅ *?, +?"],
+            ["Requires a separate module/import?", "✅ Yes — import re", "❌ No — built into the language", "✅ Yes — java.util.regex", "❌ No — built into the language"],
+            ["Compiled pattern reuse", "✅ re.compile()", "✅ Patterns are already compiled objects", "✅ Pattern.compile()", "✅ Patterns compiled automatically, cached"],
+            ["General learning curve", "Moderate — clean function-based API", "Low — very ergonomic literal syntax", "Moderate-high — verbose class-based API", "Low for basic use, notoriously deep for advanced use"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's my honestly opinionated take: I genuinely think Python made the right call NOT baking regex literal syntax directly into the language the way JavaScript and Perl do. JavaScript's <code>/pattern/</code> literals are undeniably convenient to type, but they also make it easy to sprinkle dense, cryptic patterns directly into otherwise readable code without a second thought. Python's <code>re.compile(r'...')</code> approach costs you a couple of extra characters and forces regex to visually stand out as its own distinct, deliberate tool being reached for — which, given how quickly regex readability degrades past a certain complexity, is a small nudge toward using it more thoughtfully rather than reflexively."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Using RegEx",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Regex is a genuinely powerful tool for the right problems, and a genuine liability when reached for out of habit rather than necessity."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Extremely Compact for Complex Patterns", "text": "A single line of regex can express matching logic that would take dozens of lines of manual character-by-character string parsing to replicate." },
+            { "title": "Genuinely Portable Across Languages", "text": "Core regex syntax transfers almost directly between Python, JavaScript, Java, and most other languages — learning it once pays off broadly, not just within Python." },
+            { "title": "Excellent for Text Extraction, Not Just Validation", "text": "Capturing groups turn regex from a simple yes/no check into a genuine data-extraction tool, pulling structured pieces out of unstructured or semi-structured text." },
+            { "title": "Built Into the Standard Library", "text": "No external dependency is needed for the vast majority of regex tasks — import re is available in every standard Python installation." },
+            { "title": "Fast for Repeated Matching When Compiled", "text": "re.compile() lets a pattern be parsed once and reused many times, which matters genuinely when processing large volumes of text, like log files or scraped web content." },
+            { "title": "Handles Structural Variation Elegantly", "text": "Patterns with optional parts, alternatives, and repetition (phone numbers with or without a country code, for instance) are exactly where regex clearly outperforms manual string-method chains." }
+          ],
+          "cons": [
+            { "title": "Readability Degrades Quickly With Complexity", "text": "A moderately complex pattern is genuinely hard for anyone — including its original author, months later — to read and modify confidently without careful, deliberate effort." },
+            { "title": "Easy to Write a Pattern That's Subtly Wrong", "text": "Forgetting to escape a literal dot, forgetting a raw string prefix, or missing a greedy-vs-lazy distinction produces patterns that run without error but silently match the wrong thing." },
+            { "title": "Not the Right Tool for Truly Structured Formats", "text": "Parsing genuine HTML, XML, or JSON with regex is a well-known anti-pattern — these formats have nested, recursive structure that regex fundamentally isn't designed to handle reliably; use a real parser instead." },
+            { "title": "Can Be Genuinely Slow on Pathological Patterns", "text": "Certain poorly constructed patterns can trigger catastrophic backtracking, where matching time explodes exponentially on specific unfortunate input — a real, documented performance and security concern (ReDoS)." },
+            { "title": "Overused for Simple String Checks", "text": "Reaching for regex to check if a string starts with a fixed prefix, or contains a fixed substring, is unnecessary complexity when str.startswith() or the in operator says the same thing far more clearly." },
+            { "title": "Debugging Requires Specialised Tooling or Practice", "text": "Understanding exactly why a pattern isn't matching often requires stepping through it mentally, character by character, or using an external regex-testing tool — it's not always obvious from reading the pattern alone." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "diagram-heading",
+      "title": "RegEx Matching Architecture — From Pattern to Result",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The diagram below shows the full pipeline a regex pattern and target string pass through, from your raw pattern string down to the actual engine that walks through the text looking for a match."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Your Code",
+              "color": "#6366f1",
+              "items": ["Raw string pattern: r'\\d{3}-\\d{4}'", "Target text to search"]
+            },
+            {
+              "label": "re Module API",
+              "color": "#0ea5e9",
+              "items": ["re.match() / re.search()", "re.findall() / re.finditer()", "re.sub() / re.split()", "re.compile() for reuse"]
+            },
+            {
+              "label": "Pattern Compilation",
+              "color": "#10b981",
+              "items": ["Pattern string parsed into internal representation", "Special characters interpreted (., \\d, *, etc.)", "Flags applied (IGNORECASE, MULTILINE, DOTALL)"]
+            },
+            {
+              "label": "Regex Engine (NFA-based)",
+              "color": "#f59e0b",
+              "items": ["Walks through target text character by character", "Attempts match, backtracks on failure", "Applies greedy/lazy quantifier rules"]
+            },
+            {
+              "label": "Match Result",
+              "color": "#ef4444",
+              "items": ["Match object (single) or list/iterator (multiple)", "None if no match found", ".group(), .start(), .end() available"]
+            },
+            {
+              "label": "Your Code Uses the Result",
+              "color": "#8b5cf6",
+              "items": ["Extracted groups", "Replaced/cleaned text", "Validation pass/fail"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "RegEx in Practice — Extraction, Validation, and the Greedy Trap",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's a realistic set of examples — extracting emails, validating a date format with named groups, and the exact greedy-vs-lazy trap in action."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "regex_basics.py",
+          "lines": [
+            "import re",
+            "",
+            "text = \"Contact us at support@example.com or sales@example.co.in for help.\"",
+            "",
+            "# findall — extracting every match",
+            "emails = re.findall(r'[\\w.+-]+@[\\w-]+\\.[\\w.-]+', text)",
+            "print(emails)",
+            "",
+            "# search — finding just the first match, with position info",
+            "match = re.search(r'[\\w.+-]+@[\\w-]+\\.[\\w.-]+', text)",
+            "print(match.group(), match.start(), match.end())",
+            "",
+            "# Named groups — extracting structured pieces from a date",
+            "date_pattern = r'(?P<year>\\d{4})-(?P<month>\\d{2})-(?P<day>\\d{2})'",
+            "date_match = re.search(date_pattern, \"Event scheduled for 2026-03-24\")",
+            "print(date_match.group('year'), date_match.group('month'), date_match.group('day'))"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["['support@example.com', 'sales@example.co.in']", "support@example.com 14 34", "2026 03 24"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Now the exact greedy-vs-lazy trap, reproduced with real HTML-like text:"
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "greedy_vs_lazy.py",
+          "lines": [
+            "import re",
+            "",
+            "html = \"<b>bold</b> and <i>italic</i>\"",
+            "",
+            "# Greedy (default) — matches WAY more than intended",
+            "greedy_match = re.search(r'<.+>', html)",
+            "print(\"Greedy:\", greedy_match.group())",
+            "",
+            "# Lazy — matches only the first tag, as intended",
+            "lazy_match = re.search(r'<.+?>', html)",
+            "print(\"Lazy:  \", lazy_match.group())",
+            "",
+            "# re.sub — find and replace using a pattern",
+            "cleaned = re.sub(r'<[^>]+>', '', html)",
+            "print(\"Tags stripped:\", cleaned)"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["Greedy: <b>bold</b> and <i>italic</i>", "Lazy:   <b>", "Tags stripped: bold and italic"]
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "import re\n\ntext = \"Call 9876543210 or 8765432109 for support.\"\nnumbers = re.findall(r'\\d{10}', text)\nprint(numbers)"
+        },
+        {
+          "type": "subHeading",
+          "text": "Line-by-Line Explanation"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>r'[\\w.+-]+@[\\w-]+\\.[\\w.-]+'</code> — A simplified email pattern: one or more word/dot/plus/hyphen characters, an <code>@</code>, then a domain name, a literal dot (escaped as <code>\\.</code>), and the extension. Real email validation is genuinely more complex than this, but this covers the common cases." },
+            { "html": "<code>match.start()</code> and <code>match.end()</code> — Give the exact character positions where the match begins and ends within the original string, useful for slicing or reporting exactly where something was found." },
+            { "html": "<code>(?P&lt;year&gt;\\d{4})</code> — A named capturing group. <code>match.group('year')</code> reads far more clearly in later code than a numbered <code>match.group(1)</code>, especially in patterns with several groups." },
+            { "html": "<code>r'&lt;.+&gt;'</code> vs <code>r'&lt;.+?&gt;'</code> — The only difference is the <code>?</code> after <code>+</code>. Without it, greedy matching grabs from the first <code>&lt;</code> to the very LAST <code>&gt;</code> in the whole string. With it, lazy matching stops at the very FIRST <code>&gt;</code> it finds." },
+            { "html": "<code>re.sub(r'&lt;[^&gt;]+&gt;', '', html)</code> — Uses a character class <code>[^&gt;]</code> (meaning 'any character that is NOT &gt;') instead of lazy matching to achieve a similar precise effect — a common, genuinely reliable alternative approach to the greedy-matching trap." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "regex-real-uses",
+      "title": "Where RegEx Actually Earns Its Place — Real-World Applications",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Regex isn't just an interview-question topic — it's genuinely embedded in a wide range of everyday Python tasks:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "✅ Form Input Validation", "text": " — Checking that a phone number, postal code, or username matches an expected format is one of the most common practical regex uses, especially in web backend request validation." },
+            { "strong": "📝 Log File Parsing and Analysis", "text": " — Extracting timestamps, error codes, IP addresses, or specific message patterns from server log files is a textbook regex use case, often combined with re.finditer() for processing large files line by line." },
+            { "strong": "🕸️ Web Scraping and Data Cleaning", "text": " — Pulling specific pieces of information (prices, dates, phone numbers) out of scraped HTML text, or cleaning inconsistent whitespace and formatting from user-submitted data." },
+            { "strong": "🔐 Password and Security Policy Enforcement", "text": " — Validating that a password meets complexity requirements (at least one digit, one uppercase letter, minimum length) is commonly implemented with a single, carefully constructed regex pattern." },
+            { "strong": "📊 Data Extraction from Semi-Structured Text", "text": " — Pulling structured values (product IDs, order numbers, currency amounts) out of free-text fields like customer support tickets or invoice descriptions, where the surrounding text varies but the pattern itself is consistent." },
+            { "strong": "🧹 Text Preprocessing for NLP and Machine Learning", "text": " — Removing punctuation, normalising whitespace, stripping URLs or mentions from social media text, and tokenising text are all commonly handled with regex as an early preprocessing step before feeding text into ML models." },
+            { "strong": "🔍 Search-and-Replace Across Codebases", "text": " — Tools and scripts that perform bulk find-and-replace operations across many files — renaming a function consistently, updating an import path — often use regex specifically because it can match patterns, not just exact fixed strings." },
+            { "strong": "📧 Extracting Structured Data from Emails", "text": " — Parsing email headers, extracting all email addresses from a body of text, or pulling out specific transaction details from automated notification emails are common, practical regex applications in automation scripts." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-regex",
+      "title": "Why RegEx Is Worth the Genuine Learning Curve",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Regex has a real reputation for being hard, and it's fair to acknowledge that honestly rather than pretending it's trivial. Here's why the investment still pays off:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🌍 It's a Genuinely Portable Skill", "text": " — Unlike most Python-specific syntax, core regex knowledge transfers almost directly to JavaScript, Java, grep, sed, and dozens of other tools and languages — one of the most cross-transferable technical skills you can learn." },
+            { "strong": "💼 It's Tested Regularly in Technical Interviews", "text": " — Writing a pattern to validate an email format, or explaining greedy versus lazy matching, are genuinely common interview questions, especially for roles involving data processing or backend validation." },
+            { "strong": "🧹 It Genuinely Speeds Up Everyday Text Tasks", "text": " — Once the core syntax is comfortable, tasks like cleaning messy data or extracting specific fields from log files go from tedious manual string-splitting to a single confident line of code." },
+            { "strong": "🔧 It's Foundational for Data Cleaning and NLP Work", "text": " — Nearly every real-world data science or NLP pipeline includes a text-cleaning stage that leans on regex — genuine fluency here is a practical prerequisite for that kind of work." },
+            { "strong": "🐛 Understanding Greedy vs Lazy Prevents Silent Bugs", "text": " — This specific distinction is responsible for a genuinely large share of 'my regex ran fine but extracted the wrong thing' bugs — knowing it cold is one of the highest-value individual facts in this entire topic." },
+            { "strong": "🇮🇳 It's a Standard Topic in Indian Data Science and Backend Interview Tracks", "text": " — Regex questions appear consistently in Indian data analyst, data science, and backend developer interview rounds, often as a practical coding exercise rather than a theory question." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-patterns-reference",
+      "title": "A Quick-Reference Table of Common Regex Patterns",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "These recurring patterns cover a genuinely large share of everyday regex needs — worth having memorised, or at least recognised, rather than looked up every single time."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "\\d", "text": " — Any single digit (0-9). \\D is the opposite — any non-digit character." },
+            { "strong": "\\w", "text": " — Any 'word' character: letters, digits, and underscore. \\W is the opposite — any non-word character." },
+            { "strong": "\\s", "text": " — Any whitespace character: space, tab, newline. \\S is the opposite — any non-whitespace character." },
+            { "strong": "^ and $", "text": " — Anchor to the start and end of the string (or line, with re.MULTILINE) respectively — the pattern must begin/end exactly there." },
+            { "strong": "* , + , ?", "text": " — Zero-or-more, one-or-more, and zero-or-one repetitions of the preceding element, respectively." },
+            { "strong": "{n,m}", "text": " — Between n and m repetitions of the preceding element, inclusive — {3} means exactly 3, {2,} means 2 or more." },
+            { "strong": "[abc] and [^abc]", "text": " — Any one character from the set inside the brackets, or (with ^ right after the opening bracket) any character NOT in that set." },
+            { "strong": "( ... ) and (?: ... )", "text": " — A capturing group versus a non-capturing group — the latter groups a pattern for repetition/alternation purposes without creating a numbered capture." },
+            { "strong": "\\b", "text": " — A word boundary — matches the position between a word character and a non-word character, useful for matching whole words only." }
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Goal", "Pattern", "Matches"],
+          "rows": [
+            ["10-digit phone number", "r'\\d{10}'", "9876543210"],
+            ["Simple email address", "r'[\\w.+-]+@[\\w-]+\\.\\w+'", "someone@example.com"],
+            ["Date in YYYY-MM-DD format", "r'\\d{4}-\\d{2}-\\d{2}'", "2026-03-24"],
+            ["Whole word only (not substring)", "r'\\bcat\\b'", "'cat' but not 'category'"],
+            ["Optional country code before a number", "r'(\\+91)?\\d{10}'", "+919876543210 or 9876543210"],
+            ["Extract hashtags from text", "r'#\\w+'", "#python, #coding"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python RegEx — Interview Questions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These come up regularly in Python interviews, especially for data-focused and backend-validation-heavy roles."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is the difference between re.match() and re.search() in Python?",
+              "a": "re.match() only checks whether the pattern matches starting at the very beginning of the string — if a match exists but starts anywhere other than position zero, match() returns None. re.search() scans the entire string and returns the FIRST match found anywhere within it, regardless of position. search() is generally the more commonly needed function unless you specifically need to validate that a string begins with a certain format.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. Why should regex patterns in Python usually be written as raw strings (with an r prefix)?",
+              "a": "Regular Python strings already interpret backslash as an escape character (\\n for newline, \\t for tab), and regex separately uses backslash for its own special sequences (\\d for digit, \\b for word boundary). Without the r prefix, Python processes escape sequences first, which can silently produce a different string than intended before regex even sees the pattern — some sequences like \\b collide directly with Python's own backspace escape. Writing r'\\d+\\b' as a raw string avoids this entirely, passing the backslashes through unmodified to the regex engine.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q3. What is the difference between greedy and lazy (non-greedy) matching in regex?",
+              "a": "Greedy quantifiers (*, +, {n,m}) match as MUCH text as possible while still allowing the overall pattern to succeed — this is the default behaviour. Lazy quantifiers (*?, +?, {n,m}?) match as LITTLE text as possible instead. This distinction matters most with patterns like <.+> on text containing multiple tags, where greedy matching spans from the first opening bracket all the way to the LAST closing bracket, while lazy matching correctly stops at the first closing bracket.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q4. What does re.findall() return, and how does its behaviour change if the pattern contains capturing groups?",
+              "a": "Without capturing groups, re.findall() returns a list of the full matched strings. If the pattern DOES contain capturing groups, findall() instead returns a list of tuples, where each tuple holds the captured groups for that match (or, if there's exactly one group, a list of just that group's matched values, without tuples).",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q5. What is a named capturing group in Python regex, and why would you use one over a numbered group?",
+              "a": "A named group is written as (?P<name>pattern), and its matched value is retrieved via match.group('name') instead of a numeric index like match.group(1). Named groups are preferred in patterns with several groups because they make the retrieving code self-documenting and immune to breaking if the group order in the pattern later changes.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. What does re.compile() do, and when is it genuinely worth using?",
+              "a": "re.compile(pattern) parses a regex pattern once and returns a reusable Pattern object, which can then call .match(), .search(), .findall(), etc. directly. It's genuinely worth using when the same pattern will be applied repeatedly — such as inside a loop processing many lines of text — since it avoids re-parsing the same pattern string on every single call.",
+              "tag": "Current Affairs"
+            },
+            {
+              "q": "Q7. Why is using regex to parse full HTML or XML documents generally considered an anti-pattern?",
+              "a": "HTML and XML have nested, recursive structure — tags inside tags, potentially arbitrarily deep — and regex is fundamentally a tool for matching patterns in flat text, not for correctly tracking nested structure. Regex-based HTML parsing tends to break on edge cases like nested identical tags, malformed markup, or comments containing tag-like text. A proper parser (like BeautifulSoup or an XML library) correctly understands the document's actual tree structure and is the appropriate tool instead.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. What is the difference between re.sub() and re.subn()?",
+              "a": "re.sub(pattern, replacement, string) returns just the new string with matches replaced. re.subn(pattern, replacement, string) returns a tuple of (new_string, number_of_substitutions_made), giving you a count of how many replacements actually occurred in addition to the resulting string itself.",
+              "tag": "Must Know"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Work through these before checking the answers. Predicting exactly what a pattern matches — including the greedy/lazy distinction — is the real test here."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What does re.match(r'\\d+', 'Room 42') return, and why?",
+              "a": "None. re.match() only checks from the very START of the string. Since 'Room 42' begins with a letter, not a digit, there's no match at position 0, even though '42' does appear later in the string. re.search(r'\\d+', 'Room 42') would correctly find '42'.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "2. What does re.findall(r'\\d+', 'I have 3 cats and 12 dogs') return?",
+              "a": "['3', '12']. findall() scans the entire string and collects every non-overlapping match of one-or-more digits, returning them as a list of strings.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. What is the output of: re.search(r'a.c', 'abc').group()?",
+              "a": "'abc'. The . in regex matches any single character (except newline by default), so a.c matches 'a', any one character, then 'c' — here, the middle character happens to be 'b'.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. Given text = '3.14 is pi', what does re.search(r'3.14', text) actually match, and what's the subtle bug here?",
+              "a": "It matches '3.14' correctly in this specific string, but the bug is that the . is NOT escaped, so it's actually matching ANY character in that position, not specifically a literal dot. This pattern would incorrectly also match a string like '3X14' since . matches any character. The correct, precise pattern is r'3\\.14', with the dot escaped as \\. to match a literal period.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "5. What does re.sub(r'\\s+', ' ', 'too    many     spaces') return?",
+              "a": "'too many spaces'. \\s+ matches one or more consecutive whitespace characters, and each such run gets replaced with a single space, effectively collapsing multiple spaces down to one.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. What is the output of: match = re.search(r'(\\w+)@(\\w+)\\.com', 'reach me at admin@site.com') \\n print(match.group(1), match.group(2))?",
+              "a": "admin site. Group 1 captures the part before the @ symbol, and group 2 captures the part between @ and .com — the parentheses in the pattern define these two separate capturing groups.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. Why does re.findall(r'<.+>', '<a><b><c>') return ['<a><b><c>'] as a single item, not three separate tags?",
+              "a": "Because + is greedy by default — .+ matches as much text as possible while still letting the overall pattern succeed, so it grabs everything from the very first < all the way to the very last > in the string, treating the whole thing as one match. Using the lazy version, r'<.+?>', would instead correctly return ['<a>', '<b>', '<c>'] as three separate matches.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. What does re.split(r'\\s*,\\s*', 'apple,  banana ,cherry') return?",
+              "a": "['apple', 'banana', 'cherry']. The pattern matches a comma optionally surrounded by any amount of whitespace on either side, splitting the string at each such comma and correctly discarding the inconsistent surrounding spaces from the result.",
+              "difficulty": "Medium"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — A Small Vocabulary, Genuinely Worth Learning Properly",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Regex earns its intimidating reputation from how unreadable complex patterns can look, not from how complicated the underlying ideas actually are. A handful of special characters, a handful of core <code>re</code> functions, and two genuinely important distinctions — <code>match()</code> versus <code>search()</code>, and greedy versus lazy — cover the overwhelming majority of what you'll actually need for real, everyday text-processing tasks."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If you're a <strong>complete beginner</strong>, the priority is getting comfortable with the core special characters and the difference between <code>search()</code> and <code>findall()</code>, ideally by testing patterns against real, messy text rather than memorising syntax in the abstract. If you're doing <strong>real data cleaning or backend validation work</strong>, the priority shifts to precision: escaping literal characters correctly, choosing greedy versus lazy deliberately, and knowing exactly when regex is the wrong tool for a genuinely structured format like HTML or JSON."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Your Situation", "What to Reach For"],
+          "rows": [
+            ["Simple fixed-string check", "⚠️ Use str.startswith()/in — regex is unnecessary here"],
+            ["Pattern with structural variation (optional parts, alternatives)", "✅ Regex is genuinely the right tool"],
+            ["Need to check the string genuinely starts with a pattern", "✅ re.match() or re.fullmatch()"],
+            ["Need to find a pattern anywhere in the text", "✅ re.search()"],
+            ["Need every occurrence of a pattern", "✅ re.findall() or re.finditer()"],
+            ["Extracting a specific piece, not just confirming a match", "✅ Capturing groups — named, ideally"],
+            ["Pattern applied repeatedly, e.g. inside a loop", "✅ re.compile() once, reuse the compiled pattern"],
+            ["Parsing genuinely nested/structured formats (HTML, XML, JSON)", "⚠️ Use a real parser, not regex"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The habit worth building here: whenever a pattern involves <code>*</code> or <code>+</code> and the text being matched could plausibly contain the same character or delimiter more than once, pause and specifically ask whether you actually want greedy or lazy behaviour — don't just accept the default because it's the default. That single deliberate check catches the large majority of the 'my regex ran but extracted the wrong thing' bugs before they ever ship."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Regex is a small, precise language for describing text shapes — not a mysterious black box.</strong> Learn the core vocabulary properly, respect the greedy/lazy distinction, and know when NOT to reach for it, and it becomes one of the most genuinely useful, portable tools in your entire programming toolkit. 🐍"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "What is RegEx in Python, and how do I use it?",
+        "a": "RegEx (regular expressions) is a pattern language for matching and extracting text based on its shape rather than an exact fixed value. In Python, you use it through the built-in re module: import re, then call functions like re.search(pattern, text) or re.findall(pattern, text) with a pattern string (conventionally written as a raw string, with an r prefix) describing what you're looking for."
+      },
+      {
+        "q": "What is the difference between re.match() and re.search() in Python?",
+        "a": "re.match() only checks whether a pattern matches starting at the very beginning of a string, returning None if a valid match exists but starts anywhere else. re.search() scans the whole string and returns the first match found anywhere within it. For most everyday tasks, search() is the more generally useful function unless you specifically need to confirm the string begins with a certain pattern."
+      },
+      {
+        "q": "Why do Python regex patterns usually start with an r, like r'\\d+'?",
+        "a": "The r prefix creates a raw string, which prevents Python's own string escape-sequence processing (where \\n becomes a newline, for example) from interfering with regex's separate use of backslashes for its own special sequences like \\d or \\b. Without the raw string prefix, certain regex patterns can be silently altered by Python before the regex engine ever receives them, so writing patterns as raw strings is the standard, safe convention."
+      },
+      {
+        "q": "What is the difference between greedy and lazy matching in regex?",
+        "a": "Greedy quantifiers like * and + match as much text as possible while still letting the overall pattern succeed — this is the default behaviour in Python regex. Lazy (non-greedy) quantifiers, written with a ? added after them (*?, +?), match as little text as possible instead. This distinction matters most when a pattern could span multiple similar delimiters in the target text, where greedy matching often grabs far more than intended."
+      },
+      {
+        "q": "What are capturing groups in Python regex, and how do I use them?",
+        "a": "Capturing groups are created by wrapping part of a pattern in parentheses, like (\\d{4}) to capture a four-digit year specifically. After a successful match, match.group(1) retrieves the first captured group's text, match.group(2) the second, and so on — or match.groups() returns all captured groups together as a tuple. Named groups, written as (?P<name>pattern), let you retrieve them more readably via match.group('name') instead of a numeric index."
+      },
+      {
+        "q": "Should I use regex to parse HTML or JSON in Python?",
+        "a": "No — this is a well-known anti-pattern. HTML, XML, and JSON have nested, recursive structure that regex isn't designed to reliably handle, since it fundamentally matches flat patterns rather than tracking nested structure. Use a proper parsing library instead — BeautifulSoup or an XML parser for HTML/XML, and Python's built-in json module for JSON — and reserve regex for genuinely flat, pattern-based text matching."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Json", "path": "/python/python-json" },
+    "next": { "label": "Next: Python File Handling →", "path": "/python/python-file-handling" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Module", "dd": "re (built-in)" },
+      { "dt": "Introduced", "dd": "1997, Perl-influenced syntax" },
+      { "dt": "Pattern string convention", "dd": "Raw strings — r'...'" },
+      { "dt": "Default quantifier behaviour", "dd": "Greedy" },
+      { "dt": "Lazy modifier", "dd": "? added after quantifier" },
+      { "dt": "For performance on reuse", "dd": "re.compile()" }
+    ],
+    "relatedArticles": [
+      { "label": "Python Strings", "path": "/python/python-strings" },
+      { "label": "Python Modules", "path": "/python/python-modules" },
+      { "label": "Python File Handling", "path": "/python/python-file-handling" },
+      { "label": "Python Exception Handling", "path": "/python/python-exceptions" },
+      { "label": "Python Data Types", "path": "/python/python-data-types" },
+      { "label": "Python Home", "path": "/python/python-home" },
+      { "label": "Python OOPs Concepts", "path": "/python/python-oops" },
+      { "label": "Python Functions", "path": "/python/python-functions" }
+    ],
+    "tags": ["regex", "re module", "regular expressions", "match search findall", "capturing groups", "greedy vs lazy", "raw strings", "re.compile", "re.sub", "pattern matching", "named groups", "Python 3"]
+  }
+}

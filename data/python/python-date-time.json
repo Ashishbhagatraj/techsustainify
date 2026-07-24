@@ -1,0 +1,800 @@
+{
+  "meta": {
+    "title": "Python DateTime Module | Complete datetime Tutorial 2026 | Tech Sustainify",
+    "description": "Master the Python datetime module with this complete guide 2026. Learn date, time, datetime, and timedelta classes, strftime/strptime formatting, timezone-aware vs naive datetimes, zoneinfo, date arithmetic, and production best practices.",
+    "keywords": "python datetime module, python strftime strptime, python timedelta, python timezone aware datetime, python zoneinfo, datetime.now vs utcnow, python date arithmetic, python parse date string, python date formatting codes, python datetime comparison",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-date-time/",
+    "ogTitle": "Python DateTime Module — Complete Tutorial 2026 | Tech Sustainify",
+    "ogDescription": "Complete guide to Python's datetime module. Learn date, time, datetime, timedelta, strftime/strptime formatting, timezone handling with zoneinfo, and date arithmetic.",
+    "ogUrl": "https://techsustainify.com/python/python-date-time/",
+    "ogImage": "https://techsustainify.com/images/python-date-time-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "28 minutes",
+    "twitterLevel": "Intermediate",
+    "schemaDatePublished": "2024-01-01",
+    "schemaDateModified": "2026-03-16",
+    "schemaProficiencyLevel": "Intermediate",
+    "schemaWordCount": 8000
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",            "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python DateTime Module" }
+  ],
+
+  "articleHeader": {
+    "badge": "🐍 Python",
+    "title": "Python datetime Module — Complete Guide",
+    "subtitle": "A complete, professional guide to Python's datetime module — date, time, datetime, and timedelta classes, strftime/strptime formatting, timezone-aware vs naive datetimes, and real date-arithmetic patterns."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-16", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "28 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Intermediate" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-datetime-module",
+      "title": "What is the datetime Module in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <strong>datetime module</strong> is Python's built-in standard library toolkit for working with dates, times, and the intervals between them. It provides a small set of specialized classes — <code>date</code>, <code>time</code>, <code>datetime</code>, <code>timedelta</code>, and <code>tzinfo</code> — that together cover nearly everything a program needs to represent, compare, format, parse, and calculate with calendar dates and clock times."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Working with dates correctly is deceptively hard: months have different numbers of days, years are sometimes leap years, time zones shift by non-whole-hour amounts in some regions, daylight saving time creates hours that repeat or skip entirely, and string date formats vary wildly by country and convention. The datetime module exists precisely to handle this complexity correctly and consistently, so application code doesn't have to reinvent calendar arithmetic — and getting even a small operation wrong (like naively adding 86400 seconds to represent \"one day later\") can silently produce incorrect results across a daylight-saving boundary."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every value produced by the datetime module is <strong>immutable</strong> — once a <code>date</code> or <code>datetime</code> object is created, it cannot be changed in place. Operations that appear to \"modify\" a date, like adding a number of days, always return a brand-new object rather than altering the original, which makes datetime objects safe to pass around and reuse without fear of unexpected side effects."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "datetime-classes-overview",
+      "title": "The Five Core Classes of the datetime Module",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The datetime module is built around five distinct classes, each representing a different kind of temporal value. Understanding which one to reach for is the first step to using the module correctly."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Class", "Represents", "Example", "Typical Use"],
+          "rows": [
+            ["date", "A calendar date, no time component", "date(2026, 3, 16)", "Birthdays, deadlines, calendar-only data"],
+            ["time", "A clock time, no date component", "time(14, 30, 0)", "Store opening hours, daily schedules"],
+            ["datetime", "A combined date AND time", "datetime(2026, 3, 16, 14, 30)", "Timestamps, log entries, event scheduling"],
+            ["timedelta", "A duration — the difference between two points in time", "timedelta(days=7)", "Date arithmetic, deadlines, expiry calculations"],
+            ["tzinfo / timezone", "Time zone offset and rules information", "timezone.utc", "Making a datetime timezone-aware"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "core_classes_overview.py",
+          "lines": [
+            "from datetime import date, time, datetime, timedelta, timezone",
+            "",
+            "d = date(2026, 3, 16)",
+            "t = time(14, 30, 0)",
+            "dt = datetime(2026, 3, 16, 14, 30, 0)",
+            "delta = timedelta(days=7, hours=3)",
+            "",
+            "print(d)       # 2026-03-16",
+            "print(t)       # 14:30:00",
+            "print(dt)      # 2026-03-16 14:30:00",
+            "print(delta)   # 7 days, 3:00:00",
+            "",
+            "# datetime combines date and time — you can extract either half:",
+            "print(dt.date())   # 2026-03-16",
+            "print(dt.time())   # 14:30:00"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "creating-date-time-objects",
+      "title": "Creating Date and Time Objects",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "There are several ways to construct date and datetime objects, depending on whether you want the current moment, a specific known date, or a date derived from a Unix timestamp."
+        },
+        { "type": "subHeading", "text": "Getting the Current Date and Time" },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "current_date_time.py",
+          "lines": [
+            "from datetime import date, datetime",
+            "",
+            "today = date.today()",
+            "print(today)                # e.g. 2026-07-24",
+            "",
+            "now = datetime.now()",
+            "print(now)                  # e.g. 2026-07-24 15:42:10.123456  (local time, naive)",
+            "",
+            "utc_now = datetime.now(datetime_timezone_utc := __import__('datetime').timezone.utc)",
+            "print(utc_now)              # e.g. 2026-07-24 10:12:10.123456+00:00  (timezone-aware)"
+          ]
+        },
+        { "type": "subHeading", "text": "Constructing a Specific Date" },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "specific_date.py",
+          "lines": [
+            "from datetime import date, datetime",
+            "",
+            "independence_day = date(1947, 8, 15)",
+            "print(independence_day)          # 1947-08-15",
+            "print(independence_day.year)     # 1947",
+            "print(independence_day.month)    # 8",
+            "print(independence_day.day)      # 15",
+            "print(independence_day.weekday())    # 4  (Monday=0 ... Sunday=6)",
+            "print(independence_day.strftime('%A'))  # Friday"
+          ]
+        },
+        { "type": "subHeading", "text": "Creating a Date from a Unix Timestamp" },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "from_timestamp.py",
+          "lines": [
+            "from datetime import datetime",
+            "",
+            "unix_timestamp = 1750000000",
+            "dt = datetime.fromtimestamp(unix_timestamp)",
+            "print(dt)   # local time equivalent of that Unix timestamp",
+            "",
+            "# Converting a datetime back to a Unix timestamp:",
+            "print(dt.timestamp())   # 1750000000.0"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "formatting-parsing",
+      "title": "Formatting and Parsing Dates — strftime and strptime",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Converting between datetime objects and human-readable strings is one of the most common tasks in real applications. Python uses two complementary methods for this: <code>strftime()</code> (\"string format time\") converts a datetime object <em>into</em> a formatted string, and <code>strptime()</code> (\"string parse time\") converts a string <em>into</em> a datetime object, given a matching format pattern."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "strftime_strptime.py",
+          "lines": [
+            "from datetime import datetime",
+            "",
+            "dt = datetime(2026, 3, 16, 14, 30, 0)",
+            "",
+            "# Formatting: datetime object -> string",
+            "print(dt.strftime('%Y-%m-%d'))            # 2026-03-16",
+            "print(dt.strftime('%d/%m/%Y'))            # 16/03/2026",
+            "print(dt.strftime('%A, %B %d, %Y'))       # Monday, March 16, 2026",
+            "print(dt.strftime('%I:%M %p'))            # 02:30 PM",
+            "",
+            "# Parsing: string -> datetime object",
+            "parsed = datetime.strptime('16-03-2026', '%d-%m-%Y')",
+            "print(parsed)             # 2026-03-16 00:00:00",
+            "print(type(parsed))       # <class 'datetime.datetime'>"
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Format Code", "Meaning", "Example Output"],
+          "rows": [
+            ["%Y", "Four-digit year", "2026"],
+            ["%y", "Two-digit year", "26"],
+            ["%m", "Month as zero-padded number", "03"],
+            ["%B", "Full month name", "March"],
+            ["%b", "Abbreviated month name", "Mar"],
+            ["%d", "Day of the month, zero-padded", "16"],
+            ["%A", "Full weekday name", "Monday"],
+            ["%a", "Abbreviated weekday name", "Mon"],
+            ["%H", "Hour, 24-hour clock, zero-padded", "14"],
+            ["%I", "Hour, 12-hour clock, zero-padded", "02"],
+            ["%M", "Minute, zero-padded", "30"],
+            ["%S", "Second, zero-padded", "00"],
+            ["%p", "AM or PM", "PM"],
+            ["%f", "Microsecond, zero-padded to 6 digits", "000000"],
+            ["%z", "UTC offset (empty if naive)", "+0000"],
+            ["%Z", "Time zone name (empty if naive)", "UTC"],
+            ["%j", "Day of the year (001-366)", "075"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The single most important rule when using <code>strptime()</code>: the format string passed as the second argument must <strong>exactly match</strong> the structure of the input string, character for character, including all separators (dashes, slashes, spaces). A mismatch — even something as small as expecting a dash where the string uses a slash — raises a <code>ValueError</code> with the message <em>\"time data ... does not match format\"</em>."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "Naive vs Timezone-Aware Datetime — Decision Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "One of the most important — and most commonly mishandled — decisions when working with datetimes is whether to use a <strong>naive</strong> datetime (no time zone information at all) or a <strong>timezone-aware</strong> one (carries explicit UTC offset information). This flowchart shows how to decide, and what happens when the two are mixed."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "▶️ Creating a datetime",       "sublabel": "Where does this value get used?",     "type": "start" },
+            { "id": "2", "label": "❓ Crosses time zones or stored long-term?", "sublabel": "Server logs, APIs, databases", "type": "decision" },
+            { "id": "3", "label": "✅ Use timezone-aware", "sublabel": "datetime.now(timezone.utc)",                    "type": "process" },
+            { "id": "4", "label": "⚠️ Naive datetime acceptable", "sublabel": "Purely local, single-timezone context",  "type": "process" },
+            { "id": "5", "label": "🔗 Comparing two datetimes",   "sublabel": "Are both aware, or both naive?",         "type": "decision" },
+            { "id": "6", "label": "✅ Comparison works correctly", "sublabel": "Same 'kind' on both sides",             "type": "process" },
+            { "id": "7", "label": "🚫 TypeError raised",           "sublabel": "Can't compare naive and aware directly", "type": "process" },
+            { "id": "8", "label": "🏁 Consistent datetime handling", "sublabel": "Bugs from timezone mixing avoided",    "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "consider" },
+            { "from": "2", "to": "3", "label": "yes" },
+            { "from": "2", "to": "4", "label": "no" },
+            { "from": "3", "to": "5", "label": "later" },
+            { "from": "4", "to": "5", "label": "later" },
+            { "from": "5", "to": "6", "label": "consistent" },
+            { "from": "5", "to": "7", "label": "mixed" },
+            { "from": "6", "to": "8", "label": "success" },
+            { "from": "7", "to": "8", "label": "must fix" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The general industry guideline: <strong>store and compute in UTC using timezone-aware datetimes</strong> everywhere internally (databases, APIs, logs), and only convert to a specific local time zone at the very last moment — when actually displaying a value to a human user."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "timedelta-arithmetic",
+      "title": "Date Arithmetic with timedelta",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>timedelta</code> class represents a duration — the span between two points in time — and is the correct tool for adding or subtracting time from a date or datetime, rather than manually calculating seconds or days yourself."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "timedelta_arithmetic.py",
+          "lines": [
+            "from datetime import date, datetime, timedelta",
+            "",
+            "today = date.today()",
+            "one_week_later = today + timedelta(weeks=1)",
+            "print(one_week_later)",
+            "",
+            "deadline = datetime(2026, 12, 31, 23, 59, 59)",
+            "reminder = deadline - timedelta(days=3)",
+            "print(reminder)              # 2026-12-28 23:59:59",
+            "",
+            "# Subtracting two datetimes gives you a timedelta:",
+            "start = datetime(2026, 1, 1)",
+            "end = datetime(2026, 3, 16)",
+            "difference = end - start",
+            "print(difference)            # 74 days, 0:00:00",
+            "print(difference.days)       # 74",
+            "print(difference.total_seconds())  # 6393600.0"
+          ]
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>timedelta(days=..., seconds=..., microseconds=..., weeks=...)</code> — Accepts multiple unit keywords at once; internally, everything is normalized down to days, seconds, and microseconds." },
+            { "html": "<code>date/datetime + timedelta</code> — Returns a new date/datetime shifted forward by that duration." },
+            { "html": "<code>date/datetime - timedelta</code> — Returns a new date/datetime shifted backward by that duration." },
+            { "html": "<code>datetime - datetime</code> — Returns a timedelta representing the exact difference between the two points in time." },
+            { "html": "<code>timedelta.days</code>, <code>timedelta.seconds</code>, <code>timedelta.total_seconds()</code> — Ways to extract the duration's magnitude in different units for further calculation." }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Notably, <code>timedelta</code> has <strong>no concept of months or years</strong>, because those units don't have a fixed, consistent length (a month can be 28-31 days, a year can be 365 or 366). Adding \"one month\" correctly (e.g. handling February and month-end edge cases) requires either manual calendar-aware logic or a third-party library like <code>python-dateutil</code>'s <code>relativedelta</code>."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "comparing-dates",
+      "title": "Comparing and Sorting Dates",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "date and datetime objects support all standard comparison operators directly — <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>==</code>, and <code>!=</code> — making it straightforward to check ordering, sort collections of dates, or filter for a specific range."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "comparing_dates.py",
+          "lines": [
+            "from datetime import date",
+            "",
+            "start = date(2026, 1, 1)",
+            "end = date(2026, 12, 31)",
+            "checkpoint = date(2026, 6, 15)",
+            "",
+            "print(start < checkpoint < end)    # True — chained comparisons work too",
+            "",
+            "events = [date(2026, 5, 1), date(2026, 1, 15), date(2026, 9, 20)]",
+            "events.sort()",
+            "print(events)   # sorted chronologically: [2026-01-15, 2026-05-01, 2026-09-20]",
+            "",
+            "print(max(events))   # 2026-09-20 — the latest date",
+            "print(min(events))   # 2026-01-15 — the earliest date"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A critical caveat: Python <strong>cannot compare a naive datetime with a timezone-aware one</strong> — attempting to do so raises <code>TypeError: can't compare offset-naive and offset-aware datetimes</code>. Both datetimes being compared must be consistently either naive or aware; mixing the two is one of the most common real-world datetime bugs."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "timezone-handling",
+      "title": "Timezone Handling with zoneinfo",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Since Python 3.9, the standard library includes the <code>zoneinfo</code> module, providing access to the IANA time zone database (the same authoritative source used across most modern operating systems) without requiring any third-party package. This replaced the earlier common practice of relying on the external <code>pytz</code> library for anything beyond simple UTC handling."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "zoneinfo_example.py",
+          "lines": [
+            "from datetime import datetime",
+            "from zoneinfo import ZoneInfo",
+            "",
+            "# Create a timezone-aware datetime directly in a specific zone:",
+            "ny_time = datetime(2026, 3, 16, 9, 0, tzinfo=ZoneInfo('America/New_York'))",
+            "print(ny_time)   # 2026-03-16 09:00:00-04:00",
+            "",
+            "# Convert that same moment into a different time zone:",
+            "kolkata_time = ny_time.astimezone(ZoneInfo('Asia/Kolkata'))",
+            "print(kolkata_time)   # 2026-03-16 18:30:00+05:30",
+            "",
+            "# Both represent the exact SAME instant in time, just displayed differently:",
+            "print(ny_time == kolkata_time)   # True"
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Approach", "Included with Python?", "Handles DST automatically?", "Recommended Since"],
+          "rows": [
+            ["datetime.timezone.utc", "✅ Built-in, no import needed beyond datetime", "N/A — UTC has no DST", "Always"],
+            ["zoneinfo (ZoneInfo)", "✅ Built-in since Python 3.9", "✅ Yes, using the IANA database", "Python 3.9+"],
+            ["pytz (third-party)", "❌ Requires pip install pytz", "✅ Yes, but with a quirky, error-prone API", "Legacy code / pre-3.9 projects"],
+            ["Manual fixed UTC offset", "✅ Built-in via timezone(timedelta(...))", "❌ No — fixed offset never adjusts for DST", "Only for zones without DST"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "For any new project targeting Python 3.9 or later, <strong>zoneinfo is the recommended approach</strong> for full timezone-aware handling — it's built into the standard library, correctly accounts for daylight saving transitions using the same authoritative data your operating system uses, and avoids the historically confusing, easy-to-misuse localize()/normalize() API that pytz required."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "now-vs-utcnow-comparison",
+      "title": "now() vs utcnow() vs today() — Choosing the Right Function",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The datetime module offers several similar-looking functions for getting the current moment, each with an important distinction worth understanding clearly."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Function", "Returns", "Timezone-Aware?", "Notes"],
+          "rows": [
+            ["date.today()", "Current calendar date, local time zone", "N/A (date has no time zone concept)", "Use for date-only values like 'today's date'"],
+            ["datetime.now()", "Current date and time, local time zone", "❌ Naive", "Most common, but ambiguous about which zone 'local' means when shared across systems"],
+            ["datetime.now(tz)", "Current date and time, converted to given tz", "✅ Aware", "Correct way to get an explicit, unambiguous current moment"],
+            ["datetime.utcnow()", "Current UTC date and time", "❌ Naive (deprecated in 3.12+)", "Deprecated — produces a naive datetime that LOOKS like UTC but isn't marked as such"],
+            ["datetime.now(timezone.utc)", "Current UTC date and time", "✅ Aware", "The modern, recommended replacement for utcnow()"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "As of Python 3.12, <code>datetime.utcnow()</code> is officially deprecated precisely because of this naive-vs-aware ambiguity — it returns a naive datetime whose values happen to represent UTC, but with nothing in the object itself indicating that; that missing context has historically caused numerous production bugs when such a value was later compared or combined with a different timezone-aware or local-time value. The recommended modern replacement is always <code>datetime.now(timezone.utc)</code>, which returns the equivalent value but explicitly, correctly marked as timezone-aware UTC."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "datetime-architecture",
+      "title": "How the datetime Module's Pieces Fit Together",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The datetime module's classes build on each other in layers — from raw calendar/clock values, through formatting and arithmetic, up to full timezone awareness."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Raw Value Classes",
+              "color": "#6366f1",
+              "items": ["date — calendar date only", "time — clock time only", "datetime — combined date + time"]
+            },
+            {
+              "label": "Duration & Arithmetic",
+              "color": "#0ea5e9",
+              "items": ["timedelta — spans between two points in time", "Supports +, -, comparison operators"]
+            },
+            {
+              "label": "Formatting & Parsing",
+              "color": "#10b981",
+              "items": ["strftime() — object to string", "strptime() — string to object", "isoformat() / fromisoformat()"]
+            },
+            {
+              "label": "Timezone Awareness",
+              "color": "#f59e0b",
+              "items": ["tzinfo — abstract base", "timezone — fixed UTC offsets", "zoneinfo.ZoneInfo — full IANA database, DST-aware"]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every layer builds on the one beneath it: you cannot format or parse a value that doesn't exist yet, you cannot meaningfully compute a duration without two raw values, and a value only becomes fully timezone-aware once a <code>tzinfo</code> subclass (like <code>timezone</code> or <code>ZoneInfo</code>) is explicitly attached to it."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "Practice: A Countdown and Age Calculator",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This example combines date arithmetic, formatting, and comparisons into two small, realistic utility functions."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "date_utilities.py",
+          "lines": [
+            "from datetime import date",
+            "",
+            "def calculate_age(birth_date):",
+            "    today = date.today()",
+            "    age = today.year - birth_date.year",
+            "    had_birthday_this_year = (today.month, today.day) >= (birth_date.month, birth_date.day)",
+            "    if not had_birthday_this_year:",
+            "        age -= 1",
+            "    return age",
+            "",
+            "def days_until(target_date):",
+            "    today = date.today()",
+            "    if target_date < today:",
+            "        return f\"That date was {(today - target_date).days} days ago.\"",
+            "    remaining = (target_date - today).days",
+            "    return f\"{remaining} days remaining until {target_date.strftime('%B %d, %Y')}.\"",
+            "",
+            "print(calculate_age(date(2000, 6, 15)))",
+            "print(days_until(date(2026, 12, 25)))"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "26",
+            "154 days remaining until December 25, 2026."
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "from datetime import date, timedelta\n\nashish_deadline = date.today() + timedelta(days=30)\nprint(f\"Ashish's deadline: {ashish_deadline.strftime('%A, %B %d, %Y')}\")\nprint(f\"Days from today: {(ashish_deadline - date.today()).days}\")"
+        }
+      ]
+    },
+
+    {
+      "sectionId": "best-practices",
+      "title": "datetime Module Best Practices",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "These practices help avoid the most common, and most subtle, bugs when working with dates and times in production code."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Store and compute in UTC, display in local time", "text": " — Use timezone-aware UTC datetimes internally (databases, APIs, logs), converting to a specific local zone only at the final point of display to a user." },
+            { "strong": "Prefer datetime.now(timezone.utc) over the deprecated utcnow()", "text": " — utcnow() returns a naive datetime with no timezone marker at all, a common source of comparison bugs; the aware version is unambiguous." },
+            { "strong": "Use zoneinfo instead of pytz for new Python 3.9+ projects", "text": " — zoneinfo is built into the standard library, uses the same IANA database, and has a simpler, less error-prone API than pytz's localize()/normalize() pattern." },
+            { "strong": "Never mix naive and timezone-aware datetimes", "text": " — Comparing or subtracting one of each raises a TypeError; keep all datetimes in a given code path consistently one or the other." },
+            { "strong": "Use timedelta for day/week/hour arithmetic, not manual second math", "text": " — Manually computing seconds (like adding 86400 for 'one day') is error-prone around DST transitions; timedelta handles this correctly." },
+            { "strong": "Remember timedelta has no month or year units", "text": " — For calendar-aware month/year arithmetic (handling variable month lengths correctly), use the third-party dateutil.relativedelta instead." },
+            { "strong": "Match strptime() format strings exactly to the input", "text": " — Every separator character and field order must match precisely, or Python raises a ValueError describing the mismatch." },
+            { "strong": "Use isoformat()/fromisoformat() for machine-to-machine date exchange", "text": " — ISO 8601 is the unambiguous, internationally standardized format ideal for APIs, logs, and file storage — avoid locale-dependent formats there." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of the datetime Module",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The datetime module handles the vast majority of real-world date and time needs directly, but it has some genuine rough edges worth understanding."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "No Installation Required", "text": "Part of the standard library, immediately available with a single import, covering the vast majority of common date/time needs out of the box." },
+            { "title": "Immutable, Predictable Objects", "text": "date and datetime objects can't be modified in place, making them safe to share and pass around without unexpected side effects." },
+            { "title": "Rich Comparison and Arithmetic Support", "text": "Standard operators (<, >, ==, +, -) work directly and intuitively on dates, times, and durations." },
+            { "title": "Flexible Formatting via strftime/strptime", "text": "A wide, well-documented set of format codes covers virtually every common date string representation." },
+            { "title": "Built-in Timezone Database (zoneinfo)", "text": "Since Python 3.9, full IANA timezone data with correct DST handling is available with no external dependency." }
+          ],
+          "cons": [
+            { "title": "No Native Month/Year Arithmetic", "text": "timedelta only understands days, weeks, and smaller units — calendar-correct month/year math requires a third-party library like dateutil." },
+            { "title": "Naive vs Aware Mixing Is a Common Trap", "text": "Comparing a naive and an aware datetime raises a runtime TypeError, and it's easy to accidentally end up with a mix in larger codebases." },
+            { "title": "utcnow() Historically Confusing (Now Deprecated)", "text": "A naive datetime that represents UTC but doesn't say so caused real production bugs for years, prompting its deprecation in Python 3.12." },
+            { "title": "strptime() Format Strings Are Strict and Unforgiving", "text": "Any mismatch between the format string and the actual input string raises an error rather than attempting a flexible, best-effort parse." },
+            { "title": "Pre-3.9 Projects Still Need pytz for Full Timezone Support", "text": "Projects targeting older Python versions can't use zoneinfo and must rely on the more error-prone pytz library instead." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python datetime Module — Interview Questions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Frequently asked interview questions about the datetime module, timezone handling, and date arithmetic."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is the difference between date, time, and datetime in Python?",
+              "a": "date represents only a calendar date (year, month, day) with no time component. time represents only a clock time (hour, minute, second, microsecond) with no date component. datetime combines both into a single object representing a specific date AND time together. All three are provided by the datetime module.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between a naive and a timezone-aware datetime?",
+              "a": "A naive datetime carries no time zone information at all — it's just a set of date/time numbers with no context about which time zone (or UTC offset) they belong to. A timezone-aware datetime has a tzinfo object attached, explicitly specifying its UTC offset (and often its time zone rules), making it unambiguous when compared against or converted to other time zones.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. Why is datetime.utcnow() deprecated in recent Python versions?",
+              "a": "utcnow() returns a naive datetime — one with no timezone marker — even though its values represent UTC. This missing context has historically led to bugs when that value was later compared with a timezone-aware datetime (raising a TypeError) or mistakenly treated as local time. Python 3.12 deprecated it in favor of datetime.now(timezone.utc), which returns the equivalent value but explicitly marked as aware UTC.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q4. What is the difference between strftime() and strptime()?",
+              "a": "strftime() ('string format time') converts a datetime object INTO a formatted string, using format codes like %Y and %m. strptime() ('string parse time') does the reverse — it converts a string INTO a datetime object, given a format string that must exactly match the structure of the input.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q5. Can you subtract two datetime objects directly in Python? What does the result represent?",
+              "a": "Yes — subtracting one datetime from another (end - start) returns a timedelta object representing the exact duration between the two points in time. That timedelta's .days and .total_seconds() attributes let you extract the difference in whichever unit you need.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. Why does comparing a naive datetime with a timezone-aware one raise an error?",
+              "a": "Python can't reliably determine the true chronological relationship between the two, because a naive datetime has no defined UTC offset — it's ambiguous exactly what point in absolute time it corresponds to. Rather than guess (and risk silently wrong results), Python raises a TypeError, forcing you to make both values consistently naive or consistently aware before comparing.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q7. What is the zoneinfo module, and when was it introduced?",
+              "a": "zoneinfo, introduced in Python 3.9, is a standard library module providing access to the IANA time zone database — the same authoritative source of timezone rules and daylight saving transitions used by most operating systems. It removed the need for the third-party pytz library for full timezone-aware datetime handling in modern Python projects.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. Why can't timedelta represent 'one month' or 'one year' directly?",
+              "a": "Because months and years don't have a fixed, consistent length in days — a month can be 28 to 31 days, and a year can be 365 or 366 days (leap years). timedelta only supports fixed-length units (weeks, days, hours, minutes, seconds, microseconds), so calendar-correct month/year arithmetic requires a separate tool like the third-party dateutil.relativedelta.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q9. What happens if the format string passed to strptime() doesn't match the input string exactly?",
+              "a": "Python raises a ValueError with a message like 'time data ... does not match format ...'. Unlike some more forgiving parsing libraries, strptime() requires an exact character-for-character structural match, including all separators like dashes, slashes, or spaces, between the format string and the actual input.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q10. What is the recommended general strategy for handling time zones in a production application?",
+              "a": "Store and perform all internal calculations using timezone-aware UTC datetimes (via datetime.now(timezone.utc) or equivalent), and only convert to a specific local time zone at the very last step — when actually displaying a value to a human user via astimezone(). This avoids ambiguity and keeps stored/compared values consistent regardless of where users or servers are physically located.",
+              "tag": "Frequently Asked"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Work through these practice questions on the datetime module. Try to reason through each one before checking the answer."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What does date(2026, 3, 16) - date(2026, 3, 1) return, and what is its value?",
+              "a": "It returns a timedelta object representing a 15-day difference. Printing it directly shows '15 days, 0:00:00', and accessing .days on it gives the integer 15.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Why might adding timedelta(days=1) to a datetime near a daylight-saving transition NOT change the clock time by exactly 24 hours in wall-clock terms for a timezone-aware datetime?",
+              "a": "Because during a daylight-saving transition, a day can have 23 or 25 actual clock hours instead of 24, even though the calendar date changes by exactly one day. Adding timedelta(days=1) correctly advances the calendar date by one day, but the actual elapsed wall-clock duration in that specific timezone may differ from a flat 24 hours around the transition, which is exactly why manually adding 86400 seconds instead can silently produce incorrect results.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "3. What is the output of datetime(2026, 3, 16).strftime('%A')?",
+              "a": "Monday. %A produces the full weekday name for the given date, computed automatically from the year, month, and day — no separate weekday needs to be stored or supplied.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. Why does comparing datetime.now() with datetime.now(timezone.utc) raise a TypeError?",
+              "a": "datetime.now() (with no argument) returns a naive datetime with no timezone attached, while datetime.now(timezone.utc) returns a timezone-aware one. Python refuses to compare a naive and an aware datetime directly, since it cannot determine their true chronological relationship without knowing the naive value's implied UTC offset, and raises a TypeError instead of guessing.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. If today is date(2026, 2, 27), what does today + timedelta(days=3) return, and why is this significant for February?",
+              "a": "It returns date(2026, 3, 2), correctly rolling over from February into March. Since 2026 is not a leap year, February has 28 days, so timedelta arithmetic correctly handles the month boundary automatically — this is exactly the kind of calendar complexity the datetime module manages so application code doesn't need custom logic for varying month lengths.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. What is wrong with using datetime.strptime('2026-13-01', '%Y-%m-%d')?",
+              "a": "It raises a ValueError, because 13 is not a valid month (%m expects 01 through 12). strptime() validates that the parsed values fall within legitimate calendar ranges, not just that the string structurally matches the format pattern.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. How would you get the exact same moment in time expressed in two different time zones using zoneinfo?",
+              "a": "Create or obtain a timezone-aware datetime in one zone, then call .astimezone(ZoneInfo('Target/Zone')) on it. Both the original and the converted datetime represent the identical instant in absolute time — they will compare as equal with == — but display different local wall-clock values reflecting each zone's offset.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Why is a manual formula like 'age = this_year - birth_year' potentially incorrect for calculating someone's current age?",
+              "a": "It only accounts for the year difference and ignores whether the person's birthday has already occurred this year. If today's date falls before their birthday this year, that naive formula overstates their age by one — the correct approach compares (today.month, today.day) against (birth_date.month, birth_date.day) and subtracts one from the year difference if the birthday hasn't occurred yet.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Handling Dates and Times Correctly",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The datetime module packs an enormous amount of real-world calendar and clock complexity behind a compact, well-designed set of classes. Its true value shows up not in the simple cases — printing today's date is trivial — but in the harder ones it quietly gets right: leap years, variable month lengths, daylight saving transitions, and the crucial distinction between a naive value and one that's genuinely, unambiguously anchored to a specific point in absolute time."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The habits worth carrying forward: work in <strong>UTC internally</strong> and convert to local time only for display, always use <strong>timezone-aware</strong> datetimes for anything that might be compared, stored, or shared across systems, reach for <strong>zoneinfo</strong> rather than manual offsets or the older pytz library on modern Python, and use <strong>timedelta</strong> for date arithmetic rather than manually computing seconds or days yourself."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Situation", "Recommended Approach"],
+          "rows": [
+            ["Storing timestamps in a database or API", "✅ Timezone-aware UTC (datetime.now(timezone.utc))"],
+            ["Displaying a time to a specific user", "✅ Convert to their local zone with .astimezone(ZoneInfo(...))"],
+            ["Calendar-only data (birthdays, deadlines)", "✅ Use date, not datetime"],
+            ["Adding/subtracting days, weeks, hours", "✅ timedelta"],
+            ["Adding/subtracting months or years correctly", "✅ dateutil.relativedelta (third-party)"],
+            ["Exchanging dates between systems/APIs", "✅ ISO 8601 via isoformat()/fromisoformat()"],
+            ["Getting 'current UTC time' in new code", "✅ datetime.now(timezone.utc), not utcnow()"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "From here, natural next topics include the third-party <strong>dateutil</strong> library for calendar-aware relative date arithmetic, the <strong>time module</strong> for lower-level, performance-focused timing needs, and <strong>working with dates in pandas</strong> for anyone handling time-series data at scale."
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "What is the difference between date and datetime in Python?",
+        "a": "date represents only a calendar date — year, month, and day — with no concept of time at all. datetime represents both a date AND a time (hours, minutes, seconds, microseconds) together in a single object. Use date for calendar-only values like birthdays or deadlines, and datetime for precise timestamps like log entries or event times."
+      },
+      {
+        "q": "How do you add days to a date in Python?",
+        "a": "Use the timedelta class: new_date = original_date + timedelta(days=n). This correctly handles month and year rollovers (like February into March, or December into January) automatically, unlike manually adding a fixed number of seconds, which can be error-prone around daylight-saving transitions for timezone-aware datetimes."
+      },
+      {
+        "q": "Why does Python raise a TypeError when comparing two datetime objects?",
+        "a": "This happens specifically when one datetime is naive (no timezone information) and the other is timezone-aware. Python cannot reliably determine their true chronological relationship without knowing the naive value's implied UTC offset, so it raises a TypeError rather than risk an incorrect comparison. The fix is to make both datetimes consistently either naive or aware."
+      },
+      {
+        "q": "What is the difference between datetime.now() and datetime.now(timezone.utc)?",
+        "a": "datetime.now() with no argument returns the current local time as a naive datetime, with no timezone information attached. datetime.now(timezone.utc) returns the current time in UTC, explicitly marked as timezone-aware. For anything stored, compared, or shared across systems, the timezone-aware UTC version is the recommended, unambiguous choice."
+      },
+      {
+        "q": "How do you convert a string into a datetime object in Python?",
+        "a": "Use datetime.strptime(date_string, format_string), where the format string uses codes like %Y, %m, and %d to describe the exact structure of the input string. The format string must match the input precisely, including all separators, or Python raises a ValueError describing the mismatch."
+      },
+      {
+        "q": "Should I use pytz or zoneinfo for timezone handling in Python?",
+        "a": "For any project targeting Python 3.9 or later, use the built-in zoneinfo module — it provides the same IANA timezone database as pytz, correctly handles daylight saving transitions, requires no external installation, and has a simpler, less error-prone API. pytz remains relevant mainly for projects that must still support Python versions older than 3.9."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python math Module", "path": "/python/python-math-module" },
+    "next": { "label": "Next: Python Json →", "path": "/python/python-json" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Import statement",      "dd": "from datetime import date, datetime, timedelta" },
+      { "dt": "Core classes",          "dd": "date, time, datetime, timedelta, tzinfo" },
+      { "dt": "Formatting",            "dd": "strftime() — object to string" },
+      { "dt": "Parsing",               "dd": "strptime() — string to object" },
+      { "dt": "Modern timezone tool",  "dd": "zoneinfo (Python 3.9+)" },
+      { "dt": "Recommended UTC 'now'", "dd": "datetime.now(timezone.utc)" }
+    ],
+    "relatedArticles": [
+      { "label": "Python math Module",       "path": "/python/python-math-module" },
+      { "label": "Python Encapsution",       "path": "/python/python-encapsulation" },
+      { "label": "Python Introduction",     "path": "/python/python-intro" },
+      { "label": "Python Modules",           "path": "/python/python-modules" },
+      { "label": "Python Data Types",        "path": "/python/python-datatypes" },
+      { "label": "Python Operators",         "path": "/python/python-operators" },
+      { "label": "Python Functions",         "path": "/python/python-functions" },
+      { "label": "Python Home",     "path": "/python/python-home" }
+    ],
+    "tags": ["datetime","date","timedelta","strftime","strptime","timezone","zoneinfo","naive vs aware","UTC","date arithmetic","ISO 8601"]
+  }
+}

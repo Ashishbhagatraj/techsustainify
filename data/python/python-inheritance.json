@@ -1,0 +1,761 @@
+{
+  "meta": {
+    "title": "Python Inheritance | Complete OOP Guide for Beginners 2026 | Tech Sustainify",
+    "description": "Learn Python Inheritance with this complete beginner-friendly guide 2026. Covers single, multiple, multilevel, hierarchical and hybrid inheritance, super(), method overriding, MRO (Method Resolution Order), isinstance/issubclass, and real-world inheritance design patterns.",
+    "keywords": "python inheritance, types of inheritance in python, python super() function, method overriding python, multiple inheritance python, MRO python, method resolution order python, python isinstance issubclass, python inheritance tutorial 2026, python OOP inheritance",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-inheritance/",
+    "ogTitle": "Python Inheritance — Complete OOP Guide 2026 | Tech Sustainify",
+    "ogDescription": "Complete beginner-friendly guide to Python Inheritance. Learn single, multiple, multilevel, hierarchical, and hybrid inheritance, super(), method overriding, and MRO.",
+    "ogUrl": "https://techsustainify.com/python/python-inheritance/",
+    "ogImage": "https://techsustainify.com/images/python-inheritance-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "27 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-02-25",
+    "schemaDateModified": "2026-03-16",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 8200
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",            "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python Inheritance" }
+  ],
+
+  "articleHeader": {
+    "badge": "🧬 Python OOP",
+    "title": "Python Inheritance",
+    "subtitle": "A complete beginner-friendly guide to inheritance in Python — covering single, multiple, multilevel, hierarchical, and hybrid inheritance, the super() function, method overriding, and Method Resolution Order (MRO) for 2026."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-16", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "27 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-inheritance",
+      "title": "What is Inheritance in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Inheritance</strong> is an object-oriented mechanism that lets one class acquire the attributes and methods of another class. The class being inherited from is called the <strong>parent class</strong> (or base/superclass), and the class that inherits is called the <strong>child class</strong> (or derived/subclass). Inheritance lets you build new, specialised classes on top of existing general ones, without rewriting shared logic from scratch."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Think of it like a family tree of blueprints. A general <code>Vehicle</code> blueprint might describe that every vehicle has a brand and can move. A more specific <code>Car</code> blueprint can inherit everything from <code>Vehicle</code> and then add its own details — like a trunk or four doors — without redrawing the parts it already shares with every other vehicle. This relationship is often summarised as an <strong>\"is-a\"</strong> relationship: a Car <em>is a</em> Vehicle."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In Python, inheritance is declared simply by placing the parent class name in parentheses after the child class name: <code>class Car(Vehicle):</code>. From that moment on, every attribute and method defined on <code>Vehicle</code> is automatically available on <code>Car</code> as well, unless <code>Car</code> chooses to override it with its own version."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Inheritance is one of the four foundational pillars of OOP, alongside <strong>Encapsulation</strong>, <strong>Abstraction</strong>, and <strong>Polymorphism</strong>. It is arguably the pillar most responsible for Python's reputation for <strong>code reuse</strong> — well-designed inheritance hierarchies let large systems avoid duplicating logic across dozens of similar classes, which is a major reason frameworks like Django rely on it so heavily."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "history-of-inheritance",
+      "title": "How Inheritance Evolved in Python",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Inheritance has been part of Python since its very first release, but the rules governing how it resolves conflicts and interacts with the rest of the language have been refined substantially over the decades. Here is a timeline of the key milestones:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "1991", "text": " — Python 0.9.0 already supported multiple inheritance from its earliest public release, a bold design choice that many later mainstream languages deliberately avoided." },
+            { "strong": "1995-2000", "text": " — Early 'classic classes' resolved multiple inheritance using a simple depth-first, left-to-right search, which could produce confusing or inconsistent results in complex hierarchies." },
+            { "strong": "2001", "text": " — Python 2.2 introduced new-style classes and, alongside them, the C3 linearisation algorithm for calculating a class's Method Resolution Order (MRO), fixing long-standing inconsistencies in multiple inheritance." },
+            { "strong": "2001", "text": " — The super() function was introduced in the same release, initially requiring explicit arguments like super(Car, self)." },
+            { "strong": "2008", "text": " — Python 3.0 simplified super() to a zero-argument form — just super() — making constructor and method chaining far less verbose and error-prone." },
+            { "strong": "2015", "text": " — PEP 484 type hints allowed inheritance relationships to be checked more rigorously by static type checkers like mypy, catching subclassing mistakes before runtime." },
+            { "strong": "2019", "text": " — Python 3.8 introduced Protocol classes via typing.Protocol, enabling 'structural' inheritance-like behaviour (duck typing with type checking) without requiring formal class inheritance." },
+            { "strong": "2022-2026", "text": " — Python 3.11 through 3.14 focused on faster attribute lookup across inheritance chains and continued refinement of typing.Self, making inherited method chains both faster and easier to type-check accurately." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "types-of-inheritance",
+      "title": "Types of Inheritance in Python",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python supports every classic form of inheritance found in object-oriented design. Understanding each type — and when to use it — is essential to designing clean class hierarchies."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            { "icon": "1️⃣", "title": "Single Inheritance", "text": "One child class inherits from exactly one parent class. This is the simplest and most common form, e.g. class Car(Vehicle):." },
+            { "icon": "🔢", "title": "Multiple Inheritance", "text": "One child class inherits from more than one parent class at once, e.g. class Sedan(Car, LuxuryFeatures):. Python resolves conflicts using MRO." },
+            { "icon": "🪜", "title": "Multilevel Inheritance", "text": "A chain of inheritance across several levels, e.g. Vehicle → Car → SportsCar, where each class inherits from the one directly above it." },
+            { "icon": "🌳", "title": "Hierarchical Inheritance", "text": "Multiple child classes all inherit from the same single parent class, e.g. Car, Truck, and Motorcycle all inheriting from Vehicle." },
+            { "icon": "🕸️", "title": "Hybrid Inheritance", "text": "A combination of two or more inheritance types in one hierarchy, such as mixing hierarchical and multiple inheritance together in the same design." },
+            { "icon": "🔗", "title": "super() Function", "text": "Lets a child class call methods (especially __init__) from its parent class, enabling clean chaining without hard-coding the parent's class name." },
+            { "icon": "🎭", "title": "Method Overriding", "text": "A child class redefining a method that already exists in its parent, replacing the inherited behaviour with its own specialised version." },
+            { "icon": "🧩", "title": "MRO (Method Resolution Order)", "text": "The precise order Python searches through a class hierarchy when looking up a method or attribute, calculated using the C3 linearisation algorithm." },
+            { "icon": "🔍", "title": "isinstance() and issubclass()", "text": "Built-in functions for checking whether an object belongs to a class (or its subclasses), and whether one class is a subclass of another." },
+            { "icon": "🧊", "title": "Abstract Base Classes (ABC)", "text": "Classes designed to be inherited from but never instantiated directly, defined using the abc module, forcing subclasses to implement specific methods." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "How Method Lookup Works Through Inheritance — Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When you call a method on an object, Python doesn't just look at that object's own class — it searches up through the entire inheritance chain until it finds a matching method. The flowchart below traces exactly how this search happens."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "📞 Call a Method",         "sublabel": "my_sports_car.honk()",             "type": "start" },
+            { "id": "2", "label": "🔍 Check Own Class",       "sublabel": "Does SportsCar define honk()?",    "type": "decision" },
+            { "id": "3", "label": "✅ Found — Use It",         "sublabel": "Method runs immediately",          "type": "process" },
+            { "id": "4", "label": "🔍 Check Parent Class",    "sublabel": "Does Car define honk()?",          "type": "decision" },
+            { "id": "5", "label": "🔍 Check Grandparent",     "sublabel": "Does Vehicle define honk()?",      "type": "decision" },
+            { "id": "6", "label": "🚫 Not Found Anywhere",    "sublabel": "Raises AttributeError",            "type": "data" },
+            { "id": "7", "label": "🖨️ Method Executes",       "sublabel": "Using the first match found",      "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "lookup begins" },
+            { "from": "2", "to": "3", "label": "yes, found here" },
+            { "from": "2", "to": "4", "label": "no, search up" },
+            { "from": "4", "to": "5", "label": "no, search up" },
+            { "from": "4", "to": "3", "label": "yes, found here" },
+            { "from": "5", "to": "3", "label": "yes, found here" },
+            { "from": "5", "to": "6", "label": "no match anywhere" },
+            { "from": "3", "to": "7", "label": "runs on object" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Key insight: Python always uses the <strong>first matching method found</strong>, searching starting from the object's own class and moving upward through its parents in the exact order defined by the <strong>MRO</strong>. This is precisely how method overriding works — a child class's version is found first, so it \"wins\" over the parent's version further up the chain."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "how-inheritance-works",
+      "title": "How Python Inheritance Works — super(), Overriding, and MRO Explained",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Three concepts sit at the heart of practical Python inheritance: the <strong>super()</strong> function, <strong>method overriding</strong>, and <strong>Method Resolution Order (MRO)</strong>. Understanding these three deeply is what separates a beginner who can write class Car(Vehicle): from someone who can confidently design a multi-level class hierarchy."
+        },
+        { "type": "subHeading", "text": "🔗 The super() Function" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>super()</strong> gives a child class a way to call methods defined on its parent class, without hard-coding the parent's class name directly. It is most commonly used inside a child's __init__ to reuse the parent's initialisation logic: <code>super().__init__(brand)</code> runs Vehicle's constructor before Car's own constructor adds its specific attributes. Using super() instead of writing <code>Vehicle.__init__(self, brand)</code> directly makes code more maintainable — if the parent class is ever renamed or the hierarchy restructured, super() automatically adapts, while a hard-coded class name would not."
+        },
+        { "type": "subHeading", "text": "🎭 Method Overriding" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Method overriding</strong> happens when a child class defines a method with the exact same name as one already defined in its parent class. The child's version takes priority whenever the method is called on a child object, effectively replacing — or 'overriding' — the parent's behaviour. This is how a general Vehicle.describe() method can produce a generic description, while Car.describe() produces a more specific one, even though both classes use the same method name."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Overriding does not have to completely discard the parent's logic — a common and highly recommended pattern is to call <code>super().method_name()</code> inside the override, extending the parent's behaviour rather than replacing it entirely. For example, an overridden describe() method might call super().describe() to get the base description, then append extra Car-specific details onto it."
+        },
+        { "type": "subHeading", "text": "🧩 Method Resolution Order (MRO)" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>MRO</strong> is the precise, deterministic order Python follows when searching through a class hierarchy to find a method or attribute. For simple single inheritance, MRO is intuitive — search the class itself, then its parent, then its grandparent, and so on. For <strong>multiple inheritance</strong>, where a class has more than one parent, MRO becomes essential for resolving which parent's version of a shared method name actually gets used. Python calculates MRO using the <strong>C3 linearisation algorithm</strong>, which guarantees a consistent, predictable order even in complex hierarchies. You can inspect any class's MRO directly using <code>ClassName.__mro__</code> or <code>ClassName.mro()</code>."
+        },
+        { "type": "subHeading", "text": "🔍 isinstance() and issubclass()" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>isinstance(obj, ClassName)</strong> checks whether an object belongs to a given class or any of its subclasses, returning True or False. <strong>issubclass(ChildClass, ParentClass)</strong> checks whether one class inherits from another, without needing an actual object. Both functions respect the full inheritance chain — isinstance(my_sports_car, Vehicle) returns True even though my_sports_car is technically a SportsCar, several levels below Vehicle in the hierarchy."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Simple rule to remember:</strong> super() lets a child reuse its parent's logic. Overriding lets a child replace or extend a parent's method. MRO decides exactly which version of a method wins when there's more than one candidate in the hierarchy."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "single-vs-multiple-comparison",
+      "title": "Single vs Multiple vs Multilevel Inheritance — Key Differences",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Beginners often mix up these related-but-different inheritance structures. This table lays out exactly how they differ."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Single Inheritance", "Multiple Inheritance", "Multilevel Inheritance"],
+          "rows": [
+            ["Number of direct parents", "Exactly one", "Two or more", "One (per level)"],
+            ["Structure shape", "One parent → one child", "Several parents → one child", "A chain of several levels"],
+            ["Syntax example", "class Car(Vehicle):", "class Sedan(Car, LuxuryFeatures):", "class SportsCar(Car): (where Car(Vehicle):)"],
+            ["Conflict risk", "Very low", "High — needs MRO to resolve", "Low — but attributes can shadow across levels"],
+            ["Common real-world use", "Most everyday class design", "Mixins adding optional behaviour", "Specialising a general class step by step"],
+            ["MRO complexity", "Simple, linear chain", "Requires C3 linearisation", "Simple, linear chain"],
+            ["Readability", "Easiest to follow", "Can become confusing if overused", "Easy, if not too many levels deep"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "inheritance-vs-other-languages",
+      "title": "Python Inheritance vs Other Languages — Comparison",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Not every object-oriented language treats inheritance the same way. This table compares how Python's approach differs from other popular languages."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Python", "Java", "C++", "JavaScript"],
+          "rows": [
+            ["Multiple inheritance", "✅ Directly supported", "❌ Interfaces only", "✅ Directly supported", "❌ Not supported directly"],
+            ["Conflict resolution", "MRO (C3 linearisation)", "Not applicable (no multiple inheritance)", "Explicit scope resolution (::)", "Not applicable"],
+            ["Calling parent method", "super().method()", "super.method()", "ParentClass::method()", "super.method()"],
+            ["Interfaces / Protocols", "typing.Protocol (structural)", "interface keyword", "Abstract classes only", "No formal interfaces"],
+            ["Abstract classes", "abc.ABC module", "abstract keyword", "Pure virtual functions", "No native support"],
+            ["Access to overridden parent method", "Always possible via super()", "Always possible via super", "Always possible via scope resolution", "Always possible via super"],
+            ["Runtime type checking", "isinstance() / issubclass()", "instanceof", "dynamic_cast / typeid", "instanceof"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Inheritance",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Inheritance is one of the most powerful tools in object-oriented design, but overusing it can create its own problems. Understanding both sides helps you decide when inheritance genuinely improves your code."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Maximises Code Reuse", "text": "Shared logic is written once in a parent class and automatically available to every subclass, avoiding duplicated code across similar classes." },
+            { "title": "Models Natural Hierarchies", "text": "Many real-world domains genuinely have 'is-a' relationships — a Car is a Vehicle, a Manager is an Employee — which inheritance represents cleanly." },
+            { "title": "Enables Polymorphism", "text": "Code written to operate on a general parent type automatically works with any subclass, reducing the need for repetitive type-checking logic." },
+            { "title": "Simplifies Maintenance", "text": "Fixing a bug in shared parent logic automatically fixes it for every subclass, rather than requiring the same fix to be applied in multiple places." },
+            { "title": "Supports Framework Design", "text": "Django's models, Flask's views, and countless other frameworks are built around users inheriting from provided base classes to gain built-in functionality." },
+            { "title": "Encourages Consistent Interfaces", "text": "Abstract base classes can enforce that every subclass implements certain required methods, keeping a codebase's structure predictable." }
+          ],
+          "cons": [
+            { "title": "Tight Coupling Between Classes", "text": "A subclass becomes dependent on its parent's internal implementation details, so changes to the parent can unexpectedly break subclasses." },
+            { "title": "Deep Hierarchies Are Hard to Follow", "text": "Tracing a single method call through five or six levels of inheritance can make code significantly harder to understand and debug." },
+            { "title": "Multiple Inheritance Complexity", "text": "MRO conflicts, the 'diamond problem,' and unexpected method resolution can confuse even experienced developers in complex hierarchies." },
+            { "title": "Fragile Base Class Problem", "text": "A seemingly harmless change to a widely-inherited parent class can silently break many subclasses that depended on its previous exact behaviour." },
+            { "title": "Overused for Code Reuse Alone", "text": "Developers sometimes reach for inheritance purely to reuse code, even when there's no genuine 'is-a' relationship, when composition would be a cleaner fit." },
+            { "title": "Slightly Slower Attribute Lookup", "text": "Searching up through a deep inheritance chain to find a method takes marginally longer than a direct lookup on a flat class, though this rarely matters in practice." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "inheritance-architecture-diagram",
+      "title": "Inheritance Hierarchy Architecture — Vehicle Family Example",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The diagram below shows a realistic multi-level inheritance hierarchy, illustrating how a general Vehicle class flows down into increasingly specialised classes, and how hierarchical inheritance branches into multiple siblings at the same level."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Base Class (Level 0)",
+              "color": "#6366f1",
+              "items": ["class Vehicle:", "brand, speed attributes", "def move(self), def describe(self)"]
+            },
+            {
+              "label": "Hierarchical Children (Level 1)",
+              "color": "#0ea5e9",
+              "items": ["class Car(Vehicle):", "class Truck(Vehicle):", "class Motorcycle(Vehicle):"]
+            },
+            {
+              "label": "Multilevel Specialisation (Level 2)",
+              "color": "#10b981",
+              "items": ["class SportsCar(Car):", "class PickupTruck(Truck):", "Adds turbo, cargo_capacity, etc."]
+            },
+            {
+              "label": "Mixin / Multiple Inheritance",
+              "color": "#f59e0b",
+              "items": ["class ElectricMixin:", "class ElectricCar(Car, ElectricMixin):", "MRO resolves shared method names"]
+            },
+            {
+              "label": "super() Chain",
+              "color": "#ef4444",
+              "items": ["SportsCar.__init__ → super()", "Car.__init__ → super()", "Vehicle.__init__ (base case)"]
+            },
+            {
+              "label": "Runtime Objects",
+              "color": "#8b5cf6",
+              "items": ["my_sports_car → SportsCar instance", "isinstance(my_sports_car, Vehicle) → True", "Inherited + overridden methods available"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "Your First Python Inheritance Example",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Below is a complete, realistic example demonstrating <strong>single inheritance</strong>, <strong>super().__init__()</strong>, and <strong>method overriding</strong> together in a Vehicle-to-Car hierarchy."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "inheritance.py",
+          "lines": [
+            "class Vehicle:",
+            "    def __init__(self, brand, speed=0):",
+            "        self.brand = brand",
+            "        self.speed = speed",
+            "",
+            "    def describe(self):",
+            "        return f\"{self.brand} moving at {self.speed} km/h\"",
+            "",
+            "",
+            "class Car(Vehicle):",
+            "    def __init__(self, brand, model, speed=0):",
+            "        super().__init__(brand, speed)   # Reuse Vehicle's constructor",
+            "        self.model = model",
+            "",
+            "    def describe(self):                  # Method overriding",
+            "        base_description = super().describe()   # Extend, not replace",
+            "        return f\"{base_description} — Model: {self.model}\"",
+            "",
+            "",
+            "car1 = Car(\"Tesla\", \"Model 3\", 60)",
+            "print(car1.describe())",
+            "print(isinstance(car1, Vehicle))",
+            "print(issubclass(Car, Vehicle))"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Tesla moving at 60 km/h — Model: Model 3",
+            "True",
+            "True"
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "class Vehicle:\n    def __init__(self, brand, speed=0):\n        self.brand = brand\n        self.speed = speed\n\n    def describe(self):\n        return f\"{self.brand} moving at {self.speed} km/h\"\n\n\nclass Car(Vehicle):\n    def __init__(self, brand, model, speed=0):\n        super().__init__(brand, speed)\n        self.model = model\n\n    def describe(self):\n        return super().describe() + f\" — Model: {self.model}\"\n\n\nmy_car = Car(\"Tesla\", \"Model 3 Ashish\", 50)\nprint(my_car.describe())"
+        },
+        {
+          "type": "subHeading",
+          "text": "Line-by-Line Explanation"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>class Car(Vehicle):</code> — Declares that Car inherits from Vehicle, gaining access to everything Vehicle defines." },
+            { "html": "<code>super().__init__(brand, speed)</code> — Calls Vehicle's constructor first, reusing its logic instead of duplicating self.brand = brand manually." },
+            { "html": "<code>def describe(self):</code> (inside Car) — Overrides Vehicle's describe() method with a more specific version." },
+            { "html": "<code>super().describe()</code> — Inside the override, calls the parent's original describe() to extend it rather than fully replacing it." },
+            { "html": "<code>isinstance(car1, Vehicle)</code> — Returns True because car1, though a Car, is also considered a Vehicle through inheritance." },
+            { "html": "<code>issubclass(Car, Vehicle)</code> — Returns True, confirming Car genuinely inherits from Vehicle at the class level." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "multiple-inheritance-mro",
+      "title": "Multiple Inheritance and MRO in Action",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Multiple inheritance becomes especially useful with <strong>mixins</strong> — small classes designed to add one specific piece of behaviour, meant to be combined with other classes rather than used on their own. The example below shows a Car combined with an ElectricMixin."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "multiple_inheritance.py",
+          "lines": [
+            "class Car:",
+            "    def __init__(self, brand):",
+            "        self.brand = brand",
+            "",
+            "    def info(self):",
+            "        return f\"Car: {self.brand}\"",
+            "",
+            "",
+            "class ElectricMixin:",
+            "    def info(self):",
+            "        base = super().info()",
+            "        return f\"{base} (Electric)\"",
+            "",
+            "",
+            "class ElectricCar(ElectricMixin, Car):",
+            "    pass",
+            "",
+            "",
+            "car1 = ElectricCar(\"Tesla\")",
+            "print(car1.info())",
+            "print(ElectricCar.__mro__)"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Car: Tesla (Electric)",
+            "(<class '__main__.ElectricCar'>, <class '__main__.ElectricMixin'>, <class '__main__.Car'>, <class 'object'>)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Notice the order in <code>class ElectricCar(ElectricMixin, Car):</code> matters enormously. Because <code>ElectricMixin</code> is listed first, Python's MRO places it before <code>Car</code> in the search order, so <code>ElectricMixin.info()</code> runs first — and its own internal <code>super().info()</code> call then reaches <code>Car.info()</code> next, producing the combined result. Reversing the parent order would change which info() runs first entirely."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-uses",
+      "title": "Where Inheritance Is Used — Real-World Applications",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Inheritance isn't just a theoretical OOP concept — it's the structural backbone of many of the most widely used Python frameworks and libraries. Here's where it shows up in practice:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🌐 Django Model & View Inheritance", "text": " — Every Django model inherits from models.Model, gaining database functionality automatically. Class-based views inherit from generic views like ListView or DetailView to gain pre-built behaviour." },
+            { "strong": "🧠 PyTorch Neural Network Modules", "text": " — Every custom neural network in PyTorch inherits from nn.Module, gaining parameter tracking, GPU support, and serialisation for free, while defining its own forward() method." },
+            { "strong": "🧪 Python's Own Exception Hierarchy", "text": " — Built-in exceptions like ValueError and TypeError all inherit from the base Exception class, letting a single except Exception: catch any of them, while more specific except blocks catch only particular subtypes." },
+            { "strong": "🖥️ GUI Widget Hierarchies", "text": " — Tkinter and PyQt build entire widget libraries through inheritance — a custom button class might inherit from a base Button class to add specialised styling or behaviour." },
+            { "strong": "🧩 Abstract Base Classes for Plugins", "text": " — Plugin systems often define an abstract base class specifying required methods, forcing every plugin (subclass) to implement a consistent interface the main application can rely on." },
+            { "strong": "🎮 Game Entity Hierarchies", "text": " — A game might define a general GameObject base class, with Player, Enemy, and Projectile all inheriting shared position and rendering logic while adding their own specialised behaviour." },
+            { "strong": "🧾 Pydantic & Data Validation Models", "text": " — FastAPI and Pydantic rely heavily on inheritance, letting developers build specialised request/response models on top of shared base schemas." },
+            { "strong": "☁️ Cloud SDK Client Hierarchies", "text": " — SDKs like boto3 often structure different service clients (S3, EC2, Lambda) using shared base classes for authentication and request handling, with service-specific subclasses adding their own methods." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-inheritance",
+      "title": "Why Should You Master Inheritance in 2026?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Inheritance shows up everywhere in professional Python development, from the smallest exception hierarchy to the largest web framework. Here's why it deserves serious study:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "📚 Essential for Reading Framework Code", "text": " — Django, FastAPI, PyTorch, and nearly every major framework expect you to inherit from their base classes — understanding inheritance is non-negotiable for using them effectively." },
+            { "strong": "🧩 Reduces Duplicate Code", "text": " — Well-designed inheritance hierarchies dramatically cut down on repeated logic across related classes, making codebases smaller and easier to maintain." },
+            { "strong": "🎭 Unlocks Polymorphism", "text": " — Inheritance is the foundation polymorphism is built on; without understanding inheritance first, polymorphic code patterns are much harder to grasp." },
+            { "strong": "💼 A Staple Interview Topic", "text": " — MRO, super(), method overriding, and the difference between inheritance types are classic Python OOP interview questions at nearly every experience level." },
+            { "strong": "🏗️ Enables Extensible Design", "text": " — Systems designed with inheritance in mind (like abstract base classes for plugins) let new functionality be added by writing new subclasses, without touching existing code." },
+            { "strong": "🧠 Deepens Your Understanding of Python's Own Design", "text": " — Python's exception system, container types, and even numeric types are all connected through inheritance — understanding it illuminates how Python itself is built." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "python-versions-inheritance-features",
+      "title": "Python Versions and Inheritance-Related Features",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Inheritance mechanics have been refined steadily across Python's history. Here's a quick reference of version-specific milestones relevant to how inheritance works today:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Python 2.2 — New-Style Classes & C3 Linearisation", "text": " — Introduced the modern, predictable MRO algorithm that resolves multiple inheritance consistently, replacing the older, less reliable depth-first search." },
+            { "strong": "Python 3.0 — Zero-Argument super()", "text": " — Simplified super(Car, self).method() down to super().method(), removing a significant source of boilerplate and copy-paste errors in inheritance chains." },
+            { "strong": "Python 3.4 — abc Module Improvements", "text": " — Strengthened support for Abstract Base Classes, making it easier to define required methods that every subclass must implement." },
+            { "strong": "Python 3.6 — __init_subclass__ Hook", "text": " — Added a special method that runs automatically whenever a class is subclassed, useful for registering plugins or validating subclass structure without decorators." },
+            { "strong": "Python 3.8 — typing.Protocol", "text": " — Introduced structural subtyping ('if it walks like a duck'), letting code type-check against an interface without requiring formal class inheritance." },
+            { "strong": "Python 3.11 — typing.Self", "text": " — Improved type hinting for methods that return an instance of their own class, especially useful in fluent, chainable subclass hierarchies." },
+            { "strong": "Python 3.12-3.14 — Performance Improvements", "text": " — Faster attribute and method lookup across deep inheritance chains, reducing the small performance cost that once came with heavily-layered class hierarchies." }
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Version", "Released", "Inheritance-Related Feature"],
+          "rows": [
+            ["Python 2.2", "2001", "C3 linearisation MRO introduced"],
+            ["Python 3.0", "2008", "Zero-argument super()"],
+            ["Python 3.4", "2014", "Stronger Abstract Base Class support"],
+            ["Python 3.6", "2016", "__init_subclass__ hook"],
+            ["Python 3.8", "2019", "typing.Protocol structural subtyping"],
+            ["Python 3.11", "2022", "typing.Self for chained subclass methods"],
+            ["Python 3.13", "2024", "Faster inheritance-chain attribute lookup"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python Inheritance — Interview Questions (Beginner Level)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the most frequently asked interview questions about <strong>Python inheritance</strong> for <strong>freshers and beginner-level</strong> positions. Review these carefully before your next Python OOP interview."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is inheritance in Python, and why is it useful?",
+              "a": "Inheritance is a mechanism where one class (the child) acquires the attributes and methods of another class (the parent). It is useful because it enables code reuse, letting shared logic be written once in a parent class and automatically made available to every subclass, avoiding duplication across related classes.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What are the different types of inheritance supported by Python?",
+              "a": "Python supports single inheritance (one parent, one child), multiple inheritance (one child, several parents), multilevel inheritance (a chain across several generations), hierarchical inheritance (several children from one parent), and hybrid inheritance (a combination of these patterns in one hierarchy).",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What does the super() function do?",
+              "a": "super() gives a child class access to methods defined on its parent class without hard-coding the parent's class name. It is most commonly used inside a child's __init__ to call the parent's constructor, ensuring the parent's initialisation logic still runs before the child adds its own setup.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What is method overriding, and how does Python decide which version of a method to run?",
+              "a": "Method overriding happens when a child class defines a method with the same name as one in its parent class, replacing the inherited behaviour. Python decides which version runs by following the class's Method Resolution Order (MRO), always using the first matching method found starting from the object's own class and moving upward.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. What is MRO (Method Resolution Order), and why does it matter in multiple inheritance?",
+              "a": "MRO is the precise, deterministic order Python searches through a class hierarchy when looking up a method or attribute, calculated using the C3 linearisation algorithm. It matters most in multiple inheritance, where more than one parent might define a method with the same name — MRO determines exactly which parent's version actually gets used.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. What is the difference between isinstance() and issubclass()?",
+              "a": "isinstance(obj, ClassName) checks whether a specific object belongs to a class or any of its subclasses, returning True or False. issubclass(ChildClass, ParentClass) checks the relationship between two classes directly, without needing an actual object, confirming whether one class inherits from another.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. What is the 'diamond problem' in multiple inheritance, and how does Python handle it?",
+              "a": "The diamond problem occurs when a class inherits from two parent classes that both inherit from the same grandparent class, creating ambiguity about which path to follow when resolving a shared method name. Python handles this cleanly using C3 linearisation, which guarantees a single, consistent, predictable MRO even in diamond-shaped hierarchies.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q8. Can a subclass access private attributes of its parent class?",
+              "a": "Attributes with a single underscore (_attr) remain accessible to subclasses by convention. Attributes with a double underscore (__attr) undergo name mangling, becoming _ParentClass__attr internally, which makes direct access from a subclass harder but not truly impossible — it is a discouragement, not strict enforcement.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q9. What is an Abstract Base Class, and why would you use one?",
+              "a": "An Abstract Base Class, defined using Python's abc module, is a class designed to be inherited from but never instantiated directly. It can declare abstract methods that every subclass is required to implement, enforcing a consistent interface across a family of related classes — commonly used in plugin systems and framework design.",
+              "tag": "Current Affairs"
+            },
+            {
+              "q": "Q10. What happens if a child class does not override a parent's method at all?",
+              "a": "The child class simply inherits and uses the parent's original method unchanged, since Python's method lookup continues searching up the hierarchy until it finds a match. No extra code is needed for this — inheritance makes every non-overridden parent method automatically available on the child.",
+              "tag": "Must Know"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Test your grasp of Python inheritance with these practice questions. Try answering each one yourself before checking the answer — active recall builds much stronger, longer-lasting understanding than passive reading."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. If class Car(Vehicle): does not define its own __init__, what happens when you create a Car object?",
+              "a": "Python automatically uses Vehicle's __init__ instead, since method lookup continues up the inheritance chain until it finds a matching method. The Car object will be initialised exactly as if it were a Vehicle, using whatever parameters Vehicle's constructor requires.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. In class ElectricCar(ElectricMixin, Car):, why does the order of ElectricMixin and Car matter?",
+              "a": "Python's MRO follows the order parent classes are listed, searching ElectricMixin before Car for matching methods. If both define a method with the same name, ElectricMixin's version is found first and used, while its own internal super() calls continue the search into Car next — reversing the order would change which method runs first.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "3. What does ClassName.__mro__ return, and how would you use it to debug an unexpected method call?",
+              "a": "It returns a tuple showing the exact sequence of classes Python searches through for that class, in order. If a method call produces unexpected behaviour in a multiple-inheritance hierarchy, printing __mro__ reveals precisely which class's version of the method would be found first, helping you understand why a particular implementation ran instead of another.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "4. Why might calling Vehicle.__init__(self, brand) directly, instead of using super().__init__(brand), cause problems in multiple inheritance?",
+              "a": "Calling the parent's __init__ directly by name bypasses the MRO entirely, potentially skipping other classes in a multiple-inheritance chain that super() would have correctly included. This can cause some parent classes' initialisation logic to be silently skipped, leading to partially-initialised objects.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "5. What is the difference between overriding a method completely versus extending it with super()?",
+              "a": "Completely overriding a method means the child class's version runs entirely on its own, with no reference to the parent's original implementation. Extending it means the override calls super().method_name() somewhere inside itself, reusing the parent's logic and adding additional behaviour on top, rather than replacing it outright.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. If Truck and Car both inherit from Vehicle (hierarchical inheritance), does changing Truck affect Car in any way?",
+              "a": "No. In hierarchical inheritance, sibling classes like Truck and Car are independent of each other — they only share what they've inherited from their common parent, Vehicle. Changes made directly to Truck have no effect on Car whatsoever, since they don't inherit from one another.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "7. Why would you use an Abstract Base Class instead of a regular parent class with 'placeholder' methods?",
+              "a": "A regular parent class with placeholder methods (e.g. methods that just pass or raise NotImplementedError manually) still allows the parent class itself to be instantiated, and subclasses can be created without implementing the required methods, only failing later at runtime when the method is actually called. An Abstract Base Class prevents both problems: it cannot be instantiated directly, and Python raises an error immediately if a subclass fails to implement a required abstract method.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. What would issubclass(Vehicle, Car) return, given class Car(Vehicle):, and why?",
+              "a": "It would return False. Even though Car inherits from Vehicle, the relationship is directional — Car is a subclass of Vehicle, but Vehicle is not a subclass of Car. issubclass() only returns True when the first argument is the same as, or a descendant of, the second argument.",
+              "difficulty": "Medium"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Why Inheritance Matters",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Inheritance is what turns a collection of isolated classes into a coherent, extensible family of related types. It is how <strong>Django</strong> lets you build a fully functional model in a handful of lines, how <strong>PyTorch</strong> lets you define a neural network by inheriting from nn.Module, and how Python's own exception system lets a single except block gracefully catch an entire family of related errors."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The concepts covered here — <strong>single, multiple, multilevel, and hierarchical inheritance</strong>, the <strong>super()</strong> function, <strong>method overriding</strong>, and <strong>Method Resolution Order (MRO)</strong> — together form the toolkit needed to design class hierarchies that are both powerful and maintainable, rather than tangled and fragile."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Your Goal", "Should You Master Inheritance?"],
+          "rows": [
+            ["Working with Django or FastAPI",           "✅ Absolutely — both rely on inheriting from base classes"],
+            ["Building neural networks in PyTorch",       "✅ Yes — every model inherits from nn.Module"],
+            ["Handling exceptions cleanly",                "✅ Yes — Python's exception hierarchy is inheritance-based"],
+            ["Preparing for developer interviews",         "✅ Yes — MRO and super() are classic OOP questions"],
+            ["Designing a plugin or extensible system",    "✅ Yes — Abstract Base Classes rely entirely on inheritance"],
+            ["Writing a single, isolated utility script",  "⚠️ Optional — a plain function may be simpler"],
+            ["Reducing duplicate code across similar classes","✅ Yes — inheritance is built exactly for this purpose"],
+            ["Avoiding tightly coupled, fragile class designs","⚠️ Use carefully — composition is sometimes the better fit"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The natural next step after mastering inheritance is <strong>Polymorphism</strong> — learning how code written against a general parent type can seamlessly work with any of its subclasses, unlocking flexible, extensible designs. From there, encapsulation, abstract base classes, and classic design patterns all build directly on the inheritance foundation covered here."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Used thoughtfully, inheritance turns repetition into reuse and complexity into structure.</strong> Practice building your own small class hierarchies, experiment with super() and method overriding, and the concepts will click quickly. 🧬"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "What is inheritance in Python, explained simply?",
+        "a": "Inheritance lets one class automatically gain all the attributes and methods of another class, without having to rewrite them. It's like a child class 'inheriting' a parent class's abilities, then optionally adding its own extra features or changing some of the inherited ones."
+      },
+      {
+        "q": "What is the difference between single and multiple inheritance?",
+        "a": "Single inheritance means a class inherits from exactly one parent class. Multiple inheritance means a class inherits from two or more parent classes at once, combining behaviour from all of them — Python supports both directly, unlike languages such as Java, which only allow single class inheritance."
+      },
+      {
+        "q": "Why do I need to call super().__init__() in a subclass?",
+        "a": "Without calling super().__init__(), the parent class's constructor never runs, meaning any attributes it was responsible for setting will simply be missing on the child object. Calling super().__init__() ensures the parent's setup logic executes before the child's own constructor adds its specific attributes."
+      },
+      {
+        "q": "What is method overriding, and why would I want to do it?",
+        "a": "Method overriding lets a child class provide its own specialised version of a method that already exists in its parent class. You'd want to do this whenever a subclass needs behaviour that differs from — or extends — what the general parent class provides, without changing the parent class itself."
+      },
+      {
+        "q": "What is MRO, and do I need to calculate it manually?",
+        "a": "MRO (Method Resolution Order) is the order Python follows when searching a class hierarchy for a method or attribute. You never need to calculate it manually — Python computes it automatically using the C3 linearisation algorithm, and you can always inspect the result directly using ClassName.__mro__."
+      },
+      {
+        "q": "Should I always use inheritance when I want to reuse code between two classes?",
+        "a": "Not necessarily. Inheritance is best suited for genuine 'is-a' relationships, like a Car is a Vehicle. If two classes don't have that kind of relationship but simply need to share some functionality, composition — building one class using an instance of another — is often a cleaner, more flexible solution."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Constructors", "path": "/python/python-constructors" },
+    "next": { "label": "Next: Python Polymorphism →", "path": "/python/python-polymorphism" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Core relationship", "dd": "\"is-a\"" },
+      { "dt": "Parent-call function", "dd": "super()" },
+      { "dt": "Resolution algorithm", "dd": "C3 linearisation (MRO)" },
+      { "dt": "Type check functions", "dd": "isinstance() / issubclass()" },
+      { "dt": "Multiple inheritance", "dd": "✅ Supported" },
+      { "dt": "Abstract classes module", "dd": "abc" }
+    ],
+    "relatedArticles": [
+      { "label": "Python Classes and Objects", "path": "/python/python-classes-objects" },
+      { "label": "Python Constructors",       "path": "/python/python-constructors" },
+      { "label": "Python Polymorphism",       "path": "/python/python-polymorphism" },
+      { "label": "Python Encapsulation",      "path": "/python/python-encapsulation" },
+      { "label": "Python Abstract Classes",   "path": "/python/python-abstract-classes" },
+      { "label": "Python Dunder Methods",     "path": "/python/python-dunder-methods" },
+      { "label": "Python Decorators",         "path": "/python/python-decorators" },
+      { "label": "Python OOP",                "path": "/python/python-oop" }
+    ],
+    "tags": ["Inheritance","super()","Method Overriding","MRO","Multiple Inheritance","Multilevel Inheritance","Hierarchical Inheritance","isinstance","issubclass","Abstract Base Class","Mixins","OOP"]
+  }
+}

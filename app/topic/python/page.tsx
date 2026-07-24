@@ -67,7 +67,7 @@ export const pythonTopicsData = [
     topics: [
       { label: "Python Exceptions",    path: "/python/python-exceptions" },
       { label: "Python Try Except",    path: "/python/python-try-except" },
-      { label: "Python Finally",       path: "/python/python-finally" },
+      { label: "Python Finally Block",       path: "/python/python-finally" },
       { label: "Python Raise Exception", path: "/python/python-raise-exception" },
     ],
   },
@@ -77,7 +77,7 @@ export const pythonTopicsData = [
     topics: [
       { label: "Python Modules",       path: "/python/python-modules" },
       { label: "Python Math Module",   path: "/python/python-math-module" },
-      { label: "Python Datetime",      path: "/python/python-datetime" },
+      { label: "Python Datetime",      path: "/python/python-date-time" },
       { label: "Python JSON",          path: "/python/python-json" },
       { label: "Python RegEx",         path: "/python/python-regex" },
       { label: "Python File Handling", path: "/python/python-file-handling" },
@@ -100,7 +100,8 @@ export const pythonTopicsData = [
       { label: "Python Iterators",      path: "/python/python-iterators" },
       { label: "Python Generators",     path: "/python/python-generators" },
       { label: "Python Decorators",     path: "/python/python-decorators" },
-      { label: "Python Multithreading", path: "/python/python-multithreading" },
+      { label: "Python Multi-Threading", path: "/python/python-multi-threading" },
+      { label: "Python Multi-Processing", path: "/python/python-multi-processing" },
     ],
   },
 

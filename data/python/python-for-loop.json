@@ -1,0 +1,895 @@
+{
+  "meta": {
+    "title": "Python For Loop Explained | range(), enumerate(), zip() & For-Else 2026 | Tech Sustainify",
+    "description": "A complete, practical guide to Python's for loop — syntax, range(), iterating over lists/strings/dicts/sets, enumerate(), zip(), for-else, nested loops, break/continue, and the mutation bug that breaks loops silently.",
+    "keywords": "python for loop, for loop syntax python, python range function, enumerate python, zip python, python for else, nested for loop python, for loop vs while loop python, python iterate list, python iterate dictionary, list comprehension vs for loop, python for loop interview questions",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-for-loop/",
+    "ogTitle": "Python For Loop Explained — range(), enumerate(), zip() & For-Else | Tech Sustainify",
+    "ogDescription": "The for loop explained the way you'd explain it to a teammate at 2am — not textbook definitions. range(), enumerate(), zip(), for-else, nested loops, the mutation-while-iterating bug, real fixes.",
+    "ogUrl": "https://techsustainify.com/python/python-for-loop/",
+    "ogImage": "https://techsustainify.com/images/python-for-loop-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "28 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-02-15",
+    "schemaDateModified": "2026-07-22",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 8200
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",            "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python For Loop" }
+  ],
+
+  "articleHeader": {
+    "badge": "🐍 Python",
+    "title": "Python For Loop — The Complete Guide",
+    "subtitle": "range(), enumerate(), zip(), for-else, nested loops, and the mutation bug that silently skips items — explained with real bugs, not textbook definitions."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-07-22", "value": "July 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "28 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-for-loop",
+      "title": "What Is a For Loop in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>for loop</strong> in Python iterates over the items of any <strong>iterable</strong> — a list, a string, a tuple, a dictionary, a set, a file, a range of numbers, basically anything you can walk through one item at a time. That's the definition every tutorial gives. Here's the part that actually matters and that most beginners coming from Java or C never quite absorb: Python's <code>for</code> loop is not a counting loop. It's not <code>for (int i = 0; i &lt; n; i++)</code> wearing different syntax. It's fundamentally a <strong>for-each</strong> loop, full stop, and everything else — including counting — is layered on top of that using helper functions like <code>range()</code> and <code>enumerate()</code>."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This distinction genuinely changes how you should think about writing loops in Python. In C or Java, you reach for an index because that's the only tool you have. In Python, reaching for a manual index (<code>i = 0</code>, then <code>while i &lt; len(my_list)</code>, then <code>my_list[i]</code>, then <code>i += 1</code>) is almost always a sign you're fighting the language instead of using it. Python gives you the actual item directly. Use it."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "basic_for_loop.py",
+          "lines": [
+            "fruits = ['apple', 'banana', 'mango']",
+            "",
+            "for fruit in fruits:",
+            "    print(fruit)",
+            "",
+            "print(\"Loop finished\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["apple", "banana", "mango", "Loop finished"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "My honestly opinionated take here: if I see <code>for i in range(len(my_list)): print(my_list[i])</code> in a code review, that's an instant comment, no exceptions. It's not wrong, it runs fine, it's just not Python — it's C written with Python syntax. The direct version, <code>for item in my_list: print(item)</code>, is shorter, faster (fewer index lookups), and does exactly the same thing. The only time you actually need the index is when you need the index, and Python has a purpose-built tool for that too — <code>enumerate()</code>, covered further down."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "how-for-works",
+      "title": "How a For Loop Actually Works Under the Hood",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every <code>for</code> loop in Python is secretly calling <code>iter()</code> on whatever you're looping over, getting back an <strong>iterator</strong> object, and then repeatedly calling <code>next()</code> on that iterator until it raises a <code>StopIteration</code> exception. You never see any of this happen — Python catches the <code>StopIteration</code> for you and quietly ends the loop — but knowing it's happening explains a lot of behavior that otherwise seems mysterious, especially around generators and why some things can only be looped over once."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "for_loop_under_the_hood.py",
+          "lines": [
+            "fruits = ['apple', 'banana']",
+            "",
+            "# What 'for fruit in fruits:' is actually doing, unrolled manually:",
+            "iterator = iter(fruits)",
+            "while True:",
+            "    try:",
+            "        fruit = next(iterator)",
+            "    except StopIteration:",
+            "        break",
+            "    print(fruit)"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["apple", "banana"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is exactly why a generator (something built with <code>yield</code>) can only be looped over once and then it's exhausted — calling <code>iter()</code> on a generator just returns itself, and once <code>next()</code> has raised <code>StopIteration</code>, there's no way to rewind it. A list, on the other hand, gives you a fresh iterator every time you call <code>iter()</code> on it, which is why you can loop over the same list twice without any issue but looping over an already-consumed generator a second time just does nothing."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "For Loop Execution Flow — Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's the full decision path a for loop actually takes, including the part almost nobody thinks about: the hidden call to <code>iter()</code> right at the start, and the <code>StopIteration</code> exception that ends things quietly behind the scenes."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "🏁 Start",                  "sublabel": "for item in iterable:",              "type": "start" },
+            { "id": "2", "label": "🔄 Call iter(iterable)",     "sublabel": "Creates an iterator object",         "type": "process" },
+            { "id": "3", "label": "➡️ Call next(iterator)",     "sublabel": "Fetches the next item",              "type": "process" },
+            { "id": "4", "label": "❓ StopIteration raised?",   "sublabel": "Signals the iterable is exhausted",  "type": "decision" },
+            { "id": "5", "label": "📌 Bind item to loop variable", "sublabel": "e.g. item = 'apple'",             "type": "process" },
+            { "id": "6", "label": "▶️ Run loop body",           "sublabel": "Indented block executes",            "type": "process" },
+            { "id": "7", "label": "🚪 break encountered?",      "sublabel": "Exits loop immediately, skips else", "type": "decision" },
+            { "id": "8", "label": "🍃 Run else block (if present)", "sublabel": "Only runs if loop finished WITHOUT break", "type": "process" },
+            { "id": "9", "label": "🏁 Continue after the loop", "sublabel": "Code after the for block resumes",   "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "begin" },
+            { "from": "2", "to": "3", "label": "get iterator" },
+            { "from": "3", "to": "4", "label": "fetch item" },
+            { "from": "4", "to": "5", "label": "No — item available" },
+            { "from": "4", "to": "8", "label": "Yes — exhausted, loop ends normally" },
+            { "from": "5", "to": "6", "label": "bind & run" },
+            { "from": "6", "to": "7", "label": "check for break" },
+            { "from": "7", "to": "9", "label": "break hit — skip else entirely" },
+            { "from": "7", "to": "3", "label": "no break, fetch next item" },
+            { "from": "8", "to": "9", "label": "else block done" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The detail worth remembering from this diagram: the loop doesn't check anything like a condition on every pass the way a while loop does. It just keeps asking the iterator for the next item until the iterator itself says there isn't one, by raising <code>StopIteration</code>. That's a fundamentally different termination mechanism than a while loop's condition check, and it's exactly why a for loop can never accidentally become infinite the way a while loop can — as long as the iterable is finite, the loop is guaranteed to end."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "range-function",
+      "title": "The range() Function — Counting Without an Index Variable",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When you genuinely need to repeat something a fixed number of times, or generate a numeric sequence, <code>range()</code> is the tool. It doesn't actually build a list of numbers in memory — in Python 3, <code>range()</code> returns a lightweight <code>range</code> object that generates numbers on demand as the loop asks for them, which is why <code>range(10_000_000)</code> is instant and uses barely any memory, unlike Python 2's version which built a real list upfront."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "range_variations.py",
+          "lines": [
+            "for i in range(5):",
+            "    print(i, end=\" \")        # 0 1 2 3 4",
+            "print()",
+            "",
+            "for i in range(2, 8):",
+            "    print(i, end=\" \")        # 2 3 4 5 6 7",
+            "print()",
+            "",
+            "for i in range(0, 10, 2):",
+            "    print(i, end=\" \")        # 0 2 4 6 8",
+            "print()",
+            "",
+            "for i in range(10, 0, -1):",
+            "    print(i, end=\" \")        # 10 9 8 7 6 5 4 3 2 1",
+            "print()"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "0 1 2 3 4 ",
+            "2 3 4 5 6 7 ",
+            "0 2 4 6 8 ",
+            "10 9 8 7 6 5 4 3 2 1 "
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "The range() Upper Bound Is Always Exclusive"
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is the single most common off-by-one bug beginners write. <code>range(5)</code> gives you <code>0, 1, 2, 3, 4</code> — five numbers, but it never includes <code>5</code> itself. If you need to include the endpoint, you have to write <code>range(n + 1)</code>. I've watched this exact mistake show up in a loop that was supposed to process invoice IDs 1 through 100 inclusive, written as <code>range(1, 100)</code> instead of <code>range(1, 101)</code> — silently dropping the very last invoice from a batch job, with no error, no warning, just quietly incomplete output that nobody noticed until someone manually reconciled the totals."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "iterating-data-structures",
+      "title": "Iterating Over Different Data Structures",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A for loop works identically on the surface across every built-in collection type, but what you actually get back on each pass differs — and dictionaries in particular trip up a lot of beginners."
+        },
+        {
+          "type": "subHeading",
+          "text": "Lists, Tuples, and Sets"
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "iterate_basic_collections.py",
+          "lines": [
+            "colors = ['red', 'green', 'blue']            # list — ordered, preserves insertion order",
+            "for color in colors:",
+            "    print(color)",
+            "",
+            "coordinates = (10, 20)                       # tuple — same iteration, but immutable",
+            "for value in coordinates:",
+            "    print(value)",
+            "",
+            "unique_ids = {101, 202, 303}                 # set — NO guaranteed order",
+            "for uid in unique_ids:",
+            "    print(uid)   # order across runs/versions isn't guaranteed to be insertion order"
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "Strings"
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Looping over a string gives you one character at a time. Simple, but worth stating explicitly, because it means <code>for x in \"hi\":</code> is looping twice, once for <code>'h'</code> and once for <code>'i'</code> — which connects back to why sequence patterns in match-case deliberately exclude strings from unpacking like a two-element list."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "iterate_string.py",
+          "lines": [
+            "for char in \"Python\":",
+            "    print(char, end=\"-\")",
+            "# Output: P-y-t-h-o-n-"
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "Dictionaries — The Part Everyone Gets Wrong at Least Once"
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Looping directly over a dictionary — <code>for x in my_dict:</code> — gives you only the <strong>keys</strong>, not the values, and definitely not key-value pairs. This surprises basically everyone the first time. To get both, you need <code>.items()</code>. Since Python 3.7, dictionaries also guarantee insertion order, which wasn't always true in earlier versions and caught a lot of people out when relying on dict ordering in code meant to also run on Python 3.6 or older."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "iterate_dict.py",
+          "lines": [
+            "user = {'name': 'Ashish', 'role': 'admin', 'active': True}",
+            "",
+            "for x in user:",
+            "    print(x)                      # prints keys only: name, role, active",
+            "",
+            "for key in user.keys():",
+            "    print(key)                    # same as above, explicit",
+            "",
+            "for value in user.values():",
+            "    print(value)                  # Ashish, admin, True",
+            "",
+            "for key, value in user.items():",
+            "    print(f\"{key}: {value}\")      # the version you almost always actually want"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "name",
+            "role",
+            "active",
+            "name: Ashish",
+            "role: admin",
+            "active: True"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "enumerate-function",
+      "title": "enumerate() — Getting the Index Without Manual Counting",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is the function that replaces the C-style <code>for i in range(len(my_list))</code> anti-pattern entirely. <code>enumerate()</code> wraps any iterable and gives you back <code>(index, item)</code> pairs, so you get the item directly AND its position, without ever writing a manual counter."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "enumerate_basic.py",
+          "lines": [
+            "tasks = ['Write report', 'Review PR', 'Deploy build']",
+            "",
+            "for index, task in enumerate(tasks):",
+            "    print(f\"{index}: {task}\")",
+            "",
+            "# Start counting from 1 instead of 0 — common for user-facing display",
+            "for index, task in enumerate(tasks, start=1):",
+            "    print(f\"Task #{index}: {task}\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "0: Write report",
+            "1: Review PR",
+            "2: Deploy build",
+            "Task #1: Write report",
+            "Task #2: Review PR",
+            "Task #3: Deploy build"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>start=1</code> parameter is genuinely underused. Anytime you're building something for a human to read — a numbered task list, an invoice line-item count, a leaderboard — starting at 1 instead of manually writing <code>index + 1</code> everywhere in your f-strings is cleaner and removes an easy place to introduce an off-by-one mismatch between what you print and what you actually mean."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "zip-function",
+      "title": "zip() — Looping Over Multiple Sequences Together",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>zip()</code> pairs up items from two or more iterables, position by position, letting you loop over them together in a single for loop instead of indexing into each one separately. It's the tool you reach for whenever you've got parallel lists — names and scores, dates and values, headers and row data pulled from a CSV."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "zip_basic.py",
+          "lines": [
+            "names = ['Ashish', 'Priya', 'Rahul']",
+            "scores = [88, 92, 79]",
+            "",
+            "for name, score in zip(names, scores):",
+            "    print(f\"{name} scored {score}\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Ashish scored 88",
+            "Priya scored 92",
+            "Rahul scored 79"
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "zip() Silently Stops at the Shortest Iterable"
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is a genuinely sneaky one. If your input lists don't have matching lengths, <code>zip()</code> doesn't raise an error — it just quietly stops as soon as the shortest one runs out, silently dropping the extra items from the longer lists with zero warning. If <code>names</code> has 5 entries and <code>scores</code> only has 3, you'll only get 3 pairs back, and the missing 2 names just vanish from the loop without a trace. If mismatched lengths should actually be an error in your case (a real bug, not expected behavior), use <code>zip(names, scores, strict=True)</code>, added in Python 3.10, which raises a <code>ValueError: zip() argument 2 is shorter than argument 1</code> the moment the lengths don't line up — genuinely one of the more useful small additions to the language in recent years, and criminally underused."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "zip_strict_mode.py",
+          "lines": [
+            "names = ['Ashish', 'Priya', 'Rahul', 'Deepak']",
+            "scores = [88, 92, 79]",
+            "",
+            "# Silent data loss — 'Deepak' just disappears, no warning:",
+            "for name, score in zip(names, scores):",
+            "    print(name, score)",
+            "",
+            "# Fails loudly instead, which is usually what you actually want:",
+            "for name, score in zip(names, scores, strict=True):",
+            "    print(name, score)",
+            "# ValueError: zip() argument 2 is shorter than argument 1"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "for-else",
+      "title": "The for-else Clause",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Just like while loops, for loops in Python support an <code>else</code> clause with the exact same behavior — it runs only if the loop completes fully without hitting a <code>break</code>. The naming confuses people just as much here, but the classic use case is identical: search-and-report patterns, distinguishing between \"found it and stopped early\" and \"checked everything, found nothing.\""
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "for_else_search.py",
+          "lines": [
+            "def find_prime_factor(n):",
+            "    for i in range(2, n):",
+            "        if n % i == 0:",
+            "            print(f\"{n} is divisible by {i}\")",
+            "            break",
+            "    else:",
+            "        print(f\"{n} is a prime number\")",
+            "",
+            "find_prime_factor(15)",
+            "find_prime_factor(13)"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "15 is divisible by 3",
+            "13 is a prime number"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Without <code>else</code>, you'd write a separate flag variable — set <code>is_prime = True</code> before the loop, flip it to <code>False</code> right before the <code>break</code>, then check the flag afterward. The <code>for-else</code> version removes that flag entirely, at the cost of readability for anyone unfamiliar with the construct. My honest recommendation: use it, but only in code where the team already knows the pattern, or leave a short comment the first time — it's genuinely elegant once understood, genuinely confusing on first encounter."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "nested-for-loops",
+      "title": "Nested For Loops",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A for loop can contain another for loop, running the inner loop to completion on every pass of the outer one. This is the natural way to walk a 2D grid, build a multiplication table, or compare every item in one list against every item in another."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "nested_for.py",
+          "lines": [
+            "for row in range(1, 4):",
+            "    for col in range(1, 4):",
+            "        print(f\"{row}x{col}={row * col}\", end=\"  \")",
+            "    print()"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "1x1=1  1x2=2  1x3=3  ",
+            "2x1=2  2x2=4  2x3=6  ",
+            "3x1=3  3x2=6  3x3=9  "
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "The Time Complexity Trap"
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Nested loops are where innocent-looking code quietly becomes an O(n²) problem. A single loop over 10,000 items is fast. A nested loop comparing 10,000 items against another 10,000 items is 100 million operations, and that's the exact shape of code that works fine in a local test with 50 sample rows and then times out in production against a real dataset. If you find yourself nesting a loop specifically to check \"does this item exist in the other list,\" convert the second list to a <code>set</code> first and use a plain membership check instead — that alone turns an O(n²) search into an O(n) one, which is often the difference between a script finishing in seconds versus minutes."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "mutation-while-iterating",
+      "title": "The Mutation-While-Iterating Bug (The One That Silently Skips Items)",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is, in my experience, the single most dangerous for-loop bug in Python, precisely because it doesn't crash. It doesn't raise an exception. It just quietly processes the wrong items, and you only find out later when the output looks slightly off. The rule: <strong>never modify a list's length while you're iterating over it directly.</strong>"
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "mutation_bug.py",
+          "lines": [
+            "# BUGGY — silently skips items, no error raised",
+            "numbers = [1, 2, 3, 4, 5, 6]",
+            "for n in numbers:",
+            "    if n % 2 == 0:",
+            "        numbers.remove(n)",
+            "",
+            "print(numbers)   # [1, 3, 5]  ... looks right by luck, but let's see why it's actually broken"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["[1, 3, 5]"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "That particular example happens to produce the \"expected-looking\" result, which is exactly what makes this bug so dangerous — it can pass a quick manual check while still being fundamentally broken. Here's what's actually happening: a for loop over a list tracks position by index internally. When you remove an item, everything after it shifts left by one position, but the loop's internal index keeps advancing normally — so it ends up skipping the item that just slid into the position it already passed. Try it with a list where two even numbers sit next to each other and the bug becomes obvious."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "mutation_bug_exposed.py",
+          "lines": [
+            "# Now the bug is obvious — consecutive even numbers",
+            "numbers = [2, 4, 6, 8, 10]",
+            "for n in numbers:",
+            "    if n % 2 == 0:",
+            "        numbers.remove(n)",
+            "",
+            "print(numbers)   # [4, 8]  <- WRONG, should be [] since all are even"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["[4, 8]"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every one of those numbers is even, so the fully correct output should be an empty list. Instead, <code>4</code> and <code>8</code> survive, purely because of the index-shifting problem — after removing <code>2</code>, everything shifts left, the loop's next index lands on what used to be index 2 (<code>6</code>) but is now actually <code>8</code> after the shift, and <code>4</code> gets skipped entirely. This is exactly the kind of bug that survives a quick smoke test and then produces subtly wrong output in production for weeks. The fix is simple: iterate over a copy, or build a new list instead of mutating the original in place."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "mutation_bug_fixed.py",
+          "lines": [
+            "numbers = [2, 4, 6, 8, 10]",
+            "",
+            "# Fix 1 — iterate over a copy using slicing, mutate the original safely",
+            "for n in numbers[:]:",
+            "    if n % 2 == 0:",
+            "        numbers.remove(n)",
+            "print(numbers)   # []",
+            "",
+            "# Fix 2 — build a new list instead of mutating (usually the cleaner approach)",
+            "numbers = [2, 4, 6, 8, 10]",
+            "numbers = [n for n in numbers if n % 2 != 0]",
+            "print(numbers)   # []"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["[]", "[]"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The same category of bug applies to dictionaries too — mutating a dict's keys while iterating over it raises an immediate, loud <code>RuntimeError: dictionary changed size during iteration</code>. Honestly, I consider the dictionary version the more developer-friendly outcome, precisely because it fails loudly instead of silently producing wrong data. Lists deserve the same treatment conceptually, they just don't get it, which is exactly why this is worth memorizing rather than relying on Python to catch it for you."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "for-vs-list-comprehension",
+      "title": "For Loop vs List Comprehension — When to Use Which",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A list comprehension is, structurally, a for loop that builds a list, compressed onto one line. <code>[x * 2 for x in numbers]</code> does the same job as a plain for loop appending to an empty list, just faster to write and, in most cases, faster to run too, since comprehensions avoid the repeated attribute lookup for <code>.append()</code> on every iteration."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Situation", "Use for loop", "Use list comprehension"],
+          "rows": [
+            ["Simple transformation of each item", "⚠️ Works, but more verbose", "✅ Yes — [x*2 for x in nums]"],
+            ["Multiple statements per iteration", "✅ Yes — clearer with several lines", "❌ Gets unreadable fast"],
+            ["Loop body has side effects (printing, API calls)", "✅ Yes — comprehensions shouldn't be used for side effects", "❌ Avoid — misleading, not idiomatic"],
+            ["Need to break early or use else", "✅ Yes — comprehensions can't break or use else", "❌ Not supported"],
+            ["Filtering + transforming in one step", "⚠️ Works, more lines", "✅ Yes — [x for x in nums if x > 0]"],
+            ["Deeply nested logic (3+ levels)", "✅ Yes — much easier to read", "❌ Becomes genuinely unreadable"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "My opinionated take on this one: list comprehensions are wonderful right up until they need a second condition or a nested loop, and then people keep cramming logic into them anyway because they've decided comprehensions are \"more Pythonic.\" A three-level nested comprehension with two conditions is not more Pythonic than a plain for loop — it's a puzzle the next reader has to solve. If a comprehension doesn't fit comfortably on one line without mental gymnastics, write the for loop instead."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "Try It Yourself — For Loop Playground",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Edit the snippet below — swap the list, add <code>enumerate()</code>, or try <code>zip()</code> with a second list of your own."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "for_loop_demo.py",
+          "lines": [
+            "students = ['Ashish', 'Priya', 'Rahul']",
+            "marks = [88, 92, 79]",
+            "",
+            "for index, (name, score) in enumerate(zip(students, marks), start=1):",
+            "    status = \"Pass\" if score >= 40 else \"Fail\"",
+            "    print(f\"{index}. {name} — {score} ({status})\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "1. Ashish — 88 (Pass)",
+            "2. Priya — 92 (Pass)",
+            "3. Rahul — 79 (Pass)"
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "students = ['Ashish', 'Priya', 'Rahul']\nmarks = [88, 92, 79]\n\nfor index, (name, score) in enumerate(zip(students, marks), start=1):\n    print(f\"{index}. {name} — {score}\")"
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-uses",
+      "title": "Where For Loops Actually Show Up in Real Code",
+      "blocks": [
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Processing rows from a CSV or database query", "text": " — for row in cursor.fetchall(): is the standard shape for handling query results one record at a time." },
+            { "strong": "Batch API requests", "text": " — for user_id in user_ids: call_api(user_id) is the common pattern for hitting an endpoint once per item in a known list." },
+            { "strong": "Building numbered reports or invoices", "text": " — enumerate(items, start=1) generates the line numbers a client-facing PDF or email actually needs." },
+            { "strong": "Comparing two parallel datasets", "text": " — zip(expected, actual) pairs up test results with expected values in a testing script, one of the cleanest real uses of zip()." },
+            { "strong": "Django template loops", "text": " — {% for product in products %} in Django templates is literally a for loop rendering HTML, following the exact same iteration rules as Python code." },
+            { "strong": "Data cleaning pipelines", "text": " — filtering, transforming, and validating rows of a dataset almost always starts life as a for loop before potentially becoming a list comprehension or a pandas vectorized operation." },
+            { "strong": "File processing", "text": " — for line in open('logfile.txt'): reads a file lazily, one line at a time, without loading the entire file into memory at once." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "best-practices",
+      "title": "Do's and Don'ts With For Loops",
+      "blocks": [
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Loop over the actual items, not indexes", "text": "for item in my_list: is clearer and faster than for i in range(len(my_list)): my_list[i] in almost every real case." },
+            { "title": "Use enumerate() when you genuinely need the index", "text": "It replaces manual counters entirely and reads far more clearly than tracking an index variable by hand." },
+            { "title": "Use zip() for parallel iteration", "text": "Looping over two related lists together with zip() beats indexing into both lists separately inside the same loop." },
+            { "title": "Iterate over a copy (or build a new collection) when removing items", "text": "numbers[:] or a fresh list comprehension avoids the silent index-shifting bug that happens when you mutate a list mid-iteration." },
+            { "title": "Use dict.items() for key-value iteration", "text": "Looping over a dict directly only gives keys — items() is what you want almost every time you need both." },
+            { "title": "Reach for zip(..., strict=True) when mismatched lengths should be an error", "text": "Silent truncation from plain zip() can hide real data bugs; strict mode surfaces them immediately." }
+          ],
+          "cons": [
+            { "title": "Don't mutate a list's length while iterating over it directly", "text": "This silently skips items due to index shifting, without raising any error — one of the sneakiest bugs in everyday Python." },
+            { "title": "Don't forget range()'s upper bound is exclusive", "text": "range(5) stops at 4, not 5. This is the most common off-by-one mistake beginners make." },
+            { "title": "Don't assume for x in my_dict: gives key-value pairs", "text": "It only gives keys. Use .items() explicitly when you need both." },
+            { "title": "Don't nest loops carelessly on large datasets", "text": "A nested loop over two large lists is O(n²) — convert the inner list to a set for membership checks whenever possible instead." },
+            { "title": "Don't cram complex, multi-condition logic into a one-line comprehension", "text": "If it needs mental effort to parse, a plain for loop is more maintainable, even if it's a few lines longer." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python For Loop — Interview Questions",
+      "blocks": [
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is the fundamental difference between Python's for loop and a C-style counting for loop?",
+              "a": "Python's for loop is a for-each loop — it iterates directly over the items of any iterable (list, string, dict, range, etc.), not over a numeric counter. A C-style for (int i = 0; i < n; i++) loop counts through indexes explicitly; Python achieves the same counting behavior using range() or enumerate() layered on top of the same for-each mechanism, rather than having a separate counting loop construct.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. Why does range(5) only produce 0 through 4, not 0 through 5?",
+              "a": "range()'s upper bound is always exclusive by design, matching Python's general convention of half-open intervals (also seen in list slicing). range(5) generates exactly five numbers starting from 0, stopping before reaching 5. To include 5 in the output, you need range(6) or range(0, 6).",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q3. What does for key in my_dict: actually iterate over?",
+              "a": "Only the dictionary's keys, not its values and not key-value pairs. To get values, use my_dict.values(); to get both together, use my_dict.items(), which yields (key, value) tuples that can be unpacked directly in the loop header: for key, value in my_dict.items():.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What happens if you remove items from a list while iterating over it directly with a for loop?",
+              "a": "Items can be silently skipped, without raising any error. This happens because a for loop over a list tracks position internally, and removing an item shifts all subsequent items left by one, while the loop's internal position keeps advancing as if nothing shifted — causing it to skip whatever item slid into an already-visited position. The fix is to iterate over a copy (my_list[:]) or build a new filtered list instead of mutating the original during iteration.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q5. What is the purpose of enumerate() and how does the start parameter work?",
+              "a": "enumerate() wraps an iterable and yields (index, item) pairs, eliminating the need for a manually tracked counter variable. By default it starts counting from 0, but passing start=1 (or any other number) shifts where the count begins, which is commonly used when displaying a numbered list to end users who expect counting to start at 1, not 0.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. What does zip() do when the input iterables have different lengths?",
+              "a": "By default, zip() silently stops as soon as the shortest iterable is exhausted, discarding any extra items from longer iterables without raising an error. Since Python 3.10, passing strict=True to zip() makes it raise a ValueError instead if the lengths don't match exactly, which is safer whenever mismatched lengths would actually indicate a bug.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. What is the for-else clause, and when does the else block actually execute?",
+              "a": "The else block attached to a for loop runs only if the loop completes all its iterations naturally, without a break statement ever firing. It's most commonly used in search-style loops to distinguish between finding a match and breaking early, versus checking every item and finding nothing — removing the need for a separate boolean flag variable.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. What actually happens internally when Python executes a for loop?",
+              "a": "Python calls iter() on the iterable to get an iterator object, then repeatedly calls next() on that iterator to fetch each item, binding it to the loop variable and running the loop body. When next() raises a StopIteration exception, Python catches it internally and ends the loop cleanly — this happens automatically and is why for loops can never accidentally become infinite the way while loops can, as long as the iterable is finite.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q9. What's the difference between iterating over a list versus a generator with a for loop?",
+              "a": "A list can be iterated over multiple times because calling iter() on it produces a fresh iterator each time. A generator, once exhausted (its next() calls have already raised StopIteration), cannot be reset or reused — looping over an already-consumed generator a second time simply does nothing, since iter() on a generator returns itself rather than a new independent iterator.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q10. When should you use a plain for loop instead of a list comprehension?",
+              "a": "Use a plain for loop when the loop body involves multiple statements, side effects like printing or API calls, needs to break early or use an else clause, or would require deeply nested logic that a comprehension can't express clearly. List comprehensions are best reserved for simple, single-expression transformations or filters that fit comfortably on one readable line.",
+              "tag": "Frequently Asked"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What does this loop print? for i in range(3, 0, -1): print(i)",
+              "a": "It prints 3, 2, 1, each on its own line. range(3, 0, -1) starts at 3, decrements by 1 each step (because of the -1 step argument), and stops before reaching 0 (the stop value is exclusive), producing exactly 3, 2, 1.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What does for x in {'a': 1, 'b': 2}: print(x) actually output?",
+              "a": "It prints a and b — the dictionary's keys only, not the values 1 and 2. Iterating directly over a dictionary always yields its keys by default; you'd need .values() or .items() to access the associated values.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Why does this code produce a wrong result? nums = [1, 2, 2, 3]; for n in nums: if n == 2: nums.remove(n) — expected output [], actual output?",
+              "a": "The actual output is [2, 3], not the expected fully-cleared list. Removing the first 2 shifts the second 2 into the position the loop has already passed (since indexes shift left by one after removal), so the loop's next index skips over it entirely. This is the classic mutation-while-iterating bug — the fix is to iterate over nums[:] (a copy) or build a new filtered list instead.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "4. What's the output of: for name, age in zip(['A', 'B', 'C'], [25, 30]): print(name, age)?",
+              "a": "It prints 'A 25' and 'B 30' only — two pairs, not three. zip() silently stops at the shortest iterable (the age list, with only 2 items), so 'C' is dropped entirely without any error or warning.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. What does list(enumerate(['x', 'y', 'z'], start=5)) return?",
+              "a": "[(5, 'x'), (6, 'y'), (7, 'z')]. The start=5 parameter shifts the starting index used for enumeration to 5 instead of the default 0, while the pairing with the actual items stays the same, just offset by the given starting number.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. Does the else block execute in this loop? for i in range(5): if i == 10: break else: print('completed')",
+              "a": "Yes, 'completed' is printed. The break condition (i == 10) can never actually be true since range(5) only produces 0 through 4, so the loop always finishes all its iterations naturally without ever hitting the break statement — meaning the else block runs as expected.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What error does zip(['a','b','c'], [1,2], strict=True) raise, and why?",
+              "a": "It raises ValueError: zip() argument 2 is shorter than argument 1, because strict=True (available since Python 3.10) requires all input iterables to have exactly matching lengths, and here the second list has only 2 items while the first has 3, triggering an immediate, loud failure instead of zip()'s normal silent truncation behavior.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Convert this for loop into a list comprehension: result = []; for x in range(10): if x % 3 == 0: result.append(x * x)",
+              "a": "result = [x * x for x in range(10) if x % 3 == 0]. This produces [0, 9, 36, 81] — squaring only the numbers from 0 to 9 that are divisible by 3 (0, 3, 6, 9), combining the filter condition and the transformation into a single readable line.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Mastering the For Loop",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The for loop is the tool you'll reach for more than any other single construct in Python, and it rewards you the moment you stop treating it like a counting loop from another language. Iterate over items directly. Reach for <code>enumerate()</code> only when you actually need the index, <code>zip()</code> only when you're genuinely walking two sequences together, and a comprehension only when the logic fits comfortably on one clear line."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If there's one habit worth carrying forward from this entire guide, it's this: the moment you're about to call <code>.remove()</code>, <code>.append()</code>, or <code>.pop()</code> on the same list you're currently looping over, stop and ask whether you should be iterating over a copy or building a new list instead. That single pause catches one of the sneakiest, most silent bugs in everyday Python — the kind that doesn't crash, doesn't warn you, and just quietly gives you wrong output until someone notices the numbers don't add up."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Tool", "Use It When..."],
+          "rows": [
+            ["for item in collection:", "You need each item directly — the default, most common case"],
+            ["for i in range(n):", "You need a fixed count of repetitions, not tied to any existing collection"],
+            ["enumerate(collection)", "You need both the item AND its position"],
+            ["zip(a, b)", "You're walking two or more related sequences together, position by position"],
+            ["for k, v in d.items():", "You need both keys and values from a dictionary"],
+            ["List comprehension", "A simple, single-line transformation or filter — not complex, multi-step logic"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Next, pair this with a solid grip on generators and the <code>yield</code> keyword — once you understand that a for loop is really just repeatedly calling <code>next()</code> under the hood, generators stop feeling like a separate, mysterious topic and start feeling like the natural next step in the exact same mental model you already have."
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "What is the difference between a for loop and a while loop in Python?",
+        "a": "A for loop iterates over the items of a known iterable — a list, string, range, dictionary, etc. — and terminates automatically once the iterable is exhausted. A while loop repeats based on a condition you control manually, with no automatic termination, making it better suited for situations where the number of iterations isn't known in advance."
+      },
+      {
+        "q": "Why does range(1, 10) not include the number 10?",
+        "a": "range()'s stop value is always exclusive in Python, consistent with how slicing works throughout the language. range(1, 10) produces numbers from 1 up to but not including 10, giving you 1 through 9. To include 10, you'd need range(1, 11)."
+      },
+      {
+        "q": "How do I loop over a list and get both the index and the value?",
+        "a": "Use enumerate(), like for index, value in enumerate(my_list):. This is the standard, idiomatic way to get both the position and the item together, without manually tracking a counter variable."
+      },
+      {
+        "q": "Why is my for loop skipping items when I remove elements from the list inside it?",
+        "a": "Removing an item from a list while iterating over it directly shifts all remaining items left by one position, but the loop's internal tracking doesn't account for that shift, causing it to skip whatever item slides into an already-visited spot. Iterate over a copy using my_list[:] instead, or build a new list with a list comprehension rather than mutating the original during the loop."
+      },
+      {
+        "q": "What does zip() do if the lists being combined have different lengths?",
+        "a": "By default, zip() stops as soon as the shortest input is exhausted, silently discarding any leftover items from longer inputs without raising an error. If mismatched lengths should be treated as a bug in your case, use zip(a, b, strict=True), available since Python 3.10, which raises a ValueError instead of silently truncating."
+      },
+      {
+        "q": "Should I use a for loop or a list comprehension?",
+        "a": "Use a list comprehension for simple, single-expression transformations or filters that read clearly on one line — [x*2 for x in nums]. Use a regular for loop when the logic involves multiple statements, side effects, early exits with break, or nested conditions that would make a comprehension hard to read at a glance."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python While Loop", "path": "/python/python-while-loop" },
+    "next": { "label": "Next: Python Break Continue →", "path": "/python/python-break-continue" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Loop Type",       "dd": "For-each (iterates items, not a counter)" },
+      { "dt": "Under the Hood", "dd": "Calls iter() then next() repeatedly" },
+      { "dt": "Key Helpers",    "dd": "range(), enumerate(), zip()" },
+      { "dt": "Supports else",  "dd": "Yes — runs only if no break occurred" },
+      { "dt": "range() Bound",  "dd": "Upper bound always exclusive" },
+      { "dt": "Common Bug",    "dd": "Mutating a list while iterating over it" }
+    ],
+    "relatedArticles": [
+      { "label": "Python While Loop",    "path": "/python/python-while-loop" },
+      { "label": "Python Control Flow",  "path": "/python/python-controlflow" },
+      { "label": "Python Match Case",    "path": "/python/python-match-case" },
+      { "label": "Python Functions",     "path": "/python/python-functions" },
+      { "label": "Python List Comprehension", "path": "/python/python-list-comprehension" },
+      { "label": "Python Generators",    "path": "/python/python-generators" },
+      { "label": "Python Dictionaries",  "path": "/python/python-dictionaries" },
+      { "label": "Python Operators",     "path": "/python/python-operators" }
+    ],
+    "tags": ["for loop","range function","enumerate","zip","for else","nested loop","list comprehension","iterator","StopIteration","mutation bug","python loops"]
+  }
+}

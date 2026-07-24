@@ -1,0 +1,892 @@
+{
+  "meta": {
+    "title": "What are Python Decorators? | Python Decorators Tutorial 2026 | Tech Sustainify",
+    "description": "Learn Python decorators in depth with this complete beginner-friendly guide 2026. Covers first-class functions, closures, the @ syntax, function decorators, decorators with arguments, class decorators, functools.wraps, chaining decorators, and real-world use cases.",
+    "keywords": "python decorators, what is a decorator in python, function decorators, closures python, @ syntax python, functools wraps, decorator with arguments, class decorators, chaining decorators, higher order functions python, python for beginners 2026",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-decorators/",
+    "ogTitle": "What are Python Decorators? Complete Guide 2026 | Tech Sustainify",
+    "ogDescription": "Complete beginner-friendly guide to Python decorators. Learn closures, the @ syntax, decorators with arguments, functools.wraps, class decorators, and real-world uses.",
+    "ogUrl": "https://techsustainify.com/python/python-decorators/",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "32 minutes",
+    "twitterLevel": "Beginner to Intermediate",
+    "schemaDatePublished": "2024-02-18",
+    "schemaDateModified": "2026-03-22",
+    "schemaProficiencyLevel": "Beginner to Intermediate",
+    "schemaWordCount": 8000
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python Decorators" }
+  ],
+
+  "articleHeader": {
+    "badge": "🐍 Python",
+    "title": "Python Decorators — The Complete Guide",
+    "subtitle": "A deep, beginner-friendly walkthrough of Python decorators — covering first-class functions, closures, the @ syntax, decorators with arguments, class decorators, functools.wraps, chaining decorators, and why decorators are one of Python's most powerful metaprogramming tools."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-22", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time", "value": "32 min" },
+    { "icon": "🎯", "label": "Level", "value": "Beginner to Intermediate" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-are-decorators",
+      "title": "What is a Decorator in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>decorator</strong> is a function that takes another function (or class) as input, wraps additional behaviour around it, and returns a new callable in its place — all without changing a single line of the original function's own source code. In everyday terms, a decorator lets you attach reusable, extra behaviour — logging, timing, access control, caching, validation — to any function simply by placing a special marker directly above its definition."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "That special marker is the <strong>@ syntax</strong>. Writing <code>@my_decorator</code> immediately above a function definition is Python's shorthand for a very ordinary idea: take the function defined below, pass it into <code>my_decorator</code>, and rebind the original function's name to whatever <code>my_decorator</code> returns. Nothing about this requires new language machinery beyond functions themselves — decorators are, at their core, just <strong>functions that operate on other functions</strong>. The <code>@</code> symbol is purely syntactic sugar that makes an extremely common pattern easier to read and write."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Decorators are only possible because Python treats functions as <strong>first-class objects</strong>. A function in Python can be assigned to a variable, stored in a list or dictionary, passed as an argument to another function, and returned as the result of another function — exactly like an integer, a string, or any other value. Without this property, the entire decorator pattern would not exist, because a decorator's whole job is to accept a function as an ordinary argument and hand back a different function as an ordinary return value."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Decorators were added to make a specific, recurring problem easier to solve cleanly: applying the same small piece of extra behaviour to many different functions, without duplicating that behaviour's code inside every single function, and without permanently tangling unrelated concerns — like logging or timing — into the core logic of each function. Before decorators existed as a language feature, developers achieved the same effect manually, by writing <code>my_function = my_wrapper(my_function)</code> directly after each function definition. The <code>@</code> syntax simply moves that same reassignment to sit visually right above the function it applies to, making the intent immediately obvious to anyone reading the code."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In modern Python, decorators are everywhere, even in code written by complete beginners. <code>@staticmethod</code> and <code>@classmethod</code> inside a class body, <code>@property</code> for turning a method into an attribute-like value, <code>@app.route(...)</code> in web frameworks like Flask, <code>@pytest.fixture</code> in testing frameworks, and <code>@dataclass</code> for automatically generating boilerplate class code are all decorators. Understanding how decorators work, therefore, is essential not just for writing your own — it is essential for reading almost any non-trivial Python codebase."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-decorators-exist",
+      "title": "The Problem Decorators Solve",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "To appreciate why decorators matter, it helps to imagine the alternative. Suppose you have ten different functions across a codebase, and you want every one of them to log how long it took to run. Without decorators, you would need to manually add timing code — recording a start time, calling the function, recording an end time, and printing the difference — inside each of the ten functions individually. This duplicates the same handful of lines ten times, and if you ever need to change how the timing works (say, to log to a file instead of printing), you must find and update all ten copies."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A decorator turns this scenario around completely. You write the timing logic exactly once, inside a single decorator function. Then, applying it to any function — old or new — is as simple as adding one line, <code>@timer</code>, directly above that function's definition. If the timing behaviour ever needs to change, there is exactly one place to update it, and every decorated function picks up the change automatically the next time it runs."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This distinction becomes especially valuable in three common situations. The first is <strong>cross-cutting concerns</strong> — behaviour that logically applies across many unrelated functions, such as logging, timing, authentication checks, caching, or retry logic, none of which is really 'part of' any individual function's core purpose. The second is <strong>enforcing consistent rules</strong> across an API or framework, such as ensuring every registered web route requires a valid login, or every public function's inputs are validated the same way. The third is <strong>keeping core logic readable</strong> — a function decorated with <code>@cache</code> or <code>@require_login</code> communicates its extra behaviour in a single word at the top, rather than burying that behaviour inside several extra lines mixed in with the function's actual work."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Decorators also solve a second, less obvious problem: they let you <strong>modify or extend behaviour without touching original source code</strong>. This matters enormously when the function being decorated lives in code you don't own or shouldn't modify — a third-party library function, or a framework's internal method. By wrapping such a function with a decorator rather than editing it directly, you add new behaviour cleanly, from the outside, in a way that is easy to remove later and does not risk introducing bugs into code that already works."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "first-class-functions-and-closures",
+      "title": "First-Class Functions and Closures — The Foundations Decorators Rest On",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Two ideas make decorators possible in the first place: first-class functions, and closures. Understanding both — even before writing a single decorator — makes everything that follows far more intuitive."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            { "icon": "🎁", "title": "Functions Are Objects", "text": "In Python, a function is just another kind of object, the same way an integer or a string is. It has a type, it can be inspected, and it can be handled anywhere any other value can be handled." },
+            { "icon": "📦", "title": "Assign to a Variable", "text": "def greet(): ... followed by handle = greet does not call greet — it simply gives the function object a second name. Both names now refer to exactly the same underlying function." },
+            { "icon": "➡️", "title": "Pass as an Argument", "text": "A function can be passed into another function just like any other value, letting one function's behaviour be customised by handing it a different function to call internally." },
+            { "icon": "🔙", "title": "Return from a Function", "text": "A function can build and return another function as its result. This returned function can be called later, entirely independent of the function that created it." },
+            { "icon": "🏠", "title": "Nested (Inner) Functions", "text": "A function can be defined entirely inside another function's body. The inner function is a completely ordinary function object — it just happens to be created each time the outer function runs." },
+            { "icon": "🔒", "title": "Closures", "text": "When an inner function references a variable from its enclosing (outer) function's scope, and is then returned or passed elsewhere, it carries that variable's value along with it — this bundle of function plus remembered variables is called a closure." },
+            { "icon": "🧠", "title": "Enclosing Scope Lookup", "text": "Python resolves variable names using the LEGB rule (Local, Enclosing, Global, Built-in). A closure's remembered variables live in the Enclosing scope, one level up from the inner function's own Local scope." },
+            { "icon": "🛠️", "title": "nonlocal Keyword", "text": "If a closure needs to modify (not just read) a variable from its enclosing scope, the nonlocal keyword must be used inside the inner function to signal that assignment should update the outer variable, rather than creating a new local one." }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A closure is easiest to understand through a small example: imagine an outer function <code>make_multiplier(factor)</code> that defines and returns an inner function <code>multiply(x)</code>, where <code>multiply</code> simply computes <code>x * factor</code>. Even after <code>make_multiplier</code> has finished running and its own local scope would normally be discarded, the returned <code>multiply</code> function still 'remembers' the specific value of <code>factor</code> that was passed in when it was created. Calling <code>make_multiplier(3)</code> and <code>make_multiplier(10)</code> separately produces two independent <code>multiply</code> functions, each carrying its own remembered <code>factor</code>. This remembered state is exactly the mechanism that lets a decorator's wrapper function 'remember' the original function it is wrapping, long after the decorator itself has finished running."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "decorator-features",
+      "title": "Key Characteristics of Python Decorators",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Decorators combine several distinct Python mechanics into one clean, reusable pattern. Here are the core characteristics every developer should internalise:"
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            { "icon": "🎭", "title": "A Decorator Is Just a Function", "text": "There is no special decorator type in Python. A decorator is simply any callable that accepts a function and returns a callable — usually a new, wrapped function." },
+            { "icon": "🔗", "title": "@ Syntax Is Sugar", "text": "@my_decorator above a def statement is exactly equivalent to writing func = my_decorator(func) directly below the original function definition — nothing more, nothing less." },
+            { "icon": "🎁", "title": "Wraps Without Editing", "text": "A decorator adds behaviour around a function's call — before it runs, after it returns, or both — without needing to change the original function's own source code at all." },
+            { "icon": "🧩", "title": "Built on Closures", "text": "The wrapper function returned by a decorator is a closure that remembers the original function it was given, allowing it to call that original function whenever the wrapper itself is invoked." },
+            { "icon": "🔁", "title": "Runs at Definition Time", "text": "A decorator's outer logic executes once, immediately when the decorated function is defined — not each time the function is later called. Only the returned wrapper runs on every call." },
+            { "icon": "📥", "title": "Transparent Arguments", "text": "A well-written decorator uses *args and **kwargs in its wrapper so it can decorate functions with any signature, without needing to know their specific parameters in advance." },
+            { "icon": "🏷️", "title": "Preserves Identity with functools.wraps", "text": "Applying functools.wraps inside a decorator copies the original function's name, docstring, and metadata onto the wrapper, so introspection tools and documentation generators still see the original function's identity." },
+            { "icon": "🎚️", "title": "Can Accept Their Own Arguments", "text": "A decorator can itself take parameters (like @retry(times=3)) by adding an extra outer layer of function that returns the actual decorator, configured with those parameters." },
+            { "icon": "🧱", "title": "Stackable / Chainable", "text": "Multiple decorators can be stacked above a single function, and are applied from the bottom decorator upward, with each wrapping the result of the one below it." },
+            { "icon": "🏛️", "title": "Can Decorate Classes Too", "text": "Decorators are not limited to functions — a class decorator receives a class object and can add methods, wrap its __init__, or return a modified or entirely different class." },
+            { "icon": "🧮", "title": "Common Built-in Decorators", "text": "Python ships several decorators in the standard library and as built-ins, including @staticmethod, @classmethod, @property, @functools.lru_cache, and @functools.wraps itself." },
+            { "icon": "🪄", "title": "A Form of Metaprogramming", "text": "Decorators let code modify how other code behaves, making them one of Python's clearest, most approachable entry points into metaprogramming." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "How a Decorator Executes — Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It helps to visualise exactly what happens, step by step, from the moment Python parses a decorated function definition to the moment the decorated function is actually called later in the program."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "📝 Define Original Function", "sublabel": "def say_hello(): ...", "type": "start" },
+            { "id": "2", "label": "🏷️ @my_decorator Applied", "sublabel": "Parsed directly above the def", "type": "process" },
+            { "id": "3", "label": "📤 Function Passed In", "sublabel": "my_decorator(say_hello)", "type": "data" },
+            { "id": "4", "label": "🏗️ Wrapper Function Built", "sublabel": "Inner wrapper() closure created", "type": "process" },
+            { "id": "5", "label": "🔁 Name Rebound", "sublabel": "say_hello = wrapper", "type": "decision" },
+            { "id": "6", "label": "▶️ Later: say_hello() Called", "sublabel": "Actually calls wrapper()", "type": "process" },
+            { "id": "7", "label": "⚙️ Extra Behaviour Runs", "sublabel": "Before/after logic executes", "type": "process" },
+            { "id": "8", "label": "🎯 Original Function Called", "sublabel": "Inside the wrapper, via closure", "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "decorator syntax parsed" },
+            { "from": "2", "to": "3", "label": "function object handed over" },
+            { "from": "3", "to": "4", "label": "decorator builds wrapper" },
+            { "from": "4", "to": "5", "label": "decorator returns wrapper" },
+            { "from": "5", "to": "6", "label": "program continues running" },
+            { "from": "6", "to": "7", "label": "wrapper starts executing" },
+            { "from": "7", "to": "8", "label": "wrapper calls original" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Key insight: everything from step 2 through step 5 happens exactly once, at the moment the module is loaded and the function is defined — it does <em>not</em> repeat every time <code>say_hello()</code> is called later. Only steps 6 through 8 repeat on every call."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "how-decorators-work",
+      "title": "How Decorators Work — Syntax, Rebinding, and the Call Chain",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "To really understand decorators, it helps to separate the idea into three layers: the <strong>@ syntax</strong> itself (what Python actually does when it sees this notation), the <strong>decorator function</strong> (the code you write, which receives a function and returns another), and the <strong>wrapper function</strong> (the inner closure that actually runs in place of the original whenever the decorated name is called)."
+        },
+        { "type": "subHeading", "text": "🔤 What @ Actually Means" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Writing <code>@my_decorator</code> directly above <code>def say_hello():</code> is parsed by Python as pure syntactic sugar for a two-step process that could equally be written out by hand: first define <code>say_hello</code> normally, and then immediately reassign <code>say_hello = my_decorator(say_hello)</code>. The <code>@</code> syntax exists purely so this reassignment can sit visually right above the function it modifies, rather than being written out separately below — a small but meaningful readability improvement once you're applying several decorators across a file."
+        },
+        { "type": "subHeading", "text": "🏗️ The Decorator Function's Job" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A decorator function receives exactly one argument — the function being decorated — and must return a callable to take its place. In the overwhelming majority of real decorators, that returned callable is a small <strong>inner function</strong>, conventionally named <code>wrapper</code>, defined right inside the decorator's own body. Because this inner function is defined inside the decorator, it forms a closure over the original function, meaning it can call that original function later, long after the decorator itself has already finished running and returned."
+        },
+        { "type": "subHeading", "text": "🎯 What Happens When the Decorated Function Is Called" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "After decoration, the name <code>say_hello</code> no longer refers to the original function at all — it refers to the <code>wrapper</code> function that the decorator returned. So when your code later calls <code>say_hello()</code>, it is actually calling <code>wrapper()</code>. Inside <code>wrapper</code>, the decorator's author is free to run any code before calling the original function, any code after it returns, to change the arguments passed to it, to change the value it returns, or even to skip calling the original function altogether under some condition."
+        },
+        { "type": "subHeading", "text": "📥 Handling Arbitrary Function Signatures" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A decorator meant to be reusable across many different functions cannot know in advance what parameters those functions will accept. The standard solution is to give the wrapper function the signature <code>def wrapper(*args, **kwargs):</code>, which accepts any combination of positional and keyword arguments, and then forward them unchanged into the call to the original function inside the wrapper — <code>original_function(*args, **kwargs)</code>. This pattern is so common that recognising <code>*args, **kwargs</code> inside a wrapper is often the fastest way to identify a general-purpose decorator at a glance."
+        },
+        { "type": "subHeading", "text": "🔍 Why the Original Function Object Never Disappears" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A question that trips up many newcomers is: once the name <code>say_hello</code> has been reassigned to point at <code>wrapper</code>, what happened to the original function object itself? The answer is that it hasn't gone anywhere — it still exists, fully intact, in memory. It simply no longer has a name bound to it at the module level; instead, the only remaining reference to it lives inside the closure of the <code>wrapper</code> function that the decorator created. This is exactly why the wrapper is able to call it later: the wrapper's closure holds a direct reference to the original function object, keeping it alive for as long as the wrapper itself exists, even though its original module-level name has been reused for something else entirely."
+        },
+        { "type": "subHeading", "text": "🧾 Positional-or-Keyword Ambiguity and Argument Ordering" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "One easy-to-overlook subtlety when writing a general-purpose wrapper is that Python does not by itself know which of the original function's parameters were meant to be positional and which were meant to be keyword-only — it simply forwards whatever combination of <code>args</code> and <code>kwargs</code> it happened to receive from the caller. This is usually harmless, since forwarding <code>*args, **kwargs</code> preserves whatever calling convention the original caller used. It becomes relevant only when a decorator's own logic needs to inspect or modify a specific argument by name — for example, a validation decorator that wants to check the value of a parameter called <code>user_id</code> regardless of whether the caller passed it positionally or as a keyword. In such cases, decorator authors often reach for <code>inspect.signature()</code> to bind the incoming <code>args</code> and <code>kwargs</code> against the original function's actual parameter names, producing a dictionary-like mapping that can be inspected reliably no matter how the caller chose to supply their arguments."
+        },
+        { "type": "subHeading", "text": "🧭 Decorators and Return Values" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It's worth being explicit about a detail that is easy to get wrong when first writing a wrapper: whatever the wrapper function itself returns is what the caller of the decorated function actually receives — not automatically whatever the original function returned. If a wrapper calls <code>func(*args, **kwargs)</code>, captures the result in a variable, runs some additional logic, but then forgets to include a final <code>return result</code> statement, the decorated function will silently start returning <code>None</code> to every caller, even though the original undecorated function always returned a meaningful value. This is one of the more common, and more confusing, decorator bugs precisely because the function still appears to 'work' — it runs without raising any error — while quietly discarding its actual return value."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "functools-wraps",
+      "title": "functools.wraps — Preserving Function Identity",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "There is a subtle but important side effect of decorating a function the naive way: the name that used to point to the original function now points to the <code>wrapper</code> function instead. This means that unless something is done about it, introspection attributes like <code>__name__</code>, <code>__doc__</code>, and <code>__module__</code> on the decorated function will actually report the wrapper's own metadata — typically the literal string <code>'wrapper'</code> as the function's name, and <code>None</code> as its docstring — rather than anything describing the original function."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This matters more than it might first appear. Debugging tools, error tracebacks, automatically generated documentation, and testing frameworks all frequently rely on a function's <code>__name__</code> and <code>__doc__</code> to describe what went wrong or what a piece of code does. If every decorated function in a codebase reports itself simply as <code>'wrapper'</code>, tracing bugs and generating accurate documentation both become noticeably harder."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The standard library solves this with <code>functools.wraps</code>, itself a decorator, applied to the inner <code>wrapper</code> function inside your own decorator's definition. Applying <code>@functools.wraps(original_function)</code> directly above the <code>def wrapper(...)</code> line copies the original function's <code>__name__</code>, <code>__doc__</code>, <code>__module__</code>, and a handful of other attributes onto the wrapper, so that the decorated function continues to look, to every introspection tool, exactly like the function it actually is. As a rule, any decorator intended for reuse beyond a single quick script should always apply <code>functools.wraps</code> to its wrapper — omitting it is one of the most common small mistakes in decorator code."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "decorator-vs-plain-wrapping",
+      "title": "Decorators vs Manual Wrapping vs Inheritance — Key Differences",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Beginners sometimes wonder whether a decorator is really necessary, when the same effect could seemingly be achieved by manually wrapping a function call, or by using inheritance in a class-based design. This comparison lays out how each approach actually behaves."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Decorator", "Manual Wrapping (call site)", "Class Inheritance"],
+          "rows": [
+            ["Where behaviour is added", "Once, at the function definition", "Repeated at every call site that needs it", "In a subclass, around specific methods"],
+            ["Reusability across functions", "✅ Very high — apply to any function", "❌ Low — must repeat wrapping code every time", "⚠️ Only within related classes"],
+            ["Risk of forgetting to apply it", "Low — visible right above the definition", "High — easy to forget at some call sites", "Low, once the class hierarchy is set up"],
+            ["Works on unrelated functions", "✅ Yes — no shared class needed", "✅ Yes, but with duplicated code", "❌ No — requires a common class structure"],
+            ["Readability at the definition", "✅ Intent is visible in one line (@decorator)", "❌ Extra logic clutters every call site", "⚠️ Behaviour can be spread across several classes"],
+            ["Typical use case", "Logging, timing, caching, access control", "One-off, rarely reused wrapping", "Behaviour tied to an object's type/identity"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "diagram-heading",
+      "title": "Decorator Internal Architecture Diagram",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The diagram below shows what actually happens, layer by layer, from the moment Python parses a decorated function definition down to the eventual call of the original function inside the wrapper."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Your Source Code",
+              "color": "#6366f1",
+              "items": ["Original function definition", "@decorator syntax above it", "Later call site: original_function(...)"]
+            },
+            {
+              "label": "Decoration Time (Once)",
+              "color": "#0ea5e9",
+              "items": ["Decorator function invoked with original function", "Inner wrapper() function defined as a closure", "functools.wraps copies over metadata"]
+            },
+            {
+              "label": "Name Rebinding",
+              "color": "#10b981",
+              "items": ["Original name now points to wrapper", "Original function only reachable via closure", "Module-level namespace updated"]
+            },
+            {
+              "label": "Call Time (Every Call)",
+              "color": "#f59e0b",
+              "items": ["wrapper(*args, **kwargs) executes", "Pre-call logic (logging, timing, checks)", "Original function invoked via closure reference"]
+            },
+            {
+              "label": "CPython Interpreter (PVM)",
+              "color": "#ef4444",
+              "items": ["Executes wrapper bytecode", "Resolves closure cell for original function", "Returns wrapper's result to the caller"]
+            },
+            {
+              "label": "Caller",
+              "color": "#8b5cf6",
+              "items": ["Receives the wrapper's final return value", "Sees decorated function's preserved __name__/__doc__"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "Your First Python Decorator",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Just as every Python journey starts with a <strong>Hello World</strong> program, every decorator journey starts with a tiny decorator that simply announces when a function starts and finishes. It beautifully illustrates the core idea: extra behaviour wraps around the original call."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "first_decorator.py",
+          "lines": [
+            "import functools",
+            "",
+            "def announce(func):",
+            "    @functools.wraps(func)",
+            "    def wrapper(*args, **kwargs):",
+            "        print(f\"Starting {func.__name__}\")",
+            "        result = func(*args, **kwargs)",
+            "        print(f\"Finished {func.__name__}\")",
+            "        return result",
+            "    return wrapper",
+            "",
+            "@announce",
+            "def say_hello(name):",
+            "    print(f\"Hello, {name}!\")",
+            "",
+            "say_hello(\"Ashish\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["Starting say_hello", "Hello, Ashish!", "Finished say_hello"]
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "import functools\n\ndef announce(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        print(f\"Starting {func.__name__}\")\n        result = func(*args, **kwargs)\n        print(f\"Finished {func.__name__}\")\n        return result\n    return wrapper\n\n@announce\ndef say_hello(name):\n    print(f\"Hello, {name}!\")\n\nsay_hello(\"World\")"
+        },
+        {
+          "type": "subHeading",
+          "text": "Line-by-Line Explanation"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>def announce(func):</code> — the decorator itself; it receives whatever function will be decorated as its single parameter, here named func." },
+            { "html": "<code>@functools.wraps(func)</code> — applied to the inner wrapper, this copies func's __name__ and __doc__ onto wrapper so the decorated function's identity is preserved." },
+            { "html": "<code>def wrapper(*args, **kwargs):</code> — the inner closure that will actually run in place of the original function; *args/**kwargs let it accept any signature." },
+            { "html": "<code>result = func(*args, **kwargs)</code> — calls the original function, forwarding whatever arguments the caller supplied, and captures its return value." },
+            { "html": "<code>return wrapper</code> — the decorator hands back the wrapper function; this is what gets bound to say_hello after decoration." },
+            { "html": "<code>@announce</code> above def say_hello(name):</code> — equivalent to writing say_hello = announce(say_hello) directly after the function's definition." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "decorators-with-arguments",
+      "title": "Decorators That Accept Their Own Arguments",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "So far, every decorator shown takes exactly one argument — the function being decorated — because that is what the <code>@decorator</code> syntax passes to it directly. But it is extremely common to want a decorator that is itself configurable, written as <code>@retry(times=3)</code> or <code>@cache(expire_seconds=60)</code>, where the value inside the parentheses customises the decorator's behaviour. Achieving this requires one additional layer of nested functions."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The trick is that <code>@retry(times=3)</code> is not, by itself, a decorator — it is a <strong>call</strong> that must first return a decorator, which Python then applies to the function underneath it. So a decorator-with-arguments is really structured as three nested layers: an outer function that accepts the configuration arguments (<code>times</code>, in this example) and returns the actual decorator; a middle function — the real decorator — that accepts the function to be decorated and returns the wrapper; and the innermost <code>wrapper</code> function itself, which runs on every call and has access, via closures, to both the configuration arguments and the original function."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>def retry(times):</code> — the outermost layer, called directly as retry(3); its job is only to remember times and return the real decorator." },
+            { "html": "<code>def decorator(func):</code> — the middle layer, which Python calls automatically with the function underneath @retry(3); its job is to remember func and return the wrapper." },
+            { "html": "<code>def wrapper(*args, **kwargs):</code> — the innermost layer, which actually runs on every call, using both times and func from the enclosing closures to implement the retry logic." },
+            { "html": "<code>@retry(times=3)</code> above <code>def fetch_data():</code> — expands to fetch_data = retry(times=3)(fetch_data), clearly showing the two separate calls happening: first configuring the decorator, then applying it." }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A closely related, more flexible pattern lets the same decorator be used both with and without parentheses — for example allowing both <code>@my_decorator</code> and <code>@my_decorator(option=True)</code> to work on the same decorator implementation. This is typically achieved by checking, inside the outer function, whether it was called directly with a function (the no-parentheses case) or with keyword configuration (the with-parentheses case), and branching accordingly. While convenient for library authors, this dual-mode pattern adds real complexity, and most decorators are perfectly fine committing to just one style — either always used with parentheses, or never."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "class-decorators",
+      "title": "Class Decorators and Decorating Methods",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Everything covered so far has decorated plain functions, but the decorator pattern applies equally to <strong>methods inside a class</strong> and to <strong>entire classes</strong> themselves, since both are, underneath, still just callables that a decorator can accept and replace."
+        },
+        { "type": "subHeading", "text": "🔧 Decorating Methods" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A decorator applied to a method inside a class body works essentially the same way as one applied to a standalone function, with one detail to keep in mind: an instance method's first parameter is conventionally <code>self</code>, so a wrapper intended to decorate methods must forward <code>self</code> along with everything else — which the general <code>*args, **kwargs</code> pattern already handles correctly, since <code>self</code> simply arrives as the first positional argument like any other."
+        },
+        { "type": "subHeading", "text": "🏛️ Class Decorators" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>class decorator</strong> is a decorator applied directly above a <code>class</code> definition rather than a <code>def</code>. Python passes the entire class object into the decorator, and whatever the decorator returns takes the class's place, exactly as with functions. A class decorator can add new methods or attributes onto the class, wrap existing methods (including <code>__init__</code>), record every class it decorates into some external registry, or even return a completely different class or a factory function in its place. The built-in <code>@dataclasses.dataclass</code> decorator is a well-known real-world example: applying it to a class automatically generates an <code>__init__</code>, a readable <code>__repr__</code>, and comparison methods, purely by inspecting the class's declared type-annotated attributes."
+        },
+        { "type": "subHeading", "text": "🧬 Decorators vs Metaclasses" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Class decorators are often compared to <strong>metaclasses</strong>, since both can modify a class's final shape. The key difference is scope and simplicity: a class decorator runs once, after the class body has already been fully executed and the class object already exists, and simply returns a (possibly modified) class in its place. A metaclass, by contrast, controls the entire process of how the class is constructed in the first place. For the overwhelming majority of practical needs — adding methods, registering classes, validating class-level configuration — a class decorator is simpler to write, easier to reason about, and should be reached for well before a metaclass is considered."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "chaining-decorators",
+      "title": "Chaining (Stacking) Multiple Decorators",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It is entirely valid, and common in real code, to apply more than one decorator to the same function by stacking several <code>@decorator</code> lines directly above its definition. Understanding the exact order in which stacked decorators are applied is essential, because it directly determines the order in which their wrapped behaviour actually executes."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When several decorators are stacked, Python applies them from the <strong>bottom upward</strong> — the decorator closest to the function's own <code>def</code> line runs first, wrapping the original function, and each decorator above it then wraps the result of the one below. So with <code>@a</code>, <code>@b</code>, and <code>@c</code> stacked in that order above <code>def func():</code>, the actual effect is equivalent to <code>func = a(b(c(func)))</code>. This means that, at call time, execution order is reversed relative to how the wrapping happened: the outermost decorator's pre-call logic runs first (since it's the outermost wrapper being called), then the next one in, and so on inward, until finally the original function itself runs at the very centre — after which each wrapper's post-call logic unwinds back outward in the opposite order."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "Stacking order in source code, top to bottom: <code>@a</code>, then <code>@b</code>, then <code>@c</code>, then <code>def func():</code>" },
+            { "html": "Equivalent explicit wrapping: <code>func = a(b(c(func)))</code> — c wraps the original function first, then b wraps that, then a wraps that" },
+            { "html": "Execution order when func() is finally called: a's pre-call logic → b's pre-call logic → c's pre-call logic → original function body → c's post-call logic → b's post-call logic → a's post-call logic" },
+            { "html": "A useful mental model: reading decorators from the function definition upward tells you the order in which their logic 'wraps inward' toward the original call" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This ordering has real practical consequences. A decorator that checks user authentication should typically be stacked <em>above</em> (outside) a decorator that does expensive logging or caching, so that unauthenticated calls are rejected before any of that extra work is even attempted. Similarly, a decorator that catches and logs exceptions generally needs to sit outside any decorator whose own code might itself raise an exception, so that the logging decorator actually gets a chance to see and record it."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "builtin-decorators",
+      "title": "Common Built-In and Standard Library Decorators",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python itself, and its standard library, ship a handful of decorators that every developer encounters early on. Recognising what each one actually does under the hood demystifies a lot of otherwise-unexplained class syntax."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>@staticmethod</code> — marks a method that does not receive self (or cls) at all, behaving like a plain function that simply happens to live inside a class's namespace, mainly for organisational purposes." },
+            { "html": "<code>@classmethod</code> — marks a method that receives the class itself (conventionally named cls) as its first argument instead of an instance, commonly used for alternative constructors." },
+            { "html": "<code>@property</code> — turns a method into something that can be accessed like a plain attribute (without parentheses), commonly used to expose computed or validated values while keeping a clean, attribute-style interface." },
+            { "html": "<code>@functools.wraps</code> — copies metadata (name, docstring, module) from an original function onto a wrapper, preserving the decorated function's identity for introspection." },
+            { "html": "<code>@functools.lru_cache(maxsize=...)</code> — automatically caches a function's return values based on its arguments, so repeated calls with the same arguments skip recomputation entirely." },
+            { "html": "<code>@functools.singledispatch</code> — lets a function behave differently depending on the type of its first argument, effectively enabling simple type-based overloading in a dynamically typed language." },
+            { "html": "<code>@dataclasses.dataclass</code> — automatically generates boilerplate methods like __init__, __repr__, and __eq__ for a class, based on its declared, type-annotated attributes." },
+            { "html": "<code>@contextlib.contextmanager</code> — turns a specially structured generator function into a context manager usable with Python's with statement, without needing to write a full __enter__/__exit__ class." }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Studying the source code of a few of these — especially <code>functools.lru_cache</code> and <code>contextlib.contextmanager</code> — is one of the best ways to deepen your understanding of decorators, since they demonstrate real, production-quality decorator patterns solving genuinely useful problems, well beyond simple logging or timing examples."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Decorators",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Decorators are a powerful tool, but like every feature in Python, they come with genuine trade-offs. Knowing both sides helps you decide when reaching for a decorator is the right call — and when simpler, more explicit code is actually the better choice."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Eliminates Repeated Boilerplate", "text": "Common behaviour (logging, timing, validation) is written once and reused across as many functions as needed, with a single line at each application site." },
+            { "title": "Keeps Core Logic Focused", "text": "A function's own body stays focused purely on its central purpose, while cross-cutting concerns live cleanly outside it, inside the decorator." },
+            { "title": "Non-Invasive", "text": "Behaviour can be added to a function without editing its internals at all, which is especially valuable for code you don't own or shouldn't modify directly." },
+            { "title": "Easy to Toggle On or Off", "text": "Removing or commenting out a single @decorator line cleanly removes the extra behaviour, without needing to hunt down scattered inline code." },
+            { "title": "Composable via Stacking", "text": "Multiple independent behaviours can be layered onto the same function by stacking several decorators, each handling one concern." },
+            { "title": "Widely Understood Pattern", "text": "Because decorators are used throughout the standard library and popular frameworks, developers reading decorated code generally already understand the pattern, even if unfamiliar with a specific decorator." }
+          ],
+          "cons": [
+            { "title": "Can Obscure Control Flow", "text": "Heavily decorated code can make it harder to see, at a glance, exactly what will run and in what order — especially with several stacked decorators." },
+            { "title": "Debugging Can Be Trickier", "text": "Stepping through a decorated function in a debugger often means stepping through one or more wrapper layers first, adding extra noise to the process." },
+            { "title": "Silent Metadata Loss Without functools.wraps", "text": "Forgetting to apply functools.wraps causes decorated functions to lose their original __name__ and __doc__, breaking introspection and documentation tools." },
+            { "title": "Harder-to-Read Signatures", "text": "A wrapper using *args, **kwargs hides the original function's actual parameter names from tools that inspect function signatures directly, unless extra care is taken." },
+            { "title": "Overuse Leads to 'Magic'", "text": "Applying too many decorators, or overly clever ones, can make code behave in ways that are difficult to predict just from reading the decorated function itself." },
+            { "title": "Slight Performance Overhead", "text": "Every decorated call passes through at least one extra function call (the wrapper) before reaching the original function, which is usually negligible but can matter in extremely hot code paths." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "debugging-decorated-code",
+      "title": "Debugging and Testing Decorated Functions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Decorated functions introduce an extra layer of indirection that is worth understanding specifically from a debugging and testing perspective, since it changes how you should approach both activities compared to plain, undecorated functions."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When stepping through decorated code with an interactive debugger, you will typically find yourself stepping into the wrapper function first, rather than landing directly inside the original function's body. This is expected and correct behaviour — remember that the decorated name genuinely does point to the wrapper, so calling it genuinely does begin execution there. Once inside the wrapper, stepping further (rather than stepping over) will eventually take you into the original function's own code at the point where the wrapper calls it. Being comfortable with this extra hop is simply part of working effectively with decorated code, and most debuggers offer a way to step over uninteresting wrapper frames once you're used to the pattern."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Testing decorated functions deserves a small amount of extra care as well. If a decorator adds behaviour that is expensive, has side effects (like writing to a log file or a cache), or depends on external state (like a live network connection for a retry decorator), unit tests for the function's own core logic can become entangled with testing the decorator itself. A common, effective approach is to test the undecorated function's core logic separately — often by testing the plain function before decoration is applied, or by exposing it via a <code>__wrapped__</code> attribute, which <code>functools.wraps</code> conveniently sets automatically to point back at the original, undecorated function — and then write separate, focused tests specifically for the decorator's own added behaviour, using a small, deliberately simple function purely as a test subject."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-uses",
+      "title": "Where Are Decorators Used? — Real-World Applications",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Decorators are not just a classroom curiosity — they underpin real, everyday Python code across many domains. Here are the major places you will encounter, or should reach for, decorators in 2026:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🌐 Web Framework Routing", "text": " — Frameworks like Flask and FastAPI use decorators such as @app.route(\"/users\") or @app.get(\"/items\") to associate a URL path directly with the function that should handle requests to it, keeping routing declarations right next to the handler logic they describe." },
+            { "strong": "🔐 Authentication and Authorisation", "text": " — Decorators like @login_required or @requires_permission(\"admin\") are a common way to enforce access control consistently across many view functions or API endpoints, without repeating the same check inside every one." },
+            { "strong": "📝 Logging and Monitoring", "text": " — Wrapping functions with a logging decorator records when they were called, with what arguments, and what they returned (or whether they raised an exception), providing consistent observability across an entire codebase." },
+            { "strong": "⏱️ Timing and Performance Profiling", "text": " — A simple timing decorator records how long a function takes to execute, which is invaluable for quickly identifying slow code paths during development and performance tuning." },
+            { "strong": "💾 Caching / Memoisation", "text": " — Decorators like functools.lru_cache automatically store the results of expensive function calls, returning cached results instantly for repeated calls with the same arguments instead of recomputing them." },
+            { "strong": "🧪 Testing Frameworks", "text": " — Testing libraries like pytest use decorators extensively — @pytest.fixture to set up reusable test data, and @pytest.mark.parametrize to run the same test function against many different input values." },
+            { "strong": "🔁 Retry Logic", "text": " — A @retry(times=3) style decorator automatically re-attempts a function call that fails due to a transient error (such as a flaky network request), without cluttering the function's own logic with retry loops." },
+            { "strong": "✅ Input Validation", "text": " — Decorators can inspect a function's arguments before it runs, rejecting invalid input early with a clear error, keeping validation logic separate from the function's main computation." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Mistakes When Working With Decorators",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Even experienced developers occasionally trip over a handful of recurring decorator pitfalls. Being aware of them ahead of time saves a lot of confused debugging later."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Forgetting functools.wraps", "text": " — Omitting @functools.wraps(func) on the inner wrapper silently replaces the decorated function's __name__ and __doc__ with the wrapper's own, breaking introspection, debugging output, and auto-generated documentation." },
+            { "strong": "Not Forwarding All Arguments", "text": " — Writing a wrapper with a fixed signature instead of *args, **kwargs makes the decorator break the moment it's applied to a function with a different set of parameters than the one it was originally written and tested against." },
+            { "strong": "Confusing @decorator with @decorator()", "text": " — Applying a decorator-with-arguments without its parentheses (or vice versa for a plain decorator) is a very common source of confusing TypeErrors, since Python is either calling the wrong thing, or not calling something it needed to." },
+            { "strong": "Assuming Decorator Code Runs on Every Call", "text": " — Code written directly inside the outer decorator function (outside the inner wrapper) runs only once, at decoration time — not on every call to the decorated function. Logic meant to run per-call must live inside the wrapper itself." },
+            { "strong": "Misjudging Stacking Order", "text": " — Assuming stacked decorators are applied top-down rather than bottom-up leads to authentication, logging, or caching decorators running in an unintended order relative to each other." },
+            { "strong": "Overusing Decorators for Simple Logic", "text": " — Wrapping a function in a decorator purely to run one or two lines of straightforward code that would be just as clear written directly inside the function itself adds indirection without meaningful benefit." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-decorators",
+      "title": "Why Should You Learn Decorators in 2026?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Decorators are frequently described as an 'intermediate' Python topic, but in 2026 they are functionally a <strong>core skill</strong>, not an optional extra. Here's why every Python developer should be comfortable with them:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🌐 Every Modern Framework Relies on Them", "text": " — Flask, FastAPI, Django, pytest, and countless other widely used frameworks and libraries expose their core functionality through decorators; being unable to read decorator syntax comfortably makes working with any of them noticeably harder." },
+            { "strong": "🧵 A Gateway to Deeper Python Understanding", "text": " — Learning decorators forces a genuine, practical understanding of first-class functions and closures — concepts that pay off well beyond decorators themselves, throughout functional-style Python code." },
+            { "strong": "💼 A Common Interview Topic", "text": " — Questions about how the @ syntax works, why functools.wraps matters, or how decorator stacking order affects execution are among the most frequently asked intermediate-level Python interview questions." },
+            { "strong": "🧹 Cleaner, More Maintainable Code", "text": " — Once comfortable with decorators, a surprising number of everyday cross-cutting concerns — logging, timing, caching, access control — can be factored out of core logic and reused consistently across an entire codebase." },
+            { "strong": "🪄 A Foundation for Metaprogramming", "text": " — Decorators are one of the most approachable entry points into Python's broader metaprogramming capabilities, making later, more advanced topics like descriptors and metaclasses easier to approach." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "decorator-evolution",
+      "title": "The Evolution of Decorators Across Python Versions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Decorators have grown steadily since their introduction, gaining new syntax and standard library support that expanded them from a niche pattern into a foundational language feature."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Python 2.2", "text": " — staticmethod and classmethod were introduced as built-in functions, though initially they had to be applied with an explicit reassignment rather than dedicated syntax." },
+            { "strong": "Python 2.4", "text": " — The dedicated @ decorator syntax (PEP 318) was introduced for functions, making the reassignment pattern that developers were already using by hand into a first-class, readable part of the language." },
+            { "strong": "Python 2.6 / 3.0", "text": " — The functools module gained wraps() as the standard, recommended way to preserve a decorated function's metadata, quickly becoming best practice for any serious decorator." },
+            { "strong": "Python 2.6", "text": " — Class decorators (PEP 3129/related work) became broadly supported, extending the @ syntax to apply directly above class definitions as well as function definitions." },
+            { "strong": "Python 3.2", "text": " — functools.lru_cache was added to the standard library, offering a ready-made, highly optimised memoisation decorator without needing to write one from scratch." },
+            { "strong": "Python 3.4", "text": " — functools.singledispatch was introduced, bringing simple type-based function overloading to Python via a decorator-based API." },
+            { "strong": "Python 3.7", "text": " — The dataclasses module and its @dataclass decorator were introduced, automatically generating common boilerplate methods for simple data-holding classes." },
+            { "strong": "2024-2026", "text": " — Modern Python (3.12/3.13+) relaxed several historical syntactic restrictions on what expressions can appear after @, making certain advanced decorator-composition patterns easier to write, while decorator usage across frameworks and the standard library continues to grow every release." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Decorator Interview Questions — Beginner to Intermediate",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are among the most frequently asked Python interview questions about decorators, at both fresher and intermediate levels."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is a decorator in Python?",
+              "a": "A decorator is a callable (usually a function) that accepts another function or class as its input, wraps additional behaviour around it, and returns a new callable to take its place. The @decorator syntax written above a function definition is shorthand for reassigning that function's name to the decorator's return value.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What does @my_decorator actually do behind the scenes?",
+              "a": "It is exactly equivalent to defining the function normally and then immediately writing func = my_decorator(func) right after it. Python parses the @ syntax purely as a readability shortcut for this reassignment pattern — no new underlying mechanism is involved beyond ordinary function calls.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is a closure, and why do decorators depend on it?",
+              "a": "A closure is an inner function that remembers variables from its enclosing function's scope, even after the enclosing function has finished executing. Decorators depend on closures because the wrapper function returned by a decorator must remember the original function (and any decorator arguments) long after the decorator itself has already run.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. Why is functools.wraps used inside decorators?",
+              "a": "Without it, a decorated function's __name__, __doc__, and other metadata would report the inner wrapper's own attributes instead of the original function's, since the wrapper is what actually replaces the original name. functools.wraps copies this metadata from the original function onto the wrapper, preserving the decorated function's identity for debugging, documentation, and introspection tools.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. How do you write a decorator that accepts its own arguments, like @retry(times=3)?",
+              "a": "By adding an extra outer layer of nesting: an outermost function that accepts the configuration arguments and returns the actual decorator, a middle function (the real decorator) that accepts the function being decorated and returns the wrapper, and the innermost wrapper function that runs on every call, using closures to access both the configuration and the original function.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. In what order are multiple stacked decorators applied?",
+              "a": "From the bottom upward. The decorator closest to the function's def line wraps the original function first; each decorator above it then wraps the result of the one below. So @a, @b, @c stacked above a function is equivalent to func = a(b(c(func))), meaning c's wrapping happens first and a's wrapping happens last, but a's pre-call logic actually executes first when the function is finally called.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q7. Can decorators be applied to classes, not just functions?",
+              "a": "Yes. A class decorator receives the entire class object and can add methods or attributes, wrap existing methods including __init__, or return a modified or entirely different class or factory in its place. @dataclasses.dataclass is a well-known standard library example of a class decorator.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. Why do decorator wrapper functions typically use *args and **kwargs?",
+              "a": "So the same decorator can be applied to functions with any number and combination of positional and keyword arguments, without the decorator needing to know each specific function's signature in advance. The wrapper simply forwards whatever arguments it received directly into the call to the original function.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q9. What is the difference between @staticmethod and @classmethod?",
+              "a": "@staticmethod defines a method that receives neither self nor cls automatically — it behaves like a plain function that happens to live inside the class's namespace. @classmethod defines a method that automatically receives the class itself (conventionally named cls) as its first argument, commonly used for alternative constructors that need access to the class rather than a specific instance.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q10. Do decorators add runtime overhead?",
+              "a": "Yes, a small amount — every call to a decorated function passes through at least one extra function call (the wrapper) before reaching the original function's own code. For the vast majority of applications this overhead is negligible, but it is worth being aware of in extremely performance-sensitive, tight inner-loop code.",
+              "tag": "Common Trap"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Test your understanding of decorators with these practice questions. Try answering each one yourself before checking the explanation — active recall is the most effective way to learn."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. If a decorator's outer function contains a print() statement outside the inner wrapper, when does that print statement actually run?",
+              "a": "Exactly once, at the moment the decorated function is defined (decoration time) — not each time the decorated function is later called. Only code placed inside the inner wrapper function runs every time the decorated function is invoked.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What is the output, in terms of order, of a decorator that prints 'before' then calls the function then prints 'after', applied to a function that itself prints 'inside'?",
+              "a": "before, inside, after — in that order. The wrapper's pre-call logic runs first, then control passes into the original function's body, and finally the wrapper's post-call logic runs after the original function returns.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Why does a decorated function's help() output sometimes show the wrong docstring, and how do you fix it?",
+              "a": "Because the decorated name actually points to the inner wrapper function, not the original — so without intervention, introspection tools see the wrapper's own (usually missing) docstring. Applying @functools.wraps(func) to the wrapper copies the original function's docstring (and other metadata) onto it, fixing this.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. Given @a, @b stacked above a function func(), which decorator's wrapper actually calls func() directly?",
+              "a": "b's wrapper. Decorators are applied bottom-up, so b wraps the original func first, and a then wraps the result of that — meaning a's wrapper calls b's wrapper, and only b's wrapper calls the original func directly.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Why would a decorator with a fixed wrapper(x, y) signature fail when applied to a function that takes three arguments?",
+              "a": "Because the wrapper only accepts exactly two positional arguments, so calling the decorated function with three arguments raises a TypeError before the wrapper ever gets a chance to forward anything to the original function. Using *args, **kwargs instead makes the wrapper accept any number of arguments and forward them all correctly.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. How would you write a decorator, @repeat(times), that calls the decorated function times number of times in a row?",
+              "a": "As a three-layer nested structure: an outer repeat(times) function that remembers times and returns the actual decorator; a decorator(func) function that remembers func and returns the wrapper; and a wrapper(*args, **kwargs) function that loops times number of times, calling func(*args, **kwargs) on each iteration, typically returning the result of the final call.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. Why can nonlocal be necessary inside a decorator's wrapper function, for example when building a call-counting decorator?",
+              "a": "If the wrapper needs to modify a variable defined in the enclosing decorator function's scope (such as a counter tracking how many times the function has been called), simply assigning to that variable inside the wrapper would create a new local variable instead of updating the enclosing one. Declaring it nonlocal tells Python to modify the existing enclosing-scope variable instead.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. What would go wrong if a caching decorator used a mutable default argument, like an empty dictionary, as its cache storage defined directly in the decorator's own parameter list rather than inside its closure?",
+              "a": "Similar to the classic Python mutable-default-argument gotcha, a dictionary created as a default argument value is only created once, when the decorator itself is defined, and would then be shared across every function ever decorated with that decorator — causing cached results from entirely unrelated functions to collide with each other. The cache should instead be created fresh inside the decorator's own body, so each decorated function gets its own independent cache via its own closure.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Should You Use Decorators?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Decorators are one of Python's most elegant ideas: a way to attach reusable, extra behaviour to any function or class, without editing that function's own source code, using nothing more exotic than ordinary functions, closures, and a small piece of syntactic sugar. Instead of forcing you to duplicate the same cross-cutting logic across many functions, or bury it inline alongside each function's core purpose, decorators let you write that logic exactly once and apply it anywhere with a single, readable line."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If you find yourself <strong>repeating the same handful of lines</strong> — timing, logging, validation, access checks — across several unrelated functions, a decorator is very likely the right tool to reach for. If you are working with a <strong>web framework, testing library, or any tool that exposes its API through @-syntax</strong>, understanding decorators is what turns that syntax from unexplained magic into a pattern you can read, predict, and eventually extend yourself. And if you eventually explore <strong>Python's broader metaprogramming features</strong> — descriptors, metaclasses, and beyond — a solid grasp of decorators is the natural, approachable first step."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Your Situation", "Should You Reach for a Decorator?"],
+          "rows": [
+            ["Repeating the same wrapping logic across many functions", "✅ Yes — a decorator centralises it in one place"],
+            ["A one-off tweak needed in exactly one function", "⚠️ Often simpler to just write it inline"],
+            ["Enforcing consistent access control across routes/endpoints", "✅ Yes — a natural, well-known decorator use case"],
+            ["Caching expensive, repeatable computations", "✅ Yes — functools.lru_cache or a custom cache decorator fits well"],
+            ["Need to change a function's actual parameter list permanently", "❌ Edit the function directly instead"],
+            ["Working with a framework that already uses @ syntax heavily", "✅ Understanding decorators is essential here"],
+            ["Extremely performance-critical, tight inner loop", "⚠️ Consider the small added call overhead before decorating"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The next step in mastering decorators is practising with real scenarios — write a small timing decorator and apply it to a few of your own functions, build a decorator that accepts configuration arguments like <code>@retry(times=3)</code>, and experiment with stacking two or three decorators together to see the bottom-up application order in action. The more deliberately you use decorators, the more naturally you will start to recognise decorator-shaped problems across your own codebase."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Decorators are not an obscure advanced trick — they are core, idiomatic Python.</strong> Once first-class functions, closures, and the @ syntax click together, you will start reading framework code, testing libraries, and standard-library modules with genuinely new understanding, and your own code will become cleaner and more reusable as a direct result. 🐍"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "What is a decorator in Python, in simple terms?",
+        "a": "A decorator is a function that takes another function as input and returns a new function that wraps extra behaviour around the original, without changing the original function's own code. The @decorator syntax written above a function definition applies it automatically."
+      },
+      {
+        "q": "Why does @ syntax exist if decorators are just functions?",
+        "a": "The @ syntax is purely a readability shortcut. Writing @my_decorator above a function definition is exactly equivalent to writing func = my_decorator(func) right after it — the syntax just makes the intent visually clear at the point where the function is defined."
+      },
+      {
+        "q": "What is functools.wraps used for?",
+        "a": "It copies a function's __name__, __doc__, and related metadata onto the wrapper function that a decorator returns, so the decorated function still looks like itself to debugging tools, documentation generators, and other introspection code, rather than appearing simply as 'wrapper'."
+      },
+      {
+        "q": "Can a decorator take its own arguments?",
+        "a": "Yes. This requires an extra layer of nested functions: an outer function that accepts the configuration arguments and returns the actual decorator, which in turn accepts the function being decorated and returns the wrapper that runs on every call."
+      },
+      {
+        "q": "In what order do multiple stacked decorators run?",
+        "a": "Decorators are applied from the bottom upward when wrapping, meaning the one closest to the function definition wraps the original function first. At call time, however, the outermost decorator's own logic is what runs first, since it is the outermost layer being invoked."
+      },
+      {
+        "q": "Do decorators only work on functions?",
+        "a": "No. Decorators can also be applied directly above class definitions. A class decorator receives the whole class object and can add methods or attributes, wrap existing methods, or return a modified class in its place, just as a function decorator does for functions."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Generators", "path": "/python/python-generators" },
+    "next": { "label": "Next: Python Multi-Threading →", "path": "/python/python-multi-threading" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Core syntax", "dd": "@decorator_name" },
+      { "dt": "Introduced in", "dd": "Python 2.4 (2004), PEP 318" },
+      { "dt": "Built on", "dd": "First-class functions and closures" },
+      { "dt": "Common helper", "dd": "functools.wraps" },
+      { "dt": "Applies to", "dd": "Functions, methods, and classes" },
+      { "dt": "Related concept", "dd": "Metaprogramming, descriptors" }
+    ],
+    "relatedArticles": [
+      { "label": "Python  Home", "path": "/python/python-home" },
+      { "label": "Python Generators", "path": "/python/python-generators" },
+      { "label": "Python Functions", "path": "/python/python-functions" },
+      { "label": "Python OOP", "path": "/python/python-oops" },
+      { "label": "Python Context Managers", "path": "/python/python-context-managers" },
+      { "label": "Python Classes/Objects", "path": "/python/python-classes-objects" },
+      { "label": "Python Function Arguments", "path": "/python/python-function-arguments" },
+      { "label": "Python Exceptions", "path": "/python/python-exceptions" }
+    ],
+    "tags": ["decorators","closures","first-class functions","@syntax","functools.wraps","class decorators","chaining decorators","staticmethod","classmethod","property","lru_cache","metaprogramming","higher order functions"]
+  }
+}

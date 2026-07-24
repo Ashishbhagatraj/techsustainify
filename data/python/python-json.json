@@ -1,0 +1,858 @@
+{
+  "meta": {
+    "title": "Python JSON Module | Complete json Module Tutorial 2026 | Tech Sustainify",
+    "description": "Master the Python json module with this complete guide 2026. Learn json.dumps, json.loads, json.dump, json.load, Python-JSON type mapping, serializing custom objects, JSONEncoder, error handling, and json vs pickle comparisons.",
+    "keywords": "python json module, json.dumps python, json.loads python, python json to dict, python dict to json, json.dump json.load, python JSONEncoder, python json custom object, JSONDecodeError, python json vs pickle, python json pretty print",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-json/",
+    "ogTitle": "Python JSON Module — Complete Tutorial 2026 | Tech Sustainify",
+    "ogDescription": "Complete guide to Python's json module. Learn dumps/loads, dump/load, type mapping, serializing custom objects, custom encoders/decoders, and error handling.",
+    "ogUrl": "https://techsustainify.com/python/python-json/",
+    "ogImage": "https://techsustainify.com/images/python-json-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "27 minutes",
+    "twitterLevel": "Intermediate",
+    "schemaDatePublished": "2024-01-01",
+    "schemaDateModified": "2026-03-16",
+    "schemaProficiencyLevel": "Intermediate",
+    "schemaWordCount": 8000
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",            "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python JSON Module" }
+  ],
+
+  "articleHeader": {
+    "badge": "🐍 Python",
+    "title": "Python json Module — Complete Guide",
+    "subtitle": "A complete, professional guide to Python's json module — dumps/loads, dump/load, Python-JSON type mapping, serializing custom objects, custom encoders and decoders, and error handling."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-16", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "27 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Intermediate" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-json",
+      "title": "What is JSON, and What is Python's json Module?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>JSON</strong> (JavaScript Object Notation) is a lightweight, text-based data format used to represent structured data — objects, arrays, strings, numbers, booleans, and null — in a form that's both human-readable and easy for machines to parse. Despite its name referencing JavaScript, JSON is a completely language-independent format, and it has become the de facto standard for exchanging data between web APIs, configuration files, and countless data storage and messaging systems."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python's built-in <strong>json module</strong>, part of the standard library since Python 2.6, provides the tools to convert between Python's native data structures (dictionaries, lists, strings, numbers, booleans, None) and JSON-formatted text. This conversion process has two directions, each with its own standard terminology: converting a Python object <em>into</em> a JSON string is called <strong>serialization</strong> (or \"encoding\"), and converting a JSON string <em>back into</em> a Python object is called <strong>deserialization</strong> (or \"decoding\")."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Because JSON is so close in structure to Python's own dictionaries and lists, working with it feels almost seamless — a JSON object maps naturally to a Python dict, a JSON array maps to a Python list, and JSON's string, number, boolean, and null types map directly to Python's str, int/float, bool, and None. This close structural similarity is exactly why the json module needs comparatively little configuration for the vast majority of everyday use cases."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "json-module-overview",
+      "title": "The Four Core Functions of the json Module",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Nearly everything you do with the json module boils down to one of four functions, distinguished by direction (encode vs decode) and target (string vs file)."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Function", "Direction", "Works With", "Typical Use"],
+          "rows": [
+            ["json.dumps(obj)", "Python → JSON", "Returns a JSON string", "Sending data over a network, embedding JSON in a log line"],
+            ["json.loads(s)", "JSON → Python", "Takes a JSON string, returns a Python object", "Parsing an API response body"],
+            ["json.dump(obj, file)", "Python → JSON", "Writes JSON directly to an open file object", "Saving configuration or data to a .json file"],
+            ["json.load(file)", "JSON → Python", "Reads JSON directly from an open file object", "Loading configuration or data from a .json file"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The naming convention is consistent and easy to remember: functions ending in <strong>-s</strong> (<code>dumps</code>, <code>loads</code>) work with <strong>strings</strong> in memory; functions without the trailing s (<code>dump</code>, <code>load</code>) work directly with <strong>file objects</strong>, reading or writing the JSON text as a stream rather than building the entire string in memory first."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "python-json-type-mapping",
+      "title": "Python ↔ JSON Type Mapping",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "JSON has a smaller, simpler type system than Python. Understanding exactly how each Python type maps to (and back from) its JSON equivalent avoids surprises — particularly for types JSON has no direct concept of at all."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Python Type", "JSON Equivalent", "Round-trips Back to Same Type?"],
+          "rows": [
+            ["dict", "object ({...})", "✅ Yes"],
+            ["list", "array ([...])", "✅ Yes"],
+            ["tuple", "array ([...])", "❌ No — becomes a list after decoding"],
+            ["str", "string", "✅ Yes"],
+            ["int", "number", "✅ Yes"],
+            ["float", "number", "✅ Yes"],
+            ["True", "true", "✅ Yes"],
+            ["False", "false", "✅ Yes"],
+            ["None", "null", "✅ Yes"],
+            ["set", "❌ Not supported — raises TypeError", "N/A"],
+            ["datetime", "❌ Not supported — raises TypeError", "N/A"],
+            ["Custom class instance", "❌ Not supported by default — raises TypeError", "N/A"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The tuple-to-list conversion deserves particular attention: because JSON has no separate concept of a tuple, Python tuples are silently serialized as ordinary JSON arrays, and when decoded back, they come back as a <strong>list</strong>, not a tuple — the original type information is permanently lost in that round trip. Similarly, sets, datetime objects, and instances of your own custom classes have no native JSON representation at all, and attempting to serialize them directly raises a <code>TypeError</code> unless you provide custom handling (covered later in this guide)."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "serializing-json",
+      "title": "Serializing Python to JSON with json.dumps()",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>json.dumps()</code> converts a Python object into a JSON-formatted string. Beyond the basic conversion, it accepts several useful keyword arguments controlling exactly how the output is formatted."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "json_dumps_basics.py",
+          "lines": [
+            "import json",
+            "",
+            "user = {",
+            "    \"name\": \"Ashish\",",
+            "    \"age\": 28,",
+            "    \"is_active\": True,",
+            "    \"skills\": [\"Python\", \"JSON\", \"Web Development\"],",
+            "    \"address\": None",
+            "}",
+            "",
+            "compact = json.dumps(user)",
+            "print(compact)",
+            "# {\"name\": \"Ashish\", \"age\": 28, \"is_active\": true, \"skills\": [\"Python\", \"JSON\", \"Web Development\"], \"address\": null}",
+            "",
+            "pretty = json.dumps(user, indent=4, sort_keys=True)",
+            "print(pretty)"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "{",
+            "    \"address\": null,",
+            "    \"age\": 28,",
+            "    \"is_active\": true,",
+            "    \"name\": \"Ashish\",",
+            "    \"skills\": [",
+            "        \"Python\",",
+            "        \"JSON\",",
+            "        \"Web Development\"",
+            "    ]",
+            "}"
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Parameter", "Purpose", "Example"],
+          "rows": [
+            ["indent", "Pretty-print with N spaces per nesting level", "json.dumps(data, indent=2)"],
+            ["sort_keys", "Alphabetically sort object keys in the output", "json.dumps(data, sort_keys=True)"],
+            ["separators", "Customize the item/key separators (default: ', ' and ': ')", "json.dumps(data, separators=(',', ':'))"],
+            ["ensure_ascii", "Escape all non-ASCII characters as \\uXXXX (default True)", "json.dumps(data, ensure_ascii=False)"],
+            ["default", "Provide a fallback function for non-serializable objects", "json.dumps(data, default=str)"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>separators=(',', ':')</code> combination (removing the default spaces) is commonly used to produce the most compact JSON possible — useful when minimizing payload size matters, such as for network transmission — while <code>indent</code> and <code>sort_keys</code> together produce the most readable, diff-friendly output, ideal for configuration files or debugging logs."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "deserializing-json",
+      "title": "Deserializing JSON to Python with json.loads()",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>json.loads()</code> performs the reverse operation — parsing a JSON-formatted string and returning the equivalent Python object, typically a dict or list at the top level, with nested structures converted recursively."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "json_loads_basics.py",
+          "lines": [
+            "import json",
+            "",
+            "json_text = '''",
+            "{",
+            "    \"name\": \"Ashish\",",
+            "    \"age\": 28,",
+            "    \"skills\": [\"Python\", \"JSON\"],",
+            "    \"is_active\": true",
+            "}",
+            "'''",
+            "",
+            "data = json.loads(json_text)",
+            "print(type(data))       # <class 'dict'>",
+            "print(data[\"name\"])     # Ashish",
+            "print(data[\"skills\"])   # ['Python', 'JSON']",
+            "print(type(data[\"is_active\"]))   # <class 'bool'>"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Notice that the JSON boolean <code>true</code> correctly becomes the Python <code>True</code>, and the JSON structure's nesting is fully preserved as native Python dicts and lists — no manual recursive parsing is ever required, since <code>json.loads()</code> handles arbitrarily deep nesting automatically."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "Serialization and Deserialization Flow",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This flowchart traces the complete round trip of data moving from a Python object, through JSON text, and potentially back again — the exact process behind sending and receiving data with a web API."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "🐍 Python object",           "sublabel": "dict, list, str, int, etc.",           "type": "start" },
+            { "id": "2", "label": "⚙️ json.dumps()",             "sublabel": "Recursively walks the structure",     "type": "process" },
+            { "id": "3", "label": "❓ All values JSON-serializable?", "sublabel": "dict/list/str/int/float/bool/None?", "type": "decision" },
+            { "id": "4", "label": "📄 JSON string produced",     "sublabel": "Ready to send/store",                  "type": "process" },
+            { "id": "5", "label": "🚫 TypeError raised",         "sublabel": "Non-serializable type found",         "type": "process" },
+            { "id": "6", "label": "🌐 Transmitted / Stored",     "sublabel": "Network request, file, database",     "type": "process" },
+            { "id": "7", "label": "⚙️ json.loads()",             "sublabel": "Parses the JSON text",                "type": "process" },
+            { "id": "8", "label": "🐍 Python object (rebuilt)",  "sublabel": "dict/list structure restored",        "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "serialize" },
+            { "from": "2", "to": "3", "label": "checks" },
+            { "from": "3", "to": "4", "label": "yes" },
+            { "from": "3", "to": "5", "label": "no" },
+            { "from": "4", "to": "6", "label": "sent" },
+            { "from": "6", "to": "7", "label": "received" },
+            { "from": "7", "to": "8", "label": "deserialize" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This round trip isn't always perfectly symmetrical: as covered earlier, a Python tuple serialized via dumps() comes back from loads() as a list, not a tuple — the JSON format itself has no way to preserve that original Python-specific type distinction."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "working-with-files",
+      "title": "Reading and Writing JSON Files with dump() and load()",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When working with JSON stored in a file rather than a string already in memory, <code>json.dump()</code> and <code>json.load()</code> operate directly on an open file object, avoiding the need to manually build or parse a string yourself."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "json_file_operations.py",
+          "lines": [
+            "import json",
+            "",
+            "config = {",
+            "    \"app_name\": \"Tech Sustainify\",",
+            "    \"version\": \"2.1.0\",",
+            "    \"debug\": False,",
+            "    \"max_connections\": 100",
+            "}",
+            "",
+            "# Writing JSON to a file",
+            "with open(\"config.json\", \"w\") as f:",
+            "    json.dump(config, f, indent=4)",
+            "",
+            "# Reading JSON from a file",
+            "with open(\"config.json\", \"r\") as f:",
+            "    loaded_config = json.load(f)",
+            "",
+            "print(loaded_config[\"app_name\"])   # Tech Sustainify",
+            "print(loaded_config == config)     # True"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Using <code>json.dump()</code>/<code>json.load()</code> directly with a file, rather than manually combining <code>json.dumps()</code> with <code>file.write()</code> (or <code>json.loads()</code> with <code>file.read()</code>), is both more concise and slightly more memory-efficient for very large JSON files, since the file-based versions can stream data rather than requiring the entire JSON text to exist as one string in memory at once."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "custom-objects-encoding",
+      "title": "Serializing Custom Objects and Non-Standard Types",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "By default, the json module only knows how to serialize the handful of built-in types listed in the mapping table earlier. Attempting to serialize a <code>datetime</code>, a <code>set</code>, or an instance of your own class raises a <code>TypeError</code>. There are two standard ways to teach json how to handle these cases."
+        },
+        { "type": "subHeading", "text": "Option 1 — The default Parameter (Simple Cases)" },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "custom_default_function.py",
+          "lines": [
+            "import json",
+            "from datetime import datetime",
+            "",
+            "def json_default(obj):",
+            "    if isinstance(obj, datetime):",
+            "        return obj.isoformat()",
+            "    if isinstance(obj, set):",
+            "        return list(obj)",
+            "    raise TypeError(f\"Object of type {type(obj).__name__} is not JSON serializable\")",
+            "",
+            "data = {",
+            "    \"created_at\": datetime(2026, 3, 16, 10, 30),",
+            "    \"tags\": {\"python\", \"json\", \"tutorial\"}",
+            "}",
+            "",
+            "print(json.dumps(data, default=json_default))",
+            "# {\"created_at\": \"2026-03-16T10:30:00\", \"tags\": [\"python\", \"json\", \"tutorial\"]}"
+          ]
+        },
+        { "type": "subHeading", "text": "Option 2 — A Custom JSONEncoder Subclass (Reusable Cases)" },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "custom_json_encoder.py",
+          "lines": [
+            "import json",
+            "from datetime import datetime",
+            "",
+            "class CustomEncoder(json.JSONEncoder):",
+            "    def default(self, obj):",
+            "        if isinstance(obj, datetime):",
+            "            return obj.isoformat()",
+            "        if isinstance(obj, set):",
+            "            return list(obj)",
+            "        return super().default(obj)",
+            "",
+            "data = {\"created_at\": datetime.now(), \"tags\": {\"a\", \"b\"}}",
+            "print(json.dumps(data, cls=CustomEncoder, indent=2))"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>default</code> parameter approach is quick and convenient for one-off scripts, while subclassing <code>json.JSONEncoder</code> and passing it via <code>cls=CustomEncoder</code> is better suited to larger applications where the same custom serialization logic needs to be reused consistently across many different <code>dumps()</code>/<code>dump()</code> calls."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "custom-decoding",
+      "title": "Custom Decoding with object_hook",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Just as serialization can be customized, deserialization can too. The <code>object_hook</code> parameter lets you intercept every JSON object as it's being decoded and transform it into something other than a plain dict — commonly, an instance of a custom class."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "object_hook_example.py",
+          "lines": [
+            "import json",
+            "",
+            "class User:",
+            "    def __init__(self, name, age):",
+            "        self.name = name",
+            "        self.age = age",
+            "",
+            "    def __repr__(self):",
+            "        return f\"User(name={self.name!r}, age={self.age})\"",
+            "",
+            "def user_decoder(d):",
+            "    if \"name\" in d and \"age\" in d:",
+            "        return User(d[\"name\"], d[\"age\"])",
+            "    return d",
+            "",
+            "json_text = '{\"name\": \"Ashish\", \"age\": 28}'",
+            "user = json.loads(json_text, object_hook=user_decoder)",
+            "print(user)                # User(name='Ashish', age=28)",
+            "print(type(user))          # <class '__main__.User'>"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>object_hook</code> is called on <strong>every</strong> JSON object encountered during parsing, from the innermost nested objects outward — which is why the function must check whether the specific keys it cares about are present before deciding to convert, and return the dictionary unchanged (<code>return d</code>) for any object that doesn't match the expected shape."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "error-handling",
+      "title": "Handling JSON Errors — JSONDecodeError",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Malformed or invalid JSON text raises a <code>json.JSONDecodeError</code> (a subclass of <code>ValueError</code>) when passed to <code>json.loads()</code> or <code>json.load()</code>. This exception carries useful positional information pinpointing exactly where the parsing failed."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "json_error_handling.py",
+          "lines": [
+            "import json",
+            "",
+            "invalid_json = '{\"name\": \"Ashish\", \"age\": }'   # missing value after 'age':",
+            "",
+            "try:",
+            "    data = json.loads(invalid_json)",
+            "except json.JSONDecodeError as e:",
+            "    print(f\"Invalid JSON: {e.msg}\")",
+            "    print(f\"At line {e.lineno}, column {e.colno} (character {e.pos})\")",
+            "",
+            "# Output:",
+            "# Invalid JSON: Expecting value",
+            "# At line 1, column 27 (character 26)"
+          ]
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>e.msg</code> — A short, human-readable description of what went wrong." },
+            { "html": "<code>e.lineno</code> / <code>e.colno</code> — The line and column number where the error occurred, ideal for showing a helpful message pointing to a specific spot in a config file." },
+            { "html": "<code>e.pos</code> — The absolute character index into the original string where parsing failed." },
+            { "html": "Since <code>JSONDecodeError</code> is a subclass of <code>ValueError</code>, code that only needs a generic catch can simply write <code>except ValueError:</code> instead, though catching the more specific type gives access to these extra positional attributes." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "json-vs-pickle",
+      "title": "json vs pickle — Which Should You Use?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python offers a second built-in serialization tool, pickle, which serves a fundamentally different purpose than json. This comparison clarifies when each is appropriate."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "json", "pickle"],
+          "rows": [
+            ["Format", "Human-readable text", "Binary, Python-specific"],
+            ["Cross-language compatible?", "✅ Yes — universal, language-independent", "❌ No — Python only"],
+            ["Can serialize arbitrary Python objects?", "❌ No — only basic types by default", "✅ Yes — nearly any Python object"],
+            ["Security when loading untrusted data", "✅ Safe — data-only, no code execution", "❌ Unsafe — can execute arbitrary code"],
+            ["Typical use case", "APIs, config files, cross-system data exchange", "Caching, saving Python-specific objects internally"],
+            ["Human-editable?", "✅ Yes — plain text, easy to read/edit", "❌ No — opaque binary format"],
+            ["Preserves exact Python types (tuple, set, etc.)?", "❌ No — tuples become lists, sets unsupported", "✅ Yes — preserves nearly everything exactly"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The single most important distinction is <strong>security</strong>: unpickling data from an untrusted or unauthenticated source is a well-documented remote code execution risk, because pickle's format can encode instructions to reconstruct arbitrary Python objects, including ones that execute code as a side effect of being loaded. json, by contrast, only ever produces plain data structures — parsing untrusted JSON cannot execute code, making it the safe default choice for anything involving external or network-sourced data."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "json-architecture",
+      "title": "The json Module's Processing Pipeline",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Understanding the json module as a layered pipeline — from raw Python objects down to text, and back — clarifies exactly where each customization hook (default, cls, object_hook) plugs in."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Python Objects",
+              "color": "#6366f1",
+              "items": ["dict, list, str, int, float, bool, None", "Custom classes (need default/cls)"]
+            },
+            {
+              "label": "Encoding Layer",
+              "color": "#0ea5e9",
+              "items": ["json.dumps() / json.dump()", "JSONEncoder (default, cls parameters)"]
+            },
+            {
+              "label": "JSON Text",
+              "color": "#10b981",
+              "items": ["Human-readable string", "Stored in files, sent over HTTP"]
+            },
+            {
+              "label": "Decoding Layer",
+              "color": "#f59e0b",
+              "items": ["json.loads() / json.load()", "JSONDecoder (object_hook parameter)"]
+            },
+            {
+              "label": "Python Objects (Rebuilt)",
+              "color": "#ef4444",
+              "items": ["dict/list structure restored", "Optionally custom classes via object_hook"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "Practice: A Small JSON-Based Config Loader",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This example combines file operations, error handling, and default values into a realistic configuration loader."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "config_loader.py",
+          "lines": [
+            "import json",
+            "",
+            "DEFAULT_CONFIG = {\"debug\": False, \"max_retries\": 3, \"timeout\": 30}",
+            "",
+            "def load_config(path):",
+            "    try:",
+            "        with open(path, \"r\") as f:",
+            "            return json.load(f)",
+            "    except FileNotFoundError:",
+            "        print(f\"Config file '{path}' not found — using defaults.\")",
+            "        return DEFAULT_CONFIG",
+            "    except json.JSONDecodeError as e:",
+            "        print(f\"Config file is invalid JSON ({e.msg} at line {e.lineno}) — using defaults.\")",
+            "        return DEFAULT_CONFIG",
+            "",
+            "def save_config(path, config):",
+            "    with open(path, \"w\") as f:",
+            "        json.dump(config, f, indent=4, sort_keys=True)",
+            "",
+            "config = load_config(\"app_settings.json\")",
+            "print(config)",
+            "config[\"debug\"] = True",
+            "save_config(\"app_settings.json\", config)"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Config file 'app_settings.json' not found — using defaults.",
+            "{'debug': False, 'max_retries': 3, 'timeout': 30}"
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "import json\n\nashish_profile = {\n    \"name\": \"Ashish\",\n    \"role\": \"Content Creator\",\n    \"topics\": [\"Python\", \"JSON\", \"Tutorials\"]\n}\n\njson_output = json.dumps(ashish_profile, indent=2)\nprint(json_output)\n\nparsed_back = json.loads(json_output)\nprint(f\"Parsed name: {parsed_back['name']}\")"
+        }
+      ]
+    },
+
+    {
+      "sectionId": "best-practices",
+      "title": "Python json Module Best Practices",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "These practices help you use the json module safely, efficiently, and predictably in real applications."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Prefer dump()/load() over manually combining dumps()/loads() with file I/O", "text": " — The file-based functions are more concise and avoid holding the entire JSON string in memory at once for large files." },
+            { "strong": "Always catch json.JSONDecodeError around untrusted or external JSON input", "text": " — Any data coming from a network request, uploaded file, or user input can be malformed; handle the error gracefully rather than letting the program crash." },
+            { "strong": "Never use pickle for untrusted data — use json instead", "text": " — pickle can execute arbitrary code during deserialization; json is data-only and safe to parse from any source." },
+            { "strong": "Remember tuples become lists after a round trip", "text": " — If exact type preservation matters for tuples or sets, either convert explicitly on both ends or use pickle instead (for trusted, Python-only contexts)." },
+            { "strong": "Use indent and sort_keys for anything a human will read or diff", "text": " — Configuration files and debug output benefit enormously from consistent, readable formatting; compact output is better reserved for network payloads." },
+            { "strong": "Use a custom JSONEncoder subclass for reusable custom serialization logic", "text": " — The default parameter is fine for one-off scripts, but a reusable CustomEncoder class keeps serialization logic centralized across a larger codebase." },
+            { "strong": "Validate decoded data before trusting its structure", "text": " — json.loads() will happily return a dict missing keys your code expects; check for required keys explicitly rather than assuming the shape of external JSON." },
+            { "strong": "Set ensure_ascii=False when working with non-English text you intend to keep readable", "text": " — The default escapes all non-ASCII characters as \\uXXXX sequences, which is safe but not human-readable in the raw output." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of the json Module",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The json module is fast, safe, and universally compatible, but it has real, deliberate limitations compared to Python-specific serialization tools."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "No Installation Required", "text": "Part of the standard library, available immediately with a single import in every Python installation." },
+            { "title": "Universally Compatible Format", "text": "JSON is language-independent, making it the natural choice for data exchanged between Python and any other system — web APIs, JavaScript frontends, mobile apps, and more." },
+            { "title": "Safe to Parse Untrusted Input", "text": "Unlike pickle, JSON parsing only ever produces plain data structures and cannot execute arbitrary code, making it safe for network-sourced or user-submitted data." },
+            { "title": "Human-Readable and Editable", "text": "JSON text can be opened, read, and hand-edited in any text editor, unlike binary serialization formats." },
+            { "title": "Extensible via default/object_hook", "text": "Custom types can be supported with a small, well-defined amount of extra code, without needing a different library entirely." }
+          ],
+          "cons": [
+            { "title": "Limited Native Type Support", "text": "Only dict, list, str, int, float, bool, and None are supported directly; everything else (datetime, set, custom classes) requires manual handling." },
+            { "title": "Tuples Silently Become Lists", "text": "The round trip through JSON loses the distinction between Python tuples and lists, which can surprise code that relies on tuple-specific behaviour." },
+            { "title": "No Built-in Support for Comments", "text": "Unlike some configuration formats (YAML, TOML), standard JSON has no comment syntax at all, making annotated config files awkward." },
+            { "title": "Larger Payloads Than Binary Formats", "text": "As a text-based format, JSON is generally less compact than binary alternatives like pickle or protocol buffers for the same data." },
+            { "title": "No Native Numeric Precision Guarantees", "text": "JSON numbers don't distinguish between int and float the way Python does at the type level, and very large integers can lose precision when processed by non-Python JSON parsers." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python json Module — Interview Questions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Frequently asked interview questions about the json module, serialization, and common pitfalls."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is the difference between json.dumps() and json.dump()?",
+              "a": "json.dumps() (with an 's') converts a Python object into a JSON-formatted string held in memory, returned as the function's result. json.dump() (no 's') writes the JSON output directly to an open file object instead of returning a string, which is more convenient and memory-efficient when saving JSON directly to disk.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What Python types can json.dumps() serialize by default, without any customization?",
+              "a": "dict, list, tuple, str, int, float, bool, and None. Tuples are serialized but come back as lists after decoding, since JSON has no separate array-vs-tuple distinction. Any other type — sets, datetime objects, custom class instances — raises a TypeError unless custom handling is provided.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What happens if you try to serialize a Python set with json.dumps()?",
+              "a": "It raises a TypeError, since JSON has no native representation for sets. To serialize a set, you must convert it to a list first (either manually or via the default parameter / a custom JSONEncoder), understanding that the uniqueness and unordered nature of the original set is not preserved through the round trip.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q4. What is the purpose of the default parameter in json.dumps()?",
+              "a": "It provides a fallback function that json calls whenever it encounters an object it doesn't know how to serialize natively. That function should return a JSON-serializable representation of the object (e.g. converting a datetime to an ISO string), or raise a TypeError itself if it also doesn't recognize the object.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. What is object_hook used for in json.loads()?",
+              "a": "It lets you customize deserialization by intercepting every JSON object as it's parsed and transforming it into something other than a plain dict — commonly, converting it into an instance of a custom Python class. It's called on every nested object during parsing, from the innermost outward.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. Why is pickle considered unsafe for untrusted data, while json is considered safe?",
+              "a": "pickle's binary format can encode instructions for reconstructing arbitrary Python objects, and this reconstruction process can be made to execute arbitrary code as a side effect — making unpickling untrusted data a known remote code execution vulnerability. json, by contrast, only ever produces plain data structures (dicts, lists, strings, numbers) with no mechanism to execute code, making it safe to parse regardless of the source.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q7. What exception does json.loads() raise for malformed JSON, and what useful information does it provide?",
+              "a": "json.JSONDecodeError, a subclass of ValueError. It provides .msg (a description of the problem), .lineno and .colno (the line and column where parsing failed), and .pos (the absolute character index), which together make it possible to point a user or log message directly at the exact location of the malformed JSON.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. What is the effect of the indent parameter in json.dumps()?",
+              "a": "It formats the output as multi-line, human-readable JSON, using the specified number of spaces per nesting level instead of producing a single compact line. It's commonly combined with sort_keys=True for consistent, diff-friendly configuration files and debug output.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q9. What does json.dumps() do with a Python True or False value, and what about None?",
+              "a": "True and False are serialized as the lowercase JSON keywords true and false (JSON's own boolean literals, distinct from Python's capitalized versions). None is serialized as the JSON keyword null. Both convert back to their exact original Python equivalents when decoded with json.loads().",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q10. Why might you choose a custom JSONEncoder subclass over the default parameter for handling custom types?",
+              "a": "A subclass of json.JSONEncoder, passed via cls=CustomEncoder, centralizes the custom serialization logic in one reusable class definition rather than repeating a default= function argument at every call site. This is preferable in larger applications where the same set of custom types needs consistent handling across many different serialization calls.",
+              "tag": "Frequently Asked"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Work through these practice questions on the json module. Try to predict the output or outcome before checking the answer."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the type of json.loads('[1, 2, 3]')?",
+              "a": "A Python list — [1, 2, 3]. json.loads() can decode a top-level JSON array directly into a Python list; the result doesn't have to be a dict, since JSON's top-level value can be any valid JSON type, not just an object.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What does json.loads(json.dumps((1, 2, 3))) return, and what type is it?",
+              "a": "It returns [1, 2, 3] as a list, not a tuple. json.dumps() serializes the tuple as a JSON array (since JSON has no tuple type), and json.loads() always decodes JSON arrays as Python lists — the original tuple type is not preserved through the round trip.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "3. What happens when you run json.dumps({1: 'a', 2: 'b'})?",
+              "a": "It succeeds, but the integer keys are automatically converted to strings in the output: {\"1\": \"a\", \"2\": \"b\"}. This is because JSON object keys must always be strings, so json.dumps() automatically stringifies non-string dict keys (int, float, bool, None) rather than raising an error.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. Why does json.dumps(datetime.now()) raise a TypeError?",
+              "a": "Because datetime objects are not among the built-in types the json module knows how to serialize by default (only dict, list, str, int, float, bool, tuple, and None are). To serialize a datetime, you need to either convert it to a string manually before calling dumps(), or provide a default function that converts it (e.g. via obj.isoformat()).",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "5. If a JSON file contains a trailing comma, like {\"a\": 1, \"b\": 2,}, what happens when you call json.load() on it?",
+              "a": "It raises a json.JSONDecodeError. Unlike some more lenient parsers, the standard JSON specification (and Python's json module) does not allow trailing commas after the last item in an object or array — this is one of the most common real-world causes of JSON parsing failures for hand-written config files.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. What is the purpose of setting ensure_ascii=False in json.dumps()?",
+              "a": "By default, json.dumps() escapes every non-ASCII character (like accented letters or non-Latin scripts) as a \\uXXXX Unicode escape sequence, which is always valid JSON but not human-readable. Setting ensure_ascii=False outputs those characters directly as their actual UTF-8 representation instead, which is more readable but requires the output to be written/read with a UTF-8-aware encoding.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. Why might you use object_hook when calling json.loads() on API response data?",
+              "a": "object_hook lets you automatically convert JSON objects into instances of your own custom classes as they're parsed, rather than working with plain nested dictionaries and manually converting them afterward. This is especially useful when the same object shape appears repeatedly, letting you attach methods and type-specific behaviour directly to the parsed data.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. What is the safest way to handle JSON data received from an untrusted external source (e.g. a public API)?",
+              "a": "Parse it with json.loads() or json.load() (never pickle, which can execute arbitrary code), wrap the parsing call in a try/except json.JSONDecodeError block to handle malformed input gracefully, and explicitly validate the resulting structure (checking for required keys and expected types) before trusting or using the data further in your program.",
+              "difficulty": "Medium"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Working with JSON in Python",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The json module is one of the most frequently used tools in the entire Python standard library, precisely because JSON itself sits at the center of how modern systems exchange data — web APIs, configuration files, message queues, and countless data storage formats all speak JSON. The module's four core functions, <code>dumps</code>, <code>loads</code>, <code>dump</code>, and <code>load</code>, cover the overwhelming majority of real use cases with almost no configuration required at all."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The habits worth carrying forward: always handle <strong>JSONDecodeError</strong> around any JSON coming from outside your own program, never reach for <strong>pickle</strong> when the data might come from an untrusted source, remember that <strong>tuples become lists</strong> and several common Python types (datetime, set, custom classes) need explicit handling via <code>default</code> or a custom <code>JSONEncoder</code>, and use <strong>indent</strong> and <strong>sort_keys</strong> generously for anything a human being will ever need to read."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Situation", "Recommended Approach"],
+          "rows": [
+            ["Sending/receiving JSON over a network", "✅ json.dumps() / json.loads()"],
+            ["Reading/writing a JSON config file", "✅ json.dump() / json.load()"],
+            ["Serializing datetime, set, or custom objects", "✅ default parameter or custom JSONEncoder"],
+            ["Parsing potentially malformed JSON", "✅ Wrap in try/except json.JSONDecodeError"],
+            ["Data must remain Python-only, any type allowed", "⚠️ Consider pickle instead — trusted sources only"],
+            ["Data comes from an untrusted/external source", "✅ json — never pickle"],
+            ["Output needs to be human-readable", "✅ indent + sort_keys"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "From here, natural next topics include <strong>working with REST APIs</strong> using the requests library (which integrates tightly with JSON for both request and response bodies), <strong>dataclasses and JSON serialization patterns</strong> for cleanly converting between typed Python objects and JSON, and <strong>JSON Schema validation</strong> for enforcing structure on JSON data before your program relies on it."
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "How do you convert a Python dictionary to a JSON string?",
+        "a": "Use json.dumps(your_dict), which returns a JSON-formatted string. Add indent=4 for readable, pretty-printed output, and sort_keys=True to alphabetically order the keys. No installation is required, since json is part of Python's standard library."
+      },
+      {
+        "q": "How do you convert a JSON string back into a Python dictionary?",
+        "a": "Use json.loads(your_json_string), which parses the string and returns the equivalent Python object — typically a dict for a JSON object, or a list for a JSON array. Wrap the call in a try/except json.JSONDecodeError block if the input might be malformed."
+      },
+      {
+        "q": "Why does Python's json module raise an error when trying to serialize a datetime object?",
+        "a": "The json module only natively supports a small set of built-in types — dict, list, str, int, float, bool, and None. datetime objects aren't among them, so json.dumps() raises a TypeError unless you provide a conversion function via the default parameter (commonly converting it to a string with obj.isoformat()) or use a custom JSONEncoder subclass."
+      },
+      {
+        "q": "What is the difference between json.dump() and json.dumps() in Python?",
+        "a": "json.dumps() (with an 's') converts a Python object into a JSON string held in memory and returns it. json.dump() (without the 's') writes the JSON output directly to an already-open file object instead of returning a string — it's the more convenient choice when saving JSON straight to disk."
+      },
+      {
+        "q": "Is it safe to parse JSON received from an untrusted source in Python?",
+        "a": "Yes. Unlike pickle, which can execute arbitrary code during deserialization, json.loads() and json.load() only ever produce plain Python data structures (dicts, lists, strings, numbers, booleans, None) with no ability to execute code — making JSON parsing safe even for data coming from an unauthenticated or external source, such as a public API."
+      },
+      {
+        "q": "Why do Python tuples become lists after being converted to JSON and back?",
+        "a": "JSON has only one ordered-sequence type — the array — with no separate concept of a tuple. When json.dumps() serializes a Python tuple, it becomes a JSON array; when that array is later parsed back with json.loads(), it's decoded as a Python list, since there's no information in the JSON text itself indicating it was originally a tuple."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python DateTime Module", "path": "/python/python-date-time" },
+    "next": { "label": "Next: Python Regex →", "path": "/python/python-regex" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Import statement",   "dd": "import json" },
+      { "dt": "Encode (memory)",    "dd": "json.dumps()" },
+      { "dt": "Decode (memory)",    "dd": "json.loads()" },
+      { "dt": "Encode (file)",      "dd": "json.dump()" },
+      { "dt": "Decode (file)",      "dd": "json.load()" },
+      { "dt": "Error type",         "dd": "json.JSONDecodeError (a ValueError)" }
+    ],
+    "relatedArticles": [
+      { "label": "Python DateTime Module",   "path": "/python/python-date-time" },
+      { "label": "Python Match Case",        "path": "/python/python-match-case" },
+      { "label": "Python If Else",          "path": "/python/python-if-else" },
+      { "label": "Python Modules",           "path": "/python/python-modules" },
+      { "label": "Python Dictionaries",      "path": "/python/python-dictionaries" },
+      { "label": "Python Lists",            "path": "/python/python-lists" },
+      { "label": "Python Polymorphism",     "path": "/python/python-polymorphism" },
+      { "label": "Python OOP",               "path": "/python/python-oops" }
+    ],
+    "tags": ["json","dumps","loads","dump","load","JSONEncoder","JSONDecoder","JSONDecodeError","serialization","deserialization","json vs pickle"]
+  }
+}

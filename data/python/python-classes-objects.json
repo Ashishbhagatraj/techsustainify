@@ -1,0 +1,767 @@
+{
+  "meta": {
+    "title": "Python Classes and Objects | Complete OOP Guide for Beginners 2026 | Tech Sustainify",
+    "description": "Learn Python Classes and Objects with this complete beginner-friendly guide 2026. Covers class definition, object creation, __init__ constructor, self keyword, instance vs class attributes, methods, encapsulation basics, and real-world OOP examples in Python.",
+    "keywords": "python classes and objects, python oop tutorial, python class tutorial for beginners, self keyword python, __init__ constructor python, instance variables vs class variables, python object oriented programming 2026, python dataclasses, python class methods, python static methods",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-classes-objects/",
+    "ogTitle": "Python Classes and Objects — Complete OOP Guide 2026 | Tech Sustainify",
+    "ogDescription": "Complete beginner-friendly guide to Python Classes and Objects. Learn class definition, constructors, self, attributes, methods, and real-world OOP design in Python.",
+    "ogUrl": "https://techsustainify.com/python/python-classes-objects/",
+    "ogImage": "https://techsustainify.com/images/python-classes-objects-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "26 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-02-10",
+    "schemaDateModified": "2026-03-16",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 8100
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",            "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Classes and Objects" }
+  ],
+
+  "articleHeader": {
+    "badge": "🧱 Python OOP",
+    "title": "Python Classes and Objects",
+    "subtitle": "A complete beginner-friendly guide to Object-Oriented Programming in Python — covering class definitions, the __init__ constructor, the self keyword, instance vs class attributes, methods, and real-world design patterns for 2026."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-16", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "26 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-are-classes-objects",
+      "title": "What are Classes and Objects in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>class</strong> in Python is a blueprint or template for creating objects. It defines a set of <strong>attributes</strong> (data) and <strong>methods</strong> (behaviour) that describe what an object of that type looks like and what it can do. An <strong>object</strong> is a concrete instance of a class — the actual thing built from the blueprint, occupying real memory and holding its own values."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Think of a class as an architect's drawing for a house, and each object as an actual house built from that drawing. The drawing specifies that every house has a <em>number of rooms</em>, a <em>roof type</em>, and a <em>front door</em> — but each individual house built from it can have different values for those properties. In the same way, a Python class named <code>Car</code> might define attributes like <code>brand</code>, <code>color</code>, and <code>speed</code>, while every car object created from that class carries its own specific values."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python is a <strong>multi-paradigm</strong> language, and classes are the foundation of its <strong>Object-Oriented Programming (OOP)</strong> paradigm. Everything in Python — integers, strings, lists, functions, even classes themselves — is actually an object built from some class. This is why Python is often described as being <strong>\"object-oriented to its core\"</strong>: even <code>x = 5</code> secretly creates an object of the built-in <code>int</code> class."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "OOP in Python is organised around four pillars: <strong>Encapsulation</strong> (bundling data and behaviour together), <strong>Abstraction</strong> (hiding internal complexity behind a simple interface), <strong>Inheritance</strong> (reusing and extending existing classes), and <strong>Polymorphism</strong> (treating different object types through a common interface). This article focuses on the foundation of all four — how to define classes and create objects from them."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "history-of-oop-python",
+      "title": "How Classes and Objects Evolved in Python",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Object-oriented design was part of Python's DNA from the very beginning. Guido van Rossum built Python's class system partly on ideas borrowed from <strong>Modula-3</strong> and <strong>C++</strong>, while deliberately keeping the syntax lighter and less ceremonial than either. Over more than three decades, the way Python handles classes has been refined significantly. Here is a timeline of the milestones that shaped modern Python OOP:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "1991", "text": " — Python 0.9.0 already included classes with multiple inheritance and exception classes, making OOP a first-class citizen from Python's very first public release." },
+            { "strong": "1997", "text": " — Iterators and richer special methods began appearing, letting user-defined classes plug into for-loops and built-in functions like len() and str()." },
+            { "strong": "2001-2002", "text": " — Python 2.2 unified 'classic classes' and 'new-style classes,' making every class inherit from object and giving all classes consistent, predictable behaviour." },
+            { "strong": "2008", "text": " — Python 3.0 removed the old classic-class system entirely. Every class in Python 3 automatically inherits from the built-in object class." },
+            { "strong": "2015", "text": " — PEP 484 introduced type hints, letting developers annotate class attributes and method signatures for better tooling and readability without sacrificing dynamic typing." },
+            { "strong": "2018", "text": " — Python 3.7 introduced the @dataclass decorator (PEP 557), dramatically reducing the boilerplate needed to write simple data-holding classes." },
+            { "strong": "2021", "text": " — Python 3.10 added structural pattern matching, which works elegantly with classes through the __match_args__ special attribute." },
+            { "strong": "2022-2026", "text": " — Python 3.11 through 3.14 focused on performance: faster attribute lookup, faster method calls, and continued refinement of typing features like Self and dataclass slots, making class-based code faster than ever without changing how it's written." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "core-concepts",
+      "title": "Core Concepts Every Python Class Uses",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Before writing a single class, it helps to know the vocabulary. These are the building blocks that appear in almost every Python class you will ever write:"
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            { "icon": "🏗️", "title": "class keyword", "text": "Every class definition starts with the class keyword followed by a name written in PascalCase, e.g. class Car:. This tells Python you are defining a new type, not just a function." },
+            { "icon": "🔧", "title": "__init__ Constructor", "text": "A special method automatically called when a new object is created. It initialises the object's starting attributes, e.g. setting brand, model, and speed the moment a Car object is built." },
+            { "icon": "🙋", "title": "self Keyword", "text": "The first parameter of every instance method, representing the specific object the method is being called on. self.speed refers to that particular object's speed, not any other object's." },
+            { "icon": "📦", "title": "Instance Attributes", "text": "Data that belongs to one specific object, usually set inside __init__ using self.attribute = value. Each object keeps its own independent copy." },
+            { "icon": "🌐", "title": "Class Attributes", "text": "Data shared by every object of a class, defined directly inside the class body outside any method. Useful for constants or counters shared across all instances." },
+            { "icon": "⚙️", "title": "Instance Methods", "text": "Regular functions defined inside a class that operate on a specific object via self, e.g. def accelerate(self): changes that object's own speed." },
+            { "icon": "🏛️", "title": "Class Methods", "text": "Methods decorated with @classmethod that receive the class itself (cls) instead of an instance. Often used as alternative constructors." },
+            { "icon": "🧊", "title": "Static Methods", "text": "Methods decorated with @staticmethod that take neither self nor cls. They live inside a class purely for organisational reasons, behaving like plain functions." },
+            { "icon": "🏭", "title": "Instantiation", "text": "The act of creating an object from a class by calling the class name like a function, e.g. my_car = Car('Tesla', 'Model 3'). Python calls __init__ automatically behind the scenes." },
+            { "icon": "🔒", "title": "Encapsulation", "text": "Bundling data and the methods that operate on it inside one unit. Python signals privacy by convention using a single underscore _attr or double underscore __attr, rather than strict enforcement." },
+            { "icon": "🧬", "title": "Inheritance", "text": "A class can inherit attributes and methods from another class using class Child(Parent):, promoting code reuse and building specialised versions of general classes." },
+            { "icon": "🎭", "title": "Polymorphism", "text": "Different classes can implement the same method name in their own way, letting code written for a general type work seamlessly with any of its subclasses." },
+            { "icon": "✨", "title": "Dunder Methods", "text": "Special double-underscore methods like __str__, __eq__, and __len__ let your custom objects work naturally with print(), comparisons, and built-in functions." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "How Object Creation Works — Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Understanding exactly what happens when you write <code>my_car = Car(\"Tesla\", \"Model 3\")</code> demystifies a lot of confusion beginners have about classes. The diagram below traces the precise sequence of steps Python follows, from reading the class definition to handing you back a fully initialised object."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "📝 Define the Class",       "sublabel": "class Car: ...",                    "type": "start" },
+            { "id": "2", "label": "🏭 Call the Class",          "sublabel": "Car(\"Tesla\", \"Model 3\")",         "type": "process" },
+            { "id": "3", "label": "🧱 __new__() Runs",          "sublabel": "Allocates raw object in memory",   "type": "process" },
+            { "id": "4", "label": "🔧 __init__() Runs",         "sublabel": "Sets self.brand, self.model",      "type": "decision" },
+            { "id": "5", "label": "📦 Instance Attributes Set", "sublabel": "Object now holds its own data",    "type": "process" },
+            { "id": "6", "label": "🔗 Reference Returned",      "sublabel": "my_car points to the new object",  "type": "process" },
+            { "id": "7", "label": "🖨️ Object Ready to Use",     "sublabel": "my_car.brand → \"Tesla\"",           "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "instantiate" },
+            { "from": "2", "to": "3", "label": "Python calls" },
+            { "from": "3", "to": "4", "label": "then calls" },
+            { "from": "4", "to": "5", "label": "assigns via self" },
+            { "from": "5", "to": "6", "label": "construction complete" },
+            { "from": "6", "to": "7", "label": "usable in code" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Key insight: <strong>__new__()</strong> and <strong>__init__()</strong> are two separate steps. <code>__new__()</code> actually creates the empty object in memory, while <code>__init__()</code> only initialises the attributes on an object that already exists. Beginners rarely need to override <code>__new__()</code>, but knowing it exists explains why <code>__init__()</code> never needs to \"return\" the object — it is already there by the time <code>__init__()</code> runs."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "how-classes-work",
+      "title": "How Python Classes Work — self, __init__, and Attributes Explained",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Three ideas trip up nearly every Python beginner when they first meet classes: the <strong>self</strong> keyword, the <strong>__init__</strong> constructor, and the difference between <strong>instance attributes</strong> and <strong>class attributes</strong>. Getting comfortable with these three concepts is 90% of mastering basic Python OOP."
+        },
+        { "type": "subHeading", "text": "🙋 The self Keyword — Why Every Method Needs It" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every instance method in a Python class takes <strong>self</strong> as its first parameter. This is not a special keyword enforced by the language — it is simply a strong convention, and Python automatically passes the object itself into that first parameter whenever you call a method on it. When you write <code>my_car.accelerate()</code>, Python actually runs it behind the scenes as <code>Car.accelerate(my_car)</code>. The name <code>self</code> is just a convention; you could technically call it anything, but doing so would confuse every other Python developer who reads your code."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The purpose of <code>self</code> is to let a method know <em>which specific object</em> it is operating on. Without it, a method would have no way to distinguish between two different <code>Car</code> objects — <code>self.speed</code> for one car would be indistinguishable from <code>self.speed</code> for another. This is fundamentally different from languages like Java, where <code>this</code> is implicit; Python makes the object reference explicit and visible in every method signature."
+        },
+        { "type": "subHeading", "text": "🔧 The __init__ Constructor" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>__init__</strong> is a special \"dunder\" (double-underscore) method that Python automatically calls immediately after a new object is created. Its job is to set up the object's starting state — assigning initial values to instance attributes. Despite being called a \"constructor\" in everyday conversation, __init__ technically initialises an object rather than constructing it; the true construction happens in the lesser-known __new__ method, which most beginners never need to touch."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A typical __init__ signature looks like <code>def __init__(self, brand, model):</code>. Every parameter after <code>self</code> becomes a value you must supply when creating the object, e.g. <code>Car(\"Tesla\", \"Model 3\")</code>. Inside the method body, assignments like <code>self.brand = brand</code> attach that value permanently to the specific object being built."
+        },
+        { "type": "subHeading", "text": "📦 Instance Attributes vs 🌐 Class Attributes" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Instance attributes</strong> are defined inside methods (almost always __init__) using <code>self.attribute_name = value</code>. Each object gets its own separate copy, stored on the object itself. Changing one object's instance attribute never affects any other object."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Class attributes</strong>, by contrast, are defined directly in the class body, outside of any method. They are shared across every object of that class, stored once on the class itself rather than duplicated per object. They are ideal for constants (like a tax rate) or shared counters (like tracking how many objects have been created). A common beginner mistake is reassigning a class attribute through an instance — writing <code>my_car.wheels = 6</code> creates a brand-new instance attribute that shadows the class attribute for that object only, rather than changing it for every car."
+        },
+        { "type": "subHeading", "text": "⚙️ Methods — Instance, Class, and Static" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python offers three kinds of methods inside a class. <strong>Instance methods</strong> take self and can read or modify that specific object's data. <strong>Class methods</strong>, marked with <code>@classmethod</code>, take cls instead of self and operate on the class itself — they are commonly used to build alternative constructors, such as <code>Car.from_string(\"Tesla-Model3\")</code>. <strong>Static methods</strong>, marked with <code>@staticmethod</code>, take neither self nor cls; they behave like ordinary functions that happen to be logically grouped inside the class for organisational clarity."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Simple rule to remember:</strong> __init__ sets up a new object's data. self lets a method know which object it is working with. Instance attributes belong to one object; class attributes belong to all of them."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "instance-vs-class-comparison",
+      "title": "Instance Attributes vs Class Attributes — Key Differences",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "This is one of the most frequently confused topics for Python beginners. The comparison table below lays out the differences clearly, side by side."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Instance Attribute", "Class Attribute"],
+          "rows": [
+            ["Defined where", "Inside a method, usually __init__", "Directly inside class body"],
+            ["Belongs to", "One specific object", "The class, shared by all objects"],
+            ["Syntax", "self.name = value", "name = value (no self)"],
+            ["Memory", "Separate copy per object", "One shared copy"],
+            ["Access", "obj.attribute", "ClassName.attribute or obj.attribute"],
+            ["Typical use", "Data that differs per object", "Constants, counters, defaults"],
+            ["Changing it via instance", "Updates only that object", "Creates a new instance attribute (shadows class attribute)"],
+            ["Example", "self.brand = \"Tesla\"", "wheels = 4"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "python-oop-vs-others",
+      "title": "Python OOP vs Other Languages — Comparison",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python's approach to classes is deliberately lighter than many other object-oriented languages. This table compares how core OOP concepts are expressed across popular languages."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Python", "Java", "C++", "JavaScript"],
+          "rows": [
+            ["Class keyword", "class", "class", "class", "class (ES6+)"],
+            ["Constructor name", "__init__", "Same as class name", "Same as class name", "constructor()"],
+            ["Self-reference", "self (explicit parameter)", "this (implicit)", "this (implicit)", "this (implicit)"],
+            ["Access modifiers", "Convention only (_x, __x)", "public / private / protected", "public / private / protected", "# for true private fields"],
+            ["Multiple inheritance", "✅ Supported", "❌ Interfaces only", "✅ Supported", "❌ Not supported"],
+            ["Type declarations", "Optional (type hints)", "Mandatory", "Mandatory", "Optional (TypeScript)"],
+            ["Everything is an object", "✅ Yes, always", "❌ Primitives excluded", "❌ Primitives excluded", "❌ Primitives excluded"],
+            ["Boilerplate for simple classes", "Minimal (or @dataclass)", "High (getters/setters)", "High", "Medium"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Using Classes in Python",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Classes are powerful, but they are not always the right tool. Understanding both the benefits and the trade-offs helps you decide when object-oriented design genuinely improves your code and when a simple function or dictionary is enough."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Models Real-World Entities Naturally", "text": "Classes let you represent things like Car, User, or BankAccount as coherent units of data and behaviour, matching how people naturally think about problems." },
+            { "title": "Encourages Code Reuse via Inheritance", "text": "A general Vehicle class can be extended into Car, Truck, and Motorcycle without duplicating shared logic, saving significant development time." },
+            { "title": "Encapsulation Reduces Bugs", "text": "Bundling data with the methods that operate on it prevents scattered, inconsistent logic from mutating the same data in incompatible ways." },
+            { "title": "Polymorphism Simplifies Code", "text": "Code written against a general interface automatically works with any subclass, reducing the need for long if/elif chains checking object types." },
+            { "title": "Great for Large, Long-Lived Codebases", "text": "As a codebase grows past a few hundred lines, classes provide organisational structure that a flat collection of functions struggles to match." },
+            { "title": "Works Seamlessly with Frameworks", "text": "Django models, Flask views, and most major Python frameworks are built around classes, making OOP knowledge essential for real-world Python work." },
+            { "title": "Dataclasses Minimise Boilerplate", "text": "The @dataclass decorator auto-generates __init__, __repr__, and __eq__, making simple data-holding classes almost as concise as plain dictionaries." }
+          ],
+          "cons": [
+            { "title": "Overkill for Small Scripts", "text": "A ten-line automation script rarely benefits from a class hierarchy; plain functions are simpler, faster to write, and easier to read." },
+            { "title": "Weak Privacy Enforcement", "text": "Python's underscore-based privacy conventions are not enforced by the language, so nothing truly stops external code from accessing 'private' attributes." },
+            { "title": "Can Encourage Over-Engineering", "text": "Beginners sometimes build deep inheritance hierarchies for problems that a single function or a dictionary would solve more simply." },
+            { "title": "Slightly Slower Attribute Access", "text": "Looking up an attribute through self involves more overhead than accessing a local variable, which matters only in very performance-sensitive code." },
+            { "title": "Steeper Initial Learning Curve", "text": "Concepts like self, __init__, inheritance, and dunder methods take longer for absolute beginners to internalise than simple function-based code." },
+            { "title": "Multiple Inheritance Complexity", "text": "Python's support for multiple inheritance is powerful but can create confusing method resolution order (MRO) issues in deeply layered class hierarchies." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "class-architecture-diagram",
+      "title": "Anatomy of a Python Class — Architecture Diagram",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The diagram below breaks a Python class down into its structural layers — from the outward-facing class name down to the memory each object occupies at runtime. Seeing the pieces laid out together makes it much easier to understand how a class definition becomes a living, working object."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Class Declaration",
+              "color": "#6366f1",
+              "items": ["class Car:", "Docstring", "Optional base class(es) in parentheses"]
+            },
+            {
+              "label": "Class Body — Shared Layer",
+              "color": "#0ea5e9",
+              "items": ["Class attributes (wheels = 4)", "Class methods (@classmethod)", "Static methods (@staticmethod)"]
+            },
+            {
+              "label": "Constructor Layer",
+              "color": "#10b981",
+              "items": ["__init__(self, ...)", "Parameter validation", "self.attribute = value assignments"]
+            },
+            {
+              "label": "Instance Methods Layer",
+              "color": "#f59e0b",
+              "items": ["def accelerate(self)", "def brake(self)", "Dunder methods (__str__, __eq__)"]
+            },
+            {
+              "label": "Object Instances (Runtime)",
+              "color": "#ef4444",
+              "items": ["car1 → {brand: 'Tesla', speed: 0}", "car2 → {brand: 'Toyota', speed: 20}", "Each holds its own __dict__"]
+            },
+            {
+              "label": "Memory (CPython)",
+              "color": "#8b5cf6",
+              "items": ["Heap-allocated PyObject", "Reference count", "Type pointer back to Car class"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "Your First Python Class — A Complete Example",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The best way to understand classes is to see one from start to finish. Below is a complete, realistic <strong>Car</strong> class demonstrating a constructor, instance attributes, a class attribute, and two instance methods."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "car.py",
+          "lines": [
+            "class Car:",
+            "    # Class attribute — shared by every Car object",
+            "    wheels = 4",
+            "",
+            "    def __init__(self, brand, model, speed=0):",
+            "        # Instance attributes — unique to each object",
+            "        self.brand = brand",
+            "        self.model = model",
+            "        self.speed = speed",
+            "",
+            "    def accelerate(self, amount):",
+            "        self.speed += amount",
+            "        print(f\"{self.brand} {self.model} is now going {self.speed} km/h\")",
+            "",
+            "    def brake(self, amount):",
+            "        self.speed = max(0, self.speed - amount)",
+            "        print(f\"{self.brand} {self.model} slowed to {self.speed} km/h\")",
+            "",
+            "",
+            "car1 = Car(\"Tesla\", \"Model 3\")",
+            "car2 = Car(\"Toyota\", \"Corolla\")",
+            "",
+            "car1.accelerate(60)",
+            "car2.accelerate(30)",
+            "car1.brake(10)",
+            "",
+            "print(f\"{car1.brand} has {car1.wheels} wheels\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Tesla Model 3 is now going 60 km/h",
+            "Toyota Corolla is now going 30 km/h",
+            "Tesla Model 3 slowed to 50 km/h",
+            "Tesla has 4 wheels"
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "class Car:\n    wheels = 4\n\n    def __init__(self, brand, model, speed=0):\n        self.brand = brand\n        self.model = model\n        self.speed = speed\n\n    def accelerate(self, amount):\n        self.speed += amount\n        print(f\"{self.brand} {self.model} is now going {self.speed} km/h\")\n\n\nmy_car = Car(\"Tesla\", \"Model 3 Ashish\")\nmy_car.accelerate(50)"
+        },
+        {
+          "type": "subHeading",
+          "text": "Line-by-Line Explanation"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>class Car:</code> — Declares a new class named Car. By convention, class names use PascalCase (each word capitalised, no underscores)." },
+            { "html": "<code>wheels = 4</code> — A class attribute defined directly in the class body. Every Car object shares this same value unless individually overridden." },
+            { "html": "<code>def __init__(self, brand, model, speed=0):</code> — The constructor. speed=0 gives it a default value, so callers can omit it when creating a car with zero starting speed." },
+            { "html": "<code>self.brand = brand</code> — Takes the brand argument passed in and stores it as an instance attribute on this specific object." },
+            { "html": "<code>def accelerate(self, amount):</code> — An instance method. self lets it read and modify this object's own speed attribute, not any other car's." },
+            { "html": "<code>car1 = Car(\"Tesla\", \"Model 3\")</code> — Instantiation. Python automatically calls __init__ behind the scenes, passing car1 itself in as self." },
+            { "html": "<code>car1.accelerate(60)</code> — Calling a method on an object. Python translates this internally to Car.accelerate(car1, 60)." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "dataclasses-and-modern-syntax",
+      "title": "Modern Python Classes — @dataclass and Type Hints",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Since Python 3.7, the <strong>@dataclass</strong> decorator has become the standard way to write simple, data-holding classes without repetitive boilerplate. It automatically generates <code>__init__</code>, <code>__repr__</code>, and <code>__eq__</code> based purely on type-annotated class attributes."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "car_dataclass.py",
+          "lines": [
+            "from dataclasses import dataclass",
+            "",
+            "@dataclass",
+            "class Car:",
+            "    brand: str",
+            "    model: str",
+            "    speed: int = 0",
+            "",
+            "car1 = Car(\"Tesla\", \"Model 3\")",
+            "print(car1)"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["Car(brand='Tesla', model='Model 3', speed=0)"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Notice there is no manual <code>__init__</code> and no manual <code>__repr__</code> — the decorator writes them for you based on the annotated attributes. This is now the preferred style for classes whose main purpose is holding structured data, while classes with significant custom behaviour typically still use the traditional __init__ style shown earlier."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-uses",
+      "title": "Where Classes and Objects Are Used — Real-World Applications",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Object-oriented design is not an academic exercise — it is the backbone of nearly every substantial Python application in production today. Here is where classes show up across the ecosystem:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🌐 Django Models", "text": " — Every database table in Django is represented as a Python class inheriting from models.Model. Each row in the table becomes an object, with class attributes mapping directly to database columns." },
+            { "strong": "🧠 Machine Learning Models", "text": " — scikit-learn, TensorFlow, and PyTorch all expose their models as classes. A neural network defined in PyTorch is a class inheriting from nn.Module, with layers as instance attributes and forward() as an instance method." },
+            { "strong": "🌍 Flask & FastAPI Applications", "text": " — Request handlers, database schemas (via Pydantic or SQLAlchemy models), and dependency-injected services are almost always expressed as classes in production-grade web applications." },
+            { "strong": "🎮 Game Development", "text": " — Pygame projects typically define a class for each game entity — Player, Enemy, Bullet — each holding its own position, health, and update() method, making complex games manageable." },
+            { "strong": "🏦 Financial Systems", "text": " — A BankAccount class encapsulates balance, account number, and methods like deposit() and withdraw(), ensuring balance can only ever change through controlled, validated methods." },
+            { "strong": "🤖 GUI Applications", "text": " — Tkinter, PyQt, and Kivy applications are built almost entirely from classes representing windows, buttons, and custom widgets, each managing its own visual state." },
+            { "strong": "☁️ Cloud SDKs & APIs", "text": " — The boto3 (AWS) and google-cloud-python SDKs expose services as client classes, with methods representing each API operation you can perform." },
+            { "strong": "🔬 Scientific Simulations", "text": " — Physics engines and simulation frameworks represent particles, bodies, or agents as objects, each tracking its own position, velocity, and mass across simulation steps." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-classes",
+      "title": "Why Should You Master Classes and Objects in 2026?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Functions alone can take you far in Python, but almost every serious Python codebase you will encounter professionally — from Django to PyTorch — is organised around classes. Here's why investing time in OOP pays off:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "📚 Required to Read Framework Source Code", "text": " — Django, FastAPI, and virtually every major library expose their functionality through classes. Without understanding OOP, reading their documentation and source code becomes far harder." },
+            { "strong": "🧩 Essential for Larger Projects", "text": " — As soon as a project grows past a handful of files, classes provide the structure needed to keep related data and logic organised and testable." },
+            { "strong": "💼 Expected in Technical Interviews", "text": " — OOP design questions — 'design a parking lot system,' 'design a library management system' — are standard in Python developer interviews at every experience level." },
+            { "strong": "🤝 Team Collaboration", "text": " — Classes create clear contracts between different parts of a codebase, making it easier for multiple developers to work on the same project without constantly breaking each other's code." },
+            { "strong": "🧠 Deepens Understanding of Python Itself", "text": " — Once you understand classes, concepts like Python's built-in types, exceptions, and even functions themselves become clearer — because they are all objects too." },
+            { "strong": "🚀 Foundation for Design Patterns", "text": " — Classic software design patterns (Factory, Singleton, Observer, Strategy) are all expressed through classes, and understanding them unlocks cleaner, more maintainable code." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "python-versions-oop-features",
+      "title": "Python Versions and Their Impact on Classes",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python's class system has steadily gained new capabilities over the years. Knowing which version introduced which feature helps you understand why older tutorials sometimes look different from modern code:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Python 2.2 — New-Style Classes", "text": " — Unified classic and new-style classes so every class consistently inherits from object, fixing long-standing inconsistencies in attribute lookup." },
+            { "strong": "Python 3.0 — Object Inheritance by Default", "text": " — Removed the old classic-class system entirely; writing class Car: is now automatically equivalent to class Car(object):." },
+            { "strong": "Python 3.6 — Variable Annotations", "text": " — Allowed attribute type hints directly in the class body (brand: str), paving the way for dataclasses a year later." },
+            { "strong": "Python 3.7 — @dataclass Decorator", "text": " — Auto-generates __init__, __repr__, and __eq__ for simple data classes, cutting boilerplate dramatically." },
+            { "strong": "Python 3.10 — Structural Pattern Matching", "text": " — match/case statements can destructure class instances directly using __match_args__, enabling elegant object-based branching." },
+            { "strong": "Python 3.11 — Self Type Hint", "text": " — Added typing.Self, letting methods that return an instance of their own class (like builder patterns) be type-hinted accurately." },
+            { "strong": "Python 3.13-3.14 — Performance Gains", "text": " — Faster attribute lookup and method calls under the hood mean class-based code runs measurably faster without any change to how you write it." }
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Version", "Released", "OOP Feature Added"],
+          "rows": [
+            ["Python 2.2", "2001", "New-style classes unify object model"],
+            ["Python 3.0", "2008", "Every class inherits from object automatically"],
+            ["Python 3.6", "2016", "Class attribute type annotations"],
+            ["Python 3.7", "2018", "@dataclass decorator"],
+            ["Python 3.10", "2021", "Pattern matching on class instances"],
+            ["Python 3.11", "2022", "typing.Self for accurate method typing"],
+            ["Python 3.13", "2024", "Faster attribute/method access performance"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python Classes & Objects Interview Questions — Beginner Level",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the most commonly asked interview questions about <strong>Python classes and objects</strong> for <strong>freshers and beginner-level</strong> positions. Master these before any Python OOP interview."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is the difference between a class and an object in Python?",
+              "a": "A class is a blueprint or template that defines attributes and methods — it does not occupy memory for data until an object is created from it. An object is a concrete instance of a class, occupying actual memory and holding real values for the attributes the class defines. You can create many objects from a single class, each with independent data.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the purpose of the __init__ method?",
+              "a": "__init__ is a special method automatically called immediately after a new object is created. Its purpose is to initialise the object's starting state by assigning values to instance attributes, typically using parameters passed in during instantiation, e.g. Car('Tesla', 'Model 3').",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. Why does every method in a Python class need self as its first parameter?",
+              "a": "self represents the specific object a method is being called on. It lets a method access and modify that particular object's own attributes rather than some other object's. Python passes it automatically — writing my_car.accelerate(10) is internally translated to Car.accelerate(my_car, 10).",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What is the difference between instance attributes and class attributes?",
+              "a": "Instance attributes are defined inside methods using self.attribute = value and belong to one specific object — each object stores its own independent copy. Class attributes are defined directly inside the class body, outside any method, and are shared by every object of that class unless individually overridden.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. What is the difference between a class method and a static method?",
+              "a": "A class method, marked with @classmethod, takes cls as its first parameter and can access or modify class-level state; it is often used for alternative constructors. A static method, marked with @staticmethod, takes neither self nor cls — it behaves like a plain function that is simply grouped inside the class for logical organisation.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. How does Python implement 'private' attributes if there is no private keyword?",
+              "a": "Python relies on naming conventions rather than strict enforcement. A single leading underscore (_attribute) signals 'internal use, please don't touch it directly' by convention only. A double leading underscore (__attribute) triggers name mangling, renaming the attribute internally to _ClassName__attribute, which makes accidental external access harder but not truly impossible.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q7. What is method overriding in Python, and how is it different from method overloading?",
+              "a": "Method overriding happens when a subclass defines a method with the same name as one in its parent class, replacing the parent's behaviour for objects of the subclass. Python does not support traditional method overloading (multiple methods with the same name but different parameter lists) the way Java does; instead, default arguments or *args/**kwargs are used to achieve similar flexibility.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. What is the __str__ method used for?",
+              "a": "__str__ is a dunder method that defines what print(object) or str(object) should display. Without it, printing an object shows an unhelpful default like <__main__.Car object at 0x...>. Defining __str__(self) to return a readable string makes debugging and logging far more useful.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q9. What is a dataclass, and when should you use one?",
+              "a": "A dataclass, created using the @dataclass decorator from the dataclasses module, automatically generates __init__, __repr__, and __eq__ based on type-annotated class attributes. It is ideal for classes whose main purpose is holding structured data with little custom behaviour, dramatically reducing boilerplate compared to writing __init__ manually.",
+              "tag": "Current Affairs"
+            },
+            {
+              "q": "Q10. Can a Python class inherit from multiple parent classes at once?",
+              "a": "Yes. Python supports multiple inheritance directly, e.g. class Sedan(Car, Vehicle):. When methods with the same name exist in multiple parents, Python resolves which one to use through the Method Resolution Order (MRO), calculated using the C3 linearisation algorithm and viewable via ClassName.__mro__.",
+              "tag": "Must Know"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Test your grasp of Python classes and objects with these practice questions. Try to answer each one before revealing the answer — active recall builds much stronger retention than passive reading."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What will happen if you forget to include self as the first parameter in an instance method?",
+              "a": "Calling the method on an object will raise a TypeError, because Python automatically passes the object as the first argument regardless of what the method signature expects. If the method is defined as def accelerate(amount): instead of def accelerate(self, amount):, calling my_car.accelerate(10) actually passes both my_car and 10, causing an argument-count mismatch.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. If a class attribute is a mutable object like a list, what danger should you watch out for?",
+              "a": "Because class attributes are shared across all instances, a mutable class attribute like a list can be accidentally modified by one object and unexpectedly affect every other object of that class. For example, tags = [] as a class attribute means every instance's append() call modifies the same shared list, unless each instance explicitly creates its own list inside __init__.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "3. What does Car.__mro__ return, and why does it matter?",
+              "a": "It returns the Method Resolution Order — a tuple showing the exact sequence of classes Python searches through when looking up a method or attribute, starting with the class itself and moving through its parent classes. It matters most in multiple inheritance, where it determines which parent's method actually gets called when multiple parents define the same method name.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "4. What is the difference between __repr__ and __str__?",
+              "a": "__str__ defines a readable, user-friendly string representation shown by print() and str(). __repr__ defines an unambiguous, developer-focused representation, ideally one that could recreate the object if pasted into Python, shown by repr() and in interactive shell output. If __str__ is not defined, Python falls back to __repr__.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Why does modifying an object through a method sometimes not show updated changes elsewhere in your code?",
+              "a": "This usually happens when a variable holds a copy of data rather than a reference to the same object, or when a new object was created instead of modifying the existing one. Since Python variables hold references, two variables pointing to the same object will both see any changes made to that object's attributes — but if one variable was reassigned to a new object entirely, the two variables no longer refer to the same thing.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "6. What is the purpose of the @property decorator in a class?",
+              "a": "@property lets you define a method that can be accessed like a plain attribute, without parentheses, while still running custom logic behind the scenes. For example, @property def full_name(self): return f'{self.first} {self.last}' lets code write car.full_name instead of car.full_name(), enabling computed attributes and validation without breaking the simple attribute-access syntax callers expect.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What happens if a subclass does not define its own __init__ method?",
+              "a": "The subclass automatically inherits the parent class's __init__ method. When you instantiate the subclass, Python walks up the inheritance chain until it finds an __init__ to call — if the subclass has none, the parent's constructor runs exactly as if the subclass had inherited it directly.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "8. Why is composition ('has-a' relationship) sometimes preferred over inheritance ('is-a' relationship)?",
+              "a": "Composition builds objects out of other objects (e.g. a Car has an Engine) rather than extending a class hierarchy (e.g. a Car is a Vehicle). Composition tends to produce more flexible, loosely coupled designs that are easier to change later, since swapping out an Engine object doesn't require restructuring an entire class hierarchy the way changing an inheritance relationship would.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Why Classes and Objects Matter",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Classes and objects are not just an advanced topic to learn eventually — they are the organisational backbone of virtually every substantial Python project you will encounter, from <strong>Django's models</strong> to <strong>PyTorch's neural networks</strong> to the everyday scripts powering automation pipelines across the industry."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The core ideas covered here — a <strong>class</strong> as a blueprint, an <strong>object</strong> as its concrete instance, <strong>__init__</strong> for setup, <strong>self</strong> for identifying which object a method is working on, and the distinction between <strong>instance</strong> and <strong>class attributes</strong> — form the foundation everything else in Python OOP builds upon, including inheritance, polymorphism, and design patterns."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Your Goal", "Should You Learn Classes & Objects?"],
+          "rows": [
+            ["Reading Django / FastAPI source code",   "✅ Absolutely — both are built entirely on classes"],
+            ["Building machine learning models",        "✅ Yes — PyTorch and TensorFlow models are classes"],
+            ["Writing a quick one-off automation script","⚠️ Optional — plain functions are often simpler"],
+            ["Preparing for developer interviews",      "✅ Yes — OOP design questions are extremely common"],
+            ["Working on a large, multi-file codebase",  "✅ Yes — classes provide essential structure"],
+            ["Learning data science / pandas scripting", "⚠️ Useful, but pandas itself hides most class details"],
+            ["Building a game with Pygame",              "✅ Yes — entities are almost always modelled as classes"],
+            ["Understanding Python itself more deeply",  "✅ Yes — even built-in types are implemented as classes"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The natural next step after mastering classes and objects is <strong>Inheritance and Polymorphism</strong> — learning how to build specialised classes on top of general ones, and how to write code that works seamlessly across an entire family of related classes. From there, encapsulation techniques, dunder methods, and design patterns build naturally on the foundation you've established here."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Classes turn scattered data and logic into coherent, reusable building blocks.</strong> Whether you are building a small game, a production web API, or training a neural network, the discipline of organising your code around well-designed classes pays dividends as your projects grow. Practice writing your own classes today — start small, and the concepts will click quickly. 🧱"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "What is the difference between a class and an object in simple words?",
+        "a": "A class is a design or blueprint — it describes what something should look like, but isn't the real thing itself. An object is the actual, real thing built from that blueprint. For example, Car is a class describing what every car has, while my_car is an object — an actual car with a specific brand, model, and speed."
+      },
+      {
+        "q": "Do I need to use classes for every Python program?",
+        "a": "No. Classes are useful when you need to model something with both data and behaviour, or when a project grows large enough to benefit from organisational structure. Small scripts, simple calculations, and one-off automation tasks are often clearer and faster to write using plain functions instead."
+      },
+      {
+        "q": "What is self in Python, and is it a reserved keyword?",
+        "a": "self is not a reserved keyword in Python — it is simply the near-universal convention for naming the first parameter of an instance method, which Python automatically fills in with the specific object the method was called on. You could technically name it anything, but doing so would confuse other developers reading your code."
+      },
+      {
+        "q": "Can a Python class exist without any methods?",
+        "a": "Yes. A class can contain only attributes with no methods at all, or you can even write an entirely empty class using the pass keyword: class Empty: pass. Such classes are sometimes used as simple containers or placeholders, though @dataclass or plain dictionaries are often better suited for pure data storage."
+      },
+      {
+        "q": "What is the difference between __init__ and __new__?",
+        "a": "__new__ is responsible for actually creating and allocating a new object in memory, and runs first. __init__ then initialises that already-created object by setting its attributes. Beginners almost always only need to override __init__; __new__ is reserved for advanced use cases like implementing custom object creation logic or singleton patterns."
+      },
+      {
+        "q": "Are Python classes and objects the same as in Java or C++?",
+        "a": "The core concept is the same — a class is a blueprint, an object is an instance — but the syntax and enforcement differ. Python uses explicit self parameters, convention-based privacy instead of strict access modifiers, and supports multiple inheritance directly, making its class system noticeably more flexible and less verbose than Java or C++."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python OOPs", "path": "/python/python-oops" },
+    "next": { "label": "Next: Python Constructor →", "path": "/python/python-constructors" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Core keyword",  "dd": "class" },
+      { "dt": "Constructor",   "dd": "__init__" },
+      { "dt": "Self reference","dd": "self" },
+      { "dt": "Paradigm",      "dd": "Object-Oriented Programming" },
+      { "dt": "Modern shortcut", "dd": "@dataclass (3.7+)" },
+      { "dt": "Base of all classes", "dd": "object" }
+    ],
+    "relatedArticles": [
+      { "label": "Python Functions",        "path": "/python/python-functions" },
+      { "label": "Python Inheritance",      "path": "/python/python-inheritance" },
+      { "label": "Python Polymorphism",     "path": "/python/python-polymorphism" },
+      { "label": "Python Encapsulation",    "path": "/python/python-encapsulation" },
+      { "label": "Python Dunder Methods",   "path": "/python/python-dunder-methods" },
+      { "label": "Python Dataclasses",      "path": "/python/python-dataclasses" },
+      { "label": "Python OOP",              "path": "/python/python-oop" },
+      { "label": "Python Decorators",       "path": "/python/python-decorators" }
+    ],
+    "tags": ["Classes","Objects","self","__init__","Instance Attributes","Class Attributes","Encapsulation","Inheritance","Polymorphism","Dataclasses","Dunder Methods","MRO","@classmethod","@staticmethod","@property","OOP"]
+  }
+}

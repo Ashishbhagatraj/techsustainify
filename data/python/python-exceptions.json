@@ -1,0 +1,853 @@
+{
+  "meta": {
+    "title": "Python Exceptions | Exception Handling Tutorial 2026 | Tech Sustainify",
+    "description": "Master Python Exceptions with this complete guide 2026. Learn try-except-else-finally, exception hierarchy, raising exceptions, custom exception classes, exception chaining, context managers, and best practices for robust error handling in Python.",
+    "keywords": "python exceptions, exception handling in python, try except python, python custom exceptions, python exception hierarchy, raise exception python, finally block python, python error handling, BaseException vs Exception, python exception chaining, context manager python, python traceback",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-exceptions/",
+    "ogTitle": "Python Exceptions — Complete Exception Handling Tutorial 2026 | Tech Sustainify",
+    "ogDescription": "Complete guide to Python exception handling. Learn try-except-else-finally, the exception hierarchy, raising and chaining exceptions, custom exception classes, and production-grade best practices.",
+    "ogUrl": "https://techsustainify.com/python/python-exceptions/",
+    "ogImage": "https://techsustainify.com/images/python-exceptions-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "26 minutes",
+    "twitterLevel": "Intermediate",
+    "schemaDatePublished": "2024-01-01",
+    "schemaDateModified": "2026-03-16",
+    "schemaProficiencyLevel": "Intermediate",
+    "schemaWordCount": 8000
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",            "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python Exceptions" }
+  ],
+
+  "articleHeader": {
+    "badge": "🐍 Python",
+    "title": "Python Exceptions — Complete Exception Handling Guide",
+    "subtitle": "A complete, professional guide to Python exceptions — covering the exception hierarchy, try-except-else-finally, raising and chaining exceptions, custom exception classes, context managers, and industry best practices."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-16", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "26 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Intermediate" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-exceptions",
+      "title": "What is an Exception in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "An <strong>exception</strong> is an event that occurs during the execution of a program that disrupts the normal flow of instructions. In Python, exceptions are objects — instances of classes that inherit from the built-in <code>BaseException</code> class — that are <strong>raised</strong> when an error condition occurs and can be <strong>caught (handled)</strong> using <code>try</code> and <code>except</code> blocks. Instead of a program crashing silently or printing a cryptic system error, Python converts every runtime problem into a structured, catchable object with a type, a message, and a traceback."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python treats errors as first-class citizens of the language. Almost everything that can go wrong — dividing by zero, accessing a missing dictionary key, opening a file that doesn't exist, calling a method on <code>None</code> — raises an exception rather than returning an error code. This is often summarised by Python's philosophy of <strong>\"It's easier to ask forgiveness than permission\" (EAFP)</strong>, which favours attempting an operation and handling the exception if it fails, over checking every precondition in advance (\"Look Before You Leap\" — LBYL, more common in C-style languages)."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It's important to distinguish exceptions from <strong>syntax errors</strong>. A <code>SyntaxError</code> is detected by the parser before your program even starts running — it means the code itself is not valid Python. An <strong>exception</strong>, by contrast, occurs while a syntactically correct program is <em>running</em> — for example <code>10 / 0</code> is perfectly valid syntax, but it raises a <code>ZeroDivisionError</code> the moment it executes."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When an exception is raised and nothing catches it, Python prints a <strong>traceback</strong> — a report showing the exact sequence of function calls (the call stack) that led to the error, the file and line number of each call, and the final exception type and message. Reading tracebacks correctly, from the bottom up, is one of the most important debugging skills for any Python developer."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "exception-hierarchy",
+      "title": "The Python Exception Hierarchy",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every exception in Python is a class, and every exception class ultimately inherits from <strong><code>BaseException</code></strong> — the root of the entire exception tree. Understanding this hierarchy is essential because it determines what an <code>except</code> clause will and won't catch, and it explains why certain exceptions (like <code>KeyboardInterrupt</code>) should almost never be silently swallowed."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "BaseException", "text": " — The root of all exceptions. Almost never caught directly in application code; doing so would also catch system-exiting signals, which is rarely the intent." },
+            { "strong": "SystemExit", "text": " — Raised by the built-in <code>sys.exit()</code> function to terminate the interpreter. Direct child of BaseException, not Exception, so a bare <code>except Exception</code> will not accidentally catch it." },
+            { "strong": "KeyboardInterrupt", "text": " — Raised when the user presses Ctrl+C. Also a direct child of BaseException for the same reason — you don't want a broad except clause to block a user's shutdown request." },
+            { "strong": "GeneratorExit", "text": " — Raised inside a generator or coroutine when its <code>close()</code> method is called, signalling that iteration should stop." },
+            { "strong": "Exception", "text": " — The base class for essentially all errors that application code is expected to catch and handle. This is the class you should subclass when creating your own custom exceptions." },
+            { "strong": "ArithmeticError", "text": " — Base class for numeric errors, with children ZeroDivisionError, OverflowError, and FloatingPointError." },
+            { "strong": "LookupError", "text": " — Base class for indexing/key errors, with children IndexError (sequence index out of range) and KeyError (dictionary key not found)." },
+            { "strong": "ValueError", "text": " — Raised when an operation receives an argument of the right type but an inappropriate value, e.g. int('abc')." },
+            { "strong": "TypeError", "text": " — Raised when an operation is applied to an object of an inappropriate type, e.g. 'a' + 5." },
+            { "strong": "OSError", "text": " — Base class for system-related errors such as file and network issues; FileNotFoundError, PermissionError, and ConnectionError all inherit from it." },
+            { "strong": "AttributeError", "text": " — Raised when an attribute reference or assignment fails, e.g. calling a method that doesn't exist on an object." },
+            { "strong": "ImportError / ModuleNotFoundError", "text": " — Raised when an import statement fails to find or load a module or a name within a module." },
+            { "strong": "StopIteration", "text": " — Raised internally by iterators to signal that there are no more items; consumed automatically by for-loops." },
+            { "strong": "RuntimeError", "text": " — A generic catch-all raised when an error doesn't fit any more specific category; RecursionError (stack depth exceeded) is a subclass." }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The single most important rule that follows from this hierarchy: <strong>always catch the most specific exception class possible</strong>. Writing a bare <code>except:</code> or an overly broad <code>except Exception:</code> hides bugs, makes debugging harder, and — in the case of a truly bare <code>except:</code> — can accidentally swallow <code>KeyboardInterrupt</code> and <code>SystemExit</code>, making your program impossible to stop cleanly."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "builtin-exceptions-table",
+      "title": "Common Built-in Exceptions — Reference Table",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python ships with dozens of built-in exception classes covering nearly every category of runtime failure. This table lists the ones you will encounter most often, along with the situation that typically triggers each one."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Exception", "Parent Class", "Typical Trigger", "Example"],
+          "rows": [
+            ["ZeroDivisionError", "ArithmeticError", "Dividing a number by zero", "10 / 0"],
+            ["ValueError", "Exception", "Right type, wrong value", "int('abc')"],
+            ["TypeError", "Exception", "Operation on incompatible types", "'2' + 2"],
+            ["IndexError", "LookupError", "Sequence index out of range", "[1,2,3][10]"],
+            ["KeyError", "LookupError", "Dictionary key not found", "{'a':1}['b']"],
+            ["AttributeError", "Exception", "Missing attribute or method", "None.upper()"],
+            ["FileNotFoundError", "OSError", "Opening a non-existent file", "open('missing.txt')"],
+            ["PermissionError", "OSError", "Insufficient OS permissions", "open('/root/file','w')"],
+            ["ImportError", "Exception", "Module or name import fails", "from x import y"],
+            ["ModuleNotFoundError", "ImportError", "Module does not exist", "import notreal"],
+            ["StopIteration", "Exception", "Iterator exhausted", "next(iter([]))"],
+            ["RecursionError", "RuntimeError", "Maximum recursion depth exceeded", "Infinite recursive call"],
+            ["NotImplementedError", "RuntimeError", "Abstract method not overridden", "Subclass forgets to implement"],
+            ["UnicodeDecodeError", "ValueError", "Invalid byte sequence decoding", "b'\\xff'.decode('utf-8')"],
+            ["OverflowError", "ArithmeticError", "Result too large to represent", "math.exp(1000)"],
+            ["AssertionError", "Exception", "assert statement fails", "assert 1 == 2"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "try-except-basics",
+      "title": "The try-except Block — Basic Exception Handling",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The fundamental tool for handling exceptions in Python is the <code>try</code>/<code>except</code> block. Code that might raise an exception is placed inside the <code>try</code> block; code that should run only if a specific exception occurs is placed inside the matching <code>except</code> block. If no exception occurs, every <code>except</code> block is skipped entirely."
+        },
+        { "type": "subHeading", "text": "Basic Syntax" },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "basic_try_except.py",
+          "lines": [
+            "try:",
+            "    number = int(input(\"Enter a number: \"))",
+            "    result = 100 / number",
+            "except ZeroDivisionError:",
+            "    print(\"You cannot divide by zero.\")",
+            "except ValueError:",
+            "    print(\"That was not a valid number.\")",
+            "else:",
+            "    print(f\"100 divided by {number} is {result}\")",
+            "finally:",
+            "    print(\"Execution of the try block has finished.\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Enter a number: 0",
+            "You cannot divide by zero.",
+            "Execution of the try block has finished."
+          ]
+        },
+        { "type": "subHeading", "text": "Catching Multiple Exceptions in One Clause" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When two or more exception types should trigger identical handling logic, they can be grouped into a single <code>except</code> clause using a tuple. This avoids duplicating the same handler code for each exception type."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "multi_except.py",
+          "lines": [
+            "try:",
+            "    data = {\"age\": \"twenty\"}",
+            "    value = int(data[\"age\"])",
+            "except (ValueError, KeyError) as error:",
+            "    print(f\"Input problem: {error}\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["Input problem: invalid literal for int() with base 10: 'twenty'"]
+        },
+        { "type": "subHeading", "text": "The four clauses explained" },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>try</code> — Contains the code that might raise an exception. Python executes this block first, watching for any errors." },
+            { "html": "<code>except</code> — Runs only if the specified exception type (or one of its subclasses) is raised inside the try block. You can have multiple except clauses for different exception types." },
+            { "html": "<code>else</code> — Runs only if the try block completed with <strong>no</strong> exception at all. Useful for code that should run only on success, keeping it separate from the risky code in try." },
+            { "html": "<code>finally</code> — Always runs, whether an exception occurred or not, and even if the exception was not caught. Ideal for cleanup code like closing files or releasing locks." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "How Python Exception Handling Works — Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The diagram below traces exactly what the Python interpreter does when it hits a <code>try</code> block — how it decides which <code>except</code> clause matches, when <code>else</code> runs, and why <code>finally</code> always executes regardless of the outcome."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "▶️ Enter try block",        "sublabel": "Start executing risky code",        "type": "start" },
+            { "id": "2", "label": "⚙️ Run try body",            "sublabel": "Statement by statement",             "type": "process" },
+            { "id": "3", "label": "❓ Exception raised?",         "sublabel": "Did an error occur?",                "type": "decision" },
+            { "id": "4", "label": "✅ No exception",             "sublabel": "try block completed cleanly",        "type": "process" },
+            { "id": "5", "label": "🟢 Run else block",           "sublabel": "Only executes on success",           "type": "process" },
+            { "id": "6", "label": "🔎 Match except clause",      "sublabel": "Check each except top to bottom",    "type": "decision" },
+            { "id": "7", "label": "🛠️ Matching except found",    "sublabel": "Run that handler's code",            "type": "process" },
+            { "id": "8", "label": "🚫 No match found",           "sublabel": "Exception propagates upward",        "type": "process" },
+            { "id": "9", "label": "🧹 Run finally block",        "sublabel": "Always executes — cleanup code",     "type": "process" },
+            { "id": "10", "label": "🏁 Continue / Propagate",    "sublabel": "Program continues or error bubbles up","type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "begins" },
+            { "from": "2", "to": "3", "label": "checks" },
+            { "from": "3", "to": "4", "label": "no error" },
+            { "from": "3", "to": "6", "label": "error raised" },
+            { "from": "4", "to": "5", "label": "then" },
+            { "from": "6", "to": "7", "label": "type matches" },
+            { "from": "6", "to": "8", "label": "no type matches" },
+            { "from": "5", "to": "9", "label": "always" },
+            { "from": "7", "to": "9", "label": "always" },
+            { "from": "8", "to": "9", "label": "always" },
+            { "from": "9", "to": "10", "label": "finishes" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Key insight: <strong>the finally block always runs</strong> — even if the exception is unhandled, even if there is a <code>return</code> statement inside try or except, and even if a new exception is raised inside the except block itself. The only way to skip finally entirely is if the interpreter process itself crashes (e.g. os._exit() or a fatal signal)."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "raising-exceptions",
+      "title": "Raising Exceptions with the raise Statement",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "So far we've only handled exceptions raised automatically by Python. You can also raise exceptions deliberately using the <code>raise</code> keyword — useful for enforcing business rules, validating function arguments, or signalling that a precondition wasn't met."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "raise_basic.py",
+          "lines": [
+            "def withdraw(balance, amount):",
+            "    if amount <= 0:",
+            "        raise ValueError(\"Withdrawal amount must be positive.\")",
+            "    if amount > balance:",
+            "        raise RuntimeError(\"Insufficient funds for this withdrawal.\")",
+            "    return balance - amount",
+            "",
+            "try:",
+            "    new_balance = withdraw(100, 250)",
+            "except ValueError as ve:",
+            "    print(f\"Invalid input: {ve}\")",
+            "except RuntimeError as re:",
+            "    print(f\"Transaction failed: {re}\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["Transaction failed: Insufficient funds for this withdrawal."]
+        },
+        { "type": "subHeading", "text": "Re-raising an Exception" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Inside an except block, calling <code>raise</code> with no arguments re-raises the exception currently being handled, preserving its original traceback. This is a common pattern when you want to log an error before letting it propagate further up the call stack."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "reraise.py",
+          "lines": [
+            "import logging",
+            "",
+            "def process_order(order_id):",
+            "    try:",
+            "        risky_database_call(order_id)",
+            "    except ConnectionError:",
+            "        logging.error(f\"DB connection failed for order {order_id}\")",
+            "        raise  # re-raises the original ConnectionError"
+          ]
+        },
+        { "type": "subHeading", "text": "Exception Chaining with raise ... from ..." },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When you catch one exception and raise a different, more meaningful one in response, Python lets you explicitly link the two using <code>raise NewException(...) from original_exception</code>. This preserves both tracebacks — the new exception shows \"The above exception was the direct cause of the following exception\" — which is invaluable for debugging layered systems."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "exception_chaining.py",
+          "lines": [
+            "class OrderProcessingError(Exception):",
+            "    pass",
+            "",
+            "def load_order(order_id):",
+            "    try:",
+            "        return database.fetch(order_id)",
+            "    except KeyError as exc:",
+            "        raise OrderProcessingError(",
+            "            f\"Order {order_id} could not be found.\"",
+            "        ) from exc"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If you want to suppress the original context entirely — for example when the underlying cause is irrelevant noise — you can write <code>raise NewException(...) from None</code>, which hides the chained traceback from the output."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "custom-exceptions",
+      "title": "Creating Custom Exception Classes",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Real-world applications almost always define their own exception classes rather than relying solely on built-ins. Custom exceptions make error handling code self-documenting — catching <code>InsufficientStockError</code> is far clearer than catching a generic <code>ValueError</code> and inspecting its message string."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "custom_exceptions.py",
+          "lines": [
+            "class ApplicationError(Exception):",
+            "    \"\"\"Base class for all custom exceptions in this application.\"\"\"",
+            "    pass",
+            "",
+            "class InsufficientStockError(ApplicationError):",
+            "    \"\"\"Raised when an order requests more stock than is available.\"\"\"",
+            "    def __init__(self, product, requested, available):",
+            "        self.product = product",
+            "        self.requested = requested",
+            "        self.available = available",
+            "        message = (",
+            "            f\"Cannot fulfil order for '{product}': \"",
+            "            f\"requested {requested}, only {available} in stock.\"",
+            "        )",
+            "        super().__init__(message)",
+            "",
+            "def place_order(product, requested, available):",
+            "    if requested > available:",
+            "        raise InsufficientStockError(product, requested, available)",
+            "    return \"Order placed successfully.\"",
+            "",
+            "try:",
+            "    place_order(\"Wireless Mouse\", 15, 4)",
+            "except InsufficientStockError as e:",
+            "    print(e)",
+            "    print(f\"Shortfall: {e.requested - e.available} units\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Cannot fulfil order for 'Wireless Mouse': requested 15, only 4 in stock.",
+            "Shortfall: 11 units"
+          ]
+        },
+        { "type": "subHeading", "text": "Why Build an Exception Hierarchy of Your Own?" },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Single base class", "text": " — Defining one root exception (e.g. ApplicationError) for your whole application lets callers catch \"anything my code might raise\" with one except clause, without swallowing unrelated system exceptions." },
+            { "strong": "Carries structured data", "text": " — Unlike a plain string message, a custom exception can carry attributes (product, requested, available in the example above) that calling code can inspect programmatically." },
+            { "strong": "Self-documenting", "text": " — Exception names like PaymentDeclinedError or TokenExpiredError communicate intent instantly, both to other developers and in log files." },
+            { "strong": "Enables precise handling", "text": " — Different failure modes can be handled differently by callers, rather than parsing an error message string to figure out what went wrong." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "context-managers",
+      "title": "The with Statement and Context Managers",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A very common source of bugs is forgetting to release a resource — closing a file, releasing a lock, or closing a network connection — especially when an exception causes a function to exit early. Python's <code>with</code> statement (backed by the <strong>context manager protocol</strong>, i.e. objects implementing <code>__enter__</code> and <code>__exit__</code>) guarantees that cleanup happens automatically, even if an exception is raised inside the block."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "context_manager.py",
+          "lines": [
+            "# Without a context manager — error-prone",
+            "file = open(\"data.txt\", \"r\")",
+            "try:",
+            "    contents = file.read()",
+            "finally:",
+            "    file.close()",
+            "",
+            "# With a context manager — safer and shorter",
+            "with open(\"data.txt\", \"r\") as file:",
+            "    contents = file.read()",
+            "# file.close() is called automatically, even if read() raises an exception"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "You can build your own context managers either by implementing a class with <code>__enter__</code>/<code>__exit__</code>, or more concisely using the <code>@contextmanager</code> decorator from the built-in <code>contextlib</code> module, wrapping a generator function with a single <code>yield</code> statement."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "handling-comparison",
+      "title": "EAFP vs LBYL — Two Philosophies of Error Handling",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python code can validate preconditions before acting (LBYL) or attempt the action and handle failure afterward (EAFP). This table compares both styles directly on the same problem."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "LBYL (Look Before You Leap)", "EAFP (Easier to Ask Forgiveness)"],
+          "rows": [
+            ["Style", "Check conditions first, then act", "Attempt the action, catch failure"],
+            ["Example", "if key in d: value = d[key]", "try: value = d[key] except KeyError: ..."],
+            ["Race conditions", "Vulnerable — state can change between check and use", "Immune — the check and use happen atomically"],
+            ["Performance (success path)", "Slightly faster with no exception overhead", "Fast — no extra check needed on the happy path"],
+            ["Performance (failure path)", "Cheap — no exception machinery involved", "Slower — exception construction has overhead"],
+            ["Idiomatic in", "C, Go, older procedural styles", "Python, and to a lesser extent Ruby"],
+            ["Readability", "Can require nested conditionals", "Keeps the 'happy path' code linear and clear"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python's standard library and most idiomatic Python code favour <strong>EAFP</strong> — it results in code that reads cleanly along the successful path, and it avoids a whole class of race-condition bugs where a condition is checked but becomes false by the time the action is attempted."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "exception-architecture",
+      "title": "Exception Propagation Architecture",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When an exception is raised deep inside a call stack, it doesn't just vanish — it propagates upward through every enclosing function until something catches it, or it reaches the top level and crashes the program. The diagram below shows this propagation path across layers of a typical application."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Application Entry Point",
+              "color": "#6366f1",
+              "items": ["main()", "Top-level try/except", "Global error logger"]
+            },
+            {
+              "label": "Service Layer",
+              "color": "#0ea5e9",
+              "items": ["OrderService.place_order()", "Business rule validation", "Custom exception raised here"]
+            },
+            {
+              "label": "Data Access Layer",
+              "color": "#10b981",
+              "items": ["Database query functions", "Connection handling", "OSError / ConnectionError origin"]
+            },
+            {
+              "label": "Python Interpreter (CPython)",
+              "color": "#f59e0b",
+              "items": ["Exception object created", "Traceback frame attached per call", "Stack unwinding begins"]
+            },
+            {
+              "label": "Unhandled Path",
+              "color": "#ef4444",
+              "items": ["No matching except found", "sys.excepthook invoked", "Traceback printed, process exits (code 1)"]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Each function frame that the exception passes through, without being caught, adds one entry to the traceback — this is why a traceback reads like a stack of breadcrumbs from the outermost call down to the exact line where the exception originated."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "Practice: Robust File Reading with Exception Handling",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here is a realistic, production-style example that combines everything covered so far — specific exception types, a custom exception, a with statement, and a finally block — to read and parse a configuration file safely."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "safe_config_loader.py",
+          "lines": [
+            "import json",
+            "",
+            "class ConfigError(Exception):",
+            "    \"\"\"Raised when the application configuration cannot be loaded.\"\"\"",
+            "    pass",
+            "",
+            "def load_config(path):",
+            "    try:",
+            "        with open(path, \"r\") as file:",
+            "            return json.load(file)",
+            "    except FileNotFoundError as exc:",
+            "        raise ConfigError(f\"Config file not found: {path}\") from exc",
+            "    except json.JSONDecodeError as exc:",
+            "        raise ConfigError(f\"Config file is not valid JSON: {exc}\") from exc",
+            "    except PermissionError as exc:",
+            "        raise ConfigError(f\"No permission to read: {path}\") from exc",
+            "",
+            "try:",
+            "    config = load_config(\"settings.json\")",
+            "except ConfigError as e:",
+            "    print(f\"Startup aborted — {e}\")",
+            "else:",
+            "    print(\"Configuration loaded successfully.\")",
+            "finally:",
+            "    print(\"Config loading attempt finished.\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Startup aborted — Config file not found: settings.json",
+            "Config loading attempt finished."
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "try:\n    value = int(\"25a\")\nexcept ValueError as e:\n    print(f\"Ashish caught an error: {e}\")\nfinally:\n    print(\"Done attempting conversion.\")"
+        }
+      ]
+    },
+
+    {
+      "sectionId": "best-practices",
+      "title": "Exception Handling Best Practices",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Writing exception handling code that is genuinely production-ready requires more discipline than simply wrapping code in try/except. These practices separate professional error handling from code that merely appears to handle errors."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Catch specific exceptions, never bare except", "text": " — A bare except: catches everything, including KeyboardInterrupt and SystemExit, making your program impossible to interrupt cleanly and hiding real bugs." },
+            { "strong": "Keep the try block small", "text": " — Only wrap the exact line(s) that can actually raise the exception you're catching. A large try block makes it unclear which statement actually failed." },
+            { "strong": "Never use exceptions for normal control flow", "text": " — Exceptions should represent exceptional conditions, not everyday logic branches; overusing them for flow control hurts both performance and readability." },
+            { "strong": "Always log before swallowing", "text": " — If you must catch and suppress an exception, log it first (traceback included) so the failure isn't silently lost during debugging." },
+            { "strong": "Use finally or with for cleanup", "text": " — Any resource acquired (file handles, network sockets, database connections, locks) should be released in a finally block or, preferably, via a context manager." },
+            { "strong": "Chain exceptions with raise ... from ...", "text": " — When translating a low-level exception into a higher-level one, always chain it so the original cause remains visible in the traceback." },
+            { "strong": "Build a small custom exception hierarchy", "text": " — Define one base application exception and specific subclasses for distinct failure modes, rather than reusing generic ValueError/RuntimeError everywhere." },
+            { "strong": "Don't return None to signal failure silently", "text": " — Returning None from a function that failed forces every caller to remember to check for it; raising a specific exception makes failures impossible to ignore accidentally." },
+            { "strong": "Avoid catching exceptions you can't meaningfully handle", "text": " — If your except block does nothing but re-raise, consider whether that layer needs a try/except at all." },
+            { "strong": "Test the failure paths, not just the happy path", "text": " — Unit tests should explicitly assert that the correct exception type is raised under bad input, using tools like pytest.raises()." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Python's Exception Model",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python's exception handling design is powerful and expressive, but like any tool it has trade-offs worth understanding before leaning on it heavily."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Clear Separation of Error Logic", "text": "try/except cleanly separates the 'happy path' code from error-handling code, instead of interleaving error checks throughout normal logic." },
+            { "title": "Rich, Structured Error Information", "text": "Exception objects carry a type, message, and full traceback, far richer than a simple error code or boolean return value." },
+            { "title": "Encourages EAFP Style", "text": "Lets code assume success and handle failure only where it actually occurs, resulting in more linear, readable logic." },
+            { "title": "Custom Exceptions Improve APIs", "text": "Well-designed exception hierarchies make library and application APIs self-documenting and easy to handle correctly." },
+            { "title": "Guaranteed Cleanup via finally/with", "text": "Resources are reliably released even when errors occur mid-operation, preventing resource leaks." },
+            { "title": "Automatic Propagation", "text": "Errors bubble up automatically through the call stack until handled, so you don't need to manually check and forward error codes at every layer." }
+          ],
+          "cons": [
+            { "title": "Performance Overhead on Failure Path", "text": "Raising and catching exceptions is noticeably slower than a simple conditional check, which matters in tight, high-frequency loops." },
+            { "title": "Overuse Hurts Readability", "text": "Using exceptions for routine control flow (instead of genuine errors) makes code harder to follow and debug." },
+            { "title": "Silent Failures with Broad except Clauses", "text": "A careless except Exception: pass can hide serious bugs indefinitely, since no error is ever surfaced." },
+            { "title": "Traceback Noise in Deep Call Stacks", "text": "Chained exceptions across many layers can produce long, hard-to-read tracebacks if not managed with raise ... from carefully." },
+            { "title": "No Compile-Time Checking", "text": "Unlike Java's checked exceptions, Python never forces callers to handle a particular exception — you only discover missing handling at runtime." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python Exceptions — Interview Questions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the most frequently asked interview questions on Python exception handling, ranging from fundamentals to trickier edge cases interviewers use to test deeper understanding."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is the difference between an error and an exception in Python?",
+              "a": "In everyday usage the terms overlap, but precisely: a syntax error is detected before the program runs and means the code itself is invalid. An exception occurs while a syntactically valid program is executing — e.g. dividing by zero or accessing a missing key. All exceptions in Python are objects derived from BaseException, and they can be caught and handled, unlike syntax errors which must be fixed in the source code itself.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between BaseException and Exception?",
+              "a": "BaseException is the root of the entire exception hierarchy. Exception is a direct subclass of BaseException and is the base class for nearly all errors application code is expected to catch. Critically, SystemExit, KeyboardInterrupt, and GeneratorExit inherit directly from BaseException, not Exception — so catching Exception (rather than BaseException) will not accidentally swallow a user's Ctrl+C or a deliberate sys.exit() call.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is the purpose of the else clause in a try-except block?",
+              "a": "The else clause runs only if the try block completes without raising any exception. It exists to separate the 'risky' code (in try) from code that should run only on success, without accidentally catching exceptions raised by that success-path code itself. For example, put the code that computes a result in try, and the code that uses that result in else.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q4. Does the finally block always execute?",
+              "a": "Yes — finally executes in almost every scenario: whether the try block succeeds, whether an exception is raised and caught, whether an exception is raised and NOT caught, and even if there is a return statement inside try or except. The only exceptions are if the entire Python process is killed abruptly, such as via os._exit() or a fatal signal/crash.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q5. What is the difference between raise Exception('msg') and raise Exception('msg') from other_exception?",
+              "a": "A plain raise creates a new exception with its own traceback. Using raise NewError(...) from original_error explicitly links the two exceptions together — Python will print both tracebacks and state that the original exception was the direct cause of the new one. This is called exception chaining and is essential for debugging when translating low-level errors into higher-level, more meaningful ones.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. Why should you avoid a bare except: clause?",
+              "a": "A bare except: (with no exception type specified) catches literally every exception, including BaseException subclasses like KeyboardInterrupt and SystemExit. This means pressing Ctrl+C to stop the program, or a deliberate sys.exit() call elsewhere in the code, can get silently swallowed. It also hides genuine bugs by catching errors you never intended to catch, such as a typo causing a NameError.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q7. How do you create a custom exception in Python?",
+              "a": "Define a new class that inherits from Exception (or a more specific built-in exception, or your own application's base exception class). You can optionally override __init__ to accept extra data and pass a formatted message to super().__init__(). Example: class InsufficientFundsError(Exception): pass. Custom exceptions make error handling code more readable and let you attach structured data to the error object.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q8. What happens if an exception is raised inside an except block?",
+              "a": "The new exception replaces the one currently being handled and propagates upward from that point. Python automatically chains the two, showing 'During handling of the above exception, another exception occurred' in the traceback — this is implicit exception chaining, distinct from the explicit chaining done with raise ... from ....",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q9. What is the difference between try-except-finally and a context manager (with statement)?",
+              "a": "Both guarantee cleanup code runs regardless of exceptions, but a context manager is more reusable and concise: the cleanup logic (__exit__) is defined once inside the context manager class or generator function, rather than repeated in every finally block that uses that resource. For common cases like file handling, network connections, and locks, with is the idiomatic and safer choice.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q10. Can you catch multiple exception types in a single except clause?",
+              "a": "Yes — by passing a tuple of exception types: except (ValueError, TypeError) as e:. Python checks the raised exception against each type in the tuple and executes this single handler if any of them match. This avoids duplicating identical handling logic across multiple except blocks when the response to several error types is the same.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q11. What is the assert statement and how does it relate to exceptions?",
+              "a": "assert condition, message raises an AssertionError if condition evaluates to False. It is primarily intended for internal self-checks and debugging invariants during development, not for validating user input or handling expected runtime errors — because assertions can be globally disabled when Python is run with the -O (optimize) flag, silently removing all assert statements.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q12. What is the difference between LookupError, IndexError, and KeyError?",
+              "a": "LookupError is the common base class for lookup failures. IndexError is raised when a sequence (list, tuple, string) is indexed with a position outside its valid range. KeyError is raised when a mapping (dictionary) is accessed with a key that doesn't exist. Catching LookupError will catch both, which is useful when handling generic 'container' lookups that could be either a list or a dict.",
+              "tag": "Frequently Asked"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Work through these practice questions to test your understanding of Python exception handling. Try to reason out each answer before revealing it."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What will this code print? try: print(1/0) except ZeroDivisionError: print('A') except Exception: print('B') finally: print('C')",
+              "a": "It prints 'A' followed by 'C'. Python checks except clauses top to bottom and stops at the first match — since ZeroDivisionError matches first, 'B' (the more general Exception handler) never runs. The finally block then always executes afterward, printing 'C'.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Will 'finally' run if the try block contains a return statement?",
+              "a": "Yes. Even though return normally exits a function immediately, Python guarantees that any finally block belonging to an active try statement executes before the function actually returns control to its caller. If finally also contains a return, that return value overrides the one from try — a subtle and generally discouraged pattern.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "3. What is the output of: except (TypeError, ValueError) as e: print(type(e))  when a ValueError is raised?",
+              "a": "It prints <class 'ValueError'>. Grouping exception types in a tuple only changes which exceptions the clause matches — the variable e is still bound to the actual exception instance that was raised, preserving its real, specific type.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. Why is catching Exception generally safer than a bare except:, but still discouraged as a habit?",
+              "a": "except Exception: is safer because it does not catch SystemExit, KeyboardInterrupt, or GeneratorExit (which inherit directly from BaseException), so the program can still be interrupted normally. It is still discouraged as a default habit because it can mask many unrelated bugs — a NameError from a typo would be caught the same way as a genuine, expected failure, hiding real defects.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. What does 'raise' with no arguments do when used inside an except block, versus outside one?",
+              "a": "Inside an active except block, a bare raise re-raises the exception currently being handled, preserving its original traceback — this is the standard way to log an error and then let it continue propagating. Outside of any except block (with no exception currently being handled), a bare raise instead raises a RuntimeError stating there is no active exception to re-raise.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "6. What is the difference between raise ValueError('bad input') from exc and raise ValueError('bad input') from None?",
+              "a": "'from exc' explicitly links the new exception's traceback to a specific earlier exception, showing it as the direct cause. 'from None' explicitly suppresses any chained context, so Python's traceback output shows only the new exception with no 'caused by' information — useful when the original low-level cause would only add confusing noise for the reader.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. If a custom exception class overrides __init__ but forgets to call super().__init__(message), what breaks?",
+              "a": "The exception object will still be raised and caught correctly, but str(exception) and its default traceback message will be empty, since BaseException stores the message via its own __init__. Always call super().__init__(message) (or pass args through) so that printing the exception or logging it produces a useful message.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "8. Why does using exceptions for routine control flow hurt performance in Python compared to a simple if-check?",
+              "a": "Raising an exception involves constructing an exception object, capturing a traceback (walking the current call stack), and unwinding stack frames until a matching handler is found — all of which is significantly more expensive than evaluating a boolean condition. For code paths that fail routinely and predictably (not exceptionally), a plain conditional check is faster and clearer.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Mastering Python Exception Handling",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Exception handling is not an optional add-on to Python programming — it is a core part of how the language expresses success and failure. Every reliable Python program, from a small script to a large-scale production service, depends on precise, intentional use of <code>try</code>, <code>except</code>, <code>else</code>, and <code>finally</code> to behave predictably when something goes wrong."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The path to mastery follows a clear progression: start by understanding the <strong>exception hierarchy</strong> so you know exactly what each except clause catches. Learn to <strong>raise</strong> exceptions deliberately to enforce your own business rules. Build a small, well-designed set of <strong>custom exception classes</strong> so failures in your application are self-documenting. Use <strong>context managers</strong> for guaranteed cleanup instead of manual finally blocks wherever possible. And above all, resist the temptation to reach for a bare <code>except:</code> — specificity is what makes error handling code trustworthy rather than merely present."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Situation", "Recommended Approach"],
+          "rows": [
+            ["Expected, recoverable error (bad user input)", "✅ Catch a specific built-in exception (ValueError, KeyError, etc.)"],
+            ["Domain-specific business rule violation", "✅ Raise and catch a custom exception class"],
+            ["Resource that must always be released", "✅ Use a context manager (with statement)"],
+            ["Translating a low-level error into a domain error", "✅ Use raise ... from ... to chain exceptions"],
+            ["Debugging an internal invariant during development", "✅ Use assert (never for production input validation)"],
+            ["Silencing an error you genuinely don't care about", "⚠️ Catch the specific exception, and still log it"],
+            ["\"Just make errors go away\"", "❌ Never use a bare except: or except Exception: pass"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The natural next step in your Python journey is to explore related topics that build directly on exception handling: <strong>context managers and the contextlib module</strong>, <strong>logging</strong> (Python's built-in logging module for structured error reporting), and <strong>unit testing failure paths</strong> using tools like pytest's <code>pytest.raises()</code>. Together, these form the foundation of writing Python code that fails safely, loudly, and informatively — exactly when it should."
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "What is the difference between try-except and try-except-finally in Python?",
+        "a": "try-except handles an exception if one occurs, running the except block only when a matching error is raised. Adding finally guarantees an additional block of code runs no matter what — whether the try succeeded, an exception was caught, or an exception propagated uncaught — making it ideal for cleanup tasks like closing files or releasing connections."
+      },
+      {
+        "q": "Can a Python function have multiple except blocks?",
+        "a": "Yes. A single try statement can be followed by any number of except clauses, each catching a different exception type. Python checks them in order from top to bottom and executes only the first one that matches the raised exception; any remaining except clauses below it are skipped."
+      },
+      {
+        "q": "Is it good practice to use exceptions for control flow in Python?",
+        "a": "Occasionally, yes — Python's EAFP style intentionally uses exceptions like StopIteration to control loop termination, and this is idiomatic. However, using exceptions for routine, predictable branching (rather than genuinely exceptional failures) is discouraged because it hurts both readability and performance compared to a simple conditional check."
+      },
+      {
+        "q": "What is the difference between Exception and BaseException in Python?",
+        "a": "BaseException is the root of Python's entire exception hierarchy. Exception is its direct subclass and is the base for virtually all errors that application code should catch. System-level signals like SystemExit and KeyboardInterrupt inherit directly from BaseException rather than Exception, specifically so that catching Exception won't accidentally block a user's Ctrl+C or a deliberate program exit."
+      },
+      {
+        "q": "How do you log an exception's full traceback in Python?",
+        "a": "Use the logging module's logger.exception(message) method inside an except block — it automatically attaches the current exception's traceback to the log entry. Alternatively, the traceback module's traceback.format_exc() or traceback.print_exc() functions can capture or print the traceback as a string."
+      },
+      {
+        "q": "What is the difference between raise and raise ... from ... in Python?",
+        "a": "A plain raise creates and propagates a new exception with its own fresh context. raise NewException(...) from original_exception explicitly attaches the earlier exception as the documented cause, so the printed traceback shows both errors and their relationship — essential when converting a low-level error into a more meaningful, higher-level one."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Super Function", "path": "/python/python-super-function" },
+    "next": { "label": "Next: Python Try Except →", "path": "/python/python-try-except" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Root class",     "dd": "BaseException" },
+      { "dt": "App errors base","dd": "Exception" },
+      { "dt": "Core keywords",  "dd": "try, except, else, finally, raise" },
+      { "dt": "Chaining syntax","dd": "raise ... from ..." },
+      { "dt": "Cleanup tool",   "dd": "with statement (context managers)" },
+      { "dt": "Philosophy",    "dd": "EAFP over LBYL" }
+    ],
+    "relatedArticles": [
+      { "label": "Python File Handling",   "path": "/python/python-file-handling" },
+      { "label": "Python Functions",       "path": "/python/python-functions" },
+      { "label": "Python OOP",             "path": "/python/python-oop" },
+      { "label": "Python Modules",         "path": "/python/python-modules" },
+      { "label": "Python Decorators",      "path": "/python/python-decorators" },
+      { "label": "Python Context Managers","path": "/python/python-context-managers" },
+      { "label": "Python Logging",         "path": "/python/python-logging" },
+      { "label": "Python Unit Testing",    "path": "/python/python-unit-testing" }
+    ],
+    "tags": ["try-except","finally","raise","custom exceptions","BaseException","exception chaining","context managers","with statement","EAFP","traceback","error handling","logging"]
+  }
+}

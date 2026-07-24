@@ -1,0 +1,703 @@
+{
+  "meta": {
+    "title": "Python Function Arguments | Positional, Keyword, *args, **kwargs Explained | Python Tutorial for Beginners 2026 | Tech Sustainify",
+    "description": "Learn Python function arguments in depth. Covers positional arguments, keyword arguments, default arguments, *args, **kwargs, positional-only and keyword-only parameters, argument unpacking, and pass-by-object-reference semantics, with real errors like TypeError: multiple values for argument for 2026.",
+    "keywords": "python function arguments, positional arguments python, keyword arguments python, default arguments python, args kwargs python, positional only parameters, keyword only parameters, python argument unpacking, pass by reference python, TypeError multiple values for argument, python argument order",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-function-arguments/",
+    "ogTitle": "Python Function Arguments — Complete Guide 2026 | Tech Sustainify",
+    "ogDescription": "Deep dive into Python function arguments — positional, keyword, default, *args, **kwargs, unpacking, argument order rules, and the exact TypeErrors every dev hits while learning this.",
+    "ogUrl": "https://techsustainify.com/python/python-function-arguments/",
+    "ogImage": "https://techsustainify.com/images/python/python-function-arguments-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "20 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-02-22",
+    "schemaDateModified": "2026-03-21",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 8000
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python Function Arguments" }
+  ],
+
+  "articleHeader": {
+    "badge": "📥 Python",
+    "title": "Python Function Arguments — Every Way to Pass Data In, Explained Properly",
+    "subtitle": "Positional, keyword, default, *args, **kwargs, positional-only, keyword-only, and argument unpacking — the exact order rules Python enforces, and the specific TypeErrors you'll hit while learning them."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-21", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time", "value": "20 min" },
+    { "icon": "🎯", "label": "Level", "value": "Beginner" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-are-function-arguments",
+      "title": "What Are Function Arguments in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A function without inputs can only ever do one fixed thing. Arguments are what let the same function behave differently every time it's called — <code>send_email(\"priya@example.com\", subject=\"Invoice\")</code> and <code>send_email(\"rohan@example.com\", subject=\"Reminder\")</code> run identical code with different data plugged in. Arguments are the entire reason functions are reusable instead of just named blocks that always do the exact same thing."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's where Python genuinely stands apart from most beginner-friendly languages: it gives you five distinct ways to pass arguments into a function — positional, keyword, default-valued, arbitrary positional (<code>*args</code>), and arbitrary keyword (<code>**kwargs</code>) — and they can all coexist in a single function signature, in a specific, non-negotiable order. That flexibility is genuinely powerful once it clicks. Before it clicks, it's the source of some of the most confusing tracebacks a beginner will encounter, mostly because the error messages assume you already know the vocabulary they're using."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "I still remember staring at <code>TypeError: create_user() got multiple values for argument 'role'</code> for a solid ten minutes before realising the actual problem: I'd passed <code>role</code> both positionally and as a keyword argument in the same call, and Python had absolutely no idea which one I actually meant. The error message is accurate. It's just written assuming you already know exactly what 'multiple values for one argument' means mechanically — which, the first time you see it, you don't."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This guide walks through every argument-passing style Python supports, the exact order rules the interpreter enforces, argument unpacking with <code>*</code> and <code>**</code> at the call site, and — because it trips up almost everyone eventually — how Python actually passes arguments under the hood, which is neither strictly 'by value' nor strictly 'by reference' the way those terms work in C or Java."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "history-of-arguments",
+      "title": "History — How Python's Argument-Passing Syntax Grew Over Time",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python's argument system today is the product of several distinct additions over more than three decades, each solving a specific real-world pain point that developers had already run into."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "1991 — Python 0.9.0", "text": " — Basic positional arguments existed from the very first release. Call a function, values get matched to parameters strictly by position, in order — the simplest and oldest form of argument passing in the language." },
+            { "strong": "Early 1990s — Default Arguments", "text": " — Default parameter values (def f(x=10):) were present very early on, letting callers omit arguments that have a sensible fallback, without needing separate overloaded function definitions the way C++ or Java would eventually require." },
+            { "strong": "Early 1990s — Keyword Arguments", "text": " — The ability to call a function by naming parameters explicitly (greet(name='Priya')) rather than relying purely on position was also part of Python's earliest design — a genuinely progressive feature for its era, when most mainstream languages offered only positional calling." },
+            { "strong": "Early 1990s — *args and **kwargs", "text": " — Variable-length argument collection using * and ** prefixes appeared early too, allowing functions like print() itself to accept any number of arguments without a fixed signature." },
+            { "strong": "2008 — Python 3.0 (PEP 3102)", "text": " — Introduced keyword-only arguments — parameters that must be passed by name, enforced using a bare * in the function signature. This gave library authors a way to force clarity at call sites for parameters where positional calling would be error-prone or ambiguous." },
+            { "strong": "2018 — Python 3.8 (PEP 570)", "text": " — Introduced positional-only parameters, marked using a / in the signature. This let standard library functions (many of which had already behaved this way informally in C implementations) formally declare that certain parameters cannot be passed by keyword — useful for letting a library rename an internal parameter later without breaking anyone who called it positionally." },
+            { "strong": "2026 — Current state", "text": " — All five styles — positional, keyword, default, *args, **kwargs — plus positional-only and keyword-only markers, now coexist in one unified, precisely ordered grammar. It's more rules to learn upfront than most beginner tutorials admit, but each one solves a genuinely distinct real problem, not academic completeness for its own sake." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "features-heading",
+      "title": "Key Characteristics of Python Function Arguments",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Here are the 11 things worth knowing precisely about how Python handles arguments — not the vague version, the exact one:"
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            { "icon": "📍", "title": "Positional Matching by Order", "text": "Arguments passed without a name are matched to parameters strictly left to right, in the order the function defines them. greet('Priya', 25) binds 'Priya' to the first parameter and 25 to the second, regardless of their names." },
+            { "icon": "🏷️", "title": "Keyword Matching by Name", "text": "Arguments passed as name=value are matched by that exact name, regardless of position in the call. greet(age=25, name='Priya') works identically to greet('Priya', 25), because both keyword arguments are matched by name, not position." },
+            { "icon": "🎛️", "title": "Defaults Fill Gaps, Not Override Them", "text": "A default value is only used when the caller omits that argument entirely. Passing any value at all for that parameter — even an 'empty' one like None — always overrides the default; Python never silently falls back to a default just because a value looks unusual." },
+            { "icon": "📦", "title": "*args Collects Into a Tuple", "text": "Any extra unnamed arguments beyond the explicitly listed parameters get gathered into a tuple accessible inside the function under whatever name follows the asterisk — conventionally args, though any valid name works." },
+            { "icon": "🗃️", "title": "**kwargs Collects Into a Dictionary", "text": "Any extra named arguments not matching an explicit parameter get gathered into a dictionary, with argument names as keys. Conventionally called kwargs, though again the name itself is just a convention, not a requirement." },
+            { "icon": "🔢", "title": "Strict Required Order in Signatures", "text": "A function signature must follow this exact order: positional-only, then standard positional-or-keyword, then default-valued, then *args, then keyword-only, then **kwargs. Violating this order raises SyntaxError immediately, before the function is ever called." },
+            { "icon": "🚫", "title": "Can't Mix the Same Argument Twice", "text": "Supplying a value for the same parameter both positionally and by keyword in one call raises TypeError: got multiple values for argument, because Python genuinely cannot tell which value you intended." },
+            { "icon": "🔓", "title": "Argument Unpacking at Call Sites", "text": "A single asterisk before a list or tuple (*my_list) unpacks it into separate positional arguments at the call site. A double asterisk before a dictionary (**my_dict) unpacks it into separate keyword arguments." },
+            { "icon": "🧷", "title": "Positional-Only Parameters (/)", "text": "Parameters listed before a bare / in the signature can only be passed positionally — attempting to pass them by keyword raises TypeError, even if the name matches exactly." },
+            { "icon": "🔐", "title": "Keyword-Only Parameters (*)", "text": "Parameters listed after a bare * (or after *args) in the signature must be passed by keyword — attempting to pass them positionally raises TypeError, regardless of correct ordering." },
+            { "icon": "🔗", "title": "Objects Passed by Reference, Not Copied", "text": "Python doesn't copy argument values into the function; it passes a reference to the same object. Mutating a mutable argument (like appending to a list) inside a function affects the original object the caller still holds — reassigning the parameter to a new object does not." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "How Python Matches Arguments to Parameters — Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every single function call goes through the same internal matching process before the function body even starts running — positional arguments get slotted in first, keyword arguments get matched by name, defaults fill whatever's left unfilled, and anything extra gets swept into *args or **kwargs. Here's that exact sequence."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "📞 Function Called", "sublabel": "with positional and/or keyword args", "type": "start" },
+            { "id": "2", "label": "📍 Bind Positional Args", "sublabel": "Matched left-to-right by order", "type": "process" },
+            { "id": "3", "label": "🏷️ Bind Keyword Args", "sublabel": "Matched by exact parameter name", "type": "process" },
+            { "id": "4", "label": "❓ Same Param Bound Twice?", "sublabel": "Positionally AND by keyword", "type": "decision" },
+            { "id": "5", "label": "💥 TypeError Raised", "sublabel": "got multiple values for argument", "type": "end" },
+            { "id": "6", "label": "❓ Any Required Param Unfilled?", "sublabel": "No default, no value given", "type": "decision" },
+            { "id": "7", "label": "💥 TypeError Raised", "sublabel": "missing required positional argument", "type": "end" },
+            { "id": "8", "label": "🎛️ Apply Defaults", "sublabel": "Fill remaining gaps with default values", "type": "process" },
+            { "id": "9", "label": "📦 Collect Extras", "sublabel": "Leftover positional → *args, leftover keyword → **kwargs", "type": "process" },
+            { "id": "10", "label": "✅ All Parameters Bound", "sublabel": "Function body begins executing", "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "processes left to right" },
+            { "from": "2", "to": "3", "label": "then" },
+            { "from": "3", "to": "4", "label": "checks" },
+            { "from": "4", "to": "5", "label": "if yes" },
+            { "from": "4", "to": "6", "label": "if no" },
+            { "from": "6", "to": "7", "label": "if yes" },
+            { "from": "6", "to": "8", "label": "if no" },
+            { "from": "8", "to": "9", "label": "then" },
+            { "from": "9", "to": "10", "label": "binding complete" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Key insight: this entire binding process happens <em>before</em> a single line inside the function body runs. If it fails at any decision point, the function never executes at all — you get a clean traceback pointing at the call site, not a partially-run function with confusing half-completed side effects."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "how-arguments-work",
+      "title": "How Arguments Actually Work — Order Rules, Unpacking, and Reference Semantics",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Three things separate someone who's memorised *args and **kwargs as magic syntax from someone who actually understands argument passing: the strict ordering rule for signatures, how unpacking works at the call site (not just the definition), and what 'passed by reference' really means in Python — because it is genuinely not the same as either C's pass-by-value or Java's pass-by-reference, despite people casually using both terms."
+        },
+        { "type": "subHeading", "text": "🔢 The Non-Negotiable Signature Order" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A full Python function signature, using every available feature, follows exactly this order: <code>def f(pos_only, /, standard, default=1, *args, kw_only, **kwargs):</code>. Positional-only parameters come first, separated by a bare <code>/</code>. Then standard positional-or-keyword parameters. Then defaulted parameters. Then <code>*args</code> for extra positional values. Then keyword-only parameters, which can appear either after a bare <code>*</code> or right after <code>*args</code> itself. Finally <code>**kwargs</code>, always last. Writing a parameter with a default before one without a default — <code>def f(a=1, b):</code> — raises <code>SyntaxError: parameter without a default follows parameter with a default</code> immediately, because Python can't figure out what should happen if a caller supplies only one positional value."
+        },
+        { "type": "subHeading", "text": "🔓 Unpacking at the Call Site — Where * and ** Actually Shine" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>*</code> and <code>**</code> prefixes aren't only for collecting arguments inside a definition — they also work in reverse, at the call site, to spread out an existing collection. If you have <code>coordinates = (10, 20)</code> and a function <code>def move(x, y):</code>, calling <code>move(*coordinates)</code> unpacks the tuple into two separate positional arguments — exactly equivalent to <code>move(10, 20)</code>. Similarly, if <code>user_data = {'name': 'Priya', 'age': 25}</code> and a function <code>def create_user(name, age):</code>, calling <code>create_user(**user_data)</code> unpacks the dictionary into keyword arguments — exactly equivalent to <code>create_user(name='Priya', age=25)</code>. This pattern shows up constantly when forwarding arguments between wrapper functions and the functions they wrap, which is exactly how most decorators are implemented internally."
+        },
+        { "type": "subHeading", "text": "🔗 Pass-by-Object-Reference — Neither Value Nor Reference, Exactly" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This confuses developers coming from both C-style and Java-style backgrounds, because Python's actual behaviour is its own thing. When you pass an argument, Python passes a reference to the same underlying object — no copy is made. If that object is <strong>mutable</strong> (a list, dict, or set) and the function modifies it in place — <code>my_list.append(4)</code> — the caller's original object changes too, because there's only ever been one object the whole time. But if the function <strong>reassigns</strong> the parameter name to a brand new object — <code>my_list = [1, 2, 3]</code> — that reassignment only affects the local name inside the function; the caller's original variable still points at whatever it pointed at before. Immutable objects (strings, integers, tuples) behave as if passed by value in practice, simply because you can't mutate them in place at all — any 'change' to a string parameter is actually creating a new string object and rebinding the local name to it."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Simple rule to remember:</strong> positional binds by order, keyword binds by name, defaults fill gaps, *args/**kwargs sweep up the leftovers, and mutating a mutable argument in place affects the caller — reassigning it does not."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "argument-types-comparison",
+      "title": "Positional vs Keyword vs Default vs *args vs **kwargs — Key Differences",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Each argument style solves a genuinely different problem. This table lines up exactly what each one does, how it's written, and when to reach for it."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Argument Type", "Definition Syntax", "Call Syntax", "Matched By", "Typical Use Case"],
+          "rows": [
+            ["Positional", "def f(a, b):", "f(1, 2)", "Order/position", "Simple, obvious argument order (coordinates, small math functions)"],
+            ["Keyword", "def f(a, b):", "f(b=2, a=1)", "Exact name", "Improving call-site readability, especially with several arguments"],
+            ["Default", "def f(a, b=10):", "f(5) or f(5, 20)", "Name, with fallback", "Optional settings with a sensible common value"],
+            ["*args", "def f(*args):", "f(1, 2, 3, 4)", "Position, collected into a tuple", "Unknown number of positional inputs (e.g. sum of any count of numbers)"],
+            ["**kwargs", "def f(**kwargs):", "f(x=1, y=2, z=3)", "Name, collected into a dict", "Flexible configuration-style calls, forwarding to another function"],
+            ["Positional-only", "def f(a, b, /):", "f(1, 2) only — f(a=1) fails", "Order only, keyword forbidden", "Library APIs where parameter names may change later"],
+            ["Keyword-only", "def f(*, a, b):", "f(a=1, b=2) only — f(1, 2) fails", "Name only, position forbidden", "Forcing clarity for easily-confused boolean/config flags"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "python-vs-other-arguments",
+      "title": "Passing Arguments — Python vs Other Languages",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python's argument flexibility is genuinely unusual compared to statically typed languages, and the contrast explains a lot about why Python APIs tend to look different from Java or C++ ones."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Python", "Java", "JavaScript", "C++"],
+          "rows": [
+            ["Keyword arguments", "✅ Native, widely used", "❌ Not supported natively", "⚠️ Simulated via destructured object params", "❌ Not supported natively"],
+            ["Default arguments", "✅ Native support", "❌ Requires method overloading", "✅ Native support (ES6+)", "✅ Native support"],
+            ["Variable-length args", "*args / **kwargs", "Varargs: Type... name", "Rest parameters: ...args", "Variadic templates / initializer_list"],
+            ["Positional-only enforcement", "✅ Via / marker (3.8+)", "N/A — all params positional by nature", "N/A — all params positional by nature", "N/A — all params positional by nature"],
+            ["Keyword-only enforcement", "✅ Via * marker", "❌ Not applicable", "⚠️ Simulated via object destructuring", "❌ Not applicable"],
+            ["Argument passing model", "Pass by object reference", "Pass by value (references are the value for objects)", "Pass by value (references are the value for objects)", "Pass by value, or explicitly by reference/pointer"],
+            ["Call-site unpacking", "*list, **dict", "❌ Not supported", "✅ Spread operator ...array", "❌ Not supported directly"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's my honestly opinionated take: Python's native keyword arguments are one of its most underrated design decisions, and I genuinely miss them whenever I write Java. A call like <code>create_report(start_date='2026-01-01', end_date='2026-03-31', include_charts=True)</code> is self-documenting at the call site — you don't need to open the function definition to know what each value means. Java developers simulate this with builder patterns or wrapper config objects, which works, but it's noticeably more ceremony to get the same clarity Python gives you for free with plain keyword syntax."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Python's Argument System",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "This much flexibility is a genuine strength, but it comes with real trade-offs, especially around clarity and API design discipline."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Self-Documenting Call Sites", "text": "Keyword arguments let a function call read almost like plain English — create_user(name='Priya', is_admin=False) needs no lookup to understand." },
+            { "title": "Genuinely Flexible APIs", "text": "Combining defaults, *args, and **kwargs lets one function signature gracefully support a huge range of calling styles without needing overloaded variants." },
+            { "title": "No Overloading Ceremony Required", "text": "Where Java needs several method signatures for optional parameters, Python handles the same cases with a single function and default values." },
+            { "title": "Clean Argument Forwarding", "text": "*args and **kwargs at both definition and call sites make wrapper functions and decorators that forward arguments to another function remarkably concise." },
+            { "title": "Enforceable Clarity Where It Matters", "text": "Keyword-only parameters let API designers force callers to be explicit about easily-confused arguments, preventing accidental positional mix-ups." },
+            { "title": "Efficient Passing of Large Objects", "text": "Passing by object reference means large lists or dictionaries aren't copied on every function call, which matters for performance with big data structures." }
+          ],
+          "cons": [
+            { "title": "Genuinely Confusing Error Messages at First", "text": "TypeError: got multiple values for argument and missing required positional argument are accurate but assume vocabulary beginners haven't learned yet." },
+            { "title": "Strict, Easy-to-Violate Order Rules", "text": "The required positional-only → positional-or-keyword → defaults → *args → keyword-only → **kwargs order is a lot to memorise, and violating it raises SyntaxError before the function even runs." },
+            { "title": "Mutable Argument Mutation Surprises", "text": "Passing a list or dict and mutating it inside a function silently changes the caller's original object, which surprises developers expecting value-like copy semantics." },
+            { "title": "**kwargs Can Hide Typos", "text": "A misspelled keyword argument intended for a specific parameter can silently get swept into **kwargs instead of raising an error, especially in functions that don't validate their kwargs contents." },
+            { "title": "Overuse Reduces Readability", "text": "A function signature drowning in *args, **kwargs, and a dozen optional keyword parameters can become genuinely hard to understand from the outside, defeating the self-documenting benefit entirely." },
+            { "title": "No Compile-Time Argument Type Checking", "text": "Passing the wrong type of value to any argument style won't be caught until that specific line actually executes, unlike statically typed languages that catch mismatches earlier." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "diagram-heading",
+      "title": "Argument Binding Architecture — From Call Site to Local Scope",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The diagram below shows exactly where each argument style lives in the pipeline between writing a function call and that function's body actually starting to run."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Call Site (Your Code)",
+              "color": "#6366f1",
+              "items": ["Positional values: f(1, 2)", "Keyword values: f(a=1, b=2)", "Unpacked collections: f(*list, **dict)"]
+            },
+            {
+              "label": "CPython Argument Parser",
+              "color": "#0ea5e9",
+              "items": ["Reads function's __code__ signature", "Validates order and count", "Detects duplicate bindings"]
+            },
+            {
+              "label": "Binding Resolution",
+              "color": "#10b981",
+              "items": ["Positional-only slots filled first", "Standard params matched by position or name", "Defaults applied for unfilled gaps", "Extras swept into *args / **kwargs"]
+            },
+            {
+              "label": "Error Path (On Failure)",
+              "color": "#ef4444",
+              "items": ["TypeError: missing required positional argument", "TypeError: got multiple values for argument", "TypeError: got an unexpected keyword argument"]
+            },
+            {
+              "label": "Local Scope Created",
+              "color": "#f59e0b",
+              "items": ["All parameters now bound as local variables", "Mutable arguments reference original objects", "Immutable arguments behave value-like"]
+            },
+            {
+              "label": "Function Body Executes",
+              "color": "#8b5cf6",
+              "items": ["Runs using the bound local variables", "Mutations to mutable args affect caller's objects", "Reassignments stay local only"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "Every Argument Style in One File — Plus the Errors They Produce",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's a function using every style together, followed by the two most common argument-related errors and exactly what triggers them."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "all_argument_styles.py",
+          "lines": [
+            "def build_profile(user_id, /, name, role=\"member\", *tags, verified=False, **extra_info):",
+            "    print(f\"ID: {user_id} (positional-only)\")",
+            "    print(f\"Name: {name}\")",
+            "    print(f\"Role: {role}\")",
+            "    print(f\"Tags: {tags}\")",
+            "    print(f\"Verified: {verified} (keyword-only)\")",
+            "    print(f\"Extra info: {extra_info}\")",
+            "",
+            "build_profile(101, \"Ananya\", \"admin\", \"beta-tester\", \"early-access\", verified=True, city=\"Pune\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["ID: 101 (positional-only)", "Name: Ananya", "Role: admin", "Tags: ('beta-tester', 'early-access')", "Verified: True (keyword-only)", "Extra info: {'city': 'Pune'}"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Now the two errors that trip up almost everyone at some point — reproduced exactly:"
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "argument_errors.py",
+          "lines": [
+            "def create_user(name, role=\"user\"):",
+            "    print(f\"{name} created with role {role}\")",
+            "",
+            "# Error 1: same argument supplied twice",
+            "create_user(\"Rohan\", \"admin\", role=\"editor\")",
+            "",
+            "# Error 2: a required argument never supplied",
+            "# create_user(role=\"admin\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["Traceback (most recent call last):", "  File \"argument_errors.py\", line 5, in <module>", "    create_user(\"Rohan\", \"admin\", role=\"editor\")", "TypeError: create_user() takes from 1 to 2 positional arguments but 3 were given"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "That specific error happens because <code>\"admin\"</code> was already passed positionally for <code>role</code>, and then <code>role=\"editor\"</code> tried to bind it again by keyword — but since there are only 2 total parameters and 3 positional-looking values were supplied, Python actually reports the positional-count mismatch first. Removing the extra positional value and calling <code>create_user(\"Rohan\", role=\"editor\")</code> instead resolves it cleanly. The commented-out second case — calling with only <code>role=\"admin\"</code> and no <code>name</code> — would raise <code>TypeError: create_user() missing 1 required positional argument: 'name'</code>, since <code>name</code> has no default and nothing was ever supplied for it."
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "def describe_pet(name, species=\"dog\", *nicknames, **details):\n    print(f\"{name} is a {species}\")\n    print(f\"Nicknames: {nicknames}\")\n    print(f\"Details: {details}\")\n\ndescribe_pet(\"Bruno\", \"dog\", \"Bru\", \"Champ\", color=\"brown\", age=3)"
+        },
+        {
+          "type": "subHeading",
+          "text": "Line-by-Line Explanation"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>user_id, /,</code> — Everything before the <code>/</code> is positional-only. Calling <code>build_profile(user_id=101, ...)</code> would raise <code>TypeError: build_profile() got some positional-only arguments passed as keyword arguments: 'user_id'</code>." },
+            { "html": "<code>name, role=\"member\"</code> — Standard positional-or-keyword parameters, with <code>role</code> defaulting to <code>\"member\"</code> if omitted." },
+            { "html": "<code>*tags</code> — Collects any additional positional arguments beyond <code>name</code> and <code>role</code> into a tuple — here, <code>('beta-tester', 'early-access')</code>." },
+            { "html": "<code>verified=False</code> after <code>*tags</code> — This makes <code>verified</code> keyword-only. It cannot be supplied positionally, only as <code>verified=True</code> or similar." },
+            { "html": "<code>**extra_info</code> — Collects any remaining keyword arguments not matching a named parameter — here, just <code>city=\"Pune\"</code> — into a dictionary." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "arguments-real-uses",
+      "title": "Where Argument Flexibility Actually Matters — Real-World Applications",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "This isn't abstract syntax trivia — Python's argument system shapes how real, widely-used APIs are designed:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🌐 Web Framework Configuration", "text": " — Django model fields and view functions lean heavily on keyword arguments and defaults — CharField(max_length=100, blank=True, null=False) reads clearly precisely because every value is named at the call site." },
+            { "strong": "🎨 Decorators and Function Wrapping", "text": " — Every decorator that needs to work on functions with unknown signatures relies on *args and **kwargs to transparently forward whatever arguments the wrapped function actually needs, without knowing them in advance." },
+            { "strong": "📊 Data Science Library APIs", "text": " — pandas.read_csv() accepts dozens of optional keyword arguments (sep, header, dtype, na_values) with sensible defaults — exactly the kind of API that would be unworkable without native default and keyword argument support." },
+            { "strong": "🔧 Configuration and Settings Objects", "text": " — Functions that accept **kwargs as a flexible settings bag let calling code pass only the options it cares about, letting the function apply sensible defaults for everything else." },
+            { "strong": "🧪 Test Fixtures and Parametrised Tests", "text": " — pytest fixtures and parametrised test functions frequently use default arguments and keyword-only parameters to keep test setup explicit and readable, avoiding ambiguous positional test data." },
+            { "strong": "🖼️ GUI and Plotting Libraries", "text": " — matplotlib.pyplot.plot() accepts a long tail of optional style-related keyword arguments (color, linewidth, linestyle) — exactly the pattern **kwargs and defaults are built for." },
+            { "strong": "🔌 API Client Wrappers", "text": " — Functions wrapping third-party API calls often forward **kwargs directly into an underlying HTTP request library, letting callers pass through headers, timeout, or auth options without the wrapper needing to know every possible option in advance." },
+            { "strong": "🧮 Mathematical/Statistical Utility Functions", "text": " — Functions like a custom sum_all(*numbers) or average(*values) use *args to accept any number of numeric inputs without forcing callers to build a list first." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-arguments",
+      "title": "Why This Deserves Its Own Deep Dive, Not Just a Side Note",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Most tutorials cover arguments as a quick aside inside a broader 'functions' lesson. Here's why that undersells the topic:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🐛 It's Where a Huge Share of TypeErrors Come From", "text": " — missing required positional argument, got multiple values for argument, and unexpected keyword argument are three of the most common tracebacks in real Python codebases, and all three are purely argument-binding issues, not logic bugs." },
+            { "strong": "💼 API Design Interviews Test This Directly", "text": " — Being asked to design a function signature that accepts flexible configuration, or to explain why a mutable default argument is dangerous, is a genuinely common mid-level interview question." },
+            { "strong": "🧠 It Explains Library Code You Read Daily", "text": " — Once *args, **kwargs, and keyword-only parameters actually make sense, reading the source of libraries like requests or pandas stops feeling like decoding a puzzle." },
+            { "strong": "🔧 It's Foundational for Writing Decorators", "text": " — Every non-trivial decorator needs to forward arbitrary arguments to the function it wraps, which is impossible to do cleanly without a solid grasp of *args and **kwargs." },
+            { "strong": "🔗 It Clarifies a Genuinely Common Point of Confusion", "text": " — The 'pass by reference vs pass by value' confusion is one of the most frequently mis-explained topics online. Getting it right here prevents a category of bugs involving unexpectedly mutated lists and dictionaries." },
+            { "strong": "🇮🇳 It's a Standard Deep-Dive Topic in Indian Python Courses", "text": " — Beyond the basic def introduction, Indian engineering curricula and interview-prep bootcamps typically dedicate a full separate session to *args/**kwargs and argument order — exactly the scope of this guide." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "unpacking-deep-dive",
+      "title": "Argument Unpacking — * and ** at the Call Site, Explained Further",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Unpacking deserves its own close look, because the same symbols (* and **) mean something different depending on whether they appear in a function definition or at a call site — a distinction that confuses a lot of learners initially."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "In a function definition", "text": " — *args and **kwargs COLLECT extra arguments into a tuple and dictionary respectively. This is the 'gathering' direction." },
+            { "strong": "At a function call", "text": " — *some_list and **some_dict SPREAD an existing collection out into separate individual arguments. This is the 'scattering' direction — the exact opposite operation, using identical symbols." },
+            { "strong": "Combining both directions", "text": " — A very common real pattern: def wrapper(*args, **kwargs): return original_function(*args, **kwargs). Here the wrapper collects whatever it's called with, then immediately spreads those same values back out to call another function — this exact line is the backbone of most decorator implementations." },
+            { "strong": "Unpacking multiple collections in one call", "text": " — Python allows combining several unpacked collections in a single call: combined = [*list_a, *list_b] merges two lists, and merged = {**dict_a, **dict_b} merges two dictionaries, with keys from dict_b overriding matching keys from dict_a if there's a conflict." }
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Symbol Location", "Meaning", "Example", "Result"],
+          "rows": [
+            ["*args in a def", "Gathers extra positional args into a tuple", "def f(*args):", "args is a tuple inside the function"],
+            ["**kwargs in a def", "Gathers extra keyword args into a dict", "def f(**kwargs):", "kwargs is a dict inside the function"],
+            ["*value at a call", "Spreads an iterable into positional args", "f(*[1, 2, 3])", "Equivalent to f(1, 2, 3)"],
+            ["**value at a call", "Spreads a dict into keyword args", "f(**{'a': 1, 'b': 2})", "Equivalent to f(a=1, b=2)"],
+            ["*a, *b combined (list literal)", "Merges two iterables into one list", "[*list_a, *list_b]", "A single flattened list"],
+            ["**a, **b combined (dict literal)", "Merges two dicts into one", "{**dict_a, **dict_b}", "A single merged dict, later keys win on conflict"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python Function Arguments — Interview Questions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These come up constantly in Python interviews, from fresher screening rounds to mid-level backend interviews focused on API design."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is the difference between *args and **kwargs?",
+              "a": "*args collects any extra positional arguments passed to a function into a tuple. **kwargs collects any extra keyword arguments into a dictionary. Both allow a function to accept a variable, unspecified number of arguments — *args for unnamed values, **kwargs for named ones. In a function signature, *args must be listed before **kwargs.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the required order of parameters in a Python function signature that uses every available argument type?",
+              "a": "Positional-only parameters (before a /), then standard positional-or-keyword parameters, then parameters with default values, then *args, then keyword-only parameters, then **kwargs. Violating this order — for example, putting a non-default parameter after a default one — raises SyntaxError before the function ever runs.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What causes the error 'TypeError: got multiple values for argument', and how do you fix it?",
+              "a": "This happens when the same parameter receives a value both positionally and by keyword in the same call — for example, calling f(1, 2, a=3) where the first positional argument 1 already binds to parameter a, and then a=3 tries to bind it again. The fix is removing the duplicate — supply that argument either positionally or by keyword, never both in the same call.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q4. What is the difference between a positional-only parameter and a keyword-only parameter?",
+              "a": "A positional-only parameter — marked by appearing before a bare / in the signature — can ONLY be passed by position; attempting to pass it by keyword raises TypeError even if the name matches. A keyword-only parameter — marked by appearing after a bare * or after *args — can ONLY be passed by keyword; attempting to pass it positionally raises TypeError.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. Explain what happens when you call a function like f(*my_list) where my_list = [1, 2, 3].",
+              "a": "The * operator unpacks my_list at the call site, spreading its contents into separate positional arguments. f(*my_list) is exactly equivalent to writing f(1, 2, 3) directly — the function receives three separate arguments, not one list argument.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q6. Is Python 'pass by value' or 'pass by reference'?",
+              "a": "Neither term fully applies — Python is more accurately described as 'pass by object reference' (sometimes called 'pass by assignment'). A reference to the actual argument object is passed, not a copy. Mutating a mutable object in place inside the function affects the caller's original object. But reassigning the parameter name to point at a new object only changes the local reference — it does not affect what the caller's variable points to.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q7. Why is def add_item(item, basket=[]): considered dangerous, and how does this relate to argument passing specifically?",
+              "a": "The default list [] is created exactly once, at function definition time — every call relying on that default shares the exact same list object as a reference, not a fresh copy. Because arguments (including default ones) are passed and stored as object references, mutating that shared default list in one call persists and affects every subsequent call that also relies on the default.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q8. What error occurs if you call a function with a keyword argument name that doesn't match any parameter and the function has no **kwargs?",
+              "a": "TypeError: function_name() got an unexpected keyword argument 'name'. Since there's no **kwargs to absorb unrecognised keyword arguments, Python has nowhere to put that value and raises this error immediately, naming the specific offending keyword.",
+              "tag": "Frequently Asked"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Work through these before checking the answers. Predicting exact output and exact error text is the real test here."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output of: def f(*args): return sum(args) \\n print(f(1, 2, 3, 4))",
+              "a": "10. args collects all four positional arguments into the tuple (1, 2, 3, 4), and sum() adds them together, returning 10.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What is the output of: def f(**kwargs): return kwargs \\n print(f(a=1, b=2))",
+              "a": "{'a': 1, 'b': 2}. kwargs collects the keyword arguments into a dictionary with the argument names as keys and their passed values as values.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. What happens when you run: def f(a, b, /): return a + b \\n print(f(a=1, b=2))?",
+              "a": "TypeError: f() got some positional-only arguments passed as keyword arguments: 'a, b'. Because a and b appear before the / marker, they can ONLY be supplied positionally — calling with a=1, b=2 as keywords is not allowed, regardless of matching names.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "4. Trace this: def f(a, b=5, *args): return (a, b, args) \\n print(f(1, 2, 3, 4))",
+              "a": "(1, 2, (3, 4)). a binds to 1, b binds to 2 (overriding its default of 5, since a value was explicitly supplied), and the remaining positional values 3 and 4 get collected into args as the tuple (3, 4).",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. What does this print? def f(a, *, b): return a + b \\n print(f(1, b=2))",
+              "a": "3. b appears after the bare * in the signature, making it keyword-only. Since it's correctly supplied as b=2 rather than positionally, this call succeeds and returns 1 + 2 = 3. Calling f(1, 2) instead would raise TypeError: f() takes 1 positional argument but 2 were given.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. What does this print, and why? def modify(lst): lst.append(4) \\n numbers = [1, 2, 3] \\n modify(numbers) \\n print(numbers)",
+              "a": "[1, 2, 3, 4]. Because lst inside the function is a reference to the exact same list object as numbers, calling lst.append(4) mutates that shared object in place — the change is visible to the caller because there was never a separate copy in the first place.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What does this print, and why does it differ from the previous question? def reassign(lst): lst = [9, 9, 9] \\n numbers = [1, 2, 3] \\n reassign(numbers) \\n print(numbers)",
+              "a": "[1, 2, 3] — unchanged. Inside reassign(), the line lst = [9, 9, 9] creates a brand new list object and rebinds the LOCAL name lst to point at it. This does not affect numbers in the caller's scope at all, since numbers still points at the original list — reassignment breaks the shared reference, while in-place mutation does not.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. What is the exact error if you call def f(a, b, c): pass as f(1, 2, 3, 4)?",
+              "a": "TypeError: f() takes 3 positional arguments but 4 were given. There are only three parameters defined, and Python reports both the number the function actually accepts and the number that was mistakenly supplied.",
+              "difficulty": "Easy"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Master the Order, and the Errors Stop Being Scary",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every one of the confusing tracebacks covered in this guide — <code>missing required positional argument</code>, <code>got multiple values for argument</code>, <code>got an unexpected keyword argument</code> — traces back to the exact same underlying mechanism: Python trying, and failing, to bind the values you supplied to the parameters your function actually declared. Once that binding process is genuinely clear in your head, these errors stop being cryptic and start being precise, useful diagnostics that point you straight at the fix."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If you're a <strong>complete beginner</strong>, the priority is getting comfortable with plain positional and keyword arguments first — that alone covers the overwhelming majority of function calls you'll write. If you're moving into <strong>writing reusable libraries or decorators</strong>, the priority shifts toward *args, **kwargs, and unpacking, since forwarding arguments cleanly between functions is where these tools genuinely earn their complexity."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Your Situation", "What to Focus On"],
+          "rows": [
+            ["Just learning function calls", "✅ Positional and keyword arguments — the fundamentals"],
+            ["Function needs sensible optional settings", "✅ Default arguments, never mutable defaults"],
+            ["Unknown number of positional inputs", "✅ *args"],
+            ["Flexible configuration-style calls", "✅ **kwargs"],
+            ["Forwarding arguments to another function", "✅ *args, **kwargs combined with unpacking at the call site"],
+            ["Designing a library API for others", "⚠️ Consider positional-only and keyword-only markers for clarity"],
+            ["Passing a list or dict into a function", "⚠️ Remember: mutation affects the caller, reassignment does not"],
+            ["Debugging a confusing TypeError", "✅ Re-read the exact error text — it names the specific parameter"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The habit worth carrying forward: whenever a function signature starts accumulating more than three or four parameters, especially a mix of optional ones, reach for keyword arguments at the call site even where positional would technically work. It costs a few extra characters and buys real clarity for whoever reads that call six months from now — quite possibly you."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Arguments are the actual interface of every function you write.</strong> Get the order rules solid, understand what unpacking does in both directions, and know exactly when mutation quietly leaks back to the caller — everything else about calling functions confidently follows from that. 🐍"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "What is the difference between *args and **kwargs in Python?",
+        "a": "*args collects any extra positional (unnamed) arguments passed to a function into a tuple. **kwargs collects any extra keyword (named) arguments into a dictionary. Both let a function accept a flexible, unspecified number of arguments — *args for values passed without a name, **kwargs for values passed with name=value syntax."
+      },
+      {
+        "q": "Why do I get 'TypeError: got multiple values for argument' in Python?",
+        "a": "This happens when the same parameter is supplied a value both positionally and by keyword in a single function call — Python can't determine which value you actually intended for that parameter, so it raises this error rather than guessing. The fix is supplying that particular argument only one way, either positionally or by keyword, not both in the same call."
+      },
+      {
+        "q": "What is the correct order of parameters in a Python function definition?",
+        "a": "Positional-only parameters (before a /) come first, followed by standard positional-or-keyword parameters, then parameters with default values, then *args, then keyword-only parameters, and finally **kwargs last. Writing them out of this order raises a SyntaxError before the function is ever called."
+      },
+      {
+        "q": "Is Python pass by value or pass by reference?",
+        "a": "Neither term is technically accurate — Python passes arguments by object reference (sometimes called pass by assignment). The function receives a reference to the same object the caller has, not a copy. Mutating a mutable object in place inside the function changes the caller's original object too. Reassigning the parameter name to a completely new object only affects the local reference inside the function and does not change what the caller's variable points to."
+      },
+      {
+        "q": "What does f(*my_list) do at a function call in Python?",
+        "a": "The single asterisk unpacks the contents of my_list into separate positional arguments at the call site. If my_list = [1, 2, 3], calling f(*my_list) is exactly equivalent to writing f(1, 2, 3) directly, rather than passing the whole list as one single argument."
+      },
+      {
+        "q": "What is the difference between a positional-only and a keyword-only parameter in Python?",
+        "a": "A positional-only parameter, marked by appearing before a bare / in the function signature, can only be supplied by position — passing it by keyword raises TypeError even if the name matches exactly. A keyword-only parameter, marked by appearing after a bare * or after *args, can only be supplied by keyword — passing it positionally raises TypeError. Both were designed to give function authors explicit control over how their parameters can be called."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Functions", "path": "/python/python-functions" },
+    "next": { "label": "Next: Python Lambda →", "path": "/python/python-lambda" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Argument styles", "dd": "5 (positional, keyword, default, *args, **kwargs)" },
+      { "dt": "Positional-only marker", "dd": "/ (Python 3.8+)" },
+      { "dt": "Keyword-only marker", "dd": "* (Python 3.0+)" },
+      { "dt": "Passing model", "dd": "By object reference" },
+      { "dt": "*args collects into", "dd": "tuple" },
+      { "dt": "**kwargs collects into", "dd": "dict" }
+    ],
+    "relatedArticles": [
+      { "label": "Python Functions", "path": "/python/python-functions" },
+      { "label": "Python Pass Statement", "path": "/python/python-pass-statement" },
+      { "label": "Python Scope (LEGB)", "path": "/python/python-scope" },
+      { "label": "Python Decorators", "path": "/python/python-decorators" },
+      { "label": "Python Lambda Functions", "path": "/python/python-lambda" },
+      { "label": "Python Recursion", "path": "/python/python-recursion" },
+      { "label": "Python OOP", "path": "/python/python-oop" },
+      { "label": "Python Exception Handling", "path": "/python/python-exception-handling" }
+    ],
+    "tags": ["positional arguments", "keyword arguments", "default arguments", "args kwargs", "positional-only", "keyword-only", "unpacking", "pass by reference", "TypeError", "function signature", "PEP 570", "PEP 3102", "Python 3"]
+  }
+}

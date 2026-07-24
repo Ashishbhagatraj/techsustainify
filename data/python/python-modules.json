@@ -1,0 +1,821 @@
+{
+  "meta": {
+    "title": "Python Modules | Complete Modules Tutorial 2026 | Tech Sustainify",
+    "description": "Master Python modules with this complete guide 2026. Learn import statement variations, the module search path, creating custom modules, packages and __init__.py, __name__ == '__main__', module caching, and production-grade organization patterns.",
+    "keywords": "python modules, import in python, python module vs package, python import statement, sys.path python, python __name__ main, python __init__.py, creating a module in python, python module search path, importlib reload python, python package structure",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-modules/",
+    "ogTitle": "Python Modules — Complete Tutorial 2026 | Tech Sustainify",
+    "ogDescription": "Complete guide to Python modules. Learn every import variation, the module search path and caching, creating custom modules, packages, and how to structure real Python projects.",
+    "ogUrl": "https://techsustainify.com/python/python-modules/",
+    "ogImage": "https://techsustainify.com/images/python-modules-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "26 minutes",
+    "twitterLevel": "Intermediate",
+    "schemaDatePublished": "2024-01-01",
+    "schemaDateModified": "2026-03-16",
+    "schemaProficiencyLevel": "Intermediate",
+    "schemaWordCount": 8000
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",            "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python Modules" }
+  ],
+
+  "articleHeader": {
+    "badge": "🐍 Python",
+    "title": "Python Modules — Complete Guide",
+    "subtitle": "A complete, professional guide to Python modules — every import variation, the module search path, module caching, creating custom modules, packages, and how to organize real Python projects."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-16", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "26 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Intermediate" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-module",
+      "title": "What is a Module in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>module</strong> in Python is simply a file containing Python code — functions, classes, variables, or runnable statements — that can be imported and reused in other Python files. Every single <code>.py</code> file you write is automatically a module the moment another file imports it; there is no special syntax or declaration required to \"turn a file into a module\" — the file itself already is one."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Modules exist to solve one of the oldest problems in software: organizing code so it can be <strong>reused without being copy-pasted</strong>, and so a large program can be split into smaller, independently understandable, independently testable pieces. Instead of writing every function your program needs in one enormous file, you group related functionality into separate modules — a <code>database.py</code> module for data access, a <code>validators.py</code> module for input checks, a <code>utils.py</code> module for shared helpers — and import exactly what each part of your program needs from each one."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python's own standard library is itself built almost entirely out of modules — <code>os</code>, <code>sys</code>, <code>json</code>, <code>random</code>, <code>datetime</code>, and hundreds of others are simply Python (and some C) files, organized and shipped with every Python installation, that you import exactly the same way you would import your own code. Understanding modules is therefore not a niche skill — it is the mechanism behind literally every <code>import</code> statement you have ever written."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "types-of-modules",
+      "title": "Three Categories of Python Modules",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Every module you import falls into one of three categories, each with a different origin and a different level of trust and stability."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Category", "Examples", "Where It Lives", "Installed How"],
+          "rows": [
+            ["Built-in / Standard Library", "os, sys, math, json, datetime, re", "Bundled with the Python interpreter itself", "Comes free with every Python installation"],
+            ["Third-Party Packages", "numpy, requests, django, flask, pandas", "Downloaded from PyPI (Python Package Index)", "pip install <package-name>"],
+            ["User-Defined Modules", "utils.py, models.py, config.py (your own files)", "Anywhere in your project's file structure", "Written directly by you — no installation needed"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A special subset of built-in modules — like <code>sys</code> and <code>_thread</code> — are actually <strong>compiled directly into the CPython interpreter itself</strong>, written in C rather than Python, and are technically distinct from standard library modules that happen to be <code>.py</code> files shipped alongside the interpreter (like <code>json</code> or <code>random</code>). From an import statement's point of view, however, both behave identically — you import them exactly the same way, and the distinction rarely matters in day-to-day code."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "import-statement-variations",
+      "title": "Every Form of the import Statement",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python offers several distinct ways to bring a module's contents into your current file's namespace, each with a different trade-off between convenience and namespace clarity."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Syntax", "Example", "What Gets Imported", "Access Pattern"],
+          "rows": [
+            ["Basic import", "import math", "The whole module, as an object", "math.sqrt(16)"],
+            ["Import with alias", "import numpy as np", "The whole module, under a shorter name", "np.array([1,2,3])"],
+            ["From-import a name", "from math import sqrt", "Just that one function/class/variable", "sqrt(16) — no prefix needed"],
+            ["From-import multiple names", "from math import sqrt, pi", "Several specific names at once", "sqrt(16), pi directly"],
+            ["From-import with alias", "from math import sqrt as square_root", "One name, renamed locally", "square_root(16)"],
+            ["Wildcard import", "from math import *", "Every public name in the module", "sqrt(16), pi, all others directly — discouraged"],
+            ["Relative import (inside packages)", "from . import helpers", "A sibling module within the same package", "helpers.some_function()"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "import_variations.py",
+          "lines": [
+            "import math",
+            "print(math.pi)                 # 3.141592653589793",
+            "",
+            "import numpy as np",
+            "print(np.array([1, 2, 3]))",
+            "",
+            "from math import sqrt",
+            "print(sqrt(16))                # 4.0",
+            "",
+            "from math import sqrt as square_root",
+            "print(square_root(25))         # 5.0",
+            "",
+            "from math import *              # imports everything — avoid in real code",
+            "print(pi, sqrt(9))"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The wildcard form, <code>from module import *</code>, is almost universally discouraged in production code because it silently pulls every public name from that module directly into your current namespace, with no prefix at all — making it impossible to tell, just by reading a line of code, which module a given name actually came from, and creating a real risk of one import silently overwriting a name defined elsewhere in your file."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "how-import-works",
+      "title": "How import Actually Works — The Module Search Path",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When Python encounters an <code>import module_name</code> statement, it doesn't search your entire hard drive — it checks a very specific, ordered list of locations called the <strong>module search path</strong>, stored as a list of strings in <code>sys.path</code>. Python checks each location in order and imports the first matching module it finds; if none match, it raises <code>ModuleNotFoundError</code>."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "1. The directory of the running script", "text": " — Python always checks the folder containing the file you actually executed first, so local modules right next to your main script are found immediately." },
+            { "strong": "2. PYTHONPATH environment variable", "text": " — Any directories listed in this optional environment variable are checked next, letting you add custom search locations without modifying code." },
+            { "strong": "3. Standard library directories", "text": " — The installation-specific folders containing os, sys, json, and every other built-in module that ships with Python." },
+            { "strong": "4. site-packages directory", "text": " — Where pip installs third-party packages (numpy, requests, django, etc.), typically inside your virtual environment if one is active." }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "inspect_sys_path.py",
+          "lines": [
+            "import sys",
+            "for path in sys.path:",
+            "    print(path)",
+            "",
+            "# You can even modify it at runtime (not usually recommended):",
+            "sys.path.append(\"/my/custom/module/directory\")"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "The import Process — Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The diagram below shows exactly what happens the moment Python executes an import statement — from checking the module cache through searching sys.path to actually executing the module's code."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "▶️ import module_name",       "sublabel": "Statement executes",                  "type": "start" },
+            { "id": "2", "label": "❓ Already in sys.modules?",    "sublabel": "Check the module cache first",        "type": "decision" },
+            { "id": "3", "label": "⚡ Use cached module",          "sublabel": "Instant — no re-execution",           "type": "process" },
+            { "id": "4", "label": "🔎 Search sys.path",           "sublabel": "Check each directory in order",       "type": "process" },
+            { "id": "5", "label": "❓ Module file found?",         "sublabel": "Matching .py file or package?",       "type": "decision" },
+            { "id": "6", "label": "🚫 ModuleNotFoundError",       "sublabel": "No match anywhere in sys.path",       "type": "process" },
+            { "id": "7", "label": "⚙️ Compile to bytecode",       "sublabel": "Cached as .pyc in __pycache__",       "type": "process" },
+            { "id": "8", "label": "▶️ Execute module top to bottom", "sublabel": "Runs once, defines names",         "type": "process" },
+            { "id": "9", "label": "💾 Store in sys.modules",       "sublabel": "Cached for any future import",        "type": "process" },
+            { "id": "10", "label": "🏁 Bind name in current scope","sublabel": "Module now usable",                  "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "checks" },
+            { "from": "2", "to": "3", "label": "yes, cached" },
+            { "from": "2", "to": "4", "label": "no, first import" },
+            { "from": "4", "to": "5", "label": "searches" },
+            { "from": "5", "to": "6", "label": "not found" },
+            { "from": "5", "to": "7", "label": "found" },
+            { "from": "7", "to": "8", "label": "compiled" },
+            { "from": "8", "to": "9", "label": "finishes" },
+            { "from": "9", "to": "10", "label": "cached" },
+            { "from": "3", "to": "10", "label": "reused" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Key insight: <strong>a module's top-level code only ever runs once per program execution</strong>, no matter how many different files import it. The very first import triggers full execution and caches the result in <code>sys.modules</code>; every subsequent import anywhere else in the program simply reuses that cached module object instantly."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "creating-custom-modules",
+      "title": "Creating and Importing Your Own Module",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Writing your own module requires no special syntax at all — you simply save Python code in a <code>.py</code> file, and any other file in the same directory (or on the module search path) can import it by that filename, without the <code>.py</code> extension."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "shapes.py",
+          "lines": [
+            "# shapes.py — a small custom module",
+            "PI = 3.14159",
+            "",
+            "def circle_area(radius):",
+            "    return PI * radius ** 2",
+            "",
+            "def rectangle_area(length, width):",
+            "    return length * width",
+            "",
+            "class Circle:",
+            "    def __init__(self, radius):",
+            "        self.radius = radius",
+            "",
+            "    def area(self):",
+            "        return circle_area(self.radius)"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "main.py",
+          "lines": [
+            "import shapes",
+            "",
+            "print(shapes.PI)                        # 3.14159",
+            "print(shapes.circle_area(5))             # 78.53975",
+            "",
+            "c = shapes.Circle(10)",
+            "print(c.area())                          # 314.159",
+            "",
+            "# Or, importing specific names directly:",
+            "from shapes import circle_area, Circle",
+            "print(circle_area(3))"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Everything defined at the top level of <code>shapes.py</code> — variables, functions, and classes — becomes an attribute accessible through <code>shapes.whatever_name</code> once imported. This is exactly how the standard library works too: <code>math.pi</code> and <code>math.sqrt</code> are simply attributes of the <code>math</code> module object, defined at that module's top level."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "name-main-pattern",
+      "title": "The if __name__ == '__main__' Pattern",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every Python module has a special built-in variable called <code>__name__</code>. When a file is run <strong>directly</strong> (e.g. <code>python shapes.py</code>), Python sets that file's <code>__name__</code> to the string <code>\"__main__\"</code>. When that same file is instead <strong>imported</strong> by another module, its <code>__name__</code> is set to its actual module name (e.g. <code>\"shapes\"</code>) instead."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "shapes_with_main.py",
+          "lines": [
+            "PI = 3.14159",
+            "",
+            "def circle_area(radius):",
+            "    return PI * radius ** 2",
+            "",
+            "def _run_self_tests():",
+            "    assert circle_area(1) == PI",
+            "    assert circle_area(0) == 0",
+            "    print(\"All shape tests passed.\")",
+            "",
+            "if __name__ == \"__main__\":",
+            "    # This block ONLY runs when shapes.py is executed directly,",
+            "    # never when it's imported by another file.",
+            "    _run_self_tests()"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This pattern is extremely common because it lets a single file serve two roles at once: a reusable module <strong>and</strong> a standalone, runnable script. Library code, quick self-tests, command-line entry points, and demonstration code are all placed inside the <code>if __name__ == \"__main__\":</code> block specifically so they never execute accidentally as a side effect of someone simply importing the file elsewhere."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "packages-vs-modules",
+      "title": "Modules vs Packages — What's the Difference?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>module</strong> is a single <code>.py</code> file. A <strong>package</strong> is a <em>directory</em> containing multiple modules, organized together, with an optional <code>__init__.py</code> file that marks the directory as importable as a single unit. Packages let you group many related modules under one hierarchical namespace, exactly the way the standard library groups things like <code>os.path</code> or third-party libraries group things like <code>numpy.linalg</code>."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "Module", "Package"],
+          "rows": [
+            ["What it is", "A single .py file", "A directory containing modules (and possibly sub-packages)"],
+            ["Example", "shapes.py", "myapp/ containing models.py, views.py, utils.py"],
+            ["Marker file needed", "None — any .py file is a module", "__init__.py (optional since Python 3.3, but still common)"],
+            ["Import syntax", "import shapes", "import myapp or import myapp.models"],
+            ["Namespacing", "Flat — one level", "Hierarchical — supports nested sub-packages"],
+            ["Real-world example", "json.py inside the standard library", "The numpy package, containing numpy.linalg, numpy.random, etc."]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "package_structure.txt",
+          "lines": [
+            "myapp/",
+            "├── __init__.py",
+            "├── models.py",
+            "├── views.py",
+            "└── utils/",
+            "    ├── __init__.py",
+            "    ├── validators.py",
+            "    └── formatters.py"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "With this structure, other code can write <code>from myapp.utils import validators</code> or <code>from myapp.utils.formatters import format_date</code> — the dots in the import path directly mirror the folder structure on disk. The <code>__init__.py</code> file (even when left completely empty) signals that a directory should be treated as a package, and its code — if any — runs automatically the first time any module inside that package is imported."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "module-attributes",
+      "title": "Built-in Module Attributes",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every imported module automatically carries several special <strong>dunder</strong> (double-underscore) attributes that describe the module itself — useful for introspection, debugging, and dynamic tooling."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "module_attributes.py",
+          "lines": [
+            "import json",
+            "",
+            "print(json.__name__)     # 'json'",
+            "print(json.__file__)     # the actual path to json's source file",
+            "print(json.__doc__)      # the module's docstring, if it has one",
+            "print(dir(json))         # a list of every name defined in the module"
+          ]
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>__name__</code> — The module's own name as a string; equals \"__main__\" only when the file is run directly, as covered above." },
+            { "html": "<code>__file__</code> — The absolute file path the module was loaded from; not present for built-in C modules like sys." },
+            { "html": "<code>__doc__</code> — The module's docstring — whatever triple-quoted string, if any, appears at the very top of the file." },
+            { "html": "<code>__package__</code> — The name of the package this module belongs to, or an empty string for top-level modules." },
+            { "html": "<code>dir(module)</code> — Not an attribute itself, but a built-in function that lists every name (functions, classes, variables) defined in the module." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "module-caching-reload",
+      "title": "Module Caching and Reloading with importlib",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "As covered in the import flowchart, Python caches every imported module in the <code>sys.modules</code> dictionary, keyed by module name. This is why importing the same module from ten different files in the same program only executes that module's top-level code <strong>once</strong> — every subsequent import is effectively a dictionary lookup, not a re-execution."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "sys_modules_cache.py",
+          "lines": [
+            "import sys",
+            "import json",
+            "",
+            "print('json' in sys.modules)   # True — already cached after the import above",
+            "print(sys.modules['json'] is json)   # True — same object"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This caching becomes relevant during interactive development — if you edit a module's source file while it's already loaded in a running interactive session (like a Jupyter notebook or the Python REPL), a plain <code>import module_name</code> won't pick up your changes, because the cached version is reused. The <code>importlib.reload()</code> function exists specifically to force Python to re-execute a module's code and refresh the cached version."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "importlib_reload.py",
+          "lines": [
+            "import importlib",
+            "import shapes",
+            "",
+            "# ... you edit shapes.py in your editor while the session is still running ...",
+            "",
+            "importlib.reload(shapes)   # forces shapes.py to re-execute and refresh"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>importlib.reload()</code> is a development-time convenience tool and is rarely, if ever, used in production code — in a normal program run from start to finish, every module is naturally imported (and cached) exactly once, which is the correct and expected behaviour."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "module-architecture",
+      "title": "How a Python Project's Modules Fit Together",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In a well-organized Python project, modules typically form a layered dependency structure — lower layers contain no dependencies on higher ones, keeping the overall system easy to reason about and test."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Entry Point",
+              "color": "#6366f1",
+              "items": ["main.py", "if __name__ == '__main__': block", "Imports from every layer below"]
+            },
+            {
+              "label": "Application Modules / Packages",
+              "color": "#0ea5e9",
+              "items": ["myapp.views", "myapp.services", "myapp.models"]
+            },
+            {
+              "label": "Shared Utility Modules",
+              "color": "#10b981",
+              "items": ["utils.validators", "utils.formatters", "config.py"]
+            },
+            {
+              "label": "Third-Party Packages (pip-installed)",
+              "color": "#f59e0b",
+              "items": ["requests, django, numpy", "Installed into site-packages"]
+            },
+            {
+              "label": "Python Standard Library",
+              "color": "#ef4444",
+              "items": ["os, sys, json, datetime, re", "Bundled with the interpreter"]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A common design goal is to avoid <strong>circular imports</strong> — where module A imports from module B, and module B also (directly or indirectly) imports from module A — which Python can only partially tolerate and which usually signals that shared logic between the two modules should be extracted into a third, lower-level module that both can depend on instead."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "Practice: A Small Multi-Module Project",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This example shows a realistic small project split across two modules, demonstrating imports, module-level constants, and the __main__ guard together."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "temperature.py",
+          "lines": [
+            "\"\"\"Utility functions for temperature conversions.\"\"\"",
+            "",
+            "ABSOLUTE_ZERO_C = -273.15",
+            "",
+            "def celsius_to_fahrenheit(c):",
+            "    if c < ABSOLUTE_ZERO_C:",
+            "        raise ValueError(f\"{c}°C is below absolute zero\")",
+            "    return (c * 9 / 5) + 32",
+            "",
+            "def fahrenheit_to_celsius(f):",
+            "    return (f - 32) * 5 / 9",
+            "",
+            "if __name__ == \"__main__\":",
+            "    print(celsius_to_fahrenheit(100))   # 212.0",
+            "    print(fahrenheit_to_celsius(32))    # 0.0"
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "weather_report.py",
+          "lines": [
+            "from temperature import celsius_to_fahrenheit",
+            "",
+            "def print_report(city, celsius):",
+            "    fahrenheit = celsius_to_fahrenheit(celsius)",
+            "    print(f\"{city}: {celsius}°C ({fahrenheit}°F)\")",
+            "",
+            "if __name__ == \"__main__\":",
+            "    print_report(\"Delhi\", 38)",
+            "    print_report(\"London\", 12)"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Delhi: 38°C (100.4°F)",
+            "London: 12°C (53.6°F)"
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "import math\n\ndef circle_stats(radius):\n    area = math.pi * radius ** 2\n    circumference = 2 * math.pi * radius\n    return area, circumference\n\nif __name__ == \"__main__\":\n    area, circumference = circle_stats(7)\n    print(f\"Ashish's circle -> area: {area:.2f}, circumference: {circumference:.2f}\")"
+        }
+      ]
+    },
+
+    {
+      "sectionId": "best-practices",
+      "title": "Python Module Best Practices",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "These practices help keep modules organized, predictable, and easy for other developers (including future you) to navigate."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Avoid wildcard imports (from module import *)", "text": " — They make it impossible to tell where a given name came from just by reading the code, and risk silently overwriting existing names." },
+            { "strong": "One clear responsibility per module", "text": " — A module named validators.py should contain validation logic, not database queries or HTTP handling; mixed responsibilities make modules harder to test and reuse." },
+            { "strong": "Always guard runnable code with if __name__ == '__main__':", "text": " — Prevents demonstration code, self-tests, or CLI entry points from executing accidentally when the file is imported elsewhere." },
+            { "strong": "Group standard library, third-party, and local imports separately", "text": " — PEP 8 recommends three blocks, each internally alphabetized: standard library first, then third-party packages, then your own local modules." },
+            { "strong": "Give modules a top-level docstring", "text": " — A short triple-quoted string at the very top explaining the module's purpose shows up automatically via __doc__ and help()." },
+            { "strong": "Avoid circular imports by extracting shared code", "text": " — If two modules need to import from each other, move the shared logic into a third, lower-level module both can depend on instead." },
+            { "strong": "Use packages (with __init__.py) once a project grows past a handful of files", "text": " — A flat pile of unrelated .py files becomes hard to navigate; grouping related modules into packages keeps structure legible as a project scales." },
+            { "strong": "Never rely on module-level mutable state across imports without care", "text": " — Since a module's code runs only once and is cached, any mutable global variable it defines is genuinely shared and mutated by every part of the program that imports it." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Python's Module System",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python's module system is simple and powerful, but understanding its trade-offs helps you structure larger projects correctly from the start."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Zero Boilerplate to Create a Module", "text": "Any .py file is automatically a valid, importable module — no declarations, headers, or special syntax required." },
+            { "title": "Automatic Caching via sys.modules", "text": "A module's top-level code runs only once no matter how many times it's imported, keeping large programs efficient." },
+            { "title": "Clean, Hierarchical Namespacing", "text": "Packages let related modules be grouped and accessed through readable dotted paths like myapp.utils.validators." },
+            { "title": "Massive, Ready-Made Standard Library", "text": "Hundreds of built-in modules cover file I/O, networking, data formats, and more, without installing anything extra." },
+            { "title": "Encourages Reusable, Testable Code", "text": "Splitting logic into focused modules makes each piece easier to unit test and reuse across different projects." },
+            { "title": "The __main__ Guard Enables Dual-Purpose Files", "text": "A single file can act as both an importable library and a standalone runnable script, without conflict." }
+          ],
+          "cons": [
+            { "title": "Circular Imports Can Cause Real Problems", "text": "Two modules importing from each other can raise ImportError or produce partially-initialized modules, depending on import order." },
+            { "title": "Wildcard Imports Hurt Readability", "text": "from module import * obscures where names actually come from and risks silent name collisions." },
+            { "title": "Module-Level Mutable State Is Shared Everywhere", "text": "A mutable global variable defined in a module is the same object across every part of the program that imports it, which can cause subtle bugs if not managed carefully." },
+            { "title": "sys.path Search Can Be Confusing for Beginners", "text": "Understanding why an import succeeds or fails often requires knowing exactly what's in sys.path, which isn't always obvious." },
+            { "title": "Relative Imports Have Quirky Rules", "text": "Relative imports (from . import x) only work properly inside a recognized package, which trips up beginners running a script directly instead of as part of a package." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python Modules — Interview Questions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Frequently asked interview questions about Python modules, packages, and the import system."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is a module in Python?",
+              "a": "A module is simply a .py file containing Python code — functions, classes, or variables — that can be imported and reused elsewhere. Any Python file is automatically a valid module the moment another file imports it; no special declaration is needed.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between a module and a package?",
+              "a": "A module is a single .py file. A package is a directory containing multiple related modules (and possibly sub-packages), typically marked with an __init__.py file. Packages let you organize many modules under a hierarchical, dotted namespace like myapp.utils.validators.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is sys.path and how does Python use it during import?",
+              "a": "sys.path is a list of directory paths that Python searches, in order, whenever an import statement runs. It includes the directory of the running script, any PYTHONPATH entries, the standard library location, and the site-packages directory. Python imports the first matching module found while walking this list, and raises ModuleNotFoundError if nothing matches.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q4. Why does a module's top-level code only run once, even if imported from multiple files?",
+              "a": "Because Python caches every imported module in the sys.modules dictionary, keyed by its name. The first import executes the module's code and stores the resulting module object in this cache; every subsequent import anywhere else in the same program simply retrieves that same cached object instead of re-executing the file.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. What does if __name__ == '__main__': actually check?",
+              "a": "It checks whether the current file's built-in __name__ variable equals the string '__main__', which Python sets automatically only when that file is the one being run directly (e.g. python script.py). When the same file is instead imported by another module, __name__ is set to the module's own name instead, so code inside this block never runs during an import.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q6. Why is 'from module import *' generally discouraged?",
+              "a": "It imports every public name from the module directly into the current namespace with no prefix, making it impossible to tell from the code alone which module a given name came from. It also risks silently overwriting an existing name in your file if the wildcard import happens to define something with the same name.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q7. What is the purpose of the __init__.py file in a package?",
+              "a": "It marks a directory as a Python package, allowing it to be imported as a single unit (e.g. import myapp). Since Python 3.3, packages can technically work without it (as 'namespace packages'), but including __init__.py — even empty — remains common practice, and any code placed inside it runs automatically the first time the package is imported.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q8. What is a circular import, and why is it a problem?",
+              "a": "A circular import occurs when module A imports from module B, and module B also imports (directly or indirectly) from module A. Because each module only partially finishes executing before the other tries to import from it, this can raise ImportError or result in a module object that's only partially initialized. The usual fix is extracting the shared logic into a third module both can depend on.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q9. What is the difference between an absolute import and a relative import?",
+              "a": "An absolute import specifies the full path from the top-level package, e.g. from myapp.utils import validators. A relative import uses leading dots to reference modules relative to the current module's location within a package, e.g. from . import validators (same package) or from .. import config (parent package). Relative imports only work inside a properly recognized package, not in standalone scripts.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q10. How would you force Python to re-import a module that has already been cached?",
+              "a": "Using importlib.reload(module_object), which forces the module's code to re-execute and refreshes the cached version in sys.modules. This is primarily a development-time tool used in interactive sessions like Jupyter or the REPL; it's rarely needed in a normal program that runs start to finish, since a fresh import naturally happens only once per run anyway.",
+              "tag": "Frequently Asked"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Work through these practice questions on Python modules and the import system. Try to reason through each before checking the answer."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. If module_a.py is imported by three different files in the same running program, how many times does its top-level code actually execute?",
+              "a": "Only once. The first import executes module_a's code fully and stores the resulting module object in sys.modules. Every later import of module_a anywhere else in the same program simply reuses that cached object instead of re-running the file's code.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What is printed if utils.py contains print('loading utils') at its top level, and it is imported by two different files run in the same program?",
+              "a": "'loading utils' is printed exactly once, at the very first import — not twice. This directly demonstrates that module code executes only on the first import, with every subsequent import elsewhere in the same run reusing the cached module.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "3. What is the value of __name__ inside greet.py when it is run directly with 'python greet.py', versus when it is imported by another file as 'import greet'?",
+              "a": "When run directly, __name__ equals '__main__'. When imported by another file, __name__ equals 'greet' (the module's own name) instead. This difference is exactly what the if __name__ == '__main__': pattern relies on.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. Why might 'from . import helpers' fail with an ImportError when a file inside a package is executed directly as a script, but work fine when that same package is imported normally?",
+              "a": "Relative imports (using leading dots) rely on Python knowing the current module's position within a package hierarchy, which is only established when the module is imported as part of that package. Running the file directly as a standalone script sets its __name__ to '__main__' with no package context, so Python cannot resolve the relative import and raises an error.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "5. Two modules, models.py and services.py, each try to import from the other at the top of their files. What problem does this create?",
+              "a": "This is a circular import. Whichever module is imported first will, partway through its own execution, try to import the second module — but the second module will, in turn, try to import back from the first module, which hasn't finished executing yet and may not yet have all its names defined. This typically raises an ImportError or produces a partially initialized module object.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "6. What is the output order if config.py defines DEBUG = True at the top level, and two different files both do 'from config import DEBUG' and then modify their own local DEBUG variable?",
+              "a": "Each file's local DEBUG variable becomes an independent copy of the boolean value at the moment of import — modifying one file's local DEBUG does not affect the other, because 'from module import name' binds a new local name to whatever the module's attribute pointed to at that instant. This differs from 'import config; config.DEBUG = False', which does mutate the shared module object itself.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. Does sys.path include the directory of the script you're currently running?",
+              "a": "Yes — Python automatically includes the directory containing the script being executed as the first entry in sys.path, which is why modules placed right next to your main script are found without needing any special configuration.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "8. What is the practical difference between 'import json' and 'from json import loads'?",
+              "a": "'import json' brings in the whole module as a single object, requiring the json. prefix for every use (json.loads(...)). 'from json import loads' imports only that one function directly into the current namespace, letting you call it as loads(...) without any prefix — but it makes it slightly less obvious, when reading unrelated code later, exactly which module loads came from.",
+              "difficulty": "Medium"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Structuring Python Code with Modules",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Modules are the foundation Python's entire code organization system is built on — from the standard library, to every third-party package on PyPI, to your own project's files. Understanding how import actually works, from the module search path through to caching in sys.modules, demystifies behaviour that otherwise seems almost magical: why a module's print statements only ever run once, why editing a file mid-session doesn't automatically update an already-imported module, and why circular imports fail in ways that can be confusing without this mental model."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The most valuable habits to carry forward: keep each module focused on <strong>one clear responsibility</strong>, guard runnable code with <code>if __name__ == \"__main__\":</code> so it never executes as a side effect of importing, avoid wildcard imports so every name's origin stays traceable, and reach for <strong>packages</strong> once a project grows beyond a handful of loosely related files, so its structure stays legible as it scales."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Situation", "Recommended Approach"],
+          "rows": [
+            ["Need one specific function from a module", "from module import function_name"],
+            ["Need many names, want clear origin tracking", "import module, then module.name everywhere"],
+            ["Module name is long or awkward", "import long_module_name as short_alias"],
+            ["File should be both a library and a script", "Wrap runnable code in if __name__ == '__main__':"],
+            ["Project has grown past a handful of files", "Organize into packages with __init__.py"],
+            ["Two modules seem to need each other", "❌ Circular import — extract shared code to a third module"],
+            ["Tempted to use from module import *", "❌ Avoid — import specific names instead"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "From here, natural next topics include <strong>Python packages in greater depth</strong> (namespace packages, relative imports, and the <code>__all__</code> variable), <strong>virtual environments</strong> for isolating third-party dependencies per project, and <strong>packaging your own project</strong> for distribution via PyPI using tools like <code>setuptools</code> or <code>poetry</code>."
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "What is the difference between a module and a library in Python?",
+        "a": "A module is a single .py file. A library (or package) is typically a collection of modules distributed together, often installed via pip, that provide related functionality — for example, the 'requests' library is actually a package containing multiple modules working together. In everyday conversation the terms are sometimes used loosely, but technically a module is the basic building block and a library/package is a collection of them."
+      },
+      {
+        "q": "Do I need to install Python's built-in modules like os or json separately?",
+        "a": "No. Standard library modules like os, sys, json, random, and datetime are bundled directly with every Python installation and are available immediately via import, with no pip install step required. Only third-party packages (numpy, requests, django, etc.) need to be installed separately using pip."
+      },
+      {
+        "q": "Why does my module-level print statement only run once even though I import it in multiple files?",
+        "a": "Python caches every imported module in the sys.modules dictionary after its first import. The module's top-level code, including any print statements, executes exactly once during that first import; every later import elsewhere in the same running program reuses the already-cached module object instead of re-executing the file."
+      },
+      {
+        "q": "What does __name__ == '__main__' actually mean in Python?",
+        "a": "Python automatically sets a file's built-in __name__ variable to the string '__main__' only when that file is the one being executed directly, such as running 'python script.py' from the command line. When the same file is instead imported by another module, __name__ is set to that module's own name. Checking this condition lets you write code that only runs when the file is executed directly, not when it's imported."
+      },
+      {
+        "q": "What is the correct way to organize a Python project with multiple modules?",
+        "a": "Group related modules into packages (directories with an __init__.py file), keep each individual module focused on one clear responsibility, avoid circular dependencies between modules, and use a clear main entry point (often main.py) guarded by if __name__ == '__main__':. As a project grows, separating concerns like models, services, and utilities into their own modules or sub-packages keeps the codebase navigable."
+      },
+      {
+        "q": "Is 'from module import *' ever acceptable to use in Python?",
+        "a": "It's occasionally seen in small interactive scripts, Jupyter notebooks, or specific libraries explicitly designed for it (some plotting or numerical libraries document this pattern), but it's almost always discouraged in application and library code. It obscures where each imported name actually came from and risks silently overwriting existing names in your namespace, which makes debugging significantly harder in larger codebases."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Raise Exception", "path": "/python/python-raise-exception" },
+    "next": { "label": "Next: Python Math Modules →", "path": "/python/python-math-module" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "What it is",        "dd": "Any .py file" },
+      { "dt": "Package marker",    "dd": "__init__.py" },
+      { "dt": "Search list",       "dd": "sys.path" },
+      { "dt": "Module cache",      "dd": "sys.modules" },
+      { "dt": "Run-once guard",    "dd": "if __name__ == '__main__':" },
+      { "dt": "Force reload",      "dd": "importlib.reload()" }
+    ],
+    "relatedArticles": [
+      { "label": "Python Raise Exception",    "path": "/python/python-raise-exception" },
+      { "label": "Python Packages",           "path": "/python/python-modules" },
+      { "label": "Python Functions",          "path": "/python/python-functions" },
+      { "label": "Python OOP",                "path": "/python/python-oop" },
+      { "label": "Python Installations",      "path": "/python/python-installation" },
+      { "label": "Python lambda",             "path": "/python/python-lambda" },
+      { "label": "Python Standard Library",   "path": "/python/python-standard-library" },
+      { "label": "Python Lists",              "path": "/python/python-lists" }
+    ],
+    "tags": ["modules","packages","import","sys.path","sys.modules","__name__","__main__","__init__.py","circular imports","importlib","relative imports"]
+  }
+}

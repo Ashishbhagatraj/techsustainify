@@ -1,0 +1,887 @@
+{
+  "meta": {
+    "title": "Python If Else Statement | Python Conditional Tutorial for Beginners 2026 | Tech Sustainify",
+    "description": "Learn everything about Python if-else statements in this complete beginner-friendly guide 2026. Covers if, elif, else, nested conditionals, ternary operator, match-case, truthy/falsy values, comparison and logical operators, common errors, and real-world use cases.",
+    "keywords": "python if else, python if elif else, python conditional statements, python ternary operator, python match case, python nested if, python truthy falsy, python comparison operators, python logical operators, python if else tutorial for beginners 2026",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-if-else/",
+    "ogTitle": "Python If Else Statement — Complete Conditional Tutorial for Beginners 2026 | Tech Sustainify",
+    "ogDescription": "Complete beginner-friendly guide to Python if-else — if, elif, else, nested conditionals, ternary operator, match-case, truthy/falsy values, and real-world uses.",
+    "ogUrl": "https://techsustainify.com/python/python-if-else/",
+    "ogImage": "https://techsustainify.com/images/python-if-else-tutorial-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "27 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-03-02",
+    "schemaDateModified": "2026-03-16",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 8000
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",            "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python If Else" }
+  ],
+
+  "articleHeader": {
+    "badge": "🔀 Python If Else",
+    "title": "Python If Else Statement — Complete Guide",
+    "subtitle": "A complete beginner-friendly guide to Python conditional statements — covering if, elif, else, nested conditionals, the ternary operator, match-case, truthy/falsy values, comparison and logical operators, and how decision-making actually works in Python."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-16", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "27 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-if-else",
+      "title": "What is an If-Else Statement in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "An <strong>if-else statement</strong> is Python's core tool for <strong>decision-making</strong> — it lets your program choose which block of code to run based on whether a given condition is <code>True</code> or <code>False</code>. Every meaningful program eventually needs to answer a question like \"is the user logged in?\" or \"is the cart total above ₹500?\", and the <code>if</code> statement is exactly how that question gets answered in code."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Conditional logic is one of the three fundamental building blocks of programming, alongside <strong>sequence</strong> (code running top to bottom) and <strong>iteration</strong> (loops). Without conditionals, a program could only ever do the exact same thing every single time it runs — <code>if</code>, <code>elif</code>, and <code>else</code> are what give a program the ability to <strong>branch</strong> and behave differently depending on its input."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python's conditional syntax is famous for being unusually close to plain English. Where many languages require parentheses around the condition and curly braces around the block — <code>if (x > 5) { ... }</code> — Python drops both, relying instead on a colon and <strong>indentation</strong> to define where a block starts and ends: <code>if x > 5:</code> followed by an indented block. This design is a direct expression of Python's overall philosophy that code should read as naturally as possible."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In short: <strong>if-else is how a Python program makes a choice.</strong> Every condition ultimately evaluates down to a single boolean value — <code>True</code> or <code>False</code> — and Python runs exactly one of the available branches based on that result, then continues on with the rest of the program."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "basic-if",
+      "title": "The Basic if Statement",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The simplest form of conditional logic in Python is a plain <code>if</code> statement — it runs a block of code <strong>only if</strong> its condition evaluates to <code>True</code>. If the condition is <code>False</code>, the indented block is skipped entirely, and the program continues after it."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "basic_if.py",
+          "lines": [
+            "age = 20",
+            "",
+            "if age >= 18:",
+            "    print(\"You are eligible to vote.\")",
+            "",
+            "print(\"Program continues here regardless.\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["You are eligible to vote.", "Program continues here regardless."]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Two syntax rules are non-negotiable in Python: the condition line must end with a <strong>colon (<code>:</code>)</strong>, and the block underneath it must be <strong>consistently indented</strong> — Python uses this indentation, not braces, to know exactly which lines belong inside the <code>if</code> block. Mixing tabs and spaces, or indenting inconsistently, raises an <code>IndentationError</code>."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "if-else",
+      "title": "The if-else Statement — Two-Way Branching",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A plain <code>if</code> only handles the \"True\" case. Adding an <code>else</code> clause lets you provide a fallback block that runs whenever the condition is <code>False</code> — giving your program exactly one of two possible paths to take."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "if_else.py",
+          "lines": [
+            "age = 15",
+            "",
+            "if age >= 18:",
+            "    print(\"You are eligible to vote.\")",
+            "else:",
+            "    print(\"You are not eligible to vote yet.\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["You are not eligible to vote yet."]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Exactly one of the two blocks runs — never both, and never neither. This guarantee is what makes <code>if-else</code> reliable for situations where you always need <em>some</em> outcome, such as validating input or classifying a value into one of two categories."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "elif-heading",
+      "title": "The elif Statement — Multiple Conditions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Real-world decisions often involve more than two outcomes. Python's <code>elif</code> keyword — short for <strong>\"else if\"</strong> — lets you chain multiple conditions together, checked in order from top to bottom. The first condition that evaluates to <code>True</code> has its block run, and every condition after it is skipped automatically."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "elif_chain.py",
+          "lines": [
+            "marks = 72",
+            "",
+            "if marks >= 90:",
+            "    grade = \"A+\"",
+            "elif marks >= 75:",
+            "    grade = \"A\"",
+            "elif marks >= 60:",
+            "    grade = \"B\"",
+            "elif marks >= 40:",
+            "    grade = \"C\"",
+            "else:",
+            "    grade = \"Fail\"",
+            "",
+            "print(\"Grade:\", grade)   # Grade: B"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Notice how the conditions are ordered from <strong>highest to lowest</strong>. This matters — if the checks were reversed, <code>marks >= 40</code> would match first for almost every student, and the more specific, higher-grade conditions further down would never even be evaluated. <strong>Order of elif conditions directly changes program behaviour.</strong>"
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "There is no limit to how many <code>elif</code> blocks you can chain, and the final <code>else</code> is always optional — it exists purely to catch any case that didn't match any of the conditions above it."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "How Python Evaluates an if-elif-else Chain — Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Understanding exactly how Python walks through a conditional chain removes almost all confusion about branching logic. The flowchart below traces the grading example above, step by step, from the top condition to the final result."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "📝 Start",                 "sublabel": "marks = 72 evaluated",           "type": "start" },
+            { "id": "2", "label": "❓ marks >= 90 ?",          "sublabel": "Check first condition",          "type": "decision" },
+            { "id": "3", "label": "❓ marks >= 75 ?",          "sublabel": "Check next condition",           "type": "decision" },
+            { "id": "4", "label": "❓ marks >= 60 ?",          "sublabel": "Check next condition",           "type": "decision" },
+            { "id": "5", "label": "❓ marks >= 40 ?",          "sublabel": "Check next condition",           "type": "decision" },
+            { "id": "6", "label": "🅰️ grade = 'A+'",           "sublabel": "First match — stop checking",    "type": "process" },
+            { "id": "7", "label": "🅰️ grade = 'A'",            "sublabel": "Match found — stop checking",    "type": "process" },
+            { "id": "8", "label": "🅱️ grade = 'B'",            "sublabel": "Match found — stop checking",    "type": "process" },
+            { "id": "9", "label": "🅲️ grade = 'C'",            "sublabel": "Match found — stop checking",    "type": "process" },
+            { "id": "10", "label": "❌ grade = 'Fail'",         "sublabel": "Else block — no match found",    "type": "process" },
+            { "id": "11", "label": "🖨️ print(grade)",          "sublabel": "Continues after the chain",      "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "" },
+            { "from": "2", "to": "6", "label": "True" },
+            { "from": "2", "to": "3", "label": "False" },
+            { "from": "3", "to": "7", "label": "True" },
+            { "from": "3", "to": "4", "label": "False" },
+            { "from": "4", "to": "8", "label": "True" },
+            { "from": "4", "to": "5", "label": "False" },
+            { "from": "5", "to": "9", "label": "True" },
+            { "from": "5", "to": "10", "label": "False" },
+            { "from": "6", "to": "11", "label": "" },
+            { "from": "7", "to": "11", "label": "" },
+            { "from": "8", "to": "11", "label": "" },
+            { "from": "9", "to": "11", "label": "" },
+            { "from": "10", "to": "11", "label": "" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Key insight: the moment a condition is <code>True</code>, Python runs that block and <strong>immediately skips every remaining elif and else</strong> in the chain — it never checks conditions further down, no matter how many more there are. This is why an <code>elif</code> chain is fundamentally different from writing several separate <code>if</code> statements in a row, which would each be checked independently."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "comparison-operators",
+      "title": "Comparison Operators — Building Conditions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Every if condition is ultimately built from comparison operators, which compare two values and return a boolean result."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Operator", "Meaning", "Example", "Result"],
+          "rows": [
+            ["==", "Equal to",                 "5 == 5",  "True"],
+            ["!=", "Not equal to",              "5 != 3",  "True"],
+            [">",  "Greater than",              "7 > 3",   "True"],
+            ["<",  "Less than",                 "7 < 3",   "False"],
+            [">=", "Greater than or equal to",  "5 >= 5",  "True"],
+            ["<=", "Less than or equal to",     "4 <= 3",  "False"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Common beginner mistake:</strong> writing <code>if x = 5:</code> instead of <code>if x == 5:</code>. A single <code>=</code> is the <strong>assignment</strong> operator, while double <code>==</code> is the <strong>comparison</strong> operator — using the wrong one inside a condition raises a <code>SyntaxError</code> in Python (unlike some languages where this mistake silently compiles into a bug)."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "logical-operators",
+      "title": "Logical Operators — Combining Multiple Conditions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python provides three logical operators — <code>and</code>, <code>or</code>, and <code>not</code> — that combine or invert boolean conditions, letting you express far more complex decisions than a single comparison could."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Operator", "Meaning", "Example", "Result"],
+          "rows": [
+            ["and", "True only if BOTH conditions are True",  "(5 > 3) and (2 < 4)",  "True"],
+            ["or",  "True if AT LEAST ONE condition is True", "(5 > 3) or (2 > 4)",   "True"],
+            ["not", "Reverses the boolean value",              "not (5 > 3)",          "False"]
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "logical_operators.py",
+          "lines": [
+            "age = 25",
+            "has_id = True",
+            "",
+            "if age >= 18 and has_id:",
+            "    print(\"Entry allowed.\")",
+            "",
+            "is_weekend = False",
+            "is_holiday = True",
+            "if is_weekend or is_holiday:",
+            "    print(\"No work today!\")",
+            "",
+            "logged_in = False",
+            "if not logged_in:",
+            "    print(\"Please log in first.\")"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python also supports <strong>short-circuit evaluation</strong>: in an <code>and</code> expression, if the first condition is <code>False</code>, Python never even evaluates the second one, since the overall result is already guaranteed to be <code>False</code>. Similarly, in an <code>or</code> expression, if the first condition is <code>True</code>, the second is skipped entirely. This is more than a performance detail — it's commonly used deliberately, for example: <code>if user is not None and user.is_active:</code> safely avoids crashing when <code>user</code> is <code>None</code>."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "truthy-falsy",
+      "title": "Truthy and Falsy Values in Python",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A condition in Python doesn't have to be an explicit comparison like <code>x == 5</code> — you can place almost <strong>any value</strong> directly after <code>if</code>, and Python will automatically evaluate whether that value is \"truthy\" or \"falsy\"."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Falsy values", "text": " — the following are all treated as False in a boolean context: False, None, 0, 0.0, \"\" (empty string), [] (empty list), () (empty tuple), {} (empty dict), and set() (empty set)." },
+            { "strong": "Truthy values", "text": " — everything else is treated as True, including any non-zero number, any non-empty string, and any non-empty collection." }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "truthy_falsy.py",
+          "lines": [
+            "cart = []",
+            "",
+            "if cart:",
+            "    print(\"You have items in your cart.\")",
+            "else:",
+            "    print(\"Your cart is empty.\")   # this runs — [] is falsy",
+            "",
+            "username = \"Ashish\"",
+            "if username:",
+            "    print(f\"Welcome, {username}!\")  # this runs — non-empty string is truthy"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is an extremely common and idiomatic Python pattern — writing <code>if cart:</code> instead of the more verbose <code>if len(cart) > 0:</code> is considered more \"Pythonic\", but it does mean you need to be fully aware of what counts as falsy to avoid subtle bugs, particularly around the number <code>0</code>, which is falsy even though it's a perfectly valid, meaningful value in many programs."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "nested-if",
+      "title": "Nested if Statements",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "An <code>if</code> statement can contain another <code>if</code> statement inside it — this is called <strong>nesting</strong>, and it lets you check a secondary condition only after a primary one has already been satisfied."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "nested_if.py",
+          "lines": [
+            "age = 20",
+            "has_license = True",
+            "",
+            "if age >= 18:",
+            "    if has_license:",
+            "        print(\"You can drive.\")",
+            "    else:",
+            "        print(\"You need a license first.\")",
+            "else:",
+            "    print(\"You are too young to drive.\")"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Nested conditionals are useful, but deeply nesting them (four or five levels deep) quickly hurts readability — this is often called <strong>'arrow code'</strong> because the indentation drifts further and further right. In most cases, combining conditions with <code>and</code> (<code>if age >= 18 and has_license:</code>) is a flatter, more readable alternative to a nested structure."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "ternary-operator",
+      "title": "The Ternary Operator — One-Line if-else",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python offers a compact, single-line form of <code>if-else</code> called the <strong>conditional expression</strong> (commonly known as the ternary operator), useful when you just need to assign one of two values based on a condition."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "ternary_operator.py",
+          "lines": [
+            "age = 20",
+            "",
+            "# Traditional way",
+            "if age >= 18:",
+            "    status = \"Adult\"",
+            "else:",
+            "    status = \"Minor\"",
+            "",
+            "# Ternary (conditional expression) way",
+            "status = \"Adult\" if age >= 18 else \"Minor\"",
+            "print(status)   # Adult"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The syntax reads almost like English: <code>value_if_true if condition else value_if_false</code>. Use it for short, simple assignments — for anything involving multiple conditions or side effects (like printing or logging), a regular <code>if-else</code> block remains far more readable."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "match-case-heading",
+      "title": "match-case — Python's Structural Pattern Matching",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Introduced in <strong>Python 3.10</strong>, the <code>match-case</code> statement is Python's version of a switch statement — but considerably more powerful, since it can match against data structure shapes, not just single values. It is especially useful as a cleaner alternative to a long <code>if-elif</code> chain that repeatedly compares the same variable against different fixed values."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "match_case_demo.py",
+          "lines": [
+            "def get_day_type(day):",
+            "    match day:",
+            "        case \"Saturday\" | \"Sunday\":",
+            "            return \"Weekend\"",
+            "        case \"Monday\" | \"Tuesday\" | \"Wednesday\" | \"Thursday\" | \"Friday\":",
+            "            return \"Weekday\"",
+            "        case _:",
+            "            return \"Invalid day\"",
+            "",
+            "print(get_day_type(\"Sunday\"))    # Weekend",
+            "print(get_day_type(\"Tuesday\"))   # Weekday",
+            "print(get_day_type(\"Funday\"))    # Invalid day"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>case _:</code> pattern acts as a wildcard — equivalent to a final <code>else</code> — matching anything that didn't match an earlier case. Because <code>match-case</code> requires <strong>Python 3.10 or later</strong>, an <code>if-elif-else</code> chain remains the more universally compatible choice for code that needs to run on older Python versions."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "if-else-vs-others",
+      "title": "if-else vs Ternary vs match-case — Comparison",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python gives you multiple ways to express a decision. Here's how to choose the right one for each situation."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "if / elif / else", "Ternary Expression", "match-case"],
+          "rows": [
+            ["Best for",           "Any conditional logic, especially with multiple statements", "Simple one-value assignment", "Comparing one variable against many fixed values/patterns"],
+            ["Readable for complex logic?", "✅ Yes", "❌ No — gets messy fast", "✅ Yes, for value-based branching"],
+            ["Minimum Python version", "Any version", "Any version (2.5+)", "3.10+"],
+            ["Supports side effects (print, logging)?", "✅ Yes, freely", "⚠️ Awkward, avoid", "✅ Yes"],
+            ["Pattern/structure matching?", "❌ No", "❌ No", "✅ Yes — can match shapes, not just values"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of if-else in Python",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Conditional statements are indispensable, but understanding their trade-offs helps you write cleaner, more maintainable branching logic."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Reads Almost Like English", "text": "Python's minimal syntax — no required parentheses, no curly braces — makes conditional logic unusually easy to read compared to most other languages." },
+            { "title": "Extremely Flexible Conditions", "text": "Any expression that evaluates to a boolean (or a truthy/falsy value) can be used as a condition, including comparisons, function calls, and combined logical expressions." },
+            { "title": "Unlimited elif Chaining", "text": "You can express any number of mutually exclusive outcomes cleanly using a single if-elif-...-else chain." },
+            { "title": "Short-Circuit Evaluation", "text": "and/or stop evaluating as soon as the result is determined, which both improves performance and lets you safely guard against errors, like checking 'x is not None and x.value > 0'." },
+            { "title": "Multiple Styles for Different Needs", "text": "Full if-else blocks, compact ternary expressions, and structural match-case statements each suit different situations, giving you the right tool for the job." }
+          ],
+          "cons": [
+            { "title": "Indentation Errors Are Easy to Introduce", "text": "Since indentation defines blocks (not braces), inconsistent spacing or mixing tabs and spaces can cause confusing IndentationError or, worse, silently incorrect logic." },
+            { "title": "Deep Nesting Hurts Readability", "text": "Stacking several nested if statements creates 'arrow code' that becomes hard to follow — combining conditions with and/or or restructuring with early returns is usually cleaner." },
+            { "title": "Ternary Overuse Reduces Clarity", "text": "Chaining multiple ternary expressions together to avoid writing a full if-elif-else block often produces code that is harder, not easier, to read." },
+            { "title": "Truthy/Falsy Rules Can Surprise Beginners", "text": "Treating 0, an empty string, or an empty list as automatically False can cause subtle bugs if you don't intend that behaviour — for instance, if 0 is a meaningful value in your program." },
+            { "title": "match-case Requires a Recent Python Version", "text": "Since match-case needs Python 3.10+, it cannot be used in codebases that must remain compatible with older Python installations." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "internal-architecture",
+      "title": "How Python Evaluates Conditions Internally — Architecture",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The diagram below shows what actually happens at the bytecode level when Python encounters an <code>if</code> statement — the same underlying machinery drives every conditional you write, no matter how simple or complex."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Your Python Code",
+              "color": "#6366f1",
+              "items": ["if age >= 18:", "elif condition:", "else:"]
+            },
+            {
+              "label": "Compiler (AST → Bytecode)",
+              "color": "#0ea5e9",
+              "items": ["Parses condition expression", "Generates COMPARE_OP bytecode", "Generates POP_JUMP_IF_FALSE"]
+            },
+            {
+              "label": "Bytecode Instructions",
+              "color": "#10b981",
+              "items": ["LOAD_FAST age", "COMPARE_OP >=", "POP_JUMP_IF_FALSE <target>"]
+            },
+            {
+              "label": "CPython Interpreter (PVM)",
+              "color": "#f59e0b",
+              "items": ["Evaluates truthiness of result", "Jumps to correct bytecode offset", "Executes matching block only"]
+            },
+            {
+              "label": "Operating System",
+              "color": "#ef4444",
+              "items": ["Process continues linearly after branch"]
+            },
+            {
+              "label": "Hardware",
+              "color": "#8b5cf6",
+              "items": ["CPU branch execution"]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Key insight: an <code>if</code> statement compiles down to a <strong>conditional jump instruction</strong> — the CPython interpreter evaluates the condition, and depending on whether it's truthy or falsy, either continues executing the next line normally or <strong>jumps</strong> straight past the block to skip it. This is why only one branch of an if-elif-else chain ever actually runs — the skipped blocks are never even reached by the interpreter."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "Your First Python if-else Program",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Let's bring everything together in one small, complete program — checking a number's sign using if-elif-else, exactly the kind of logic you'll write constantly once conditionals become second nature."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "first_if_else_program.py",
+          "lines": [
+            "number = int(input(\"Enter a number: \"))",
+            "",
+            "if number > 0:",
+            "    print(f\"{number} is positive.\")",
+            "elif number < 0:",
+            "    print(f\"{number} is negative.\")",
+            "else:",
+            "    print(\"The number is zero.\")",
+            "",
+            "# Bonus: check even/odd using a ternary expression",
+            "parity = \"even\" if number % 2 == 0 else \"odd\"",
+            "print(f\"It is also {parity}.\")"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["Enter a number: -7", "-7 is negative.", "It is also odd."]
+        },
+        { "type": "subHeading", "text": "Practice This Code — Live Editor" },
+        {
+          "type": "liveEditor",
+          "initialCode": "number = -7\nif number > 0:\n    print(f\"{number} is positive.\")\nelif number < 0:\n    print(f\"{number} is negative.\")\nelse:\n    print(\"The number is zero.\")"
+        },
+        { "type": "subHeading", "text": "Line-by-Line Explanation" },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>if number > 0:</code> — the first condition checked; if True, only this block runs and the rest of the chain is skipped." },
+            { "html": "<code>elif number < 0:</code> — only reached if the first condition was False; checked in order, top to bottom." },
+            { "html": "<code>else:</code> — the catch-all block, running only when neither earlier condition matched — here, exactly when number == 0." },
+            { "html": "<code>\"even\" if number % 2 == 0 else \"odd\"</code> — a ternary expression computing a value in one line instead of a full if-else block." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-errors-heading",
+      "title": "Common Errors and Gotchas With if-else",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "These are the mistakes that trip up nearly every Python learner the first few times they write conditional logic."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Using = Instead of ==", "text": " — writing if x = 5: instead of if x == 5: raises a SyntaxError immediately in Python, since = is assignment, not comparison — unlike some languages, this mistake cannot compile at all." },
+            { "strong": "Forgetting the Colon", "text": " — every if, elif, and else line must end with a colon. Omitting it (if age >= 18) raises a SyntaxError: expected ':'." },
+            { "strong": "Inconsistent Indentation", "text": " — mixing tabs and spaces, or using different indentation widths within the same block, raises IndentationError: unexpected indent or unindent does not match any outer indentation level." },
+            { "strong": "Chained Comparisons Misunderstood", "text": " — Python actually supports chained comparisons like 0 < x < 10, which correctly checks both conditions at once. Beginners coming from other languages sometimes don't realise this works, and write the more verbose 0 < x and x < 10 unnecessarily — both are valid, but the chained form is more Pythonic." },
+            { "strong": "Confusing is with ==", "text": " — is checks object identity (same object in memory), while == checks value equality. Using is to compare numbers or strings (if x is 5:) can behave unpredictably and should be reserved for comparisons like if x is None:." },
+            { "strong": "Assuming elif Conditions Are All Checked", "text": " — once one condition in an if-elif-else chain matches, every remaining condition is skipped entirely, even if a later one would also be True. Order conditions carefully, especially from most specific to least specific." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-uses",
+      "title": "Where Are if-else Statements Used? — Real-World Applications",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Conditional logic is genuinely everywhere in software. Here is where you will constantly reach for if-else in real, professional code:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🔐 Authentication & Authorization", "text": " — checking whether a user is logged in, whether their password matches, or whether they have permission to access a resource is fundamentally a chain of conditional checks." },
+            { "strong": "✅ Input Validation", "text": " — verifying that a form field isn't empty, that an email contains '@', or that a number falls within an acceptable range all rely on if statements before the data is trusted or processed." },
+            { "strong": "🎮 Game Logic", "text": " — checking whether a player has won, lost, collided with an object, or has enough health remaining is driven entirely by conditional branches evaluated every game frame." },
+            { "strong": "💰 Business Rule Enforcement", "text": " — applying a discount if the cart total exceeds a threshold, calculating shipping cost based on weight, or flagging a transaction as suspicious are all conditional business logic." },
+            { "strong": "🚦 API & Web Request Handling", "text": " — returning different HTTP responses based on the request method, checking if a required parameter is present, or handling errors gracefully all depend on conditional branching." },
+            { "strong": "📊 Data Cleaning & Processing", "text": " — filtering out missing values, categorising data into buckets, or handling edge cases in a dataset routinely relies on conditional expressions inside loops or comprehensions." },
+            { "strong": "🤖 AI & Machine Learning Pipelines", "text": " — decision trees, rule-based systems, and pre/post-processing logic around model predictions are all built from layered conditional statements." },
+            { "strong": "⚙️ Configuration & Feature Flags", "text": " — enabling or disabling a feature for specific users, environments, or A/B test groups is almost always implemented as a conditional check at runtime." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-if-else",
+      "title": "Why Should You Master if-else in 2026?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If-else logic feels almost too basic to dwell on — but weak conditional thinking is the root cause of an enormous share of real-world software bugs. Here's why mastering it thoroughly pays off:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🧠 It's the Foundation of All Programming Logic", "text": " — loops, functions, and even object-oriented design all eventually rely on decisions made with if-else; you cannot write meaningful software without it." },
+            { "strong": "🐞 Most Real Bugs Are Logic Bugs, Not Syntax Bugs", "text": " — an incorrectly ordered elif chain, a missed edge case, or a wrong operator (and vs or) causes far more production bugs than any exotic language feature ever does." },
+            { "strong": "🎯 A Classic Interview Topic", "text": " — coding interviews are full of problems (FizzBuzz, grading systems, validation logic) that test nothing more than your ability to write clean, correct conditional logic." },
+            { "strong": "🧹 Directly Shapes Code Readability", "text": " — well-structured conditionals (flat instead of deeply nested, clearly ordered elif chains) are one of the biggest factors separating readable code from a tangled mess." },
+            { "strong": "🔗 A Gateway to Advanced Patterns", "text": " — understanding truthy/falsy values, short-circuiting, and match-case sets you up to write cleaner, more idiomatic Python across every other area of the language." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python if-else Interview Questions — Beginner Level",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the most frequently asked interview questions specifically about <strong>Python conditional statements</strong>. Practice explaining each answer in your own words."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is the difference between if, elif, and else in Python?",
+              "a": "if introduces the first condition checked. elif ('else if') introduces additional conditions checked only if all earlier ones were False, and there can be any number of them. else is an optional final block that runs only when none of the preceding conditions matched — it takes no condition of its own.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. How does Python know where an if block starts and ends, without curly braces?",
+              "a": "Python uses indentation to define code blocks instead of braces. Every line at the same indentation level directly under an if, elif, or else statement is considered part of that block; the block ends as soon as a line returns to a lower indentation level.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is the difference between == and is in a conditional check?",
+              "a": "== checks value equality — whether two variables hold the same value. is checks identity — whether two variables refer to the exact same object in memory. is should generally be reserved for comparisons like 'if x is None:', not for comparing numbers or strings, where == is correct.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q4. What are truthy and falsy values in Python?",
+              "a": "Every value in Python can be evaluated in a boolean context, even without an explicit comparison. Falsy values include False, None, 0, 0.0, and any empty collection (empty string, list, tuple, dict, or set). Every other value — including any non-zero number and any non-empty collection — is considered truthy.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. What is short-circuit evaluation in the context of and/or?",
+              "a": "Short-circuit evaluation means Python stops evaluating a logical expression as soon as the overall result is already determined. In an and expression, if the first operand is False, the second is never evaluated. In an or expression, if the first operand is True, the second is never evaluated. This is commonly used to safely guard against errors, such as 'if obj is not None and obj.value > 0:'.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. What is the ternary (conditional expression) operator in Python?",
+              "a": "It is a compact, single-line form of if-else used for assigning one of two values: value_if_true if condition else value_if_false. For example, status = 'Adult' if age >= 18 else 'Minor' assigns a value in one line instead of a full four-line if-else block.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q7. Does Python support a traditional switch statement?",
+              "a": "Not in the traditional sense before Python 3.10. Starting with Python 3.10, the match-case statement provides similar and more powerful functionality, including matching against data structure patterns, not just single values. Before 3.10, developers typically used if-elif-else chains or dictionaries mapping values to functions instead.",
+              "tag": "Current Affairs"
+            },
+            {
+              "q": "Q8. What happens if you write if x = 5: in Python?",
+              "a": "Python raises a SyntaxError immediately, because = is the assignment operator, not the comparison operator. The correct comparison uses double equals: if x == 5:. Unlike some languages where this mistake can compile and produce a subtle bug, Python catches it at parse time.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q9. Can you chain multiple comparisons in a single Python condition?",
+              "a": "Yes — Python supports chained comparisons like if 0 < age < 100:, which is equivalent to, but more readable than, writing if 0 < age and age < 100:. This is a distinctly Pythonic feature not present in many other mainstream languages.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q10. Why is deeply nested if code generally considered bad practice?",
+              "a": "Deeply nested conditionals ('arrow code') push code further and further to the right, making it harder to track which condition applies to which block and increasing cognitive load when reading the code. Combining conditions with and/or, or restructuring logic using early returns, usually produces flatter, more maintainable code.",
+              "tag": "Must Know"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Knowledge of if-else",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Try to work out each answer yourself before revealing it — active recall is one of the fastest ways to lock in a new concept."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What does if []: print('yes') else: print('no') output, and why?",
+              "a": "'no'. An empty list is a falsy value in Python, so the condition evaluates to False and the else block runs instead.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What is the output of print('Even') if 10 % 2 == 0 else print('Odd')?",
+              "a": "'Even' is printed. Although this looks unusual, it's a valid (if slightly unconventional) use of the ternary expression: it evaluates the condition, then calls whichever print() function corresponds to the result — here, print('Even') runs directly.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. Given x = 5, what does if 0 < x < 10: print('in range') output, and why?",
+              "a": "'in range' is printed. Python's chained comparison 0 < x < 10 checks both 0 < x and x < 10 together, and both are True for x = 5, so the combined condition is True.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. In an if-elif-else chain checking marks >= 90, then marks >= 75, then marks >= 60, what happens if marks = 95?",
+              "a": "Only the first condition's block runs, since marks >= 90 is True for 95. Python stops checking immediately after the first match — the subsequent elif conditions (marks >= 75, marks >= 60), even though they would technically also be True for 95, are never evaluated at all.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Why does if user and user.is_active: avoid a crash when user is None, but if user.is_active and user: does not?",
+              "a": "Because of short-circuit evaluation combined with left-to-right order. In the first version, 'user' is checked first; if it's None (falsy), Python never evaluates 'user.is_active', avoiding an AttributeError. In the second version, 'user.is_active' is evaluated first — if user is None, this immediately crashes with an AttributeError before the second condition is ever reached.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. Rewrite this nested code as a single flat condition: if age >= 18:\\n    if has_id:\\n        print('Allowed')",
+              "a": "if age >= 18 and has_id:\\n    print('Allowed'). Combining the two conditions with 'and' produces logically identical behaviour to the nested version, but with one less level of indentation and improved readability.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What is the output of bool(0), bool(0.0), bool(''), and bool('0')?",
+              "a": "bool(0) is False, bool(0.0) is False, bool('') is False — all are recognised falsy values. However, bool('0') is True, because '0' is a non-empty string; Python only cares whether the string itself is empty or not, not what characters it contains.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Using match-case (Python 3.10+), how would you handle the values 1, 2, or 3 identically, and any other value with a default case?",
+              "a": "match value:\\n    case 1 | 2 | 3:\\n        print('Small number')\\n    case _:\\n        print('Other number')\\nThe pipe character (|) inside a single case combines multiple values into one matching pattern, and case _: acts as the default, catch-all case, equivalent to a final else.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Mastering Decision-Making in Python",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <strong>if-else statement</strong> is the single most fundamental decision-making tool in Python — and by extension, in programming itself. Whether you're validating a form, enforcing a business rule, or branching game logic, the pattern is always the same: evaluate a condition, and let the program choose its path accordingly."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "As your conditional logic grows more complex, Python gives you a full toolkit to keep it readable: chain conditions with <code>elif</code>, combine them with <code>and</code>/<code>or</code>, compress simple assignments into a <strong>ternary expression</strong>, and — on modern Python — reach for <code>match-case</code> when you're really comparing one value against many fixed patterns."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Your Situation", "Recommended Tool"],
+          "rows": [
+            ["Simple two-outcome decision", "✅ if / else"],
+            ["Several mutually exclusive outcomes", "✅ if / elif / else chain, ordered carefully"],
+            ["Assigning one of two values in one line", "✅ Ternary expression"],
+            ["Comparing one variable against many fixed values/patterns (3.10+)", "✅ match-case"],
+            ["Multiple conditions must ALL be true", "✅ Combine with and"],
+            ["ANY one of several conditions is enough", "✅ Combine with or"],
+            ["Checking if a collection has any items", "✅ if my_list: (rely on truthy/falsy)"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The next step in your Python journey is to practise flattening a few of your own deeply nested conditionals using <code>and</code>/<code>or</code> and early returns — your future self debugging the code will thank you. Continue on to <strong>Python Loops</strong> next, since loops and conditionals are used together constantly in almost every real program. 🔀"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "What is the syntax of an if-else statement in Python?",
+        "a": "The basic syntax is: if condition:\\n    # code if True\\nelse:\\n    # code if False. Both the if and else lines must end with a colon, and their blocks must be consistently indented — Python uses indentation, not curly braces, to define where each block starts and ends."
+      },
+      {
+        "q": "What is the difference between elif and multiple separate if statements?",
+        "a": "In an if-elif-else chain, Python checks conditions in order and stops at the first True match, skipping every remaining elif and else entirely — only one block ever runs. With multiple separate if statements, each condition is evaluated completely independently, so more than one block could run if more than one condition happens to be True."
+      },
+      {
+        "q": "Does Python require parentheses around if conditions?",
+        "a": "No. Unlike languages such as Java or C, Python does not require parentheses around the condition: if x > 5: is valid and idiomatic. You can add parentheses for grouping complex expressions like (a and b) or c, but they are never mandatory around the whole condition itself."
+      },
+      {
+        "q": "What are truthy and falsy values in Python if statements?",
+        "a": "Python allows any value, not just explicit True/False comparisons, to be used directly as a condition. Values like None, 0, 0.0, empty strings, and empty collections (empty list, tuple, dict, or set) are treated as falsy. Every other value — non-zero numbers and non-empty collections — is treated as truthy."
+      },
+      {
+        "q": "What is the ternary operator in Python?",
+        "a": "It's Python's compact, single-line form of if-else, written as: value_if_true if condition else value_if_false. It is best suited for simple value assignments, such as status = 'Adult' if age >= 18 else 'Minor', rather than for logic involving multiple statements or side effects."
+      },
+      {
+        "q": "Does Python have a switch statement?",
+        "a": "Python did not have a traditional switch statement before version 3.10. Starting with Python 3.10, the match-case statement provides equivalent — and more powerful — functionality, including pattern matching on data structures, not just simple value comparisons. Before 3.10, if-elif-else chains or dictionary-based dispatch were the common alternatives."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Arrays", "path": "/python/python-arrays" },
+    "next": { "label": "Next: Python Match Case →", "path": "/python/python-match-case" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Keywords",       "dd": "if, elif, else" },
+      { "dt": "Block defined by","dd": "Indentation + colon" },
+      { "dt": "Modern alternative", "dd": "match-case (3.10+)" },
+      { "dt": "One-line form",  "dd": "Ternary expression" },
+      { "dt": "Evaluates to",  "dd": "Boolean (True/False)" },
+      { "dt": "Category",      "dd": "Control Flow Statement" }
+    ],
+    "relatedArticles": [
+      { "label": "Python Operators",      "path": "/python/python-operators" },
+      { "label": "Python Loops",          "path": "/python/python-loops" },
+      { "label": "Python Control Flow",   "path": "/python/python-controlflow" },
+      { "label": "Python Functions",      "path": "/python/python-functions" },
+      { "label": "Python Match Case",     "path": "/python/python-match-case" },
+      { "label": "Python Data Types",     "path": "/python/python-datatypes" },
+      { "label": "Python Booleans",       "path": "/python/python-booleans" },
+      { "label": "Python Comprehensions", "path": "/python/python-comprehensions" }
+    ],
+    "tags": ["If Else","Elif","Ternary Operator","Match Case","Truthy Falsy","Comparison Operators","Logical Operators","Control Flow","Nested If","Short-Circuit Evaluation","Conditional Expression","CPython"]
+  }
+}

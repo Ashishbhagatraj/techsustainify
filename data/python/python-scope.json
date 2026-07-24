@@ -1,0 +1,725 @@
+{
+  "meta": {
+    "title": "Python Scope | LEGB Rule Explained | global and nonlocal Keywords | Python Tutorial for Beginners 2026 | Tech Sustainify",
+    "description": "Learn Python variable scope in depth. Covers the LEGB rule (Local, Enclosing, Global, Built-in), global and nonlocal keywords, closures, UnboundLocalError, namespaces, and common scope mistakes with real code examples for 2026.",
+    "keywords": "python scope, LEGB rule python, local vs global variables python, global keyword python, nonlocal keyword python, python namespaces, python closures scope, UnboundLocalError python, enclosing scope python, python variable lifetime",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-scope/",
+    "ogTitle": "Python Scope — Complete LEGB Rule Guide 2026 | Tech Sustainify",
+    "ogDescription": "Deep dive into Python variable scope — the LEGB rule, global and nonlocal keywords, namespaces, closures, and the exact UnboundLocalError every dev hits while learning this.",
+    "ogUrl": "https://techsustainify.com/python/python-scope/",
+    "ogImage": "https://techsustainify.com/images/python-scope-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "20 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-03-06",
+    "schemaDateModified": "2026-03-24",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 8000
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python Scope" }
+  ],
+
+  "articleHeader": {
+    "badge": "🧭 Python",
+    "title": "Python Scope — The LEGB Rule Explained Properly",
+    "subtitle": "Everything you actually need to know about variable scope in Python — Local, Enclosing, Global, Built-in resolution order, the global and nonlocal keywords, closures, and the exact UnboundLocalError you'll hit while learning this."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-24", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time", "value": "20 min" },
+    { "icon": "🎯", "label": "Level", "value": "Beginner" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-scope",
+      "title": "What is Scope in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Scope answers one specific question: when your code says a name like <code>total</code>, which actual variable does Python mean? The same name can exist in several completely separate places at once — a <code>total</code> inside one function, a different <code>total</code> inside another, and a third <code>total</code> sitting at the top level of your script — and scope is the set of rules Python follows to figure out, for any given line of code, exactly which one you're talking about."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python resolves this using a specific, ordered search called the <strong>LEGB rule</strong> — Local, Enclosing, Global, Built-in. When your code references a name, Python checks these four scopes in that exact order and uses the first match it finds. It's not a vague heuristic; it's a precise, deterministic algorithm that runs every single time a name is looked up, and once you actually know the order, a huge number of 'why isn't my variable updating' bugs stop being mysterious."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's the specific moment scope stopped being abstract for me: I had a function that read <code>if count > threshold:</code> where <code>count</code> was meant to be a variable the function itself incremented on every call, tracking state across multiple calls. It never worked — <code>count</code> stayed at zero forever, no matter how many times I called the function. The bug wasn't in the logic. It was that <code>count += 1</code> inside the function silently created a brand-new local variable named <code>count</code>, completely separate from the global one I thought I was updating, and Python never told me this was happening — it just quietly did it, exactly per the LEGB rule, and I hadn't yet learned the rule well enough to see it coming."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This guide walks through all four LEGB scopes precisely, the <code>global</code> and <code>nonlocal</code> keywords that let you deliberately reach outside a function's local scope, how closures capture enclosing-scope variables, and the exact <code>UnboundLocalError</code> traceback that's almost always the direct symptom of a scope misunderstanding."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "history-of-scope",
+      "title": "History — How Python's Scoping Rules Evolved",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python's scoping model has genuinely changed shape over the decades, not just gained new keywords — an important thing to know if you ever read code or documentation written for an earlier version."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "1991 — Python 0.9.0", "text": " — Basic local and global scope existed from Python's earliest release, along with the global keyword, letting a function explicitly declare it intends to modify a module-level variable rather than create a new local one." },
+            { "strong": "Early-to-mid 1990s — No Enclosing Scope Yet", "text": " — In Python's earliest versions, nested functions could NOT read variables from an enclosing function's local scope at all — only from local and global/built-in scopes. A function defined inside another function was, for scoping purposes, almost as isolated as a top-level function." },
+            { "strong": "2001 — Python 2.1 (PEP 227)", "text": " — Introduced genuine nested scopes, formally adding the 'E' (Enclosing) to what would eventually be called the LEGB rule. This single change is what made real closures possible in Python, and it directly enabled the decorator pattern years before decorators had their own dedicated @ syntax." },
+            { "strong": "2008 — Python 3.0 (PEP 3104)", "text": " — Introduced the nonlocal keyword, finally giving nested functions a clean, explicit way to MODIFY (not just read) a variable in an enclosing function's scope — something Python 2 genuinely had no clean syntax for at all, forcing awkward workarounds like wrapping a value in a mutable list." },
+            { "strong": "2008 — Python 3.0, Comprehension Scoping Change", "text": " — List comprehensions gained their own private scope in Python 3, meaning the loop variable inside a comprehension no longer leaks into the enclosing scope the way it did in Python 2 — a subtle but genuinely important scoping fix that eliminated a class of accidental variable-overwriting bugs." },
+            { "strong": "2026 — Current state", "text": " — The LEGB rule, global, and nonlocal remain exactly as they've been since Python 3.0. This is one of the most stable areas of the language's core semantics, precisely because getting scoping rules right is foundational — changing them later would silently break enormous amounts of existing code." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "features-heading",
+      "title": "Key Characteristics of Python Scope",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Here are the 11 things worth knowing precisely about how Python scope actually behaves — not the loose version, the exact one:"
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            { "icon": "🔍", "title": "LEGB Search Order", "text": "Python resolves a name by checking Local, then Enclosing, then Global, then Built-in scope, in that exact order, stopping at the first match found. This search happens for every single name lookup." },
+            { "icon": "📦", "title": "Functions Create Their Own Local Scope", "text": "Every function call gets a fresh, private local namespace. Variables assigned inside a function are local to that function by default and don't exist outside it." },
+            { "icon": "🚫", "title": "Blocks Don't Create Scope", "text": "Unlike many languages, if, for, and while blocks in Python do NOT create their own scope. A variable assigned inside an if block or for loop is accessible after that block ends, within the same function or module." },
+            { "icon": "✍️", "title": "Assignment Determines Locality", "text": "If a name is assigned anywhere inside a function body, Python treats it as local for the ENTIRE function — even on lines before that assignment. This is a compile-time decision, not a runtime one, and it's the root cause of most scope-related bugs." },
+            { "icon": "🌍", "title": "global Declares Module-Level Intent", "text": "Writing global count inside a function tells Python that count refers to the module-level variable, not a new local one — allowing the function to genuinely modify the global value." },
+            { "icon": "🪆", "title": "nonlocal Declares Enclosing-Function Intent", "text": "Writing nonlocal count inside a nested function tells Python that count refers to a variable in the nearest enclosing function's scope, not the module-level global or a new local — enabling genuine modification of that enclosing variable." },
+            { "icon": "🔒", "title": "Reading Doesn't Require Declaration", "text": "You can freely READ a variable from an enclosing or global scope inside a function without any special keyword. global and nonlocal are only required when you intend to REASSIGN that name, not merely read it." },
+            { "icon": "🧩", "title": "Closures Capture Enclosing Variables by Reference", "text": "A nested function that references an enclosing function's variable keeps access to that variable even after the enclosing function has finished executing — this is the mechanism behind Python closures and decorators." },
+            { "icon": "📛", "title": "Every Module Has Its Own Global Scope", "text": "Global scope is actually per-module, not truly program-wide. A variable defined at the top level of one .py file is that module's global scope, separate from another module's globals unless explicitly imported." },
+            { "icon": "🏗️", "title": "Built-in Scope Holds Python's Own Names", "text": "Names like len, print, range, and Exception live in the outermost Built-in scope, checked last — which is also why shadowing them (naming a variable list, for instance) silently hides the built-in within that scope." },
+            { "icon": "⚠️", "title": "Mutating vs Reassigning Are Scope-Different Operations", "text": "Calling a method that mutates a mutable object in place (like list.append()) doesn't require global or nonlocal, because you're not reassigning the name itself — only reassignment triggers Python's local-by-default rule." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "How Python Resolves a Variable Name — The LEGB Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every single time your code references a variable name, Python runs through this exact search, in this exact order, checking one scope after another until it finds a match — or runs out of scopes and raises <code>NameError</code>."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "🔍 Name Referenced", "sublabel": "e.g. print(total)", "type": "start" },
+            { "id": "2", "label": "📍 L — Local Scope", "sublabel": "Current function's own namespace", "type": "decision" },
+            { "id": "3", "label": "🪆 E — Enclosing Scope", "sublabel": "Any outer function this is nested in", "type": "decision" },
+            { "id": "4", "label": "🌍 G — Global Scope", "sublabel": "Current module's top-level namespace", "type": "decision" },
+            { "id": "5", "label": "🏗️ B — Built-in Scope", "sublabel": "Python's own reserved names", "type": "decision" },
+            { "id": "6", "label": "💥 NameError Raised", "sublabel": "name is not defined", "type": "end" },
+            { "id": "7", "label": "✅ Name Found", "sublabel": "Value used at this line", "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "checks first" },
+            { "from": "2", "to": "7", "label": "found here" },
+            { "from": "2", "to": "3", "label": "not found, checks next" },
+            { "from": "3", "to": "7", "label": "found here" },
+            { "from": "3", "to": "4", "label": "not found, checks next" },
+            { "from": "4", "to": "7", "label": "found here" },
+            { "from": "4", "to": "5", "label": "not found, checks next" },
+            { "from": "5", "to": "7", "label": "found here" },
+            { "from": "5", "to": "6", "label": "not found anywhere" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Key insight: this search stops at the <strong>first</strong> match. If a variable named <code>list</code> exists locally inside your function, Python uses that local variable every time <code>list</code> is referenced in that function — it never even gets to Built-in scope to check Python's actual <code>list</code> type, silently shadowing it for the rest of that function's execution."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "how-scope-works",
+      "title": "How Scope Actually Works — Local-by-Default, global, and nonlocal",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Three things separate someone who's memorised 'LEGB' as an acronym from someone who actually understands scope: knowing exactly when Python decides a variable is local, understanding precisely what <code>global</code> and <code>nonlocal</code> each do (and don't do), and recognising the specific traceback these misunderstandings produce."
+        },
+        { "type": "subHeading", "text": "✍️ The Rule That Trips Up Almost Everyone: Assignment Makes It Local" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is the single most important, most surprising rule in Python scoping: if a name is assigned <em>anywhere</em> inside a function's body, Python treats that name as local to the entire function — including on lines that come before the assignment. Python decides this at compile time, by scanning the whole function body for assignment statements, before the function ever actually runs. This is why <code>count += 1</code> inside a function, intending to modify a module-level <code>count</code>, doesn't work as expected: <code>count += 1</code> is really <code>count = count + 1</code>, which is an assignment, which makes Python treat <code>count</code> as local for that entire function — and then the read on the right-hand side (<code>count</code>, before the <code>+</code>) fails, because that local <code>count</code> hasn't been given a value yet at the point it's being read."
+        },
+        { "type": "subHeading", "text": "💥 UnboundLocalError — The Exact Error This Produces" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Exactly this scenario raises <code>UnboundLocalError: local variable 'count' referenced before assignment</code>. This error message is precise and honest, but it confuses beginners because the variable clearly exists — just not the one they meant. Python correctly identifies <code>count</code> as local (because of the assignment somewhere in the function), and then correctly points out that this specific local variable has no value yet at the line where you're trying to read it. The fix isn't about the variable existing or not; it's about telling Python which scope you actually mean."
+        },
+        { "type": "subHeading", "text": "🌍 global — Reaching Out to Module-Level Scope" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Adding <code>global count</code> as the first line inside the function tells Python explicitly: 'when this function uses the name <code>count</code>, it means the module-level variable, not a new local one.' With that declaration in place, <code>count += 1</code> genuinely modifies the global value, and every subsequent call to the function sees the updated number. <code>global</code> must be declared before the variable is used in that function, and it applies only within that specific function's body — it doesn't leak into any other function."
+        },
+        { "type": "subHeading", "text": "🪆 nonlocal — Reaching Out to an Enclosing Function's Scope" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<code>nonlocal</code> solves the identical problem one level down: a nested function that needs to modify a variable belonging to the function it's defined inside, rather than the module-level global or its own new local variable. This is exactly what a counter-generator closure pattern needs — an inner function incrementing a counter that lives in its enclosing function's scope, persisting across multiple calls to that inner function, without that counter ever touching module-level global scope at all."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Simple rule to remember:</strong> reading a variable from an outer scope needs no special keyword at all. Reassigning it does — <code>global</code> for module-level variables, <code>nonlocal</code> for enclosing-function variables. Mutating a mutable object in place (like <code>my_list.append(x)</code>) is a read of the reference plus a method call, not a reassignment, so it needs neither keyword."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "scope-comparison",
+      "title": "Local vs Enclosing vs Global vs Built-in — Key Differences",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Each of the four LEGB scopes has a genuinely different lifetime, visibility, and typical use. This table lines them up directly."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Scope", "Where It Lives", "Lifetime", "Modifiable From Inner Function?", "Typical Use"],
+          "rows": [
+            ["Local (L)", "Inside the current function call", "Created on call, destroyed on return", "N/A — it's already the innermost scope", "Function's own working variables"],
+            ["Enclosing (E)", "An outer function this one is nested inside", "Tied to the outer function's call/closure lifetime", "✅ Yes, with nonlocal", "Closures, decorator state, factory functions"],
+            ["Global (G)", "Top level of the current module (.py file)", "Exists for the life of the program/module", "✅ Yes, with global", "Module-wide constants, shared application state"],
+            ["Built-in (B)", "Python's own reserved namespace", "Exists for the life of the Python process", "❌ Cannot be reassigned this way (would shadow, not modify)", "len(), print(), range(), Exception, etc."]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "python-vs-other-scope",
+      "title": "Variable Scoping — Python vs Other Languages",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python's function-based, block-transparent scoping is genuinely different from block-scoped languages, and this difference causes real confusion for developers moving between them in either direction."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Python", "Java", "JavaScript (let/const)", "C++"],
+          "rows": [
+            ["Scoping unit", "Function scope (and module scope)", "Block scope", "Block scope (with let/const)", "Block scope"],
+            ["if/for block creates new scope?", "❌ No", "✅ Yes", "✅ Yes (with let/const)", "✅ Yes"],
+            ["Variable declared inside a loop survives after it?", "✅ Yes, within the same function", "❌ No, scoped to the loop block", "❌ No, scoped to the loop block (with let)", "❌ No, scoped to the loop block"],
+            ["Explicit keyword to modify outer scope?", "✅ global / nonlocal", "❌ Not applicable (fields/access modifiers instead)", "❌ Not applicable (closures just work)", "❌ Not applicable (references/pointers instead)"],
+            ["Nested function closures", "✅ Yes, since Python 2.1 (2001)", "⚠️ Only effectively-final variables (lambdas)", "✅ Yes, fully", "⚠️ Explicit capture list required for lambdas"],
+            ["Default assignment behaviour inside a function", "Local, unless declared global/nonlocal", "Local to the declared block automatically", "Local to the declared block automatically (let/const)", "Local to the declared block automatically"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's my honestly opinionated take: Python's decision to make <code>if</code> and <code>for</code> blocks NOT create their own scope is one of its more underrated design choices, and I say that as someone who's been genuinely bitten by it too. It means you don't need to pre-declare a variable above a loop just to use its final value after the loop ends, the way you sometimes do in block-scoped languages. The trade-off is that it makes the 'accidentally shadow the outer variable' mistake slightly easier to make inside functions — but honestly, that trade-off favours Python's broader goal of minimal ceremony over strict, block-by-block variable isolation."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Python's Scoping Model",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python's approach to scope is deliberately simple compared to many languages, and that simplicity has real costs alongside its real benefits."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Simple, Predictable, Consistent Rule", "text": "LEGB is one deterministic search order, applied identically everywhere in the language — no special cases for loops, conditionals, or try blocks to memorise separately." },
+            { "title": "No Unnecessary Block-Level Ceremony", "text": "Not needing block scope means you don't need to declare variables above a loop just to use their final value afterward — genuinely less boilerplate than block-scoped languages often require." },
+            { "title": "Genuine, Fully-Working Closures", "text": "Enclosing scope access, combined with nonlocal, gives Python real closures capable of both reading and modifying captured state — the foundation for decorators and factory functions." },
+            { "title": "Explicit Intent for Outer-Scope Modification", "text": "Requiring global and nonlocal for reassignment (though not for reading) forces a small, deliberate signal in the code whenever a function reaches outside its own local scope to change something." },
+            { "title": "Encapsulation by Default", "text": "Since every function gets its own private local namespace automatically, variables genuinely don't leak between unrelated functions unless you explicitly ask them to via global or nonlocal." },
+            { "title": "Module-Level Global Scope Is Cleanly Isolated", "text": "Because global scope is per-module rather than truly program-wide, importing modules doesn't silently pollute a shared global namespace the way some languages' global scope can." }
+          ],
+          "cons": [
+            { "title": "The Local-by-Default Assignment Rule Surprises Beginners", "text": "That a single assignment anywhere in a function retroactively makes that name local for the WHOLE function, even before the assignment line, is genuinely counter-intuitive the first time it produces UnboundLocalError." },
+            { "title": "Silent Shadowing of Built-ins", "text": "Naming a local variable list, dict, or str silently hides Python's built-in of that name within that scope, with no warning — a subtle bug source, especially for beginners unaware they've done it." },
+            { "title": "No Block Scope Can Cause Loop-Variable Leakage", "text": "A variable assigned inside a for loop or if block remains accessible after that block ends, which occasionally causes confusion when a stale value from a previous iteration gets used unintentionally." },
+            { "title": "Two Separate Keywords for a Similar Concept", "text": "Needing both global and nonlocal, rather than one unified keyword, adds a bit of real cognitive overhead — remembering which one applies to which situation is a genuine, if small, learning cost." },
+            { "title": "Late-Binding Closures Can Surprise", "text": "Because closures capture enclosing variables by reference, not by value at creation time, functions created in a loop that reference the loop variable often behave unexpectedly, all sharing the same final value." },
+            { "title": "Debugging Scope Issues Requires Understanding an Implicit Rule", "text": "There's no visible syntax marking a variable as local versus outer-scope at the point of assignment — you have to know the local-by-default rule exists to correctly predict a function's behaviour just by reading it." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "diagram-heading",
+      "title": "Scope Architecture — Namespaces Nested Inside Each Other",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The diagram below shows how Python's four scopes physically nest inside each other, from the innermost function call out to the Python interpreter's own built-in namespace."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Local Scope (L)",
+              "color": "#6366f1",
+              "items": ["Innermost function's own namespace", "Parameters and locally assigned variables", "Created fresh on every call, destroyed on return"]
+            },
+            {
+              "label": "Enclosing Scope (E)",
+              "color": "#0ea5e9",
+              "items": ["Any outer function this one is nested inside", "Accessed read-only by default", "Modifiable with nonlocal"]
+            },
+            {
+              "label": "Global Scope (G)",
+              "color": "#10b981",
+              "items": ["Top level of the current .py module", "Module-level variables, imports, top-level function/class definitions", "Modifiable with global"]
+            },
+            {
+              "label": "Built-in Scope (B)",
+              "color": "#f59e0b",
+              "items": ["len, print, range, Exception, etc.", "Lives in the builtins module", "Checked last, can be silently shadowed"]
+            },
+            {
+              "label": "CPython Name Resolution Engine",
+              "color": "#ef4444",
+              "items": ["Searches L → E → G → B in strict order", "Stops at first match", "Raises NameError if exhausted"]
+            },
+            {
+              "label": "Result",
+              "color": "#8b5cf6",
+              "items": ["Correct value bound to that name", "Used at the point of reference"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "Scope in Practice — From UnboundLocalError to Working global and nonlocal",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Here's the exact broken version first, its precise error, and then the two correct fixes — one using <code>global</code>, one using <code>nonlocal</code> inside a closure."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "broken_scope.py",
+          "lines": [
+            "count = 0",
+            "",
+            "def increment():",
+            "    count += 1   # intends to modify the global count",
+            "    print(count)",
+            "",
+            "increment()"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["Traceback (most recent call last):", "  File \"broken_scope.py\", line 7, in <module>", "    increment()", "  File \"broken_scope.py\", line 4, in increment", "    count += 1", "UnboundLocalError: cannot access local variable 'count' where it is not associated with a value"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The fix, using <code>global</code>:"
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "fixed_with_global.py",
+          "lines": [
+            "count = 0",
+            "",
+            "def increment():",
+            "    global count",
+            "    count += 1",
+            "    print(count)",
+            "",
+            "increment()",
+            "increment()",
+            "increment()"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["1", "2", "3"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "And the closure version, using <code>nonlocal</code> instead — a self-contained counter with no module-level global involved at all:"
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "closure_counter.py",
+          "lines": [
+            "def make_counter():",
+            "    count = 0            # enclosing-scope variable",
+            "    def increment():",
+            "        nonlocal count",
+            "        count += 1",
+            "        return count",
+            "    return increment",
+            "",
+            "counter_a = make_counter()",
+            "counter_b = make_counter()",
+            "",
+            "print(counter_a())   # 1",
+            "print(counter_a())   # 2",
+            "print(counter_b())   # 1 — completely independent from counter_a"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["1", "2", "1"]
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "x = 'global x'\n\ndef outer():\n    x = 'enclosing x'\n    def inner():\n        print(x)\n    inner()\n\nouter()"
+        },
+        {
+          "type": "subHeading",
+          "text": "Line-by-Line Explanation"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>count += 1</code> without <code>global</code> — Because <code>count</code> is assigned inside <code>increment()</code>, Python treats it as local for the whole function, and reading it on the right side of <code>+=</code> before it has a local value raises <code>UnboundLocalError</code>." },
+            { "html": "<code>global count</code> — Declares, before any use, that <code>count</code> inside this function refers to the module-level variable. Now <code>count += 1</code> correctly reads and writes that same global variable." },
+            { "html": "<code>count = 0</code> inside <code>make_counter()</code> — This is <code>increment()</code>'s <strong>enclosing</strong> scope variable, not global — it belongs to <code>make_counter()</code>'s own local namespace." },
+            { "html": "<code>nonlocal count</code> inside <code>increment()</code> — Declares that this inner function's <code>count</code> refers to the enclosing function's <code>count</code>, not a new local one and not the module-level global (there isn't one here anyway)." },
+            { "html": "<code>counter_a</code> and <code>counter_b</code> — Two separate calls to <code>make_counter()</code> create two entirely independent enclosing scopes, each with its own private <code>count</code> — which is exactly why calling <code>counter_b()</code> starts back at 1, unaffected by <code>counter_a</code>'s calls." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "scope-real-uses",
+      "title": "Where Scope Understanding Actually Matters — Real-World Applications",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "This isn't abstract theory — scope rules shape how real, working Python code is actually structured across many domains:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🎨 Decorators", "text": " — Nearly every decorator relies on a nested function closing over variables from its enclosing function, exactly the Enclosing scope mechanism covered here — understanding LEGB is a genuine prerequisite for writing decorators confidently rather than by rote imitation." },
+            { "strong": "🏭 Factory Functions Generating Customised Behaviour", "text": " — Functions that return other functions, each configured differently (like make_counter() above, or a make_multiplier(factor) that returns a function multiplying by that specific factor), depend entirely on closures capturing enclosing-scope state correctly." },
+            { "strong": "⚙️ Configuration and Application State Management", "text": "Global-scope constants and configuration values (API_URL = '...', DEBUG = False) are extremely common at the top of real Python modules, and understanding exactly when a function needs global to modify them (versus just reading them, which needs nothing special) is a genuinely everyday skill." },
+            { "strong": "🧵 Thread-Safe State and Avoiding Shared Mutable Globals", "text": " — Recognising that module-level global variables are shared across every part of a program that imports that module is exactly what motivates safer patterns like passing state explicitly as function arguments instead, especially in multi-threaded code." },
+            { "strong": "🧪 Test Fixtures and Mocking", "text": " — pytest fixtures and monkeypatching frequently rely on precise understanding of scope to correctly override or restore global and module-level state during tests without leaking changes between test cases." },
+            { "strong": "🖥️ GUI Callback and Event Handler Design", "text": " — GUI frameworks often need callback functions defined inside a class or setup function that need to modify state defined in an enclosing scope — exactly the nonlocal use case, common in Tkinter-based applications." },
+            { "strong": "🐛 Debugging 'My Variable Isn't Updating' Bugs", "text": " — An enormous share of real-world Python debugging sessions, especially for less experienced developers, end up tracing back to exactly this: a function silently creating a new local variable instead of modifying the outer one the developer intended." },
+            { "strong": "📦 Module Design and Namespace Isolation", "text": " — Understanding that global scope is per-module, not program-wide, is essential for designing multi-file Python projects where different modules need their own independent top-level state without stepping on each other." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-scope",
+      "title": "Why Scope Deserves Real, Deliberate Study",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Scope is one of those topics that seems simple in a two-paragraph tutorial summary and then quietly causes real, recurring confusion in actual code. Here's why it's worth the deeper look:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🐛 It's a Genuinely Common Source of Silent Bugs", "text": " — Unlike a syntax error, a scope mistake often doesn't crash — it just quietly produces the wrong result, like a counter that never actually increments, which can be far harder to notice and debug than a loud traceback." },
+            { "strong": "💼 It's Directly Tested in Interviews", "text": " — 'What will this code print?' questions involving nested functions, global, and nonlocal are a genuinely common way interviewers test whether a candidate understands Python at a level beyond copy-pasted syntax." },
+            { "strong": "🔧 It's a Prerequisite for Decorators and Closures", "text": " — You genuinely cannot understand how decorators work, or confidently write your own, without a solid grasp of enclosing scope and how nested functions capture outer variables." },
+            { "strong": "🧠 It Reinforces a Precise, Useful Mental Model", "text": " — The LEGB search order is a genuinely reusable mental tool — once it's solid, reading unfamiliar code with nested functions and closures becomes dramatically less mysterious." },
+            { "strong": "🏗️ It Shapes Good Architecture Decisions", "text": " — Knowing when reaching for global is a code smell (heavy reliance on shared mutable global state) versus when it's a reasonable, deliberate choice (a small script's simple configuration) is a real design judgment call this understanding enables." },
+            { "strong": "🇮🇳 It's a Standard Deep-Dive Topic Alongside Functions in Indian Curricula", "text": " — Scope, alongside *args/**kwargs and recursion, is typically given dedicated coverage in Indian engineering college Python courses and interview-prep material, precisely because it reveals genuine conceptual understanding." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "namespaces-and-scope",
+      "title": "Namespaces vs Scope — A Distinction Worth Making Precisely",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "These two terms get used almost interchangeably in casual conversation, but they describe genuinely different things, and being precise about the difference sharpens your understanding of both."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "A namespace", "text": " — is the actual mapping from names to objects — practically, a dictionary Python maintains behind the scenes, associating variable names with the objects they currently refer to. Every module, every function call, and every class has its own separate namespace." },
+            { "strong": "Scope", "text": " — is the RULE for which namespaces are visible, and in what order, from a particular point in your code. Scope is what tells Python which namespace (or namespaces) to actually search when resolving a name." },
+            { "strong": "How they relate", "text": " — LEGB describes the specific sequence of namespaces — Local namespace, then Enclosing function's namespace, then Global (module) namespace, then Built-in namespace — that scope rules make visible and searchable, in that order, from any given line of code." },
+            { "strong": "Practical tools for inspecting namespaces", "text": " — locals() returns a dictionary of the current local namespace; globals() returns the current module's global namespace; these are genuinely useful for debugging exactly what names are visible and what values they currently hold at a specific point in your code." }
+          ]
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Concept", "What It Is", "Example / Tool"],
+          "rows": [
+            ["Namespace", "A concrete mapping of names to objects", "A function's local variables, accessible via locals()"],
+            ["Scope", "The rule for which namespaces are visible from where", "The LEGB search order itself"],
+            ["Local namespace", "Current function call's own variables", "locals() inside a function"],
+            ["Global namespace", "Current module's top-level variables", "globals() anywhere in that module"],
+            ["Built-in namespace", "Python's reserved names", "The builtins module itself"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python Scope — Interview Questions",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These come up regularly in Python interviews, particularly around closures, global state, and predicting output for nested-function code."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is the LEGB rule in Python?",
+              "a": "LEGB describes the exact order Python searches when resolving a variable name: Local scope (the current function's own namespace) first, then Enclosing scope (any outer function this one is nested inside), then Global scope (the current module's top-level namespace), then Built-in scope (Python's own reserved names like len or print). Python uses the first match it finds and stops searching.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. Why does count += 1 inside a function raise UnboundLocalError even when count exists as a global variable?",
+              "a": "Because Python determines, at compile time, that any name assigned anywhere within a function body is local to that entire function — and count += 1 counts as an assignment. This makes count local for the whole function, so when the right-hand side of += tries to READ count before any local value has been assigned to it, Python raises UnboundLocalError. The global variable with the same name is never actually reached.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q3. What is the difference between the global and nonlocal keywords?",
+              "a": "global tells Python that a name inside a function refers to a variable at the module's top-level (global) scope, allowing that function to reassign it. nonlocal tells Python that a name inside a nested function refers to a variable in the nearest ENCLOSING function's scope (not the module-level global), allowing that nested function to reassign it. global reaches all the way to module level; nonlocal reaches only to the closest enclosing function.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. Do if, for, and while blocks create their own scope in Python?",
+              "a": "No. Unlike many other languages, Python's if, for, and while blocks do not create a new scope. A variable assigned inside one of these blocks remains accessible after the block ends, within the same enclosing function or module — scope in Python is determined by functions (and modules), not by arbitrary code blocks.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. Do you need the global or nonlocal keyword to READ a variable from an outer scope inside a function?",
+              "a": "No. Reading a variable from an enclosing or global scope requires no special keyword at all — Python's normal LEGB lookup handles that automatically. global and nonlocal are only required when you intend to REASSIGN that name inside the function; without the keyword, an assignment would instead create a new local variable rather than modifying the outer one.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q6. What is a closure, and how does it relate to Python's Enclosing scope?",
+              "a": "A closure occurs when a nested function references a variable from its enclosing function's scope, and that nested function is then used (often returned and called) after the enclosing function has already finished executing. The nested function 'closes over' and retains access to that enclosing variable, which is precisely what Python's Enclosing scope in the LEGB rule makes possible.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q7. Why does calling append() on a list parameter inside a function not require the global or nonlocal keyword, even though it changes the list?",
+              "a": "Because my_list.append(x) is not an assignment to the name my_list — it's a method call that mutates the object my_list already refers to, in place. Only reassigning the NAME itself (my_list = something_new) triggers Python's local-by-default rule and requires global/nonlocal to instead modify the outer variable. Mutating the object the name already points to needs neither keyword.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q8. What does locals() and globals() return in Python, and how are they useful for debugging scope issues?",
+              "a": "locals() returns a dictionary representing the current local namespace at the point it's called — every variable currently visible in the local scope, with its current value. globals() returns the equivalent dictionary for the current module's global namespace. Both are genuinely useful for debugging exactly which variables Python considers local versus global at a specific point in your code, especially when tracking down an unexpected UnboundLocalError.",
+              "tag": "Current Affairs"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Understanding",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Work through these before checking the answers. Correctly predicting when a scope error happens — not just what value gets printed — is the real test here."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What is the output of: x = 'global' \\n def show(): print(x) \\n show()",
+              "a": "global. Since x is only READ inside show(), never assigned, Python's LEGB search finds no local x, moves on to check Enclosing (none exists here), then finds x in Global scope and uses that value — no global keyword is needed for reading.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What happens when you run: x = 'global' \\n def show(): print(x); x = 'local' \\n show()?",
+              "a": "UnboundLocalError: cannot access local variable 'x' where it is not associated with a value. Because x is assigned somewhere in show() (the line x = 'local'), Python treats x as local for the ENTIRE function — including the print(x) line that comes before the assignment, which now tries to read a local x that doesn't have a value yet.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "3. Trace this: for i in range(3): pass \\n print(i) — what does it print, and why doesn't this raise an error?",
+              "a": "2. Since for loops don't create their own scope in Python, the loop variable i remains accessible after the loop ends, still holding its final value from the last completed iteration.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. What is the output of: def outer(): x = 'outer' \\n def inner(): x = 'inner'; print(x) \\n inner() \\n print(x) \\n outer()",
+              "a": "inner, then outer. Inside inner(), x = 'inner' creates a genuinely separate local variable for inner() alone, printing 'inner'. Back in outer()'s own scope, its own x variable was never touched by inner() at all (no nonlocal was used), so it still holds 'outer'.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. What would change in the previous question if nonlocal x were added as the first line inside inner()?",
+              "a": "It would print inner, then inner — both prints show 'inner'. With nonlocal x declared, the assignment x = 'inner' inside inner() now modifies outer()'s own x variable directly, rather than creating a separate local one, so when outer() later prints x, it sees the modified value.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "6. What is the output of: list = [1, 2, 3] \\n print(list(range(3)))",
+              "a": "TypeError: 'list' object is not callable. Assigning list = [1, 2, 3] creates a local (or global, depending on where this runs) variable that shadows Python's built-in list type within that scope. The subsequent call list(range(3)) now tries to CALL the list object [1, 2, 3] as if it were a function, which fails because lists aren't callable.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "7. What does make_multiplier(3) return, functionally, given: def make_multiplier(factor): def multiply(x): return x * factor \\n return multiply — and what does make_multiplier(3)(10) evaluate to?",
+              "a": "It returns the inner multiply function itself, which has closed over factor=3 from its enclosing scope. Calling make_multiplier(3)(10) immediately calls that returned function with x=10, computing 10 * 3, which evaluates to 30.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "8. Why does globals()['x'] = 'changed' work to modify a global variable x from inside a function, even without the global keyword?",
+              "a": "globals() returns the actual dictionary Python uses to store the module's global namespace, not a copy — directly modifying an entry in that dictionary genuinely changes the global variable, bypassing the need for the global keyword entirely. This works because it isn't a normal name assignment at all; it's a dictionary mutation performed on the real underlying namespace object, similar in principle to why mutating a mutable argument doesn't require global/nonlocal either.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — LEGB Is the Quiet Rule Behind Almost Every 'Why Isn't This Updating' Bug",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Scope is one of those Python topics that rarely gets its own dedicated attention early on, and then quietly turns out to be the actual explanation behind a real share of the confusing bugs beginners hit in their first few months. <code>UnboundLocalError</code>, a counter that never increments, a variable that seems to 'reset' unexpectedly inside a function — these almost always trace back to the same underlying mechanism: Python's local-by-default assignment rule, working exactly as designed, just not as the developer expected."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "If you're a <strong>complete beginner</strong>, the priority is internalising the LEGB search order and the local-by-default assignment rule until predicting scope behaviour becomes automatic, not something you have to consciously reason through every time. If you're writing <strong>real, shared code</strong>, the priority shifts to judgment: recognising when reaching for <code>global</code> is a reasonable, deliberate choice versus when it's a sign that state should be passed explicitly as a function argument instead."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Your Situation", "What to Focus On"],
+          "rows": [
+            ["Learning scope for the first time", "✅ LEGB search order — memorise it, then trace it through real code"],
+            ["Function needs to modify a module-level variable", "✅ global — declared explicitly, before the variable is used"],
+            ["Nested function needs to modify an enclosing function's variable", "✅ nonlocal — for closures and factory-function patterns"],
+            ["Just reading an outer-scope variable", "✅ No keyword needed at all — LEGB handles it automatically"],
+            ["Getting UnboundLocalError unexpectedly", "✅ Check for ANY assignment to that name anywhere in the function"],
+            ["Heavy reliance on global mutable state", "⚠️ Consider passing values as explicit function arguments instead"],
+            ["Writing a decorator or factory function", "✅ Solid enclosing-scope and closure understanding is a genuine prerequisite"],
+            ["Debugging unfamiliar nested-function code", "✅ Use locals() and globals() to inspect exactly what's visible where"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The habit worth carrying forward: whenever a function seems to be silently ignoring an update to a variable you expected it to change, the very first question to ask isn't 'is my logic wrong' — it's 'does this variable name get assigned anywhere inside this function, and did I mean for that to create a new local one.' That single question resolves an outsized share of Python's most confusing-looking bugs almost instantly."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Scope is a search order, not a mystery.</strong> Know the four letters, know exactly what triggers 'local,' and know precisely which keyword reaches outside it — everything else about reading and writing variable-heavy Python code gets noticeably clearer from there. 🐍"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "What is the LEGB rule in Python?",
+        "a": "LEGB is the order Python follows when resolving a variable name: Local scope (the current function's own variables) first, then Enclosing scope (any outer function it's nested inside), then Global scope (the current module's top-level variables), then Built-in scope (Python's own reserved names like len and print). Python uses the first matching name it finds in that search order."
+      },
+      {
+        "q": "Why do I get UnboundLocalError when trying to modify a variable inside a Python function?",
+        "a": "This happens when a variable is assigned somewhere inside a function (like count += 1) without first declaring it with global or nonlocal. Python decides at compile time that any assigned name is local to the whole function, so trying to read that name before its local assignment has actually run — as happens with += reading the current value first — raises UnboundLocalError, even if a variable with the same name exists at module level."
+      },
+      {
+        "q": "What is the difference between global and nonlocal in Python?",
+        "a": "global lets a function modify a variable defined at the module's top level (global scope). nonlocal lets a nested function modify a variable defined in its nearest enclosing function's scope, rather than the module-level global or a new local variable. Use global for module-level state; use nonlocal for closures and nested-function patterns."
+      },
+      {
+        "q": "Do Python's if and for blocks create a new variable scope?",
+        "a": "No. Unlike many other programming languages, Python's if, for, and while blocks do not create their own scope. A variable assigned inside one of these blocks remains fully accessible after the block ends, within the same enclosing function or at module level."
+      },
+      {
+        "q": "Do I need the global keyword just to read a global variable inside a function?",
+        "a": "No. Reading a variable from global (or enclosing) scope inside a function works automatically through Python's normal LEGB lookup, with no special keyword required. global and nonlocal are only needed when you want to REASSIGN that variable's value from inside the function, not merely read its current value."
+      },
+      {
+        "q": "What is a closure in Python, and how is it related to scope?",
+        "a": "A closure happens when a nested function references a variable from its enclosing function's scope, and continues to have access to that variable even after the enclosing function has finished running. This is made possible specifically by Python's Enclosing scope — the 'E' in the LEGB rule — which was added to the language in Python 2.1 and remains the mechanism behind decorators and factory functions today."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Recursion", "path": "/python/python-recursion" },
+    "next": { "label": "Next: Python OOPs →", "path": "/python/python-oops" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Rule", "dd": "LEGB (Local, Enclosing, Global, Built-in)" },
+      { "dt": "Enclosing scope added in", "dd": "Python 2.1 (2001, PEP 227)" },
+      { "dt": "nonlocal added in", "dd": "Python 3.0 (2008, PEP 3104)" },
+      { "dt": "Block scope?", "dd": "No — if/for/while don't create scope" },
+      { "dt": "Common error", "dd": "UnboundLocalError" },
+      { "dt": "Inspection tools", "dd": "locals(), globals()" }
+    ],
+    "relatedArticles": [
+      { "label": "Python Functions", "path": "/python/python-functions" },
+      { "label": "Python Function Arguments", "path": "/python/python-function-arguments" },
+      { "label": "Python Lambda Functions", "path": "/python/python-lambda-functions" },
+      { "label": "Python Recursion", "path": "/python/python-recursion" },
+      { "label": "Python Decorators", "path": "/python/python-decorators" },
+      { "label": "Python Closures", "path": "/python/python-closures" },
+      { "label": "Python Modules", "path": "/python/python-modules" },
+      { "label": "Python OOP", "path": "/python/python-oop" }
+    ],
+    "tags": ["scope", "LEGB", "global", "nonlocal", "namespaces", "closures", "UnboundLocalError", "enclosing scope", "local scope", "built-in scope", "PEP 227", "PEP 3104", "Python 3"]
+  }
+}

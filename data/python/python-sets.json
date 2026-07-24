@@ -1,0 +1,945 @@
+{
+  "meta": {
+    "title": "What is a Set in Python? | Python Set Tutorial for Beginners 2026 | Tech Sustainify",
+    "description": "Learn everything about Python Sets in this complete beginner-friendly guide 2026. Covers set creation, set methods, union, intersection, difference, symmetric difference, frozenset, set comprehension, hashing internals, common errors, and real-world use cases.",
+    "keywords": "python set, what is set in python, python set tutorial, python set methods, python set vs list, python frozenset, python set comprehension, union intersection difference python, python set operations, python hashable, python unique elements, python set for beginners 2026",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-sets/",
+    "ogTitle": "What is a Set in Python? Complete Python Set Tutorial for Beginners 2026 | Tech Sustainify",
+    "ogDescription": "Complete beginner-friendly guide to Python Sets — creation, methods, union, intersection, difference, symmetric difference, frozenset, comprehension, hashing internals, and real-world uses.",
+    "ogUrl": "https://techsustainify.com/python/python-sets/",
+    "ogImage": "https://techsustainify.com/images/python-set-tutorial-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "28 minutes",
+    "twitterLevel": "Beginner",
+    "schemaDatePublished": "2024-02-10",
+    "schemaDateModified": "2026-03-16",
+    "schemaProficiencyLevel": "Beginner",
+    "schemaWordCount": 8000
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home",            "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python Sets" }
+  ],
+
+  "articleHeader": {
+    "badge": "🔷 Python Sets",
+    "title": "What is a Set in Python?",
+    "subtitle": "A complete beginner-friendly guide to Python Sets — covering creation, characteristics, methods, mathematical set operations, frozenset, hashing internals, set comprehension, common errors, and why sets matter in real-world Python programming."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-16", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time",    "value": "28 min" },
+    { "icon": "🎯", "label": "Level",         "value": "Beginner" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-set",
+      "title": "What is a Set in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>set</strong> in Python is an <strong>unordered, mutable collection of unique elements</strong>. Sets are one of Python's four built-in data structures used to store collections of data — alongside <strong>lists</strong>, <strong>tuples</strong>, and <strong>dictionaries</strong> — but sets are unique in one important way: <strong>they automatically eliminate duplicate values</strong>. If you try to add the same value twice, the set simply ignores the second attempt."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Sets in Python are modelled directly on <strong>mathematical set theory</strong>. Just like in mathematics, a Python set supports operations such as <strong>union</strong>, <strong>intersection</strong>, <strong>difference</strong>, and <strong>symmetric difference</strong>. This makes sets the natural choice whenever you need to compare groups of items, remove duplicates, or check membership extremely fast."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Under the hood, a Python set is implemented using a <strong>hash table</strong> — the same underlying data structure that powers Python dictionaries. This is why sets can test whether an item exists in <strong>O(1) average time complexity</strong>, dramatically faster than searching through a list, which takes <strong>O(n)</strong> time. This single design decision is the reason sets exist as a separate data type instead of just being \"lists without duplicates.\""
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python's built-in <code>set</code> type was formally added to the language as a core built-in in <strong>Python 2.4 (2004)</strong>. Before that, an equivalent <code>Set</code> class existed in the standalone <code>sets</code> module starting from <strong>Python 2.3</strong>. Since Python 2.4, sets have been available without any import — they are a first-class citizen of the language, just like lists and dictionaries."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In short: <strong>a set is Python's tool for storing an unordered group of distinct, hashable items and performing fast membership tests and set-theory operations on them.</strong> If your problem involves the words \"unique\", \"duplicate-free\", \"common items\", \"difference between two groups\", or \"fast lookup\", a set is very likely the right tool."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "creating-sets",
+      "title": "How to Create a Set in Python",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python gives you several ways to create a set. Understanding each method — and one very common beginner trap — is the first real step to using sets confidently."
+        },
+        { "type": "subHeading", "text": "1. Using Curly Braces {}" },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "create_set_literal.py",
+          "lines": [
+            "fruits = {\"apple\", \"banana\", \"cherry\"}",
+            "print(fruits)",
+            "print(type(fruits))"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["{'banana', 'cherry', 'apple'}", "<class 'set'>"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Notice the printed order does not match the order you typed the items in. This is expected — <strong>sets are unordered</strong>, and Python does not guarantee (or even attempt) to preserve insertion order for sets the way it does for lists or dictionaries."
+        },
+        { "type": "subHeading", "text": "2. The Empty Set Trap — A Classic Beginner Mistake" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is one of the most common mistakes new Python learners make: writing <code>{}</code> expecting an empty set. In reality, <code>{}</code> creates an <strong>empty dictionary</strong>, not an empty set, because curly braces are shared syntax between sets and dictionaries and Python defaults to <code>dict</code> when there is no way to tell them apart."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "empty_set_trap.py",
+          "lines": [
+            "wrong = {}",
+            "print(type(wrong))   # <class 'dict'>  -- NOT a set!",
+            "",
+            "correct = set()",
+            "print(type(correct)) # <class 'set'>   -- this is an empty set"
+          ]
+        },
+        { "type": "subHeading", "text": "3. Using the set() Constructor" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>set()</code> constructor can build a set from any <strong>iterable</strong> — a list, tuple, string, or range. Duplicate elements are automatically dropped during construction."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "set_constructor.py",
+          "lines": [
+            "numbers = set([1, 2, 2, 3, 3, 3, 4])",
+            "print(numbers)          # {1, 2, 3, 4}",
+            "",
+            "letters = set(\"banana\")",
+            "print(letters)          # {'b', 'a', 'n'}"
+          ]
+        },
+        { "type": "subHeading", "text": "4. Set Comprehension" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Just like list comprehension, Python supports <strong>set comprehension</strong> using curly braces. This is the most \"Pythonic\" way to build a set from a computed expression."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "set_comprehension.py",
+          "lines": [
+            "squares = {x**2 for x in range(10) if x % 2 == 0}",
+            "print(squares)   # {0, 4, 16, 36, 64}"
+          ]
+        },
+        { "type": "subHeading", "text": "5. Why You Cannot Nest a Set Inside Another Set" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every element inside a set must be <strong>hashable</strong> (immutable). Since a regular set is itself mutable, it cannot be placed inside another set — Python raises a <code>TypeError: unhashable type: 'set'</code>. If you need a \"set of sets\", you must use <strong>frozenset</strong> (covered later in this guide) for the inner sets."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "set-characteristics",
+      "title": "Key Characteristics of Python Sets",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Sets behave differently from lists, tuples, and dictionaries in several important ways. Understanding these ten characteristics will save you from confusing bugs later."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            { "icon": "🔀", "title": "Unordered", "text": "Sets do not maintain insertion order. You cannot rely on the order elements appear in when you print or iterate over a set — this order can even change between Python runs." },
+            { "icon": "🚫", "title": "No Duplicates", "text": "A set automatically removes duplicate values. Adding an item that already exists silently does nothing — no error is raised." },
+            { "icon": "✏️", "title": "Mutable Container", "text": "You can add and remove elements from a set after creation using methods like add(), remove(), and discard() — the set object itself can change." },
+            { "icon": "🔒", "title": "Elements Must Be Hashable", "text": "Every individual element inside a set must be immutable — numbers, strings, tuples, and frozensets qualify. Lists, dictionaries, and other sets do not, since they are mutable and unhashable." },
+            { "icon": "⚡", "title": "Fast Membership Testing", "text": "Checking 'x in my_set' runs in O(1) average time thanks to hashing — dramatically faster than checking 'x in my_list', which is O(n)." },
+            { "icon": "🚷", "title": "No Indexing or Slicing", "text": "Because sets are unordered, expressions like my_set[0] are invalid. There is no concept of the 'first' or 'last' element in a set." },
+            { "icon": "➕", "title": "Supports Set-Theory Operators", "text": "Sets support |, &, -, and ^ operators for union, intersection, difference, and symmetric difference — directly mirroring mathematical set notation." },
+            { "icon": "🔁", "title": "Iterable", "text": "You can loop over a set with a for loop, just like a list, though the iteration order is not guaranteed." },
+            { "icon": "📏", "title": "Dynamic Size", "text": "A set grows and shrinks automatically as you add or remove elements — there is no fixed capacity to declare in advance." },
+            { "icon": "🧮", "title": "Built on Hash Tables", "text": "Internally, CPython implements sets using an open-addressing hash table — the same core technology used for dictionaries, just without the associated values." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "How a Python Set Ensures Uniqueness — Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Every time you add an element to a set, Python runs it through a precise internal process to decide whether it is genuinely new or a duplicate. The flowchart below traces exactly what happens the moment you call <code>my_set.add(item)</code>."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "📝 my_set.add(item)",       "sublabel": "Element passed to the set",         "type": "start" },
+            { "id": "2", "label": "🔑 Compute hash(item)",     "sublabel": "Python calls the item's __hash__()", "type": "process" },
+            { "id": "3", "label": "📍 Locate Hash Bucket",     "sublabel": "Hash value maps to a table slot",   "type": "process" },
+            { "id": "4", "label": "❓ Slot Already Occupied?", "sublabel": "Check for existing entry",          "type": "decision" },
+            { "id": "5", "label": "🔍 Compare with ==",        "sublabel": "Resolve possible hash collision",   "type": "decision" },
+            { "id": "6", "label": "🚫 Reject — Duplicate",     "sublabel": "Item already exists, set unchanged","type": "end" },
+            { "id": "7", "label": "✅ Insert into Bucket",     "sublabel": "New unique element stored",         "type": "process" },
+            { "id": "8", "label": "📦 Set Updated",            "sublabel": "len(my_set) increases by 1",        "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "hashing" },
+            { "from": "2", "to": "3", "label": "modulo table size" },
+            { "from": "3", "to": "4", "label": "check slot" },
+            { "from": "4", "to": "5", "label": "yes — possible collision" },
+            { "from": "4", "to": "7", "label": "no — slot empty" },
+            { "from": "5", "to": "6", "label": "equal — duplicate" },
+            { "from": "5", "to": "7", "label": "not equal — probe next slot" },
+            { "from": "7", "to": "8", "label": "stored" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Key insight: this is exactly why <strong>mutable objects like lists cannot go inside a set</strong> — a list has no stable <code>hash()</code> value, so Python cannot compute step 2 at all, and raises <code>TypeError: unhashable type: 'list'</code> immediately."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "set-methods-heading",
+      "title": "Python Set Methods — Adding and Removing Elements",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Python sets come with a rich set of built-in methods. This section covers the methods used to <strong>add</strong> and <strong>remove</strong> elements — the most frequently used operations in day-to-day code."
+        },
+        { "type": "subHeading", "text": "➕ Adding Elements" },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>my_set.add(x)</code> — adds a single element x to the set. Does nothing if x already exists." },
+            { "html": "<code>my_set.update(iterable)</code> — adds multiple elements at once from a list, tuple, string, or another set." }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "adding_elements.py",
+          "lines": [
+            "colors = {\"red\", \"green\"}",
+            "colors.add(\"blue\")",
+            "print(colors)              # {'red', 'green', 'blue'}",
+            "",
+            "colors.update([\"yellow\", \"black\"])",
+            "print(colors)              # adds both new items"
+          ]
+        },
+        { "type": "subHeading", "text": "➖ Removing Elements" },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>my_set.remove(x)</code> — removes x from the set. Raises a <code>KeyError</code> if x is not found." },
+            { "html": "<code>my_set.discard(x)</code> — removes x from the set. Does nothing (no error) if x is not found — the safer choice." },
+            { "html": "<code>my_set.pop()</code> — removes and returns an arbitrary element. Since sets are unordered, you cannot predict which element will be removed." },
+            { "html": "<code>my_set.clear()</code> — removes all elements, leaving an empty set." },
+            { "html": "<code>del my_set</code> — deletes the entire set object from memory." }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "removing_elements.py",
+          "lines": [
+            "nums = {1, 2, 3, 4, 5}",
+            "nums.remove(3)      # works fine",
+            "nums.discard(99)    # no error, even though 99 isn't in the set",
+            "print(nums.pop())   # removes and prints some arbitrary element",
+            "nums.clear()",
+            "print(nums)         # set()"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Rule of thumb:</strong> use <code>discard()</code> instead of <code>remove()</code> whenever you are not 100% sure the element exists — it avoids having to wrap your code in a <code>try/except KeyError</code> block."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "set-operations-heading",
+      "title": "Python Set Operations — Union, Intersection, Difference, Symmetric Difference",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is the heart of what makes sets so powerful. Every operation below has both an <strong>operator form</strong> and a <strong>method form</strong> — they behave identically, but the method form additionally accepts any iterable, while the operator form requires both sides to be sets."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Operation", "Operator", "Method", "Meaning", "Example (A={1,2,3}, B={3,4,5})"],
+          "rows": [
+            ["Union",               "A | B", "A.union(B)",               "All elements from both sets, no duplicates", "{1, 2, 3, 4, 5}"],
+            ["Intersection",        "A & B", "A.intersection(B)",        "Elements present in both sets",              "{3}"],
+            ["Difference",          "A - B", "A.difference(B)",          "Elements in A but not in B",                 "{1, 2}"],
+            ["Symmetric Difference","A ^ B", "A.symmetric_difference(B)","Elements in A or B, but not both",           "{1, 2, 4, 5}"]
+          ]
+        },
+        { "type": "subHeading", "text": "In-Place Update Variants" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Each set-theory method above has a corresponding <strong>in-place</strong> version, ending in <code>_update</code>, which modifies the original set directly instead of returning a new one — similarly to how <code>+=</code> differs from <code>+</code> for numbers."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>A.update(B)</code> — same effect as <code>A |= B</code>, A now contains the union" },
+            { "html": "<code>A.intersection_update(B)</code> — same effect as <code>A &= B</code>, A keeps only common elements" },
+            { "html": "<code>A.difference_update(B)</code> — same effect as <code>A -= B</code>, removes B's elements from A" },
+            { "html": "<code>A.symmetric_difference_update(B)</code> — same effect as <code>A ^= B</code>" }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "set_operations.py",
+          "lines": [
+            "A = {1, 2, 3}",
+            "B = {3, 4, 5}",
+            "",
+            "print(A | B)   # {1, 2, 3, 4, 5}  Union",
+            "print(A & B)   # {3}              Intersection",
+            "print(A - B)   # {1, 2}           Difference",
+            "print(A ^ B)   # {1, 2, 4, 5}     Symmetric Difference",
+            "",
+            "A |= B         # in-place union",
+            "print(A)       # {1, 2, 3, 4, 5}"
+          ]
+        },
+        { "type": "subHeading", "text": "Relational Methods — Comparing Sets" },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>A.issubset(B)</code> (or <code>A <= B</code>) — True if every element of A is also in B" },
+            { "html": "<code>A.issuperset(B)</code> (or <code>A >= B</code>) — True if A contains every element of B" },
+            { "html": "<code>A.isdisjoint(B)</code> — True if A and B share no elements at all" }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "relational_methods.py",
+          "lines": [
+            "A = {1, 2}",
+            "B = {1, 2, 3, 4}",
+            "",
+            "print(A.issubset(B))    # True",
+            "print(B.issuperset(A))  # True",
+            "print(A.isdisjoint({9, 10}))  # True"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "set-methods-table",
+      "title": "Complete Python Set Methods — Cheat Sheet",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Here is every commonly used set method in one reference table, organised by what it does."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Method", "Category", "Description", "Returns"],
+          "rows": [
+            ["add(x)",                         "Modify", "Adds a single element",                          "None"],
+            ["update(iterable)",                "Modify", "Adds multiple elements from an iterable",        "None"],
+            ["remove(x)",                       "Modify", "Removes x, raises KeyError if missing",          "None"],
+            ["discard(x)",                      "Modify", "Removes x safely, no error if missing",          "None"],
+            ["pop()",                           "Modify", "Removes and returns an arbitrary element",       "Element"],
+            ["clear()",                         "Modify", "Removes all elements",                           "None"],
+            ["copy()",                          "Utility","Returns a shallow copy of the set",               "set"],
+            ["union(*others)",                  "Set Op", "Combines elements of all sets",                  "New set"],
+            ["intersection(*others)",           "Set Op", "Common elements across all sets",                "New set"],
+            ["difference(*others)",             "Set Op", "Elements only in the original set",              "New set"],
+            ["symmetric_difference(other)",     "Set Op", "Elements in either set, not both",               "New set"],
+            ["issubset(other)",                 "Compare","Checks if set is a subset",                      "bool"],
+            ["issuperset(other)",               "Compare","Checks if set is a superset",                    "bool"],
+            ["isdisjoint(other)",               "Compare","Checks if sets share no elements",                "bool"],
+            ["len(my_set)",                     "Utility","Returns number of elements (built-in function)",  "int"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "frozenset-heading",
+      "title": "What is a Frozenset in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "A <strong>frozenset</strong> is Python's <strong>immutable</strong> version of a set. Once created, you cannot add, remove, or modify its elements in any way. Frozensets support every read-only set operation — union, intersection, difference, membership testing — but none of the mutating methods like <code>add()</code> or <code>remove()</code>."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Because frozensets are immutable, they are also <strong>hashable</strong> — which means a frozenset can be used as a dictionary key, or placed as an element inside another set. A regular mutable set cannot do either of these things."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "frozenset_demo.py",
+          "lines": [
+            "fs = frozenset([1, 2, 3, 2, 1])",
+            "print(fs)                # frozenset({1, 2, 3})",
+            "",
+            "# fs.add(4)              # AttributeError! frozensets have no add()",
+            "",
+            "# A set of frozensets IS allowed:",
+            "outer = {frozenset([1, 2]), frozenset([3, 4])}",
+            "print(outer)",
+            "",
+            "# Frozenset as a dictionary key IS allowed:",
+            "cache = {frozenset([1, 2]): \"result A\"}",
+            "print(cache[frozenset([2, 1])])   # 'result A' — order inside doesn't matter"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Use a frozenset whenever you need a <strong>constant, unchanging group of values</strong> that must itself be hashable — for example, representing a fixed set of permissions, memoizing function results based on a group of inputs, or building a set of sets for graph algorithms."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "set-comprehension-deep-dive",
+      "title": "Set Comprehension — A Deeper Look",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Set comprehension follows the same pattern as list comprehension — <code>{expression for item in iterable if condition}</code> — but produces a set instead of a list, automatically discarding any duplicate results the expression happens to generate."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Removing duplicates from a computation", "text": " — {len(word) for word in [\"cat\",\"dog\",\"owl\",\"ant\"]} gives {3} since every word has length 3." },
+            { "strong": "Filtering with a condition", "text": " — {n for n in range(50) if n % 7 == 0} collects every multiple of 7 below 50." },
+            { "strong": "Nested iteration", "text": " — {x*y for x in range(3) for y in range(3)} builds every unique product of two small numbers." },
+            { "strong": "Transforming case-insensitive data", "text": " — {name.lower() for name in names} is a common one-liner to find unique names while ignoring capitalization differences." }
+          ]
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "set_comprehension_examples.py",
+          "lines": [
+            "words = [\"Apple\", \"apple\", \"BANANA\", \"banana\", \"Cherry\"]",
+            "unique_lower = {w.lower() for w in words}",
+            "print(unique_lower)   # {'apple', 'banana', 'cherry'}",
+            "",
+            "multiples_of_7 = {n for n in range(50) if n % 7 == 0}",
+            "print(multiples_of_7) # {0, 35, 7, 42, 14, 49, 21, 28}"
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "set-vs-others",
+      "title": "Set vs List vs Tuple vs Dictionary — Comparison",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Python offers four core built-in collection types. Choosing the right one for your task depends on whether you need order, uniqueness, mutability, or key-value pairing."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Set", "List", "Tuple", "Dictionary"],
+          "rows": [
+            ["Ordered?",           "❌ No",              "✅ Yes",             "✅ Yes",             "✅ Yes (3.7+)"],
+            ["Allows Duplicates?", "❌ No",              "✅ Yes",             "✅ Yes",             "❌ No (keys)"],
+            ["Mutable?",           "✅ Yes",             "✅ Yes",             "❌ No",              "✅ Yes"],
+            ["Indexing / Slicing", "❌ Not supported",   "✅ Supported",       "✅ Supported",       "❌ By key only"],
+            ["Syntax",             "{1, 2, 3}",          "[1, 2, 3]",          "(1, 2, 3)",          "{'a': 1}"],
+            ["Membership Test",    "⚡ O(1) average",    "🐢 O(n)",            "🐢 O(n)",            "⚡ O(1) average"],
+            ["Best For",           "Uniqueness, fast lookup, set math", "Ordered sequences, frequent iteration", "Fixed, unchanging records", "Key-based lookups, structured records"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Python Sets",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Sets are extremely useful, but they are not the right tool for every job. Here is an honest look at their strengths and their real limitations."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Blazing-Fast Membership Testing", "text": "Checking 'x in my_set' runs in O(1) average time, regardless of how large the set is — ideal for large datasets that need frequent lookups." },
+            { "title": "Automatic Deduplication", "text": "Converting any iterable to a set is the fastest, most idiomatic way to remove duplicates in Python: unique_items = list(set(my_list))." },
+            { "title": "Built-in Mathematical Operations", "text": "Union, intersection, difference, and symmetric difference are all available as single-character operators, mirroring set-theory notation exactly." },
+            { "title": "Clean, Readable Syntax", "text": "Set operations read almost like the mathematical formulas they represent, making set-heavy code easy to follow." },
+            { "title": "Memory-Efficient for Lookups", "text": "Compared to repeatedly scanning a list, a set trades a small amount of extra memory for a huge speed advantage on large collections." }
+          ],
+          "cons": [
+            { "title": "No Guaranteed Order", "text": "You cannot rely on the order elements were added — if order matters, a set is the wrong choice." },
+            { "title": "No Indexing", "text": "You cannot access 'the third element' of a set the way you can with a list, since there is no concept of position." },
+            { "title": "Elements Must Be Hashable", "text": "Lists, dictionaries, and other mutable sets cannot be stored inside a set — this trips up many beginners the first time they try it." },
+            { "title": "Slightly More Memory Than Lists", "text": "The underlying hash table typically uses more memory per element than a list uses for the same data." },
+            { "title": "Not Suitable for Sequential Data", "text": "If your data has a meaningful sequence — like steps in a process or ranked results — a list or tuple is the correct structure, not a set." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "internal-architecture",
+      "title": "How Python Sets Work Internally — Architecture",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The diagram below shows the internal layers behind every set operation you write — from the Python code you type, down to the actual C-level hash table CPython maintains in memory."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Your Python Code",
+              "color": "#6366f1",
+              "items": ["my_set = {1, 2, 3}", "my_set.add(4)", "A | B, A & B, A - B"]
+            },
+            {
+              "label": "CPython set Object API",
+              "color": "#0ea5e9",
+              "items": ["set_add()", "set_discard()", "set_union() / set_intersection()"]
+            },
+            {
+              "label": "Hashing Layer",
+              "color": "#10b981",
+              "items": ["__hash__() called on each element", "Hash value computed (SipHash for strings)"]
+            },
+            {
+              "label": "Open-Addressing Hash Table",
+              "color": "#f59e0b",
+              "items": ["Fixed-size bucket array", "Probing sequence on collisions", "Automatic resizing (growth factor 4x/2x)"]
+            },
+            {
+              "label": "Memory Management",
+              "color": "#ef4444",
+              "items": ["Reference counting", "Garbage collector for cyclic references"]
+            },
+            {
+              "label": "Hardware",
+              "color": "#8b5cf6",
+              "items": ["CPU", "RAM"]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This is precisely why sets and dictionaries share so much behaviour in Python — <strong>a set is essentially a dictionary that only stores keys, with no values attached.</strong> Both rely on the exact same hashing and collision-resolution machinery inside CPython."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "performance-heading",
+      "title": "Set Performance — Big-O Complexity Table",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Understanding the time complexity of common operations helps you decide when a set is genuinely the faster choice versus a list."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Operation", "Set (Average)", "Set (Worst Case)", "List (Average)"],
+          "rows": [
+            ["Membership test (x in ...)", "O(1)", "O(n)", "O(n)"],
+            ["Add element",                "O(1)", "O(n)", "O(1) (append)"],
+            ["Remove element",             "O(1)", "O(n)", "O(n)"],
+            ["Union of two collections",   "O(len(A)+len(B))", "O(len(A)*len(B))", "O(n*m) with nested loop"],
+            ["Iteration over all items",   "O(n)", "O(n)", "O(n)"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The \"worst case\" column occurs only when there are heavy hash collisions — extremely rare in practice for well-distributed hash values, which is why sets are described as O(1) \"on average\" for lookups."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "code-heading",
+      "title": "Your First Python Set Program",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Let's tie everything together with a small, complete program that creates a set, modifies it, and performs a set operation — the kind of code you will write constantly once sets become second nature."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "first_set_program.py",
+          "lines": [
+            "# Two friend groups on a social platform",
+            "team_a = {\"Riya\", \"Aman\", \"Zara\", \"Kabir\"}",
+            "team_b = {\"Zara\", \"Kabir\", \"Isha\", \"Dev\"}",
+            "",
+            "print(\"All unique people:\", team_a | team_b)",
+            "print(\"In both teams:\", team_a & team_b)",
+            "print(\"Only in Team A:\", team_a - team_b)",
+            "print(\"Not shared by both:\", team_a ^ team_b)"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "All unique people: {'Riya', 'Aman', 'Zara', 'Kabir', 'Isha', 'Dev'}",
+            "In both teams: {'Zara', 'Kabir'}",
+            "Only in Team A: {'Riya', 'Aman'}",
+            "Not shared by both: {'Riya', 'Aman', 'Isha', 'Dev'}"
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "team_a = {\"Riya\", \"Aman\", \"Zara\", \"Kabir\"}\nteam_b = {\"Zara\", \"Kabir\", \"Isha\", \"Dev\"}\nprint(\"Common members:\", team_a & team_b)"
+        },
+        { "type": "subHeading", "text": "Line-by-Line Explanation" },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>team_a = {...}</code> — creates a set literal holding four unique names." },
+            { "html": "<code>team_a | team_b</code> — the union operator combines both sets, automatically dropping duplicate names like Zara and Kabir." },
+            { "html": "<code>team_a & team_b</code> — the intersection operator returns only names present in both teams." },
+            { "html": "<code>team_a - team_b</code> — the difference operator returns names unique to Team A." },
+            { "html": "<code>team_a ^ team_b</code> — the symmetric difference returns names that belong to exactly one team, not both." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-errors-heading",
+      "title": "Common Errors and Gotchas When Using Sets",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "These are the mistakes that trip up almost every Python learner the first time they use sets. Recognising them in advance will save you debugging time."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "The {} Empty Set Trap", "text": " — {} always creates an empty dict, never an empty set. Always use set() for an empty set." },
+            { "strong": "TypeError: unhashable type: 'list'", "text": " — you cannot put a list, dict, or another set directly inside a set literal or add() call. Convert inner lists to tuples, or inner sets to frozensets, first." },
+            { "strong": "Assuming Order is Preserved", "text": " — printing a set or looping over it may not return elements in the order you inserted them. Never write logic that depends on set order." },
+            { "strong": "Using remove() on a Missing Element", "text": " — remove() raises a KeyError if the element isn't present. Use discard() when you're unsure whether the element exists." },
+            { "strong": "Comparing a Set to a List Directly", "text": " — {1,2,3} == [1,2,3] is always False, even with identical values, because Python considers the types themselves as part of equality here." },
+            { "strong": "Modifying a Set While Iterating Over It", "text": " — adding or removing elements inside a for loop over the same set raises a RuntimeError: Set changed size during iteration. Iterate over a copy instead: for x in my_set.copy():." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-uses",
+      "title": "Where Are Python Sets Used? — Real-World Applications",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Sets are not just an academic data structure — they solve real, everyday programming problems more elegantly than any other built-in type. Here is where you will actually reach for a set in production code:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🧹 Removing Duplicates", "text": " — the single most common use case. list(set(my_list)) instantly deduplicates any list of hashable items." },
+            { "strong": "⚡ Fast Membership Checks", "text": " — when you need to repeatedly ask 'is this item in my collection?' on a large dataset, converting the collection to a set first turns an O(n) check into an O(1) check." },
+            { "strong": "🕸️ Graph Algorithms", "text": " — sets are used to track 'visited nodes' in breadth-first search (BFS) and depth-first search (DFS), since checking whether a node was already visited must be extremely fast." },
+            { "strong": "🔐 Permissions & Roles Systems", "text": " — user permissions are naturally modelled as sets, letting you use issubset() to check 'does this user have all required permissions?' in a single line." },
+            { "strong": "📊 Data Analysis & Comparison", "text": " — finding common customers between two marketing campaigns, or products that appear in one inventory list but not another, is a direct intersection or difference operation." },
+            { "strong": "🔤 Text Processing", "text": " — finding unique words in a document, or the vocabulary shared between two texts, is commonly done by converting word lists into sets." },
+            { "strong": "🧪 Test Data Validation", "text": " — verifying that a returned dataset contains exactly the expected values, with no extras and nothing missing, is naturally expressed using set equality." },
+            { "strong": "🗺️ Tracking Unique Visitors", "text": " — web analytics systems use sets (or their probabilistic cousins like HyperLogLog) to count distinct visitor IDs without storing duplicates." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-sets",
+      "title": "Why Should You Learn Python Sets in 2026?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Sets might seem like a small corner of Python compared to flashy topics like AI or web frameworks — but mastering them pays off constantly. Here's why every serious Python developer needs to be fluent in sets:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🎯 Interview Staple", "text": " — 'remove duplicates', 'find common elements', and 'check for overlap' are extremely common coding interview questions, and sets solve them in one or two lines." },
+            { "strong": "⚡ Real Performance Gains", "text": " — swapping a list-based membership check for a set-based one is one of the easiest, highest-impact optimisations you can make in everyday Python code." },
+            { "strong": "🧠 Cleaner, More Expressive Code", "text": " — set operators let you express complex comparison logic (union, overlap, exclusive items) in a single readable line instead of nested loops." },
+            { "strong": "🔗 Foundation for Dictionaries", "text": " — since sets and dictionaries share the same hashing internals, understanding sets deeply makes dictionaries — and Python's performance model in general — much easier to reason about." },
+            { "strong": "📈 Used Everywhere", "text": " — from data engineering pipelines to backend permission systems to competitive programming, sets show up in nearly every category of real-world Python work." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Python Set Interview Questions — Beginner Level",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the most frequently asked interview questions specifically about <strong>Python sets</strong>. Practice explaining each answer in your own words before your next interview."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is a set in Python and how is it different from a list?",
+              "a": "A set is an unordered, mutable collection of unique, hashable elements. Unlike a list, a set cannot contain duplicates, does not support indexing or slicing, and does not preserve insertion order. Sets also offer much faster membership testing — O(1) on average versus O(n) for a list.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. Why does {} create a dictionary instead of an empty set?",
+              "a": "Curly braces are shared syntax between sets and dictionaries in Python. Since dictionaries were introduced first and are used far more often, Python defaults {} to an empty dict for backward compatibility and consistency. To create an empty set, you must explicitly call set().",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q3. What does it mean for an element to be 'hashable', and why does it matter for sets?",
+              "a": "A hashable object has a fixed hash value that never changes during its lifetime, which is required for a set to correctly place it in its internal hash table and detect duplicates. Immutable types like int, str, and tuple are hashable. Mutable types like list, dict, and set are not hashable, so they cannot be stored as elements inside a set.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q4. What is the difference between remove() and discard()?",
+              "a": "Both remove an element from a set. remove() raises a KeyError if the element does not exist, while discard() silently does nothing in that case. discard() is generally safer when you are not certain the element is present.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. What is a frozenset and when would you use one?",
+              "a": "A frozenset is an immutable version of a set — once created, its elements cannot change. Because it is immutable, a frozenset is also hashable, which means it can be used as a dictionary key or as an element inside another set, both of which are impossible with a regular mutable set.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q6. How do you remove duplicates from a list using a set?",
+              "a": "Convert the list to a set and back to a list: unique_list = list(set(my_list)). This is the fastest and most idiomatic way to deduplicate hashable items in Python, though it does not preserve the original order.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q7. What is the time complexity of checking membership in a set versus a list?",
+              "a": "Checking 'x in my_set' runs in O(1) average time because Python computes the hash of x and jumps directly to its expected bucket. Checking 'x in my_list' runs in O(n) time because Python must scan through elements one by one until it finds a match or reaches the end.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q8. What is the difference between union() and update()?",
+              "a": "union() returns a brand-new set containing the combined elements, leaving the original sets unchanged. update() modifies the calling set in place, adding elements from the other set(s) directly into it and returning None.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q9. Can you have a set of lists in Python?",
+              "a": "No. Lists are mutable and therefore unhashable, so Python cannot compute a stable hash value for them, which a set requires internally. Attempting to add a list to a set raises TypeError: unhashable type: 'list'. If you need list-like data inside a set, convert each list to a tuple first.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q10. What happens if you modify a set while iterating over it?",
+              "a": "Python raises RuntimeError: Set changed size during iteration if you add or remove elements from a set inside a loop that is currently iterating over that same set. The safe approach is to iterate over a copy of the set (for item in my_set.copy():) while modifying the original.",
+              "tag": "Current Affairs"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Knowledge of Sets",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Try to work out each answer yourself before revealing it. Active recall is one of the fastest ways to lock in a new concept."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What will print({1, 2, 3} == {3, 2, 1}) output, and why?",
+              "a": "True. Sets compare equal based purely on their contents, completely ignoring order, since sets have no concept of order in the first place.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. What is the output of len({1, 1, 2, 2, 3})?",
+              "a": "3. Duplicate values are automatically collapsed when the set literal is created, so only the three distinct values 1, 2, and 3 remain.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. What error, if any, does {1, [2, 3]} raise, and why?",
+              "a": "TypeError: unhashable type: 'list'. The set literal tries to include a list as one of its elements, but lists are mutable and therefore not hashable, so Python cannot store it in the underlying hash table.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. Given A = {1, 2, 3, 4} and B = {3, 4, 5, 6}, what is A ^ B?",
+              "a": "{1, 2, 5, 6}. The symmetric difference operator returns elements found in exactly one of the two sets — excluding 3 and 4, which appear in both.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Why is set.pop() considered unpredictable, and when is that acceptable?",
+              "a": "Because sets have no defined order, pop() removes and returns an arbitrary element — you cannot control or predict which one. This is acceptable when you simply need to process every element exactly once and don't care about the removal order, such as draining a set in a worklist algorithm.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. How would you check if two sets share no elements at all, in one line?",
+              "a": "Use A.isdisjoint(B), which returns True if A and B have zero elements in common, and is generally faster than computing A & B and checking if the result is empty, since isdisjoint() can short-circuit as soon as one shared element is found.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. Why can a frozenset be used as a dictionary key, but a regular set cannot?",
+              "a": "Dictionary keys must be hashable, and hashability requires immutability so the hash value never changes after the object is created. A frozenset is immutable and therefore hashable, while a regular set is mutable — its contents (and thus its hash) could change after being used as a key, which Python disallows entirely by making sets unhashable.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Write a one-line expression to find words longer than 4 characters that appear in both of two word lists, using set comprehension and intersection.",
+              "a": "{w for w in (set(list_a) & set(list_b)) if len(w) > 4} — first computes the shared words between the two lists via intersection, then filters that result down to only the longer words using a set comprehension.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Should You Use a Set?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The Python <strong>set</strong> is a deceptively simple tool with an outsized impact on both code clarity and performance. Whenever your problem involves the words <em>unique</em>, <em>duplicate</em>, <em>common</em>, <em>overlap</em>, or <em>fast lookup</em>, a set is almost certainly the right data structure — often turning ten lines of nested-loop logic into a single, readable operator."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "At the same time, sets are not a universal replacement for lists or dictionaries. If order matters, or you need to access elements by position, reach for a list or tuple instead. If you need to associate extra data with each key, a dictionary is the better fit. Knowing when <em>not</em> to use a set is just as important as knowing how to use one."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Your Situation", "Should You Use a Set?"],
+          "rows": [
+            ["Removing duplicates from a collection", "✅ Yes — the fastest, most idiomatic solution"],
+            ["Frequent membership testing on large data", "✅ Yes — O(1) average lookup beats a list every time"],
+            ["Comparing two groups (common / different items)", "✅ Yes — union, intersection, and difference are built in"],
+            ["Order of items matters", "❌ No — use a list or tuple instead"],
+            ["You need to access items by position/index", "❌ No — sets have no indexing"],
+            ["You need to store key-value pairs", "❌ No — use a dictionary instead"],
+            ["You need an immutable, hashable group of values", "✅ Yes — use frozenset specifically"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The next step in your Python journey is to practise rewriting a few of your existing list-based scripts using sets wherever duplicates or membership checks are involved — you will be surprised how often your code gets both <strong>shorter</strong> and <strong>faster</strong> at the same time. Continue on to <strong>Python Dictionaries</strong> next, since dictionaries build directly on everything you just learned about hashing. 🔷"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "Is a Python set ordered or unordered?",
+        "a": "A Python set is unordered. It does not track or guarantee the order in which elements were inserted, and the order elements print in can even differ between runs of the same program. If you need order, use a list, tuple, or an ordered structure instead."
+      },
+      {
+        "q": "Can a Python set contain duplicate values?",
+        "a": "No. A set automatically discards duplicate values the moment you try to add them — this is its defining feature. Adding an element that already exists is a silent no-op; no error is raised."
+      },
+      {
+        "q": "What is the difference between a set and a frozenset?",
+        "a": "A set is mutable — you can add or remove elements after creation. A frozenset is immutable — once created, its contents can never change. Because it is immutable, a frozenset is hashable and can be used as a dictionary key or as an element inside another set, unlike a regular set."
+      },
+      {
+        "q": "Why can't I put a list inside a Python set?",
+        "a": "Every element inside a set must be hashable, meaning it must have a fixed hash value that never changes. Lists are mutable, so their contents — and therefore their hash — could change after insertion, which Python disallows by making lists unhashable. Use a tuple instead if you need list-like data inside a set."
+      },
+      {
+        "q": "Is checking membership in a set really faster than in a list?",
+        "a": "Yes, significantly. Checking 'x in my_set' runs in O(1) average time because Python jumps directly to the expected hash bucket. Checking 'x in my_list' runs in O(n) time because Python must scan through the list element by element. For large collections, this difference is dramatic."
+      },
+      {
+        "q": "How do you remove duplicates from a list using a set in Python?",
+        "a": "The standard idiom is unique_list = list(set(my_list)). This converts the list to a set, which automatically drops duplicates, then converts the result back into a list. Note that the original order is not preserved using this method."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Tuples", "path": "/python/python-tuples" },
+    "next": { "label": "Next: Python Dictionaries →", "path": "/python/python-dictionaries" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "Data type",   "dd": "set / frozenset" },
+      { "dt": "Introduced",  "dd": "Python 2.4 (2004)" },
+      { "dt": "Mutable?",    "dd": "set: Yes · frozenset: No" },
+      { "dt": "Ordered?",    "dd": "No" },
+      { "dt": "Duplicates?", "dd": "Never allowed" },
+      { "dt": "Lookup Speed","dd": "O(1) average" }
+    ],
+    "relatedArticles": [
+      { "label": "Python Lists",         "path": "/python/python-lists" },
+      { "label": "Python Tuples",        "path": "/python/python-tuples" },
+      { "label": "Python Dictionaries",  "path": "/python/python-dictionaries" },
+      { "label": "Python Data Types",    "path": "/python/python-datatypes" },
+      { "label": "Python Comprehensions","path": "/python/python-comprehensions" },
+      { "label": "Python Control Flow",  "path": "/python/python-controlflow" },
+      { "label": "Python Functions",     "path": "/python/python-functions" },
+      { "label": "Python OOP",           "path": "/python/python-oop" }
+    ],
+    "tags": ["Set","Frozenset","Union","Intersection","Difference","Symmetric Difference","Hashing","Hash Table","Set Comprehension","Unique Elements","CPython","Deduplication"]
+  }
+}

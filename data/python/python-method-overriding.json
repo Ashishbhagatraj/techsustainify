@@ -1,0 +1,807 @@
+{
+  "meta": {
+    "title": "Python Method Overriding Explained | Complete OOP Guide 2026 | Tech Sustainify",
+    "description": "Learn Python Method Overriding with this complete, beginner-friendly guide 2026. Covers what method overriding is, how it differs from overloading, the super() function, method resolution order (MRO), real-world examples, interview questions and practice problems.",
+    "keywords": "python method overriding, method overriding in python, super function python, method resolution order python, MRO python, overriding vs overloading python, python inheritance overriding, oop method overriding, python polymorphism overriding",
+    "author": "Tech Sustainify",
+    "canonical": "https://techsustainify.com/python/python-method-overriding/",
+    "ogTitle": "Python Method Overriding Explained | Complete OOP Guide 2026 | Tech Sustainify",
+    "ogDescription": "Complete beginner-friendly guide to Method Overriding in Python — super(), Method Resolution Order (MRO), overriding vs overloading, and real-world use cases.",
+    "ogUrl": "https://techsustainify.com/python/python-method-overriding/",
+    "ogImage": "https://techsustainify.com/images/python-method-overriding-og.png",
+    "ogSiteName": "Tech Sustainify",
+    "twitterReadingTime": "22 minutes",
+    "twitterLevel": "Beginner to Intermediate",
+    "schemaDatePublished": "2024-02-20",
+    "schemaDateModified": "2026-03-22",
+    "schemaProficiencyLevel": "Beginner to Intermediate",
+    "schemaWordCount": 8000
+  },
+
+  "breadcrumbs": [
+    { "position": 1, "name": "Home", "path": "/" },
+    { "position": 2, "name": "Python Tutorial", "path": "/python/python-home" },
+    { "position": 3, "name": "Python OOP", "path": "/python/python-oop" },
+    { "position": 4, "name": "Method Overriding" }
+  ],
+
+  "articleHeader": {
+    "badge": "🔁 Python OOP",
+    "title": "Method Overriding in Python",
+    "subtitle": "A complete beginner-friendly guide to Method Overriding — covering how subclasses redefine inherited behaviour, the super() function, Method Resolution Order (MRO), overriding vs overloading, real-world examples, and why overriding is central to polymorphism."
+  },
+
+  "infoCards": [
+    { "icon": "📅", "label": "Last Updated", "isTime": true, "dateTime": "2026-03-22", "value": "March 2026" },
+    { "icon": "⏱️", "label": "Read Time", "value": "22 min" },
+    { "icon": "🎯", "label": "Level", "value": "Beginner to Intermediate" }
+  ],
+
+  "sections": [
+
+    {
+      "sectionId": "what-is-method-overriding",
+      "title": "What is Method Overriding in Python?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Method Overriding</strong> is an Object-Oriented Programming technique in which a <strong>subclass provides its own specific implementation of a method that is already defined in its parent (superclass)</strong>. When the overridden method is called on an instance of the subclass, Python runs the subclass's version instead of the parent's version — even though both methods share the exact same name."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Think of it like a <strong>generic company policy being customised by a specific department</strong>. A company might have a general 'Employee.calculate_bonus()' policy, but the Sales department might override it with its own commission-based bonus calculation, and the Engineering department might override it with a performance-review-based calculation. Both departments are still 'Employees' following the same overall structure, but each customises the specific behaviour that matters to them."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Method overriding is one of the primary mechanisms that makes <strong>runtime polymorphism</strong> possible in Python. Because Python resolves method calls dynamically at runtime (a concept sometimes called 'late binding'), the exact method that executes depends on the actual type of the object at the moment the call is made — not on the type of the reference or variable holding it. This is what allows a single line of code like <code>animal.speak()</code> to produce completely different output depending on whether <code>animal</code> is a <code>Dog</code>, a <code>Cat</code>, or a <code>Bird</code>."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Unlike some statically typed languages, Python does not require any special keyword (like Java's <code>@Override</code> annotation or C++'s <code>virtual</code> keyword) to enable overriding — <strong>every method in Python is overridable by default</strong>. Simply defining a method with the same name in a subclass automatically overrides the parent's version. This simplicity is very Pythonic, but it also means developers must be more careful and deliberate, since there is no compiler warning if an override is accidental or a typo."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Method overriding is used constantly in real Python codebases — Django model methods like <code>save()</code> are frequently overridden to add custom logic before saving to the database, and Python's own built-in dunder methods like <code>__str__</code> and <code>__eq__</code> are almost always overridden in user-defined classes to customise how objects are printed or compared."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "overriding-origins",
+      "title": "Origins of Method Overriding — A Brief History",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Method overriding is deeply tied to the history of polymorphism and dynamic dispatch in programming languages. Understanding its roots clarifies why Python implements it the way it does today."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "1967 — Simula 67", "text": " — Introduced 'virtual procedures,' the earliest form of overriding, allowing a subclass procedure to replace a superclass procedure of the same name when invoked polymorphically." },
+            { "strong": "1972 — Smalltalk", "text": " — Formalised 'message passing' where every method call is resolved dynamically at runtime based on the receiving object's actual class — a model of dynamic dispatch that heavily influenced Python's own method resolution behaviour." },
+            { "strong": "1983 — C++ virtual Functions", "text": " — C++ required the explicit virtual keyword for a base class method to be eligible for overriding via dynamic dispatch; without it, C++ defaults to static, compile-time binding, unlike Python's fully dynamic model." },
+            { "strong": "1995 — Java @Override", "text": " — Java made overriding straightforward by default but later added the optional @Override annotation (Java 5, 2004) purely as a compile-time safety check to catch accidental signature mismatches." },
+            { "strong": "1991 — Python's Dynamic Dispatch Model", "text": " — Guido van Rossum designed Python so that all method resolution happens dynamically at runtime by default, with no special keyword required to enable overriding — reflecting Python's broader philosophy of simplicity and flexibility over explicit ceremony." },
+            { "strong": "1995 — Python's super() Function", "text": " — Introduced early in Python's history and significantly improved in Python 2.2 (2001) alongside new-style classes, super() gave developers a clean, cooperative way to call a parent class's overridden method from within the subclass's override." },
+            { "strong": "2001 — C3 Linearization Algorithm Adopted (Python 2.3)", "text": " — Python adopted the C3 linearization algorithm to compute a well-defined Method Resolution Order (MRO) for multiple inheritance, ensuring overriding behaves predictably even in complex class hierarchies." }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This history explains why Python's overriding model feels so effortless compared to Java or C++: Python was designed from the very beginning around dynamic dispatch as the default behaviour, rather than treating it as an opt-in feature requiring special keywords."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-overriding-matters",
+      "title": "Why Method Overriding Matters — Core Goals",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Before exploring syntax, it helps to understand exactly what problems method overriding solves. These goals explain why it is one of the most frequently used OOP techniques in real Python projects."
+        },
+        {
+          "type": "featureCards",
+          "items": [
+            { "icon": "🎭", "title": "Enables Runtime Polymorphism", "text": "The same method call behaves differently depending on the actual object's class, letting a single line of code work correctly across many different subclasses." },
+            { "icon": "🧩", "title": "Customises Inherited Behaviour", "text": "A subclass can adapt or specialise a parent's general-purpose method to match its own specific needs, without duplicating the entire class from scratch." },
+            { "icon": "♻️", "title": "Supports Code Reuse via super()", "text": "An overriding method can still call the parent's original implementation using super(), extending rather than completely replacing existing behaviour." },
+            { "icon": "🔌", "title": "Powers Framework Hook Points", "text": "Frameworks like Django and Flask define base methods specifically expecting subclasses to override them, creating clean extension points for custom logic." },
+            { "icon": "📐", "title": "Keeps Interfaces Consistent", "text": "Overriding lets every subclass honour a shared method name and signature, while implementing the internal logic however is appropriate for that subclass." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "overriding-basics",
+      "title": "How Method Overriding Works — The Basics",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Overriding a method in Python requires nothing more than defining a method with the <strong>exact same name</strong> in a subclass that already exists in its parent class. There is no special syntax, decorator, or keyword required for basic overriding to take effect."
+        },
+        { "type": "subHeading", "text": "🔄 Automatic, Keyword-Free Overriding" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "As soon as Python sees a method definition in a subclass that shares a name with a method in the parent class, the subclass's version <strong>completely replaces</strong> the parent's version for instances of that subclass. This happens automatically — Python does not require you to explicitly declare an intention to override, unlike some other languages."
+        },
+        { "type": "subHeading", "text": "🧭 Dynamic Dispatch at Runtime" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When you call <code>obj.method()</code>, Python looks up <code>method</code> starting from <code>obj</code>'s actual class, not from whatever type a variable is annotated or assumed to hold. This lookup process — walking up the class hierarchy in a specific, well-defined order — is called the <strong>Method Resolution Order (MRO)</strong>, and it is exactly what determines which version of an overridden method actually executes."
+        },
+        { "type": "subHeading", "text": "🪜 Calling the Parent's Version with super()" },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Overriding does not have to mean fully discarding the parent's implementation. The built-in <code>super()</code> function lets an overriding method call the parent class's original version of the same method — often to reuse shared setup logic before adding subclass-specific behaviour on top. This pattern, called <strong>method extension</strong>, is extremely common in professional Python code, especially in <code>__init__</code> constructors."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "flowchart-heading",
+      "title": "How Python Resolves an Overridden Method Call — Flowchart",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "When you call a method on an object, Python runs a precise lookup process to determine exactly which version of that method should execute — especially important when multiple classes in the hierarchy define a method with the same name. The flowchart below traces this resolution step by step."
+        },
+        {
+          "type": "flowchart",
+          "nodes": [
+            { "id": "1", "label": "📝 Method Call Made", "sublabel": "animal.speak()", "type": "start" },
+            { "id": "2", "label": "🔍 Identify Actual Class", "sublabel": "type(animal) → Dog", "type": "process" },
+            { "id": "3", "label": "📋 Compute MRO", "sublabel": "Dog → Animal → object (C3 linearization)", "type": "process" },
+            { "id": "4", "label": "❓ Method Found on Dog?", "sublabel": "Does Dog define speak() itself?", "type": "decision" },
+            { "id": "5a", "label": "✅ Run Dog.speak()", "sublabel": "Subclass override executes", "type": "process" },
+            { "id": "5b", "label": "⬆️ Walk Up to Animal", "sublabel": "Check next class in MRO", "type": "process" },
+            { "id": "6", "label": "🪜 super().speak() Called?", "sublabel": "Optional — explicitly invokes parent version", "type": "decision" },
+            { "id": "7", "label": "🖨️ Output Produced", "sublabel": "e.g. \"Woof!\"", "type": "end" }
+          ],
+          "edges": [
+            { "from": "1", "to": "2", "label": "runtime lookup" },
+            { "from": "2", "to": "3", "label": "build search order" },
+            { "from": "3", "to": "4", "label": "check first class in MRO" },
+            { "from": "4", "to": "5a", "label": "✅ found on Dog" },
+            { "from": "4", "to": "5b", "label": "❌ not found, continue" },
+            { "from": "5a", "to": "6", "label": "inside override" },
+            { "from": "6", "to": "7", "label": "either path completes" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Key insight: Python <strong>always starts the search from the object's actual class</strong>, not from the type of the variable or reference used to call the method. This is precisely what makes overriding work polymorphically — the exact same line <code>animal.speak()</code> produces different behaviour purely based on what <code>animal</code> actually is at runtime."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "overriding-code-example",
+      "title": "Method Overriding in Action — Animal Sound Example",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The classic way to demonstrate method overriding is an <strong>Animal hierarchy</strong>, where every animal makes a sound, but each subclass overrides the exact sound it makes."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "animal_sounds.py",
+          "lines": [
+            "class Animal:",
+            "    def __init__(self, name):",
+            "        self.name = name",
+            "",
+            "    def speak(self):",
+            "        return f\"{self.name} makes a generic sound.\"",
+            "",
+            "class Dog(Animal):",
+            "    def speak(self):   # overrides Animal.speak()",
+            "        return f\"{self.name} says Woof!\"",
+            "",
+            "class Cat(Animal):",
+            "    def speak(self):   # overrides Animal.speak()",
+            "        return f\"{self.name} says Meow!\"",
+            "",
+            "class Puppy(Dog):",
+            "    def speak(self):",
+            "        # extends the parent's overridden version using super()",
+            "        original = super().speak()",
+            "        return f\"{original} (but in a tiny puppy voice)\"",
+            "",
+            "animals = [Animal(\"Generic\"), Dog(\"Rex\"), Cat(\"Whiskers\"), Puppy(\"Buddy\")]",
+            "for a in animals:",
+            "    print(a.speak())"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Generic makes a generic sound.",
+            "Rex says Woof!",
+            "Whiskers says Meow!",
+            "Buddy says Woof! (but in a tiny puppy voice)"
+          ]
+        },
+        {
+          "type": "subHeading",
+          "text": "Practice This Code — Live Editor"
+        },
+        {
+          "type": "liveEditor",
+          "initialCode": "class Animal:\n    def __init__(self, name):\n        self.name = name\n    def speak(self):\n        return f\"{self.name} makes a generic sound.\"\n\nclass Dog(Animal):\n    def speak(self):\n        return f\"{self.name} says Woof!\"\n\nd = Dog(\"Rex\")\nprint(d.speak())"
+        },
+        {
+          "type": "subHeading",
+          "text": "Line-by-Line Explanation"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "html": "<code>class Dog(Animal)</code> with its own <code>def speak(self)</code> — Simply defining a method with the same name automatically overrides the parent's version; no special keyword is needed in Python." },
+            { "html": "<code>class Puppy(Dog)</code> — Demonstrates that overriding works across multiple inheritance levels; Puppy overrides Dog's already-overridden version of speak()." },
+            { "html": "<code>super().speak()</code> — Calls Dog's version of speak() from within Puppy's override, reusing the existing logic instead of duplicating the 'Woof!' string — this is method extension, not full replacement." },
+            { "html": "<code>for a in animals: print(a.speak())</code> — This single loop calls speak() polymorphically; Python automatically runs the correct overridden version based on each object's actual class." },
+            { "html": "The output shows four different behaviours from one method name (<code>speak</code>) — a direct demonstration of runtime polymorphism enabled by overriding." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "super-function-deep-dive",
+      "title": "The super() Function — Cooperative Overriding",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The <code>super()</code> function is the standard, Pythonic way to call a parent class's original method from within an overriding method. It is used constantly in real-world code, especially inside <code>__init__</code> constructors, to ensure the parent class's setup logic still runs."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "super_constructor_demo.py",
+          "lines": [
+            "class Employee:",
+            "    def __init__(self, name, salary):",
+            "        self.name = name",
+            "        self.salary = salary",
+            "",
+            "    def details(self):",
+            "        return f\"{self.name} earns {self.salary}\"",
+            "",
+            "class Manager(Employee):",
+            "    def __init__(self, name, salary, team_size):",
+            "        super().__init__(name, salary)   # reuse Employee's setup logic",
+            "        self.team_size = team_size",
+            "",
+            "    def details(self):",
+            "        base = super().details()          # reuse Employee's overridden method",
+            "        return f\"{base}, manages a team of {self.team_size}\"",
+            "",
+            "m = Manager(\"Priya\", 95000, 8)",
+            "print(m.details())"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": ["Priya earns 95000, manages a team of 8"]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Without <code>super()</code>, the <code>Manager.__init__</code> would have to duplicate the exact logic of setting <code>self.name</code> and <code>self.salary</code>, and <code>Manager.details()</code> would have to rebuild the entire earning string from scratch. Using <code>super()</code> keeps the code <strong>DRY (Don't Repeat Yourself)</strong> and ensures that if <code>Employee</code>'s logic changes later, <code>Manager</code> automatically benefits from the update without any changes to its own code."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "mro-explained",
+      "title": "Method Resolution Order (MRO) — Overriding in Multiple Inheritance",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Method overriding becomes considerably more nuanced when a class inherits from <strong>multiple parent classes</strong>. Python uses an algorithm called <strong>C3 linearization</strong> to compute a consistent, predictable <strong>Method Resolution Order (MRO)</strong> — the exact sequence of classes Python checks, in order, when resolving a method call."
+        },
+        {
+          "type": "codeBox",
+          "lang": "🐍 Python",
+          "label": "mro_demo.py",
+          "lines": [
+            "class Base:",
+            "    def greet(self):",
+            "        return \"Hello from Base\"",
+            "",
+            "class Left(Base):",
+            "    def greet(self):",
+            "        return \"Hello from Left\"",
+            "",
+            "class Right(Base):",
+            "    def greet(self):",
+            "        return \"Hello from Right\"",
+            "",
+            "class Child(Left, Right):",
+            "    pass   # does not override greet() itself",
+            "",
+            "c = Child()",
+            "print(c.greet())          # Hello from Left — Left comes first in MRO",
+            "print(Child.__mro__)"
+          ]
+        },
+        {
+          "type": "outputBox",
+          "lines": [
+            "Hello from Left",
+            "(<class 'Child'>, <class 'Left'>, <class 'Right'>, <class 'Base'>, <class 'object'>)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "This example demonstrates the classic <strong>diamond inheritance</strong> pattern: <code>Child</code> inherits from both <code>Left</code> and <code>Right</code>, which both inherit from <code>Base</code>. Since <code>Child</code> itself does not override <code>greet()</code>, Python walks its MRO in order — <code>Child → Left → Right → Base → object</code> — and stops at the very first class that actually defines <code>greet()</code>, which is <code>Left</code>. Understanding MRO is essential for correctly predicting which overridden method actually runs in complex, multiply-inherited class hierarchies."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "overriding-vs-overloading",
+      "title": "Method Overriding vs Method Overloading — Comparison Table",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Beginners very frequently confuse <strong>overriding</strong> with <strong>overloading</strong>. They sound similar but describe entirely different concepts — and Python handles the second one quite differently from languages like Java or C++."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Method Overriding", "Method Overloading"],
+          "rows": [
+            ["Definition", "Subclass redefines a method already in its parent", "Multiple methods with the same name but different parameters"],
+            ["Relationship required", "Requires inheritance (parent-child classes)", "Can occur within a single class"],
+            ["When resolved", "At runtime (dynamic dispatch / late binding)", "At compile time in Java/C++ (static dispatch)"],
+            ["Native Python support?", "✅ Fully supported, no special syntax needed", "❌ Not natively supported — later definitions silently replace earlier ones"],
+            ["Python workaround", "N/A — works natively", "Default arguments, *args/**kwargs, or functools.singledispatch"],
+            ["Purpose", "Customise/specialise inherited behaviour", "Provide multiple ways to call a function with different argument types/counts"],
+            ["Example", "Dog.speak() overriding Animal.speak()", "area(radius) vs area(length, width) in Java"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "It's worth emphasising: Python does <strong>not</strong> support true method overloading the way Java does. If you define two methods with the same name in one class, the second definition simply overwrites the first in the class's namespace — there is no mechanism to have Python choose between them based on argument count or type, unless you explicitly build that logic yourself using default parameters, <code>*args</code>/<code>**kwargs</code>, or the <code>functools.singledispatch</code> / <code>singledispatchmethod</code> decorators."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "python-vs-others-overriding",
+      "title": "Method Overriding in Python vs Other Languages",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Overriding exists in every mainstream object-oriented language, but the exact rules and required syntax vary considerably. Here's how Python compares to Java and C++."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Feature", "Python", "Java", "C++"],
+          "rows": [
+            ["Special keyword needed?", "❌ No — automatic by name match", "❌ No, but @Override annotation recommended", "✅ Yes — virtual keyword required in base class"],
+            ["Default dispatch", "Dynamic (always runtime resolution)", "Dynamic for instance methods", "Static, unless virtual is used"],
+            ["Calling the parent version", "super().method()", "super.method()", "BaseClass::method()"],
+            ["Signature must match exactly?", "Not enforced by the language", "✅ Enforced by compiler with @Override", "✅ Enforced by compiler"],
+            ["Overriding private methods", "N/A — name mangling changes behaviour entirely", "❌ Not possible — private methods aren't inherited-visible", "❌ Not possible — private methods aren't virtual by default"],
+            ["Overriding static/class methods", "✅ classmethod can be overridden like instance methods", "⚠️ Static methods are hidden, not overridden (no polymorphism)", "⚠️ Static methods cannot be virtual"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "advantages-disadvantages",
+      "title": "Advantages and Disadvantages of Method Overriding",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Method overriding is a powerful and heavily used technique, but it introduces certain risks and trade-offs that are worth understanding before relying on it extensively."
+        },
+        {
+          "type": "prosConsTable",
+          "pros": [
+            { "title": "Enables Runtime Polymorphism", "text": "A single method call can behave differently across many subclasses, letting code work generically with any object in a class hierarchy." },
+            { "title": "Customises Behaviour Without Duplication", "text": "Subclasses only need to override the specific methods that differ, inheriting everything else unchanged from the parent class." },
+            { "title": "Supports the Open/Closed Principle", "text": "New subclasses can override behaviour to extend a system without modifying any existing, tested parent class code." },
+            { "title": "Works Seamlessly with super()", "text": "Overriding methods can selectively reuse parent logic via super(), striking a balance between customisation and code reuse." },
+            { "title": "Powers Framework Extension Points", "text": "Frameworks like Django, Flask, and unittest are designed around expected overriding, giving developers clean, well-defined hooks for custom behaviour." }
+          ],
+          "cons": [
+            { "title": "No Compile-Time Safety Net", "text": "Since Python has no compiler and no @Override-style check, a typo in a method name silently creates a brand-new method instead of overriding the intended one — with no warning." },
+            { "title": "Can Break the Liskov Substitution Principle", "text": "If an override changes a method's expected behaviour too drastically, code written for the parent class may break unexpectedly when given a subclass instance." },
+            { "title": "Complex MRO in Multiple Inheritance", "text": "Diamond-shaped or deep multiple-inheritance hierarchies can make it genuinely difficult to predict which overridden method will actually execute without checking __mro__." },
+            { "title": "Risk of Forgetting super()", "text": "Overriding __init__ without calling super().__init__() can silently skip essential parent class setup logic, leading to subtle bugs." },
+            { "title": "Overriding Can Obscure Behaviour", "text": "Deeply nested override chains across many subclass levels can make it hard to trace exactly which version of a method actually runs without careful investigation." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "architecture-diagram-heading",
+      "title": "Method Overriding Architecture — Dispatch Diagram",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "The diagram below visualises how a single overridden method call travels down through a class hierarchy, showing exactly where Python's dynamic dispatch mechanism intervenes to select the correct implementation."
+        },
+        {
+          "type": "architectureDiagram",
+          "layers": [
+            {
+              "label": "Calling Code",
+              "color": "#6366f1",
+              "items": ["animal.speak()", "employee.details()", "shape.area()"]
+            },
+            {
+              "label": "Dynamic Dispatch Engine",
+              "color": "#0ea5e9",
+              "items": ["type(obj) lookup", "MRO computation (C3 linearization)", "__mro__ traversal"]
+            },
+            {
+              "label": "Subclass Override Layer",
+              "color": "#10b981",
+              "items": ["Dog.speak()", "Manager.details()", "Circle.area()"]
+            },
+            {
+              "label": "super() Bridge",
+              "color": "#f59e0b",
+              "items": ["super().speak()", "super().__init__()", "Calls next class in MRO"]
+            },
+            {
+              "label": "Parent Class Implementation",
+              "color": "#ef4444",
+              "items": ["Animal.speak()", "Employee.details()", "Shape.area()"]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Notice the <strong>super() Bridge</strong> layer sitting between the subclass override and the parent implementation — this is what allows an override to selectively reach back into the parent's original behaviour instead of either fully replacing it or fully duplicating it."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "real-world-uses",
+      "title": "Where Method Overriding is Used — Real-World Applications",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Method overriding shows up constantly in professional Python development in 2026. Here are the major real-world contexts where it plays a central role:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "🗄️ Django Model save() Overriding", "text": " — Developers routinely override a Django model's save() method to add custom logic, like automatically generating a slug or timestamp, before calling super().save() to complete the actual database write." },
+            { "strong": "🖨️ Dunder Method Customisation", "text": " — Nearly every user-defined Python class overrides __str__, __repr__, __eq__, or __lt__ to customise how objects are printed, compared, or sorted, replacing Python's generic default behaviour." },
+            { "strong": "🧪 unittest.TestCase Setup Methods", "text": " — Test classes override setUp() and tearDown() to define custom test fixtures, while the base TestCase class defines a default (usually empty) implementation as the extension point." },
+            { "strong": "🌐 Flask/Django View Class Overriding", "text": " — Class-based views override methods like get() and post() to define custom request handling, while inheriting shared dispatch logic from the framework's base View class." },
+            { "strong": "🤖 Machine Learning Custom Layers", "text": " — In frameworks like PyTorch, custom neural network layers are built by subclassing nn.Module and overriding its forward() method to define the layer's specific computation." },
+            { "strong": "🎮 Game Entity Behaviour", "text": " — A base GameCharacter class might define a generic attack() method, which specific character subclasses (Warrior, Mage, Archer) override with completely different combat mechanics." },
+            { "strong": "🔌 Exception Class Customisation", "text": " — Custom exception classes commonly override __init__ or __str__ to attach additional context (like an error code) while still calling super().__init__() to preserve standard exception behaviour." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "overriding-vs-polymorphism",
+      "title": "Method Overriding vs Polymorphism — How They Relate",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Method overriding and polymorphism are closely linked but not identical — overriding is one specific <strong>mechanism</strong> that enables the broader <strong>concept</strong> of polymorphism."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Aspect", "Method Overriding", "Polymorphism"],
+          "rows": [
+            ["Core idea", "A subclass redefines a specific inherited method", "One interface, many different behaviours across types"],
+            ["Scope", "A relationship between exactly two classes (parent/child)", "A broader principle spanning inheritance, duck typing, and operator overloading"],
+            ["Is it a mechanism or a concept?", "A concrete mechanism (technique)", "A conceptual OOP principle"],
+            ["Example", "Dog overrides Animal.speak()", "A loop calling .speak() on Dog, Cat, and Bird objects, each behaving differently"],
+            ["Can polymorphism exist without overriding?", "N/A", "✅ Yes — via duck typing or operator overloading, without any shared class hierarchy"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "In short: <strong>overriding is how</strong> Python achieves one common form of polymorphism (inheritance-based polymorphism), but polymorphism itself is a broader idea that can also be achieved without any inheritance at all, purely through duck typing."
+        }
+      ]
+    },
+
+    {
+      "sectionId": "why-learn-overriding",
+      "title": "Why Should You Master Method Overriding in 2026?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Method overriding is a defining topic in nearly every Python OOP interview and shows up constantly in framework-heavy production code. Here's why mastering it deeply matters:"
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "💼 A Core OOP Interview Topic", "text": " — Overriding, super(), and MRO are among the most frequently tested Python OOP concepts, especially for roles involving Django, Flask, or any framework-heavy work." },
+            { "strong": "🏗️ Essential for Working with Frameworks", "text": " — Nearly every major Python framework — Django, Flask, PyTorch, unittest — is designed around expected method overriding as its primary extension mechanism." },
+            { "strong": "🐍 Foundation for Understanding Dunder Methods", "text": " — Overriding __str__, __eq__, __add__, and other dunder methods is how you customise Python's built-in behaviours for your own classes — a skill used in almost every serious Python project." },
+            { "strong": "🚀 Key to Writing Extensible, DRY Code", "text": " — Overriding combined with super() lets you extend behaviour cleanly instead of duplicating logic, directly supporting maintainable, professional-grade software design." },
+            { "strong": "🔄 Prevents Subtle, Hard-to-Find Bugs", "text": " — Understanding MRO and how super() actually works prevents entire categories of bugs that arise from multiple inheritance and diamond-shaped class hierarchies." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "common-mistakes",
+      "title": "Common Method Overriding Mistakes Beginners Make",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Even experienced developers occasionally trip up on method overriding. Here are the mistakes that show up most often in real code reviews and beginner projects."
+        },
+        {
+          "type": "bulletList",
+          "items": [
+            { "strong": "Forgetting to call super().__init__()", "text": " — Overriding __init__ without calling the parent's __init__ can silently skip essential setup logic, leaving the object in an incomplete or broken state." },
+            { "strong": "Mismatched method signatures", "text": " — Overriding a method with a different number or order of parameters than the parent can break code that calls the method generically across the whole hierarchy, since Python does not check this at all." },
+            { "strong": "Accidental overriding via typos", "text": " — Misspelling a method name meant to override a parent's method (e.g. def spek() instead of def speak()) silently creates a brand-new method rather than an override, with no error raised." },
+            { "strong": "Assuming Python supports overloading", "text": " — Defining two methods with the same name but different parameters in one class does not create an overload; the second definition simply replaces the first entirely." },
+            { "strong": "Ignoring MRO in multiple inheritance", "text": " — Assuming a method call will resolve to a specific parent class without actually checking __mro__ can lead to confusing, hard-to-debug behaviour in diamond-shaped hierarchies." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "interview-questions",
+      "title": "Method Overriding Interview Questions — Beginner to Intermediate",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "These are the most frequently asked interview questions on <strong>Python method overriding</strong>. Master these before any OOP-focused interview."
+        },
+        {
+          "type": "interviewQA",
+          "items": [
+            {
+              "q": "Q1. What is method overriding in Python?",
+              "a": "Method overriding occurs when a subclass defines a method with the same name as one already defined in its parent class, replacing the parent's implementation when that method is called on an instance of the subclass. It requires no special keyword in Python and is resolved dynamically at runtime.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q2. What is the difference between method overriding and method overloading?",
+              "a": "Overriding involves a subclass redefining a method that already exists in its parent class, resolved at runtime based on the object's actual type. Overloading involves defining multiple methods with the same name but different parameters, typically resolved at compile time in languages like Java. Python does not natively support true method overloading.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q3. What is the purpose of the super() function in method overriding?",
+              "a": "super() allows an overriding method to call the parent class's original version of that method, letting the subclass reuse and extend existing logic rather than fully duplicating or discarding it. It is commonly used inside overridden __init__ methods to ensure the parent's setup logic still runs.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q4. What is Method Resolution Order (MRO) in Python?",
+              "a": "MRO is the specific, well-defined order in which Python searches through a class hierarchy to find a method or attribute, especially important with multiple inheritance. Python computes this using the C3 linearization algorithm, and it can be inspected directly via ClassName.__mro__ or ClassName.mro().",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q5. Does Python require a special keyword like Java's @Override to override a method?",
+              "a": "No. Python does not require any special keyword or annotation. Simply defining a method with the same name in a subclass automatically overrides the parent's version, since Python resolves method calls dynamically based on the object's actual class.",
+              "tag": "Must Know"
+            },
+            {
+              "q": "Q6. What happens if you forget to call super().__init__() in an overridden constructor?",
+              "a": "Any attributes or setup logic defined in the parent class's __init__ will simply never run, potentially leaving the object missing expected attributes and causing AttributeError exceptions later when those attributes are accessed.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q7. In diamond inheritance, how does Python decide which overridden method to call?",
+              "a": "Python uses the C3 linearization algorithm to compute a single, consistent Method Resolution Order across the entire class hierarchy, then calls the first matching method found while walking that order from the object's actual class upward.",
+              "tag": "Common Trap"
+            },
+            {
+              "q": "Q8. Can you override a static method or a class method in Python?",
+              "a": "Yes. Both @staticmethod and @classmethod methods can be overridden in a subclass just like regular instance methods, and Python's dynamic dispatch still applies — the subclass's version will be used when called on a subclass instance or via the subclass itself.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q9. What is the relationship between method overriding and polymorphism?",
+              "a": "Method overriding is one of the primary mechanisms that enables polymorphism in Python. It allows the same method call to produce different behaviour depending on the actual class of the object, which is the defining characteristic of polymorphism.",
+              "tag": "Frequently Asked"
+            },
+            {
+              "q": "Q10. Give a real-world analogy for method overriding.",
+              "a": "A company-wide 'calculate bonus' policy being customised by individual departments is a good analogy: the Sales department might override it with a commission-based formula, and Engineering might override it with a performance-review-based formula, while both still follow the same overall company structure.",
+              "tag": "Must Know"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "practice-questions",
+      "title": "Practice Questions — Test Your Method Overriding Knowledge",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Test your understanding of Python method overriding with these practice questions. Try to answer each one before revealing the answer — active recall is the most effective way to learn."
+        },
+        {
+          "type": "practiceQuestions",
+          "items": [
+            {
+              "q": "1. What will happen if a subclass defines a method with a completely different name than any method in its parent class?",
+              "a": "No overriding occurs at all — it is simply a brand-new method unique to the subclass. Overriding only happens when the method name in the subclass exactly matches a method name already defined in the parent class.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "2. Why does Python not require a keyword like Java's @Override for method overriding to work?",
+              "a": "Because Python resolves all method calls dynamically at runtime based on the object's actual class, overriding happens automatically as soon as a subclass defines a method sharing the same name as one in its parent — no explicit declaration is needed for this dynamic dispatch to take effect.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "3. What does calling super().method_name() actually do inside an overriding method?",
+              "a": "It explicitly calls the next class's version of method_name in the current object's Method Resolution Order (MRO) — typically the immediate parent class's original implementation — allowing the override to reuse existing logic instead of duplicating it.",
+              "difficulty": "Easy"
+            },
+            {
+              "q": "4. In a diamond inheritance hierarchy where Child inherits from both Left and Right, and both override a shared method from Base, which version runs when Child() calls that method and does not override it itself?",
+              "a": "Python calls Left's version, because Left appears before Right in Child's Method Resolution Order (computed via C3 linearization), assuming Child(Left, Right) was declared in that order. Checking Child.__mro__ confirms the exact resolution order.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "5. Why is Python's lack of true method overloading not usually considered a major limitation?",
+              "a": "Python compensates through default parameter values, *args and **kwargs for variable argument counts, and the functools.singledispatch/singledispatchmethod decorators for type-based dispatch — covering most use cases that overloading solves in statically typed languages, without needing separate method definitions.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "6. Design a Shape base class with an area() method, and a Square subclass that overrides area() but also uses super() to log a message before returning the calculated area.",
+              "a": "Define class Shape with def area(self): return 0 as a default. Define class Square(Shape) with def area(self): print('Calculating square area'); result = self.side ** 2; return result — optionally calling super().area() first for logging purposes even though its return value (0) is discarded, demonstrating that super() calls are not required to contribute to the final return value.",
+              "difficulty": "Medium"
+            },
+            {
+              "q": "7. What subtle bug can occur if an overriding method changes the expected return type of the parent's method (for example, returning a string instead of a number)?",
+              "a": "Any code written to work generically with the parent class — expecting a number back from that method — may crash or behave incorrectly when given an instance of the subclass instead, since it now receives an unexpected type. This violates the Liskov Substitution Principle, which states subclasses should be substitutable for their parent class without breaking correctness.",
+              "difficulty": "Hard"
+            },
+            {
+              "q": "8. Explain how Python's C3 linearization algorithm ensures a 'monotonic' and consistent MRO even in complex multiple-inheritance hierarchies.",
+              "a": "C3 linearization computes the MRO by merging the MROs of all parent classes plus the list of parents itself, preserving the local precedence order declared in each class definition while ensuring no class appears before any of its own subclasses. This guarantees a single, predictable, non-ambiguous method lookup order, even in hierarchies involving multiple shared ancestors like diamond inheritance.",
+              "difficulty": "Hard"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "conclusion-heading",
+      "title": "Conclusion — Mastering Method Overriding in Python",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Method overriding is the mechanism that lets inheritance become truly powerful rather than merely a way to copy code. By allowing subclasses to redefine specific behaviour while inheriting everything else unchanged, Python enables the kind of flexible, extensible design seen throughout Django, Flask, PyTorch, and virtually every serious Python framework."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "Understanding overriding deeply means going beyond just 'redefining a method' — it means understanding <strong>dynamic dispatch</strong>, the <strong>Method Resolution Order</strong>, and how <code>super()</code> lets you extend rather than blindly replace inherited behaviour. These three concepts together form the backbone of professional, maintainable object-oriented Python code."
+        },
+        {
+          "type": "comparisonTable",
+          "headers": ["Your Goal", "Should You Use Method Overriding Here?"],
+          "rows": [
+            ["Customising a framework's base class behaviour", "✅ Absolutely — this is the intended extension pattern (e.g. Django's save())"],
+            ["Adding subclass-specific logic while keeping shared setup", "✅ Yes — override the method and call super() to reuse parent logic"],
+            ["Two methods in one class doing similar things with different args", "⚠️ Not overriding — use default arguments or functools.singledispatch instead"],
+            ["Completely unrelated method names between classes", "❌ Not overriding at all — this is just independent method definitions"],
+            ["Deep multiple inheritance with shared ancestor methods", "⚠️ Proceed carefully — always check __mro__ to confirm resolution order"],
+            ["Customising object printing, comparison, or arithmetic", "✅ Yes — override dunder methods like __str__, __eq__, __add__"]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "As a next step, practice by taking one of your own base classes and creating two or three subclasses that override the same method differently — then write a single loop that calls that method polymorphically across all of them. Seeing one line of code produce different, correct behaviour for each subclass is the clearest way to internalise why overriding matters."
+        },
+        {
+          "type": "paragraph",
+          "isHtml": true,
+          "text": "<strong>Method overriding is what turns a class hierarchy into a living, adaptable system.</strong> Master it alongside encapsulation, abstraction, and inheritance, and you will have a complete, professional command of Python's object-oriented foundations. 🔁"
+        }
+      ]
+    }
+
+  ],
+
+  "faq": {
+    "sectionId": "faq-heading",
+    "title": "Frequently Asked Questions (FAQ)",
+    "items": [
+      {
+        "q": "What is method overriding in simple words?",
+        "a": "Method overriding means a child class provides its own version of a method that already exists in its parent class, replacing the parent's behaviour with its own whenever that method is called on a child class object."
+      },
+      {
+        "q": "Is method overriding the same as method overloading?",
+        "a": "No. Overriding involves a subclass redefining an inherited method and is resolved at runtime. Overloading involves multiple methods with the same name but different parameters within one class, and Python does not natively support true method overloading the way Java does."
+      },
+      {
+        "q": "Do I need a special keyword to override a method in Python?",
+        "a": "No. Unlike Java's @Override annotation or C++'s virtual keyword, Python requires no special syntax. Simply defining a method with the same name in a subclass is enough to override the parent's version automatically."
+      },
+      {
+        "q": "What does super() do when used inside an overridden method?",
+        "a": "super() gives you access to the next class in the Method Resolution Order — typically the immediate parent class — letting you call its original version of the method you're overriding, so you can reuse and extend its behaviour instead of rewriting it entirely."
+      },
+      {
+        "q": "What is Method Resolution Order (MRO) and why does it matter for overriding?",
+        "a": "MRO is the specific order Python follows when searching a class hierarchy for a method, especially relevant with multiple inheritance. It matters because it determines exactly which overridden version of a method actually executes when several classes in the hierarchy define a method with the same name."
+      },
+      {
+        "q": "Can you override a private (double-underscore) method in Python?",
+        "a": "Not in the usual sense, because name mangling renames a private method like __helper() to _ClassName__helper() internally, tying it specifically to the class where it was defined. A subclass defining its own __helper() creates a separately mangled name, so it doesn't actually override the parent's private method — it just coexists alongside it."
+      }
+    ]
+  },
+
+  "nav": {
+    "prev": { "label": "← Previous: Python Abstraction", "path": "/python/python-abstraction" },
+    "next": { "label": "Next: Python Super Function →", "path": "/python/python-super-function" }
+  },
+
+  "sidebar": {
+    "quickFacts": [
+      { "dt": "OOP Relationship", "dd": "Requires inheritance (parent-child classes)" },
+      { "dt": "Key Function", "dd": "super()" },
+      { "dt": "Resolution Type", "dd": "Dynamic dispatch (runtime)" },
+      { "dt": "Lookup Mechanism", "dd": "Method Resolution Order (MRO)" },
+      { "dt": "MRO Algorithm", "dd": "C3 Linearization" },
+      { "dt": "Enables", "dd": "Runtime Polymorphism" }
+    ],
+    "relatedArticles": [
+      { "label": "Python OOP", "path": "/python/python-oop" },
+      { "label": "Python Inheritance", "path": "/python/python-inheritance" },
+      { "label": "Python Polymorphism", "path": "/python/python-polymorphism" },
+      { "label": "Python Abstraction", "path": "/python/python-abstraction" },
+      { "label": "Python Encapsulation", "path": "/python/python-encapsulation" },
+      { "label": "Python super() Function", "path": "/python/python-super-function" },
+      { "label": "Python Dunder Methods", "path": "/python/python-dunder-methods" },
+      { "label": "Python Multiple Inheritance", "path": "/python/python-multiple-inheritance" }
+    ],
+    "tags": ["Method Overriding","super()","Method Resolution Order","MRO","C3 Linearization","Dynamic Dispatch","Runtime Polymorphism","OOP","Inheritance","Dunder Methods","Overriding vs Overloading"]
+  }
+}
